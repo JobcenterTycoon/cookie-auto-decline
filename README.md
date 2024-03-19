@@ -15,9 +15,19 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
 
 <h3>Die Vorteile</h3>
 <ul>
-  <li>Nahezu keine kaputten Webseiten da Cookie Banner wirklich bearbeitet und nicht einfach nur versteckt oder blockiert werden.</li>
-  <li>Anders als andere Addons lehnt dieses Addon Tracking wenn möglich ab auch wenn es technisch komplexer ist.</li>
+  <li>Nahezu keine kaputten Webseiten da Cookie Banner wirklich geklickt und nicht einfach nur versteckt oder blockiert werden.</li>
+  <li>Es werden auch redirect Cookie Banner erkannt (z.b. consent.google.com oder consent.yahoo.com).</li>
+  <li>Anders als andere Browser Addons lehnt dieses Addon Tracking wenn möglich ab auch wenn es technisch komplexer ist.</li>
   <li>Das Addon ist absolut <b>Werbe, Tracking und Telemetriefrei.</b></li>
-  <li>Keine nervigen Benachrichtigungen oder überfrachtete Menüs. Das Addon macht seine Arbeit einfach im Hintergrund.</li>
-  <li>Da das Addon keine Cookie Banner dauerhaft versteckt können diese im Nachhinein auch von den Nutzern aufgerufen und Einstellungen geändert werden.</li>
+  <li>Keine nervigen Benachrichtigungen oder überfrachtete Menüs. Das Addon erledigt seine Arbeit unkompliziert im Hintergrund.</li>
+  <li>Da das Addon keine Cookie Banner dauerhaft versteckt und nur für die ersten Sekunden aktiv ist können Cookie Banner im Nachhinein bei Bedarf aufgerufen und Einstellungen geändert werden.</li>
 </ul>
+<h3>Schutz vor Webseitenbeschädigungen</h3>
+Das Addon nutzt mehrere Verfahren um zu verhindern das es Webseiten beschädigt:
+<br><br>
+<ol>
+  <li>Das Addon wird nur 1x pro Webseitensitzung ausgeführt. Wird z.b. die Webseite neu geladen bricht das Addon direkt ab (Schutz vor Reload Schleifen).</li>
+  <li>Wenn möglich prüft das Addon ob die Cookies bereits gesetzt wurden. Wenn ja bricht das Addon direkt ab (Schutz vor Überschreiben der Einstellungen).</li>
+  <li>Das Addon sucht nur für einige Sekunden nach Cookie Bannern. Sollte es innerhalb der Zeit keine finden bricht das Addon die Suche ab (Schutz vor ungewollten Klicken).</li>
+  <li>Kein dauerhaftes verstecken oder blockieren von Cookie Bannern (Schutz vor allgemeinen Problemen).</li>
+</ol>
