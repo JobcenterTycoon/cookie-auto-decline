@@ -31,3 +31,7 @@ Das Addon nutzt mehrere Verfahren um zu verhindern das es Webseiten beschädigt:
   <li>Das Addon sucht nur für einige Sekunden nach Cookie Bannern. Sollte es innerhalb der Zeit keine finden bricht das Addon die Suche ab (Schutz vor ungewollten Klicken).</li>
   <li>Kein dauerhaftes verstecken oder blockieren von Cookie Bannern (Schutz vor allgemeinen Problemen).</li>
 </ol>
+
+
+> [!IMPORTANT]
+> Damit das Addon funktioniert muss die Berechtigung "Auf Ihre Daten für diverse Websites zugreifen" <b>global!!</b> erteilt werden. Dazu oben in die URL Leiste about:addons eingeben -> Enter -> Auf das Addon klicken -> Berechtigungen -> "Auf Ihre Daten für diverse Websites zugreifen" aktivieren. Wer das Addon auch im privaten Modus nutzen möchte muss dies ebenso in den Addon Einstellungen erlauben.
