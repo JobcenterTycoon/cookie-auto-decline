@@ -1,13 +1,12 @@
 'use strict';
 (function () {
-   if ((sessionStorage.getItem("mpowlesu908hxfyw37ghg5ikx90jdzt") != "djx0v0odce35xrb2pt5dzbgaj1mud5c" && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector("body.no-js > .main-wrapper + script + img[src^=\"/cdn-cgi/images/trace/managed/js/transparent.gif?ray=\"][style=\"display: none\"]") === null && document.querySelector("html[style=\"height:100%\"] iframe[src^=\"/_Incapsula_Resource?\"]") === null && document.querySelector("link[href=\"/cdn-cgi/styles/challenges.css\"][rel=\"stylesheet\"]") === null && window.location.hostname != "accounts.google.com") {
+   if ((sessionStorage.getItem("mpowlesu908hxfyw37ghg5ikx90jdzt") != "djx0v0odce35xrb2pt5dzbgaj1mud5c" && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector("body.no-js > .main-wrapper + script + img[src^=\"/cdn-cgi/images/trace/managed/js/transparent.gif?ray=\"][style=\"display: none\"]") === null && document.querySelector("body.no-js > .main-wrapper + script + script:last-child[src^=\"https://static.cloudflareinsights.com/beacon.min.js\"]") === null && document.querySelector("html[style=\"height:100%\"] iframe[src^=\"/_Incapsula_Resource?\"]") === null && document.querySelector("link[href=\"/cdn-cgi/styles/challenges.css\"][rel=\"stylesheet\"]") === null && window.location.hostname != "accounts.google.com") {
       if (window.self == window.top && window.location.host.endsWith("aternos.org") === false && window.location.host.endsWith("office-discount.de") === false && window.location.host.endsWith("rp-online.de") === false && window.location.host.endsWith("privadovpn.com") === false && window.location.host.endsWith("youtube.com") === false && window.location.host.endsWith("web.de") === false && window.location.host.endsWith("gmx.net") === false && window.location.host.endsWith("fifa.com") === false && window.location.href.startsWith("https://ga.de/") === false && window.location.host.endsWith("notebooksbilliger.de") === false) {
          sessionStorage.setItem("mpowlesu908hxfyw37ghg5ikx90jdzt", "djx0v0odce35xrb2pt5dzbgaj1mud5c");
       }
-
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#__tealiumGDPRecModal,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"]{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#__tealiumGDPRecModal,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
@@ -260,9 +259,8 @@
       let bereitsgeklickt = false;
       const findconsent = window.setInterval(function () {
          // consentmanager.net
-         const consentmanager = document.querySelector("script[src=\"https://cdn.consentmanager.net/delivery/js/cmp_de.min.js\"][data-cmp-ab]");
-         const consentmanager2 = document.querySelector("script[src^=\"https://cdn.consentmanager.net/delivery/customdata/\"][data-cmp-ab]");
-         if (consentmanager || consentmanager2) {
+         const consentmanager = document.querySelector("script[src*=\".consentmanager.net/delivery/\"][data-cmp-ab]");
+         if (consentmanager) {
             console.log("[Cookie auto decline] Detected: consentmanager.net");
             const ablehnen = document.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
             const akzeptieren = document.querySelector("#cmpbox a.cmptxt_btn_yes[role=\"button\"]");
@@ -701,7 +699,7 @@
                window.setTimeout(function () {
                   ablehnen2.click();
                }, 402);
-            } else if (ablehnen3) {
+            } else if (ablehnen3 && ablehnen3.innerText.toLowerCase().includes("ad free") === false) {
                beenden();
                window.setTimeout(function () {
                   ablehnen3.click();
@@ -715,7 +713,7 @@
                window.setTimeout(function () {
                   einstellungen.click();
                }, 402);
-            } else if (einstellungen2 && einstellungen2.offsetHeight > 0) {
+            } else if (einstellungen2 && einstellungen2.offsetHeight > 0 && einstellungen2.innerText.toLowerCase().includes("mehr infos") === false) {
                window.setTimeout(function () {
                   einstellungen2.click();
                }, 402);
@@ -1369,7 +1367,21 @@
          // consentframework.com
          const consentframework = document.querySelector("#sd-cmp[class^=\"sd-cmp-\"]");
          if (consentframework && document.cookie.includes("euconsent-v2") === false) {
+            console.log("[Cookie auto decline] Detected: consentframework.com");
             const ablehnen = consentframework.querySelector("button:only-child");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            } 
+         }
+
+         // cky-consent-container
+         const ckyconsent = document.querySelector(".cky-consent-bar[data-cky-tag][style]");
+         if (ckyconsent && document.cookie.includes("action:yes,necessary:yes") === false) {
+            console.log("[Cookie auto decline] Detected: cky-consent-container");
+            const ablehnen = ckyconsent.querySelector("button.cky-btn-reject[data-cky-tag=\"reject-button\"]");
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
@@ -1406,21 +1418,11 @@
          seite: "autismus.de",
          selector: "a.cc_btn_accept_all[data-cc-event=\"click:dismiss\"]"
       }, {
-         seite: "ada.com",
-         checkcookie: "cookie_settings",
-         setcookie: "cookie_settings={\"necessary\":true,\"statistics\":false,\"marketing\":false};"
-      }, {
-         seite: "geektyrant.com",
-         selector: "#ez-cookie-dialog-wrapper #ez-save-settings"
-      }, {
          seite: "msn.com",
          selector: "#ez-cookie-dialog-wrapper #ez-save-settings"
       }, {
          seite: "bund.de",
          selector: ".cookie-consent__btn-wrapper > button.cookie-consent__btn.is-deny"
-      }, {
-         seite: "kurier.at",
-         selector: "app-required-consent-overlay button.hasBackground"
       }, {
          seite: "wochenspiegelonline.de",
          selector: "button.btn--secondary[name*=\"[consent][deny]\"]"
@@ -1436,9 +1438,17 @@
          selector: "#cc_privacy_layer button.cc_open_settings",
          selectorfinal: "#cc_privacy_layer button.cc_accept_settings"
       }, {
-         seite: "facebook.com,meta.com",
-         selector: "button[data-cookiebanner=\"accept_only_essential_button\"]",
-         selectorfinal: "div[role=\"dialog\"] div[aria-label$=\"blehnen\"][role=\"button\"]"
+         seite: "meta.com",
+         checkstorage: "Session",
+         selector: "div[role=\"dialog\"][aria-label*=\"ookies\"] > div:first-child > div:first-child[aria-hidden] > div:first-child > div:last-child[aria-hidden] > div:last-child > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > div:last-child > div[role=\"button\"][tabindex]"
+      }, {
+         seite: "facebook.com",
+         checkstorage: "Session",
+         selector: "button[data-cookiebanner=\"accept_only_essential_button\"]"
+      }, {
+         seite: "threads.net",
+         checkstorage: "Session",
+         selector: "div[role=\"dialog\"] div[aria-hidden=\"false\"] div[role=\"button\"][tabindex=\"0\"] + div[role=\"button\"][tabindex=\"0\"]"
       }, {
          seite: "twitter.com",
          selector: "div[class*=\"eu-cookie-notice\"] ul[class$=\"-eu-cookie-notice__choice-list\"] button[class*=\"-eu-cookie-notice__button\"]",
@@ -1450,7 +1460,8 @@
          selector: "div[style=\"display: flex; flex-direction: column; height: 100%; max-width: 100%;\"] > button[tabindex] + button[tabindex]"
       }, {
          seite: "whatsapp.com",
-         selector: "div[data-testid=\"wa_cookies_banner_modal\"] button[data-testid=\"cookie_banner_accept_button\"]"
+         checkcookie: "wa_cb",
+         selector: "div[data-testid=\"wa_cookies_banner_modal\"] button[data-cookiebanner=\"accept_button\"]"
       }, {
          seite: "linkedin.com",
          selector: ".artdeco-global-alert-action__wrapper > button[action-type=\"DENY\"][data-control-name^=\"ga-cookie.consent.deny\"]"
@@ -1463,7 +1474,7 @@
       }, {
          seite: "etsy.com",
          checkcookie: " p=",
-         selector: "#gdpr-single-choice-overlay button[data-gdpr-open-full-settings]",
+         selector: "[data-gdpr-consent-prompt] button[data-gdpr-open-full-settings=\"true\"]",
          selectorfinal: "#gdpr-privacy-settings button[data-wt-overlay-close]"
       }, {
          seite: "rp-online.de",
@@ -1482,11 +1493,7 @@
          selector: "div[role=\"dialog\"][aria-modal][aria-describedby][aria-labelledby][style] > div[class^=\"buttons__\"] > button[class*=\"secondaryButton\"]"
       }, {
          seite: "poco.de",
-         selector: "#jentis_consent center > a[variant=\"link\"]"
-      }, {
-         seite: "wayfair.de",
-         selector: ".CookieComplianceContainer-veil button[type=\"button\"][data-enzyme-id=\"BannerCookieSettings\"]",
-         selectorfinal: "div[data-enzyme-id=\"CookieComplianceModal\"] button[data-enzyme-id=\"ModalSaveAndClose\"]"
+         selector: "[aria-describedby=\"consentbar\"] button[data-purpose=\"cookieBar.button.accept\"] + div > button"
       }, {
          seite: "otto.de",
          checkcookie: "cb=",
@@ -1520,13 +1527,13 @@
          selector: "#cookiePrompt > section.bbccookies-banner button#bbccookies-continue-button.continue-button"
       }, {
          seite: "amazon.de,amazon.com,amazon.co.uk,amazon.it,amazon.es,amazon.com.tr,amazon.pl",
-         selectorfinal: "span.a-declarative[data-sp-cc][data-action=\"sp-cc\"] > form#sp-cc[action^=\"/privacyprefs/\"] > #sp-cc-rejectall-container > a#sp-cc-rejectall-link[href=\"#\"][role=\"button\"]",
+         selectorfinal: "form#sp-cc button#sp-cc-rejectall-link",
          countdown: 1000
       }, {
          seite: "aliexpress.com",
          checkcookie: "u_p_s=2",
-         selector: "#gdpr-new-container.global-gdpr-container button.btn-more",
-         selectorfinal: ".gdpr-dialog-wrap .gdpr-dialog-btn-group > button.btn-save"
+         selector: "#gdpr-new-container button.btn-more",
+         selectorfinal: "#gdpr-new-container button.btn-save"
       }, {
          seite: "dan.com",
          checkcookie: "cookie_permission",
@@ -1554,10 +1561,6 @@
          checkstorage: "cookieConfig",
          selector: ".modalWrapper > .modalContent > .logoContainer > button.modalBtnAccept"
       }, {
-         seite: "auto.de",
-         checkstorage: "cookieConfig",
-         selector: ".modalWrapper > .modalContent > .logoContainer > button.modalBtnAccept"
-      }, {
          seite: "gdatasoftware.com",
          checkcookie: "GDS_CookieConsent",
          selector: "#gd-cookie-consent button[data-cookie-save=\"none\"]"
@@ -1569,14 +1572,6 @@
          seite: "parlons-basket.com",
          checkcookie: "euconsent-v2",
          selector: "#sd-cmp button[class*=\"sd-cmp-\"]"
-      }, {
-         seite: "dw.com",
-         checkstorage: "gdprAccepted",
-         selector: ".gdpr-wrapper .button-wrapper div.primary[role=\"button\"]"
-      }, {
-         seite: "fainin.com",
-         checkcookie: "ucc_consents",
-         selector: "fainin-cookie-consent button.cookie_consent-button--secondary"
       }, {
          seite: "0rechner.de,0calc.com,0calc.es,0calc.fr",
          checkcookie: "precmp",
@@ -1606,10 +1601,6 @@
          checkcookie: "thomann_settings",
          selector: ".cookie-consent-spice button.consent-button.js-decline-all-cookies[type=\"button\"]"
       }, {
-         seite: "drweb-av.de",
-         checkcookie: "SwIt_msg_cookies",
-         selector: "#cookie_accept_msg_block button[onclick=\"cookieMsg.set(\'accepted\')\"]"
-      }, {
          seite: "lionic.com",
          checkcookie: "cookie-box",
          selector: "#js-cookie-box .cookie-confirmation-buttons > #js-cookie-button"
@@ -1630,8 +1621,8 @@
          selector: "#cookie-consent .coc-accept-link.button[onclick*=\"cookie_consent_accept(false\"]"
       }, {
          seite: "photovoltaik4all.de",
-         checkcookie: "allowCookie",
-         selector: ".mnd-cookie-modal button.btn-accept-functional"
+         checkcookie: "cookie-preference",
+         selector: ".cookie-permission-container button.btn-primary"
       }, {
          seite: "diebayerische.de",
          checkcookie: "cookieConsent",
@@ -1653,8 +1644,8 @@
          selector: ".cookie-permission-container .cookie-permission-button > button.btn-primary"
       }, {
          seite: "dehogerielen.be",
-         checkcookie: "necessary-cookie-",
-         selector: "form#form-cookies-banner button.btn-accept-necessary"
+         checkcookie: "CookieConsent",
+         selector: "#cookieconsent-banner button.cookieconsent-banner-accept-necessary-button"
       }, {
          seite: "humboldtforum.org",
          checkcookie: "acceptCookie",
@@ -1663,10 +1654,6 @@
          seite: "raiffeisen-mobil.at",
          checkcookie: "cookieconsent",
          selector: "#info-overlay button.js-declineAllCookies"
-      }, {
-         seite: "metro.hu",
-         checkcookie: "cookieconsent",
-         selector: ".cookie-disclaimer-intrusive button.btn-primary.accept-btn"
       }, {
          seite: "filmzie.com",
          checkstorage: "cookiesAccepted",
@@ -1688,7 +1675,7 @@
       }, {
          seite: "abo24.de",
          checkcookie: "cmp",
-         selector: "#cookie-consent-wrapper a#consent-all[class=\"button\"][onclick=\"cookieConsentAll();\"]"
+         selector: "#cookie-consent button.accept-all"
       }, {
          seite: "lolaliza.com",
          checkcookie: "enableTracking",
@@ -1705,10 +1692,6 @@
          seite: "mustijamirri.fi",
          checkcookie: "mfi_consent_necessary",
          selector: "#cookie_consent button#cookie_only_necessary[role=\"button\"]"
-      }, {
-         seite: "eam-netz.de",
-         checkcookie: "omCookieConsent",
-         selector: ".cookie-panel__description button.cookie-panel__button.button_min"
       }, {
          seite: "goldenstateofmind.com",
          checkcookie: "_chorus_privacy_consent",
@@ -1755,7 +1738,7 @@
       }, {
          seite: "umicore.jp",
          checkcookie: "CookieConsent",
-         selector: "#cookieconsent-banner a#cookieconsent-banner-accept-necessary-button"
+         selector: "#cookieconsent-banner #cookieconsent-banner-accept-necessary-button"
       }, {
          seite: "coqtales.com",
          checkstorage: "fareharbor-cookie-notice-dismissed",
@@ -1781,19 +1764,10 @@
          checkcookie: "GDPRp",
          selector: ".cookie-banner form[action*=\"cookies\"] > button[name=\"cookies_deny\"]"
       }, {
-         seite: "esvika.ee",
-         checkcookie: "Consent",
-         selector: "#cookieConsent button[type=\"button\"][data-cookie-string]"
-      }, {
          seite: "schell.eu",
          checkcookie: "cookieStaticdata",
          setcookie: "cookieStaticdata=1;",
          selector: "#modalCookie button.btn-secondary.allow-all"
-      }, {
-         seite: "swrag.de",
-         checkcookie: "CookieLayerDismissed",
-         selectorfinal: ".modal-dialog button.btn-secondary",
-         countdown: 1502
       }, {
          seite: "steampowered.com,steamcommunity.com",
          selectorfinal: "#cookiePrefPopup .buttonGroup > div#rejectAllButton",
@@ -1803,10 +1777,6 @@
          checkcookie: "cookieConsentSubmitted",
          selector: ".js-cookie-wall button.js-cookie-reject-btn",
          selectoralternate: ".js-cookie-bar button.js-close-cookies[type=\"button\"]"
-      }, {
-         seite: "drimsim.com",
-         checkstorage: "DS_POLICY",
-         selector: ".cookies-wrapper a.cookies[data-cookies-action=\"accept\"]"
       }, {
          seite: "soluxtec.de",
          checkcookie: "cookieconsent_status",
@@ -1833,9 +1803,6 @@
          checkcookie: "ctb_base",
          selector: "#cookie_banner button.btn-light[type=\"button\"]"
       }, {
-         seite: "gesundheit-nordhessen.de",
-         selector: "#tarteaucitronServices button#tarteaucitronSave[type=\"button\"]"
-      }, {
          seite: "pferdekaemper.de",
          checkcookie: "optin",
          selector: "#cookiebanner button.set_essential_cookies"
@@ -1844,18 +1811,9 @@
          checkcookie: "FPVCookiePolicy",
          selector: "#cookieModal button.btn-secondary[type=\"submit\"]"
       }, {
-         seite: "myfxbook.com",
-         checkcookie: "cookieconsent_status",
-         selector: "#gdprConsentBanner button#dismissGdprConsentBannerBtn"
-      }, {
          seite: "cgi.com",
          checkcookie: "cookie-agreed",
          selector: ".eu-cookie-compliance-banner button#cookie-decline-button[type=\"button\"]"
-      }, {
-         seite: "tvgids.nl",
-         checkcookie: "_osb_consent",
-         selector: "iframe + div div[style^=\"max-height:\"] > div:last-child button[type=\"button\"]",
-         selectorfinal: "iframe + div button:not([aria-label]):first-child"
       }, {
          seite: "frankfurt.de",
          checkcookie: "cookieAccepted",
@@ -1880,11 +1838,6 @@
          seite: "varusteleka.com",
          selector: ".cookie_settings_container #accept_necessary_cookies.cookie_button"
       }, {
-         seite: "bankmillennium.pl",
-         checkcookie: "Marketing_consent=0",
-         setcookie: "Marketing_consent=2;",
-         selector: "wc-cookies-marketing #cookie-m-button-allow"
-      }, {
          seite: "simyo.nl",
          checkcookie: "acceptCookies",
          selector: "[class^=\"cookie-\"] a#js-cookie-btn-refuse"
@@ -1897,13 +1850,10 @@
          checkcookie: "privacy-options-confirmed",
          selector: "#privacy-policy-banner a.btn-decline"
       }, {
-         seite: "highend-audiokabel.de",
-         checkcookie: "accept_cookies",
-         selector: ".cookie-information button[type=\"button\"][data-xo-cookieinformation-href*=\"cookies_type=technical\"]"
-      }, {
          seite: "wetransfer.com",
          checkcookie: "wt_privacy",
-         selector: ".welcome--consent-wall button.welcome__button--decline[type=\"button\"]"
+         selector: ".welcome--consent-wall button.welcome__button--decline[type=\"button\"]",
+         selectorfinal: ".terms-conditions button.transfer__button"
       }, {
          seite: "smard.de",
          checkstorage: "smard-cookiebanner",
@@ -1923,7 +1873,7 @@
       }, {
          seite: "coolblue.de",
          checkcookie: "cookie-preferences",
-         selector: ".js-cookie-notification-settings-container button[aria-label*=\"kzeptieren\"]"
+         selector: ".js-cookie-notification__form button[name=\"accept_cookie\"]"
       }, {
          seite: "gronkh.tv",
          checkstorage: "grnk-cookies-accepted",
@@ -1938,12 +1888,11 @@
          selector: "#mcDsgvo a.decline"
       }, {
          seite: "snack-joker.de",
-         checkcookie: "epCookieConsent",
-         selector: ".cc-dialog button.cc-dialog-button-decline"
+         selector: ".shopify-pc__banner__btns-granular button#shopify-pc__banner__btn-decline"
       }, {
          seite: "sehen.de",
          checkcookie: "analytics",
-         selector: ".cc-dialog button.cc-dialog-button-decline"
+         selector: ".m-cookie [data-block-cookies]"
       }, {
          seite: "lentiamo.de",
          selector: ".vc-bar-cookie button[data-cookie=\"0\"]"
@@ -1957,10 +1906,11 @@
       }, {
          seite: "smart.com",
          checkcookie: "OptanonAlertBoxClosed",
-         selector: "#cookie-pro-dialog button#cookie-pro-reject-button"
+         selector: "#cookie-pro-dialog button#cookie-pro-info-button",
+         selectorfinal: "#onetrust-consent-sdk .ot-pc-refuse-all-handler"
       }, {
          seite: "websummit.com",
-         selector: ".civic_cookie__banner .civic_cookie__button--rejectAll"
+         selector: "[class*=\"CivicCookieBanner\"] .civic_cookie__buttons > button + button"
       }, {
          seite: "google.ac,google.ae,google.at,google.be,google.bg,google.by,google.ca,google.ch,google.cl,google.co.id,google.co.il,google.coIn,google.co.jp,google.co.ke,google.co.kr,google.co.nz,google.co.th,google.co.uk,google.co.ve,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.co,google.com.ec,google.com.eg,google.com.hk,google.com.mx,google.com.my,google.com.pe,google.com.ph,google.com.pk,google.com.py,google.com.sa,google.com.sg,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vn,google.cz,google.de,google.dk,google.dz,google.ee,google.es,google.fi,google.fr,google.gr,google.hr,google.hu,google.ie,google.it,google.lt,google.lv,google.nl,google.no,google.pl,google.pt,google.ro,google.rs,google.ru,google.se,google.sk,google.coIn",
          checkcookie: "OTZ",
@@ -2010,10 +1960,6 @@
          seite: "cannabissocialclubsdeutschland.de",
          checkcookie: "cookie_warning_dismissed",
          selector: ".widget-cookie-banner a[id$=\"-decline\"][data-aid=\"FOOTER_COOKIE_DECLINE_RENDERED\"]"
-      }, {
-         seite: "kadari.net",
-         checkcookie: "cookiebar",
-         selector: ".cookie-warning a.cookie-warning-close"
       }, {
          seite: "smdv.de,voelkner.de,digitalo.de,getgoods.com",
          selector: ".reveal__overlay[style=\"display: block;\"] button[class$=\"button_decline\"][data-cookie_consent]"
@@ -2069,18 +2015,9 @@
          checkcookie: "cookiesConsent",
          selector: "#modal-cookie button#saveCookies"
       }, {
-         seite: "klett.de",
-         checkcookie: "klett_cookie_consent",
-         selector: "#cookie-consent-modal button.btn-secondary[type=\"button\"]",
-         selectorfinal: "#cookie-consent-modal button.btn-primary[type=\"button\"]"
-      }, {
          seite: "swindi.de",
          checkcookie: "swindi-web-app-privacy-settings",
          selector: "#privacy-modal button#privacy-modal-save-recommended[type=\"button\"]"
-      }, {
-         seite: "fitx.de",
-         checkcookie: "consent",
-         selector: ".cookie_overlay div.cookie_overlay__button--mandatory"
       }, {
          seite: "erdinger.de",
          checkcookie: "cConsent",
@@ -2096,13 +2033,13 @@
       }, {
          seite: "buyzoxs.de,zoxs.de",
          checkcookie: "essential",
-         selector: "#gdpr-dialog a.gdpr-extend[href=\"#\"]",
+         selector: "#gdpr-dialog a.js-gdpr-settings",
          selector2: "#gdpr-dialog input#mediaSwitch",
          selectorfinal: "#gdpr-dialog button#btnDeny[type=\"button\"]"
       }, {
          seite: "neiki.dev",
          selectorfinal: "#gdpr-cookie-message2 button#gdpr-cookie-accept",
-         countdown: 500
+         countdown: 702
       }, {
          seite: "airwallex.com",
          checkcookie: "awx_cookie_consent",
@@ -2146,19 +2083,14 @@
          selector: "input#cconsentcheck",
          selectorfinal: "#approveform a.arrlink"
       }, {
-         seite: "hek.de,inp-gruppe.de,altoetting.de,micronova.de",
-         checkcookie: "cookie_consent",
-         setcookie: "cookie_consent=;",
-         selectorfinal: "#cboxContent a.js_cm_consent_essentials_only",
-         countdown: 1000
-      }, {
          seite: "mediathekviewweb.de",
          checkstorage: "allowCookies",
          selector: "#cookieModal button#cookieDenyButton"
       }, {
          seite: "virginaustralia.com",
          checkcookie: "virginCookiesAccepted",
-         selector: ".cmp-container button#cookieAcceptanceBtn"
+         selectorfinal: ".cmp-container button#cookieAcceptanceBtn",
+         countdown: 1000
       }, {
          seite: "huf-haus.com",
          checkstorage: "ccm_consent",
@@ -2184,7 +2116,7 @@
          checkstorage: "gdprconfirm",
          selector: "#gdpr-block button#gdpr-confirm-btn"
       }, {
-         seite: "wp.pl,money.pl,o2.pl,parenting.pl,pudelek.pl,autokult.pl,gadzetomania.pl,fotoblogia.pl,komorkomania.pl,polygamia.pl,abczdrowie.pl,benchmark.pl,kafeteria.pl,pysznosci.pl,dobreprogramy.pl,genialne.pl,autocentrum.pl",
+         seite: "wp.pl,money.pl,o2.pl,parenting.pl,pudelek.pl,autokult.pl,gadzetomania.pl,fotoblogia.pl,komorkomania.pl,polygamia.pl,abczdrowie.pl,benchmark.pl,kafeteria.pl,pysznosci.pl,dobreprogramy.pl,genialne.pl,autocentrum.pl,jastrzabpost.pl,deliciousmagazine.pl",
          checkcookie: "PWA_adbd",
          setcookie: "WPci=1;",
          selector: "body > div[class]:not([id], [data-container]) > div > div:last-child > div:last-child > div:first-child > button",
@@ -2208,7 +2140,8 @@
       }, {
          seite: "gibgas.de",
          checkcookie: "gibgas",
-         selector: "#cookies_consent button#btnSave[onclick]"
+         selectorfinal: "#cookies_consent button#btnSave[onclick]",
+         countdown: 500
       }, {
          seite: "handyhuellen.de",
          checkstorage: "mage_consent",
@@ -2224,15 +2157,16 @@
       }, {
          seite: "phase-6.de",
          checkcookie: "GDPR",
-         selector: "button#noCookies[onclick*=\"setGdprCookieRequired\"]"
+         selectorfinal: "button#noCookies[onclick*=\"setGdprCookieRequired\"]",
+         countdown: 1002
       }, {
          seite: "ninibela.de",
          checkstorage: "cookies-selected",
          selector: "[data-nosnippet] [data-gi-selector=\"reject-all-cookies\"] > a"
       }, {
          seite: "reifen-4x4.de",
-         checkcookie: "PrestaShop-4972",
-         selector: "#acb-banner button#acb-close-button"
+         checkcookie: "PrestaShop-49722c247d445ea6ad5f50ec8153945a",
+         selector: "#acb-deny-all-button"
       }, {
          seite: "frischteigwaren-huber.de",
          checkstorage: "privacyNote",
@@ -2264,8 +2198,7 @@
       }, {
          seite: "schaedlingskunde.de",
          checkcookie: "cookieconsent",
-         selector: "#iw-cookie-banner #customize-cookies-btn",
-         selectorfinal: "#customize-cookie-settings .customize-cookies-close:last-of-type"
+         selector: "#cookie-biter .allow-cookies-btn"
       }, {
          seite: "destatis.de",
          checkcookie: "gsbbanner",
@@ -2278,10 +2211,6 @@
          seite: "modell-werkstatt.de",
          checkcookie: "CookieConsent",
          selector: "#cookie-manager-window button#accept-selected"
-      }, {
-         seite: "tinyurl.com",
-         checkstorage: "cookiesAccepted",
-         selector: "div[class=\"alert alert-info alert-dismissible text-center m-0\"] > button.btn-sm"
       }, {
          seite: "webnode.com",
          checkcookie: "essential",
@@ -2296,10 +2225,6 @@
          checkcookie: "gdpr_accept",
          selector: "#gdpr #gdpr_accept",
          setcookie: "gdpr_cpp_opt_out=1;",
-      }, {
-         seite: "eventbrite.com",
-         checkcookie: "_evidon_suppress_notification_cookie",
-         selector: "#_evidon_banner button#_evidon-decline-button"
       }, {
          seite: "playstation.com",
          checkcookie: "_evidon_suppress_notification_cookie",
@@ -2337,7 +2262,7 @@
       }, {
          seite: "android.com",
          checkstorage: "glue.CookieNotificationBar",
-         selector: ".glue-cookie-notification-bar button.glue-cookie-notification-bar__reject"
+         selector: ".glue-cookie-notification-bar button.glue-cookie-notification-bar__accept"
       }, {
          seite: "rt.com",
          checkcookie: "rt-cb-approve",
@@ -2349,7 +2274,7 @@
       }, {
          seite: "reg.ru",
          checkcookie: "cookieAgree",
-         selector: ".b-policy-info__wrapper .b-policy-info__cross"
+         selector: ".b-policy-info button.b-policy-info__button"
       }, {
          seite: "ionos.de",
          checkcookie: "PRIVACY_CONSENT",
@@ -2358,10 +2283,6 @@
          seite: "frontline.de",
          checkcookie: "it_eprivacy_ah-_essential",
          selector: "#it-eprivacy-root button#it-eprivacy-banner-btn-decline"
-      }, {
-         seite: "waze.com",
-         checkcookie: "ads-cookie-consent",
-         selector: ".wz-cc-container button.wz-cc-disallow"
       }, {
          seite: "123rf.com",
          checkcookie: "agreed_c",
@@ -2375,9 +2296,9 @@
          checkcookie: "uw_madison_cookieconsent_timestamp",
          selector: "#cookieconsent-window button#cookieconsent-dismiss"
       }, {
-         seite: "safety.google",
+         seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
          checkstorage: "glue.CookieNotificationBar",
-         selector: "div[id^=\"glue-cookie-notification-bar-\"] button.glue-cookie-notification-bar__reject"
+         selector: ".glue-cookie-notification-bar button.glue-cookie-notification-bar__accept"
       }, {
          seite: "xing.com",
          checkcookie: "userConsent",
@@ -2672,6 +2593,14 @@
          seite: "truckscout24.de",
          checkcookie: "confirmed%22%3Afalse",
          sonderfall: "truckscout24de"
+      }, {
+         seite: "hansapark.de",
+         checkcookie: "cookieManager",
+         selector: "#cookie-manager button#btnUebernehmen"
+      }, {
+         seite: "domains-anonymizer.com",
+         checkcookie: "cookieConsentAgree",
+         selector: ".cookie-consent button[onclick^=\"createCookieInfo\"]"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -2850,7 +2779,7 @@
                               akzeptieren.click();
                            }
                         }
-                     }, 1202);
+                     }, 1502);
                   } else if (regeln[i].sonderfall === "lachainemeteocom") {
                      window.setTimeout(function () {
                         const check = document.querySelector("#appconsent > iframe").contentWindow.document.querySelector(".banner__controlArea > section > button:last-child");
