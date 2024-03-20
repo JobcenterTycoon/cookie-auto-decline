@@ -18,7 +18,7 @@
       }, {
          seite: "spiegel.de",
          checkcookie: "consent",
-         setcookie: "consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27;"
+         setcookie: "consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27_29;"
       }, {
          seite: "t3n.de",
          checkcookie: "consentUUID",
@@ -26,7 +26,7 @@
       }, {
          seite: "welt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27;"
+         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27_29;"
       }, {
          seite: "t-online.de",
          checkcookie: "consentUUID",
@@ -34,27 +34,27 @@
       }, {
          seite: "autobild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=2adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25;"
+         setcookie: "consentUUID=2adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29;"
       }, {
          seite: "bild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27;"
+         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27_29;"
       }, {
          seite: "computerbild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25;"
+         setcookie: "consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29;"
       }, {
          seite: "stern.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=dfb35a5e-740a-4f10-8838-a93153554627_25_27;"
+         setcookie: "consentUUID=dfb35a5e-740a-4f10-8838-a93153554627_25_27_29;"
       }, {
          seite: "pcwelt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27;"
+         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27_29;"
       }, {
          seite: "focus.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8e8125e8-9dae-457d-8010-746bae67d2b2_26;"
+         setcookie: "consentUUID=8e8125e8-9dae-457d-8010-746bae67d2b2_26_29;"
       }, {
          seite: "krzbb.de",
          checkcookie: "consentUUID",
@@ -65,10 +65,10 @@
          setcookie: "consentUUID=02c26ce9-695d-465e-aa09-402401455baf_25;"
       }, {
          // privacy-mgmt.com - ENDE
-         seite: "opensource.google,developers.google.com,cloud.google.com,web.dev",
-         checkstorage: "devsite-eu-cookie",
-         setstoragename: "devsite-eu-cookie",
-         setstoragecontent: "1"
+         seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
+         checkstorage: "glue.CookieNotificationBar",
+         setstoragename: "glue.CookieNotificationBar",
+         setstoragecontent: '[{"category":"2A","date":"2024-03-20T20:50:40.953Z","eea":true,"siteId":"developers.google.com","status":"ACCEPTED"}]'
       }, {
          seite: "bandlab.com",
          checkstorage: "privacyConsent",
@@ -305,10 +305,6 @@
          checkstorage: "kick_cookie_accepted",
          setstoragename: "kick_cookie_accepted",
          setstoragecontent: "true"
-      }, {
-         seite: "threads.net",
-         checkcookie: "cb",
-         setcookie: "cb=1_2023_07_05_2-3;"
       }, {
          seite: "xxxlutz.de",
          checkstorage: "_trackgate",
@@ -908,6 +904,108 @@
          seite: "obelink.de",
          checkcookie: "cookieConsentPrefs",
          setcookie: "cookieConsentPrefs={%22cg_essential%22:1%2C%22cg_analytical%22:1%2C%22cg_marketing%22:1%2C%22expire%22:182%2C%22secure%22:1};"
+      }, {
+         seite: "airitsystems.de",
+         checkcookie: "limz_consent_cookie",
+         setcookie: "limz_consent_cookie=%7B%22accepted%22%3Atrue%2C%22preferences%22%3Afalse%2C%22statistics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22version%22%3A1%7D;"
+      }, {
+         seite: "german.cri.cn",
+         checkstorage: "german_isPrivacy",
+         setstoragename: "german_isPrivacy",
+         setstoragecontent: "1"
+      }, {
+         seite: "inf-shop.de",
+         checkcookie: "gdpr_user_interaction_done",
+         setcookie: "gdpr_user_interaction_done=yes;"
+      }, {
+         seite: "ada.com",
+         checkcookie: "cookie_settings",
+         setcookie: "cookie_settings={%22necessary%22:true%2C%22statistics%22:false%2C%22marketing%22:false%2C%22updatedAt%22:1710933148380};"
+      }, {
+         seite: "geektyrant.com",
+         checkcookie: "ez-consent-tcf",
+         setcookie: "ez-consent-tcf=CP7xPlgP7xPlgErAEEENArEgAAAAAEPgACiQAABBqALMNCogD7IkJCLQMIoEAKgrCAigQAAAAkDRAQAmDAp2BgEusJEAIAUAAwQAgABRkACAAASABCIAJACgQAAQCBQAAgAACAQAMDAAGAC0EAgABAdAhTAggUCwASMyIhTAhCgSCAlsoEEgCBBXCEIs8CCAREwUAAAJABWAAICwWAxJICViQQJcQbQAAEACAQQgVCKTowBDAmbLVTiibRlaQFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAA.YAAAAAAAAAAA;"
+      }, {
+         seite: "bund.de",
+         checkcookie: "isTrackingConsentGiven",
+         setcookie: "isTrackingConsentGiven=false;"
+      }, {
+         seite: "wayfair.de",
+         checkcookie: "user_cookie_prefs",
+         setcookie: "user_cookie_prefs=NECESSARY%2CADMINISTRATIVE;",
+         reload: true
+      }, {
+         seite: "fainin.com",
+         checkcookie: "ucc_consents",
+         setcookie: "ucc_consents=[%22base%22];"
+      }, {
+         seite: "drweb-av.de",
+         checkcookie: "SwIt_msg_cookies",
+         setcookie: "SwIt_msg_cookies=%22accepted%22;"
+      }, {
+         seite: "metro.hu",
+         checkcookie: "allowedCookieCategories",
+         setcookie: "allowedCookieCategories=necessary;"
+      }, {
+         seite: "eam-netz.de",
+         checkcookie: "omCookieConsent",
+         setcookie: "omCookieConsent=group-1.0,group-2.0,dismiss;"
+      }, {
+         seite: "swrag.de",
+         checkcookie: "CookieLayerDismissed",
+         setcookie: "CookieLayerDismissed=true;"
+      }, {
+         seite: "drimsim.com",
+         checkstorage: "DS_POLICY",
+         setstoragename: "DS_POLICY",
+         setstoragecontent: "{\"user\":false,\"anon\":false}"
+      }, {
+         seite: "gesundheit-nordhessen.de",
+         checkcookie: "cookieconsent_status",
+         setcookie: "cookieconsent_status=!tarteaucitron=true!website=true!youtube=false!openstreetmap=true!matomo=false;"
+      }, {
+         seite: "tvgids.nl",
+         checkcookie: "_osb_consent",
+         setcookie: "_osb_consent=CP7xYYAP7xYYAFjAVBENAsEgAAAAAAAAABpYAAAAAAAA.YAAAAAAAAAAA;"
+      }, {
+         seite: "bankmillennium.pl",
+         checkcookie: "Marketing_consent=2",
+         setcookie: "Marketing_consent=2;"
+      }, {
+         seite: "highend-audiokabel.de",
+         checkcookie: "accept_cookies",
+         setcookie: "accept_cookies2=true;",
+         reload: true
+      }, {
+         seite: "kadari.net",
+         checkcookie: "krd-notice",
+         setcookie: "krd-notice=confirmed;",
+         reload: true
+      }, {
+         seite: "klett.de",
+         checkcookie: "klett_cookie_consent",
+         setcookie: "klett_cookie_consent={%22statistiken%22:false};"
+      }, {
+         seite: "fitx.de",
+         checkcookie: "klett_cookie_consent",
+         setcookie: "mandatory.consentGiven=true; , mandatory.marketing=true; , mandatory.preference=true;"
+      }, {
+         seite: "hek.de,inp-gruppe.de,altoetting.de,micronova.de",
+         checkcookie: "cookie_consent",
+         setcookie: "cookie_consent=;"
+      }, {
+         seite: "tinyurl.com",
+         checkstorage: "cookiesAccepted",
+         setstoragename: "cookiesAccepted",
+         setstoragecontent: "true"
+      }, {
+         seite: "eventbrite.com",
+         setstoragename: "tcmConsent",
+         setstoragecontent: '{"purposes":{"Advertising":false,"Functional":false,"Analytics":false,"SaleOfInfo":false},"timestamp":"2024-03-20T20:24:48.871Z","confirmed":true,"prompted":true,"updated":true}'
+      }, {
+         seite: "waze.com",
+         checkcookie: "ads-cookie-consent",
+         setcookie: "ads-cookie-consent=disallow;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
