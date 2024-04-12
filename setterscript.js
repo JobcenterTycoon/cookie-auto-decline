@@ -10,15 +10,16 @@
          }
       }
       const nc = "domain=" + window.location.host + ";secure=true; max-age=31104000; SameSite=None; path=/";
+      const aktuellezeit = new Date().getTime();
       const regeln = [{
          // privacy-mgmt.com
          seite: "heise.de",
          checkcookie: "consent",
-         setcookie: "consentUUID=6dfaa80d-9ac8-4a41-aa95-660c6ab3d930_25;"
+         setcookie: "consentUUID=6dfaa80d-9ac8-4a41-aa95-660c6ab3d930_25_30;"
       }, {
          seite: "spiegel.de",
          checkcookie: "consent",
-         setcookie: "consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27_29;"
+         setcookie: "consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27_29_30;"
       }, {
          seite: "t3n.de",
          checkcookie: "consentUUID",
@@ -26,7 +27,7 @@
       }, {
          seite: "welt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27_29;"
+         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27_29_30;"
       }, {
          seite: "t-online.de",
          checkcookie: "consentUUID",
@@ -38,7 +39,7 @@
       }, {
          seite: "bild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27_29;"
+         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27_29_30;"
       }, {
          seite: "computerbild.de",
          checkcookie: "consentUUID",
@@ -50,7 +51,7 @@
       }, {
          seite: "pcwelt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27_29;"
+         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27_29_30;"
       }, {
          seite: "focus.de",
          checkcookie: "consentUUID",
@@ -63,6 +64,42 @@
          seite: "geo.de",
          checkcookie: "consentUUID",
          setcookie: "consentUUID=02c26ce9-695d-465e-aa09-402401455baf_25;"
+      }, {
+         seite: "giga.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=61106531-b837-47b0-b2bd-ecda95dc853d_30;"
+      }, {
+         seite: "familie.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=088cb981-bb58-4e3c-b8f7-26660254cba1_30;"
+      }, {
+         seite: "sport1.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=01242313-50a4-4006-b8a6-0451d87404ed_30;"
+      }, {
+         seite: "kino.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=e9ad21ef-f01a-4e83-a0bd-dfe421ae931e_30;"
+      }, {
+         seite: "techstage.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=5fadf0d2-23ec-4d8c-8689-7a40d783e2a3_30;"
+      }, {
+         seite: "likehifi.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=5bc805e8-7430-476d-9687-988f5d0254ef_30;"
+      }, {
+         seite: "faszination-fankurve.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=ebfc3590-7dfa-4365-a4bf-5d8bcd9a58c3_30;"
+      }, {
+         seite: "backenmachtgluecklich.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=09411421-a34c-4b1f-9536-5e462713f39c_30;"
+      }, {
+         seite: "raspberry-pi-geek.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=6a3dd856-7c76-4536-b0e9-ed6284960194_30;"
       }, {
          // privacy-mgmt.com - ENDE
          seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
@@ -569,7 +606,7 @@
          seite: "roller.de",
          checkstorage: "cookie-hinweis",
          setstoragename: "cookie-hinweis",
-         setstoragecontent: "{\"accepted\":false}"
+         setstoragecontent: '{"accepted":false,"declined":true}'
       }, {
          seite: "hoeffner.de",
          checkcookie: "optOutAccepted",
@@ -638,7 +675,7 @@
       }, {
          seite: "destatis.de",
          checkcookie: "gsbbanner",
-         setcookie: "gsbbanner=closed;"
+         setcookie: "gsbbanner=closed; , cookieConsent=NO;"
       }, {
          seite: "vdk.de",
          checkcookie: "essenc",
@@ -920,7 +957,7 @@
       }, {
          seite: "ada.com",
          checkcookie: "cookie_settings",
-         setcookie: "cookie_settings={%22necessary%22:true%2C%22statistics%22:false%2C%22marketing%22:false%2C%22updatedAt%22:1710933148380};"
+         setcookie: "cookie_settings={%22necessary%22:true%2C%22statistics%22:false%2C%22marketing%22:false%2C%22updatedAt%22:" + aktuellezeit + "};"
       }, {
          seite: "geektyrant.com",
          checkcookie: "ez-consent-tcf",
@@ -1006,6 +1043,59 @@
          seite: "waze.com",
          checkcookie: "ads-cookie-consent",
          setcookie: "ads-cookie-consent=disallow;"
+      }, {
+         seite: "hama.com",
+         checkcookie: "OPT_",
+         setcookie: "OPT_OUT=-96405886582557098138335614482657689069;",
+         reload: true
+      }, {
+         seite: "shopdirect-online.de",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1;"
+      }, {
+         seite: "netcup.com",
+         checkcookie: "js-cookie-opt-in__consent",
+         setcookie: "js-cookie-opt-in__consent=needed,preferences;"
+      }, {
+         seite: "diffusmag.de",
+         checkcookie: "tracking",
+         setcookie: "tracking=no;"
+      }, {
+         seite: "blocksmc.com",
+         checkcookie: "allowCookies",
+         setcookie: "allowCookies=1;"
+      }, {
+         seite: "myhome.zone",
+         checkcookie: "obfx-policy-consent",
+         setcookie: "obfx-policy-consent=accepted;"
+      }, {
+         seite: "kunsthaus-artes.de",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1;"
+      }, {
+         seite: "faindx.com",
+         checkstorage: "RubyPrivacyAllowed",
+         setstoragename: "RubyPrivacyAllowed",
+         setstoragecontent: "1"
+      }, {
+         seite: "safemoon.com",
+         checkcookie: "acceptCookies",
+         setcookie: "acceptCookies=true;"
+      }, {
+         seite: "temu.com",
+         checkcookie: "privacy_setting",
+         setcookie: "privacy_setting=100;",
+         setstoragename: "cookie_prompt_times,last_prompt_time",
+         setstoragecontent: "1 ; " + aktuellezeit
+      }, {
+         seite: "apetito.de",
+         checkstorage: "DM_prefs",
+         setstoragename: "DM_prefs",
+         setstoragecontent: '{"cookie_hint":true,"accept_cookies":false,"_childs":[],"_type":1}'
+      }, {
+         seite: "kram.store",
+         checkcookie: "tinycookie",
+         setcookie: "tinycookie=1; , tinycookie_acc=req;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
