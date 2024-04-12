@@ -79,7 +79,6 @@
                      ablehnen2.click();
                   }, 502);
                } else if (speichern && localStorage.getItem("bereitsgeklickt") != "true") {
-                  console.log(localStorage.getItem("bereitsgeklickt"));
                   window.clearInterval(privacymgmt);
                   window.setTimeout(function () {
                      speichern.click();
@@ -139,6 +138,7 @@
             }, 5000);
          }
       }
+
       // privacymanager.io (iframe klicker)
       if (window.self !== window.top) {
          if (window.location.host === "cmp-consent-tool.privacymanager.io") {
@@ -300,6 +300,7 @@
                }, 502);
             }
          }
+
          // opencmp.net
          const opencmp = document.querySelector("script#open-cmp-stub:is([src=\"https://cdn.opencmp.net/tcf-v2/cmp-stub-latest.js\"], [src=\"//cdn.opencmp.net/tcf-v2/cmp-stub-latest.js\"])");
          if (opencmp && document.cookie.includes("euconsent-v2") === false) {
@@ -315,6 +316,7 @@
                }
             }
          }
+
          // ContentPass
          const contentpass = document.querySelector("script[src^=\"https://cp\"][src$=\"/now.js\"]");
          if (contentpass && document.cookie.includes("OptanonAlertBoxClosed") === false) {
@@ -350,6 +352,7 @@
                }, 201);
             }
          }
+         
          // cookielaw.org
          const cookielaw = document.querySelector("script[src=\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\"][data-domain-script]");
          if (cookielaw && contentpass == null && document.cookie.includes("OptanonAlertBoxClosed") === false) {
@@ -372,6 +375,7 @@
                }
             }
          }
+
          // usercentrics.eu
          const usercentrics = document.getElementById("usercentrics-root");
          const usercentricsscript = document.querySelector("script[src*=\"usercentrics.eu/browser-ui\"]#usercentrics-cmp");
@@ -423,6 +427,7 @@
                }, 502);
             }
          }
+
          // usercentrics.eu 2
          const usercentrics2 = document.getElementById("comspace-usercentrics");
          const usercentricsframe = document.querySelector("iframe#uc-cross-domain-bridge[src^=\"https://app.usercentrics.eu/browser-sdk/\"]");
@@ -490,6 +495,7 @@
                }, 502);
             }
          }
+
          // gatekeeperconsent.com
          const gatekeeperconsent = document.querySelector("script[src=\"https://privacy.gatekeeperconsent.com/tcf2_stub.js\"]");
          if (gatekeeperconsent && document.cookie.includes("ezCMPCookieConsent") === false) {
@@ -507,6 +513,7 @@
                }, 202);
             }
          }
+
          // cookiebot.com
          const cookiebot = document.querySelector("#CybotCookiebotDialog[name=\"CybotCookiebotDialog\"]");
          if (cookiebot && document.cookie.includes("%2Cutc:16") === false) {
@@ -538,6 +545,7 @@
             }
 
          }
+
          // trustarc.com
          const trustarc = document.querySelector("script[src^=\"https://consent.trustarc.com/asset/notice.js/v/v\"]");
          if (trustarc && document.cookie.includes("notice_gdpr_prefs") === false) {
@@ -562,29 +570,42 @@
                }, 502);
             }
          }
-         // real-cookie-banner-pro
 
+         // real-cookie-banner-pro
          const realcookiebannerpro = document.querySelector(".wp-exclude-emoji > .animate__animated div[id^=\"bnnr-body-rightSide-\"][style] > div[style]:nth-of-type(2) > span");
          const realcookiebannerpro2 = document.querySelector(".wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 1;\"][role]");
          const realcookiebannerpro3 = document.querySelector(".wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 0;\"][role] + a[href=\"#\"][style=\"order: 3;\"]");
-         if (realcookiebannerpro && document.cookie.includes("real_cookie_banner-v") === false) {
-            console.log("[Cookie auto decline] Detected: realcookiebannerpro");
-            beenden();
-            window.setTimeout(function () {
-               realcookiebannerpro.click();
-            }, 202);
-         } else if (realcookiebannerpro2 && document.cookie.includes("real_cookie_banner-v") === false && realcookiebannerpro2.innerText.includes("instellungen") === false) {
-            console.log("[Cookie auto decline] Detected: realcookiebannerpro2");
-            beenden();
-            window.setTimeout(function () {
-               realcookiebannerpro2.click();
-            }, 202);
-         } else if (realcookiebannerpro3 && document.cookie.includes("real_cookie_banner-v") === false) {
-            console.log("[Cookie auto decline] Detected: realcookiebannerpro3");
-            beenden();
-            window.setTimeout(function () {
-               realcookiebannerpro3.click();
-            }, 202);
+         const realcookiebannerproeinstellungen = document.querySelector(".wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 0;\"][role] + [data-order=\"1\"] + [data-order=\"3\"]:last-child");
+         const realcookiebannerprospeichern = document.querySelector(".wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 0;\"][role] + a + a[data-order=\"2\"][role]:last-child");
+         if (document.cookie.includes("real_cookie_banner-v") === false) {
+            if (realcookiebannerpro) {
+               console.log("[Cookie auto decline] Detected: realcookiebannerpro");
+               beenden();
+               window.setTimeout(function () {
+                  realcookiebannerpro.click();
+               }, 202);
+            } else if (realcookiebannerpro2 && realcookiebannerpro2.innerText.includes("instellungen") === false) {
+               console.log("[Cookie auto decline] Detected: realcookiebannerpro2");
+               beenden();
+               window.setTimeout(function () {
+                  realcookiebannerpro2.click();
+               }, 202);
+            } else if (realcookiebannerpro3) {
+               console.log("[Cookie auto decline] Detected: realcookiebannerpro3");
+               beenden();
+               window.setTimeout(function () {
+                  realcookiebannerpro3.click();
+               }, 202);
+            } else if(realcookiebannerproeinstellungen && realcookiebannerproeinstellungen.innerText.includes("instellungen") === true) {
+               window.setTimeout(function () {
+                  realcookiebannerproeinstellungen.click();
+               }, 202);
+            } else if(realcookiebannerprospeichern && realcookiebannerprospeichern.innerText.includes("speichern") === true) {
+               beenden();
+               window.setTimeout(function () {
+                  realcookiebannerprospeichern.click();
+               }, 202);
+            }
          }
 
          // waconcookiemanagement
@@ -636,6 +657,7 @@
             }
 
          }
+
          // https://wordpress.org/plugins/complianz-gdpr
          const complianzgdpr = document.querySelector("body > #cmplz-cookiebanner-container");
          if (complianzgdpr) {
@@ -815,6 +837,7 @@
                }
             }
          }
+
          // hu-manity.co
          const humanity = document.querySelector("#cookie-notice[class=\"cookie-revoke-hidden cn-position-bottom cn-effect-fade cookie-notice-visible\"]");
          if (humanity && document.cookie.includes("cookie_notice_accepted") === false) {
@@ -871,6 +894,7 @@
                }, 202);
             }
          }
+
          // cookieconsent:desc
          const cookieconsentdesc = document.querySelector("[aria-label*=\"cookie\"][aria-describedby=\"cookieconsent:desc\"]");
          if (cookieconsentdesc && window.location.host.endsWith("sozialversicherung-kompetent.de") === false) {
@@ -1201,6 +1225,7 @@
                }, 202);
             }
          }
+
          // amgdpr
          const amgdpr = document.querySelector(".amgdprcookie-modal-template form#amgdprcookie-form.amgdprcookie-settings-form[data-amcookie-js]");
          if (amgdpr && document.cookie.includes("amcookie_allowed") === false) {
@@ -1225,6 +1250,7 @@
                }, 1502);
             }
          }
+         
          // klaro.org
          const klaro = document.querySelector("div[id=\"klaro\"] > div[class^=\"klaro\"]");
          const klaro2 = document.querySelector("#cookieconsent > div[class^=\"klaro\"]");
@@ -2601,6 +2627,14 @@
          seite: "domains-anonymizer.com",
          checkcookie: "cookieConsentAgree",
          selector: ".cookie-consent button[onclick^=\"createCookieInfo\"]"
+      }, {
+         seite: "norberteder.com",
+         checkcookie: "cookielay",
+         selector: "#cookielay [data-cookielay-allow=\"custom\"]"
+      }, {
+         seite: "codesandbox.io",
+         checkcookie: "cc_cookie",
+         selector: "#cc-main button[data-role=\"necessary\"]"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
