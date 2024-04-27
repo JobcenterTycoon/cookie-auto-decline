@@ -101,6 +101,10 @@
          checkcookie: "consentUUID",
          setcookie: "consentUUID=6a3dd856-7c76-4536-b0e9-ed6284960194_30;"
       }, {
+         seite: "n-tv.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=e3aa3574-054f-4753-85ea-261ac070af11_30;"
+      }, {
          // privacy-mgmt.com - ENDE
          seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
          checkstorage: "glue.CookieNotificationBar",
@@ -1096,6 +1100,51 @@
          seite: "kram.store",
          checkcookie: "tinycookie",
          setcookie: "tinycookie=1; , tinycookie_acc=req;"
+      }, {
+         seite: "gitbook.com",
+         checkstorage: "framerCookiesDismissed",
+         setstoragename: "framerCookiesDismissed,framerCookiesConsentMode",
+         setstoragecontent: 'true ; {"analytics":false,"marketing":false,"necessary":false,"preferences":false}'
+      }, {
+         seite: "karriere-feuerwehr.hamburg",
+         checkcookie: "hsnCookieAllowed",
+         setcookie: 'hsnCookieAllowed={"gtm":false,"youtube":true};'
+      }, {
+         seite: "rct-power.com",
+         checkcookie: "user_privacy_settings",
+         setcookie: "user_privacy_settings=0;",
+         setstoragename: "user_privacy_settings",
+         setstoragecontent: "0"
+      }, {
+         seite: "global2000.at",
+         checkcookie: "legalweb_cookie_settings",
+         setcookie: "legalweb_cookie_settings=%7B%22guid%22%3A%22a5dd9b1f-4f8a-4df5-a46a-50f467828655%22%2C%22version%22%3A1708611751%2C%22lifeTime%22%3A94608000%2C%22integrations%22%3A%5B%22embeddings_buzzsprout%22%2C%22embeddings_googleforms_free%22%2C%22embeddings_openstreetmap%22%2C%22embeddings_spotteron%22%2C%22embeddings_typeform%22%2C%22embeddings_vimeo%22%2C%22embeddings_youtube%22%5D%2C%22lastChangeOn%22%3A1714216081064%2C%22includeSubdomains%22%3A%221%22%2C%22domain%22%3A%22global2000.at%22%2C%22gvlVersion%22%3A0%7D;"
+      }, {
+         seite: "sell.amazon.de",
+         checkcookie: "appguard-cookie-consent",
+         setcookie: "appguard-cookie-consent=operational%7C!performance%7C!advertising;"
+      }, {
+         seite: "kba-online.de",
+         checkstorage: "ora-cookie-policy",
+         setstoragename: "ora-cookie-policy",
+         setstoragecontent: "accepted"
+      }, {
+         seite: "storefront.prod.kulturpass.de",
+         checkcookie: "kp-cookie-banner-accepted",
+         setcookie: "kp-cookie-banner-accepted=" + aktuellezeit + ";"
+      }, {
+         seite: "bosch-bkk.de",
+         checkcookie: "do-consent",
+         setcookie: "do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:60%2C%22timestamp%22:" + aktuellezeit + "%2C%22version%22:4};"
+      }, {
+         seite: "swissgrid.ch",
+         checkcookie: "acceptedCookie",
+         setcookie: "acceptedCookie=true;"
+      }, {
+         seite: "emobilitaet.sh",
+         checkcookie: "cms_cookie",
+         setcookie: "cms_cookie=%7B%22pref%22%3A1%2C%22stat%22%3A0%2C%22market%22%3A0%2C%22prefo%22%3A1%2C%22stato%22%3A0%2C%22marketo%22%3A0%2C%22req%22%3A1%2C%22id%22%3A%221666728113662cefd68c9c03.71955225%22%2C%22tset%22%3A1714221014%7D;",
+         reload: true
       }];
 
       for (let i = 0; i < regeln.length; i++) {
