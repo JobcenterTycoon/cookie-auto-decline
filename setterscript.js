@@ -10,6 +10,13 @@
          }
       }
       const nc = "domain=" + window.location.host + ";secure=true; max-age=31104000; SameSite=None; path=/";
+
+      let ncnowww = "domain=" + window.location.host + ";secure=true; max-age=31104000; SameSite=None; path=/";
+      if (window.location.host.startsWith("www.")) {
+         ncnowww = ncnowww.replace("domain=www.", "domain=");
+      }
+
+
       const aktuellezeit = new Date().getTime();
       const regeln = [{
          // privacy-mgmt.com
@@ -104,6 +111,10 @@
          seite: "n-tv.de",
          checkcookie: "consentUUID",
          setcookie: "consentUUID=e3aa3574-054f-4753-85ea-261ac070af11_30;"
+      }, {
+         seite: "chip.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=a602d41d-1dcc-4304-9566-1138801bab52_31;"
       }, {
          // privacy-mgmt.com - ENDE
          seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
@@ -1101,11 +1112,6 @@
          checkcookie: "tinycookie",
          setcookie: "tinycookie=1; , tinycookie_acc=req;"
       }, {
-         seite: "gitbook.com",
-         checkstorage: "framerCookiesDismissed",
-         setstoragename: "framerCookiesDismissed,framerCookiesConsentMode",
-         setstoragecontent: 'true ; {"analytics":false,"marketing":false,"necessary":false,"preferences":false}'
-      }, {
          seite: "karriere-feuerwehr.hamburg",
          checkcookie: "hsnCookieAllowed",
          setcookie: 'hsnCookieAllowed={"gtm":false,"youtube":true};'
@@ -1145,6 +1151,40 @@
          checkcookie: "cms_cookie",
          setcookie: "cms_cookie=%7B%22pref%22%3A1%2C%22stat%22%3A0%2C%22market%22%3A0%2C%22prefo%22%3A1%2C%22stato%22%3A0%2C%22marketo%22%3A0%2C%22req%22%3A1%2C%22id%22%3A%221666728113662cefd68c9c03.71955225%22%2C%22tset%22%3A1714221014%7D;",
          reload: true
+      }, {
+         seite: "mellerud.de",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1;"
+      }, {
+         seite: "braufreude.de",
+         checkcookie: "allowCookie",
+         setcookie: "allowCookie=1;"
+      }, {
+         seite: "seznam.cz",
+         checkcookie: "euconsent-v2",
+         setcookie: "euconsent-v2=CP-jXAAP-jXAAD3ACMENA0EgALAAAEPgAATIJVwQgAAwAKAAsACAAFQALgAZAA6ACAAFAAKgAWgAyABoADmAIgAigBHACSAEwAJwAVQAtgBfgDCAMUAgACEgEQARQAjoBOAE6AL4AaQA4gB3ADxAH6AQgAkwBOACegFIAKyAWYAuoBgQDTgG0APkAjUBHQCaQE2gJ0AVIAtQBbgC8wGMgMkAZcA0oBqYDugHfgQHAhcBGYCTQEqwQugRQAKAAsACoAFwAQAAyABoAEQAI4ATAAqgBiAD8AISARABEgCOAE4AMsAZoA7gB-gEIAIsAXUA2gCbQFSALUAW4AvMBggDJAGXANTAhcAA.YAAAAAAAAQAA;",
+         nowww: true
+      }, {
+         seite: "github.com",
+         checkcookie: "GHCC",
+         setcookie: "GHCC=Required:1-Analytics:0-SocialMedia:0-Advertising:0;"
+      }, {
+         seite: "freiewaehler.eu",
+         checkcookie: "ccm_consent",
+         setcookie: "ccm_consent=c1.2.5;",
+         reload: true
+      }, {
+         seite: "bosch-ebike.com",
+         checkcookie: "do-consent",
+         setcookie: "do-consent={%22consent%22:{%22convenience%22:true%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:182%2C%22timestamp%22:" + aktuellezeit + "%2C%22version%22:4};"
+      }, {
+         seite: "longi.com",
+         checkcookie: "CookieConsent",
+         setcookie: "CookieConsent=false;"
+      }, {
+         seite: "vampirevape.de",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -1161,7 +1201,11 @@
                      let setcookies = regeln[i].setcookie.toString();
                      setcookies = setcookies.split(" , ");
                      for (let j = 0; j < setcookies.length; j++) {
-                        document.cookie = setcookies[j] + nc;
+                        if (regeln[i].nowww === true) {
+                           document.cookie = setcookies[j] + ncnowww;
+                        } else {
+                           document.cookie = setcookies[j] + nc;
+                        }
                      }
                      console.log("[Cookie auto decline] Cookie gesetzt.");
                   }
