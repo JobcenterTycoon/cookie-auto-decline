@@ -6,7 +6,7 @@
       }
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#__tealiumGDPRecModal,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#__tealiumGDPRecModal,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
@@ -1467,6 +1467,25 @@
             }
          }
 
+         // privacy_optin_611
+         const privacy_optin_611 = document.querySelector("#privacy_optin_611.mod_privacy_optin.open");
+         if (privacy_optin_611 && window.localStorage.getItem("user_privacy_settings") === null) {
+            console.log("[Cookie auto decline] Detected: privacy_optin_611");
+            const ablehnen = privacy_optin_611.querySelector(".privacy_buttons > input[name=\"save_tech_settings\"]");
+            const speichern = privacy_optin_611.querySelector(".privacy_buttons > input[name=\"save_settings\"]");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            } else if (speichern) {
+               beenden();
+               window.setTimeout(function () {
+                  speichern.click();
+               }, 202);
+            }
+         }
+
 
          // Ende Intervall
       }, 200);
@@ -1526,12 +1545,6 @@
          seite: "threads.net",
          checkstorage: "Session",
          selector: "div[role=\"dialog\"] div[aria-hidden=\"false\"] div[role=\"button\"][tabindex=\"0\"] + div[role=\"button\"][tabindex=\"0\"]"
-      }, {
-         seite: "twitter.com",
-         selector: "div[class*=\"eu-cookie-notice\"] ul[class$=\"-eu-cookie-notice__choice-list\"] button[class*=\"-eu-cookie-notice__button\"]",
-         selectoralternate: "div[role=\"button\"][tabindex][style] + div[role=\"button\"][tabindex][style]",
-         selectorfinal: "div[data-cname*=\"_opt\"] ul[class$=\"-opt-in__choice-list\"] button.is-naked",
-         noframe: true
       }, {
          seite: "instagram.com",
          selector: "div[style=\"display: flex; flex-direction: column; height: 100%; max-width: 100%;\"] > button[tabindex] + button[tabindex]"
@@ -2694,6 +2707,17 @@
          seite: "atu.de",
          checkcookie: "TC_PRIVACY",
          selector: "#popin_tc_privacy button#popin_tc_privacy_button"
+      }, {
+         seite: "geforcenow.com",
+         checkcookie: "TC_PRIVACY",
+         selector: "#mat-dialog-0 button[mat-raised-button]"
+      }, {
+         seite: "gas.info",
+         checkcookie: "Tracking",
+         selector: ".jwCOWidget button.jwOptinBtnDeny"
+      }, {
+         seite: "ebayinc.com",
+         selector: ".phs-cookie-popup-area button.primary-button"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -2889,7 +2913,7 @@
                         }
                      }, 202);
                   } else if (regeln[i].sonderfall === "demailsites") {
-                     document.cookie = "euconsent-v2=CP5P4cAP5P4cACnABIDEAlEkAP_gAAAAAAYgJmJV9D7dbXFDcXh3SPt0OYwW1dBTKsQhAhSAA2AFRAOQ8JQA02ESMASAhiACEQIAolYBAAEEFAFUAECAQIAEAAHsIgCEgAAKIABECBEQAAIQAAoKAAAAEAAIgAABIgQAmBiYSdLkRUiACIAgDgAYAqABAIABAgMBBEAIABAIAIIIwygAAQBAAIIAAAEAARAIAAAAAAAAIAAAAABAAAAUEgAwABBMwNABgACCZgiADAAEEzBUAGAAIJmDIAMAAQTMHQAYAAgmYQgAwABBMwlABgACCZhSADAAEEzC0AGAAIJmAAAA.f_wAAAAABcgAAAAA;" + nc;
+                     document.cookie = "euconsent-v2=CP-p84AP-p84ACnABIDEA0EkAP_gAAAAAAYgJmIV9D7dbXFDcXx3SPt0OYwW1dBTKsQhAhSAA2AFRAOQ8JQA02ESMATAhiACEQIAo1YBAAEEHABUAECAQIAEAADMIgSEgAAKIABECBEQAAIQAAoKAAAAEAAIgAIBogQAmBiYSdLkRUiACIAgDgAYgqABCIABAgMBBEgIABAIAIIIwygAAQAAAIIAAAEAARAIAAAAAAAAIAAAAABBOuASADgAH4BrwEqgMEAZCA7kCWgE6wCgkAGAAIJ1hoAMAAQTrEQAYAAgnWKgAwABBOsZABgACCdY6ADAAEE6yEAGAAIJ1koAMAAQTrKQAYAAgnWWgAwABBOs.f_wAAAAABcgAAAAA;" + nc;
                      if (document.location.href.endsWith("consent-management/")) {
                         forcesessionstorage();
                         document.cookie = "euconsent-bypass=1;" + nc;
