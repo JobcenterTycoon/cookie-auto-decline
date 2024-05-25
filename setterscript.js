@@ -16,7 +16,6 @@
          ncnowww = ncnowww.replace("domain=www.", "domain=");
       }
 
-
       const aktuellezeit = new Date().getTime();
       const regeln = [{
          // privacy-mgmt.com
@@ -310,11 +309,6 @@
          seite: "bankenverband.de",
          checkcookie: "CookieConsent",
          setcookie: "CookieConsent={stamp:%27dwd6RRKAC9e2ID4NwqwhxHE7esv1Zf0J6va9GcuRMya3HyNoG7wagw==%27%2Cnecessary:true%2Cpreferences:false%2Cstatistics:false%2Cmarketing:false%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1690802774147%2Cregion:%27de%27};"
-      }, {
-         seite: "koenigreichdeutschland.org",
-         checkstorage: "user_privacy_settings",
-         setstoragename: "user_privacy_settings,user_privacy_settings_expires",
-         setstoragecontent: "1,2 ; 9999999999999"
       }, {
          seite: "kununu.com",
          checkcookie: "userConsent",
@@ -865,7 +859,7 @@
       }, {
          seite: "dvgw.de",
          checkcookie: "_2BCookieSettings",
-         setcookie: "_2BCookieSettings={\"necessary\":true,\"preferences\":true,\"statistic\":false,\"marketing\":false,\"version\":3};"
+         setcookie: "_2BCookieSettings={\"necessary\":true,\"preferences\":true,\"statistic\":false,\"marketing\":false,\"version\":8};"
       }, {
          seite: "autismus-sh.de",
          checkstorage: "mono_donottrack",
@@ -1185,6 +1179,47 @@
          seite: "vampirevape.de",
          checkcookie: "cookie-preference",
          setcookie: "cookie-preference=1;"
+      }, {
+         seite: "chargecloud.de",
+         checkstorage: "stromfahrer_privacy_policy_read",
+         setstoragename: "stromfahrer_privacy_policy_read,stromfahrer_consent_required,stromfahrer_consent_google,stromfahrer_consent_extended_sentry",
+         setstoragecontent: "true ; true ; true ; false"
+      }, {
+         seite: "kreissler24.de",
+         checkcookie: "4S_CookiePrivacy",
+         setcookie: "4S_CookiePrivacy=v2-15043700029010274669:0[00],1[1],0[0000],1[11];"
+      }, {
+         seite: "go-e.com",
+         checkcookie: "gdpr",
+         setcookie: "gdpr={%22version%22:%221.1_tracking%22%2C%22options%22:{%22typo3%22:true%2C%22gdpr%22:true%2C%22openstreetmap%22:true%2C%22vimeo%22:true%2C%22youtube%22:true%2C%22recaptcha%22:true%2C%22googlemaps%22:true%2C%22tracking%22:false}};"
+      }, {
+         seite: "men-at-work.net",
+         checkcookie: "bst_accepted",
+         setcookie: "bst_accepted=1;"
+      }, {
+         seite: "twitter.com,x.com",
+         checkcookie: "d_prefs",
+         setcookie: "d_prefs=MjoxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw;"
+      }, {
+         seite: "developer.twitter.com,developer.x.com",
+         checkcookie: "twtr_pixel_opt_in",
+         setcookie: "twtr_pixel_opt_in=N;"
+      }, {
+         seite: "tischlerei-hoppe.de",
+         checkcookie: "pixelmate",
+         setcookie: 'pixelmate={"gen_tracking":"deny","didConsent":"yes","stats":"deny","ads":"deny","videos":"no","else":"deny","uuid":"7eda854b-315a-4be1-9d61-15976747d84d","ga_tracking":"deny","fb_tracking":"deny","youtubeConsent":"deny","vimeoConsent":"deny","gmapsConsent":"deny","trustindexConsent":"deny","video":"deny"};'
+      }, {
+         seite: "offgridtec.com",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1; , acris_persistent_cart_sw=1; , youtube-cookie=true;"
+      }, {
+         seite: "brightdata.de",
+         checkcookie: "brd_cookie_consent",
+         setcookie: "brd_cookie_consent=%7B%22name%22%3A%22save%22%2C%22saved_at%22%3A" + aktuellezeit + "%2C%22settings%22%3A%7B%22necessary%22%3Atrue%2C%22pers%22%3Afalse%2C%22perf%22%3Afalse%2C%22mkt%22%3Afalse%7D%7D;"
+      }, {
+         seite: "nico-fahrradwerkstatt.de",
+         checkcookie: "b2ad21-874",
+         setcookie: "b2ad21-874=true;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
