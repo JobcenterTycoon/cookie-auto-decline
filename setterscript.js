@@ -33,7 +33,7 @@
       }, {
          seite: "welt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27_29_30;"
+         setcookie: "consentUUID=8c8af154-c2c9-4025-9c03-16262284dccb_25_27_29_30_32;"
       }, {
          seite: "t-online.de",
          checkcookie: "consentUUID",
@@ -41,15 +41,15 @@
       }, {
          seite: "autobild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=2adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29;"
+         setcookie: "consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32;"
       }, {
          seite: "bild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27_29_30;"
+         setcookie: "consentUUID=9f95c3ed-1ec2-4655-b4b9-95abfe38d960_25_27_29_30_32;"
       }, {
          seite: "computerbild.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29;"
+         setcookie: "consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29_32;"
       }, {
          seite: "stern.de",
          checkcookie: "consentUUID",
@@ -57,11 +57,11 @@
       }, {
          seite: "pcwelt.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27_29_30;"
+         setcookie: "consentUUID=69ca7e43-5a84-448c-8fa2-77814cccf19c_25_27_29_30_32;"
       }, {
          seite: "focus.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8e8125e8-9dae-457d-8010-746bae67d2b2_26_29;"
+         setcookie: "consentUUID=8e8125e8-9dae-457d-8010-746bae67d2b2_26_29_32;"
       }, {
          seite: "krzbb.de",
          checkcookie: "consentUUID",
@@ -113,7 +113,7 @@
       }, {
          seite: "chip.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=a602d41d-1dcc-4304-9566-1138801bab52_31;"
+         setcookie: "consentUUID=a602d41d-1dcc-4304-9566-1138801bab52_31_32;"
       }, {
          // privacy-mgmt.com - ENDE
          seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
@@ -517,10 +517,6 @@
          seite: "virustotal.com",
          checkcookie: "euConsent",
          setcookie: "euConsent=1;"
-      }, {
-         seite: "telekom.de",
-         checkcookie: "CONSENTMGR",
-         setcookie: "CONSENTMGR=consent%3Afalse%7Cts%3A1691415267591;"
       }, {
          seite: "bingen-ruedesheimer.de",
          checkcookie: "CookieConsent",
@@ -1220,6 +1216,40 @@
          seite: "nico-fahrradwerkstatt.de",
          checkcookie: "b2ad21-874",
          setcookie: "b2ad21-874=true;"
+      }, {
+         seite: "gluehbirnebillig.de",
+         checkcookie: "cookieConsent",
+         setcookie: "cookieConsentAnalyticsGranted=0; , cookieConsentDeclined=0; , cookieConsentFunctionalityGranted=1; , cookieConsentGranted=1; , cookieConsentMarketingGranted=0; , cookieConsentPersonalizationGranted=1; , cookieConsentPersonalization=0; , cookieConsentSecurityGranted=1; , cookieConsentUserdata=0;"
+      }, {
+         seite: "adidas.de",
+         checkcookie: "notice_preferences",
+         setcookie: "notice_preferences=%5B0%2C1%5D;"
+      }, {
+         seite: "matratzen.discount",
+         checkcookie: "md_cookie_allow",
+         setcookie: "md_cookie_allow={%22necessary%22:true%2C%22advertising%22:false};"
+      }, {
+         seite: "elektrosol.de",
+         checkcookie: "cookie_optin_q",
+         setcookie: "cookie_optin_q=googlemaps%2Cyoutubevideos; , cookienotification=notified;"
+      }, {
+         seite: "sex.de",
+         checkcookie: "CookieConsent",
+         setcookie: "CookieConsent=esex;",
+         setstoragename: "CookieAccept",
+         setstoragecontent: "1"
+      }, {
+         seite: "sex.com",
+         checkcookie: "privacy-preferences",
+         setcookie: "privacy-preferences=%7B%22essential%22%3Atrue%2C%22analytics%22%3Afalse%7D;"
+      }, {
+         seite: "schwarzwaldpalast.de",
+         checkcookie: "cookie-preference",
+         setcookie: "cookie-preference=1; , wishlist-enabled=1; , youtube-video=1;"
+      }, {
+         seite: "tuinmaximaal.de",
+         checkcookie: "pr-cookie-consent",
+         setcookie: "pr-cookie-consent=[]; , pr-cookie-consent-id=3767448; , user_allowed_save_cookie=%7B%7D;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
