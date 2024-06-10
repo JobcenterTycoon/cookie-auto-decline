@@ -1,19 +1,19 @@
 'use strict';
 (function () {
    if ((sessionStorage.getItem("mpowlesu908hxfyw37ghg5ikx90jdzt") != "djx0v0odce35xrb2pt5dzbgaj1mud5c" && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector("body.no-js > .main-wrapper + script + img[src^=\"/cdn-cgi/images/trace/managed/js/transparent.gif?ray=\"][style=\"display: none\"]") === null && document.querySelector("body.no-js > .main-wrapper + script + script:last-child[src^=\"https://static.cloudflareinsights.com/beacon.min.js\"]") === null && document.querySelector("html[style=\"height:100%\"] iframe[src^=\"/_Incapsula_Resource?\"]") === null && document.querySelector("link[href=\"/cdn-cgi/styles/challenges.css\"][rel=\"stylesheet\"]") === null && window.location.hostname != "accounts.google.com") {
-      if (window.self == window.top && window.location.host.endsWith("aternos.org") === false && window.location.host.endsWith("office-discount.de") === false && window.location.host.endsWith("rp-online.de") === false && window.location.host.endsWith("privadovpn.com") === false && window.location.host.endsWith("youtube.com") === false && window.location.host.endsWith("web.de") === false && window.location.host.endsWith("gmx.net") === false && window.location.host.endsWith("fifa.com") === false && window.location.href.startsWith("https://ga.de/") === false && window.location.href.startsWith("https://www.wz.de/") === false && window.location.host.endsWith("notebooksbilliger.de") === false) {
+      if (window.self == window.top && window.location.host.endsWith("aternos.org") === false && window.location.host.endsWith("office-discount.de") === false && window.location.host.endsWith("rp-online.de") === false && window.location.host.endsWith("privadovpn.com") === false && window.location.host.endsWith("youtube.com") === false && window.location.host.endsWith("web.de") === false && window.location.host.endsWith("gmx.net") === false && window.location.host.endsWith("fifa.com") === false && window.location.href.startsWith("https://ga.de/") === false && window.location.href.startsWith("https://www.wz.de/") === false && window.location.host.endsWith("notebooksbilliger.de") === false && window.location.href.startsWith("https://www.crocs.de/") === false) {
          sessionStorage.setItem("mpowlesu908hxfyw37ghg5ikx90jdzt", "djx0v0odce35xrb2pt5dzbgaj1mud5c");
       }
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#__tealiumGDPRecModal,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"]{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
       }
 
       let css2 = document.createElement("style"); // Für Browser mit :has() support
-      css2.innerText = "div[style*=\"blur\"]:has(> .wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 1;\"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 1;\"][role]) {opacity:0!important;pointer-events:none!important;}";
+      css2.innerText = "div[style*=\"blur\"]:has(> .wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 1;\"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href=\"#\"][style=\"order: 1;\"][role]), body > .js-modal[style=\"z-index: 2147483647 !important\"]:has(.js-modal--cookies) {opacity:0!important;pointer-events:none!important;}";
       css2.setAttribute("id", "6tr2bqvixssc0n08khsf3nfvf9urdax");
       if (document.head != null) {
          document.head.appendChild(css2);
@@ -677,8 +677,14 @@
          const borlabsverify = document.querySelector("#BorlabsCookieBox > .bottom-center[style=\"display: none;\"]");
          if ((borlabs || borlabs2) && borlabsverify === null) {
             console.log("[Cookie auto decline] Detected: borlabs.io");
+            const ablehnen = document.querySelector("[data-borlabs-cookie-wrap] label[for=\"borlabsCookieOptionFirstParty\"]");
             const speichern = document.querySelector("#BorlabsCookieBox ._brlbs-accept > a#CookieBoxSaveButton[data-cookie-accept]");
-            if (speichern) {
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            } else if (speichern) {
                beenden();
                window.setTimeout(function () {
                   speichern.click();
@@ -1482,6 +1488,30 @@
                beenden();
                window.setTimeout(function () {
                   speichern.click();
+               }, 202);
+            }
+         }
+
+         // tealiumGDPR
+         const tealiumGDPR = document.querySelector("div[id^=\"__tealiumGDPR\"]");
+         if (tealiumGDPR) {
+            console.log("[Cookie auto decline] Detected: tealiumGDPR");
+            const ablehnen = tealiumGDPR.querySelector("button#rejectAll");
+            const ablehnen2 = document.querySelector(".js-modal .cookie-settings button.js-btn-reject-all");
+            const einstellungen = tealiumGDPR.querySelector("button.js-btn-edit-cookie-settings");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            } else if (ablehnen2) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen2.click();
+               }, 202);
+            } else if (einstellungen) {
+               window.setTimeout(function () {
+                  einstellungen.click();
                }, 202);
             }
          }
@@ -2718,6 +2748,14 @@
       }, {
          seite: "ebayinc.com",
          selector: ".phs-cookie-popup-area button.primary-button"
+      }, {
+         seite: "torsten-herbst.de",
+         checkcookie: "cookie-agreed",
+         selector: "form[id^=\"uv-gdpr-cconsent-all-form\"] input[id^=\"edit-submit\"]"
+      }, {
+         seite: "swhd.de",
+         checkcookie: "HRCookieManager",
+         selector: ".consent-banner button[onclick*=\", false, true, [\"]"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
