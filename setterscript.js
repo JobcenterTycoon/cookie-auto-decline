@@ -61,59 +61,67 @@
       }, {
          seite: "focus.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=8e8125e8-9dae-457d-8010-746bae67d2b2_26_29_32;"
+         setcookie: "consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32;"
       }, {
          seite: "krzbb.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=651a3a04-8b49-4f2f-920c-64d8ac6560ab_25;"
+         setcookie: "consentUUID=3dbdc74e-c687-41d4-9b01-9d04a7d02c2e_32;"
       }, {
          seite: "geo.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=02c26ce9-695d-465e-aa09-402401455baf_25;"
+         setcookie: "consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32;"
       }, {
          seite: "giga.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=61106531-b837-47b0-b2bd-ecda95dc853d_30;"
+         setcookie: "consentUUID=02be7d11-4d68-453a-9e07-acd007280dbf_32;"
       }, {
          seite: "familie.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=088cb981-bb58-4e3c-b8f7-26660254cba1_30;"
+         setcookie: "consentUUID=22e75cc9-f3ca-42e7-8793-af72b0125a9c_32;"
       }, {
          seite: "sport1.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=01242313-50a4-4006-b8a6-0451d87404ed_30;"
+         setcookie: "consentUUID=89da2b14-cb6f-49e4-af96-67dc8d8a40f6_32;"
       }, {
          seite: "kino.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=e9ad21ef-f01a-4e83-a0bd-dfe421ae931e_30;"
+         setcookie: "consentUUID=e395b84d-b4d0-4c7a-9777-a40ff61fc7a2_32;"
       }, {
          seite: "techstage.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=5fadf0d2-23ec-4d8c-8689-7a40d783e2a3_30;"
+         setcookie: "consentUUID=80f57ffd-7468-4ca5-8fff-c442bcc6f276_32;"
       }, {
          seite: "likehifi.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=5bc805e8-7430-476d-9687-988f5d0254ef_30;"
+         setcookie: "consentUUID=0e4eec08-6702-4544-b5a4-f9871fe5363a_32;"
       }, {
          seite: "faszination-fankurve.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=ebfc3590-7dfa-4365-a4bf-5d8bcd9a58c3_30;"
+         setcookie: "consentUUID=3e739c93-8e64-4e6f-bc58-d08e4fd29fdb_32;"
       }, {
          seite: "backenmachtgluecklich.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=09411421-a34c-4b1f-9536-5e462713f39c_30;"
+         setcookie: "consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32;"
       }, {
          seite: "raspberry-pi-geek.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=6a3dd856-7c76-4536-b0e9-ed6284960194_30;"
+         setcookie: "consentUUID=b4c8762d-10e7-416b-9918-51d11f51fb09_32;"
       }, {
          seite: "n-tv.de",
          checkcookie: "consentUUID",
-         setcookie: "consentUUID=e3aa3574-054f-4753-85ea-261ac070af11_30;"
+         setcookie: "consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32;"
       }, {
          seite: "chip.de",
          checkcookie: "consentUUID",
          setcookie: "consentUUID=a602d41d-1dcc-4304-9566-1138801bab52_31_32;"
+      }, {
+         seite: "rtl.de",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32;"
+      }, {
+         seite: "weather.com",
+         checkcookie: "consentUUID",
+         setcookie: "consentUUID=de9ed9d6-0a43-4074-9349-e5fe71fd3610_32;"
       }, {
          // privacy-mgmt.com - ENDE
          seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
@@ -740,10 +748,6 @@
          checkcookie: "PrivacyBanner",
          setcookie: "PrivacyBanner={%22tm%22:%2226-11-2023@16:13:12%22%2C%22PrivacyBanner%22:true%2C%22ttcms%22:true%2C%22google_analytics%22:false%2C%22ga-disable%22:true%2C%22mollie%22:true%2C%22klarna%22:true%2C%22klarna_paylater%22:false%2C%22amazon_pay%22:true%2C%22paypal_checkout%22:true%2C%22paypal_account%22:true%2C%22matomo%22:false%2C%22matomo_functional%22:true%2C%22google_youtube%22:true%2C%22PrivacyBanner_Youtube%22:true%2C%22google_maps%22:true%2C%22PrivacyBanner_GoogleMaps%22:true%2C%22google_ads_remarketing%22:false%2C%22Kelkoo%22:false%2C%22facebook_pixel%22:false%2C%22PhpBB%22:true};"
       }, {
-         seite: "haferkamp-immobilien.de",
-         checkcookie: "avia",
-         setcookie: "aviaCookieConsent=8a1be7b9c92dfaa344c77a7657d094fd||v1.0; , aviaPrivacyEssentialCookiesEnabled=true; , aviaPrivacyGoogleTrackingDisabled=true; , aviaPrivacyMustOptInSetting=true; , aviaPrivacyRefuseCookiesHideBar=true;"
-      }, {
          seite: "ispringlearn.de",
          checkcookie: "cookieConsent",
          setcookie: "cookieConsent=4;"
@@ -819,7 +823,7 @@
          checkcookie: "cookie-agreed",
          setcookie: "cookie-agreed-categories=[%22mandatory%22]; , cookie-agreed-version=1.0.0; , cookie-agreed=2;"
       }, {
-         seite: "h2-news.eu",
+         seite: "h2-news.eu,h2-news.de",
          checkcookie: "sp_dsgvo_cookie_settings",
          setcookie: "sp_dsgvo_cookie_settings=%7B%22version%22%3A%220%22%2C%22lifeTime%22%3A%2286400%22%2C%22integrations%22%3A%5B%5D%2C%22lastChangeOn%22%3A1704825219736%7D;"
       }, {
@@ -855,7 +859,7 @@
       }, {
          seite: "dvgw.de",
          checkcookie: "_2BCookieSettings",
-         setcookie: "_2BCookieSettings={\"necessary\":true,\"preferences\":true,\"statistic\":false,\"marketing\":false,\"version\":8};"
+         setcookie: "_2BCookieSettings={\"necessary\":true,\"preferences\":true,\"statistic\":false,\"marketing\":false,\"version\":9};"
       }, {
          seite: "autismus-sh.de",
          checkstorage: "mono_donottrack",
@@ -1106,12 +1110,6 @@
          checkcookie: "hsnCookieAllowed",
          setcookie: 'hsnCookieAllowed={"gtm":false,"youtube":true};'
       }, {
-         seite: "rct-power.com",
-         checkcookie: "user_privacy_settings",
-         setcookie: "user_privacy_settings=0;",
-         setstoragename: "user_privacy_settings",
-         setstoragecontent: "0"
-      }, {
          seite: "global2000.at",
          checkcookie: "legalweb_cookie_settings",
          setcookie: "legalweb_cookie_settings=%7B%22guid%22%3A%22a5dd9b1f-4f8a-4df5-a46a-50f467828655%22%2C%22version%22%3A1708611751%2C%22lifeTime%22%3A94608000%2C%22integrations%22%3A%5B%22embeddings_buzzsprout%22%2C%22embeddings_googleforms_free%22%2C%22embeddings_openstreetmap%22%2C%22embeddings_spotteron%22%2C%22embeddings_typeform%22%2C%22embeddings_vimeo%22%2C%22embeddings_youtube%22%5D%2C%22lastChangeOn%22%3A1714216081064%2C%22includeSubdomains%22%3A%221%22%2C%22domain%22%3A%22global2000.at%22%2C%22gvlVersion%22%3A0%7D;"
@@ -1250,6 +1248,67 @@
          seite: "tuinmaximaal.de",
          checkcookie: "pr-cookie-consent",
          setcookie: "pr-cookie-consent=[]; , pr-cookie-consent-id=3767448; , user_allowed_save_cookie=%7B%7D;"
+      }, {
+         seite: "gogoro.com",
+         checkcookie: "_OPT",
+         setcookie: "GDPR_OPT=REJECTED; , LEGAL_OPT=1;"
+      }, {
+         seite: "dekoder.org",
+         checkstorage: "ph-cookie-compliance",
+         setstoragename: "ph-cookie-compliance",
+         setstoragecontent: "declined"
+      }, {
+         seite: "geotastic.net",
+         checkstorage: "privacy-policy-accepted",
+         setstoragename: "privacy-policy-accepted,privacy-policy-accepted-date",
+         setstoragecontent: "true ; " + aktuellezeit
+      }, {
+         seite: "dashboard-deutschland.de",
+         checkstorage: "cbV2Closed",
+         setstoragename: "cbV2Closed",
+         setstoragecontent: "true"
+      }, {
+         seite: "grover.com",
+         checkcookie: "cookieconsent",
+         setcookie: "cookieconsent={%22preferenceCookie%22:true%2C%22statisticsCookie%22:false%2C%22marketingCookie%22:false%2C%22consentTimestamp%22:1719775985784%2C%22consentExpiration%22:%222025-06-30T19:27:43.258Z%22};"
+      }, {
+         seite: "owayo.de",
+         checkcookie: "Cookie",
+         setcookie: 'CookieShow=true; , CookieShowpreferences=allow; , CookiePreferences=["preferences"]; , cc_cookie={"categories":["preferences"],"level":["preferences"],"revision":0,"data":null,"rfc_cookie":false,"consent_date":"2024-06-30T20:17:02.786Z","consent_uuid":"7348e67f-1bbd-429c-a657-7df0a2641004","last_consent_update":"2024-06-30T20:17:02.786Z"};'
+      }, {
+         seite: "anbord.de",
+         checkcookie: "cookie-cracker",
+         setcookie: "cookie-cracker_1=true; , cookie-cracker_1_prefs=technischnotwendig,cookie-cracker,woocommerce,wordPress-user-login;"
+      }, {
+         seite: "hyla-germany.de",
+         checkstorage: "cookie-preference",
+         setstoragename: "cookie-preference",
+         setstoragecontent: "declined"
+      }, {
+         seite: "neubaukompass.de",
+         checkcookie: "accept-",
+         setcookie: "accept-googlefonts=" + aktuellezeit + "; , accept-googlemaps=" + aktuellezeit + "; , accept-required=" + aktuellezeit + "; , accept-thirdparty=" + aktuellezeit + ";"
+      }, {
+         seite: "energie-und-management.de",
+         checkcookie: "tracking-",
+         setcookie: "trackingConsent=1; , trackingDisableGoogle=1; , trackingDisableIVW=1; , trackingPressed=1;"
+      }, {
+         seite: "upmpaper.com",
+         checkcookie: "UPMCookiePolicy-",
+         setcookie: "UPMCookiePolicy=strictlyNecessary|functional;"
+      }, {
+         seite: "dekra.de",
+         checkstorage: "privacySettings",
+         setstoragename: "privacySettings",
+         setstoragecontent: '{"baidu_maps":"true","linkedin":"false","facebook":"false","googleAds":"false","baidu":"false","hubspot":"false","hotjar":"false","matomo":"false","googleTagManager":"false","youtube":"true","applicationInsights":"false","google_maps":"true","vimeo":"true"}'
+      }, {
+         seite: "tiny-huchler.de",
+         checkcookie: "CookieBanner",
+         setcookie: "CookieBanner=1;"
+      }, {
+         seite: "tiny-house-helden.de",
+         checkcookie: "allowTracking",
+         setcookie: "allowTracking=declined;"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
