@@ -6,7 +6,7 @@
       }
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"]{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],[aria-describedby=\"cookiebar-desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
@@ -444,7 +444,8 @@
 
          // consensu.org
          const consensu = document.querySelector("script[src^=\"https://cdn.consentmanager.mgr.consensu.org/delivery/cmp_\"]");
-         if (consensu) {
+         const consensu2 = document.querySelector("#cmpwrapper.cmpwrapper");
+         if (consensu || consensu2) {
             console.log("[Cookie auto decline] Detected: consensu.org");
             const ablehnen = document.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
             const einstellungen = document.querySelector("#cmpbox a.cmptxt_btn_settings[role=\"button\"]");
@@ -916,15 +917,17 @@
 
          // cookieconsent:desc
          const cookieconsentdesc = document.querySelector("[aria-describedby=\"cookieconsent:desc\"]");
-         if (cookieconsentdesc && window.location.host.endsWith("sozialversicherung-kompetent.de") === false) {
+         const cookieconsentdesc2 = document.querySelector("[aria-describedby=\"cookiebar-desc\"]");
+         if ((cookieconsentdesc ||cookieconsentdesc2) && window.location.host.endsWith("sozialversicherung-kompetent.de") === false) {
             console.log("[Cookie auto decline] Detected: cookieconsent:desc");
-            const ablehnen = cookieconsentdesc.querySelector("a.cc-dismiss[role=\"button\"]");
-            const ablehnen2 = cookieconsentdesc.querySelector("button#cookie_button_deny");
-            const ablehnen3 = cookieconsentdesc.querySelector("a.cc-deny[role=\"button\"]");
-            const ablehnen4 = cookieconsentdesc.querySelector("button.cc-deny");
-            const ablehnen5 = cookieconsentdesc.querySelector("button.cc-dialog-button-decline");
-            const speichern = cookieconsentdesc.querySelector("a.cc-save[role=\"button\"]");
-            const speichern2 = cookieconsentdesc.querySelector("a.cc-allow[role=\"button\"]");
+            const ablehnen = document.querySelector("[aria-describedby^=\"cookie\"] a.cc-dismiss[role=\"button\"]");
+            const ablehnen2 = document.querySelector("[aria-describedby^=\"cookie\"] button#cookie_button_deny");
+            const ablehnen3 = document.querySelector("[aria-describedby^=\"cookie\"] a.cc-deny[role=\"button\"]");
+            const ablehnen4 = document.querySelector("[aria-describedby^=\"cookie\"] button.cc-deny");
+            const ablehnen5 = document.querySelector("[aria-describedby^=\"cookie\"] button.cc-dialog-button-decline");
+            const ablehnen6 = document.querySelector("[aria-describedby^=\"cookie\"] button[data-deny-all]");
+            const speichern = document.querySelector("[aria-describedby^=\"cookie\"] a.cc-save[role=\"button\"]");
+            const speichern2 = document.querySelector("[aria-describedby^=\"cookie\"] a.cc-allow[role=\"button\"]");
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
@@ -949,6 +952,11 @@
                beenden();
                window.setTimeout(function () {
                   ablehnen5.click();
+               }, 202);
+            } else if (ablehnen6) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen6.click();
                }, 202);
             } else if (speichern) {
                beenden();
@@ -1516,6 +1524,31 @@
             }
          }
 
+         // avia
+         const avia = document.querySelector(".avia-cookie-consent-wrap");
+         if (avia) {
+            console.log("[Cookie auto decline] Detected: avia");
+            const akzeptieren = avia.querySelector(".avia-cookie-consent .avia-cookie-consent-button-1");
+            if (akzeptieren) {
+               beenden();
+               window.setTimeout(function () {
+                  akzeptieren.click();
+               }, 202);
+            }
+         }
+
+         // cookiebar_optin_219
+         const cookiebaroptin219 = document.querySelector("#cookiebar_optin_219.mod_cookiebar_optin_slim");
+         if (cookiebaroptin219) {
+            const ablehnen = cookiebaroptin219.querySelector(".cookiebar_disagree > a[data-privacy]");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            }
+         }
+
 
          // Ende Intervall
       }, 200);
@@ -1569,8 +1602,8 @@
          selector: "div[role=\"dialog\"][aria-label*=\"ookies\"] > div:first-child > div:first-child[aria-hidden] > div:first-child > div:last-child[aria-hidden] > div:last-child > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > div:last-child > div[role=\"button\"][tabindex]"
       }, {
          seite: "facebook.com",
-         checkstorage: "Session",
-         selector: "button[data-cookiebanner=\"accept_only_essential_button\"]"
+         checkstorage: "wd",
+         selector: "[data-testid=\"cookie-policy-manage-dialog\"] [aria-label*=\"ookies\"][tabindex=\"0\"]"
       }, {
          seite: "threads.net",
          checkstorage: "Session",
@@ -2756,6 +2789,14 @@
          seite: "swhd.de",
          checkcookie: "HRCookieManager",
          selector: ".consent-banner button[onclick*=\", false, true, [\"]"
+      }, {
+         seite: "stahl-online.de",
+         checkcookie: "confirmed%22%3Atrue",
+         selector: ".phunk-cookie-modal input[value=\"Speichern\"]"
+      }, {
+         seite: "sfc.com",
+         checkcookie: "consent",
+         selector: "#consent #consent-onlytech"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
