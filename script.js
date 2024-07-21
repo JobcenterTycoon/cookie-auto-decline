@@ -6,7 +6,7 @@
       }
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],[aria-describedby=\"cookiebar-desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],[aria-describedby=\"cookiebar-desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^=\"https://cdn.baycloud.com/\"],#sd-cmp[class^=\"sd-cmp-\"]{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
@@ -49,22 +49,36 @@
          }
       }
 
-      // Allgemein
+      // Cookie banner (klicker)
+      window.setTimeout(function () {
+         window.clearInterval(findconsent);
+      }, 5000);
 
-      // cdn.privacy-mgmt.com (iframe klicker)
-      if (window.self !== window.top) {
-         if (window.location.host === "cdn.privacy-mgmt.com" || ((window.location.host.startsWith("consent") || window.location.host.startsWith("cmp") || window.location.host.startsWith("sp-cdn.") || window.location.host.startsWith("privacy.") || window.location.host.startsWith("baseendpoint.") || window.location.host.startsWith("spcmp.") || window.location.host.startsWith("sourcepoint") || window.location.host.startsWith("sp-consent.") || window.location.host.startsWith("sp.") || window.location.host.startsWith("cnsnt.")) && window.location.href.includes("/index.html?")) || window.location.host === "sp-spiegel-de.spiegel.de") {
-            console.log("[Cookie auto decline] Detected: privacy-mgmt.com");
-            const privacymgmt = window.setInterval(function () {
+      function beenden() {
+         window.clearInterval(findconsent);
+         forcesessionstorage();
+      }
+
+      let bereitsgeklickt = false;
+      const findconsent = window.setInterval(function () {
+
+
+         // iframe klicker
+         if (window.self !== window.top) {
+
+            // cdn.privacy-mgmt.com
+            if (window.location.host === "cdn.privacy-mgmt.com" || ((window.location.host.startsWith("consent") || window.location.host.startsWith("cmp") || window.location.host.startsWith("sp-cdn.") || window.location.host.startsWith("privacy.") || window.location.host.startsWith("baseendpoint.") || window.location.host.startsWith("spcmp.") || window.location.host.startsWith("sourcepoint") || window.location.host.startsWith("sp-consent.") || window.location.host.startsWith("sp.") || window.location.host.startsWith("cnsnt.")) && window.location.href.includes("/index.html?")) || window.location.host === "sp-spiegel-de.spiegel.de") {
+               console.log("[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)");
                const ablehnen = document.querySelector(".message-container button.sp_choice_type_REJECT_ALL[title][aria-label]");
-               const ablehnen2 = document.querySelector(".message-container button[title*=\"blehnen\"][aria-label]");
+               const ablehnen2 = document.querySelector(".message-container button[title*=\"blehnen\"][aria-label]:not([title*=\"instellungen\"])");
                const speichern = document.querySelector(".message-container button.sp_choice_type_SAVE_AND_EXIT[title][aria-label]:not([disabled])");
                const einstellungen = document.querySelector(".message-container button.sp_choice_type_12[title][aria-label]");
                const akzeptieren = document.querySelector(".message-container button.sp_choice_type_11[title][aria-label][style]");
                const akzeptieren2 = document.querySelector(".message-container button.sp_choice_type_ACCEPT_ALL[title][aria-label]");
                const speicherndeaktiviert = document.querySelector(".message-container .sp_choice_type_SAVE_AND_EXIT[disabled][aria-disabled]");
+
                if (ablehnen) {
-                  window.clearInterval(privacymgmt);
+                  beenden();
                   window.setTimeout(function () {
                      ablehnen.click();
                   }, 502);
@@ -74,79 +88,90 @@
                      }, 902);
                   }
                } else if (ablehnen2) {
-                  window.clearInterval(privacymgmt);
+                  beenden();
                   window.setTimeout(function () {
                      ablehnen2.click();
                   }, 502);
-               } else if (speichern && localStorage.getItem("bereitsgeklickt") != "true") {
-                  window.clearInterval(privacymgmt);
-                  window.setTimeout(function () {
-                     speichern.click();
-                  }, 502);
-               } else if (speichern && localStorage.getItem("bereitsgeklickt") === "true") {
-                  window.clearInterval(privacymgmt);
-                  window.setTimeout(function () {
-                     if (speicherndeaktiviert) {
-                        speichern.click();
-                     } else if (speicherndeaktiviert === null) {
-                        window.clearInterval(privacymgmt);
-                        const auswahlfelder = document.querySelectorAll(".pm-main div[class=\"tcfv2-stack focusable\"]");
-                        for (let i = 0; i < auswahlfelder.length; i++) {
-                           if (auswahlfelder[i].offsetHeight > 0 && getComputedStyle(auswahlfelder[i]).getPropertyValue("visibility") === "visible") {
-                              let zustimmenbuttons = auswahlfelder[i].querySelector(".pur-buttons-container > button:first-child");
-                              let ablehnbuttons = auswahlfelder[i].querySelector(".pur-buttons-container > button:last-child");
-                              if (auswahlfelder[i].querySelector(".required-consent") != null || ablehnbuttons != null && getComputedStyle(ablehnbuttons).getPropertyValue("visibility") != "visible") {
-                                 if (zustimmenbuttons != null) {
-                                    zustimmenbuttons.click();
-                                 }
-                              } else {
-                                 if (ablehnbuttons != null && getComputedStyle(ablehnbuttons).getPropertyValue("visibility") === "visible") {
-                                    ablehnbuttons.click();
+               } else {
+                  try {
+                     if (speichern && localStorage.getItem("bereitsgeklickt") != "true") {
+                        beenden();
+                        window.setTimeout(function () {
+                           speichern.click();
+                        }, 502);
+                     } else if (speichern && localStorage.getItem("bereitsgeklickt") === "true") {
+                        beenden();
+                        window.setTimeout(function () {
+                           if (speicherndeaktiviert) {
+                              speichern.click();
+                           } else if (speicherndeaktiviert === null) {
+                              beenden();
+                              const auswahlfelder = document.querySelectorAll(".pm-main div[class=\"tcfv2-stack focusable\"]");
+                              for (let i = 0; i < auswahlfelder.length; i++) {
+                                 if (auswahlfelder[i].offsetHeight > 0 && getComputedStyle(auswahlfelder[i]).getPropertyValue("visibility") === "visible") {
+                                    let zustimmenbuttons = auswahlfelder[i].querySelector(".pur-buttons-container > button:first-child");
+                                    let ablehnbuttons = auswahlfelder[i].querySelector(".pur-buttons-container > button:last-child");
+                                    if (auswahlfelder[i].querySelector(".required-consent") != null || ablehnbuttons != null && getComputedStyle(ablehnbuttons).getPropertyValue("visibility") != "visible") {
+                                       if (zustimmenbuttons != null) {
+                                          zustimmenbuttons.click();
+                                       }
+                                    } else {
+                                       if (ablehnbuttons != null && getComputedStyle(ablehnbuttons).getPropertyValue("visibility") === "visible") {
+                                          ablehnbuttons.click();
+                                       }
+                                    }
                                  }
                               }
-                           }
-                        }
-                        window.setTimeout(function () {
-                           const speichernfinal = document.querySelector(".message-container button.sp_choice_type_SAVE_AND_EXIT[title][aria-label]:not([disabled])");
-                           if (speichernfinal) {
-                              localStorage.removeItem("bereitsgeklickt");
-                              speichernfinal.click();
+                              window.setTimeout(function () {
+                                 const speichernfinal = document.querySelector(".message-container button.sp_choice_type_SAVE_AND_EXIT[title][aria-label]:not([disabled])");
+                                 if (speichernfinal) {
+                                    localStorage.removeItem("bereitsgeklickt");
+                                    speichernfinal.click();
+                                 }
+                              }, 502);
                            }
                         }, 502);
+
+                     } else if (einstellungen && localStorage.getItem("bereitsgeklickt") != "true") {
+                        localStorage.setItem("bereitsgeklickt", "true");
+                        window.setTimeout(function () {
+                           einstellungen.click();
+                        }, 502);
+                     } else if (akzeptieren && localStorage.getItem("bereitsgeklickt") != "true") {
+                        beenden();
+                        window.setTimeout(function () {
+                           akzeptieren.click();
+                        }, 502);
                      }
-                  }, 502);
-
-               } else if (einstellungen && localStorage.getItem("bereitsgeklickt") != "true") {
-                  localStorage.setItem("bereitsgeklickt", "true");
-                  window.setTimeout(function () {
-                     einstellungen.click();
-                  }, 502);
-               } else if (akzeptieren && localStorage.getItem("bereitsgeklickt") != "true") {
-                  window.clearInterval(privacymgmt);
-                  window.setTimeout(function () {
-                     akzeptieren.click();
-                  }, 502);
-               } else if (akzeptieren2) {
-                  window.clearInterval(privacymgmt);
-                  window.setTimeout(function () {
-                     akzeptieren2.click();
-                  }, 502);
+                  } catch (a) {
+                     console.error(a);
+                     if (speichern) {
+                        beenden();
+                        window.setTimeout(function () {
+                           speichern.click();
+                        }, 502);
+                     } else if (akzeptieren) {
+                        beenden();
+                        window.setTimeout(function () {
+                           akzeptieren.click();
+                        }, 502);
+                     } else if (akzeptieren2) {
+                        beenden();
+                        window.setTimeout(function () {
+                           akzeptieren2.click();
+                        }, 502);
+                     }
+                  }
                }
-            }, 200);
-            window.setTimeout(function () {
-               window.clearInterval(privacymgmt);
-            }, 5000);
-         }
-      }
+            }
 
-      // privacymanager.io (iframe klicker)
-      if (window.self !== window.top) {
-         if (window.location.host === "cmp-consent-tool.privacymanager.io") {
-            const findcookiebanner = window.setInterval(function () {
+            // privacymanager.io (iframe klicker)
+            if (window.location.host === "cmp-consent-tool.privacymanager.io") {
+               console.log("[Cookie auto decline] Detected: privacymanager.io (iFrame)");
                const einstellungen = document.querySelector("button#manageSettings");
                const speichern = document.querySelector("button#saveAndExit");
                if (speichern) {
-                  window.clearInterval(findcookiebanner);
+                  beenden();
                   window.setTimeout(function () {
                      speichern.click();
                   }, 502);
@@ -155,17 +180,11 @@
                      einstellungen.click();
                   }, 502);
                }
-            }, 200);
-            window.setTimeout(function () {
-               window.clearInterval(findcookiebanner);
-            }, 5000);
-         }
-      }
+            }
 
-      // trustarc.com (iframe klicker)
-      if (window.self !== window.top) {
-         if (window.location.host === "consent-pref.trustarc.com") {
-            const findcookiebanner = window.setInterval(function () {
+            // trustarc.com (iframe klicker)
+            if (window.location.host === "consent-pref.trustarc.com") {
+               console.log("[Cookie auto decline] Detected: trustarc.com (iFrame)");
                const ablehnen = document.querySelector(".mainContent .pdynamicbutton .required");
                const ablehnen2 = document.querySelector(".mainContent .bottom .rejectAll");
                const ablehnen3 = document.querySelector(".mainContent .trustarc-submit-buttons-container > button.trustarc-declineall-btn");
@@ -190,7 +209,7 @@
                      ablehnen4.click();
                   }, 502);
                } else if (schließen) {
-                  window.clearInterval(findcookiebanner);
+                  beenden();
                   window.setTimeout(function () {
                      schließen.click();
                   }, 502);
@@ -223,7 +242,7 @@
                         parentablehnen3.click();
                      }, 502);
                   } else if (parentschließen) {
-                     window.clearInterval(findcookiebanner);
+                     beenden();
                      window.setTimeout(function () {
                         parentschließen.click();
                      }, 502);
@@ -237,27 +256,37 @@
                      }, 502);
                   }
                }
+            }
 
-            }, 200);
-            window.setTimeout(function () {
-               window.clearInterval(findcookiebanner);
-            }, 5000);
+            // baycloud.ie
+            if (window.location.host === "cdn.baycloud.com") {
+               console.log("[Cookie auto decline] Detected: baycloud.ie (iFrame)");
+               const ablehnen = document.querySelector("#panelContainer button#panelDecline");
+               if (ablehnen) {
+                  window.setTimeout(function () {
+                     beenden();
+                     ablehnen.click();
+                  }, 1002);
+               }
+               let css = document.createElement("style");
+               css.innerText = "body{opacity:0!important;pointer-events:none!important;}";
+               css.setAttribute("id", "vktgytywnpohtlutzkebaunetlurwlcj");
+               if (document.head != null) {
+                  document.head.appendChild(css);
+               }
+               window.setTimeout(function () {
+                  let csscheck1 = document.getElementById("vktgytywnpohtlutzkebaunetlurwlcj");
+                  if (csscheck1 != null) {
+                     csscheck1.remove();
+                  }
+                  clearInterval(findantioverflow);
+               }, 5000);
+            }
+
          }
-      }
+         // iframe klicker ENDE
 
 
-      // Cookie banner (klicker)
-      window.setTimeout(function () {
-         window.clearInterval(findconsent);
-      }, 5000);
-
-      function beenden() {
-         window.clearInterval(findconsent);
-         forcesessionstorage();
-      }
-
-      let bereitsgeklickt = false;
-      const findconsent = window.setInterval(function () {
          // consentmanager.net
          const consentmanager = document.querySelector("script[src*=\".consentmanager.net/delivery/\"][data-cmp-ab]");
          if (consentmanager) {
@@ -918,7 +947,7 @@
          // cookieconsent:desc
          const cookieconsentdesc = document.querySelector("[aria-describedby=\"cookieconsent:desc\"]");
          const cookieconsentdesc2 = document.querySelector("[aria-describedby=\"cookiebar-desc\"]");
-         if ((cookieconsentdesc ||cookieconsentdesc2) && window.location.host.endsWith("sozialversicherung-kompetent.de") === false) {
+         if ((cookieconsentdesc || cookieconsentdesc2) && window.location.host.endsWith("sozialversicherung-kompetent.de") === false) {
             console.log("[Cookie auto decline] Detected: cookieconsent:desc");
             const ablehnen = document.querySelector("[aria-describedby^=\"cookie\"] a.cc-dismiss[role=\"button\"]");
             const ablehnen2 = document.querySelector("[aria-describedby^=\"cookie\"] button#cookie_button_deny");
@@ -1126,6 +1155,7 @@
 
          // https://github.com/orestbida/cookieconsent
          const orestbida = document.querySelector("#cc--main.c--anim[style]");
+         const orestbida2 = document.querySelector("#cc-main > .cm-wrapper > [aria-describedby=\"cm__desc\"]");
          if (orestbida && document.cookie.includes("cc_cookie") === false) {
             console.log("[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent");
             const ablehnen = orestbida.querySelector("button#s-rall-bn[type=\"button\"]");
@@ -1145,6 +1175,15 @@
                beenden();
                window.setTimeout(function () {
                   akzeptieren.click();
+               }, 202);
+            }
+         } else if (orestbida2 && document.cookie.includes("cc_cookie") === false) {
+            console.log("[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent 2");
+            const speichern = orestbida2.querySelector("button[data-role=\"necessary\"]");
+            if (speichern) {
+               beenden();
+               window.setTimeout(function () {
+                  speichern.click();
                }, 202);
             }
          }
@@ -1549,6 +1588,18 @@
             }
          }
 
+         // sirdata.com
+         const sirdatacom = document.querySelector("#sd-cmp[class^=\"sd-cmp-\"]");
+         if (sirdatacom && document.cookie.includes("euconsent-v2") === false) {
+            const ablehnen = sirdatacom.querySelector("button:has(+ button + button)");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            }
+         }
+
 
          // Ende Intervall
       }, 200);
@@ -1596,6 +1647,10 @@
          checkcookie: "privacylayer",
          selector: "#cc_privacy_layer button.cc_open_settings",
          selectorfinal: "#cc_privacy_layer button.cc_accept_settings"
+      }, {
+         seite: "transparency.meta.com",
+         checkstorage: "Session",
+         selector: "[data-testid=\"cookie-policy-dialog\"] button[data-cookiebanner=\"accept_button\"]"
       }, {
          seite: "meta.com",
          checkstorage: "Session",
@@ -2693,11 +2748,6 @@
          checkstorage: "cookie",
          selector: "#cdk-overlay-0 button.cookie-settings-submit"
       }, {
-         seite: "augsburger-allgemeine.de",
-         checkstorage: "aa_consentGroup",
-         selectorfinal: ".aa-first-layer__content button.aa-first-layer__button[onclick=\"acceptPUR()\"]",
-         countdown: 1500
-      }, {
          seite: "news.samsung.com",
          checkcookie: "COOKIECONSENT",
          selector: "#bgc-cookie-popup #cookie_action_reject"
@@ -2740,10 +2790,6 @@
          seite: "norberteder.com",
          checkcookie: "cookielay",
          selector: "#cookielay [data-cookielay-allow=\"custom\"]"
-      }, {
-         seite: "codesandbox.io",
-         checkcookie: "cc_cookie",
-         selector: "#cc-main button[data-role=\"necessary\"]"
       }, {
          seite: "hmd.com",
          checkcookie: "consent",
@@ -2797,6 +2843,33 @@
          seite: "sfc.com",
          checkcookie: "consent",
          selector: "#consent #consent-onlytech"
+      }, {
+         seite: "vontobel.com",
+         checkcookie: "Cconsent:true",
+         selector: "[data-disclaimer-attributes] button.functional-only"
+      }, {
+         seite: "augsburger-allgemeine.de",
+         checkstorage: "SDGIds",
+         selector: "#pur_layer button#pgwl_pur-option-accept-button"
+      }, {
+         seite: "vercel.com",
+         checkcookie: "fides_consent",
+         selector: "#fides-banner button[data-testid=\"Deny-btn\"]"
+      }, {
+         seite: "gruenes-gas.at",
+         checkcookie: "fcc_",
+         selector: ".fcc-cookie-modal button.fcc-cookie-button_disable-all"
+      }, {
+         seite: "tvo.fi",
+         checkstorage: "accept-cookies",
+         selector: "jaettu-evastekysely button[data-action=\"accept-mandatory-cookies\"]"
+      }, {
+         seite: "liveramp.com",
+         selector: "#ketch-banner button[aria-label=\"Reject All\"]"
+      }, {
+         seite: "dgppn.de",
+         checkcookie: "cookieConsent",
+         selector: "#modal-cookie button#saveCookies"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
