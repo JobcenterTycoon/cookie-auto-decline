@@ -1,12 +1,12 @@
 'use strict';
 (function () {
-   if ((sessionStorage.getItem("mpowlesu908hxfyw37ghg5ikx90jdzt") != "djx0v0odce35xrb2pt5dzbgaj1mud5c" && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector("body.no-js > .main-wrapper + script + img[src^=\"/cdn-cgi/images/trace/managed/js/transparent.gif?ray=\"][style=\"display: none\"]") === null && document.querySelector("body.no-js > .main-wrapper + script + script:last-child[src^=\"https://static.cloudflareinsights.com/beacon.min.js\"]") === null && document.querySelector("html[style=\"height:100%\"] iframe[src^=\"/_Incapsula_Resource?\"]") === null && document.querySelector("link[href=\"/cdn-cgi/styles/challenges.css\"][rel=\"stylesheet\"]") === null && window.location.hostname != "accounts.google.com") {
+   if ((sessionStorage.getItem("mpowlesu908hxfyw37ghg5ikx90jdzt") != "djx0v0odce35xrb2pt5dzbgaj1mud5c" && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector("html[style=\"height:100%\"] iframe[src^=\"/_Incapsula_Resource?\"]") === null && document.querySelector("link[href=\"/cdn-cgi/styles/challenges.css\"][rel=\"stylesheet\"]") === null && window.location.hostname != "accounts.google.com") {
       if (window.self == window.top && window.location.host.endsWith("aternos.org") === false && window.location.host.endsWith("office-discount.de") === false && window.location.host.endsWith("rp-online.de") === false && window.location.host.endsWith("privadovpn.com") === false && window.location.host.endsWith("youtube.com") === false && window.location.host.endsWith("web.de") === false && window.location.host.endsWith("gmx.net") === false && window.location.host.endsWith("fifa.com") === false && window.location.href.startsWith("https://ga.de/") === false && window.location.href.startsWith("https://www.wz.de/") === false && window.location.host.endsWith("notebooksbilliger.de") === false && window.location.href.startsWith("https://www.crocs.de/") === false) {
          sessionStorage.setItem("mpowlesu908hxfyw37ghg5ikx90jdzt", "djx0v0odce35xrb2pt5dzbgaj1mud5c");
       }
       // Am Anfang laden
       let css = document.createElement("style");
-      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],[aria-describedby=\"cookiebar-desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^=\"https://cdn.baycloud.com/\"],#sd-cmp[class^=\"sd-cmp-\"],.ccm-root,body > .stpd_cmp{opacity:0!important;pointer-events:none!important;}";
+      css.innerText = "body:not([class=\"mobile\"]):not([class=\"mobile promoted-search-body\"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,#usercentrics-root,#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*=\"/privacyprefs/\"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex=\"0\"][data-ved][style=\"display: block;\"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,div[class=\"needsclick cmp-root-container\"],div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^=\"https://k.twitchcdn.net\"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role=\"dialog\"][aria-label=\"cookieconsent\"][aria-describedby=\"cookieconsent:desc\"],[aria-describedby=\"cookiebar-desc\"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,.cky-consent-container,div[id=\"orejime\"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id=\"klaro\"],div[id=\"timm4-cookie-consent\"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^=\"sd-cmp-\"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role=\"alertdialog\"][aria-labelledby][style=\"display: block;\"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^=\"__tealiumGDPR\"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^=\"https://cdn.baycloud.com/\"],#sd-cmp[class^=\"sd-cmp-\"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner{opacity:0!important;pointer-events:none!important;}";
       css.setAttribute("id", "q3xyktv21es96by0ybwvb1e9a37y5pu");
       if (document.head != null) {
          document.head.appendChild(css);
@@ -38,9 +38,9 @@
          }
       }, 200);
 
-      const nc = "domain=" + window.location.host + ";secure=true; max-age=31104000; SameSite=None; path=/";
+      const nc = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
       const datum = new Date();
-      const cookiedatum = datum.getFullYear() + "-" + datum.getMonth() + "-" + datum.getDay() + "T0:00:00.451Z";
+      const cookiedatum = datum.getFullYear() + "-" + datum.getMonth() + "-" + datum.getDate() + "T0:00:00.451Z";
 
       // Forciere das Session Storage Item.
       function forcesessionstorage() {
@@ -286,47 +286,68 @@
          }
          // iframe klicker ENDE
 
-
-         // consentmanager.net
-         const consentmanager = document.querySelector("script[src*=\".consentmanager.net/delivery/\"][data-cmp-ab]");
-         if (consentmanager) {
-            console.log("[Cookie auto decline] Detected: consentmanager.net");
-            const ablehnen = document.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
-            const akzeptieren = document.querySelector("#cmpbox a.cmptxt_btn_yes[role=\"button\"]");
-            const einstellungen = document.querySelector("#cmpbox:not(:has(.cmpcontentpasssignuplogo[data-cmp-ab])) a.cmptxt_btn_settings[role=\"button\"]");
-            const speichern = document.querySelector("#cmpbox a.cmptxt_btn_save[role=\"button\"]");
-            const shadowroot = document.querySelector("#cmpwrapper");
+         // #cmpbox (consensu.org, consentmanager.net)
+         const cmpbox = document.querySelector("#cmpbox.cmpbox[aria-labelledby^=\"cmpbox\"]");
+         if (cmpbox) {
+            console.log("[Cookie auto decline] Detected: #cmpbox (consensu.org, consentmanager.net)");
+            const ablehnen = cmpbox.querySelector("a.cmptxt_btn_no[role=\"button\"]");
+            const einstellungen = cmpbox.querySelector("a.cmptxt_btn_settings[role=\"button\"]");
+            const speichern = cmpbox.querySelector("a.cmptxt_btn_save[role=\"button\"]");
+            const akzeptieren = cmpbox.querySelector("a.cmptxt_btn_yes[role=\"button\"]");
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
                   ablehnen.click();
-               }, 502);
-            } else if (speichern && speichern.offsetHeight > 0) {
+               }, 202);
+            } else if (einstellungen) {
+               beenden();
+               window.setTimeout(function () {
+                  einstellungen.click();
+                  window.setTimeout(function () {
+                     const switchespurpose = cmpbox.querySelector("[data-cmp-purpose=\"all\"][aria-checked=\"true\"]");
+                     const switchesvendors = cmpbox.querySelector("[data-cmp-vendor=\"all\"][aria-checked=\"true\"]");
+                     if (switchespurpose && switchesvendors) {
+                        switchespurpose.click();
+                        switchesvendors.click();
+                        window.setTimeout(function () {
+                           speichern.click();
+                        }, 202);
+                     } else(
+                        window.setTimeout(function () {
+                           speichern.click();
+                        }, 202)
+                     );
+                  }, 202);
+               }, 202);
+            } else if (speichern && speichern.offsetHeight >= 1) {
                beenden();
                window.setTimeout(function () {
                   speichern.click();
-               }, 502);
-            } else if (einstellungen) {
-               window.setTimeout(function () {
-                  einstellungen.click();
-               }, 502);
+               }, 202);
             } else if (akzeptieren) {
                beenden();
                window.setTimeout(function () {
                   akzeptieren.click();
-               }, 502);
-            } else if (shadowroot) {
+               }, 202);
+            }
+         }
+
+         // #cmpbox shadowroot (consensu.org, consentmanager.net)
+         const cmpboxshadowroot = document.querySelector("#cmpwrapper.cmpwrapper");
+         if (cmpboxshadowroot) {
+            console.log("[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)");
+            const ablehnen = cmpboxshadowroot.shadowRoot.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
+            const akzeptieren = cmpboxshadowroot.shadowRoot.querySelector("a.cmptxt_btn_yes[role=\"button\"]");
+            if (ablehnen) {
+               beenden();
                window.setTimeout(function () {
-                  const akzeptierenshadowroot = shadowroot.shadowRoot.querySelector("#cmpbox a.cmptxt_btn_yes[role=\"button\"]");
-                  const ablehnenshadowroot = shadowroot.shadowRoot.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
-                  if (ablehnenshadowroot && ablehnenshadowroot.offsetHeight > 0) {
-                     beenden();
-                     ablehnenshadowroot.click();
-                  } else if (akzeptierenshadowroot && akzeptierenshadowroot.offsetHeight > 0) {
-                     beenden();
-                     akzeptierenshadowroot.click();
-                  }
-               }, 502);
+                  ablehnen.click();
+               }, 202);
+            } else if (akzeptieren) {
+               beenden();
+               window.setTimeout(function () {
+                  akzeptieren.click();
+               }, 202);
             }
          }
 
@@ -467,61 +488,6 @@
                beenden();
                window.setTimeout(function () {
                   speichern.click();
-               }, 502);
-            }
-         }
-
-         // consensu.org
-         const consensu = document.querySelector("script[src^=\"https://cdn.consentmanager.mgr.consensu.org/delivery/cmp_\"]");
-         const consensu2 = document.querySelector("#cmpwrapper.cmpwrapper");
-         if (consensu || consensu2) {
-            console.log("[Cookie auto decline] Detected: consensu.org");
-            const ablehnen = document.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
-            const einstellungen = document.querySelector("#cmpbox a.cmptxt_btn_settings[role=\"button\"]");
-            const speichern = document.querySelector("#cmpbox a.cmptxt_btn_save[role=\"button\"]");
-            const speichern2 = document.querySelector("#cmpbox a.cmpboxbtnyes");
-
-            const shadow = document.getElementById("cmpwrapper");
-            let ablehnenshadow;
-            let einstellungenshadow;
-            let speichernshadow;
-            if (shadow) {
-               ablehnenshadow = document.getElementById("cmpwrapper").shadowRoot.querySelector("#cmpbox a.cmptxt_btn_no[role=\"button\"]");
-               einstellungenshadow = document.getElementById("cmpwrapper").shadowRoot.querySelector("#cmpbox a.cmptxt_btn_settings[role=\"button\"]");
-               speichernshadow = document.getElementById("cmpwrapper").shadowRoot.querySelector("#cmpbox a.cmptxt_btn_save[role=\"button\"]");
-            }
-            if (ablehnen) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnen.click();
-               }, 502);
-            } else if (ablehnenshadow) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnenshadow.click();
-               }, 502);
-            } else if (einstellungen) {
-               window.setTimeout(function () {
-                  einstellungen.click();
-               }, 502);
-            } else if (einstellungenshadow) {
-               window.setTimeout(function () {
-                  einstellungenshadow.click();
-               }, 502);
-            } else if (speichern2) {
-               beenden();
-               window.setTimeout(function () {
-                  speichern2.click();
-               }, 502);
-            } else if (speichern) {
-               beenden();
-               window.setTimeout(function () {
-                  speichern.click();
-               }, 502);
-            } else if (speichernshadow) {
-               beenden();
-               window.setTimeout(function () {
-                  speichernshadow.click();
                }, 502);
             }
          }
@@ -702,13 +668,11 @@
          }
 
          // borlabs.io
-         const borlabs = document.querySelector("script#BorlabsCookieBoxWrap");
-         const borlabs2 = document.querySelector("script#borlabs-cookie-js");
-         const borlabsverify = document.querySelector("#BorlabsCookieBox > .bottom-center[style=\"display: none;\"]");
-         if ((borlabs || borlabs2) && borlabsverify === null) {
+         const borlabs = document.querySelector("#BorlabsCookieBox");
+         if (borlabs && document.cookie.includes("essential%22%3A%5B%22borlabs-cookie") === false) {
             console.log("[Cookie auto decline] Detected: borlabs.io");
-            const ablehnen = document.querySelector("[data-borlabs-cookie-wrap] label[for=\"borlabsCookieOptionFirstParty\"]");
-            const speichern = document.querySelector("#BorlabsCookieBox ._brlbs-accept > a#CookieBoxSaveButton[data-cookie-accept]");
+            const ablehnen = borlabs.querySelector("button.brlbs-cmpnt-btn.brlbs-btn-accept-only-essential");
+            const speichern = borlabs.querySelector("#CookieBoxSaveButton[data-cookie-accept]");
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
@@ -1525,7 +1489,7 @@
          if (privacy_optin_611 && window.localStorage.getItem("user_privacy_settings") === null) {
             console.log("[Cookie auto decline] Detected: privacy_optin_611");
             const ablehnen = privacy_optin_611.querySelector(".privacy_buttons > input[name=\"save_tech_settings\"]");
-            const speichern = privacy_optin_611.querySelector(".privacy_buttons > input[name=\"save_settings\"]");
+            const speichern = privacy_optin_611.querySelector(".privacy_buttons > input[name=\"save_settings\"]:not([disabled])");
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
@@ -1536,6 +1500,10 @@
                window.setTimeout(function () {
                   speichern.click();
                }, 202);
+            } else {
+               window.localStorage.setItem("user_privacy_settings", "1,2");
+               window.localStorage.setItem("user_privacy_settings_expires", new Date().getTime() * 1.5);
+               window.location.reload();
             }
          }
 
@@ -1579,6 +1547,7 @@
          // cookiebar_optin_219
          const cookiebaroptin219 = document.querySelector("#cookiebar_optin_219.mod_cookiebar_optin_slim");
          if (cookiebaroptin219) {
+            console.log("[Cookie auto decline] Detected: cookiebar_optin_219");
             const ablehnen = cookiebaroptin219.querySelector(".cookiebar_disagree > a[data-privacy]");
             if (ablehnen) {
                beenden();
@@ -1591,6 +1560,7 @@
          // sirdata.com
          const sirdatacom = document.querySelector("#sd-cmp[class^=\"sd-cmp-\"]");
          if (sirdatacom && document.cookie.includes("euconsent-v2") === false) {
+            console.log("[Cookie auto decline] Detected: sirdata.com");
             const ablehnen = sirdatacom.querySelector("button:has(+ button + button)");
             if (ablehnen) {
                beenden();
@@ -1603,6 +1573,7 @@
          // https://setupad.com/
          const setupad = document.querySelector("body > .stpd_cmp");
          if (setupad && localStorage.getItem("additional-consent") === null) {
+            console.log("[Cookie auto decline] Detected: https://setupad.com/");
             const einstellungen = setupad.querySelector(".stpd_consent_wrapper > .stpd_button_wrapper > .stpd_flexed_btns > button.stpd_submit_btn[type=\"button\"]");
             const speichern = setupad.querySelector(".stpd_return_btn + div + .stpd_consent_wrapper > div > .stpd_flexed_btns > button.stpd_submit_btn[type=\"submit\"]");
             if (einstellungen) {
@@ -1625,7 +1596,37 @@
             }
          }
 
+         // https://mkm.legal/
+         const mkmlegal = document.querySelector("#jmdCookieConsentWrapper");
+         if (mkmlegal && document.cookie.includes("mkm_cbconsent") === false) {
+            console.log("[Cookie auto decline] Detected: https://mkm.legal/");
+            const ablehnen = mkmlegal.shadowRoot.querySelector("#cookieConsent button.deny");
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            }
+         }
 
+         // https://2b-advice.com/
+         const twobadvice = document.querySelector('#bbcdBanner.b-banner[style]');
+         if (twobadvice && document.cookie.includes("_2BCookieSettings") === false) {
+            console.log("[Cookie auto decline] Detected: https://2b-advice.com/");
+            const einstellungen = twobadvice.querySelector('button#bbcdBannerButtonSettings');
+            if (einstellungen) {
+               beenden();
+               window.setTimeout(function () {
+                  einstellungen.click();
+                  window.setTimeout(function () {
+                     const speichern = document.querySelector('#bbcdSettings button#bbcdButtonOK_dialog_St');
+                     if (speichern) {
+                        speichern.click();
+                     }
+                  }, 202);
+               }, 202);
+            }
+         }
 
 
          // Ende Intervall
@@ -1667,9 +1668,6 @@
          seite: "solinger-nachrichten.de",
          selector: "#cookie_action_close_header"
       }, {
-         seite: "tum.de",
-         selector: "button[data-in2-modal-save-button]"
-      }, {
          seite: "chemnitz.de,ba-riesa.de,theater-chemnitz.de",
          checkcookie: "privacylayer",
          selector: "#cc_privacy_layer button.cc_open_settings",
@@ -1704,28 +1702,22 @@
          seite: "office.com,microsoft.com,minecraft.net,skype.com,xbox.com",
          selector: "#wcpConsentBannerCtrl button[type=\"button\"]:nth-of-type(2)"
       }, {
-         seite: "bing.com",
-         selector: "#bnp_cookie_banner button#bnp_btn_reject"
-      }, {
          seite: "etsy.com",
          checkcookie: " p=",
-         selector: "[data-gdpr-consent-prompt] button[data-gdpr-open-full-settings=\"true\"]",
-         selectorfinal: "#gdpr-privacy-settings button[data-wt-overlay-close]"
+         selector: '[data-gdpr-consent-prompt] + div button[data-gdpr-open-full-settings]',
+         selector2: "#gdpr-privacy-settings button[data-wt-overlay-close]",
+         selectorfinal: "#gdpr-privacy-settings button[data-wt-overlay-close]" // zweiter versuch wenn erster nicht geht.
       }, {
          seite: "rp-online.de,wz.de,ga.de",
          checkcookie: "OptanonAlertBoxClosed",
          selector: "#consentAccept"
-      }, {
-         seite: "edna.de",
-         checkstorage: "econda.privacy.protection",
-         selector: "#privacyProtectionBanner button#buttonOK"
       }, {
          seite: "gamestar.de",
          checkcookie: "euconsent",
          selector: "#cmp-modal a.cmp-accept.no-link[href=\"#\"]"
       }, {
          seite: "forbes.com",
-         selector: "div[role=\"dialog\"][aria-modal][aria-describedby][aria-labelledby][style] > div[class^=\"buttons__\"] > button[class*=\"secondaryButton\"]"
+         selector: '[aria-label="privacy banner"] button[aria-label="Reject All"]'
       }, {
          seite: "poco.de",
          selector: "[aria-describedby=\"consentbar\"] button[data-purpose=\"cookieBar.button.accept\"] + div > button"
@@ -1811,10 +1803,6 @@
          seite: "0rechner.de,0calc.com,0calc.es,0calc.fr",
          checkcookie: "precmp",
          selector: "#precmpdialog form[action=\"/precmp\"] button[value=\"deny\"]"
-      }, {
-         seite: "stackoverflow.com,askubuntu.com,mathoverflow.net,serverfault.com,stackexchange.com,superuser.com",
-         checkcookie: "Optanon",
-         selector: "body > .js-consent-banner button.js-reject-cookies"
       }, {
          seite: "norton.com",
          checkcookie: "SYMANTEC_ENSIGHTEN_PRIVACY_BANNER_VIEWED",
@@ -1916,10 +1904,6 @@
          checkcookie: "enableTracking",
          selector: "#cookie-notice a#cookie-bar-button.cookieBar_close"
       }, {
-         seite: "werbringtwas.com",
-         checkcookie: "cookieconsent_wbw_status",
-         selector: "#cookie-notice a#cookie-bar-button.cookieBar_close"
-      }, {
          seite: "schleswig-holstein.de,bmbf.de",
          checkcookie: "gsbbanner",
          selector: "#cookiebanner button.confirmSelection"
@@ -2017,10 +2001,6 @@
          checkcookie: "cookieconsent_status",
          selector: "div[style=\"display: flex;\"] > [style=\"position: fixed;\"] div:not([class], [id]) + div > div:last-child > button"
       }, {
-         seite: "bitburger.de",
-         checkcookie: "cookies-general",
-         selector: ".cookie-age button#cookie-layer-continue"
-      }, {
          seite: "bsh-group.com",
          checkcookie: "cookiepolicy",
          selector: "#cookie-layer button.js_decline-cookies[type=\"button\"]"
@@ -2061,10 +2041,6 @@
          seite: "grants.at",
          checkcookie: "cookieconsent_status_new",
          selector: "#cookie-notice a[data-dismiss=\"modal\"]"
-      }, {
-         seite: "bitburger-braugruppe.de",
-         checkcookie: "cookie-",
-         selector: "#cookie-layer-wrapper a#cookie-accept"
       }, {
          seite: "parliamentlive.tv",
          checkcookie: "cookie-",
@@ -2110,14 +2086,6 @@
          checkstorage: "grnk-cookies-accepted",
          selector: ".g-dialog-content grui-button[aria-label*=\"blehnen\"]"
       }, {
-         seite: "knoema.de",
-         checkcookie: "ConsentPolicy",
-         selector: "#gdpr button"
-      }, {
-         seite: "tinte24.de",
-         checkcookie: "mcDsgvo",
-         selector: "#mcDsgvo a.decline"
-      }, {
          seite: "sehen.de",
          checkcookie: "analytics",
          selector: ".m-cookie [data-block-cookies]"
@@ -2149,10 +2117,6 @@
          checkcookie: "consentLevel",
          sonderfall: "demailsites",
          noframe: true
-      }, {
-         seite: "zeit.de",
-         checkcookie: "zonconsent",
-         sonderfall: "zeitde"
       }, {
          seite: "tiktok.com",
          sonderfall: "tiktokcom"
@@ -2277,11 +2241,6 @@
          checkcookie: "cookie-layer-settings",
          selector: ".cookielayer a.accept-none"
       }, {
-         seite: "stepstone.de",
-         checkcookie: "CONSENTMGR",
-         selector: "#GDPRConsentManagerContainer #ccmgt_explicit_preferences.options-button",
-         selectorfinal: "#GDPRConsentManagerContainer #ccmgt_preferences_reject"
-      }, {
          seite: "l-bank.de,l-bank.info",
          checkcookie: "bm-cookies-settings-v2",
          selector: "div[aria-labelledby=\"AP_cookies-dialog-title\"] button#toggleCookieFunctional",
@@ -2320,25 +2279,13 @@
          checkstorage: "ccm_consent",
          selector: "#ccm-widget button.ccm--decline-cookies"
       }, {
-         seite: "ovpn.com",
-         checkcookie: "eovpn_cookie_consent",
-         selector: ".cookie-consent button.js-cookie-consent-agree"
-      }, {
          seite: "shellfire.de,privatevpn.com",
          checkcookie: "CookieScriptConsent",
          selector: "#cookiescript_injected #cookiescript_reject"
       }, {
-         seite: "azirevpn.com",
-         checkcookie: "az_hide_cookie_bar",
-         selector: "#cookiebar button"
-      }, {
          seite: "playretrogames.net",
          checkcookie: "saved",
          selector: "#cookies button#cookiebutton"
-      }, {
-         seite: "hidemy.io",
-         checkstorage: "gdprconfirm",
-         selector: "#gdpr-block button#gdpr-confirm-btn"
       }, {
          seite: "wp.pl,money.pl,o2.pl,parenting.pl,pudelek.pl,autokult.pl,gadzetomania.pl,fotoblogia.pl,komorkomania.pl,polygamia.pl,abczdrowie.pl,benchmark.pl,kafeteria.pl,pysznosci.pl,dobreprogramy.pl,genialne.pl,autocentrum.pl,jastrzabpost.pl,deliciousmagazine.pl",
          checkcookie: "PWA_adbd",
@@ -2374,10 +2321,6 @@
       }, {
          seite: "kevag-telekom.de",
          selector: "#fullScreenLockBlockOverlayKp .notConfirmKp"
-      }, {
-         seite: "telekom.com",
-         checkcookie: "CONSENTMGR",
-         selector: "#__tealiumGDPRecModal button#rejectAll"
       }, {
          seite: "phase-6.de",
          checkcookie: "GDPR",
@@ -2680,10 +2623,6 @@
          selectorfinal: "#cookieModal button#cookiebar-safe-settings",
          countdown: 500
       }, {
-         seite: "a-coding-project.de",
-         checkcookie: "cookieconsent_status",
-         selector: "#cookiebox #change-cookies"
-      }, {
          seite: "get-in-it.de",
          checkstorage: "Get_CookieConsent",
          selector: "#Get_CookieConsentBox a#coocon-extend-main-screen[href=\"javascript:void(0)\"]",
@@ -2775,10 +2714,6 @@
          checkstorage: "cookie",
          selector: "#cdk-overlay-0 button.cookie-settings-submit"
       }, {
-         seite: "news.samsung.com",
-         checkcookie: "COOKIECONSENT",
-         selector: "#bgc-cookie-popup #cookie_action_reject"
-      }, {
          seite: "moemax.de",
          selector: "[aria-describedby=\"consentbar\"] button[data-purpose=\"cookieBar.button.accept\"] + div button"
       }, {
@@ -2788,10 +2723,6 @@
          seite: "ga.de",
          checkcookie: "Optanon",
          selector: "custom-card #consentAccept"
-      }, {
-         seite: "databroker.global",
-         checkcookie: "databroker_cookie",
-         selector: ".cookie-accept button#cookie-accept-btn"
       }, {
          seite: "movistar.es",
          checkcookie: "OptanonAlertBoxClosed",
@@ -2911,6 +2842,32 @@
       }, {
          seite: "ihk-muenchen.de",
          selector: "#cookie-banner button[onclick=\"declineMatomoConsent()\"]"
+      }, {
+         seite: "wasserstoff-sicherheit.de",
+         checkcookie: "ckies_cloudflare",
+         selector: "[data-gi-selector=\"reject-all-cookies\"] > a"
+      }, {
+         seite: "safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev",
+         selector: "#glue-cookie-notification-bar-1 button.glue-cookie-notification-bar__accept"
+      }, {
+         seite: "ok.ru",
+         selector: "[data-module=\"cookieBanner\"] button.cb_setup",
+         selector2: "[data-module=\"SetupCookies\"] input[value=\"FUNCTIONALITY\"]",
+         selectorfinal: "[data-module=\"SetupCookies\"] input#hook_FormButton_button_save_choice",
+         checkcookie: "PRIVACY"
+      }, {
+         seite: "americanexpress.com",
+         selector: "#glue-cookie-notification-bar-1 button.glue-cookie-notification-bar__accept",
+         checkcookie: "CookieConsent"
+      }, {
+         seite: "aachener-zeitung.de",
+         selector: '[class^="zweiwegen-model-dialog_consentDialog"] button[data-testid="zweiwegen-accept-button"]',
+         checkcookie: "euconsent-v2"
+      }, {
+         seite: "stepstone.de",
+         selector: '#GDPRConsentManagerContainer #ccmgt_explicit_preferences',
+         selectorfinal: '#GDPRConsentManagerContainer #ccmgt_preferences_reject',
+         checkcookie: "CONSENTMGR"
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -2928,6 +2885,7 @@
                      const findcookiebanner = setInterval(function () {
                         counter++;
                         if (document.querySelector(regeln[i].selector)) {
+                           // Privater Test Code 1
                            console.log("[Cookie auto decline] Selector 1");
                            forcesessionstorage();
                            document.querySelector(regeln[i].selector).click();
@@ -2943,8 +2901,9 @@
                      }, 302);
                      setTimeout(function () {
                         clearInterval(findcookiebanner);
-                        if (counter > 21) {
+                        if (counter > 20) {
                            console.warn("[Cookie auto decline] Kein Cookie Banner gefunden trotz Regel.");
+                           // Privater Test Code 2
                         }
                      }, 7000);
                   }
@@ -3023,18 +2982,7 @@
                      location.reload();
                   }
                   // Sonderfälle
-                  if (regeln[i].sonderfall === "zeitde") {
-                     if (window.location.href.includes("www.zeit.de/zustimmung?url=") === true) {
-                        document.cookie = "zonconsent = " + cookiedatum + " ; domain=.zeit.de; secure=true; max-age=31104000; SameSite=Lax; path=/";
-                        let url = decodeURIComponent(window.location.href);
-                        let formatierteurl = url.replace("https://www.zeit.de/zustimmung?url=", "");
-                        if (formatierteurl.startsWith("https://www.zeit.de/")) {
-                           window.location.replace(formatierteurl);
-                        } else {
-                           window.location.replace("https://www.zeit.de/");
-                        }
-                     }
-                  } else if (regeln[i].sonderfall === "tiktokcom") {
+                  if (regeln[i].sonderfall === "tiktokcom") {
                      window.setTimeout(function () {
                         const check = document.querySelector("tiktok-cookie-banner").shadowRoot.querySelector(".button-wrapper > button:first-child");
                         if (check) {
@@ -3082,11 +3030,11 @@
                      }, 10002);
                   } else if (regeln[i].sonderfall === "lefigarofr") {
                      window.setTimeout(function () {
-                        const check = document.querySelector("#appconsent > iframe");
+                        const check = document.querySelector('#appconsent > iframe');
                         if (check) {
-                           const akzeptieren = check.contentWindow.document.querySelector("html button.button__acceptAll");
-                           if (akzeptieren) {
-                              akzeptieren.click();
+                           const akezptieren = check.contentDocument.querySelector('button.button__acceptAll');
+                           if (akezptieren) {
+                              akezptieren.click();
                            }
                         }
                      }, 1502);
@@ -3147,5 +3095,7 @@
             }
          }, 202);
       }
+      // Privater Test Code 3
    }
 })();
+// Privater Test Code 4
