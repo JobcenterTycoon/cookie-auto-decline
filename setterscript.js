@@ -50,13 +50,13 @@
          setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34;'
       }, {
          seite: 't-online.de',
-         setcookie: 'consentUUID=c274c162-0bc0-43bb-bd17-58a7bdf05aa9_25;'
+         setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36;'
       }, {
          seite: 'autobild.de',
          setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34;'
       }, {
          seite: 'bild.de',
-         setcookie: 'consentUUID=e4fe2f39-dea0-4d85-b59e-943f634018b9_32_33;'
+         setcookie: 'consentUUID=e4fe2f39-dea0-4d85-b59e-943f634018b9_32_33_36;'
       }, {
          seite: 'computerbild.de',
          setcookie: 'consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29_32_34;'
@@ -95,10 +95,11 @@
          setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34;'
       }, {
          seite: 'faszination-fankurve.de',
-         setcookie: 'consentUUID=8ec72931-7f30-41ee-8e7a-3eeed042376e_32_33;'
+         setcookie: 'consentUUID=8ec72931-7f30-41ee-8e7a-3eeed042376e_32_33_36;'
       }, {
          seite: 'backenmachtgluecklich.de',
-         setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34;'
+         setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36;',
+         nowww: true
       }, {
          seite: 'raspberry-pi-geek.de',
          setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34;'
@@ -122,7 +123,7 @@
          setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34;'
       }, {
          seite: 'ark-unity.com',
-         setcookie: 'consentUUID=14d13bbd-730c-4354-acc6-ecb31ca5c8cb_34;'
+         setcookie: 'consentUUID=14d13bbd-730c-4354-acc6-ecb31ca5c8cb_34_36;'
       }, {
          seite: 'telepolis.de',
          setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36;'
