@@ -47,7 +47,7 @@
          setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35;'
       }, {
          seite: 'welt.de',
-         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34;'
+         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36;'
       }, {
          seite: 't-online.de',
          setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36;'
@@ -65,10 +65,10 @@
          setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33;'
       }, {
          seite: 'pcwelt.de',
-         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34;'
+         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36;'
       }, {
          seite: 'focus.de',
-         setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34;'
+         setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36;'
       }, {
          seite: 'krzbb.de',
          setcookie: 'consentUUID=3dbdc74e-c687-41d4-9b01-9d04a7d02c2e_32;'
@@ -92,7 +92,7 @@
          setcookie: 'consentUUID=80f57ffd-7468-4ca5-8fff-c442bcc6f276_32;'
       }, {
          seite: 'likehifi.de',
-         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34;'
+         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36;'
       }, {
          seite: 'faszination-fankurve.de',
          setcookie: 'consentUUID=8ec72931-7f30-41ee-8e7a-3eeed042376e_32_33_36;'
@@ -102,13 +102,13 @@
          nowww: true
       }, {
          seite: 'raspberry-pi-geek.de',
-         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34;'
+         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36;'
       }, {
          seite: 'n-tv.de',
          setcookie: 'consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32_34;'
       }, {
          seite: 'chip.de',
-         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35;'
+         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36;'
       }, {
          seite: 'rtl.de',
          setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34;'
