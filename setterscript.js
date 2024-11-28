@@ -5,7 +5,7 @@
       // Cookie Banner die ersten 5 Sekunden verstecken.
       window.addEventListener('DOMContentLoaded', function () {
          let css = document.createElement('style');
-         css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),body:not([class="mobile"]):not([class="mobile promoted-search-body"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"]{opacity:0!important;pointer-events:none!important;}';
+         css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),body:not([class="mobile"]):not([class="mobile promoted-search-body"]),.sp-message-open{overflow:auto!important}#BorlabsCookieBox,[data-borlabs-cookie-wrap],#CybotCookiebotDialog,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"]{opacity:0!important;pointer-events:none!important;}';
          css.setAttribute('id', 'q3xyktv21es96by0ybwvb1e9a37y5pu');
          if (document.head != null) {
             document.head.appendChild(css);
@@ -43,7 +43,7 @@
          setcookie: 'consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27_29_30;'
       }, {
          seite: 't3n.de',
-         setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35;'
+         setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38;'
       }, {
          seite: 'welt.de',
          setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36;'
@@ -55,25 +55,25 @@
          setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37;'
       }, {
          seite: 'bild.de',
-         setcookie: 'consentUUID=e4fe2f39-dea0-4d85-b59e-943f634018b9_32_33_36;'
+         setcookie: 'consentUUID=e4fe2f39-dea0-4d85-b59e-943f634018b9_32_33_36_38;'
       }, {
          seite: 'computerbild.de',
-         setcookie: 'consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29_32_34;'
+         setcookie: 'consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29_32_34_38;'
       }, {
          seite: 'stern.de',
-         setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33;'
+         setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38;'
       }, {
          seite: 'pcwelt.de',
-         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36;'
+         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38;'
       }, {
          seite: 'focus.de',
-         setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36;'
+         setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38;'
       }, {
          seite: 'krzbb.de',
          setcookie: 'consentUUID=3dbdc74e-c687-41d4-9b01-9d04a7d02c2e_32;'
       }, {
          seite: 'geo.de',
-         setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34;'
+         setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e;'
       }, {
          seite: 'giga.de',
          setcookie: 'consentUUID=02be7d11-4d68-453a-9e07-acd007280dbf_32;'
@@ -91,23 +91,23 @@
          setcookie: 'consentUUID=80f57ffd-7468-4ca5-8fff-c442bcc6f276_32;'
       }, {
          seite: 'likehifi.de',
-         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37;'
+         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38;'
       }, {
          seite: 'faszination-fankurve.de',
-         setcookie: 'consentUUID=8ec72931-7f30-41ee-8e7a-3eeed042376e_32_33_36_37;'
+         setcookie: 'consentUUID=8ec72931-7f30-41ee-8e7a-3eeed042376e_32_33_36_37_38;'
       }, {
          seite: 'backenmachtgluecklich.de',
          setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36;',
          nowww: true
       }, {
          seite: 'raspberry-pi-geek.de',
-         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36;'
+         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38;'
       }, {
          seite: 'n-tv.de',
          setcookie: 'consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32_34_36;'
       }, {
          seite: 'chip.de',
-         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36;'
+         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38;'
       }, {
          seite: 'rtl.de',
          setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37;'
@@ -116,7 +116,7 @@
          setcookie: 'consentUUID=8e2d1754-cf0f-410d-b5e3-22ea9abf7ce4_34_35;'
       }, {
          seite: 'cinestar.de',
-         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37;'
+         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38;'
       }, {
          seite: 'forschung-und-wissen.de',
          setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34;'
@@ -156,9 +156,6 @@
       }, {
          seite: 'stadt-brandenburg.de',
          setcookie: 'consent=1,0,1,1,0;'
-      }, {
-         seite: 'jena.de',
-         setcookie: 'tarteaucitron=!matomo=false!vimeo=true!youtube=true;'
       }, {
          seite: 'staedtetag.de',
          setcookie: 'cookienotev2=opt-out-only;'
@@ -401,9 +398,6 @@
          seite: 'qatarairways.com',
          setcookie: 'cookie_visited=true; , accepted_functional=true; , accepted_marketing=false;',
       }, {
-         seite: 'livoo.fr',
-         setcookie: 'tarteaucitron=!facebookpixel=false!gajs=false;'
-      }, {
          seite: 'lhsystems.com',
          setcookie: 'comfortCookiesAccepted=false; , functionalCookiesAccepted=false; , necessaryCookies=true; , statisticsCookiesAccepted=false;'
       }, {
@@ -456,9 +450,6 @@
          setcookie: 'epCookieConsent=0;',
          reload: true
       }, {
-         seite: 'holzleitner.de',
-         setcookie: 'cookie-preference=1;'
-      }, {
          seite: 'zdf.de',
          setcookie: 'zdf_cmp_client={%22version%22:%22v1%22%2C%22iteration%22:1%2C%22consents%22:[{%22id%22:%22erforderlich%22%2C%22value%22:true}%2C{%22id%22:%22erfolgsmessung%22%2C%22value%22:true}%2C{%22id%22:%22personalisierung%22%2C%22value%22:false}%2C{%22id%22:%22socialMedia%22%2C%22value%22:false}%2C{%22id%22:%22instagram%22%2C%22value%22:false}%2C{%22id%22:%22twitter%22%2C%22value%22:false}%2C{%22id%22:%22facebook%22%2C%22value%22:false}%2C{%22id%22:%22drittsysteme%22%2C%22value%22:false}]};'
       }, {
@@ -476,7 +467,7 @@
          setcookie: 'pcbwaycookies_analytics=1; , pcbwaycookies_functional=0; , pcbwaycookies=true;',
          reload: true
       }, {
-         seite: 'destatis.de,bmel.de',
+         seite: 'destatis.de,bmel.de,zensus2022.de',
          setcookie: 'gsbbanner=closed; , cookieConsent=NO;'
       }, {
          seite: 'vdk.de',
@@ -530,14 +521,11 @@
          seite: 'bdc.de',
          setcookie: 'analyse-disabled=true;'
       }, { // trustarc.com
-         seite: 'oracle.com,trustarc.com,samsung.com,flickr.com,hostelworld.com,juniper.net,css-tricks.com,concursolutions.com,ibmcloud.com',
+         seite: 'oracle.com,trustarc.com,samsung.com,flickr.com,hostelworld.com,juniper.net,css-tricks.com,concursolutions.com,ibmcloud.com,mi.com',
          setcookie: 'notice_gdpr_prefs=0:; , notice_preferences=0:; , cmapi_cookie_privacy=permit 1 required;'
       }, { // trustarc.com - ENDE
          seite: 'helmholtz.de',
          setcookie: 'Helmholtz-Cookie=false;'
-      }, {
-         seite: 'bleibwarm.de',
-         setcookie: 'real_cookie_banner-blog:1=1701948203%3Aecb4be6f-3647-4019-9bb5-f7bd3437f9ad%3Af49f47778ae677169847751cc8899286%3A%7B%2229%22%3A%5B611%5D%7D;'
       }, {
          seite: 'fdm-druckservice.de',
          setcookie: 'cookieControl=true; , cookieControlPrefs=[];'
@@ -675,7 +663,7 @@
          seite: 'geektyrant.com',
          setcookie: 'ez-consent-tcf=CP7xPlgP7xPlgErAEEENArEgAAAAAEPgACiQAABBqALMNCogD7IkJCLQMIoEAKgrCAigQAAAAkDRAQAmDAp2BgEusJEAIAUAAwQAgABRkACAAASABCIAJACgQAAQCBQAAgAACAQAMDAAGAC0EAgABAdAhTAggUCwASMyIhTAhCgSCAlsoEEgCBBXCEIs8CCAREwUAAAJABWAAICwWAxJICViQQJcQbQAAEACAQQgVCKTowBDAmbLVTiibRlaQFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAA.YAAAAAAAAAAA;'
       }, {
-         seite: 'bmwk.de,bmwk-energiewende.de',
+         seite: 'bmwk.de,bmwk-energiewende.de,german-energy-solutions.de,personalausweisportal.de',
          setcookie: 'cookiebanner=closed;'
       }, {
          seite: 'dvgw.de',
@@ -709,9 +697,6 @@
          seite: 'drimsim.com',
          setstoragename: 'DS_POLICY',
          setstoragecontent: '{"user":false,"anon":false}'
-      }, {
-         seite: 'gesundheit-nordhessen.de',
-         setcookie: 'cookieconsent_status=!tarteaucitron=true!website=true!youtube=false!openstreetmap=true!matomo=false;'
       }, {
          seite: 'tvgids.nl',
          setcookie: '_osb_consent=CQDzioAQDzioAFjAWBENBDFgAAAAAAAAABpYAAAAAAAA.YAAAAAAAAAAA;'
@@ -751,9 +736,6 @@
          setcookie: 'OPT_OUT=-96405886582557098138335614482657689069;',
          reload: true
       }, {
-         seite: 'shopdirect-online.de',
-         setcookie: 'cookie-preference=1;'
-      }, {
          seite: 'netcup.com',
          setcookie: 'js-cookie-opt-in__consent=needed,preference;'
       }, {
@@ -762,9 +744,6 @@
       }, {
          seite: 'blocksmc.com',
          setcookie: 'allowCookies=1;'
-      }, {
-         seite: 'kunsthaus-artes.de',
-         setcookie: 'cookie-preference=1;'
       }, {
          seite: 'faindx.com',
          setstoragename: 'RubyPrivacyAllowed',
@@ -807,9 +786,6 @@
          setcookie: 'cms_cookie=%7B%22pref%22%3A1%2C%22stat%22%3A0%2C%22market%22%3A0%2C%22prefo%22%3A1%2C%22stato%22%3A0%2C%22marketo%22%3A0%2C%22req%22%3A1%2C%22id%22%3A%221666728113662cefd68c9c03.71955225%22%2C%22tset%22%3A1714221014%7D;',
          reload: true
       }, {
-         seite: 'mellerud.de',
-         setcookie: 'cookie-preference=1;'
-      }, {
          seite: 'braufreude.de',
          setcookie: 'allowCookie=1;'
       }, {
@@ -829,9 +805,6 @@
       }, {
          seite: 'longi.com',
          setcookie: 'CookieConsent=false;'
-      }, {
-         seite: 'vampirevape.de',
-         setcookie: 'cookie-preference=1;'
       }, {
          seite: 'chargecloud.de',
          setstoragename: 'stromfahrer_privacy_policy_read,stromfahrer_consent_required,stromfahrer_consent_google,stromfahrer_consent_extended_sentry',
@@ -885,9 +858,6 @@
          seite: 'sex.com',
          setcookie: 'privacy-preferences=%7B%22essential%22%3Atrue%2C%22analytics%22%3Afalse%7D;'
       }, {
-         seite: 'schwarzwaldpalast.de',
-         setcookie: 'cookie-preference=1; , wishlist-enabled=1; , youtube-video=1;'
-      }, {
          seite: 'tuinmaximaal.de',
          setcookie: 'pr-cookie-consent=[]; , pr-cookie-consent-id=3767448; , user_allowed_save_cookie=%7B%7D;'
       }, {
@@ -938,9 +908,6 @@
          seite: 'tiny-house-helden.de',
          setcookie: 'allowTracking=declined;'
       }, {
-         seite: 'offset-nutrition.com',
-         setcookie: 'cookieconsent_preferences_disabled=marketing,analytics; , cookieconsent_status=accept_selected;'
-      }, {
          seite: 'aikosolar.com',
          setcookie: 'aiko-show-cookie-section=0;'
       }, {
@@ -976,9 +943,6 @@
       }, {
          seite: 'setupad.com',
          setcookie: 'wpcc=dismiss;'
-      }, {
-         seite: 'bund-hamburg.de',
-         setcookie: 'tarteaucitron=!matomo=false!youtube=false;'
       }, {
          seite: 'shell.de',
          setstoragename: '_evidon_proxy',
@@ -1031,12 +995,6 @@
       }, {
          seite: 'maxeon.com',
          setcookie: 'cookiePolicy=accepted;'
-      }, {
-         seite: 'dasgehirn.info,mademyday.com,lumedis.de',
-         setcookie: 'cookieconsent_dismissed=yes;'
-      }, {
-         seite: 'elektroland24.de',
-         setcookie: 'cookie-preference=1;'
       }, {
          seite: 'xn--fahrradprfung-4ob.de,fahrradprüfung.de',
          setcookie: 'ckcs=deny;'
@@ -1173,14 +1131,8 @@
          seite: 'pv-magazine.com',
          setcookie: 'euCookie=set;'
       }, {
-         seite: 'kuechenprofi-markenshop.de',
-         setcookie: 'cookie-preference=1;'
-      }, {
          seite: 'oklo.com',
          setcookie: 'cookiemonster-gdpr=' + cookiezeit + ';'
-      }, {
-         seite: 'kuechenprofi-mdarkenshop.de',
-         setcookie: 'cookie-preference=1;'
       }, {
          seite: 'perfect-privacy.com',
          setcookie: 'cookieuse=set;',
@@ -1188,9 +1140,6 @@
       }, {
          seite: 'ibisworld.com',
          setcookie: 'cookieyes-consent=consentid:QUx1QUR2UlViUkEyeFBZaTNaZ2QxS0NKTmlGUlk5cVY,consent:yes,action:yes,necessary:yes,functional:no,analytics:no,performance:no,advertisement:no,other:no;'
-      }, {
-         seite: 'sephora.de',
-         setcookie: 'TC_PRIVACY=1%40005%7C17%7C3650%40%401%401726942787947%2C1726942787947%2C1742494787947%40AiQ%3D;'
       }, {
          seite: 'bike-components.de',
          setcookie: 'privacy-202408230938=0;',
@@ -1218,9 +1167,6 @@
          seite: 'klangheimat.de',
          setcookie: 'accept_cookies2=true;',
          reload: true
-      }, {
-         seite: 'bellvita.de',
-         setcookie: 'cookie-preference=1;'
       }, {
          seite: 'tennet.eu',
          setcookie: 'tennet-cookie-consent=false;'
@@ -1295,9 +1241,6 @@
          seite: 'peter-park.de',
          setcookie: 'cookiehub=eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUiOnRydWUsImltcGxpY3QiOmZhbHNlLCJyZWdpb24iOiJHMCIsInRva2VuIjoiRmdKMFUzMFg5Rk8yME1kSnRVa1YwM25UTE4xdzE1Wnl0VUZlMklpcTVCTnhsQVpVRDBNNElENUdVTEhGRFk5YiIsInRpbWVzdGFtcCI6IjIwMjQtMTAtMDhUMTk6NDk6MDguNjQ0WiIsImNhdGVnb3JpZXMiOlt7ImNpZCI6MSwiaWQiOiJuZWNlc3NhcnkiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6dHJ1ZSwidHJhY2tpbmciOmZhbHNlLCJkZWZhdWx0Ijp0cnVlLCJmaXJlZCI6dHJ1ZX0seyJjaWQiOjIsImlkIjoicHJlZmVyZW5jZXMiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInRyYWNraW5nIjpmYWxzZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6MywiaWQiOiJhbmFseXRpY3MiLCJ2YWx1ZSI6ZmFsc2UsInByZWNvbnNlbnQiOmZhbHNlLCJ0cmFja2luZyI6dHJ1ZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6NCwiaWQiOiJtYXJrZXRpbmciLCJ2YWx1ZSI6ZmFsc2UsInByZWNvbnNlbnQiOmZhbHNlLCJ0cmFja2luZyI6dHJ1ZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfV19;'
       }, {
-         seite: 'topglas.de',
-         setcookie: 'cookieconsent_preferences_disabled=,marketing,analytics; , cookieconsent_status=accept_selected;'
-      }, {
          seite: 'basengreen.com',
          setcookie: 'blocksy_cookies_consent_accepted=no;'
       }, {
@@ -1329,9 +1272,6 @@
       }, {
          seite: 'meindach.de',
          setcookie: 'cookie_consent_user_accepted=true; , cookie_consent_level=%7B%22strictly-necessary%22%3Atrue%2C%22functionality%22%3Afalse%2C%22tracking%22%3Afalse%2C%22targeting%22%3Afalse%7D;'
-      }, {
-         seite: 'livarea.de',
-         setcookie: 'cookie-preference=1; , dvsn-persistent-cart=1; , moorl-location-map=1; , wishlist-enabled=1;'
       }, {
          seite: 'altholzverband.de',
          setcookie: 'eucookielaw=' + cookiezeit + ';'
@@ -1400,17 +1340,103 @@
          seite: 'inmobi.com',
          setcookie: 'cookie-pref=rejected;'
       }, {
-         seite: 'energypedia.info',
-         setcookie: 'energypediacookiewarning_dismissed=true;'
-      }, {
          seite: 'froeling.com',
          setcookie: 'licc_required=true;'
       }, {
-         seite: 'fairplane.de',
-         setcookie: 'viewed_cookie_policy=no; , cookielawinfo-checkbox-analytics=no; , cookielawinfo-checkbox-advertisement=no;'
-      }, {
          seite: 'lenovo.com',
          setcookie: '_evidon_suppress_notification_cookie={"date":"' + cookiedatum + '"};'
+      }, {
+         seite: 'mifcom.de',
+         setcookie: 'analytics_cookie=0; , cookie_accepted=1; , cookie_closed=1; , marketing_cookie=0; , user_allowed_save_cookie=%7B%221%22%3A1%7D;',
+         reload: true
+      }, {
+         seite: 'weltladen.de',
+         setcookie: 'cookietypes=required;'
+      }, {
+         seite: 'trybawaryjny.pl',
+         setcookie: 'cookie_notice_accepted=false;'
+      }, {
+         seite: 'tomtom.com',
+         setcookie: 'tt_settings={%22url%22:%22https://www.tomtom.com/%22%2C%22advertising%22:false%2C%22social%22:false%2C%22analytical%22:false};'
+      }, {
+         seite: 'random.org',
+         setcookie: 'RDOPRIVACY=%5Btrue%2Ctrue%2Cfalse%5D;',
+         nowww: true
+      }, {
+         seite: 'vfa.de',
+         setcookie: 'vfa-consent=%7B%22ga%22%3A0%2C%22soundcloud%22%3A0%2C%22youtube%22%3A0%2C%22livestream%22%3A0%2C%2223degree%22%3A0%2C%22googlemaps%22%3A0%2C%22twitter%22%3A0%2C%22tiktok%22%3A0%2C%22spotify%22%3A0%2C%22podcaster%22%3A0%2C%22cookielogin%22%3A1%2C%22session%22%3A1%2C%22klaro%22%3A1%7D;'
+      }, {
+         seite: 'iurado.de',
+         setcookie: 'cookieControlPrefs=["essential","preferences"];'
+      }, {
+         seite: 'canon.de',
+         setcookie: 'CONSENTMGR=consent:false%7Cts:1732572153611; , user_accepted=1; , _evidon_suppress_notification_cookie={"date":"' + cookiedatum + '"};',
+         nowww: true
+      }, {
+         seite: 'extracomputer.de',
+         setcookie: 'extra-cookie={"all":false,"necessary":true,"preferences":false,"statistics":false,"marketing":false};'
+      }, {
+         seite: 'kabelscheune.de',
+         setcookie: 'cookie_config=["eShop"];'
+      }, {
+         seite: 'quooker.de',
+         setcookie: 'cookie-consent-io=necessary;'
+      }, {
+         seite: 'computeruniverse.net',
+         setcookie: 'consentOpts={%22b%22:false%2C%22c%22:false%2C%22n%22:true};'
+      }, {
+         seite: 'spektrum.de',
+         setcookie: 'eupubconsent-v2=CQIsg5gQIsg5gAcABBDEBRFsAP_gAAAAAAYgKoNX_G__bWlr8X73aftkeY1P9_h77sQxBhfJE-4FzLvW_JwXx2ExNA36tqIKmRIAu3TBIQNlGJDURVCgaogVryDMaEyUoTNKJ6BkiFMRM2dYCFxvm4tj-QCY5vqts1dxmB-AKALAAEAggAAACAAAgCAAAACAAAAACEAAAAAAAAAAAIBAAgJgMAIAAAEAARgAAQAAAAAAAAAAAAAAoAfff_9Pn_-uB_-_3_vf_AAAAMEgBgLzAhCBNUIABAgYOgBALzAmqSgBgImAXmBNUpAFARMAvMCEIEOQJqlAAIEDAAAA.f_wAAAAAAAAA; , OptanonConsent=isGpcEnabled=0&datestamp=Tue+Nov+26+2024+20%3A41%3A10+GMT%2B0100+(Mitteleurop%C3%A4ische+Normalzeit)&version=202411.1.0&browserGpcFlag=0&isIABGlobal=false&consentId=383f13ff-391d-4fed-a353-39127f52e612&interactionCount=3&isAnonUser=1&landingPath=NotLandingPage&groups=C0002%3A1%2CC0005%3A1%2CC0004%3A1%2CC0001%3A1%2CC0003%3A1%2Cgad%3A1%2CC0009%3A1%2CC0008%3A1%2CV2STACK42%3A1%2CC0010%3A1&hosts=H1016%3A1%2CH1894%3A1%2CH436%3A1%2CH1461%3A1%2CH449%3A1%2CH128%3A1%2CH903%3A1%2CH1588%3A1%2CH908%3A1%2CH1908%3A1%2CH876%3A1%2CH140%3A1%2CH943%3A1%2CH197%3A1%2CH1954%3A1%2CH878%3A1%2CH1831%3A1%2CH504%3A1%2CH1814%3A1%2CH879%3A1%2CH1786%3A1%2CH253%3A1%2CH12%3A1%2CH390%3A1%2CH881%3A1%2CH14%3A1%2CH326%3A1%2CH1445%3A1%2CH882%3A1%2CH391%3A1%2CH327%3A1%2CH1870%3A1%2CH23%3A1%2CH201%3A1%2CH32%3A1%2CH950%3A1%2CH429%3A1%2CH1373%3A1%2CH37%3A1%2CH202%3A1%2CH631%3A1%2CH430%3A1%2CH42%3A1%2CH423%3A1%2CH1788%3A1%2CH52%3A1%2CH1832%3A1%2CH1744%3A1%2CH1871%3A1%2CH886%3A1%2CH53%3A1%2CH1547%3A1%2CH55%3A1%2CH911%3A1%2CH205%3A1%2CH1955%3A1%2CH1459%3A1%2CH61%3A1%2CH887%3A1%2CH434%3A1%2CH888%3A1%2CH1589%3A1%2CH207%3A1%2CH333%3A1%2CH1584%3A1%2CH1833%3A1%2CH209%3A1%2CH1940%3A1%2CH957%3A1%2CH889%3A1%2CH839%3A1%2CH613%3A1%2CH562%3A1%2CH82%3A1%2CH335%3A1%2CH1895%3A1%2CH214%3A1%2CH86%3A1%2CH88%3A1%2CH1018%3A1%2CH216%3A1%2CH1830%3A1%2CH1483%3A1%2CH257%3A1%2CH891%3A1%2CH217%3A1%2CH92%3A1%2CH565%3A1%2CH218%3A1%2CH1405%3A1%2CH220%3A1%2CH962%3A1%2CH339%3A1%2CH441%3A1%2CH1697%3A1%2CH1896%3A1%2CH1872%3A1%2CH893%3A1%2CH1873%3A1%2CH340%3A1%2CH760%3A1%2CH677%3A1%2CH765%3A1%2CH571%3A1%2CH344%3A1%2CH113%3A1%2CH117%3A1%2CH843%3A1%2CH445%3A1%2CH448%3A1%2CH1062%3A1%2CH121%3A1%2CH1834%3A1%2CH125%3A1%2CH346%3A1%2CH620%3A1%2CH450%3A1%2CH1064%3A1%2CH230%3A1%2CH247%3A1%2CH231%3A1%2CH1586%3A1%2CH1953%3A1%2CH901%3A1%2CH1767%3A1%2CH1053%3A1%2CH780%3A1%2CH234%3A1%2CH1874%3A1%2CH148%3A1%2CH1775%3A1%2CH926%3A1%2CH1793%3A1%2CH1462%3A1%2CH1587%3A1%2CH1022%3A1%2CH350%3A1%2CH1875%3A1%2CH984%3A1%2CH787%3A1%2CH1757%3A1%2CH250%3A1%2CH586%3A1%2CH170%3A1%2CH171%3A1%2CH1084%3A1%2CH1006%3A1%2CH909%3A1%2CH461%3A1%2CH178%3A1%2CH883%3A1%2CH940%3A1%2CH906%3A1%2CH837%3A1%2CH104%3A1%2CH153%3A1%2CH1536%3A1%2CH25%3A1%2CH200%3A1%2CH244%3A1%2CH701%3A1%2CH221%3A1%2CH897%3A1%2CH228%3A1%2CH139%3A1%2CH147%3A1%2CH249%3A1%2CH853%3A1&genVendors=V2%3A1%2CV4%3A1%2CV10%3A1%2CV6%3A0%2CV11%3A1%2CV14%3A1%2CV15%3A1%2CV5%3A1%2C&intType=3&geolocation=DE%3BHH&AwaitingReconsent=false;'
+      }, {
+         seite: 'sebson.de',
+         setcookie: 'plenty-shop-cookie={"necessary":{"consent":true,"session":true,"csrf":true},"tracking":{"googleAnalytics":false},"media":{"reCaptcha":true},"paypal":{"paypal-cookies":true},"convenience":{"languageDetection":true},"_id":"fa1a1cedc934f34806768139fd96a3325f8bca23"};'
+      }, {
+         seite: 'viagogo.de',
+         setcookie: 'CookieConsent=eyJoYXNTZWxlY3RlZFByZWZlcmVuY2VzIjp0cnVlLCJwcmVmZXJlbmNlcyI6eyJhZHZlcnRpc2luZyI6ZmFsc2UsImFuYWx5dGljcyI6ZmFsc2UsInByZWZlcmVuY2VzIjpmYWxzZX19;'
+      }, {
+         seite: 'statistik-nord.de',
+         setstoragename: 'cookie_banner',
+         setstoragecontent: 'hidden'
+      }, {
+         seite: 'agila.de',
+         setcookie: 'cookieconsent_dismissed=essential;'
+      }, {
+         seite: 'dws.com',
+         setcookie: 'CONSENTMGR=consent:false%7Cts:1732797155674%7Cc1:0%7Cc2:0%7Cc3:0%7Cc4:0%7Cc5:0%7Cc6:0%7Cc7:0%7Cc8:0%7Cc9:0%7Cc10:0%7Cc11:0%7Cc12:0%7Cc13:0%7Cc14:0%7Cc15:0;'
+      }, {
+         seite: 'svb.de',
+         setcookie: 'cookieconsent_status=deny;'
+      }, {
+         seite: 'bequiet.com',
+         setcookie: '_CookiePolicyHint=true;'
+      }, {
+         seite: 'hardwaredealz.com',
+         setcookie: 'hwdconsent=1;'
+      }, {
+         seite: 'mindfactory.de',
+         setcookie: 'cookies_accepted=false;',
+         reload: true
+      }, {
+         seite: 'piazzablu.com',
+         setcookie: 'cmplz_banner-status=dismissed; cmplz_functional=allow; , cmplz_marketing=deny; , cmplz_preferences=allow; , cmplz_statistics=deny;'
+      }, {
+         seite: 'habsburger.net',
+         setcookie: 'gdpr={%22consent_created%22:%22Thu%2C%2028%20Nov%202024%2014:53:07%20GMT%22%2C%22settings%22:{%22cookie_necessary_setting%22:true%2C%22cookie_analysis_setting%22:false}};'
+      }, {
+         seite: 'startnext.com',
+         setcookie: 'ty_cookie_consent={"data":{"preferences":false,"statistics":false,"necessary":true},"version":1};'
+      }, {
+         seite: 'inline-info.com',
+         setcookie: 'requiredCookies=1; , firstCall=1;'
+      }, {
+         seite: 'elektroland24.de',
+         setcookie: 'cookie-preference=1; , inactive-cookie-consent=marketing%2Cstatistik;'
+      }, {
+         seite: 'ademax-strom.de',
+         setcookie: 'cookie-preference=1;'
+      }, {
+         seite: 'mademyday.com',
+         setcookie: 'cookieconsent_dismissed=1;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
