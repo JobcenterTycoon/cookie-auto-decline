@@ -84,7 +84,7 @@
                               speichern.click();
                            } else if (speicherndeaktiviert === null) {
                               beenden();
-                              const auswahlfelder = document.querySelectorAll('.pm-main div[class="tcfv2-stack focusable"]');
+                              const auswahlfelder = document.querySelectorAll('.pm-main div[class^="tcfv2-stack focusable"]');
                               for (let i = 0; i < auswahlfelder.length; i++) {
                                  if (auswahlfelder[i].offsetHeight > 0 && getComputedStyle(auswahlfelder[i]).getPropertyValue('visibility') === 'visible') {
                                     let zustimmenbuttons = auswahlfelder[i].querySelector('.pur-buttons-container > button:first-child');
@@ -359,12 +359,14 @@
             const contentpassobfuscated3 = document.querySelector('div[class^="_"] > div > h2 + div + div button[class^="_"]');
             const contentpassregular = document.querySelector('div#cmp-consent > button#cmp-btn-accept');
             const contentpassregular2 = document.querySelector('body > [id$="box"] .cmptxt_btn_yes[role="button"]');
+            const contentpassshadowroot = document.querySelector('body > div:first-child[id$="wrapper"][class$="wrapper"]');
             if (contentpassobfuscated) {
                beenden();
                window.setTimeout(function () {
                   contentpassobfuscated.click();
                }, 201);
             } else if (contentpassobfuscated2) {
+               beenden();
                window.setTimeout(function () {
                   contentpassobfuscated2.click();
                }, 201);
@@ -383,6 +385,14 @@
                window.setTimeout(function () {
                   contentpassregular2.click();
                }, 201);
+            } else if (contentpassshadowroot) {
+               const buttonyes = contentpassshadowroot.shadowRoot.querySelector('[class^="cmpcontent"] a.cmptxt_btn_yes');
+               if (buttonyes) {
+                  beenden();
+                  window.setTimeout(function () {
+                     buttonyes.click();
+                  }, 201);
+               }
             }
          }
 
@@ -2091,16 +2101,40 @@
             }
          }
 
+         // wordpress
+         const wordpress = document.querySelector('#cmp-app-container iframe');
+         if (wordpress && document.cookie.includes('euconsent-v2') === false) {
+            const einstellungen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button is-secondary"]');
+            const ablehnen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button white-space-normal is-secondary"]');
+            if (ablehnen) {
+               beenden();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            } else if (einstellungen && bereitsgeklickt === false) {
+               bereitsgeklickt = true;
+               window.setTimeout(function () {
+                  einstellungen.click();
+               }, 202);
+            }
+         }
+
 
          // Advanced
          if (advancedcounter >= 5 && advancedrun === true && window.self === window.top) {
-            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc-"], [id*="cc-"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
+            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
 
             for (let i = 0; i < advancedcontainer.length; i++) {
                const a = advancedcontainer[i];
                const b = window.getComputedStyle(a).getPropertyValue('position');
-               const bp = window.getComputedStyle(a.parentElement).getPropertyValue('position');
-               const bc = window.getComputedStyle(a.children[0]).getPropertyValue('position');
+               let bp = a.parentElement;
+               let bc = a.children[0];
+               if (bp) {
+                  bp = window.getComputedStyle(a.parentElement).getPropertyValue('position');
+               }
+               if (bc) {
+                  bc = window.getComputedStyle(a.children[0]).getPropertyValue('position');
+               }
                if (sichtbarkeitsprüfung(a) === true && (b === 'fixed' || b === 'sticky' || bp === 'fixed' || bp === 'sticky' || bc === 'fixed' || bc === 'sticky' || window.getComputedStyle(document.querySelector('body')).getPropertyValue('overflow') === 'hidden') && a.childElementCount >= 1 && a.innerText.length > 10) {
                   beenden();
                   const text = a.innerText.toLowerCase();
@@ -2127,9 +2161,8 @@
                      text.includes('wir setzen cookies ein') ||
                      text.includes('wir verwenden cookies') ||
                      text.includes('wir verwenden auf dieser website cookies') ||
-                     text.includes('wir nutzen cookies auf unserer website') ||
                      text.includes('wir nutzen essentielle cookies') ||
-                     text.includes('wir nutzen cookies, um') ||
+                     text.includes('wir nutzen cookie') ||
                      text.includes('wir benutzen cookies') ||
                      text.includes('auf dieser website nutzen wir cookies') ||
                      text.includes('verwendet cookies, um') ||
@@ -2176,10 +2209,11 @@
                      text.includes('manage cookies') ||
                      text.includes('accept all cookies') ||
                      text.includes('we serve cookies on this site') ||
+                     text.includes('Cookie instellingen') ||
                      text.includes('stosujemy pliki cookies') ||
                      text.includes('ta strona korzysta z ciasteczek')) {
                      // Buttons suchen und klicken.
-                     const buttons = a.querySelectorAll('button, a:not([href*="/"]), a[class*="button"], [role="button"], input[type="button"], input[type="submit"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"]):is(span, div):not(:has(button))');
+                     const buttons = a.querySelectorAll('button, a:not([href*="/"]), a[href*="optOut"], a[href*="optout"], a[class*="button"], [role="button"], input[type="button"], input[type="submit"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"]):is(span, div):not(:has(button))');
                      if (buttons.length > 0) {
                         let finalerbutton;
                         let gewichtung = 3;
@@ -2195,7 +2229,7 @@
                               if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('ohne ') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn === 'no') && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  break;
-                              } else if ((btn.includes('einstellungen übernehmen') || btn.includes('speichern') || btn.includes('auswahl ') || btn.includes('ausgewählte')) && btn.length < 45) {
+                              } else if ((btn.includes('einstellungen übernehmen') || btn.includes('speichern') || btn.includes('auswahl ') || btn.includes('ausgewählte') || btn.includes('keuze opslaan')) && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 1;
                               } else if (attributchecker(a) && gewichtung > 1) {
@@ -2209,6 +2243,7 @@
                         }
                         if (finalerbutton) {
                            window.setTimeout(function () {
+                              console.log('[Cookie auto decline] Detected: Unbekannter Cookie Banner.');
                               finalerbutton.click();
                            }, 202);
                         }
