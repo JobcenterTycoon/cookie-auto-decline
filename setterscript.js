@@ -5,7 +5,7 @@
       // Cookie Banner die ersten 5 Sekunden verstecken.
       window.addEventListener('DOMContentLoaded', function () {
          let css = document.createElement('style');
-         css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container{filter:opacity(0)!important;pointer-events:none!important;}';
+         css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"]{content-visibility:hidden!important;pointer-events:none!important;}';
          css.setAttribute('id', 'q3xyktv21es96by0ybwvb1e9a37y5pu');
          if (document.head != null) {
             document.head.appendChild(css);
@@ -22,13 +22,13 @@
 
       // Force the session storage
       function forcesessionstorage() {
-         if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') != 'djx0v0odce35xrb2pt5dzbgaj1mud5c') {
+         if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c') {
             sessionStorage.setItem('mpowlesu908hxfyw37ghg5ikx90jdzt', 'djx0v0odce35xrb2pt5dzbgaj1mud5c');
          }
       }
       let nc;
       if (window.location.protocol === 'http:') {
-         nc = "domain=" + window.location.host + "; max-age=86400; SameSite=Lax; path=/";
+         nc = "domain=" + window.location.host + ";max-age=86400; SameSite=Lax; path=/";
       } else {
          nc = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
       }
@@ -49,7 +49,7 @@
          setcookie: 'consentUUID=ef87121f-86d4-4ca6-8494-2d267bd3b72f_26_27_29_30;'
       }, {
          seite: 't3n.de',
-         setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38;'
+         setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40;'
       }, {
          seite: 'welt.de',
          setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36;'
@@ -61,7 +61,7 @@
          setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37;'
       }, {
          seite: 'bild.de',
-         setcookie: 'consentUUID=e4fe2f39-dea0-4d85-b59e-943f634018b9_32_33_36_38_39;'
+         setcookie: 'consentUUID=1de7ad29-583f-466e-b237-4d90aedaf00d_40;'
       }, {
          seite: 'computerbild.de',
          setcookie: 'consentUUID=57ec6531-37d9-4fab-9134-e016be36727f_25_29_32_34_38;'
@@ -70,7 +70,7 @@
          setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38;'
       }, {
          seite: 'pcwelt.de',
-         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38;'
+         setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40;'
       }, {
          seite: 'focus.de',
          setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39;'
@@ -110,7 +110,7 @@
          setcookie: 'consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32_34_36_39;'
       }, {
          seite: 'chip.de',
-         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39;'
+         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40;'
       }, {
          seite: 'rtl.de',
          setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39;'
@@ -119,13 +119,13 @@
          setcookie: 'consentUUID=8e2d1754-cf0f-410d-b5e3-22ea9abf7ce4_34_35;'
       }, {
          seite: 'cinestar.de',
-         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39;'
+         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40;'
       }, {
          seite: 'forschung-und-wissen.de',
          setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34;'
       }, {
          seite: 'ark-unity.com',
-         setcookie: 'consentUUID=14d13bbd-730c-4354-acc6-ecb31ca5c8cb_34_36;'
+         setcookie: 'consentUUID=14d13bbd-730c-4354-acc6-ecb31ca5c8cb_34_36_40;'
       }, {
          seite: 'telepolis.de',
          setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39;'
@@ -139,7 +139,7 @@
          setcookie: 'cookieBannerServices=cookieBannerFunctional|cookieBannerKomfort;'
       }, {
          seite: 'aok.de',
-         setcookie: 'aok_cookie_settings=%7B%22functional%22%3A%7B%22key%22%3A%22functional%22%2C%22name%22%3A%22Funktionale%20Cookies%22%2C%22required%22%3Atrue%2C%22approved%22%3Atrue%7D%2C%22comfort%22%3A%7B%22key%22%3A%22comfort%22%2C%22name%22%3A%22Komfort-Cookies%22%2C%22required%22%3Afalse%2C%22approved%22%3Atrue%7D%2C%22tracking%22%3A%7B%22key%22%3A%22tracking%22%2C%22name%22%3A%22Marketing-Cookies%22%2C%22required%22%3Afalse%2C%22approved%22%3Afalse%7D%7D; , ccm_external_content=1697200469; , ccm_external_maps=1697200469; , ccm_external_videos=1697200469; , cookie_consent_manager=1697200469;'
+         setcookie: 'aok-gp-cookie-settings={"comfort":{"key":"comfort","required":false,"approved":true},"functional":{"key":"functional","required":true,"approved":true},"tracking":{"key":"tracking","required":false,"approved":false}};'
       }, {
          seite: 'viactiv.de',
          setcookie: 'dp_cookie_settings=1; , function-cookies=1;'
@@ -214,11 +214,6 @@
          seite: 'fingerprint.com',
          setstoragename: 'cookieChoice',
          setstoragecontent: '["required"]'
-      }, {
-         seite: 'restaurant-kitty-leo.de',
-         setstoragename: 'cookies-selected',
-         setstoragecontent: 'true',
-         setcookie: 'ckies_cloudflare=true; , ckies_google_analytics=deny; , ckies_google_maps=deny;'
       }, {
          seite: 'eqmac.app',
          setstoragename: 'EQM_PRIVACY_CONSENT_CHOSEN',
@@ -392,7 +387,7 @@
          seite: 'huss-licht-ton.de',
          setcookie: 'huss_cookie_version=1; , huss_cookie=%7B%22acceptcookies%22%3A%5B%5D%2C%22user_hash%22%3A%22196df052e3382111587910b112cd9e504cc586da8fec77a0289248447766b588%22%7D;'
       }, {
-         seite: 'bosch-homecomfort.com,bosch-presse.de',
+         seite: 'bosch-homecomfort.com,bosch-presse.de,bosch-smarthome.com',
          setcookie: 'do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:" + cookiezeit + "%2C%22version%22:4};'
       }, {
          seite: 'alpenverein-muenchen-oberland.de',
@@ -933,9 +928,6 @@
          seite: 'bauzaunwelt.de',
          setcookie: 'cookiesplus=%7B%22C_P_DISPLAY_MODAL%22%3Afalse%2C%22cookiesplus-finality-18%22%3A%22on%22%2C%22cookiesplus-finality-19%22%3A%22off%22%2C%22cookiesplus-finality-20%22%3A%22off%22%2C%22consent_date%22%3A%222024-07-21%2015%3A29%22%7D;'
       }, {
-         seite: 'setupad.com',
-         setcookie: 'wpcc=dismiss;'
-      }, {
          seite: 'shell.de',
          setstoragename: '_evidon_proxy',
          setstoragecontent: '{"date":"2024-08-08T13:51:38.744Z","statistics":false,"preferences":false,"marketing":false,"functional":true}'
@@ -1185,9 +1177,6 @@
          seite: 'redusystems.com',
          setcookie: 'gtmCookieAccepted=0; , gtmCookiePopup=1;'
       }, {
-         seite: 'suurstoffi.ch',
-         setcookie: 'cookiehub=eyJhbnN3ZXJlZCI6dHJ1ZSwicmV2aXNpb24iOjEsImRudCI6ZmFsc2UsImFsbG93U2FsZSI6dHJ1ZSwiaW1wbGljdCI6ZmFsc2UsInJlZ2lvbiI6IiIsInRva2VuIjoiYUFQTktDcWUyTUV1QWdvMXZUdFFyZkpPeGtsRER4YnZYc1h0bjNYc3hGZEpPSjA3WXlmMThwd0dkZWU0WDZyYSIsInRpbWVzdGFtcCI6IjIwMjQtMTAtMDNUMTI6NDM6MjIuNzIxWiIsImFsbEFsbG93ZWQiOmZhbHNlLCJjYXRlZ29yaWVzIjpbMSwyXSwidmVuZG9ycyI6W10sInNlcnZpY2VzIjpbXX0=;'
-      }, {
          seite: 'reolink.com',
          setcookie: 'gdprNewLocalName=%7B%22features%22%3Atrue%2C%22ads%22%3Afalse%2C%22googleAdsTracking%22%3Afalse%7D;'
       }, {
@@ -1223,9 +1212,6 @@
       }, {
          seite: 'institut-fuer-menschenrechte.de',
          setcookie: 'cookie_consent=%7B%22consent%22:true,%22options%22:%5B%5D%7D;'
-      }, {
-         seite: 'peter-park.de',
-         setcookie: 'cookiehub=eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUiOnRydWUsImltcGxpY3QiOmZhbHNlLCJyZWdpb24iOiJHMCIsInRva2VuIjoiRmdKMFUzMFg5Rk8yME1kSnRVa1YwM25UTE4xdzE1Wnl0VUZlMklpcTVCTnhsQVpVRDBNNElENUdVTEhGRFk5YiIsInRpbWVzdGFtcCI6IjIwMjQtMTAtMDhUMTk6NDk6MDguNjQ0WiIsImNhdGVnb3JpZXMiOlt7ImNpZCI6MSwiaWQiOiJuZWNlc3NhcnkiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6dHJ1ZSwidHJhY2tpbmciOmZhbHNlLCJkZWZhdWx0Ijp0cnVlLCJmaXJlZCI6dHJ1ZX0seyJjaWQiOjIsImlkIjoicHJlZmVyZW5jZXMiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInRyYWNraW5nIjpmYWxzZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6MywiaWQiOiJhbmFseXRpY3MiLCJ2YWx1ZSI6ZmFsc2UsInByZWNvbnNlbnQiOmZhbHNlLCJ0cmFja2luZyI6dHJ1ZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6NCwiaWQiOiJtYXJrZXRpbmciLCJ2YWx1ZSI6ZmFsc2UsInByZWNvbnNlbnQiOmZhbHNlLCJ0cmFja2luZyI6dHJ1ZSwiZGVmYXVsdCI6dHJ1ZSwiZmlyZWQiOmZhbHNlfV19;'
       }, {
          seite: 'basengreen.com',
          setcookie: 'blocksy_cookies_consent_accepted=no;'
@@ -1344,7 +1330,8 @@
       }, {
          seite: 'random.org',
          setcookie: 'RDOPRIVACY=%5Btrue%2Ctrue%2Cfalse%5D;',
-         nowww: true
+         nowww: true,
+         reload: true
       }, {
          seite: 'vfa.de',
          setcookie: 'vfa-consent=%7B%22ga%22%3A0%2C%22soundcloud%22%3A0%2C%22youtube%22%3A0%2C%22livestream%22%3A0%2C%2223degree%22%3A0%2C%22googlemaps%22%3A0%2C%22twitter%22%3A0%2C%22tiktok%22%3A0%2C%22spotify%22%3A0%2C%22podcaster%22%3A0%2C%22cookielogin%22%3A1%2C%22session%22%3A1%2C%22klaro%22%3A1%7D;'
@@ -1500,6 +1487,35 @@
       }, {
          seite: 'magnet-shop.net',
          setcookie: 'hbcom-cookiepanel-dismiss=1;'
+      }, {
+         seite: 'builtbybit.com',
+         setcookie: 'bbb_notice_dismiss=-1;'
+      }, {
+         seite: 'polymart.org',
+         setcookie: 'wpcc=dismiss;'
+      }, {
+         seite: 'allekabel.de',
+         setstoragename: 'showlegal,uid',
+         setstoragecontent: '0 ; -1'
+      }, {
+         seite: 'bmw-public-charging.com',
+         setcookie: 'CN_ALLOW_FUNCTIONAL_COOKIES=false;'
+      }, {
+         seite: 'bahn.de',
+         setcookie: 'CONSENTMGR=c1:1%7Cc2:0%7Cc3:0%7Cc4:0%7Cc5:0%7Cc6:0%7Cc7:0%7Cc8:0%7Cc9:0%7Cc10:0%7Cc11:0%7Cc12:0%7Cc13:0%7Cc14:0%7Cc15:0%7Cts:1736696118593%7Cconsent:true%7Cid:01945b279026002bf9055210d94405050003600d00fb8;'
+      }, {
+         seite: 'secondsol.com',
+         setcookie: 'cookies_consent=1;'
+      }, {
+         seite: 'betterplace.org',
+         setcookie: 'betterplace-tracking-accepted=rejected;'
+      }, {
+         seite: 'fischer-bike.com',
+         setstoragename: 'mmFbPixel.1.optin',
+         setstoragecontent: '0'
+      }, {
+         seite: 'segway.com',
+         setcookie: 'allowed_save_cookie=%7B%221%22%3A1%2C%222%22%3A1%2C%223%22%3A1%2C%224%22%3A1%2C%225%22%3A1%2C%226%22%3A1%2C%227%22%3A1%2C%229%22%3A1%2C%2210%22%3A1%2C%2211%22%3A1%2C%2212%22%3A1%2C%2213%22%3A1%7D;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
