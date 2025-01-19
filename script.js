@@ -3864,8 +3864,6 @@
                            check.click();
                         }
                      }, 202);
-                  } else if (regeln[i].sonderfall === 'demailsites') {
-
                   } else if (regeln[i].sonderfall === 'truckscout24de') {
                      if (window.location.href === 'https://www.truckscout24.de/main/consent') {
                         if (document.querySelector('a[href="javascript:history.back()"]')) {
