@@ -1739,9 +1739,8 @@
          }
 
          // https://www.jtl-software.de/
-         const jtlsoftwarede = document.querySelector('#consent-manager.active');
-         const jtlsoftwarede2 = document.querySelector('#consent.active');
-         if ((jtlsoftwarede || jtlsoftwarede2) && window.localStorage.getItem('consent') === null) {
+         const jtlsoftwarede = document.querySelector('#consent-manager.active, #consent.active');
+         if (jtlsoftwarede && window.localStorage.getItem('consent') === null) {
             console.log('[Cookie auto decline] Detected: #consent-manager');
             const ablehnen = document.querySelector('#consent-manager.active button#consent-banner-btn-close');
             const ablehnen2 = document.querySelector('#consent.active button#consent--banner-btn-decline');
@@ -2314,7 +2313,7 @@
 
             function sichtbarkeitsprüfung(a) {
                const check = window.getComputedStyle(a);
-               if (check.getPropertyValue("display") !== "none" && check.getPropertyValue("visibility") === "visible" && check.getPropertyValue("opacity") > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && a.getBoundingClientRect().bottom <= document.body.offsetHeight + 10) {
+               if (check.getPropertyValue("display") !== "none" && check.getPropertyValue("visibility") === "visible" && check.getPropertyValue("content-visibility") === "visible" && check.getPropertyValue("opacity") > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && a.getBoundingClientRect().bottom <= document.body.offsetHeight + 10) {
                   return true;
                } else {
                   return false;
