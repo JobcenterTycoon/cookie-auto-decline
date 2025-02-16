@@ -31,7 +31,6 @@
       }, 8000);
 
       function beenden() {
-         advancedrun = false;
          window.clearInterval(findconsent);
          forcesessionstorage();
       }
@@ -47,6 +46,7 @@
             // cdn.privacy-mgmt.com
             if (window.location.href.includes('/index.html?') && window.location.href.includes('hasCsp=') && window.location.href.includes('message_id=') && window.location.href.includes('consent')) {
                console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
+               advancedrun = false;
                const ablehnen = document.querySelector('.message-container button.sp_choice_type_REJECT_ALL[title][aria-label]');
                const ablehnen2 = document.querySelector('.message-container button[title*="blehnen"][aria-label]:not([title*="instellungen"], [title*="onfigurieren"])');
                const speichern = document.querySelector('.message-container button.sp_choice_type_SAVE_AND_EXIT[title][aria-label]:not([disabled])');
@@ -146,6 +146,7 @@
             // privacymanager.io (iframe klicker)
             if (window.location.host === 'cmp-consent-tool.privacymanager.io') {
                console.log('[Cookie auto decline] Detected: privacymanager.io (iFrame)');
+               advancedrun = false;
                const einstellungen = document.querySelector('button#manageSettings');
                const speichern = document.querySelector('button#saveAndExit');
                if (speichern) {
@@ -239,6 +240,7 @@
             // baycloud.ie
             if (window.location.host === 'cdn.baycloud.com') {
                console.log('[Cookie auto decline] Detected: baycloud.ie (iFrame)');
+               advancedrun = false;
                const ablehnen = document.querySelector('#panelContainer button#panelDecline');
                if (ablehnen) {
                   window.setTimeout(function () {
@@ -268,6 +270,7 @@
          const cmpbox = document.querySelector('#cmpbox.cmpbox[aria-labelledby^="cmpbox"]');
          if (cmpbox) {
             console.log('[Cookie auto decline] Detected: #cmpbox (consensu.org, consentmanager.net)');
+            advancedrun = false;
             const ablehnen = cmpbox.querySelector('a.cmptxt_btn_no[role="button"]');
             const einstellungen = cmpbox.querySelector('a.cmptxt_btn_settings[role="button"]');
             const speichern = cmpbox.querySelector('a.cmptxt_btn_save[role="button"]');
@@ -314,6 +317,7 @@
          const cmpboxshadowroot = document.querySelector('#cmpwrapper.cmpwrapper');
          if (cmpboxshadowroot) {
             console.log('[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)');
+            advancedrun = false;
             const ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"]');
             const akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
             const einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
@@ -338,6 +342,7 @@
          const opencmp = document.querySelector('script#open-cmp-stub:is([src="https://cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"], [src="//cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"])');
          if (opencmp && document.cookie.includes('euconsent-v2') === false) {
             console.log('[Cookie auto decline] Detected: opencmp.net');
+            advancedrun = false;
             const cookiecontainer = document.getElementsByClassName('cmp-root-container');
             if (cookiecontainer.length > 0) {
                const akzeptieren = document.querySelector('.cmp-root-container').shadowRoot.querySelector('.cmp-button-accept-all');
@@ -354,6 +359,7 @@
          const contentpass = document.querySelector('script[src^="https://cp"][src$="/now.js"]');
          if (contentpass && document.cookie.includes('OptanonAlertBoxClosed') === false) {
             console.log('[Cookie auto decline] Detected: contentpass');
+            advancedrun = false;
             const contentpassobfuscated = document.querySelector('div[class^="_"] > button[class^="_"][type="button"]#_cp_cmp_cta_button');
             const contentpassobfuscated2 = document.querySelector('div[class^="_"] > a[class^="_"][rel="noopener noreferrer"][target="_self"]');
             const contentpassobfuscated3 = document.querySelector('div[class^="_"] > div > h2 + div + div button[class^="_"]');
@@ -400,6 +406,7 @@
          const cookielaw = document.querySelector('script[src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"][data-domain-script]');
          if (cookielaw && contentpass == null && document.cookie.includes('OptanonAlertBoxClosed') === false) {
             console.log('[Cookie auto decline] Detected: cookielaw.org');
+            advancedrun = false;
             const cookielawwithdecline = document.querySelector('#onetrust-button-group-parent button#onetrust-reject-all-handler');
             const cookielawwithdecline2 = document.querySelector('#onetrust-consent-sdk button.ot-pc-refuse-all-handler');
             const cookielawwithdecline3 = document.querySelector('#onetrust-consent-sdk button.ot-close-link');
@@ -408,17 +415,17 @@
                beenden();
                window.setTimeout(function () {
                   cookielawwithdecline.click();
-               }, 502);
+               }, 1502);
             } else if (cookielawwithdecline2) {
                beenden();
                window.setTimeout(function () {
                   cookielawwithdecline2.click();
-               }, 502);
+               }, 1502);
             } else if (cookielawwithdecline3) {
                beenden();
                window.setTimeout(function () {
                   cookielawwithdecline3.click();
-               }, 502);
+               }, 1502);
             } else if (cookielawsettings) {
                cookielawsettings.click();
                const auswahlbestätigen = document.querySelector('button.save-preference-btn-handler');
@@ -436,6 +443,7 @@
          const usercentricsscript = document.querySelector('script[src*="usercentrics.eu/"]#usercentrics-cmp');
          if (usercentrics && usercentricsscript && localStorage.getItem('uc_user_interaction') != true) {
             console.log('[Cookie auto decline] Detected: usercentrics');
+            advancedrun = false;
             const ablehnen = usercentrics.shadowRoot.querySelector('button[class^="sc-"][data-testid="uc-deny-all-button"][role="button"]');
             const ablehnen2 = usercentrics.shadowRoot.querySelector('button#deny');
             const einstellungenspeichern = usercentrics.shadowRoot.querySelector('button[class^="sc-"][data-testid="uc-save-button"][role="button"]');
@@ -479,6 +487,7 @@
          const usercentricsframe = document.querySelector('iframe#uc-cross-domain-bridge[src^="https://app.usercentrics.eu/browser-sdk/"]');
          if (usercentrics2 && usercentricsframe && localStorage.getItem('uc_user_interaction') != true) {
             console.log('[Cookie auto decline] Detected: usercentrics2');
+            advancedrun = false;
             const speichern = usercentrics2.querySelector('button.comspace-usercentrics--button');
             if (speichern) {
                beenden();
@@ -492,6 +501,7 @@
          const gatekeeperconsent = document.querySelector('script[src="https://privacy.gatekeeperconsent.com/tcf2_stub.js"]');
          if (gatekeeperconsent && document.cookie.includes('ezCMPCookieConsent') === false) {
             console.log('[Cookie auto decline] Detected: gatekeeperconsent.com');
+            advancedrun = false;
             const einstellungen = document.querySelector('button#ez-manage-settings');
             const speichern = document.querySelector('button#ez-save-settings');
             if (speichern) {
@@ -510,6 +520,7 @@
          const cookiebot = document.querySelector('div[id*="Cookiebot"], div#cookiebot');
          if (cookiebot && document.cookie.includes('%2Cutc:16') === false) {
             console.log('[Cookie auto decline] Detected: cookiebot.com');
+            advancedrun = false;
             const ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], button#CybotCookiebotDialogBodyButtonDecline');
             const speichern = cookiebot.querySelector('[id*="OptinAllowallSelection"]:is(button, a, span)');
             const einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
@@ -536,6 +547,7 @@
          const trustarc = document.querySelector('script[src^="https://consent.trustarc.com/asset/notice.js/v/v"]');
          if (trustarc && document.cookie.includes('notice_gdpr_prefs=') === false) {
             console.log('[Cookie auto decline] Detected: trustarc.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('#truste-consent-buttons button#truste-consent-required');
             const ablehnen2 = document.querySelector('#truste-consent-track #truste-consent-buttons > a#truste-consent-required');
             const einstellungen = document.querySelector('#truste-consent-buttons button#truste-show-consent');
@@ -561,6 +573,7 @@
          const realcookiebannerpro = document.querySelectorAll('body > div[id^="a"][class^="a"] > dialog.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > a:first-child + div + div[class*="-ext-"] > div:first-child > div[class*="-ext-"] > a[href="#"], body > div[id^="a"][class]> div.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > div[style^="background"] > div:only-child > div + div > div[style*="order"]');
          if (realcookiebannerpro.length > 0) {
             console.log('[Cookie auto decline] Detected: real-cookie-banner-pro');
+            advancedrun = false;
             for (let i = 0; i < realcookiebannerpro.length; i++) {
                if (realcookiebannerpro[i].innerText.includes('Weiter ohne Einwilligung') || realcookiebannerpro[i].innerText.includes('Continue without consent')) {
                   realcookiebannerpro[i].click();
@@ -576,6 +589,7 @@
          const waconcookiemanagement = document.getElementsByClassName('waconcookiemanagement');
          if (waconcookiemanagement.length > 0 && waconcookiemanagement[0].offsetHeight > 0) {
             console.log('[Cookie auto decline] Detected: waconcookiemanagement');
+            advancedrun = false;
             const ablehnen = document.querySelector('.waconcookiemanagement .cookie-refuse > a');
             if (ablehnen) {
                beenden();
@@ -589,6 +603,7 @@
          const onetrust = document.getElementById('onetrust-consent-sdk');
          if (onetrust && cookielaw === null) {
             console.log('[Cookie auto decline] Detected: onetrust.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-reject-all-handler');
             const ablehnen2 = document.querySelector('#cookie-disclosure button#cookie-disclosure-reject');
             const einstellungen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-pc-btn-handler');
@@ -626,6 +641,7 @@
          const complianzgdpr = document.querySelector('body > #cmplz-cookiebanner-container');
          if (complianzgdpr) {
             console.log('[Cookie auto decline] https://wordpress.org/plugins/complianz-gdpr');
+            advancedrun = false;
             const ablehnen = document.querySelector('body > #cmplz-cookiebanner-container .cmplz-buttons > button.cmplz-deny');
             if (ablehnen) {
                beenden();
@@ -639,6 +655,7 @@
          const borlabs = document.querySelector('#BorlabsCookieBox');
          if (borlabs && document.cookie.includes('essential%22%3A%5B%22borlabs-cookie') === false) {
             console.log('[Cookie auto decline] Detected: borlabs.io');
+            advancedrun = false;
             const ablehnen = borlabs.querySelector('button.brlbs-cmpnt-btn.brlbs-btn-accept-only-essential');
             const speichern = borlabs.querySelector('#CookieBoxSaveButton');
             const einstellungen = borlabs.querySelector('#CookieBoxPreferencesButton');
@@ -663,6 +680,7 @@
          const osano = document.querySelector('script[src^="https://cmp.osano.com/"]');
          if (osano) {
             console.log('[Cookie auto decline] Detected: osano.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('.osano-cm-window > div[id][role="dialog"] .osano-cm-buttons > button.osano-cm-denyAll');
             if (ablehnen) {
                beenden();
@@ -677,6 +695,7 @@
          const privacycenter2 = document.querySelector('#didomi-host #didomi-popup');
          if (privacycenter || privacycenter2) {
             console.log('[Cookie auto decline] Detected: privacy-center.org');
+            advancedrun = false;
             const ablehnen = document.querySelector('#didomi-host #didomi-popup .didomi-continue-without-agreeing[role="button"]');
             const ablehnen2 = document.querySelector('#didomi-host #didomi-notice #buttons > button#didomi-notice-disagree-button');
             const ablehnen3 = document.querySelector('#didomi-host .didomi-popup-notice-buttons button#didomi-notice-disagree-button');
@@ -737,6 +756,7 @@
          const quantcast2 = document.querySelector('#qc-cmp2-container.qc-cmp2-container');
          if ((quantcast || quantcast2) && document.cookie.includes('addtl_consent') === false) {
             console.log('[Cookie auto decline] Detected: quantcast.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
             const einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
             const speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
@@ -761,6 +781,7 @@
          const iubenda = document.querySelector('script[src*=".iubenda.com/"]');
          if (iubenda && document.cookie.includes('%7B%22timestamp%22%') === false) {
             console.log('[Cookie auto decline] Detected: iubenda.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-reject-btn');
             const akzeptieren = document.querySelector('#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-accept-btn');
             const akzeptieren2 = document.querySelector('#iubenda-cs-banner button.iubenda-cs-close-btn');
@@ -792,6 +813,7 @@
          const gdprlegalcookiemyshopify = document.querySelector('#cookie-banner_flag + #banner-wrapper[style="opacity: 1; display: flex; visibility: visible; top: 0px; left: 0px;"]');
          if (gdprlegalcookiemyshopify && document.cookie.includes('_bc_c_set') === false) {
             console.log('[Cookie auto decline] Detected: gdpr-legal-cookie.myshopify.com');
+            advancedrun = false;
             const ablehnen = gdprlegalcookiemyshopify.querySelector("#essential_accept");
             if (ablehnen) {
                beenden();
@@ -805,6 +827,7 @@
          const shopify = document.querySelector('section#shopify-pc__banner[aria-labelledby][style="display: block;"]');
          if (shopify && document.cookie.includes('%7B%22purposes%22%3A%7B%22p%22%3Atrue') === false) {
             console.log('[Cookie auto decline] Detected: shopify cookie banner');
+            advancedrun = false;
             const ablehnen = shopify.querySelector('.shopify-pc__banner__btns-granular #shopify-pc__banner__btn-decline');
             if (ablehnen) {
                beenden();
@@ -818,6 +841,7 @@
          const shopify2 = document.querySelector('div[id^="shopify-section-sections"] > cookie-banner');
          if (shopify2) {
             console.log('[Cookie auto decline] Detected: shopify cookie banner 2');
+            advancedrun = false;
             const ablehnen = shopify2.querySelector('button[name="decline"]');
             if (ablehnen && ablehnen.offsetHeight > 5) {
                beenden();
@@ -831,6 +855,7 @@
          const fastcmp = document.querySelector('script[src="https://static.fastcmp.com/fast-cmp-stub.js"]');
          if (fastcmp && document.cookie.includes('fastCMP-addtlConsent') === false) {
             console.log('[Cookie auto decline] Detected: fastcmp.com');
+            advancedrun = false;
             const check = document.querySelector('iframe#fast-cmp-iframe');
             if (check) {
                const ablehnen = check.contentWindow.document.querySelector('.fast-cmp-home-refuse > button.fast-cmp-button-secondary');
@@ -853,6 +878,7 @@
          const humanity = document.querySelector('#cookie-notice[class="cookie-revoke-hidden cn-position-bottom cn-effect-fade cookie-notice-visible"]');
          if (humanity && document.cookie.includes('cookie_notice_accepted') === false) {
             console.log('[Cookie auto decline] Detected: hu-manity.co');
+            advancedrun = false;
             const ablehnen = humanity.querySelector('#cn-notice-buttons > a#cn-refuse-cookie[data-cookie-set="refuse"]');
             const schließen = humanity.querySelector('.cookie-notice-container > #cn-close-notice[data-cookie-set="accept"]');
             if (ablehnen) {
@@ -872,6 +898,7 @@
          const cookielawinfobar = document.querySelector('#cookie-law-info-bar[style]');
          if (cookielawinfobar && document.cookie.includes('viewed_cookie_policy') === false) {
             console.log('[Cookie auto decline] Detected: cookie-law-info-bar');
+            advancedrun = false;
             const ablehnen = cookielawinfobar.querySelector('a#wt-cli-reject-btn');
             const speichern = document.querySelector('#cliSettingsPopup a#wt-cli-privacy-save-btn.wt-cli-privacy-accept-btn[role="button"]');
             if (ablehnen) {
@@ -892,6 +919,7 @@
          const cookiefirst2 = document.querySelector('script[src="//app.cookiefirst.com/loader/init.js"]');
          if ((cookiefirst || cookiefirst2) && document.cookie.includes('cookiefirst-consent') === false) {
             console.log('[Cookie auto decline] Detected: cookiefirst.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="reject"][type="button"]');
             const einstellungen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="adjust"][type="button"]');
             const speichern = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="save"][type="button"]');
@@ -914,8 +942,9 @@
 
          // cookieconsent:desc
          const cookieconsentdesc = document.querySelector('div[aria-describedby="cookieconsent:desc"][class*="cc-window"]');
-         if (cookieconsentdesc && document.cookie.includes('cookieconsent_status') === false) {
+         if (cookieconsentdesc && cookieconsentdesc.offsetWidth > 1 && document.cookie.includes('cookieconsent_status') === false) {
             console.log('[Cookie auto decline] Detected: cookieconsent:desc');
+            advancedrun = false;
             const ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], button.cc-deny');
             const speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save');
             const einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"]');
@@ -970,6 +999,7 @@
          const oveleon = document.querySelector('div[aria-describedby="cookiebar-desc"].contao-cookiebar, div[aria-describedby="cookiebar-desc"]#cookiebar');
          if (oveleon && (window.localStorage.getItem('ccb_contao_token_1') === null || (window.localStorage.getItem('ccb_contao_token_1') && window.localStorage.getItem('ccb_contao_token_1').includes('"saved":-1') === true))) {
             console.log('[Cookie auto decline] Detected: oveleon.de (cookiebar-desc)');
+            advancedrun = false;
             const ablehnen = oveleon.querySelector('button[data-deny-all].deny');
             const checkedcheckbox = oveleon.querySelectorAll('.cc-groups > .cc-group > input[type="checkbox"][data-toggle-cookies]:checked:not([disabled])');
             const speichern = oveleon.querySelector('button[data-save].save');
@@ -1007,6 +1037,7 @@
          const asoilcontentoverlay = document.querySelector('.as-oil-content-overlay[data-qa="oil-full"]');
          if (asoilcontentoverlay) {
             console.log('[Cookie auto decline] Detected: as-oil-content-overlay');
+            advancedrun = false;
             const ablehnen = document.querySelector('.as-oil-content-overlay button.as-js-only-essentials[data-qa="oil-only-essentials-button"]');
             const einstellungen = document.querySelector('.as-oil-content-overlay button.as-js-advanced-settings[data-qa="oil-AdvancedSettingsButton"]');
             const speichern = document.querySelector('.as-oil-content-overlay button.as-js-optin');
@@ -1032,6 +1063,7 @@
          const mndcookiemodal2 = document.querySelector('div[class="js--modal sizing--content mnd-cookie-modal"]');
          if (mndcookiemodal || mndcookiemodal2) {
             console.log('[Cookie auto decline] Detected: mnd-cookie-modal');
+            advancedrun = false;
             const ablehnen = document.querySelector('.mnd-cookie-modal button.btn-accept-functional');
             const ablehnen2 = document.querySelector('.mnd-cookie-wrapper button.mnd-btn-decline');
             const speichern = document.querySelector('.mnd-cookie-wrapper button.mnd-btn-save-settings');
@@ -1057,6 +1089,7 @@
          const pagewrapcookiepermission = document.querySelector('.page-wrap--cookie-permission[data-cookie-permission="true"][data-urlprefix][data-title]');
          if (pagewrapcookiepermission && document.cookie.includes('cookiePreferences') === false) {
             console.log('[Cookie auto decline] Detected: page-wrap--cookie-permission');
+            advancedrun = false;
             const einstellungen = pagewrapcookiepermission.querySelector('.cookie-permission--configure-button');
             const komforthaken = document.querySelector('#cookie-consent .cookie-consent--group > input[value="comfort"] + label');
             const speichern = document.querySelector('#cookie-consent input.cookie-consent--save-button[type="button"]');
@@ -1090,6 +1123,7 @@
          const idxrcookiesdocument = document.getElementById('idxrcookies');
          if (idxrcookiesdocument && document.cookie.includes('deluxecookiesWarningCheck') === false) {
             console.log('[Cookie auto decline] Detected: idxrcookies');
+            advancedrun = false;
             const speichern = document.querySelector('#cookieModal a#js-save-cookieconf');
             if (speichern) {
                beenden();
@@ -1103,6 +1137,7 @@
          const complyconsentmanager = document.querySelector('comply-consent-manager[apikey] .comply-Menu');
          if (complyconsentmanager) {
             console.log('[Cookie auto decline] Detected: comply-consent-manager');
+            advancedrun = false;
             const ablehnen = complyconsentmanager.querySelector('button.comply-SaveSettingsButton');
             if (ablehnen) {
                beenden();
@@ -1116,6 +1151,7 @@
          const cccoverlay = document.querySelector('#ccc[style]');
          if (cccoverlay && document.cookie.includes('CookieControl') === false) {
             console.log('[Cookie auto decline] Detected: ccc-overlay');
+            advancedrun = false;
             const einstellungen = document.querySelector('#ccc-notify button.ccc-notify-button.ccc-tabbable:not(#ccc-notify-accept)');
             const schließen = document.querySelector('#ccc #ccc-content button#ccc-close');
             const ablehnen = document.querySelector('#ccc #ccc-content button#ccc-reject-settings');
@@ -1146,6 +1182,7 @@
          const ccm19de = document.querySelector('.ccm-root > #ccm-widget');
          if (ccm19de && localStorage.getItem('ccm_consent') === null) {
             console.log('[Cookie auto decline] Detected: ccm-root');
+            advancedrun = false;
             const ablehnen = document.querySelector('#ccm-widget button.ccm--decline-cookies[type="button"]');
             if (ablehnen && ablehnen.offsetHeight >= 1) {
                beenden();
@@ -1167,6 +1204,7 @@
          const orestbida2 = document.querySelector('#cc-main > .cm-wrapper > [aria-describedby="cm__desc"]');
          if (orestbida && document.cookie.includes('cc_cookie') === false) {
             console.log('[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent');
+            advancedrun = false;
             const ablehnen = orestbida.querySelector('button#s-rall-bn[type="button"]');
             const speichern = orestbida.querySelector('button#s-sv-bn[type="button"]');
             const akzeptieren = orestbida.querySelector('button#c-p-bn[type="button"]');
@@ -1188,6 +1226,7 @@
             }
          } else if (orestbida2 && document.cookie.includes('cc_cookie') === false) {
             console.log('[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent 2');
+            advancedrun = false;
             const speichern = orestbida2.querySelector('button[data-role="necessary"]');
             const einstellungen = orestbida2.querySelector('button.cm__btn--secondary[data-role="show"]');
             const switchdecline = document.querySelector('#cc-main input[type="checkbox"][value="analytics"]');
@@ -1218,6 +1257,7 @@
          const optanon = document.querySelector('.optanon-alert-box-wrapper');
          if (optanon && document.cookie.includes('OptanonAlertBoxClosed') === false) {
             console.log('[Cookie auto decline] Detected: optanon');
+            advancedrun = false;
             const ablehnen = optanon.querySelector('button.optanon-reject-all[onclick]');
             const speichern = document.querySelector('.optanon-white-button-middle > button[onclick]');
             if (ablehnen) {
@@ -1237,6 +1277,7 @@
          const mandarinmedien = document.querySelector('script[src*="gdpr.mandarin-medien.de/manager.js"]');
          if (mandarinmedien && document.cookie.includes('mmcm-jar-') === false) {
             console.log('[Cookie auto decline] Detected: gdpr.mandarin-medien.de');
+            advancedrun = false;
             const ablehnen = document.querySelector('.mmcm-container .mmcm-actions a.mmcm-btn-decline');
             const speichern = document.querySelector('.mmcm-container .mmcm-actions a.mmcm-btn-save');
             if (ablehnen) {
@@ -1256,6 +1297,7 @@
          const orejime = document.querySelector('.orejime-NoticePortal');
          if (orejime && document.cookie.includes('orejime') === false) {
             console.log('[Cookie auto decline] Detected: orejime');
+            advancedrun = false;
             const ablehnen = document.querySelector('.orejime-NoticePortal button.orejime-Button--decline');
             if (ablehnen) {
                beenden();
@@ -1269,6 +1311,7 @@
          const oaxcookieconsentmodal = document.querySelector('body.oax');
          if (oaxcookieconsentmodal && document.cookie.includes('_consentCookie') === false) {
             console.log('[Cookie auto decline] Detected: oaxcookieconsentmodal');
+            advancedrun = false;
             const ablehnen = document.querySelector('.oax_cookie_consent_modal button.oax-cookie-consent-select-necessary');
             if (ablehnen) {
                beenden();
@@ -1282,6 +1325,7 @@
          const acris = document.querySelector('.acris-cookie-consent[data-acris-cookie-consent="true"][data-acris-cookie-consent-options]');
          if (acris) {
             console.log('[Cookie auto decline] Detected: https://www.acris-ecommerce.at/');
+            advancedrun = false;
             const ablehnen = acris.querySelector('#ccAcceptOnlyFunctional');
             const akzeptieren = acris.querySelector('#ccAcceptButton');
             if (ablehnen && ablehnen.offsetHeight > 1) {
@@ -1301,6 +1345,7 @@
          const acris2 = document.querySelector('#acris--page-wrap--cookie-permission[data-acris-cookie-permission]');
          if (acris2 && document.cookie.includes('cookiePreferences') === false) {
             console.log('[Cookie auto decline] Detected: https://www.acris-ecommerce.at/ 2');
+            advancedrun = false;
             const ablehnen = acris2.querySelector('button#cookie-permission--accept-only-functional-button');
             const speichern = acris2.querySelector('#cookie-permission--accept-button');
             if (ablehnen) {
@@ -1317,10 +1362,10 @@
          }
 
          // https://www.tramino.de/
-         const tramino = document.querySelector('script[src="/tramino/js/require.min.js"]');
-         const tramino2 = document.querySelector('script[src^="https://storage.tramino.net/static/root/js/jquery"]');
-         if ((tramino || tramino2) && document.cookie.includes('Consent') === false) {
+         const tramino = document.querySelector('script[src^="https://storage.tramino.net/static/root/js/jquery"], script[src="/tramino/js/require.min.js"]');
+         if (tramino && document.cookie.includes('Consent') === false) {
             console.log('[Cookie auto decline] Detected: https://www.tramino.de/');
+            advancedrun = false;
             const ablehnen = document.querySelector('.TraminoConsent button[value="acceptConsent"]');
             if (ablehnen) {
                beenden();
@@ -1331,27 +1376,33 @@
          }
 
          // amgdpr
-         const amgdpr = document.querySelector('.amgdprcookie-modal-template form#amgdprcookie-form.amgdprcookie-settings-form[data-amcookie-js]');
+         const amgdpr = document.querySelector('.amgdprjs-bar-template, .amgdprcookie-modal-container');
          if (amgdpr && document.cookie.includes('amcookie_allowed') === false) {
             console.log('[Cookie auto decline] Detected: amgdpr');
-            const ablehnen = amgdpr.querySelector('button.amgdprcookie-button.-decline:not([disabled])');
-            const schließen = document.querySelector('.amgdprcookie-modal-template > button#close-modal:not([disabled])');
-            const speichern = amgdpr.querySelector('button.amgdprcookie-button.-save:not([disabled])');
+            const ablehnen = amgdpr.querySelector('button.-decline, button.g-c-button-reject');
+            const einstellungen = amgdpr.querySelector('button.-settings');
+            const speichern = document.querySelector('.gdpr-cookie-modal_setup-modal button.-save');
+            const speichern2 = document.querySelector('.amgdprcookie-cookie-settings-modal button.amgdprcookie-done');
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
                   ablehnen.click();
-               }, 1502);
-            } else if (schließen) {
-               beenden();
+               }, 2002);
+            } else if (einstellungen && bereitsgeklickt === false) {
+               bereitsgeklickt = true;
                window.setTimeout(function () {
-                  schließen.click();
-               }, 1502);
+                  einstellungen.click();
+               }, 202);
             } else if (speichern) {
                beenden();
                window.setTimeout(function () {
                   speichern.click();
-               }, 1502);
+               }, 202);
+            } else if (speichern2 && speichern2.offsetWidth > 100) {
+               beenden();
+               window.setTimeout(function () {
+                  speichern2.click();
+               }, 202);
             }
          }
 
@@ -1360,6 +1411,7 @@
          const klaro2 = document.querySelector('#cookieconsent > div[class^="klaro"]');
          if ((klaro || klaro2) && document.cookie.includes('klaro') === false) {
             console.log('[Cookie auto decline] Detected: klaro.org');
+            advancedrun = false;
             const ablehnen = document.querySelector('div[class^="klaro"] button.cn-decline[type="button"]');
             const einstellungen = document.querySelector('#klaro button.cm-btn-lern-more');
             const einstellungen2 = document.querySelector('#klaro a.cn-learn-more[href="#"]');
@@ -1395,6 +1447,7 @@
          const klarozwei = document.querySelector('div[id="timm4-cookie-consent"] > div[class^="klaro"], div[id="hbaccept"] > div[class^="klaro"]');
          if (klarozwei && document.cookie.includes('timm4cookie-consent') === false && window.localStorage.getItem('hbaccept') === null) {
             console.log('[Cookie auto decline] Detected: klaro.org 2');
+            advancedrun = false;
             const speichern = klarozwei.querySelector('button.cm-btn-accept[type="button"]');
             const ablehnen = klarozwei.querySelector('button.cn-decline');
             if (ablehnen) {
@@ -1414,6 +1467,7 @@
          const cookienotehide = document.querySelector('div[id="cookie-note"][style="display: block;"].cookie-note');
          if (cookienotehide && document.cookie.includes('ikiss-cookie-note-off') === false) {
             console.log('[Cookie auto decline] Detected: cookie-note-hide (germany)');
+            advancedrun = false;
             const ablehnen = cookienotehide.querySelector('button#cookie-note-hide');
             if (ablehnen) {
                beenden();
@@ -1427,6 +1481,7 @@
          const cookieconsentformdescription = document.querySelector('dialog.cookie-consent-form[aria-labelledby="cookie-consent-form__description"][open]');
          if (cookieconsentformdescription && document.cookie.includes('hide_cn') === false) {
             console.log('[Cookie auto decline] Detected: cookie-consent-form__description (germany)');
+            advancedrun = false;
             const allesauswählen = cookieconsentformdescription.querySelector('button.cookie-consent-form__permit-button');
             const trackingverbieten = cookieconsentformdescription.querySelector('input[id][aria-describedby*="tracking"]');
             const speichern = cookieconsentformdescription.querySelector('button.cookie-consent-form__save-button');
@@ -1453,6 +1508,7 @@
          const sgalinski = document.querySelector('#SgCookieOptin');
          if (sgalinski) {
             console.log('[Cookie auto decline] Detected: sgalinski.de');
+            advancedrun = false;
             const speichern = sgalinski.querySelector('.sg-cookie-optin-box-button button.sg-cookie-optin-box-button-accept-specific');
             const einstellungen = sgalinski.querySelector('.sg-cookie-optin-banner-button button.sg-cookie-optin-banner-button-settings');
             if (speichern) {
@@ -1471,6 +1527,7 @@
          const cookiemanmodal = document.querySelector('#cookieman-modal[data-cookieman-settings]');
          if (cookiemanmodal) {
             console.log('[Cookie auto decline] Detected: cookieman-modal');
+            advancedrun = false;
             const ablehnen = cookiemanmodal.querySelector('button[data-cookieman-accept-none]');
             const speichern = cookiemanmodal.querySelector('button[data-cookieman-accept-all]');
             if (ablehnen) {
@@ -1491,6 +1548,7 @@
          const usercentricsbutton2 = document.querySelector('#usercentrics-button');
          if (usercentricsbutton && usercentricsbutton2) {
             console.log('[Cookie auto decline] Detected: usercentrics-button');
+            advancedrun = false;
             const ablehnen = document.querySelector('#usercentrics-button button#uc-btn-deny-banner');
             const einstellungen = document.querySelector('#usercentrics-button button#uc-btn-more-info-banner');
             const speichern = document.querySelector('#usercentrics-button .uc-save-settings-button');
@@ -1515,6 +1573,7 @@
          const ckyconsent = document.querySelector('.cky-consent-container');
          if (ckyconsent && document.cookie.includes('action:yes,necessary:yes') === false) {
             console.log('[Cookie auto decline] Detected: cky-consent');
+            advancedrun = false;
             const ablehnen = ckyconsent.querySelector('button.cky-btn-reject');
             const einstellungen = ckyconsent.querySelector('button.cky-btn-customize');
             const speichern = document.querySelector('.cky-preference-center button.cky-btn-preferences');
@@ -1539,6 +1598,7 @@
          const framer = document.querySelector('.--framer-cookie-banner-container');
          if (framer && window.localStorage.getItem('framerCookiesDismissed') === null) {
             console.log('[Cookie auto decline] Detected: --framer-cookie-banner-container');
+            advancedrun = false;
             const ablehnen = framer.querySelector('div[style="display: flex; flex-direction: row; gap: 10px; margin-top: 16px;"] > input:first-child');
             if (ablehnen) {
                beenden();
@@ -1552,6 +1612,7 @@
          const privacy_optin = document.querySelector('div[id^="privacy_optin_"].mod_privacy_optin.open');
          if (privacy_optin && window.localStorage.getItem('user_privacy_settings') === null) {
             console.log('[Cookie auto decline] Detected: privacy_optin');
+            advancedrun = false;
             const ablehnen = privacy_optin.querySelector('.privacy_buttons > input[name="save_tech_settings"]');
             const speichern = privacy_optin.querySelector('.privacy_buttons > input[name="save_settings"]:not([disabled])');
             if (ablehnen) {
@@ -1575,6 +1636,7 @@
          const tealiumGDPR = document.querySelector('div[id^="__tealiumGDPR"]:not(:empty)');
          if (tealiumGDPR) {
             console.log('[Cookie auto decline] Detected: tealiumGDPR');
+            advancedrun = false;
             const ablehnen = tealiumGDPR.querySelector('button#rejectAll, button#consent_prompt_reject, a#no_consent, button.js-btn-reject-all, button#cm-acceptNone');
             const speichern = document.querySelector('#__tealiumGDPRcpPrefs button#save');
             const einstellungen = tealiumGDPR.querySelector('button.js-btn-edit-cookie-settings, a#preferences');
@@ -1600,6 +1662,7 @@
          const avia = document.querySelector('.avia-cookie-consent-wrap');
          if (avia) {
             console.log('[Cookie auto decline] Detected: avia');
+            advancedrun = false;
             const akzeptieren = avia.querySelector('.avia-cookie-consent a[href="#"][class*="avia-cookie-consent-button-"]');
             if (akzeptieren) {
                beenden();
@@ -1613,6 +1676,7 @@
          const cookiebaroptin219 = document.querySelector('#cookiebar_optin_219.mod_cookiebar_optin_slim');
          if (cookiebaroptin219) {
             console.log('[Cookie auto decline] Detected: cookiebar_optin_219');
+            advancedrun = false;
             const ablehnen = cookiebaroptin219.querySelector('.cookiebar_disagree > a[data-privacy]');
             if (ablehnen) {
                beenden();
@@ -1626,6 +1690,7 @@
          const sirdatacom = document.querySelector('#sd-cmp[class^="sd-cmp-"]');
          if (sirdatacom && document.cookie.includes('euconsent-v2') === false) {
             console.log('[Cookie auto decline] Detected: sirdata.com');
+            advancedrun = false;
             const ablehnen = sirdatacom.querySelector('button:has(+ button + button)');
             const ablehnen2 = sirdatacom.querySelector('div > button:has(+ div > a[href="https://cmp.sirdata.com/"])');
             if (ablehnen) {
@@ -1645,6 +1710,7 @@
          const setupad = document.querySelector('body > .stpd_cmp');
          if (setupad && localStorage.getItem('additional-consent') === null) {
             console.log('[Cookie auto decline] Detected: https://setupad.com/');
+            advancedrun = false;
             const einstellungen = setupad.querySelector('.stpd_consent_wrapper > .stpd_button_wrapper > .stpd_flexed_btns > button.stpd_submit_btn[type="button"]');
             const speichern = setupad.querySelector('.stpd_return_btn + div + .stpd_consent_wrapper > div > .stpd_flexed_btns > button.stpd_submit_btn[type="submit"]');
             if (einstellungen) {
@@ -1671,6 +1737,7 @@
          const mkmlegal = document.querySelector('#jmdCookieConsentWrapper');
          if (mkmlegal && document.cookie.includes('mkm_cbconsent') === false) {
             console.log('[Cookie auto decline] Detected: https://mkm.legal/');
+            advancedrun = false;
             const ablehnen = mkmlegal.shadowRoot.querySelector('#cookieConsent button.deny');
             if (ablehnen) {
                beenden();
@@ -1684,6 +1751,7 @@
          const twobadvice = document.querySelector('#bbcdBanner.b-banner[style]');
          if (twobadvice && document.cookie.includes('_2BCookieSettings') === false) {
             console.log('[Cookie auto decline] Detected: https://2b-advice.com/');
+            advancedrun = false;
             const einstellungen = twobadvice.querySelector('button#bbcdBannerButtonSettings');
             if (einstellungen) {
                beenden();
@@ -1703,6 +1771,7 @@
          const webstollen = document.getElementById('ws_eu-cookie-container');
          if (webstollen && document.cookie.includes('eu_cookie_store') === false) {
             console.log('[Cookie auto decline] Detected: https://webstollen.de/');
+            advancedrun = false;
             const buttons = webstollen.querySelectorAll('[class*="button"] > button');
             const speichern = webstollen.querySelectorAll('[class^="centerCat_buttons"] > a');
             const einstellungen = webstollen.querySelector('span[class^="modal_text_smaller"] > span + a');
@@ -1742,6 +1811,7 @@
          const jtlsoftwarede = document.querySelector('#consent-manager.active, #consent.active');
          if (jtlsoftwarede && window.localStorage.getItem('consent') === null) {
             console.log('[Cookie auto decline] Detected: #consent-manager');
+            advancedrun = false;
             const ablehnen = document.querySelector('#consent-manager.active button#consent-banner-btn-close');
             const ablehnen2 = document.querySelector('#consent.active button#consent--banner-btn-decline');
             if (ablehnen) {
@@ -1761,6 +1831,7 @@
          const blogspot = document.querySelector('#cookieChoiceInfo.cookie-choices-info');
          if (blogspot && document.cookie.includes('displayCookieNotice') === false) {
             console.log('[Cookie auto decline] Detected: blogspot.com');
+            advancedrun = false;
             const ablehnen = document.querySelector('#cookieChoiceInfo a#cookieChoiceDismiss');
             if (ablehnen) {
                beenden();
@@ -1774,6 +1845,7 @@
          const jimdo = document.querySelector('div[aria-describedby="cc-individual-cookie-settings"], [class="sR5JB"]');
          if (jimdo && document.cookie.includes('ckies_') === false) {
             console.log('[Cookie auto decline] Detected: jimdo.com');
+            advancedrun = false;
             const ablehnen = jimdo.querySelector('button#cookie-settings-reject-all, [data-gi-selector="reject-all-cookies"] > a');
             if (ablehnen) {
                beenden();
@@ -1787,6 +1859,7 @@
          const ampconsent = document.querySelector('amp-consent.i-amphtml-element');
          if (ampconsent && (window.localStorage.key(0) === null || (window.localStorage.key(0) && window.localStorage.key(0).includes('amp-store:') === false))) {
             console.log('[Cookie auto decline] Detected: amp-consent');
+            advancedrun = false;
             const ablehnen = ampconsent.querySelector('button[on="tap:consent-element.reject"]');
             const ablehnen2 = ampconsent.querySelector('button[on="tap:consent.dismiss"]');
             if (ablehnen) {
@@ -1806,6 +1879,7 @@
          const shapepress = document.querySelector('div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"]');
          if (shapepress && document.cookie.includes('sp_dsgvo_cookie_settings') === false) {
             console.log('[Cookie auto decline] Detected: shapepress');
+            advancedrun = false;
             const ablehnen = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-nothing');
             const akzeptieren = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-all');
             if (ablehnen) {
@@ -1825,6 +1899,7 @@
          const cookiesjsr = document.querySelector('[id$="cookiesui"] #cookiesjsr');
          if (cookiesjsr && document.cookie.includes('cookiesjsr') === false) {
             console.log('[Cookie auto decline] Detected: cookiesjsr');
+            advancedrun = false;
             const ablehnen = cookiesjsr.querySelector('button.denyAll');
             if (ablehnen) {
                beenden();
@@ -1838,6 +1913,7 @@
          const moove = document.querySelector('aside#moove_gdpr_cookie_info_bar');
          if (moove && document.cookie.includes('moove_gdpr_popup') === false) {
             console.log('[Cookie auto decline] Detected: moove_gdpr_cookie_info_bar');
+            advancedrun = false;
             const ablehnen = moove.querySelector('button.moove-gdpr-infobar-reject-btn');
             const einstellungen = moove.querySelector('button.moove-gdpr-infobar-settings-btn');
             const ablehnenineinstellungen = document.querySelector('#moove_gdpr_cookie_modal button.moove-gdpr-modal-reject-all');
@@ -1869,6 +1945,7 @@
          const cookieinformationcom = document.querySelector('#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"]');
          if (cookieinformationcom && document.cookie.includes('CookieInformationConsent') === false) {
             console.log('[Cookie auto decline] Detected: https://cookieinformation.com/');
+            advancedrun = false;
             const ablehnen = cookieinformationcom.querySelector('button#declineButton');
             if (ablehnen) {
                beenden();
@@ -1882,6 +1959,7 @@
          const cookieinfoscriptcom = document.querySelector('.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "]');
          if (cookieinfoscriptcom && document.cookie.includes('CookieInfoScript') === false) {
             console.log('[Cookie auto decline] Detected: https://cookieinfoscript.com');
+            advancedrun = false;
             const ablehnen = cookieinfoscriptcom.querySelector('.cookieinfo-close');
             if (ablehnen) {
                beenden();
@@ -1895,6 +1973,7 @@
          const cookiepermissioncontainer = document.querySelector('.cookie-permission-container[data-cookie-permission="true"][style="display: block;"]');
          if (cookiepermissioncontainer && document.cookie.includes('cookie-preference') === false) {
             console.log('[Cookie auto decline] Detected: cookie-permission-container');
+            advancedrun = false;
             const ablehnen = cookiepermissioncontainer.querySelector('button.btn-primary');
             if (ablehnen) {
                beenden();
@@ -1908,6 +1987,7 @@
          const mwcookiewarningcontainer = document.querySelector('[class="mw-cookiewarning-container"]');
          if (mwcookiewarningcontainer && document.cookie.includes('cookiewarning_dismissed') === false) {
             console.log('[Cookie auto decline] Detected: mw-cookiewarning-container');
+            advancedrun = false;
             const akzeptieren = mwcookiewarningcontainer.querySelector('form [name="disablecookiewarning"]');
             if (akzeptieren) {
                beenden();
@@ -1921,7 +2001,8 @@
          const tcprivacywrapper = document.querySelector('#tc-privacy-wrapper.tc-privacy-wrapper.tc-privacy-override');
          if (tcprivacywrapper && document.cookie.includes('TC_PRIVACY') === false) {
             console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
-            const ablehnen = tcprivacywrapper.querySelector('button[id*="_tc_privacy_button"].tc-privacy-button:is([title="Weiter ohne Zustimmung"], [title="Ablehnen"])');
+            advancedrun = false;
+            const ablehnen = tcprivacywrapper.querySelector('button[id*="_tc_privacy_button"].tc-privacy-button:is([title="Weiter ohne Zustimmung"], [title="Ablehnen"], [title="Refuse all"])');
             if (ablehnen) {
                beenden();
                window.setTimeout(function () {
@@ -1934,6 +2015,7 @@
          const tarteaucitronroot = document.getElementById('tarteaucitronRoot');
          if (tarteaucitronroot && document.cookie.includes('=wait') === true) {
             console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
+            advancedrun = false;
             const ablehnen = tarteaucitronroot.querySelector('button[id^="tarteaucitronAllDenied2"], button[onclick="tarteaucitron.userInterface.respondAll(false);"]');
             const speichern = tarteaucitronroot.querySelector('button#tarteaucitronSave');
             const einstellungen = tarteaucitronroot.querySelector('button[onclick="tarteaucitron.userInterface.openPanel();"]#tarteaucitronCloseAlert');
@@ -1965,6 +2047,7 @@
          const offcanvas = document.querySelector('[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"]');
          if (offcanvas && offcanvas.innerText.includes('Cookies') && document.cookie.includes('cookie-preference') === false) {
             console.log('[Cookie auto decline] Detected: offcanvas (shopping sites)');
+            advancedrun = false;
             const speichern = offcanvas.querySelector('button[class="btn btn-primary btn-block js-offcanvas-cookie-submit"]');
             if (speichern && (speichern.innerText.toLowerCase().includes('akzeptieren') || speichern.innerText.toLowerCase().includes('speichern'))) {
                beenden();
@@ -1978,6 +2061,7 @@
          const eightworkscookieconsentplus = document.querySelector('#eightworks-cookie-consent-plus[data-cookie-permission="true"]');
          if (eightworkscookieconsentplus && document.cookie.includes('cookie-preference') === false) {
             console.log('[Cookie auto decline] Detected: eightworks-cookie-consent-plus');
+            advancedrun = false;
             const einstellungen = eightworkscookieconsentplus.querySelector('a.cookie-permission--configure-button[href="#"]');
             const speichern = eightworkscookieconsentplus.querySelector('button[class="btn btn-default js-offcanvas-cookie-submit eightworks-cookie-consent-plus-button eightworks-cookie-consent-plus-button-mod1"][title="Speichern"]');
             if (speichern) {
@@ -1997,6 +2081,7 @@
          const ccbannerwrapper = document.querySelector('div[class="cc_banner-wrapper "] :is(div[class="cc_banner cc_container cc_container--open"], div[class="cc-banner cc_container cc_container--open"])');
          if (ccbannerwrapper && document.cookie.includes('cookieconsent_dismissed') === false) {
             console.log('[Cookie auto decline] Detected: cc_banner-wrapper');
+            advancedrun = false;
             const akzeptieren = ccbannerwrapper.querySelector('a[data-cc-event="click:dismiss"]');
             if (akzeptieren) {
                beenden();
@@ -2010,6 +2095,7 @@
          const transcend = document.querySelector('#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"]');
          if (transcend && window.localStorage.getItem('tcmConsent') === null) {
             console.log('[Cookie auto decline] Detected: transcend.io');
+            advancedrun = false;
             // Shadow Root is closed so the addon need to go this way.
             window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
             beenden();
@@ -2020,7 +2106,8 @@
          const ketch = document.querySelector('#ketch-modal.ketch-flex, #ketch-banner.ketch-flex');
          if (ketch) {
             console.log('[Cookie auto decline] Detected: ketch.com');
-            const ablehnen = ketch.querySelector('div:has(> div:first-child > div:first-child > div:first-child > p:first-child) > div:last-child > button:is([aria-label="Reject All"], [aria-label="Alle ablehnen"], [aria-label="DECLINE"])');
+            advancedrun = false;
+            const ablehnen = ketch.querySelector('div:has(> div:first-child > div:first-child > div:first-child > p:first-child) > div:last-child > button:is([aria-label="Reject All"], [aria-label="Alle ablehnen"], [aria-label="DECLINE"], [aria-label="Decline All"])');
             const speichern = ketch.querySelector('div:has(> div > a[href^="https://www.ketch.com/"]) > div > button[aria-label="Save choices"]');
             if (ablehnen) {
                beenden();
@@ -2039,6 +2126,7 @@
          const otckappdata = document.querySelector('.otCookiesNotification > #cookies-wrapper');
          if (otckappdata && document.cookie.includes('_consentik_cookie') === false) {
             console.log('[Cookie auto decline] Detected: otCKAppData');
+            advancedrun = false;
             const ablehnen = otckappdata.querySelector('#cookies-dismiss[role="button"]');
             if (ablehnen) {
                beenden();
@@ -2050,8 +2138,9 @@
 
          // sliding-popup
          const slidingpopup = document.querySelector('div[id="sliding-popup"][class="sliding-popup-bottom"][style]');
-         if (slidingpopup && document.cookie.includes('cookie-agreed') === false) {
+         if (slidingpopup && document.cookie.includes('cookie-agreed=') === false) {
             console.log('[Cookie auto decline] Detected: sliding-popup');
+            advancedrun = false;
             const ablehnen = slidingpopup.querySelector('button.decline-button');
             const speichern = slidingpopup.querySelector('.eu-cookie-compliance-save-preferences-button');
             if (ablehnen) {
@@ -2071,6 +2160,7 @@
          const evidon = document.querySelector('#_evidon_banner, #_evidon-barrier-wrapper');
          if (evidon && evidon.offsetHeight >= 1) {
             console.log('[Cookie auto decline] Detected: evidon');
+            advancedrun = false;
             const ablehnen = evidon.querySelector('button#_evidon-decline-button, button#_evidon-barrier-declinebutton');
             if (ablehnen) {
                beenden();
@@ -2084,6 +2174,7 @@
          const axept = document.querySelector('#axeptio_overlay.axeptio_mount[data-project-id]');
          if (axept && document.cookie.includes('axeptio') === true && document.cookie.includes('%2Cgoogle_analytics%2C') === false) {
             console.log('[Cookie auto decline] Detected: axept.io');
+            advancedrun = false;
             const ablehnen = axept.querySelector('button#axeptio_btn_dismiss');
             let ablehnen2 = axept.querySelector('.needsclick');
             const einstellungen = axept.querySelector('button#axeptio_btn_configure');
@@ -2117,6 +2208,7 @@
          const wordpress = document.querySelector('#cmp-app-container iframe');
          if (wordpress && document.cookie.includes('euconsent-v2') === false) {
             console.log('[Cookie auto decline] Detected: wordpress cookie banner');
+            advancedrun = false;
             const einstellungen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button is-secondary"]');
             const ablehnen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button white-space-normal is-secondary"]');
             if (ablehnen) {
@@ -2136,6 +2228,7 @@
          const cookiehub = document.querySelector('div[role="dialog"].ch2-visible.ch2-dialog, div[class="ch2-settings ch2-settings-scan ch2-visible"]');
          if (cookiehub && document.cookie.includes('cookiehub') === false) {
             console.log('[Cookie auto decline] Detected: cookiehub.com');
+            advancedrun = false;
             const einstellungen = cookiehub.querySelector('button.ch2-open-settings-btn');
             const ablehnenineinstellungen = document.querySelector('div[class="ch2-settings ch2-settings-scan ch2-visible"] button.ch2-deny-all-btn');
             if (ablehnenineinstellungen) {
@@ -2153,7 +2246,7 @@
 
 
          // Advanced
-         if (advancedcounter >= 5 && advancedrun === true && window.self === window.top) {
+         if (advancedcounter >= 5 && advancedrun === true && window.self === window.top && false) {
             const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar, li):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [data-testid="consent-banner"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
 
             for (let i = 0; i < advancedcontainer.length; i++) {
@@ -2177,9 +2270,6 @@
                      text.includes('diese seite nutzt cookies') ||
                      text.includes('diese website nutzt cookies') ||
                      text.includes('diese webseite nutzt cookies') ||
-                     text.includes('diese seite verwendet cookies') ||
-                     text.includes('diese website verwendet cookies') ||
-                     text.includes('diese webseite verwendet cookies') ||
                      text.includes('diese seite verwendet notwendige cookies') ||
                      text.includes('diese website verwendet notwendige cookies') ||
                      text.includes('diese webseite verwendet notwendige cookies') ||
@@ -2196,8 +2286,9 @@
                      text.includes('wir nutzen cookie') ||
                      text.includes('wir benutzen cookies') ||
                      text.includes('auf dieser website nutzen wir cookies') ||
-                     text.includes('verwendet cookies, um') ||
-                     text.includes('die website verwendet cookies') ||
+                     text.includes('verwendet cookies') ||
+                     text.includes('verwenden cookies') ||
+                     text.includes('uns cookies auf') ||
                      text.includes('verwendeten cookies') ||
                      text.includes('verwenden wir cookies') ||
                      text.includes('dass wir cookies verwenden') ||
@@ -2244,12 +2335,14 @@
                      text.includes('website makes use of cookies') ||
                      text.includes('manage cookies') ||
                      text.includes('accept all cookies') ||
-                     text.includes('we serve cookies on this site') ||
+                     text.includes('to improve the quality of our site') ||
+                     text.includes('accept all cookies') ||
                      text.includes('Cookie instellingen') ||
+                     text.includes('rejeitar cookies') ||
                      text.includes('stosujemy pliki cookies') ||
                      text.includes('ta strona korzysta z ciasteczek')) {
                      // Buttons suchen und klicken.
-                     const buttons = a.querySelectorAll('button, a:not([href*="/"]), a[href*="optOut"], a[href*="optout"], a[class*="button"], [role="button"], input[type="button"], input[type="submit"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"], [id*="essential"], [class*="essential"]):is(span, div):not(:has(button))');
+                     const buttons = a.querySelectorAll('button, a:not([href*="/"]), a[href*="optOut"], a[href*="optout"], a[class*="button"], [role="button"], input[type="button"], input[type="submit"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"], [id*="essential"], [class*="essential"], [title*="blehnen"]):is(span, div):not(:has(button))');
                      if (buttons.length > 0) {
                         let finalerbutton;
                         let gewichtung = 3;
@@ -2262,16 +2355,19 @@
                                  btninput = btninput.toLowerCase().trim();
                               }
                               // Ablehnen
-                              if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('ohne ') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn === 'no') && btn.length < 45) {
+                              if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('ohne ') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  break;
+                                 // Speichern
                               } else if ((btn.includes('einstellungen übernehmen') || btn.includes('speichern') || btn.includes('auswahl ') || btn.includes('ausgewählte') || btn.includes('keuze opslaan')) && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 1;
+                                 // Attributchecker für Symbol Schaltflächen
                               } else if (attributchecker(a) && gewichtung > 1) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
-                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptieren') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn === 'ok' || btn === 'ein­ver­standen') && btn.length < 45 && gewichtung > 2) {
+                                 // Akzeptieren
+                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptieren') || btn.includes('akzeptiert') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('nicht mehr anzeigen') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -2541,10 +2637,6 @@
          seite: 'diebayerische.de',
          checkcookie: 'cookieConsent',
          selector: '#cookie-consent-layer button.js_cc-accept-custom'
-      }, {
-         seite: 'ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bbk.bund.de',
-         checkcookie: 'gsbbanner',
-         selector: '#cookiebanner.cookiebanner button.js-banner-button-confirm-selection[type="button"]'
       }, {
          seite: 'xnxx.com,xvideos.com',
          selector: '#disclaimer_background button#disclaimer-reject_cookies-btn[onclick]'
@@ -3340,7 +3432,7 @@
          seite: 'verivox.de',
          checkstorage: 'uc_gcm',
          selectorfinal: 'button.gdpr-deny-all',
-         countdown: 1000
+         countdown: 1200
       }, {
          seite: 'futurezone.at',
          checkcookie: '__pid',
@@ -3574,11 +3666,6 @@
          selector: '#eu_cookies button.button_cookie',
          checkcookie: 'windtech'
       }, {
-         seite: 'helmonline.de',
-         selector: '[data-role="gdpr-cookie-container"] button[data-amgdprcookie-js="settings"]:not([disabled])',
-         selectorfinal: '.amgdprcookie-cookie-settings-modal button.amgdprcookie-done',
-         checkcookie: 'amcookie_allowed'
-      }, {
          seite: 'proidee.de',
          selector: '#COOKIE_EINSTELLUNG_BANNER a[onclick*="sendCookieData(false"]'
       }, {
@@ -3650,11 +3737,6 @@
          selector: '#cookiescript_injected_wrapper #cookiescript_reject',
          checkcookie: 'consenttime'
       }, {
-         seite: 'isolicht.com',
-         selectorfinal: '.amgdprjs-bar-template[data-role="gdpr-cookie-container"] button[data-amcookie-js="close-cookiebar"]',
-         checkstorage: 'amCookieBarFirstShowTime',
-         countdown: 1000
-      }, {
          seite: 'gotha.de',
          selector: '#gccookiemessage button#cookieSubmitButton',
       }, {
@@ -3678,6 +3760,15 @@
          selector2: 'dialog > div:last-child > section:only-child > div[class=""]:first-child + div:last-child > div:only-child > div:only-child > .px-4 > div + div[class="group h-full"] > div:only-child > button#accordion-header-interesse > div > section',
          selectorfinal: 'dialog > div:last-child > section:only-child > div[class=""]:first-child + div:last-child > div:only-child > div:only-child > div:last-child  > div:only-child > button#c2-accept-selection',
          checkcookie: 'userInteracted%22%3Atrue',
+      }, {
+         seite: 'fixline-kitchen.de',
+         selectorfinal: '#banner-wrapper p#essential_accept',
+         countdown: 1000,
+         checkcookie: 'GDPR_LC_Version'
+      }, {
+         seite: 'lotto24.de,tipp24.de',
+         selector: 'button[data-element-id="cookieConsentPromptOverlay.functionalOnlyButton"]',
+         checkcookie: 'cookieConsentDisclaimer'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -3890,6 +3981,20 @@
                check.click();
             }
          }, 202);
+      } else if (window.location.host === 'js.driftt.com') {
+         let findecookiebanner = window.setInterval(function () {
+            const ablehnen = document.querySelector('.drift-widget-chat-wrapper__GDPR button.drift-gdpr-action--deny-consent');
+            if (ablehnen) {
+               console.log('[Cookie auto decline] Detected: js.driftt.com cookie banner chat iframe');
+               forcesessionstorage();
+               window.setTimeout(function () {
+                  ablehnen.click();
+               }, 202);
+            }
+         }, 200);
+         window.setTimeout(function () {
+            clearInterval(findecookiebanner);
+         }, 7000);
       }
       // Privater Test Code 3
    }
