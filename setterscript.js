@@ -1,13 +1,13 @@
 'use strict';
 (function () {
    let forcesessionstorage;
-   if ((sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && (window.innerHeight > 400 || window.innerHeight === 0)) && window.location.hostname !== 'accounts.google.com') {
+   if ((sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && (window.innerHeight > 400 || window.innerHeight === 0)) && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
       // Cookie Banner die ersten 5 Sekunden verstecken.
       window.addEventListener('DOMContentLoaded', function () {
          if (document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src="https://ct.captcha-delivery.com/c.js"]') === null) {
             let css = document.createElement('style');
-            css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"],.amgdprjs-bar-template,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay{clip-path:circle(0)!important;pointer-events:none!important;}';
+            css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"],.amgdprjs-bar-template,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,li[class="notice js-notice notice--primary notice--cookie"]{clip-path:circle(0)!important;pointer-events:none!important;}';
             css.setAttribute('id', 'q3xyktv21es96by0ybwvb1e9a37y5pu');
             if (document.head !== null) {
                document.head.appendChild(css);
@@ -30,13 +30,15 @@
          }
       };
       let nc;
+      let ncnowww;
       if (window.location.protocol === 'http:') {
          nc = "domain=" + window.location.host + ";max-age=86400; SameSite=Lax; path=/";
+         ncnowww = "domain=" + window.location.host + ";max-age=86400; SameSite=Lax; path=/";
       } else {
          nc = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
+         ncnowww = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
       }
 
-      let ncnowww = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
       if (window.location.host.startsWith('www.')) {
          ncnowww = ncnowww.replace('domain=www.', 'domain=');
       }
@@ -263,12 +265,6 @@
          seite: 'catsbest.de',
          setcookie: 'gdpr-cookie=eyJ2ZXJzaW9uIjoiMiIsImdyb3VwcyI6eyJlc3NlbnRpYWwiOnRydWUsInN0YXRpc3RpY3MiOmZhbHNlLCJleHRlcm5hbC1tZWRpYSI6dHJ1ZX0sImNvb2tpZXMiOnsiZ29vZ2xlLWFuYWx5dGljcyI6ZmFsc2UsImZiLXBpeGVsIjpmYWxzZSwiZ29vZ2xlLXRhZy1tYW5hZ2VyIjpmYWxzZSwieW91dHViZSI6dHJ1ZX19;'
       }, {
-         seite: 'mydealz.de',
-         setcookie: 'cookie_policy_agreement=3; , dont-track=1;',
-         setstoragename: 'cmp',
-         setstoragecontent: '{"value":{"tcs":"CQDwPsAQDwPsAG2ABBDEBCFgAAAAAEPgAAAAAAAT-AJMNCogALAgBCCQAIIAAKgpCAggAAAAAkCBAQAECAowBgACIJAAAAAAAgAAgABQEAAAAACABCAAAAAAQAAQAAQAAgAAAAQAAAAACACAEAAABAQAhSAggQAAASIAIhBAAAAACABsKAAAAAAGAEAIMAAAAAgAAAAAAACAAIAQAAQBACQAAABMALAAAAAAAAQARACQAwABAASCEBAwIQgaABgAAAAA.YAAAAAAAAAAA","partners":[1,2,4,8,9,10,11,12,13,14,15,16,20,21,23,24,25,28,29,30,31,32,34,36,40,42,45,48,49,50,52,53,56,58,59,60,61,62,69,71,73,76,80,81,82,85,87,90,91,94,98,100,101,102,104,108,109,119,122,124,126,127,128,129,130,131,132,134,137,138,139,140,142,143,148,149,150,151,153,155,156,161,164,165,168,178,185,192,193,194,195,196,199,202,206,209,210,211,215,216,217,224,226,227,231,235,238,241,242,243,244,246,248,252,253,254,259,263,264,272,274,275,280,284,290,293,302,311,314,315,316,317,325,326,331,333,336,350,351,354,358,368,371,373,374,375,381,387,388,397,410,418,423,424,427,431,434,436,455,459,469,471,473,475,479,490,493,495,498,501,507,511,517,528,534,556,559,568,587,591,597,598,601,602,610,614,617,618,620,621,626,639,644,647,652,655,663,665,666,667,671,673,676,682,684,686,690,697,702,712,713,719,721,724,725,728,738,740,744,745,746,748,749,755,765,770,773,774,778,779,783,790,793,794,803,804,806,807,811,812,814,815,816,834,839,844,848,855,856,864,867,868,869,874,878,884,885,893,900,902,918,922,930,937,938,941,957,959,962,963,964,968,970,972,973,976,986,987,991,997,998,1015,1020,1025,1026,1029,1031,1035,1036,1038,1039,1049,1050,1060,1067,1070,1071,1072,1073,1079,1082,1083,1084,1085,1097,1098,1101,1105,1110,1111,1113,1126,1130,1132,1135,1137,1147,1148,1151,1154,1155,1157,1162,1165,1176,1177,1179,1184,1187,1190,1191,1193,1199,1200,1202,1207,1209,1210,1213,1215,1216,1218,1221,1222,1223,1224,1225,1229,1231,1233,1236,1237,1244,1249,1251,1254,1256,1260,1261,1262,1264,1272,1275,1276,1277,1278,1281,4176]}}',
-         reload: true
-      }, {
          seite: 'metro.de,metro.fr,metro.at,metro.bg,makro.nl,metro.it,metro.pe,makro.cz,makro.pt,makro.pl,metro.co.uk',
          setcookie: 'allowedCookieCategories=necessary%7Cfunctional%7CUncategorized%7Cv1;'
       }, {
@@ -468,7 +464,7 @@
          setcookie: 'pcbwaycookies_analytics=1; , pcbwaycookies_functional=0; , pcbwaycookies=true;',
          reload: true
       }, {
-         seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de',
+         seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de,deutsche-rohstoffagentur.de',
          setcookie: 'gsbbanner=closed; , cookieConsent=NO;'
       }, {
          seite: 'vdk.de',
@@ -775,10 +771,6 @@
       }, {
          seite: 'braufreude.de',
          setcookie: 'allowCookie=1;'
-      }, {
-         seite: 'seznam.cz',
-         setcookie: 'euconsent-v2=CP-jXAAP-jXAAD3ACMENA0EgALAAAEPgAATIJVwQgAAwAKAAsACAAFQALgAZAA6ACAAFAAKgAWgAyABoADmAIgAigBHACSAEwAJwAVQAtgBfgDCAMUAgACEgEQARQAjoBOAE6AL4AaQA4gB3ADxAH6AQgAkwBOACegFIAKyAWYAuoBgQDTgG0APkAjUBHQCaQE2gJ0AVIAtQBbgC8wGMgMkAZcA0oBqYDugHfgQHAhcBGYCTQEqwQugRQAKAAsACoAFwAQAAyABoAEQAI4ATAAqgBiAD8AISARABEgCOAE4AMsAZoA7gB-gEIAIsAXUA2gCbQFSALUAW4AvMBggDJAGXANTAhcAA.YAAAAAAAAQAA;',
-         nowww: true
       }, {
          seite: 'github.com',
          setcookie: 'GHCC=Required:1-Analytics:0-SocialMedia:0-Advertising:0;'
@@ -1230,9 +1222,6 @@
          seite: 'toptal.com',
          setcookie: 'user_agreed_gdpr=true;'
       }, {
-         seite: 'lieferando.de',
-         setcookie: 'cookieConsent=functional; , customerCookieConsent=%5B%7B%22consentTypeId%22%3A101%2C%22consentTypeName%22%3A%22functional%22%2C%22isAccepted%22%3Atrue%2C%22decisionAt%22%3A%222024-10-12T21%3A20%3A47.0000000%2B00%3A00%22%7D%5D;'
-      }, {
          seite: 'lebensmittelverband.de',
          setcookie: 'LMV_consent-general=1;'
       }, {
@@ -1551,6 +1540,74 @@
          seite: 'blacknut.com',
          setstoragename: 'bn:a:privacyConsent',
          setstoragecontent: '{"statistics":false,"marketing":false,"lang":"de","expiry":' + (cookiezeit + 86400) + '}'
+      }, {
+         seite: 'seznam.cz',
+         setcookie: 'euconsent-v2=CQNBgcAQNBgcAD3ACQCSBdFsAP_gAEPgAATIJNQIwAFAAQAAqABkAEAAKAAZAA0ACSAEwAJwAWwAvwBhAGIAQEAggCEAEUAI4ATgAoQBxADuAIQAUgA04COgE2gKkAW4AvMBjID_AIDgRmAk0BecBIACoAIAAZAA0ACYAGIAPwAhABHACcAGaAO4AhABFgE2gKkAW4AvMAAA.YAAAAAAAAWAA;',
+         nowww: true
+      }, {
+         seite: 'hardwareluxx.de',
+         setcookie: 'hwl_cc=1;',
+         reload: true
+      }, {
+         seite: 'parqet.com',
+         setcookie: 'ParqetGDPR=denied;'
+      }, {
+         seite: 'spaness.de',
+         setcookie: 'kookiesSet=6;'
+      }, {
+         seite: 'old.reddit.com',
+         setcookie: 'eu_cookie={%22opted%22:true%2C%22nonessential%22:false};'
+      }, {
+         seite: 'spigen.pl',
+         setcookie: 'ck_cook=yes;'
+      }, {
+         seite: 'aws.amazon.com',
+         setcookie: 'awsccc=eyJlIjoxLCJwIjowLCJmIjowLCJhIjowLCJjY2JhIjoxLCJpIjoiYWQ5ZWNkOTMtMTBkOC00ZjFkLWEwNTMtYTY5MmFiODJhNTFiIiwidiI6IjEifQ==;'
+      }, {
+         seite: 'etherscan.io',
+         setcookie: 'etherscan_cookieconsent=True;'
+      }, {
+         seite: 'sparwelt.de',
+         setcookie: 'consent-1.0=%7B%22functional%22%3Atrue%2C%22analytics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22isSet%22%3Atrue%7D;',
+         checkcookie: '%22%3Atrue%7D'
+      }, {
+         seite: 'here.com',
+         setstoragename: 'CONSENT',
+         setstoragecontent: 'REJECTED'
+      }, {
+         seite: 'fruugo.de',
+         setcookie: 'consents=essential;'
+      }, {
+         seite: 'rheinenergie.com',
+         setcookie: 'cookiesAccepted=0;'
+      }, {
+         seite: 'emove.online',
+         setcookie: 'cookie-cracker_1=true; , cookie-cracker_1_prefs=technischnotwendig,cookie-cracker;'
+      }, {
+         seite: 'innn.it',
+         setcookie: 'cookieConsent=[%22essential%22];'
+      }, {
+         seite: 'lieferando.de',
+         setcookie: 'je-cookieConsent=necessary; , customerCookieConsent=%5B%7B%22consentTypeId%22%3A103%2C%22consentTypeName%22%3A%22necessary%22%2C%22isAccepted%22%3Atrue%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A104%2C%22consentTypeName%22%3A%22functional%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A105%2C%22consentTypeName%22%3A%22analytical%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A106%2C%22consentTypeName%22%3A%22personalized%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%5D;',
+         nowww: true
+      }, {
+         seite: 'stellantis-direktbank.de,jtdirektbank.de,bbbank.de,berliner-volksbank.de,sparda-sw.de,sparda-bank-hamburg.de,sparda-h.de,frankfurter-volksbank.de,volksbank-stuttgart.de,volksbanking.de,hannoversche-volksbank.de,vb-mittelhessen.de,vrbank-mkb.de,vbkraichgau.de,sparda-ostbayern.de,vrbank-hessenland.de,maerkische-bank.de,bergische-volksbank.de,sparda-a.de,volksbank-koeln-bonn.de,voba-rnh.de,vr-bankverein.de,vrbank-suedpfalz.de,vb-eg.de,volksbank-allgaeu-oberschwaben.de,vb-alzey-worms.de,vrbank-ke-oa.de,volksbank-albstadt.de,westerwaldbank.de,wvb.de,dovoba.de,voba-bl.de,vrbankgl.de,gestalterbank.de,volksbank-hellweg.de,psd-berlin-brandenburg.de,volksbankinostwestfalen.de,volksbank-chemnitz.de,volksbank-goeppingen.de,eb.de,vobakl.de,volksbank-dresden-bautzen.de,vr-lif-ebn.de,vrnu.de,leipziger-volksbank.de,vblh.de,vr-werdenfels.de,vrbank.de,vb-muensterland.de,kieler-volksbank.de,volksbank-ueberlingen.de,hamburger-volksbank.de,vbhalle.de,vbkrefeld.de,volksbank-vor-ort.de,aachener-bank.de,vbsdn.de,volksbank-mit-herz.de,vvr-bank.de,volksbank-trier-eifel.de,meine-rvb.de,spreewaldbank.de,pax-bank.de,vb-ruhrmitte.de,donau-iller-bank.de,ligabank.de,rbok.de,volksbank-freiburg.de,vr-bank-passau.de,volksbankeg.de,diebank.de,raiba-rastede.de,vbimharz.de',
+         setcookie: 'cookieConsent=%5B%7B%22name%22%3A%22essenziell%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22komfort%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22marketing%22%2C%22value%22%3A%22off%22%7D%2C%7B%22name%22%3A%22statistik%22%2C%22value%22%3A%22off%22%7D%2C%7B%22name%22%3A%22speichern%22%2C%22value%22%3A%22on%22%7D%5D;'
+      }, {
+         seite: 'sparda-b.de,vr-nordoberpfalz.de,vreg.de',
+         setcookie: 'cookieConsent=%5B%7B%22name%22%3A%22essenziell%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22komfort%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22statistik%22%2C%22value%22%3A%22off%22%7D%2C%7B%22name%22%3A%22speichern%22%2C%22value%22%3A%22on%22%7D%5D;'
+      }, {
+         seite: 'vr.de',
+         setcookie: 'TC_PRIVACY_CENTER=1; , TC_PRIVACY=0%40011%7C58%7C4483%401%40%401741117974717%2C1741117974717%2C1774813974717%40;'
+      }, {
+         seite: 'muenchner-bank.de,volksbank-buehl.de,vb-oberberg.de',
+         setcookie: 'cookieConsent=%5B%7B%22name%22%3A%22essenziell%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22komfort%22%2C%22value%22%3A%22on%22%7D%2C%7B%22name%22%3A%22marketing%22%2C%22value%22%3A%22off%22%7D%2C%7B%22name%22%3A%22statistik%22%2C%22value%22%3A%22off%22%7D%5D;'
+      }, {
+         seite: 'sberbank.com',
+         setcookie: 'sber.pers_notice_en=1;'
+      }, {
+         seite: 'filemail.com',
+         setcookie: 'cookie_consent_user_accepted=true; , cookie_consent_level=%7B%22strictly-necessary%22%3Atrue%2C%22functionality%22%3Atrue%2C%22tracking%22%3Afalse%2C%22targeting%22%3Afalse%7D;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -1603,6 +1660,32 @@
                break;
             }
          }
+      }
+      // Sonderfälle
+      if (window.location.host === 'cmp.seznam.cz') {
+         // Öffene geschlossenes Shadowroot (closed -> open)
+         let openshadowroot = document.createElement("script");
+         openshadowroot.innerText = 'Element.prototype.attachShadow = new Proxy(Element.prototype.attachShadow, { apply(target, thisArg, args) { args[0].mode = "open"; return Reflect.apply(target, thisArg, args); } });';
+         document.documentElement.appendChild(openshadowroot);
+         document.querySelector('html > script:first-child').remove();
+         // Klicke Cookie Banner
+         let findecookiebanner = window.setInterval(function () {
+            let akzeptieren = document.querySelector('.szn-cmp-dialog-container');
+            if (akzeptieren) {
+               akzeptieren = akzeptieren.shadowRoot.querySelector('button[data-testid="cw-button-agree-with-ads"]');
+               if (akzeptieren) {
+                  console.log('[Cookie auto decline] Detected: cmp.seznam.cz redirect cookie banner');
+                  forcesessionstorage();
+                  clearInterval(findecookiebanner);
+                  window.setTimeout(function () {
+                     akzeptieren.click();
+                  }, 202);
+               }
+            }
+         }, 200);
+         window.setTimeout(function () {
+            clearInterval(findecookiebanner);
+         }, 5000);
       }
    }
 })();
