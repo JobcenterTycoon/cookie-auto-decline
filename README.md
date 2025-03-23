@@ -6,7 +6,7 @@
 
 ***
 
-Immer mehr Cookie Banner lassen sich nicht mehr blockieren oder verstecken ohne die Webseiten zu beschädigen. Das Addon "Cookie auto decline" löst dieses Dilemmer indem es solche Cookie Banner nicht einfach versteckt oder blockiert sondern diese wirklich im Hintergrund mit minimaler Zustimmung akzeptiert oder die erforderlichen Cookies setzt damit der Cookie Banner nicht erscheint. Das Addon arbeitet dafür unauffällig im Hintergrund.
+Immer mehr Cookie Banner, Consent Banner und GDPR Banner lassen sich nicht mehr blockieren oder verstecken ohne die Webseiten zu beschädigen. Das Addon "Cookie auto decline" löst dieses Dilemmer indem es solche Cookie Banner nicht einfach versteckt oder blockiert sondern diese wirklich im Hintergrund mit minimaler Zustimmung akzeptiert oder die erforderlichen Cookies setzt damit der Cookie Banner nicht erscheint. Das Addon arbeitet dafür unauffällig im Hintergrund.
 
 Das Addon unterstützt viele bekannte Cookie Banner wie [Contentpass](https://www.contentpass.net/de), [consentmanager.net](https://www.consentmanager.net/), [cookielaw.org](https://www.cookielaw.org/), consensu, cookiebot, privacy-mgmt.com, [usercentrics.eu](https://usercentrics.com/) und viele mehr. Auch größere individuelle Seiten wie Google, Youtube, Yahoo, facebook usw. werden unterstützt. Dadurch ist es möglich den Cookie Banner auf über 1.000.000 Seiten zu erkennen und abzulehnen.
 
