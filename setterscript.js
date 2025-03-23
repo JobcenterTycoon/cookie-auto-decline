@@ -5,7 +5,7 @@
 
       // Cookie Banner die ersten 5 Sekunden verstecken.
       window.addEventListener('DOMContentLoaded', function () {
-         if (document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src="https://ct.captcha-delivery.com/c.js"]') === null) {
+         if (document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null) {
             let css = document.createElement('style');
             css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"],.amgdprjs-bar-template,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,li[class="notice js-notice notice--primary notice--cookie"]{clip-path:circle(0)!important;pointer-events:none!important;}';
             css.setAttribute('id', 'q3xyktv21es96by0ybwvb1e9a37y5pu');
@@ -647,8 +647,8 @@
          seite: 'ada.com',
          setcookie: 'cookie_settings={%22necessary%22:true%2C%22statistics%22:false%2C%22marketing%22:false%2C%22updatedAt%22:" + cookiezeit + "};'
       }, {
-         seite: 'geektyrant.com',
-         setcookie: 'ez-consent-tcf=CP7xPlgP7xPlgErAEEENArEgAAAAAEPgACiQAABBqALMNCogD7IkJCLQMIoEAKgrCAigQAAAAkDRAQAmDAp2BgEusJEAIAUAAwQAgABRkACAAASABCIAJACgQAAQCBQAAgAACAQAMDAAGAC0EAgABAdAhTAggUCwASMyIhTAhCgSCAlsoEEgCBBXCEIs8CCAREwUAAAJABWAAICwWAxJICViQQJcQbQAAEACAQQgVCKTowBDAmbLVTiibRlaQFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAA.YAAAAAAAAAAA;'
+         seite: 'mediafire.com',
+         setcookie: 'ez-consent-tcf=CQOuIlgQOuIlgErAKKENBgFgAAAAAAAgACiQAAAV0ar-N_62vLf8PCvw_bIcxq_77An3YhiCA2TRswLmXUt-RgnvsJmSJF0YUwQMiABRuiCQAJSIDCIiKFCkRAqWiHYAJghQnaQQ8DJAGYiwMCgAJCfFxbGsgEzydT86K7zkltZybXturlkkzBHfuVa98kqoTE4UwYKO9ba0CIj1eR57qiVrRaR-Z3SJgUkBjb_KNTL3uw95LOfr3Xi6_z36Yl--5Lnv-9-ids3977Z9f-AA.YAAAAAAAAAAA;'
       }, {
          seite: 'bmwk.de,bmwk-energiewende.de,german-energy-solutions.de,personalausweisportal.de',
          setcookie: 'cookiebanner=closed;'
@@ -1178,6 +1178,9 @@
          seite: 'mini.de',
          setcookie: 'cc_consentCookie=%7B%22mini_germany_family%22%3A%7B%22cmm%22%3A%7B%22advertising%22%3A0%7D%2C%22cdc%22%3A1%2C%22tp%22%3A1661330829156%2C%22lmt%22%3A1727960594266%7D%7D;'
       }, {
+         seite: 'bmwgroup-werke.com',
+         setcookie: 'cc_consentCookie=%7B%22bmwgroup-werke_com%22%3A%7B%22cmm%22%3A%7B%22advertising%22%3A0%7D%2C%22tp%22%3A1661330829156%2C%22lmt%22%3A1741554416904%7D%7D;'
+      }, {
          seite: 'audi.de',
          setcookie: 'AUDI_ENSIGHTEN_PRIVACY_Do_Not_Track=1; , AUDI_ENSIGHTEN_PRIVACY_External_Content=0; , AUDI_ENSIGHTEN_PRIVACY_Functional=1; , AUDI_ENSIGHTEN_PRIVACY_Marketing=0; , AUDI_ENSIGHTEN_PRIVACY_MODAL_LOADED=1; , AUDI_ENSIGHTEN_PRIVACY_MODAL_VIEWED=1; , AUDI_ENSIGHTEN_PRIVACY_Performance=0; , AUDI_ENSIGHTEN_PRIVACY_Social=0;'
       }, {
@@ -1588,7 +1591,7 @@
          setcookie: 'cookieConsent=[%22essential%22];'
       }, {
          seite: 'lieferando.de',
-         setcookie: 'je-cookieConsent=necessary; , customerCookieConsent=%5B%7B%22consentTypeId%22%3A103%2C%22consentTypeName%22%3A%22necessary%22%2C%22isAccepted%22%3Atrue%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A104%2C%22consentTypeName%22%3A%22functional%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A105%2C%22consentTypeName%22%3A%22analytical%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A106%2C%22consentTypeName%22%3A%22personalized%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%5D;',
+         setcookie: 'je-cookieConsent=necessary; , customerCookieConsent=%5B%7B%22consentTypeId%22%3A103%2C%22consentTypeName%22%3A%22necessary%22%2C%22isAccepted%22%3Atrue%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A104%2C%22consentTypeName%22%3A%22functional%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A105%2C%22consentTypeName%22%3A%22analytical%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%2C%7B%22consentTypeId%22%3A106%2C%22consentTypeName%22%3A%22personalized%22%2C%22isAccepted%22%3Afalse%2C%22decisionAt%22%3A%222025-03-04T23%3A00%3A27.0000000%2B00%3A00%22%7D%5D; , cookieConsent=functional;',
          nowww: true
       }, {
          seite: 'stellantis-direktbank.de,jtdirektbank.de,bbbank.de,berliner-volksbank.de,sparda-sw.de,sparda-bank-hamburg.de,sparda-h.de,frankfurter-volksbank.de,volksbank-stuttgart.de,volksbanking.de,hannoversche-volksbank.de,vb-mittelhessen.de,vrbank-mkb.de,vbkraichgau.de,sparda-ostbayern.de,vrbank-hessenland.de,maerkische-bank.de,bergische-volksbank.de,sparda-a.de,volksbank-koeln-bonn.de,voba-rnh.de,vr-bankverein.de,vrbank-suedpfalz.de,vb-eg.de,volksbank-allgaeu-oberschwaben.de,vb-alzey-worms.de,vrbank-ke-oa.de,volksbank-albstadt.de,westerwaldbank.de,wvb.de,dovoba.de,voba-bl.de,vrbankgl.de,gestalterbank.de,volksbank-hellweg.de,psd-berlin-brandenburg.de,volksbankinostwestfalen.de,volksbank-chemnitz.de,volksbank-goeppingen.de,eb.de,vobakl.de,volksbank-dresden-bautzen.de,vr-lif-ebn.de,vrnu.de,leipziger-volksbank.de,vblh.de,vr-werdenfels.de,vrbank.de,vb-muensterland.de,kieler-volksbank.de,volksbank-ueberlingen.de,hamburger-volksbank.de,vbhalle.de,vbkrefeld.de,volksbank-vor-ort.de,aachener-bank.de,vbsdn.de,volksbank-mit-herz.de,vvr-bank.de,volksbank-trier-eifel.de,meine-rvb.de,spreewaldbank.de,pax-bank.de,vb-ruhrmitte.de,donau-iller-bank.de,ligabank.de,rbok.de,volksbank-freiburg.de,vr-bank-passau.de,volksbankeg.de,diebank.de,raiba-rastede.de,vbimharz.de',
@@ -1608,6 +1611,49 @@
       }, {
          seite: 'filemail.com',
          setcookie: 'cookie_consent_user_accepted=true; , cookie_consent_level=%7B%22strictly-necessary%22%3Atrue%2C%22functionality%22%3Atrue%2C%22tracking%22%3Afalse%2C%22targeting%22%3Afalse%7D;'
+      }, {
+         seite: 'boerse-stuttgart.de',
+         setcookie: 'COOKIE_CONSENT=ALLOW_REQUIRED;',
+         reload: true
+      }, {
+         seite: 'hetzner.com',
+         setcookie: '__Secure-HO_Cookie_Consent_Declined=1;'
+      }, {
+         seite: 'bandcamp.com',
+         setcookie: 'cookie_preferences=%7B%22allow%22%3A%5B%5D%7D;'
+      }, {
+         seite: 'doppelherz.de',
+         setcookie: 'cookieConsent=false;'
+      }, {
+         seite: 'xbox-store-checker.com',
+         setcookie: 'EU_COOKIE_LAW_CONSENT=true;'
+      }, {
+         seite: 'dreambox.de',
+         setcookie: 'hu-consent={"consent":true,"consentLevel":1,"consentID":"03a39998-e53f-4899-9ee8-28ea6205d13d","categories":{"1":true,"2":false,"3":false,"4":false},"expiry":30,"timestamp":' + cookiezeit + ',"blocking":{"blocked":0,"allowed":0,"blockedServices":[],"allowedServices":[]},"lastVersion":1};'
+      }, {
+         seite: 'graugear.de',
+         setcookie: 'ct-ultimate-gdpr-cookie-level=Mw%3D%3D; , ct-ultimate-gdpr-cookie=eyJjb25zZW50X2RlY2xpbmVkIjpmYWxzZSwiY29uc2VudF9leHBpcmVfdGltZSI6MTc3Mzg2MjQ3OSwiY29uc2VudF9sZXZlbCI6MywiY29uc2VudF90aW1lIjoxNzQyMzI2NDc5fQ%3D%3D;'
+      }, {
+         seite: 'kompass.com',
+         setcookie: 'axeptio_cookies=%7B%22%24%24token%22%3A%22tzuxh86xw3gvlc672faa%22%2C%22%24%24date%22%3A%222025-03-23T15%3A23%3A36.290Z%22%2C%22%24%24cookiesVersion%22%3A%7B%22name%22%3A%22de-DE%22%2C%22identifier%22%3A%2266f423a89a161582c3a9cf03%22%7D%2C%22%24%24completed%22%3Atrue%2C%22facebook_pixel%22%3Afalse%2C%22cloudflare%22%3Afalse%2C%22CloudFlare%22%3Afalse%2C%22vimeo%22%3Afalse%2C%22google_analytics%22%3Afalse%2C%22effinity%22%3Afalse%2C%22optomaton_ug%22%3Afalse%2C%22sojern%22%3Afalse%2C%22spotad%22%3Afalse%2C%22mediamath%22%3Afalse%2C%22widespace%22%3Afalse%2C%22adsense%22%3Afalse%2C%22getquanty%22%3Afalse%2C%22GetQuanty%22%3Afalse%2C%22oct8ne%22%3Afalse%2C%22snapengage%22%3Afalse%2C%22fastbase%22%3Afalse%2C%22shiny_stat%22%3Afalse%7D;',
+         setstoragename: '_ax_tcstring',
+         setstoragecontent: 'CQOuRYAQOuRYAEEAEBDEBiFgAAAAAAAAAAYgAAAAAAAA.YAAAAAAAAAAA'
+      }, {
+         seite: 'fusionbase.com',
+         setcookie: 'cookie_consent=%7B%22ad_storage%22%3A%22denied%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%7D;'
+      }, {
+         seite: 'meine-bandscheibe.de',
+         setcookie: 'pixelmate={"gen_tracking":"deny","didConsent":"yes","stats":"deny","ads":"deny","videos":"no","else":"deny","uuid":"e44ceefa-fc44-4a20-9c3d-f711a701ac58","ga_tracking":"deny","fb_tracking":"deny","youtubeConsent":"deny","vimeoConsent":"deny","gmapsConsent":"deny","trustindexConsent":"deny","video":"deny"};'
+      }, {
+         seite: 'emlakjet.com',
+         setstoragename: 'efl-saved-consent',
+         setstoragecontent: '{"updatedAt":1742743804412,"categories":{"essential":true,"functional":false,"marketing":false,"other":false},"browserData":{"userAgent":"' + navigator.userAgent + '","pageLoad":2070,"language":"' + navigator.language + '","networkType":"","screen":{"devicePixelRatio":1.5,"height":1080,"width":1920},"uuid":"e3a89f10-056b-48e2-9a69-5cfbf1fefaaf"}}'
+      }, {
+         seite: 'sucuri.net',
+         setcookie: 'pwinteraction=Sun%2C%2023%20Mar%202025%2015%3A34%3A49%20GMT;'
+      }, {
+         seite: 'yorks-scooter.de',
+         setcookie: 'ginger-cookie=Y;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
