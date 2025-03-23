@@ -23,4 +23,4 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
 </ul>
 
 > [!IMPORTANT]
-> Damit das Addon funktioniert muss die Berechtigung "Auf Ihre Daten für diverse Websites zugreifen" <b>global!!</b> erteilt werden. Dazu oben in die URL Leiste about:addons eingeben -> Enter -> Auf das Addon klicken -> Berechtigungen -> "Auf Ihre Daten für diverse Websites zugreifen" aktivieren. Wer das Addon auch im privaten Modus nutzen möchte muss dies ebenso in den Addon Einstellungen erlauben.
+> Damit das Addon funktioniert muss die Berechtigung "Auf Ihre Daten für diverse Websites zugreifen" <b>global</b> erteilt werden. Dazu oben in die URL Leiste about:addons eingeben -> Enter -> Auf das Addon klicken -> Berechtigungen -> "Auf Ihre Daten für diverse Websites zugreifen" aktivieren. Wer das Addon auch im privaten Modus nutzen möchte muss dies ebenso in den Addon Einstellungen erlauben.
