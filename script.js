@@ -3,6 +3,8 @@
    // Variablen
    let findconsent;
    let findconsentinterval;
+   let findconsentintervalzahl = 200;
+   let findconsentintervalzahlgeändert = false;
    let checkpagevisibility;
    let checkpagevisibility2;
    let findcookiebannerspecific;
@@ -34,8 +36,9 @@
       }
    };
    let klickecookiebutton = function () {};
+   let findconsentintervalzahländern = function() {};
    // Find Cookie Banner
-   if ((sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && (window.innerHeight > 400 || window.innerHeight === 0)) && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
+   if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
       const nc = 'domain=' + window.location.host + ';secure=true; max-age=86400; SameSite=None; path=/';
       const cookiedatum = new Date().toISOString();
@@ -48,14 +51,14 @@
          } else if (document.hidden === false) {
             findconsentinterval = window.setInterval(function () {
                findconsent();
-            }, 200);
+            }, findconsentintervalzahl);
          }
       };
       window.addEventListener('visibilitychange', checkpagevisibility);
       if (document.hidden === false) {
          findconsentinterval = window.setInterval(function () {
             findconsent();
-         }, 200);
+         }, findconsentintervalzahl);
       }
 
       let bereitsgeklickt = false;
@@ -378,38 +381,10 @@
          if (contentpass && document.cookie.includes('OptanonAlertBoxClosed') === false) {
             console.log('[Cookie auto decline] Detected: Contentpass');
             advancedrun = false;
-            const contentpassobfuscated = document.querySelector('div[class^="_"] > button[class^="_"][type="button"]#_cp_cmp_cta_button');
-            const contentpassobfuscated2 = document.querySelector('div[class^="_"] > a[class^="_"][rel="noopener noreferrer"][target="_self"]');
-            const contentpassobfuscated3 = document.querySelector('div[class^="_"] > div > h2 + div + div button[class^="_"]');
-            const contentpassregular = document.querySelector('div#cmp-consent > button#cmp-btn-accept');
-            const contentpassregular2 = document.querySelector('body > [id$="box"] .cmptxt_btn_yes[role="button"]');
+            const akzeptieren = document.querySelector('div[class^="_"] > button[class^="_"][type="button"]#_cp_cmp_cta_button, div[class^="_"] > a[class^="_"][rel="noopener noreferrer"][target="_self"], div[class^="_"] > div > h2 + div + div button[class^="_"], div#cmp-consent > button#cmp-btn-accept, body > [id$="box"] .cmptxt_btn_yes[role="button"]');
             const contentpassshadowroot = document.querySelector('body > div:first-child[id$="wrapper"][class$="wrapper"]');
-            if (contentpassobfuscated) {
-               beenden();
-               window.setTimeout(function () {
-                  contentpassobfuscated.click();
-               }, 201);
-            } else if (contentpassobfuscated2) {
-               beenden();
-               window.setTimeout(function () {
-                  contentpassobfuscated2.click();
-               }, 201);
-            } else if (contentpassobfuscated3) {
-               beenden();
-               window.setTimeout(function () {
-                  contentpassobfuscated3.click();
-               }, 201);
-            } else if (contentpassregular) {
-               beenden();
-               window.setTimeout(function () {
-                  contentpassregular.click();
-               }, 2201);
-            } else if (contentpassregular2) {
-               beenden();
-               window.setTimeout(function () {
-                  contentpassregular2.click();
-               }, 201);
-            } else if (contentpassshadowroot) {
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            if (contentpassshadowroot) {
                const buttonyes = contentpassshadowroot.shadowRoot.querySelector('[class^="cmpcontent"] a.cmptxt_btn_yes');
                if (buttonyes) {
                   beenden();
@@ -437,53 +412,22 @@
          }
 
          // usercentrics.eu
-         const usercentrics = document.querySelector('[id^="usercentrics-"]:not(script)');
+         const usercentrics = document.querySelector('[id^="usercentrics-"]:not(script), [class="aa-first-layer cxenseignore"]');
          const usercentricsscript = document.querySelector('script[src*="usercentrics.eu/"]#usercentrics-cmp');
          if (usercentrics && usercentricsscript && localStorage.getItem('uc_user_interaction') !== true) {
             console.log('[Cookie auto decline] Detected: usercentrics');
             advancedrun = false;
-            const ablehnen = usercentrics.shadowRoot.querySelector('button[class^="sc-"][data-testid="uc-deny-all-button"][role="button"]');
-            const ablehnen2 = usercentrics.shadowRoot.querySelector('button#deny');
-            const einstellungenspeichern = usercentrics.shadowRoot.querySelector('button[class^="sc-"][data-testid="uc-save-button"][role="button"]');
-            const einstellungen = usercentrics.shadowRoot.querySelector('button[data-testid^="uc-customize-"], button.uc-more-button, button[data-testid^="uc-more-"]');
-            const akzeptieren = document.querySelector('button.aa-first-layer__button[onclick^="accept"]');
-            const akzeptieren2 = usercentrics.shadowRoot.querySelector('button[data-testid="uc-accept-all-button"]');
-            const speichern = usercentrics.shadowRoot.querySelector('button[data-testid="uc-save-button"], button#save.uc-save-button');
-            if (ablehnen) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnen.click();
-               }, 502);
-            } else if (ablehnen2) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnen2.click();
-               }, 602);
-            } else if (einstellungenspeichern) {
-               beenden();
-               window.setTimeout(function () {
-                  einstellungenspeichern.click();
-               }, 602);
-            } else if (speichern) {
-               beenden();
-               window.setTimeout(function () {
-                  speichern.click();
-               }, 502);
-            } else if (einstellungen) {
-               window.setTimeout(function () {
-                  einstellungen.click();
-               }, 502);
-            } else if (akzeptieren) {
-               beenden();
-               window.setTimeout(function () {
-                  akzeptieren.click();
-               }, 1502);
-            } else if (akzeptieren2) {
-               beenden();
-               window.setTimeout(function () {
-                  akzeptieren2.click();
-               }, 1502);
+            findconsentintervalzahl = 702;
+            findconsentintervalzahländern();
+            if (usercentrics.shadowRoot) {
+               ablehnen = usercentrics.shadowRoot.querySelector('button[class^="sc-"][data-testid="uc-deny-all-button"][role="button"], button#deny');
+               einstellungen = usercentrics.shadowRoot.querySelector('button[data-testid^="uc-customize-"], button.uc-more-button, button[data-testid^="uc-more-"]');
+               akzeptieren = usercentrics.shadowRoot.querySelector('button[data-testid="uc-accept-all-button"], button#accept');
+               speichern = usercentrics.shadowRoot.querySelector('button[data-testid="uc-save-button"], button#save.uc-save-button, button[class^="sc-"][data-testid="uc-save-button"][role="button"]');
+            } else {
+               akzeptieren = document.querySelector('button.aa-first-layer__button[onclick^="accept"]');
             }
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
          // usercentrics.eu 2
@@ -509,7 +453,7 @@
          if (cookiebot && document.cookie.includes('%2Cutc:16') === false) {
             console.log('[Cookie auto decline] Detected: cookiebot.com');
             ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], button#CybotCookiebotDialogBodyButtonDecline');
-            speichern = cookiebot.querySelector('[id*="OptinAllowallSelection"]:is(button, a, span)');
+            speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"]):is(button, a, span)');
             einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
             nureinklickeinstellungen = true;
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -960,6 +904,13 @@
             einstellungen = ccm19de.querySelector('button[data-ccm-modal="ccm-control-panel"]');
             speichern = document.querySelector('#ccm-control-panel button.ccm--decline-cookies[type="button"], #ccm-control-panel button.ccm--save-settings[type="button"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            window.setTimeout(function() {
+               if (document.querySelector('.ccm-root > #ccm-widget:not([style="display: none;"])')) {
+                  window.localStorage.setItem('ccm_consent', '{"/":{"gen":2,"ucid":"2d74b685b2e05d5a547f2b22e09f833fb0ac7b534d78af2608eed772e2128cb3","consent":true,"embeddings":["9752444","1b8c114","bb6c67f"],"created":17448899122,"updated":17448899122,"iframeConsentDomains":[],"tcf":{"p":[],"sf":[],"v":[],"gad":[]},"lang":"de-DE"}}');
+                  beenden();
+                  window.location.reload();
+               }
+            }, 1002);
          }
 
          // https://github.com/orestbida/cookieconsent
@@ -1053,8 +1004,11 @@
          // https://www.acris-ecommerce.at/
          const acris = document.querySelector('.acris-cookie-consent[data-acris-cookie-consent="true"][data-acris-cookie-consent-options]');
          if (acris) {
+            findconsentintervalzahl = 502;
+            findconsentintervalzahländern();
             console.log('[Cookie auto decline] Detected: https://www.acris-ecommerce.at/');
             ablehnen = acris.querySelector('#ccAcceptOnlyFunctional');
+            einstellungen = acris.querySelector('#ccSettingButton');
             akzeptieren = acris.querySelector('#ccAcceptButton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1400,7 +1354,7 @@
          if (cookiesjsr && document.cookie.includes('cookiesjsr') === false) {
             console.log('[Cookie auto decline] Detected: cookiesjsr');
             ablehnen = cookiesjsr.querySelector('button.denyAll');
-            einstellungen = cookiesjsr.querySelector('button.cookiesjsr-settings');
+            einstellungen = cookiesjsr.querySelector('.cookiesjsr-settings');
             speichern = cookiesjsr.querySelector('button.save.dialog-last-tab');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1536,7 +1490,7 @@
          if (ketch) {
             console.log('[Cookie auto decline] Detected: ketch.com');
             ablehnen = ketch.querySelector('div:has(> div:first-child > div:first-child > div:first-child > p:first-child) > div:last-child > button:is([aria-label="Reject All"], [aria-label="Alle ablehnen"], [aria-label="DECLINE"], [aria-label="Decline All"])');
-            speichern = ketch.querySelector('div:has(> div > div > a[href^="https://www.ketch.com/"]) > div > button[aria-label="Save choices"]');
+            speichern = ketch.querySelector('div:has(> div > div > a[href^="https://www.ketch.com/"]) > div > button:is([aria-label="Save choices"], [aria-label="Confirm My Choices"])');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1671,7 +1625,7 @@
 
          // Advanced
          if (advancedcounter >= 5 && advancedrun === true && window.self === window.top) {
-            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar, li, footer):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [data-testid="consent-banner"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
+            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar, li, footer):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [data-testid="consent-banner"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
 
             for (let i = 0; i < advancedcontainer.length; i++) {
                const a = advancedcontainer[i];
@@ -2280,18 +2234,12 @@
       }, {
          seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de',
          checkcookie: 'cmp-settings',
-         sonderfall: 'fernsehsender'
+         selector: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
+         keinesichtbarkeitsprüfung: true
       }, {
-         seite: 'lefigaro.fr',
-         checkcookie: 'fig_firstparty',
-         sonderfall: 'lefigarofr'
-      }, {
-         seite: 'lachainemeteo.com',
+         seite: 'lachainemeteo.com,lefigaro.fr',
          checkcookie: 'savedProfile',
-         sonderfall: 'lachainemeteocom'
-      }, {
-         seite: 'tumblr.com',
-         sonderfall: 'tumblrcom'
+         selector: '#appconsent > iframe >> button.button__acceptAll'
       }, {
          seite: 'startmail.com',
          checkcookie: 'cb_rejected',
@@ -3147,6 +3095,9 @@
          seite: 'mydealz.de',
          selector: '.popover-content button[data-t="showCookiesSettings"] -> .popover-content button[data-t="rejectAll"]',
          checkcookie: 'cookie_policy_agreement'
+      }, {
+         seite: 'assets.poool.fr',
+         selector: '#app .p3-widget-consent > :not(.p3-d-xl-none) .consent-action > .p3-button-wrapper > button.p3-unlock-button + button'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -3182,13 +3133,15 @@
                                  for (let j = 1; j < shadowroots.length; j++) {
                                     if (getfinalshadowrootselector && getfinalshadowrootselector.shadowRoot) {
                                        getfinalshadowrootselector = getfinalshadowrootselector.shadowRoot.querySelector(shadowroots[j]);
+                                    } else if(getfinalshadowrootselector && getfinalshadowrootselector.contentDocument) {
+                                       getfinalshadowrootselector = getfinalshadowrootselector.contentDocument.querySelector(shadowroots[j]);
                                     } else {
                                        getfinalshadowrootselector = undefined;
                                        break;
                                     }
                                  }
                                  const a = getfinalshadowrootselector;
-                                 if (getfinalshadowrootselector && sichtbarkeitsprüfung(a)) {
+                                 if (getfinalshadowrootselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
                                     cookiebannerspecificakzeptiert = true;
                                     foundbutton = true;
                                     forcesessionstorage();
@@ -3202,7 +3155,7 @@
                            } else {
                               const normalselector = document.querySelector(selectors[tiefe]);
                               const a = normalselector;
-                              if (normalselector && sichtbarkeitsprüfung(a)) {
+                              if (normalselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
                                  cookiebannerspecificakzeptiert = true;
                                  foundbutton = true;
                                  forcesessionstorage();
@@ -3268,65 +3221,19 @@
                      location.reload();
                   }
                   // Sonderfälle
-                  if (regeln[i].sonderfall === 'fernsehsender') {
-                     const findcookiebanner = window.setInterval(function () {
-                        const ablehnen = document.querySelector('cmp-banner').shadowRoot.querySelector('cmp-dialog').shadowRoot.querySelector('cmp-link').shadowRoot.querySelector('a');
-                        const test = document.querySelector('cmp-banner').shadowRoot.querySelector('cmp-dialog').shadowRoot.querySelector('cmp-button[variant="secondary"]').innerText;
-                        const einstellungenundspeichern = document.querySelector('cmp-banner').shadowRoot.querySelector('cmp-dialog').shadowRoot.querySelector('cmp-button[variant="secondary"]').shadowRoot.querySelector('button');
-                        if (ablehnen) {
-                           window.clearInterval(findcookiebanner);
-                           window.setTimeout(function () {
-                              ablehnen.click();
-                           }, 202);
-                        } else if (test === 'ABLEHNEN ODER EINSTELLUNGEN') {
-                           window.setTimeout(function () {
-                              einstellungenundspeichern.click();
-                           }, 202);
-                        } else if (test === 'EINWILLIGUNG ABLEHNEN WIE AUSGEWÄHLT' || test === 'EINWILLIGUNGEN ABLEHNEN WIE AUSGEWÄHLT') {
-                           window.setTimeout(function () {
-                              window.clearInterval(findcookiebanner);
-                              einstellungenundspeichern.click();
-                           }, 202);
-                        }
-                     }, 202);
-                     window.setTimeout(function () {
-                        window.clearInterval(findcookiebanner);
-                     }, 10002);
-                  } else if (regeln[i].sonderfall === 'lefigarofr') {
-                     window.setTimeout(function () {
-                        const check = document.querySelector('#appconsent > iframe');
-                        if (check) {
-                           const akezptieren = check.contentDocument.querySelector('button.button__acceptAll');
-                           if (akezptieren) {
-                              akezptieren.click();
-                           }
-                        }
-                     }, 1502);
-                  } else if (regeln[i].sonderfall === 'lachainemeteocom') {
-                     window.setTimeout(function () {
-                        const check = document.querySelector('#appconsent > iframe').contentWindow.document.querySelector('.banner__controlArea > section > button:last-child');
-                        if (check) {
-                           check.click();
-                           localStorage.setItem('appconsent', '{"consents":{"consentables":[{"id":1,"iab_id":1,"name":{"values":{"fr":"Stocker et/ou accéder à des informations sur un terminal"}},"description":{"values":{"fr":"Les cookies, identifiants de votre terminal ou autres informations peuvent être stockés ou consultés sur votre terminal pour les finalités qui vous sont présentées."}},"description_legal":{"values":{"fr":"Les partenaires peuvent :\n* Stocker des informations et accéder à des informations stockées sur le terminal, comme les cookies et les identifiants du terminal présentés à un utilisateur."}},"status":1,"legintStatus":0,"type":0},{"id":2,"iab_id":2,"name":{"values":{"fr":"Sélectionner des publicités standard"}},"description":{"values":{"fr":"Les publicités peuvent vous être présentées en fonction du contenu éditorial que vous consultez, de l’application que vous utilisez, de votre localisation approximative, ou de votre type de terminal\n"}},"description_legal":{"values":{"fr":"Pour sélectionner des publicités standard, les p');
-                        }
-                     }, 1202);
-                  } else if (regeln[i].sonderfall === 'tumblrcom') {
-                     window.setTimeout(function () {
-                        const check = document.querySelector('#cmp-app-container iframe').contentWindow.document.querySelector('button.is-primary[type="button"]');
-                        if (check) {
-                           check.click();
-                        }
-                     }, 202);
-                  } else if (regeln[i].sonderfall === 'truckscout24de') {
+                  if (regeln[i].sonderfall === 'truckscout24de') {
+                     advancedrun = false;
                      if (window.location.href === 'https://www.truckscout24.de/main/consent') {
                         if (document.querySelector('a[href="javascript:history.back()"]')) {
+                           beenden();
                            document.querySelector('a[href="javascript:history.back()"]').click();
                         }
                      } else {
-                        sessionStorage.removeItem('mpowlesu908hxfyw37ghg5ikx90jdzt');
-                        if (document.querySelector('#cookie-notification a.btn[href="/main/consent"]')) {
-                           document.querySelector('#cookie-notification a.btn[href="/main/consent"]').click();
-                        }
+                        window.setTimeout(function() {
+                           if (document.querySelector('#cookie-notification a.btn[href="/main/consent"]')) {
+                              document.querySelector('#cookie-notification a.btn[href="/main/consent"]').click();
+                           }
+                        }, 502);
                      }
                   }
                }
@@ -3398,6 +3305,18 @@
             beenden();
          }
       };
+
+      // Consentfinder Delay ändern.
+      findconsentintervalzahländern = function() {
+         if (findconsentintervalzahlgeändert === false) {
+            findconsentintervalzahlgeändert = true;
+            window.clearInterval(findconsentinterval);
+            findconsentinterval = window.setInterval(function () {
+               findconsent();
+            }, findconsentintervalzahl);
+         }
+      }
+
       // Weitere Sonderfälle die gar nicht oben reinpassen.
       if (window.location.host.endsWith('.de') && (window.location.host.includes('sparkasse-') || window.location.host.includes('-sparkasse') || window.location.host.includes('stadtsparkasse-') || window.location.host.startsWith('www.ssk') || window.location.host.startsWith('www.spk') || window.location.host.endsWith('haspa.de')) && document.cookie.includes('ePrivacyStatus') === false) {
          console.log('[Cookie auto decline] Detected: Sparkasse cookie banner');
