@@ -2,7 +2,7 @@
   "manifest_version":3,
   "name":"Cookie auto decline",
   "author":"JobcenterTycoon",
-  "version":"5.1",
+  "version":"5.2",
   "description":"Die Erweiterung akzeptiert Cookie Banner automatisch mit minimaler Zustimmung.",
   "icons":{
      "128":"icons/icon_128.png",
@@ -20,6 +20,9 @@
         "matches":[
            "<all_urls>"
         ],
+        "exclude_matches":[
+         "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+        ],
         "js":[
            "script.js"
         ],
@@ -29,6 +32,9 @@
       "matches":[
          "<all_urls>"
       ],
+      "exclude_matches":[
+         "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+        ],
       "js":[
          "setterscript.js"
       ],
