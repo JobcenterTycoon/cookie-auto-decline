@@ -25,21 +25,21 @@
 
       // Force the session storage
       forcesessionstorage = function () {
-         if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && window.location.host.endsWith('.mydealz.de') === false) {
+         if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && window.location.hostname.endsWith('.mydealz.de') === false) {
             sessionStorage.setItem('mpowlesu908hxfyw37ghg5ikx90jdzt', 'djx0v0odce35xrb2pt5dzbgaj1mud5c');
          }
       };
       let nc;
       let ncnowww;
       if (window.location.protocol === 'http:') {
-         nc = "domain=" + window.location.host + ";max-age=86400; SameSite=Lax; path=/";
-         ncnowww = "domain=" + window.location.host + ";max-age=86400; SameSite=Lax; path=/";
+         nc = "domain=" + window.location.hostname + ";max-age=86400; SameSite=Lax; path=/";
+         ncnowww = "domain=" + window.location.hostname + ";max-age=86400; SameSite=Lax; path=/";
       } else {
-         nc = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
-         ncnowww = "domain=" + window.location.host + ";secure=true; max-age=86400; SameSite=None; path=/";
+         nc = "domain=" + window.location.hostname + ";secure=true; max-age=86400; SameSite=None; path=/";
+         ncnowww = "domain=" + window.location.hostname + ";secure=true; max-age=86400; SameSite=None; path=/";
       }
 
-      if (window.location.host.startsWith('www.')) {
+      if (window.location.hostname.startsWith('www.')) {
          ncnowww = ncnowww.replace('domain=www.', 'domain=');
       }
 
@@ -102,20 +102,20 @@
          setcookie: 'consentUUID=80f57ffd-7468-4ca5-8fff-c442bcc6f276_32;'
       }, {
          seite: 'likehifi.de',
-         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42;'
+         setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43;'
       }, {
          seite: 'backenmachtgluecklich.de',
          setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41;',
          nowww: true
       }, {
          seite: 'raspberry-pi-geek.de',
-         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42;'
+         setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43;'
       }, {
          seite: 'n-tv.de',
          setcookie: 'consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32_34_36_39_41;'
       }, {
          seite: 'chip.de',
-         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42;'
+         setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43;'
       }, {
          seite: 'rtl.de',
          setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41;'
@@ -124,7 +124,7 @@
          setcookie: 'consentUUID=8e2d1754-cf0f-410d-b5e3-22ea9abf7ce4_34_35_42;'
       }, {
          seite: 'cinestar.de',
-         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40;'
+         setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43;'
       }, {
          seite: 'forschung-und-wissen.de',
          setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34;'
@@ -192,9 +192,6 @@
       }, {
          seite: 'afternic.com,godaddy.com',
          setcookie: 'OPTOUTMULTI=0:0%7Cc2:1%7Cc9:1%7Cc11:1; , pwinteraction=Wed%2C%2013%20Sep%202023%2015%3A27%3A25%20GMT;'
-      }, {
-         seite: 'nature.com',
-         setcookie: 'sncc_tc_8=CQDs8wAQDs8wAGgABAENBCFgAAAAAAAAAAYgAAAAAADBIAMAAQTLHQAYAAgmWQgAwABBMslABgACCZZSADAAEEyy0AGAAIJlgAAA.YAAAAAAAAAAA; , sncc=P%3D8%3AV%3D68.0.0%26C%3DC01%26D%3Dtrue;'
       }, {
          seite: 'change.org',
          setstoragename: '_change_cookie_prefs',
@@ -584,7 +581,8 @@
          setcookie: 'cookie_consent={"statistics":{"googleAnalytics":false}};'
       }, {
          seite: 'honeygain.com',
-         setcookie: 'cookieConsent=%7B%22submitBasicData%22%3Atrue%2C%22submitUsageStats%22%3Afalse%2C%22submitAudienceData%22%3Afalse%7D;'
+         setcookie: 'cookieConsent={%22submitBasicData%22:true%2C%22submitUsageStats%22:false%2C%22submitAudienceData%22:false};',
+         reload: true
       }, {
          seite: 'bonus-bunny.de',
          setcookie: 'bst_dsgvo_cookie=1;'
@@ -1286,9 +1284,6 @@
          seite: 'henrich-schroeder.de',
          setcookie: 'omCookieConsent=group-1.1,group-2.0,group-3.0,group-4.0,dismiss;'
       }, {
-         seite: 'klimaanlagen-heizungen.de',
-         setcookie: 'cookiePreferences={"groups":{"technical":{"name":"technical","cookies":{"cookieDeclined":{"name":"cookieDeclined","active":true},"allowCookie":{"name":"allowCookie","active":true},"shop":{"name":"shop","active":true},"csrf_token":{"name":"csrf_token","active":true},"cookiePreferences":{"name":"cookiePreferences","active":true},"x-cache-context-hash":{"name":"x-cache-context-hash","active":true},"slt":{"name":"slt","active":true},"nocache":{"name":"nocache","active":true},"paypal-cookies":{"name":"paypal-cookies","active":true},"session":{"name":"session","active":true},"currency":{"name":"currency","active":true}},"active":true},"comfort":{"name":"comfort","cookies":{"sUniqueID":{"name":"sUniqueID","active":true}},"active":true},"statistics":{"name":"statistics","cookies":{"adcell":{"name":"adcell","active":false},"x-ua-device":{"name":"x-ua-device","active":false},"mmFacebookPixel":{"name":"mmFacebookPixel","active":false},"googletagmanager":{"name":"googletagmanager","active":false},"partner":{"name":"partner","active":false},"uptain":{"name":"uptain","active":false}},"active":false}},"hash":"WyJhZGNlbGwiLCJhbGxvd0Nvb2tpZSIsImNvbWZvcnQiLCJjb29raWVEZWNsaW5lZCIsImNvb2tpZVByZWZlcmVuY2VzIiwiY3NyZl90b2tlbiIsImN1cnJlbmN5IiwiZ29vZ2xldGFnbWFuYWdlciIsIm1tRmFjZWJvb2tQaXhlbCIsIm5vY2FjaGUiLCJwYXJ0bmVyIiwicGF5cGFsLWNvb2tpZXMiLCJzVW5pcXVlSUQiLCJzZXNzaW9uIiwic2hvcCIsInNsdCIsInN0YXRpc3RpY3MiLCJ0ZWNobmljYWwiLCJ1cHRhaW4iLCJ4LWNhY2hlLWNvbnRleHQtaGFzaCIsIngtdWEtZGV2aWNlIl0="};'
-      }, {
          seite: 'daikin.de',
          setcookie: 'acceptCookiePolicy-functional=false; , acceptCookiePolicy-marketing=false; , acceptCookiePolicy-performance=false; , acceptCookies=true; , acceptCookiePolicyDate=' + cookiezeit + ';'
       }, {
@@ -1688,6 +1683,24 @@
       }, {
          seite: 'jeep.de',
          setcookie: 'opncl_advertising=false; , opncl_comfort=true; , opncl_essential=true; , opncl_general=true; , opncl_performance=false;'
+      }, {
+         seite: 'hug-ka.de',
+         setcookie: 'cc_advertising=no; , cc_necessary=yes;'
+      }, {
+         seite: 'entsoe.eu',
+         setcookie: 'emfip-welcome=true;'
+      }, {
+         seite: 'ilovepdf.com',
+         setcookie: 'cmp_ck=3;'
+      }, {
+         seite: 'planet-beruf.de',
+         setcookie: 'cc_important=true;'
+      }, {
+         seite: 'aubi-plus.de',
+         setcookie: 'cm-accepted=true;'
+      }, {
+         seite: 'gira.de',
+         setcookie: 'GIRA_ca2=%5B1%2C2%2C3%2C4%2C5%2C7%5D;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -1742,7 +1755,7 @@
          }
       }
       // Sonderfälle
-      if (window.location.host === 'cmp.seznam.cz') {
+      if (window.location.hostname === 'cmp.seznam.cz') {
          // Öffene geschlossenes Shadowroot (closed -> open)
          let openshadowroot = document.createElement("script");
          openshadowroot.innerText = 'Element.prototype.attachShadow = new Proxy(Element.prototype.attachShadow, { apply(target, thisArg, args) { args[0].mode = "open"; return Reflect.apply(target, thisArg, args); } });';
