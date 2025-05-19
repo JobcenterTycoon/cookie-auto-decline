@@ -91,7 +91,6 @@
             if (window.location.href.includes('/index.html?') && window.location.href.includes('hasCsp=') && window.location.href.includes('message_id=') && window.location.href.includes('consent')) {
                console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
                advancedrun = false;
-               findconsentintervalzahländern();
                ablehnen = document.querySelector('button.sp_choice_type_13');
                akzeptieren = document.querySelector('button.sp_choice_type_11');
                einstellungen = document.querySelector('button.sp_choice_type_12, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
