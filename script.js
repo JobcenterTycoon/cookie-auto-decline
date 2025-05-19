@@ -38,7 +38,7 @@
    let klickecookiebutton = function () {};
    let findconsentintervalzahländern = function() {};
    // Find Cookie Banner
-   if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
+   if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && document.querySelector('body > div:first-child + script[src^="https://mcl.spur.us/d/mcl.js?"] + script:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
       const nc = 'domain=' + window.location.hostname + ';secure=true; max-age=86400; SameSite=None; path=/';
       const cookiedatum = new Date().toISOString();
@@ -89,14 +89,13 @@
 
             // cdn.privacy-mgmt.com
             if (window.location.href.includes('/index.html?') && window.location.href.includes('hasCsp=') && window.location.href.includes('message_id=') && window.location.href.includes('consent')) {
-               
                console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
                advancedrun = false;
+               findconsentintervalzahländern();
                ablehnen = document.querySelector('button.sp_choice_type_13');
                akzeptieren = document.querySelector('button.sp_choice_type_11');
                einstellungen = document.querySelector('button.sp_choice_type_12, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
                speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not([disabled])');
-               nureinklickeinstellungen = true;
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                if (einstellungenknöpfe.length > 0) {
@@ -108,6 +107,11 @@
                      }
                   }
                }
+               window.setTimeout(function() {
+                  if (speichern && speichern.offsetHeight >= 1) {
+                     speichern.click();
+                  }
+               }, 702);
             }
 
             // privacymanager.io (iframe klicker)
@@ -244,7 +248,6 @@
          }
 
          // Contentpass (obfuscated)
-
          const contentpass = document.querySelector('body > div:first-child + div[data-nosnippet][translate] > div:first-child > div[class^="_"]:not([id]):has(a)');
          if (contentpass) {
             akzeptieren = contentpass.querySelector('a[class^="_"][href^="http"][rel="noopener noreferrer"][target="_self"]');
@@ -359,10 +362,10 @@
          }
 
          // waconcookiemanagement
-         const waconcookiemanagement = document.getElementsByClassName('waconcookiemanagement');
-         if (waconcookiemanagement.length > 0 && waconcookiemanagement[0].offsetHeight > 0) {
+         const waconcookiemanagement = document.querySelector('.waconcookiemanagement-cookiebar, [class="waconcookiemanagement "]');
+         if (waconcookiemanagement && document.cookie.includes('waconcookiemanagement') === false) {
             console.log('[Cookie auto decline] Detected: waconcookiemanagement');
-            ablehnen = document.querySelector('.waconcookiemanagement .cookie-refuse > a');
+            ablehnen = waconcookiemanagement.querySelector('a#data-cookie-refuse, span.cookie-refuse');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -390,7 +393,7 @@
          if (borlabs && document.cookie.includes('essential%22%3A%5B%22borlabs-cookie') === false) {
             console.log('[Cookie auto decline] Detected: borlabs.io');
             ablehnen = borlabs.querySelector('button.brlbs-cmpnt-btn.brlbs-btn-accept-only-essential');
-            speichern = borlabs.querySelector('#CookieBoxSaveButton');
+            speichern = borlabs.querySelector('#CookieBoxSaveButton, [data-cookie-accept=""]');
             einstellungen = borlabs.querySelector('#CookieBoxPreferencesButton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -511,7 +514,10 @@
          const shopify = document.querySelector('section#shopify-pc__banner[aria-labelledby][style="display: block;"]');
          if (shopify && document.cookie.includes('%7B%22purposes%22%3A%7B%22p%22%3Atrue') === false) {
             console.log('[Cookie auto decline] Detected: shopify cookie banner');
+            nureinklickeinstellungen = true;
             ablehnen = shopify.querySelector('.shopify-pc__banner__btns-granular #shopify-pc__banner__btn-decline');
+            einstellungen = shopify.querySelector('#shopify-pc__banner__btn-manage-prefs');
+            speichern = document.querySelector('#shopify-pc__prefs button#shopify-pc__prefs__header-decline');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -588,28 +594,14 @@
          if (cookieconsentdesc && cookieconsentdesc.offsetWidth > 1 && document.cookie.includes('cookieconsent_status') === false) {
             console.log('[Cookie auto decline] Detected: cookieconsent:desc');
             advancedrun = false;
-            const ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss');
-            const speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save');
-            const einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"]');
+            nureinklickeinstellungen = true;
+            ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss');
+            speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save, [aria-label*="speichern"], [aria-label*="save"]');
+            einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"], a.cc-settings');
             const einstellungsmenu = document.querySelector('div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + #pd-cp-preferences, div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + div > div[id="cookieconsent:settings"]');
-            const schließen = cookieconsentdesc.querySelector('a[aria-label="dismiss cookie message"]');
-            const akzeptieren = cookieconsentdesc.querySelector('a[aria-label="allow cookies"]');
-            if (ablehnen) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnen.click();
-               }, 202);
-            } else if (speichern) {
-               beenden();
-               window.setTimeout(function () {
-                  speichern.click();
-               }, 202);
-            } else if (einstellungen && bereitsgeklickt === false) {
-               bereitsgeklickt = true;
-               window.setTimeout(function () {
-                  einstellungen.click();
-               }, 202);
-            } else if (einstellungsmenu) {
+            schließen = cookieconsentdesc.querySelector('a[aria-label="dismiss cookie message"]');
+            akzeptieren = cookieconsentdesc.querySelector('a[aria-label="allow cookies"]');
+            if (einstellungsmenu && einstellungsmenu.offsetHeight >= 1) {
                beenden();
                window.setTimeout(function () {
                   const checkboxen = einstellungsmenu.querySelectorAll('input#analytics-cookies-checkbox:checked, input#marketing-cookies-checkbox:checked');
@@ -625,17 +617,8 @@
                      speichernuntermenu.click();
                   }
                }, 202);
-            } else if (schließen) {
-               beenden();
-               window.setTimeout(function () {
-                  schließen.click();
-               }, 202);
-            } else if (akzeptieren) {
-               beenden();
-               window.setTimeout(function () {
-                  akzeptieren.click();
-               }, 202);
             }
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
          // oveleon.de (cookiebar-desc)
@@ -917,9 +900,8 @@
          }
 
          // klaro.org
-         const klaro = document.querySelector('div[id="klaro"] > div[class^="klaro"]');
-         const klaro2 = document.querySelector('#cookieconsent > div[class^="klaro"]');
-         if ((klaro || klaro2) && document.cookie.includes('klaro') === false) {
+         const klaro = document.querySelector('div[id="klaro"] > div[class^="klaro"], #cookieconsent > div[class^="klaro"], #consentfriend > div[class^="klaro"');
+         if (klaro && document.cookie.includes('klaro') === false) {
             console.log('[Cookie auto decline] Detected: klaro.org');
             advancedrun = false;
             const ablehnen = document.querySelector('div[class^="klaro"] button.cn-decline[type="button"]');
@@ -1023,6 +1005,7 @@
             ablehnen = document.querySelector('#usercentrics-button button#uc-btn-deny-banner');
             einstellungen = document.querySelector('#usercentrics-button button#uc-btn-more-info-banner');
             speichern = document.querySelector('#usercentrics-button .uc-save-settings-button');
+            akzeptieren = document.querySelector('#usercentrics-button button#uc-btn-accept-banner');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1495,6 +1478,14 @@
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
+         // sovy.com
+         const sovy = document.querySelector('#sccm');
+         if (sovy && document.cookie.includes('%22consentId%22%3A%') === false) {
+            console.log('[Cookie auto decline] Detected: sovy.com');
+            ablehnen = sovy.querySelector('.rejectcookies');
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+         }
+
          // Volksbanken (100+ Seiten)
          const volksbanken = document.querySelector('div[class="cookie-consent  "]');
          if (volksbanken && document.cookie.includes('cookieConsent') === false) {
@@ -1513,7 +1504,7 @@
 
          // Advanced
          if (advancedcounter >= 5 && advancedrun === true && window.self === window.top) {
-            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, cms-cookie-bar, li, footer):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [data-testid="consent-banner"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
+            const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, li, footer, app-cookie, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="cc_overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [data-testid="consent-banner"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty)');
 
             for (let i = 0; i < advancedcontainer.length; i++) {
                const a = advancedcontainer[i];
@@ -1557,7 +1548,7 @@
                      text.includes('uns cookies auf') ||
                      text.includes('verwendeten cookies') ||
                      text.includes('verwenden wir cookies') ||
-                     text.includes('dass wir cookies verwenden') ||
+                     text.includes('wir cookies verwenden') ||
                      text.includes('mehr über cookies auf unserer webseite') ||
                      text.includes('der nutzung aller cookies') ||
                      text.includes('cookies gesetzt') ||
@@ -1587,9 +1578,11 @@
                      text.includes('alle cookies akzeptieren') ||
                      text.includes('cookie einstellungen') ||
                      text.includes('cookie-einstellungen') ||
+                     text.includes('einwilligung cookies') ||
                      text.includes('privatsphären-einstellungen') ||
                      text.includes('privatsphäre-einstellungen') ||
                      text.includes('cookie-präferenz') ||
+                     text.includes('verwenden cookies') ||
                      text.includes('wir verwenden tools,') ||
                      text.includes('this website uses cookies') ||
                      text.includes('this site uses cookies') ||
@@ -1625,7 +1618,7 @@
                                  btninput = btninput.toLowerCase().trim();
                               }
                               // Ablehnen
-                              if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('ohne ') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
+                              if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('ohne ') || btn.includes('eingeschränkte funktionalität') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('no thanks') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  break;
                                  // Speichern
@@ -1637,7 +1630,7 @@
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
                                  // Akzeptieren
-                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptieren') || btn.includes('akzeptiert') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
+                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptieren') || btn.includes('akzeptiert') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it')|| btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -1654,7 +1647,6 @@
                      }
 
                   }
-                  //break;
                }
             }
             attributchecker = function (a) {
@@ -1696,9 +1688,9 @@
          checkcookie: 'SOCS',
          noframe: true
       }, {
-         seite: 'consent.google.com',
-         selector: 'form[action="https://consent.google.com/save"] [aria-label*="blehnen"]',
-         selectormobile: 'div + div > form[action="https://consent.google.com/save"] [aria-label*="blehnen"]'
+         seite: 'consent.google.ac,consent.google.ae,consent.google.at,consent.google.be,consent.google.bg,consent.google.by,consent.google.ca,consent.google.ch,consent.google.cl,consent.google.co.id,consent.google.co.il,consent.google.coIn,consent.google.co.jp,consent.google.co.ke,consent.google.co.kr,consent.google.co.nz,consent.google.co.th,consent.google.co.uk,consent.google.co.ve,consent.google.co.za,consent.google.com,consent.google.com.ar,consent.google.com.au,consent.google.com.br,consent.google.com.co,consent.google.com.ec,consent.google.com.eg,consent.google.com.hk,consent.google.com.mx,consent.google.com.my,consent.google.com.pe,consent.google.com.ph,consent.google.com.pk,consent.google.com.py,consent.google.com.sa,consent.google.com.sg,consent.google.com.tr,consent.google.com.tw,consent.google.com.ua,consent.google.com.uy,consent.google.com.vn,consent.google.cz,consent.google.de,consent.google.dk,consent.google.dz,consent.google.ee,consent.google.es,consent.google.fi,consent.google.fr,consent.google.gr,consent.google.hr,consent.google.hu,consent.google.ie,consent.google.it,consent.google.lt,consent.google.lv,consent.google.nl,consent.google.no,consent.google.pl,consent.google.pt,consent.google.ro,consent.google.rs,consent.google.ru,consent.google.se,consent.google.sk,consent.google.coIn',
+         selector: 'form[action^="https://consent.google."][action$="/save"] [aria-label*="blehnen"]',
+         selectormobile: 'div + div > form[action^="https://consent.google."][action$="/save"] [aria-label*="blehnen"]'
       }, {
          seite: 'consent.youtube.com',
          selector: 'form[action="https://consent.youtube.com/save"] [aria-label*="blehnen"]',
@@ -2109,7 +2101,8 @@
       }, {
          seite: 'google.ac,google.ae,google.at,google.be,google.bg,google.by,google.ca,google.ch,google.cl,google.co.id,google.co.il,google.coIn,google.co.jp,google.co.ke,google.co.kr,google.co.nz,google.co.th,google.co.uk,google.co.ve,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.co,google.com.ec,google.com.eg,google.com.hk,google.com.mx,google.com.my,google.com.pe,google.com.ph,google.com.pk,google.com.py,google.com.sa,google.com.sg,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vn,google.cz,google.de,google.dk,google.dz,google.ee,google.es,google.fi,google.fr,google.gr,google.hr,google.hu,google.ie,google.it,google.lt,google.lv,google.nl,google.no,google.pl,google.pt,google.ro,google.rs,google.ru,google.se,google.sk,google.coIn',
          checkcookie: 'SOCS',
-         selector: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child, div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
+         selector: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child',
+         selectormobile: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
          noframe: true
       }, {
          seite: 'plus.web.de,plus.gmx.net',
@@ -2121,7 +2114,7 @@
          selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button',
          checkcookie: 'eu_cookie'
       }, {
-         seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de',
+         seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at',
          checkcookie: 'cmp-settings',
          selector: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
          keinesichtbarkeitsprüfung: true
@@ -2742,7 +2735,7 @@
          checkcookie: 'Cconsent:true',
          selector: '[data-disclaimer-attributes] button.functional-only'
       }, {
-         seite: 'augsburger-allgemeine.de',
+         seite: 'augsburger-allgemeine.de,mainpost.de',
          checkstorage: 'SDGIds',
          selector: '#pur_layer button#pgwl_pur-option-accept-button'
       }, {
@@ -2994,6 +2987,25 @@
          seite: 'hvv.de',
          checkcookie: 'cookieBanner',
          selector: 'div[data-options*="cookieBanner"] button.js-f-cookie-banner-button'
+      }, {
+         seite: 'mercedes-benz.de',
+         selector: 'cmm-cookie-banner >> .button--only-technically-necessary'
+      }, {
+         seite: 'wise.com',
+         checkcookie: 'twCookie',
+         selector: '#twcc__mechanism button#twcc__decline-button'
+      }, {
+         seite: 'comdirect.de',
+         checkcookie: 'consent',
+         selector: '#privacy-init-wall button#privacy-init-wall-button-deny'
+      }, {
+         seite: 'nah.sh.hafas.de',
+         checkcookie: 'consent',
+         selector: '#HFS_CookieHint button#HFS_CookieSelectChoice'
+      }, {
+         seite: 'apkpure.com',
+         checkcookie: 'apkpure__policy_review',
+         selector: '#policy-info [dt-eid="only_necessary_cookies"]'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
