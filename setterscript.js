@@ -57,16 +57,16 @@
          setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40_43_44;'
       }, {
          seite: 'welt.de',
-         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36_41_43;'
+         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36_41_43_44;'
       }, {
          seite: 't-online.de',
-         setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36;'
+         setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36_44;'
       }, {
          seite: 'autobild.de',
          setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44;'
       }, {
          seite: 'bild.de',
-         setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42;'
+         setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44;'
       }, {
          seite: 'computerbild.de',
          setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44;'
@@ -112,13 +112,13 @@
          setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43;'
       }, {
          seite: 'n-tv.de',
-         setcookie: 'consentUUID=2cc64b48-60ab-4161-b42c-45f25a6e338c_32_34_36_39_41;'
+         setcookie: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44;'
       }, {
          seite: 'chip.de',
          setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43;'
       }, {
          seite: 'rtl.de',
-         setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41;'
+         setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44;'
       }, {
          seite: 'weather.com',
          setcookie: 'consentUUID=8e2d1754-cf0f-410d-b5e3-22ea9abf7ce4_34_35_42;'
@@ -130,7 +130,7 @@
          setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34;'
       }, {
          seite: 'ark-unity.com',
-         setcookie: 'consentUUID=10a7171e-7071-4c34-9012-fe991aca25b7_42;'
+         setcookie: 'consentUUID=10a7171e-7071-4c34-9012-fe991aca25b7_42_44;'
       }, {
          seite: 'telepolis.de',
          setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44;'
@@ -527,9 +527,6 @@
          seite: 'fdm-druckservice.de',
          setcookie: 'cookieControl=true; , cookieControlPrefs=[];'
       }, {
-         seite: 'kerzenwelt.de',
-         setcookie: 'eu_cookie_store={"b209404849c0357500f7a82a6899961a":true,"b7ca35f100eec22e63e206481b8b4573":false,"15a127e9acdecdeaade9ce48350022f3":false,"9b88c95a15e018c3f8038a7d0160145c":true,"970cfba66b8380fb97b742e4571356c6":false,"0a3fbfc21a86a28c8961999929c374f3":true,"21affb15e1316adac24b26db8e421a9d":false,"d323dff6f7de41c0b9af4c35e21dc032":false,"1363710b65d1ecccb85f2afbc1bbb94c":false};'
-      }, {
          seite: 'theycantalk.com',
          setcookie: 'gdpr_banner_accepted=1;'
       }, {
@@ -555,9 +552,6 @@
       }, {
          seite: 'haute-innovation.com',
          setcookie: 'uncode_privacy%5Bprivacy_bar%5D=1;'
-      }, {
-         seite: 'tesla-lighter.de',
-         setcookie: 'eu_cookie_store={"b209404849c0357500f7a82a6899961a":true,"3940b498c8a17157f69d757a80ff3421":true,"1d3c65b2b03ef35e14df6b163ea3a1f6":true,"d86cf69a8b82547a94ca3f6a307cf9a6":false,"f3e51329da77ff7494683c2e6ba2e70f":false,"af01f8c298aa063d9c7490f00eddd2df":true,"b7ca35f100eec22e63e206481b8b4573":false,"697abb9a95cfe2c76cc3b71312ea176a":true,"0a3fbfc21a86a28c8961999929c374f3":true,"970cfba66b8380fb97b742e4571356c6":false,"7c478959c218087ffc4ad5d96e7f66a6":true,"9b88c95a15e018c3f8038a7d0160145c":true};'
       }, {
          seite: 'baeckerei-roennau.de',
          setcookie: 'hasConsent=false;'
@@ -1711,6 +1705,27 @@
          seite: 'gkv-spitzenverband.de',
          setstoragename: 'cookie-consent',
          setstoragecontent: '{"date":' + cookiezeit + ',"version":1,"statistics":false}'
+      }, {
+         seite: 'redact.dev',
+         setcookie: 'CookieConsent={stamp:%27HpGPQAwWFMz6kZAvI3b1t/jR/ZFQYw2dMKW67U8RiCmbNPZZMY/cSg==%27%2Cnecessary:true%2Cpreferences:false%2Cstatistics:false%2Cmarketing:false%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1748035485255%2Cregion:%27de%27};'
+      }, {
+         seite: 'kbv.de',
+         setcookie: 'cookieConsent=level1;'
+      }, {
+         seite: 'sunspec.org',
+         setcookie: 'woodmart_cookies_1=accepted;'
+      }, {
+         seite: 'mhw-deutschland.de',
+         setcookie: 'engagebox_2=1;'
+      }, {
+         seite: '116117.de',
+         setcookie: 'cookieConsent=level1.level3;'
+      }, {
+         seite: 'rauchmeldertest.net',
+         setcookie: 'privacy_embeds=consent;'
+      }, {
+         seite: 'brf.be',
+         setcookie: 'cookieConsent=disallow;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
