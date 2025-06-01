@@ -92,16 +92,27 @@
                console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
                advancedrun = false;
                ablehnen = document.querySelector('button.sp_choice_type_13');
-               akzeptieren = document.querySelector('button.sp_choice_type_11');
+               const akzeptierenbutton = document.querySelectorAll('button.sp_choice_type_11');
+               if (akzeptierenbutton.length > 0) {
+                  for (let i = 0; i < akzeptierenbutton.length; i++) {
+                     const a = akzeptierenbutton[i];
+                     if (sichtbarkeitsprüfung(a)) {
+                        akzeptieren = a;
+                     }
+                  }
+               }
                einstellungen = document.querySelector('button.sp_choice_type_12, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
                speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not([disabled])');
+               if (window.screen.availWidth < 669) {
+                  einstellungen = document.querySelector('button.sp_choice_type_12.mobile, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                if (einstellungenknöpfe.length > 0) {
                   advancedrun = false;
                   for (let i = 0; i < einstellungenknöpfe.length; i++) {
                      const a = einstellungenknöpfe[i];
-                     if (sichtbarkeitsprüfung(a)) {
+                     if (getComputedStyle(a).getPropertyValue('display') !== 'none' && getComputedStyle(a).getPropertyValue('visibility') !== 'hidden') {
                         a.click();
                      }
                   }
@@ -247,8 +258,9 @@
          }
 
          // Contentpass (obfuscated)
-         const contentpass = document.querySelector('body > div:first-child + div[data-nosnippet][translate] > div:first-child > div[class^="_"]:not([id]):has(a)');
+         const contentpass = document.querySelector('body > div[data-nosnippet][translate] > div:first-child:not([class], [id]) > div[class^="_"]:not([id]):has(a[href*="datenschutz"]), body > div:first-child + div[data-nosnippet][translate] > div:first-child > div[class^="_"]:not([id]):has(a[href*="datenschutz"])');
          if (contentpass) {
+            console.log('[Cookie auto decline] Detected: Contentpass (obfuscated)');
             akzeptieren = contentpass.querySelector('a[class^="_"][href^="http"][rel="noopener noreferrer"][target="_self"]');
             if (akzeptieren.innerText.toLowerCase().endsWith('weiter')) {
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -268,6 +280,8 @@
          // opencmp.net
          const opencmp = document.querySelector('script#open-cmp-stub:is([src="https://cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"], [src="//cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"])');
          if (opencmp && document.cookie.includes('euconsent-v2') === false) {
+            findconsentintervalzahl = 502;
+            findconsentintervalzahländern();
             console.log('[Cookie auto decline] Detected: opencmp.net');
             const cookiecontainer = document.getElementsByClassName('cmp-root-container');
             if (cookiecontainer.length > 0) {
@@ -383,7 +397,8 @@
          const complianzgdpr = document.querySelector('body > #cmplz-cookiebanner-container');
          if (complianzgdpr) {
             console.log('[Cookie auto decline] https://wordpress.org/plugins/complianz-gdpr');
-            ablehnen = document.querySelector('body > #cmplz-cookiebanner-container .cmplz-buttons > button.cmplz-deny');
+            ablehnen = complianzgdpr.querySelector('.cmplz-buttons > button.cmplz-deny');
+            speichern = complianzgdpr.querySelector('.cmplz-buttons > button.cmplz-save-preferences');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -579,7 +594,7 @@
          }
 
          // cookiefirst.com
-         const cookiefirst = document.querySelector('script[src^="https://consent.cookiefirst.com/banner"], script[src="//app.cookiefirst.com/loader/init.js"]');
+         const cookiefirst = document.querySelector('script[src^="https://consent.cookiefirst.com/banner"], script[src="//app.cookiefirst.com/loader/init.js"], script[src*="/cookiefirst/"]');
          if (cookiefirst && document.cookie.includes('cookiefirst-consent') === false) {
             console.log('[Cookie auto decline] Detected: cookiefirst.com');
             ablehnen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="reject"][type="button"]');
@@ -595,8 +610,8 @@
             advancedrun = false;
             nureinklickeinstellungen = true;
             ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss');
-            speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save, [aria-label*="speichern"], [aria-label*="save"]');
-            einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"], a.cc-settings');
+            speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save, [aria-label*="speichern"], [aria-label*="save"], button[class="cc-btn cc-allow"]');
+            einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"], .cc-settings');
             const einstellungsmenu = document.querySelector('div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + #pd-cp-preferences, div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + div > div[id="cookieconsent:settings"]');
             schließen = cookieconsentdesc.querySelector('a[aria-label="dismiss cookie message"]');
             akzeptieren = cookieconsentdesc.querySelector('a[aria-label="allow cookies"]');
@@ -822,11 +837,11 @@
          }
 
          // gdpr.mandarin-medien.de
-         const mandarinmedien = document.querySelector('script[src*="gdpr.mandarin-medien.de/manager.js"]');
+         const mandarinmedien = document.querySelector('div[class="mmcm-container"]');
          if (mandarinmedien && document.cookie.includes('mmcm-jar-') === false) {
             console.log('[Cookie auto decline] Detected: gdpr.mandarin-medien.de');
-            ablehnen = document.querySelector('.mmcm-container .mmcm-actions a.mmcm-btn-decline');
-            speichern = document.querySelector('.mmcm-container .mmcm-actions a.mmcm-btn-save');
+            ablehnen = mandarinmedien.querySelector('.mmcm-actions a.mmcm-btn-decline');
+            speichern = mandarinmedien.querySelector('.mmcm-actions a.mmcm-btn-save');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -906,7 +921,8 @@
             const ablehnen = document.querySelector('div[class^="klaro"] button.cn-decline[type="button"]');
             const einstellungen = document.querySelector('#klaro button.cm-btn-lern-more');
             const einstellungen2 = document.querySelector('#klaro a.cn-learn-more[href="#"]');
-            const speichern = document.querySelector('#klaro button.cm-btn-accept');
+            const speichern = document.querySelector('#klaro button.cm-btn-accept, .cm-buttons > button[class="inbtn inbtn--primary"]:first-child');
+            const akzeptieren = document.querySelector('#klaro .cm-footer-buttons > button.cm-btn-accept-all:first-child');
             const checkbox = document.querySelector('#klaro input[type="checkbox"]#purpose-item-disableAll[class="cm-list-input"]');
             if (ablehnen) {
                beenden();
@@ -930,6 +946,11 @@
             } else if (einstellungen2) {
                window.setTimeout(function () {
                   einstellungen2.click();
+               }, 202);
+            } else if (akzeptieren) {
+               beenden();
+               window.setTimeout(function () {
+                  akzeptieren.click();
                }, 202);
             }
          }
@@ -1275,7 +1296,7 @@
          const tcprivacywrapper = document.querySelector('#tc-privacy-wrapper.tc-privacy-wrapper.tc-privacy-override > [id$="tc_privacy"]');
          if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
             console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
-            ablehnen = tcprivacywrapper.querySelector('button[id*="_tc_privacy_button"].tc-privacy-button:is([title="Weiter ohne Zustimmung"], [title*="blehnen"], [title="Refuse all"], [title="Continue browsing"], [title="Weiter ohne zulassen "])');
+            ablehnen = tcprivacywrapper.querySelector('button[id*="_tc_privacy_button"].tc-privacy-button:is([title="Weiter ohne Zustimmung"], [title*="blehnen"], [title="Refuse all"], [title="Continue browsing"], [title="Weiter ohne zulassen "], [title="Continue without accepting"], [aria-label*="efuse"])');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1526,15 +1547,6 @@
                      text.includes('diese seite nutzt cookies') ||
                      text.includes('diese website nutzt cookies') ||
                      text.includes('diese webseite nutzt cookies') ||
-                     text.includes('diese seite verwendet notwendige cookies') ||
-                     text.includes('diese website verwendet notwendige cookies') ||
-                     text.includes('diese webseite verwendet notwendige cookies') ||
-                     text.includes('diese seite verwendet technisch notwendige cookies') ||
-                     text.includes('diese website verwendet technisch notwendige cookies') ||
-                     text.includes('diese webseite verwendet technisch notwendige cookies') ||
-                     text.includes('diese seite nutzt ausschließlich technisch notwendige cookies') ||
-                     text.includes('wir setzen technisch notwendige cookies ein') ||
-                     text.includes('wir setzen notwendige cookies ein') ||
                      text.includes('wir setzen cookies ein') ||
                      text.includes('wir verwenden cookies') ||
                      text.includes('wir verwenden auf dieser website cookies') ||
@@ -1565,15 +1577,14 @@
                      text.includes('performance-cookies') ||
                      text.includes('tracking-cookies') ||
                      text.includes('notwendige-cookies') ||
+                     text.includes('notwendige cookies') ||
                      text.includes('cookies verwalten') ||
                      text.includes('optionalen cookies zustimmen') ||
                      text.includes('unwesentliche cookies ablehnen') ||
                      text.includes('essenzielle cookies') ||
-                     text.includes('nur notwendige cookies') ||
                      text.includes('gebrauch von cookies') ||
                      text.includes('nur essentielle cookies') ||
                      text.includes('erforderliche cookies') ||
-                     text.includes('technisch notwendige cookies') ||
                      text.includes('alle cookies akzeptieren') ||
                      text.includes('cookie einstellungen') ||
                      text.includes('cookie-einstellungen') ||
@@ -1629,7 +1640,7 @@
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
                                  // Akzeptieren
-                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptieren') || btn.includes('akzeptiert') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it')|| btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
+                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it')|| btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -3005,6 +3016,14 @@
          seite: 'apkpure.com',
          checkcookie: 'apkpure__policy_review',
          selector: '#policy-info [dt-eid="only_necessary_cookies"]'
+      }, {
+         seite: 'nico-europe.com',
+         checkcookie: 'allowCookie',
+         selector: '.pea_cook_wrapper button#pea_cook_btn'
+      }, {
+         seite: 'ao.com',
+         checkcookie: 'AOCookieRequestReference',
+         selector: '[data-tag-section="cookie_banner_modal"] button[data-testid="cookieBanner-decline-btn"]'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
