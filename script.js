@@ -36,7 +36,7 @@
       }
    };
    let klickecookiebutton = function () {};
-   let findconsentintervalzahländern = function() {};
+   let findconsentintervalzahländern = function () {};
    // Find Cookie Banner
    if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && document.querySelector('body > div:first-child + script[src^="https://mcl.spur.us/d/mcl.js?"] + script:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
@@ -117,7 +117,7 @@
                      }
                   }
                }
-               window.setTimeout(function() {
+               window.setTimeout(function () {
                   if (speichern && speichern.offsetHeight >= 1) {
                      speichern.click();
                   }
@@ -132,8 +132,8 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
-             // trustarc.com (iframe klicker)
-             if (window.location.hostname === 'consent-pref.trustarc.com') {
+            // trustarc.com (iframe klicker)
+            if (window.location.hostname === 'consent-pref.trustarc.com') {
                console.log('[Cookie auto decline] Detected: trustarc.com (iFrame)');
                const ablehnen = document.querySelector('.mainContent .pdynamicbutton .required, .mainContent .bottom .rejectAll, .mainContent .trustarc-submit-buttons-container > button.trustarc-declineall-btn, .gdpr .declineAllButtonLower');
                const schließen = document.querySelector('.mainContent .pdynamicbutton .close');
@@ -201,7 +201,7 @@
             }
 
             // Contentpass iFrame
-            if (window.location.href.startsWith('https://cp.') && window.location.href.includes('/first-layer/?start&theme=steps&v=')) {
+            if (window.location.href.startsWith('https://cp.') && window.location.href.includes('/first-layer/?start&theme=')) {
                console.log('[Cookie auto decline] Detected: Contentpass (iFrame)');
                akzeptieren = document.querySelector('main.animation astro-island[props*="acceptAll"] > button');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -292,7 +292,7 @@
 
          // usercentrics.eu
          const usercentrics = document.querySelector('[id^="usercentrics-"]:not(script), [class="aa-first-layer cxenseignore"]');
-         const usercentricsscript = document.querySelector('script[src*="usercentrics.eu/"]#usercentrics-cmp');
+         const usercentricsscript = document.querySelector('script[src*="usercentrics.eu/"]');
          if (usercentrics && usercentricsscript && localStorage.getItem('uc_user_interaction') !== true) {
             console.log('[Cookie auto decline] Detected: usercentrics');
             advancedrun = false;
@@ -331,7 +331,7 @@
          const cookiebot = document.querySelector('div[id*="Cookiebot"], div#cookiebot, #cookiebanner[name="cookiebanner"][ng-non-bindable], #cookieBotLayer');
          if (cookiebot && document.cookie.includes('%2Cutc:16') === false) {
             console.log('[Cookie auto decline] Detected: cookiebot.com');
-            ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"]');
+            ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
             speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"]):is(button, a, span)');
             einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
             nureinklickeinstellungen = true;
@@ -764,7 +764,7 @@
             einstellungen = ccm19de.querySelector('button[data-ccm-modal="ccm-control-panel"]');
             speichern = document.querySelector('#ccm-control-panel button.ccm--decline-cookies[type="button"], #ccm-control-panel button.ccm--save-settings[type="button"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
-            window.setTimeout(function() {
+            window.setTimeout(function () {
                if (document.querySelector('.ccm-root > #ccm-widget:not([style="display: none;"])')) {
                   window.localStorage.setItem('ccm_consent', '{"/":{"gen":2,"ucid":"2d74b685b2e05d5a547f2b22e09f833fb0ac7b534d78af2608eed772e2128cb3","consent":true,"embeddings":["9752444","1b8c114","bb6c67f"],"created":17448899122,"updated":17448899122,"iframeConsentDomains":[],"tcf":{"p":[],"sf":[],"v":[],"gad":[]},"lang":"de-DE"}}');
                   beenden();
@@ -1537,6 +1537,14 @@
             }
          }
 
+         // redim.de
+         const redimde = document.querySelector('#redim-cookiehint-bottom, #redim-cookiehint-modal');
+         if (redimde && document.cookie.includes('reDimCookieHint') === false) {
+            console.log('[Cookie auto decline] Detected: redim.de');
+            akzeptieren = redimde.querySelector('#cookiehintsubmit');
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+         }
+
          // Volksbanken (100+ Seiten)
          const volksbanken = document.querySelector('div[class="cookie-consent  "]');
          if (volksbanken && document.cookie.includes('cookieConsent') === false) {
@@ -1580,6 +1588,7 @@
                      text.includes('privatsphären-einstellungen') ||
                      text.includes('privatsphäre-einstellungen') ||
                      text.includes('wir verwenden tools,') ||
+                     text.includes('verwendet cookies') ||
                      text.includes('this website uses cookies') ||
                      text.includes('this website stores cookies') ||
                      text.includes('this site uses cookies') ||
@@ -1626,7 +1635,7 @@
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
                                  // Akzeptieren
-                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('erlauben') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it')|| btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey') && btn.length < 45 && gewichtung > 2) {
+                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('erlauben') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it') || btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey' || btn === 'consent') && btn.length < 45 && gewichtung > 2) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -2792,10 +2801,6 @@
          selector: 'sibbo-cmp-layout #acceptAllMain',
          checkcookie: 'euconsent'
       }, {
-         seite: 'beacons.ai',
-         selector: '#beacons-cookie-banner button[onclick="confirmRejectAll()"]',
-         checkcookie: '_bConsentSet'
-      }, {
          seite: 'rolandgumpert.com',
          selector: '.cookie a.hide',
          checkstorage: 'cookie_consent_202008181030'
@@ -3019,6 +3024,14 @@
          seite: 'seclookup.com',
          checkcookie: 'zcglobal_cookie',
          selector: '#zcb-banner a#zc-decline'
+      }, {
+         seite: 'consent.pdf24.org',
+         checkstorage: 'consent/pdf24.org',
+         selector: '#consentManager a.settings -> #consentManager a.declineAll'
+      }, {
+         seite: 'liebherr.com',
+         checkcookie: 'ucid_',
+         selector: '#cmpStart button#uc-btn-deny-banner'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -3059,7 +3072,7 @@
                                  for (let j = 1; j < shadowroots.length; j++) {
                                     if (getfinalshadowrootselector && getfinalshadowrootselector.shadowRoot) {
                                        getfinalshadowrootselector = getfinalshadowrootselector.shadowRoot.querySelector(shadowroots[j]);
-                                    } else if(getfinalshadowrootselector && getfinalshadowrootselector.contentDocument) {
+                                    } else if (getfinalshadowrootselector && getfinalshadowrootselector.contentDocument) {
                                        getfinalshadowrootselector = getfinalshadowrootselector.contentDocument.querySelector(shadowroots[j]);
                                     } else {
                                        getfinalshadowrootselector = undefined;
@@ -3121,7 +3134,7 @@
                         }, regeln[i].countdown);
                      }
                   }
-                  
+
                   // Cookies oder/und LocalStorage setzen
                   if (regeln[i].setcookie) {
                      let setcookies = regeln[i].setcookie.toString();
@@ -3155,7 +3168,7 @@
                            document.querySelector('a[href="javascript:history.back()"]').click();
                         }
                      } else {
-                        window.setTimeout(function() {
+                        window.setTimeout(function () {
                            if (document.querySelector('#cookie-notification a.btn[href="/main/consent"]')) {
                               document.querySelector('#cookie-notification a.btn[href="/main/consent"]').click();
                            }
@@ -3238,7 +3251,7 @@
       };
 
       // Consentfinder Delay ändern.
-      findconsentintervalzahländern = function() {
+      findconsentintervalzahländern = function () {
          if (findconsentintervalzahlgeändert === false) {
             findconsentintervalzahlgeändert = true;
             window.clearInterval(findconsentinterval);
@@ -3273,7 +3286,7 @@
          window.setTimeout(function () {
             clearInterval(findecookiebanner);
          }, 7000);
-      } else if(window.location.hostname === 'www.mediafire.com') {
+      } else if (window.location.hostname === 'www.mediafire.com') {
          console.log('[Cookie auto decline] Detected: mediafire.com cookie banner');
          window.setTimeout(function () {
             const check = document.querySelector('#cookie-accept-footer a.CookieAcceptance-accept');
