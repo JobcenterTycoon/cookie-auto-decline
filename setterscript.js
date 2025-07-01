@@ -1496,10 +1496,6 @@
          setcookie: 'consent=false;',
          reload: true
       }, {
-         seite: 'bvse.de',
-         setcookie: 'reDimCookieHint=1;',
-         reload: true
-      }, {
          seite: 'iiyama.com',
          setcookie: 'cookie-bar=ok;'
       }, {
@@ -1724,10 +1720,6 @@
          seite: 'cng-mobility.ch',
          setcookie: 'wk-consent=consentGiven; , wk-consent-status=;'
       }, {
-         seite: 'jahresarbeitszahlen.info',
-         setcookie: 'reDimCookieHint=1;',
-         reload: true
-      }, {
          seite: 'minol.de',
          setcookie: 'cms_cookies_saved=true;',
          reload: true
@@ -1735,6 +1727,19 @@
          seite: 'karlstadsenergi.se',
          setcookie: 'sv-cookie-consent=.X3BrX2lkLF9wa19zZXMsc3RnX3JldHVybmluZ192aXNpdG9yLHN0Z3RyYWZmaWNzb3VyY2Vwcmlvcml0eSxzdGdfbGFzdF9pbnRlcmFjdGlvbixzdi1pbnRlcm5hbC1zdi13ZWItYW5hbHl0aWNzLHN2LWludGVybmFsLXN2LXdlYi1hbmFseXRpY3MtbWFya2V0aW5nLGltYm94;',
          reload: true
+      }, {
+         seite: 'wpforms.com',
+         setcookie: 'wpconsent_preferences={"essential":true,"statistics":false,"marketing":false};'
+      }, {
+         seite: 'beacons.ai',
+         setcookie: '_bConsentSet=yes;'
+      }, {
+         seite: 'slewo.com',
+         setcookie: 'CookieConsent={"dateUpdated":"' + cookiedatum + '","statistics":false,"marketing":false};',
+         reload: true
+      }, {
+         seite: 'awwwards.com',
+         setcookie: '__w_cc={%22preferences%22:false%2C%22analysis%22:false%2C%22marketing%22:false};'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
