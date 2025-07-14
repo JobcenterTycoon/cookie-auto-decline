@@ -41,4 +41,6 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
   <li>No annoying annoyances or heavy settings menus. The addon works in the background.</li>
   <li>The addon is only for a few seconds active so cookie banner settings can be changed after this (like enabling third-party videoplayer).</li>
 </ul>
+
+Link to the firefox addon (english): https://addons.mozilla.org/en-US/firefox/addon/cookie-auto-decline/
 </details>
