@@ -1745,6 +1745,12 @@
       }, {
          seite: 'chatgpt.com',
          setcookie: 'oai-allow-ne=false; , oai_consent_analytics=false; , oai_consent_marketing=false;'
+      }, {
+         seite: 'openai.com',
+         setcookie: 'analytics_consent=rejected; , marketing_consent=rejected;'
+      }, {
+         seite: 'smallpdf.com',
+         setcookie: '_s.cookie_consent=marketing=0:analytics=0:version=2021-07-01:timestamp=' + cookiezeit + ';'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
