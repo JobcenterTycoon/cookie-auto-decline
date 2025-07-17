@@ -1398,7 +1398,6 @@
             ablehnen = otckappdata.querySelector('#cookies-dismiss[role="button"]');
             einstellungen = otckappdata.querySelector('#cookies-preferences[role="button"]');
             speichern = document.querySelector('#cookies-popup button.decline-btn');
-
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -3046,6 +3045,14 @@
          seite: 'vogue.de,nytimes.com,vercel.com',
          checkcookie: 'fides_consent',
          selector: '#fides-banner button.fides-reject-all-button'
+      }, {
+         seite: 'cookpad.com',
+         checkcookie: 'cookies_preference',
+         selector: '[data-controller*="cookies-consent"] a[href*="/de/terms_of_use_consents?value=0"]'
+      }, {
+         seite: 'nike.com',
+         checkcookie: 'AKA_A2',
+         selector: '.cookie-modal-base button.modal-actions-decline-btn'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
