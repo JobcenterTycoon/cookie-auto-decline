@@ -37,7 +37,7 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
   <li>Nearly no broken pages because the cookie banner getting clicked, not just hidden or blocked.</li>
   <li>It also works with redirect cookie banner (like consent.google.com oder consent.yahoo.com).</li>
   <li>The addon trying to decline tracking even when its more complex.</li>
-  <li>There are <b>no ads, no tracking und no Telemtry</b> at all.</li>
+  <li>There are <b>no ads, no tracking und no Telemetry</b> at all.</li>
   <li>No annoying annoyances or heavy settings menus. The addon works in the background.</li>
   <li>The addon is only for a few seconds active so cookie banner settings can be changed after this (like enabling third-party videoplayer).</li>
 </ul>
