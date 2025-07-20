@@ -600,11 +600,12 @@
          }
 
          // cookiefirst.com
-         const cookiefirst = document.querySelector('script[src^="https://consent.cookiefirst.com/banner"], script[src="//app.cookiefirst.com/loader/init.js"], script[src*="/cookiefirst/"]');
+         const cookiefirst = document.querySelector('.cookiefirst-root');
          if (cookiefirst && document.cookie.includes('cookiefirst-consent') === false) {
             console.log('[Cookie auto decline] Detected: cookiefirst.com');
-            ablehnen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="reject"][type="button"]');
-            einstellungen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="adjust"][type="button"]');
+            nureinklickeinstellungen = true;
+            ablehnen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="reject"][type="button"], [aria-labelledby="cookie-preference-panel-title"] button[data-cookiefirst-action="reject_second"]');
+            einstellungen = cookiefirst.querySelector('button[data-cookiefirst-action="adjust"][type="button"]');
             speichern = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="save"][type="button"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1553,6 +1554,16 @@
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
+         // ethyca.com
+         const ethyca = document.querySelector('#fides-banner-container.fides-banner:not(.fides-banner-hidden), .fides-modal-container[data-testid="consent-modal"]:not([aria-hidden="true"])');
+         if (ethyca) {
+            console.log('[Cookie auto decline] Detected: ethyca.com');
+            nureinklickeinstellungen = true;
+            ablehnen = ethyca.querySelector('button.fides-reject-all-button');
+            einstellungen = ethyca.querySelector('button.fides-manage-preferences-button');
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+         }
+
          // Volksbanken (100+ Seiten)
          const volksbanken = document.querySelector('div[class="cookie-consent  "]');
          if (volksbanken && document.cookie.includes('cookieConsent') === false) {
@@ -1603,6 +1614,7 @@
                      text.includes('uses cookies from') ||
                      text.includes('uses cookies to personalize') ||
                      text.includes('we use cookies') ||
+                     text.includes('cookies and similar technology') ||
                      text.includes('we use essential cookies') ||
                      text.includes('cookie policy') ||
                      text.includes('cookie privacy') ||
@@ -1625,13 +1637,13 @@
                         for (let k = 0; k < buttons.length; k++) {
                            const a = buttons[k];
                            if (sichtbarkeitsprüfung(a) === true) {
-                              const btn = buttons[k].innerText.toLowerCase().trim();
+                              let btn = buttons[k].innerText.toLowerCase().trim();
                               let btninput = buttons[k].value;
-                              if (btninput) {
-                                 btninput = btninput.toLowerCase().trim();
+                              if (btninput && btn.length <= 1) {
+                                 btn = btninput.toLowerCase().trim();
                               }
                               // Ablehnen
-                              if (((btninput && btninput.includes('ablehnen')) || btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('nur das nötigste') || btn.includes('ohne ') || btn.includes('eingeschränkte funktionalität') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('no thanks') || btn.includes('necessary') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
+                              if ((btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('nur das nötigste') || btn.includes('ohne ') || btn.includes('eingeschränkte funktionalität') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('no thanks') || btn.includes('necessary') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
                                  finalerbutton = buttons[k];
                                  break;
                                  // Speichern
@@ -1643,7 +1655,7 @@
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
                                  // Akzeptieren
-                              } else if (((btninput && (btninput.includes('akzeptieren') || btninput.includes('inverstanden'))) || btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('erlauben') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it') || btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey' || btn === 'consent') && btn.length < 45 && gewichtung > 2) {
+                              } else if ((btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('erlauben') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it') || btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey' || btn === 'consent') && btn.length < 45 && gewichtung > 2) {
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -1697,12 +1709,12 @@
 
       const regeln = [{
          seite: 'consent.google.ac,consent.google.ae,consent.google.at,consent.google.be,consent.google.bg,consent.google.by,consent.google.ca,consent.google.ch,consent.google.cl,consent.google.co.id,consent.google.co.il,consent.google.coIn,consent.google.co.jp,consent.google.co.ke,consent.google.co.kr,consent.google.co.nz,consent.google.co.th,consent.google.co.uk,consent.google.co.ve,consent.google.co.za,consent.google.com,consent.google.com.ar,consent.google.com.au,consent.google.com.br,consent.google.com.co,consent.google.com.ec,consent.google.com.eg,consent.google.com.hk,consent.google.com.mx,consent.google.com.my,consent.google.com.pe,consent.google.com.ph,consent.google.com.pk,consent.google.com.py,consent.google.com.sa,consent.google.com.sg,consent.google.com.tr,consent.google.com.tw,consent.google.com.ua,consent.google.com.uy,consent.google.com.vn,consent.google.cz,consent.google.de,consent.google.dk,consent.google.dz,consent.google.ee,consent.google.es,consent.google.fi,consent.google.fr,consent.google.gr,consent.google.hr,consent.google.hu,consent.google.ie,consent.google.it,consent.google.lt,consent.google.lv,consent.google.nl,consent.google.no,consent.google.pl,consent.google.pt,consent.google.ro,consent.google.rs,consent.google.ru,consent.google.se,consent.google.sk,consent.google.coIn',
-         selector: 'form[action^="https://consent.google."][action$="/save"] [aria-label*="blehnen"]',
-         selectormobile: 'div + div > form[action^="https://consent.google."][action$="/save"] [aria-label*="blehnen"]'
+         selector: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child:has(+ form:last-child) > div > div > button',
+         selectormobile: 'div:first-child + div > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button'
       }, {
          seite: 'consent.youtube.com',
-         selector: 'form[action="https://consent.youtube.com/save"] [aria-label*="blehnen"]',
-         selectormobile: 'div + div > form[action="https://consent.youtube.com/save"] [aria-label*="blehnen"]'
+         selector: 'div > div:has(> div:only-child > button[aria-label][role="link"]) + form[action="https://consent.youtube.com/save"]:has(+ form:last-child) > div > div > button',
+         selectormobile: 'div + div > form[action="https://consent.youtube.com/save"] + form[action="https://consent.youtube.com/save"]:has(+ div:last-child > div > button[aria-label][role="link"]) > div > div > button'
       }, {
          seite: 'consent.yahoo.com',
          selector: 'button.reject-all[name="reject"][value="reject"]'
@@ -3041,10 +3053,6 @@
          seite: 'gehalt.de',
          checkcookie: 'CONSENTMGR',
          selector: '#GDPRConsentManagerContainer #ccmgt_explicit_preferences -> #GDPRConsentManagerContainer #ccmgt_preferences_reject'
-      }, {
-         seite: 'vogue.de,nytimes.com,vercel.com',
-         checkcookie: 'fides_consent',
-         selector: '#fides-banner button.fides-reject-all-button'
       }, {
          seite: 'cookpad.com',
          checkcookie: 'cookies_preference',
