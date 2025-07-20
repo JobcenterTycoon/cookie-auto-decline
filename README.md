@@ -24,7 +24,7 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
 </ul><hr>
 
 <details>
-  <summary>English 🇺🇸</summary>
+  <summary>English (click to expand) 🇺🇸</summary>
   <br>
   More and more cookie banner, consent banner and GDPR banner can't be blocked or hidden without breaking the website. The Addon "Cookie auto decline" solving the problem by clicking the button or setting the required cookie so the banner doesn't appear. The addon works in the background without the need of further interaction.<br><br>
   
