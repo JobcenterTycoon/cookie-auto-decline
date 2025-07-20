@@ -1743,7 +1743,7 @@
          setstoragename: 'cookies',
          setstoragecontent: '1'
       }, {
-         seite: 'chatgpt.com',
+         seite: 'chatgpt.com,platform.openai.com',
          setcookie: 'oai-allow-ne=false; , oai_consent_analytics=false; , oai_consent_marketing=false;'
       }, {
          seite: 'openai.com',
