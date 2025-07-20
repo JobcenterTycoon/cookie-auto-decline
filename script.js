@@ -1556,7 +1556,7 @@
 
          // ethyca.com
          const ethyca = document.querySelector('#fides-banner-container.fides-banner:not(.fides-banner-hidden), .fides-modal-container[data-testid="consent-modal"]:not([aria-hidden="true"])');
-         if (ethyca) {
+         if (ethyca && document.cookie.includes('fides_consent') === false) {
             console.log('[Cookie auto decline] Detected: ethyca.com');
             nureinklickeinstellungen = true;
             ablehnen = ethyca.querySelector('button.fides-reject-all-button');
