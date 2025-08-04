@@ -11,6 +11,12 @@
    let findcookiebannerspecificinterval;
    let regelsuchebereitsgelaufen = false;
 
+   let cookiebannerstatus = {
+      suchstatus: "suche",
+      anbieter: "unbekannt",
+      knopfstatus: "suche"
+   }
+
    // Forciere das Session Storage Item.
    let forcesessionstorage = function () {
       if (sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && window.location.host.endsWith('.mydealz.de') === false) {
@@ -74,6 +80,7 @@
             cookiebannerfinalakzeptiertcounter++;
          }
          if (findconsentcounter >= (10000 / findconsentintervalzahl)) {
+            cookiebannerstatus.suchstatus = 'nichts gefunden';
             beenden();
          }
 
@@ -90,6 +97,7 @@
             // cdn.privacy-mgmt.com
             if (window.location.href.includes('/index.html?') && window.location.href.includes('hasCsp=') && window.location.href.includes('message_id=') && window.location.href.includes('consent')) {
                console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
+               cookiebannerstatus.anbieter = 'privacy-mgmt.com (iFrame)';
                advancedrun = false;
                ablehnen = document.querySelector('button.sp_choice_type_13');
                const akzeptierenbutton = document.querySelectorAll('button.sp_choice_type_11');
@@ -127,6 +135,7 @@
             // privacymanager.io (iframe klicker)
             if (window.location.hostname === 'cmp-consent-tool.privacymanager.io') {
                console.log('[Cookie auto decline] Detected: privacymanager.io (iFrame)');
+               cookiebannerstatus.anbieter = 'privacymanager.io (iFrame)';
                einstellungen = document.querySelector('button#manageSettings');
                speichern = document.querySelector('button#saveAndExit');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -135,6 +144,7 @@
             // trustarc.com (iframe klicker)
             if (window.location.hostname === 'consent-pref.trustarc.com') {
                console.log('[Cookie auto decline] Detected: trustarc.com (iFrame)');
+               cookiebannerstatus.anbieter = 'trustarc.com (iFrame)';
                const ablehnen = document.querySelector('.mainContent .pdynamicbutton .required, .mainContent .bottom .rejectAll, .mainContent .trustarc-submit-buttons-container > button.trustarc-declineall-btn, .gdpr .declineAllButtonLower');
                const schließen = document.querySelector('.mainContent .pdynamicbutton .close');
                const akzeptieren = document.querySelector('.mainContent .pdynamicbutton .call, .mainContent .pdynamicbutton .submit[role="button"]');
@@ -177,6 +187,7 @@
             // baycloud.ie
             if (window.location.hostname === 'cdn.baycloud.com') {
                console.log('[Cookie auto decline] Detected: baycloud.ie (iFrame)');
+               cookiebannerstatus.anbieter = 'baycloud.ie (iFrame)';
                ablehnen = document.querySelector('#panelContainer button#panelDecline');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                let css = document.createElement('style');
@@ -194,8 +205,9 @@
             }
 
             // trustcommander.net
-            if (window.location.href === 'https://cdn.trustcommander.net/privacy-center/template/index.htm') {
+            if (window.location.href.startsWith('https://cdn.trustcommander.net/privacy-center/template/index.htm')) {
                console.log('[Cookie auto decline] Detected: trustcommander.net (iFrame)');
+               cookiebannerstatus.anbieter = 'trustcommander.net (iFrame)';
                speichern = document.querySelector('#privacy-cat-modal button.btn-primary:is([title*="estätigen"], [title*="peichern"])');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -203,6 +215,7 @@
             // Contentpass iFrame
             if (window.location.href.startsWith('https://cp.') && window.location.href.includes('/first-layer/?start&theme=')) {
                console.log('[Cookie auto decline] Detected: Contentpass (iFrame)');
+               cookiebannerstatus.anbieter = 'Contentpass (iFrame)';
                akzeptieren = document.querySelector('main.animation astro-island[props*="acceptAll"] > button');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -214,6 +227,7 @@
          const cmpbox = document.querySelector('#cmpbox.cmpbox');
          if (cmpbox) {
             console.log('[Cookie auto decline] Detected: #cmpbox (consensu.org, consentmanager.net)');
+            cookiebannerstatus.anbieter = '#cmpbox (consensu.org, consentmanager.net)';
             advancedrun = false;
             const ablehnen = cmpbox.querySelector('a.cmptxt_btn_no[role="button"]');
             const einstellungen = cmpbox.querySelector('a.cmptxt_btn_settings[role="button"]');
@@ -261,6 +275,7 @@
          const contentpass = document.querySelector('body > div[data-nosnippet][translate] > div:first-child:not([class], [id]) > div[class^="_"]:not([id]):has(a[href*="datenschutz"]), body > div:first-child + div[data-nosnippet][translate] > div:first-child > div[class^="_"]:not([id]):has(a[href*="datenschutz"])');
          if (contentpass) {
             console.log('[Cookie auto decline] Detected: Contentpass (obfuscated)');
+            cookiebannerstatus.anbieter = 'Contentpass (obfuscated)';
             akzeptieren = contentpass.querySelector('a[class^="_"][href^="http"][rel="noopener noreferrer"][target="_self"]');
             if (akzeptieren.innerText.toLowerCase().endsWith('weiter')) {
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -271,6 +286,7 @@
          const cmpboxshadowroot = document.querySelector('#cmpwrapper.cmpwrapper');
          if (cmpboxshadowroot) {
             console.log('[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)');
+            cookiebannerstatus.anbieter = '#cmpbox shadowroot (consensu.org, consentmanager.net)';
             ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
             akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
             einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
@@ -283,6 +299,7 @@
             findconsentintervalzahl = 502;
             findconsentintervalzahländern();
             console.log('[Cookie auto decline] Detected: opencmp.net');
+            cookiebannerstatus.anbieter = 'opencmp.net';
             const cookiecontainer = document.getElementsByClassName('cmp-root-container');
             if (cookiecontainer.length > 0) {
                akzeptieren = document.querySelector('.cmp-root-container').shadowRoot.querySelector('.cmp-button-accept-all');
@@ -295,6 +312,7 @@
          const usercentricsscript = document.querySelector('script[src*="usercentrics.eu/"]');
          if (usercentrics && usercentricsscript && localStorage.getItem('uc_user_interaction') !== true) {
             console.log('[Cookie auto decline] Detected: usercentrics');
+            cookiebannerstatus.anbieter = 'usercentrics';
             advancedrun = false;
             findconsentintervalzahl = 1002;
             findconsentintervalzahländern();
@@ -314,6 +332,7 @@
          const usercentricsframe = document.querySelector('iframe#uc-cross-domain-bridge[src^="https://app.usercentrics.eu/browser-sdk/"]');
          if (usercentrics2 && usercentricsframe && localStorage.getItem('uc_user_interaction') !== true) {
             console.log('[Cookie auto decline] Detected: usercentrics2');
+            cookiebannerstatus.anbieter = 'usercentrics';
             speichern = usercentrics2.querySelector('button.comspace-usercentrics--button');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -322,6 +341,7 @@
          const gatekeeperconsent = document.querySelector('script[src="https://privacy.gatekeeperconsent.com/tcf2_stub.js"]');
          if (gatekeeperconsent && document.cookie.includes('ezCMPCookieConsent') === false) {
             console.log('[Cookie auto decline] Detected: gatekeeperconsent.com');
+            cookiebannerstatus.anbieter = 'gatekeeperconsent.com';
             einstellungen = document.querySelector('button#ez-manage-settings');
             speichern = document.querySelector('button#ez-save-settings');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -331,6 +351,7 @@
          const cookiebot = document.querySelector('div[id*="Cookiebot"], div#cookiebot, #cookiebanner[name="cookiebanner"][ng-non-bindable], #cookieBotLayer');
          if (cookiebot && document.cookie.includes('%2Cutc:16') === false) {
             console.log('[Cookie auto decline] Detected: cookiebot.com');
+            cookiebannerstatus.anbieter = 'cookiebot.com';
             ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
             speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"], [onclick*="submitConsent"]):is(button, a, span)');
             einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
@@ -343,16 +364,18 @@
          const trustarc = document.querySelector('script[src^="https://consent.trustarc.com/asset/notice.js/v/v"]');
          if (trustarc && document.cookie.includes('notice_gdpr_prefs=') === false) {
             console.log('[Cookie auto decline] Detected: trustarc.com');
+            cookiebannerstatus.anbieter = 'trustarc.com';
             ablehnen = document.querySelector('#truste-consent-buttons button#truste-consent-required, #truste-consent-track #truste-consent-buttons > a#truste-consent-required');
             einstellungen = document.querySelector('#truste-consent-buttons button#truste-show-consent');
             nureinklickeinstellungen = true;
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
-         // real-cookie-banner-pro
+         // real-cookie-banner-pro (devowl.io)
          let realcookiebannerpro = document.querySelectorAll('body > div[id^="a"][class^="a"] > dialog.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > a:first-child + div + div[class*="-ext-"] > div:first-child > div[class*="-ext-"] > a[href="#"], body > div[id^="a"][class]> div.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > div[style^="background"] > div:only-child > div + div > div[style*="order"]');
          if (realcookiebannerpro.length > 0 && document.cookie.includes('%22main_essential%22%7D') === false) {
-            console.log('[Cookie auto decline] Detected: real-cookie-banner-pro');
+            console.log('[Cookie auto decline] Detected: real-cookie-banner-pro (devowl.io)');
+            cookiebannerstatus.anbieter = 'real-cookie-banner-pro (devowl.io)';
             advancedrun = false;
             for (let i = 0; i < realcookiebannerpro.length; i++) {
                if (realcookiebannerpro[i].offsetWidth > 0) {
@@ -378,6 +401,7 @@
          const waconcookiemanagement = document.querySelector('.waconcookiemanagement-cookiebar, [class="waconcookiemanagement "]');
          if (waconcookiemanagement && document.cookie.includes('waconcookiemanagement') === false) {
             console.log('[Cookie auto decline] Detected: waconcookiemanagement');
+            cookiebannerstatus.anbieter = 'waconcookiemanagement';
             ablehnen = waconcookiemanagement.querySelector('a#data-cookie-refuse, span.cookie-refuse');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -386,6 +410,7 @@
          const onetrust = document.getElementById('onetrust-consent-sdk');
          if (onetrust) {
             console.log('[Cookie auto decline] Detected: onetrust.com');
+            cookiebannerstatus.anbieter = 'onetrust.com';
             ablehnen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-reject-all-handler, #cookie-disclosure button#cookie-disclosure-reject');
             einstellungen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-pc-btn-handler');
             speichern = document.querySelector('button.save-preference-btn-handler');
@@ -397,7 +422,9 @@
          const complianzgdpr = document.querySelector('body > #cmplz-cookiebanner-container');
          if (complianzgdpr) {
             console.log('[Cookie auto decline] https://wordpress.org/plugins/complianz-gdpr');
+            cookiebannerstatus.anbieter = 'https://wordpress.org/plugins/complianz-gdpr';
             ablehnen = complianzgdpr.querySelector('.cmplz-buttons > button.cmplz-deny');
+            einstellungen = complianzgdpr.querySelector('button.cmplz-view-preferences');
             speichern = complianzgdpr.querySelector('.cmplz-buttons > button.cmplz-save-preferences');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -405,10 +432,13 @@
          // borlabs.io
          const borlabs = document.querySelector('#BorlabsCookieBox:not(:empty), div[class="rbrl-overlay rbrl-dialog-holder"]');
          if (borlabs && document.cookie.includes('essential%22%3A%5B%22borlabs-cookie') === false) {
+            nureinklickeinstellungen = true;
             console.log('[Cookie auto decline] Detected: borlabs.io');
+            cookiebannerstatus.anbieter = 'borlabs.io';
             ablehnen = borlabs.querySelector('button.brlbs-cmpnt-btn.brlbs-btn-accept-only-essential, .rbrl-accept-essential');
-            speichern = borlabs.querySelector('#CookieBoxSaveButton, [data-cookie-accept=""]');
-            einstellungen = borlabs.querySelector('#CookieBoxPreferencesButton');
+            speichern = borlabs.querySelector('#CookieBoxSaveButton, [data-cookie-accept=""], [data-borlabs-cookie-actions="save"]');
+            schließen = document.querySelector('.cookie-preference a#CookiePrefSave');
+            einstellungen = borlabs.querySelector('#CookieBoxPreferencesButton, [data-borlabs-cookie-actions="preferences"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -416,6 +446,7 @@
          const osano = document.querySelector('script[src^="https://cmp.osano.com/"]');
          if (osano) {
             console.log('[Cookie auto decline] Detected: osano.com');
+            cookiebannerstatus.anbieter = 'osano.com';
             ablehnen = document.querySelector('.osano-cm-window > div[id][role="dialog"] .osano-cm-buttons > button.osano-cm-denyAll');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -425,6 +456,7 @@
          const privacycenter2 = document.querySelector('#didomi-host #didomi-popup');
          if (privacycenter || privacycenter2) {
             console.log('[Cookie auto decline] Detected: privacy-center.org');
+            cookiebannerstatus.anbieter = 'privacy-center.org';
             advancedrun = false;
             const ablehnen = document.querySelector('#didomi-host #didomi-popup .didomi-continue-without-agreeing[role="button"]');
             const ablehnen2 = document.querySelector('#didomi-host #didomi-notice #buttons > button#didomi-notice-disagree-button');
@@ -479,7 +511,7 @@
                window.setTimeout(function () {
                   akzeptieren.click();
                }, 402);
-            } else if(akzeptieren2 && bereitsgeklickt === true) {
+            } else if (akzeptieren2 && bereitsgeklickt === true) {
                beenden();
                window.setTimeout(function () {
                   akzeptieren2.click();
@@ -491,6 +523,7 @@
          const quantcast = document.querySelector('script[src^="https://cmp.quantcast.com/tcfv"], #qc-cmp2-container.qc-cmp2-container');
          if (quantcast && document.cookie.includes('addtl_consent') === false) {
             console.log('[Cookie auto decline] Detected: quantcast.com');
+            cookiebannerstatus.anbieter = 'quantcast.com';
             advancedrun = false;
             let ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
             const einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
@@ -517,6 +550,7 @@
          const iubenda = document.querySelector('script[src*=".iubenda.com/"]');
          if (iubenda && document.cookie.includes('%7B%22timestamp%22%') === false) {
             console.log('[Cookie auto decline] Detected: iubenda.com');
+            cookiebannerstatus.anbieter = 'iubenda.com';
             ablehnen = document.querySelector('#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-reject-btn');
             akzeptieren = document.querySelector('#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-accept-btn, #iubenda-cs-banner button.iubenda-cs-close-btn:not([style="display:none!important;"]), #iubenda-cs-banner button.iubenda-cs-accept-btn');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -526,6 +560,7 @@
          const gdprlegalcookiemyshopify = document.querySelector('#banner-wrapper[style="opacity: 1; display: flex; visibility: visible; top: 0px; left: 0px;"]');
          if (gdprlegalcookiemyshopify && document.cookie.includes('_bc_c_set') === false) {
             console.log('[Cookie auto decline] Detected: gdpr-legal-cookie.myshopify.com');
+            cookiebannerstatus.anbieter = 'gdpr-legal-cookie.myshopify.com';
             ablehnen = gdprlegalcookiemyshopify.querySelector("#essential_accept");
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -534,6 +569,7 @@
          const shopify = document.querySelector('section#shopify-pc__banner[aria-labelledby][style="display: block;"]');
          if (shopify && document.cookie.includes('%7B%22purposes%22%3A%7B%22p%22%3Atrue') === false) {
             console.log('[Cookie auto decline] Detected: shopify cookie banner');
+            cookiebannerstatus.anbieter = 'shopify cookie banner';
             nureinklickeinstellungen = true;
             ablehnen = shopify.querySelector('.shopify-pc__banner__btns-granular #shopify-pc__banner__btn-decline');
             einstellungen = shopify.querySelector('#shopify-pc__banner__btn-manage-prefs');
@@ -545,6 +581,7 @@
          const shopify2 = document.querySelector('div[id^="shopify-section-sections"] > cookie-banner');
          if (shopify2) {
             console.log('[Cookie auto decline] Detected: shopify cookie banner 2');
+            cookiebannerstatus.anbieter = 'shopify cookie banner';
             ablehnen = shopify2.querySelector('button[name="decline"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -553,6 +590,7 @@
          const fastcmp = document.querySelector('script[src="https://static.fastcmp.com/fast-cmp-stub.js"]');
          if (fastcmp && document.cookie.includes('fastCMP-addtlConsent') === false) {
             console.log('[Cookie auto decline] Detected: fastcmp.com');
+            cookiebannerstatus.anbieter = 'fastcmp.com';
             advancedrun = false;
             const check = document.querySelector('iframe#fast-cmp-iframe');
             if (check) {
@@ -566,6 +604,7 @@
          const humanity = document.querySelector('#cookie-notice[class="cookie-revoke-hidden cn-position-bottom cn-effect-fade cookie-notice-visible"]');
          if (humanity && document.cookie.includes('cookie_notice_accepted') === false) {
             console.log('[Cookie auto decline] Detected: hu-manity.co');
+            cookiebannerstatus.anbieter = 'hu-manity.co';
             ablehnen = humanity.querySelector('#cn-notice-buttons > a#cn-refuse-cookie[data-cookie-set="refuse"]');
             schließen = humanity.querySelector('.cookie-notice-container > #cn-close-notice[data-cookie-set="accept"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -575,6 +614,7 @@
          const cookielawinfobar = document.querySelector('#cookie-law-info-bar[style]');
          if (cookielawinfobar && document.cookie.includes('viewed_cookie_policy') === false) {
             console.log('[Cookie auto decline] Detected: cookie-law-info-bar');
+            cookiebannerstatus.anbieter = 'cookie-law-info-bar';
             ablehnen = cookielawinfobar.querySelector('a#wt-cli-reject-btn');
             einstellungen = cookielawinfobar.querySelector('a.cli_settings_button[role="button"]');
             speichern = document.querySelector('#cliSettingsPopup a#wt-cli-privacy-save-btn.wt-cli-privacy-accept-btn[role="button"], #wt-cli-cookie-banner #wt-cli-accept-btn');
@@ -603,6 +643,7 @@
          const cookiefirst = document.querySelector('.cookiefirst-root');
          if (cookiefirst && document.cookie.includes('cookiefirst-consent') === false) {
             console.log('[Cookie auto decline] Detected: cookiefirst.com');
+            cookiebannerstatus.anbieter = 'cookiefirst.com';
             nureinklickeinstellungen = true;
             ablehnen = document.querySelector('.cookiefirst-root button[data-cookiefirst-action="reject"][type="button"], [aria-labelledby="cookie-preference-panel-title"] button[data-cookiefirst-action="reject_second"]');
             einstellungen = cookiefirst.querySelector('button[data-cookiefirst-action="adjust"][type="button"]');
@@ -614,6 +655,7 @@
          const cookieconsentdesc = document.querySelector('div[aria-describedby="cookieconsent:desc"][class*="cc-"]');
          if (cookieconsentdesc && cookieconsentdesc.offsetWidth > 1 && document.cookie.includes('cookieconsent_status') === false) {
             console.log('[Cookie auto decline] Detected: cookieconsent:desc');
+            cookiebannerstatus.anbieter = 'cookieconsent:desc';
             advancedrun = false;
             nureinklickeinstellungen = true;
             ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss, .cc-dialog-button-decline');
@@ -646,6 +688,7 @@
          const oveleon = document.querySelector('div[aria-describedby="cookiebar-desc"].contao-cookiebar, div[aria-describedby="cookiebar-desc"]#cookiebar');
          if (oveleon && (window.localStorage.getItem('ccb_contao_token_1') === null || (window.localStorage.getItem('ccb_contao_token_1') && window.localStorage.getItem('ccb_contao_token_1').includes('"saved":-1') === true))) {
             console.log('[Cookie auto decline] Detected: oveleon.de (cookiebar-desc)');
+            cookiebannerstatus.anbieter = 'oveleon.de (cookiebar-desc)';
             advancedrun = false;
             const ablehnen = oveleon.querySelector('button[data-deny-all].deny');
             const checkedcheckbox = oveleon.querySelectorAll('.cc-groups > .cc-group > input[type="checkbox"][data-toggle-cookies]:checked:not([disabled])');
@@ -683,7 +726,8 @@
          // as-oil-content-overlay
          const asoilcontentoverlay = document.querySelector('.as-oil-content-overlay[data-qa="oil-full"]');
          if (asoilcontentoverlay) {
-            console.log('[Cookie auto decline] Detected: as-oil-content-overlay');
+            console.log('[Cookie auto decline] Detected: as-oil-content-overlay (modified-shop.org)');
+            cookiebannerstatus.anbieter = 'as-oil-content-overlay (modified-shop.org)';
             ablehnen = document.querySelector('.as-oil-content-overlay button.as-js-only-essentials[data-qa="oil-only-essentials-button"]');
             einstellungen = document.querySelector('.as-oil-content-overlay button.as-js-advanced-settings[data-qa="oil-AdvancedSettingsButton"]');
             speichern = document.querySelector('.as-oil-content-overlay button.as-js-optin');
@@ -695,6 +739,7 @@
          const mndcookiemodal2 = document.querySelector('div[class="js--modal sizing--content mnd-cookie-modal"]');
          if (mndcookiemodal || mndcookiemodal2) {
             console.log('[Cookie auto decline] Detected: mnd-cookie-modal');
+            cookiebannerstatus.anbieter = 'mnd-cookie-modal';
             advancedrun = false;
             ablehnen = document.querySelector('.mnd-cookie-modal button.btn-accept-functional, .mnd-cookie-wrapper button.mnd-btn-decline');
             speichern = document.querySelector('.mnd-cookie-wrapper button.mnd-btn-save-settings');
@@ -705,6 +750,7 @@
          const pagewrapcookiepermission = document.querySelector('.page-wrap--cookie-permission[data-cookie-permission="true"][data-urlprefix][data-title]');
          if (pagewrapcookiepermission && document.cookie.includes('cookiePreferences') === false) {
             console.log('[Cookie auto decline] Detected: page-wrap--cookie-permission');
+            cookiebannerstatus.anbieter = 'page-wrap--cookie-permission';
             advancedrun = false;
             const einstellungen = pagewrapcookiepermission.querySelector('.cookie-permission--configure-button');
             const komforthaken = document.querySelector('#cookie-consent .cookie-consent--group > input[value="comfort"] + label');
@@ -739,15 +785,17 @@
          const idxrcookiesdocument = document.getElementById('idxrcookies');
          if (idxrcookiesdocument && document.cookie.includes('deluxecookiesWarningCheck') === false) {
             console.log('[Cookie auto decline] Detected: idxrcookies');
+            cookiebannerstatus.anbieter = 'idxrcookies';
             ablehnen = idxrcookiesdocument.querySelector('a#idxrcookiesKO');
             speichern = document.querySelector('#cookieModal a#js-save-cookieconf');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
          // comply-consent-manager
-         const complyconsentmanager = document.querySelector('comply-consent-manager[apikey] .comply-Menu');
+         const complyconsentmanager = document.querySelector('comply-consent-manager .comply-Menu');
          if (complyconsentmanager) {
             console.log('[Cookie auto decline] Detected: comply-consent-manager');
+            cookiebannerstatus.anbieter = 'comply-consent-manager';
             ablehnen = complyconsentmanager.querySelector('button.comply-SaveSettingsButton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -756,6 +804,7 @@
          const cccoverlay = document.querySelector('#ccc[style]');
          if (cccoverlay && document.cookie.includes('CookieControl') === false) {
             console.log('[Cookie auto decline] Detected: ccc-overlay');
+            cookiebannerstatus.anbieter = 'ccc-overlay';
             ablehnen = cccoverlay.querySelector('#ccc-content button#ccc-reject-settings');
             schließen = cccoverlay.querySelector('button#ccc-notify-dismiss');
             speichern = cccoverlay.querySelector('button[aria-label="Set cookie preferences"]');
@@ -765,7 +814,8 @@
          // ccm19.de
          const ccm19de = document.querySelector('.ccm-root > #ccm-widget');
          if (ccm19de && localStorage.getItem('ccm_consent') === null) {
-            console.log('[Cookie auto decline] Detected: ccm-root');
+            console.log('[Cookie auto decline] Detected: ccm19.de');
+            cookiebannerstatus.anbieter = 'ccm19.de';
             nureinklickeinstellungen = true;
             ablehnen = ccm19de.querySelector('#ccm-widget button.ccm--decline-cookies[type="button"]');
             einstellungen = ccm19de.querySelector('button[data-ccm-modal="ccm-control-panel"]');
@@ -785,6 +835,7 @@
          const orestbida2 = document.querySelector('#cc-main > .cm-wrapper > [aria-describedby="cm__desc"]');
          if (orestbida && document.cookie.includes('cc_cookie') === false) {
             console.log('[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent');
+            cookiebannerstatus.anbieter = 'https://github.com/orestbida/cookieconsent';
             advancedrun = false;
             const ablehnen = orestbida.querySelector('button#s-rall-bn[type="button"]');
             const speichern = orestbida.querySelector('button#s-sv-bn[type="button"]');
@@ -807,6 +858,7 @@
             }
          } else if (orestbida2 && document.cookie.includes('cc_cookie') === false) {
             console.log('[Cookie auto decline] Detected: https://github.com/orestbida/cookieconsent 2');
+            cookiebannerstatus.anbieter = 'https://github.com/orestbida/cookieconsent';
             advancedrun = false;
             const speichern = orestbida2.querySelector('button[data-role="necessary"]');
             const einstellungen = orestbida2.querySelector('button.cm__btn--secondary[data-role="show"]');
@@ -838,6 +890,7 @@
          const optanon = document.querySelector('.optanon-alert-box-wrapper');
          if (optanon && document.cookie.includes('OptanonAlertBoxClosed') === false) {
             console.log('[Cookie auto decline] Detected: optanon');
+            cookiebannerstatus.anbieter = 'optanon';
             ablehnen = optanon.querySelector('button.optanon-reject-all[onclick]');
             speichern = document.querySelector('.optanon-white-button-middle > button[onclick]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -847,6 +900,7 @@
          const mandarinmedien = document.querySelector('div[class="mmcm-container"]');
          if (mandarinmedien && document.cookie.includes('mmcm-jar-') === false) {
             console.log('[Cookie auto decline] Detected: gdpr.mandarin-medien.de');
+            cookiebannerstatus.anbieter = 'gdpr.mandarin-medien.de';
             ablehnen = mandarinmedien.querySelector('.mmcm-actions a.mmcm-btn-decline');
             speichern = mandarinmedien.querySelector('.mmcm-actions a.mmcm-btn-save');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -856,6 +910,7 @@
          const orejime = document.querySelector('#orejime, .orejime-NoticePortal');
          if (orejime && document.cookie.includes('orejime') === false) {
             console.log('[Cookie auto decline] Detected: orejime');
+            cookiebannerstatus.anbieter = 'orejime';
             ablehnen = orejime.querySelector('button.orejime-Notice-declineButton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -864,6 +919,7 @@
          const oaxcookieconsentmodal = document.querySelector('body.oax');
          if (oaxcookieconsentmodal && document.cookie.includes('_consentCookie') === false) {
             console.log('[Cookie auto decline] Detected: oaxcookieconsentmodal');
+            cookiebannerstatus.anbieter = 'oaxcookieconsentmodal';
             ablehnen = document.querySelector('.oax_cookie_consent_modal button.oax-cookie-consent-select-necessary');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -875,6 +931,7 @@
             findconsentintervalzahl = 802;
             findconsentintervalzahländern();
             console.log('[Cookie auto decline] Detected: https://www.acris-ecommerce.at/');
+            cookiebannerstatus.anbieter = 'https://www.acris-ecommerce.at/';
             ablehnen = acris.querySelector('#ccAcceptOnlyFunctional');
             einstellungen = acris.querySelector('#ccSettingButton');
             akzeptieren = acris.querySelector('#ccAcceptButton');
@@ -897,6 +954,7 @@
          const acris2 = document.querySelector('#acris--page-wrap--cookie-permission[data-acris-cookie-permission]');
          if (acris2 && document.cookie.includes('cookiePreferences') === false) {
             console.log('[Cookie auto decline] Detected: https://www.acris-ecommerce.at/ 2');
+            cookiebannerstatus.anbieter = 'https://www.acris-ecommerce.at/';
             ablehnen = acris2.querySelector('button#cookie-permission--accept-only-functional-button');
             speichern = acris2.querySelector('#cookie-permission--accept-button');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -906,6 +964,7 @@
          const tramino = document.querySelector('script[src^="https://storage.tramino.net/static/root/js/jquery"], script[src="/tramino/js/require.min.js"]');
          if (tramino && document.cookie.includes('Consent') === false) {
             console.log('[Cookie auto decline] Detected: https://www.tramino.de/');
+            cookiebannerstatus.anbieter = 'https://www.tramino.de/';
             ablehnen = document.querySelector('.TraminoConsent button[value="acceptConsent"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -914,60 +973,21 @@
          const amgdpr = document.querySelector('.amgdprjs-bar-template, .amgdprcookie-modal-container');
          if (amgdpr && document.cookie.includes('amcookie_allowed') === false) {
             console.log('[Cookie auto decline] Detected: amgdpr');
+            cookiebannerstatus.anbieter = 'amgdpr';
             ablehnen = amgdpr.querySelector('button.-decline, button.g-c-button-reject');
             einstellungen = amgdpr.querySelector('button.-settings');
-            speichern = document.querySelector('.gdpr-cookie-modal_setup-modal._show button.-save, .amgdprcookie-cookie-settings-modal._show button.amgdprcookie-done');
+            speichern = document.querySelector('[class*="cookie"] button.-save, .amgdprcookie-cookie-settings-modal._show button.amgdprcookie-done');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
          // klaro.org
-         const klaro = document.querySelector('div[id="klaro"] > div[class^="klaro"], #cookieconsent > div[class^="klaro"], #consentfriend > div[class^="klaro"');
+         const klaro = document.querySelector('div[class^="klaro "]:not(.cm-as-context-notice), div[class="klaro"]');
          if (klaro && document.cookie.includes('klaro') === false) {
             console.log('[Cookie auto decline] Detected: klaro.org');
-            advancedrun = false;
-            const ablehnen = document.querySelector('div[class^="klaro"] button.cn-decline[type="button"]');
-            const einstellungen = document.querySelector('#klaro button.cm-btn-lern-more');
-            const einstellungen2 = document.querySelector('#klaro a.cn-learn-more[href="#"]');
-            const speichern = document.querySelector('#klaro button.cm-btn-accept, .cm-buttons > button[class="inbtn inbtn--primary"]:first-child');
-            const akzeptieren = document.querySelector('#klaro .cm-footer-buttons > button.cm-btn-accept-all:first-child');
-            const checkbox = document.querySelector('#klaro input[type="checkbox"]#purpose-item-disableAll[class="cm-list-input"]');
-            if (ablehnen) {
-               beenden();
-               window.setTimeout(function () {
-                  ablehnen.click();
-               }, 202);
-            } else if (checkbox && checkbox.checked === true && bereitsgeklickt === false) {
-               bereitsgeklickt = true;
-               window.setTimeout(function () {
-                  checkbox.click();
-               }, 202);
-            } else if (speichern) {
-               beenden();
-               window.setTimeout(function () {
-                  speichern.click();
-               }, 202);
-            } else if (einstellungen) {
-               window.setTimeout(function () {
-                  einstellungen.click();
-               }, 202);
-            } else if (einstellungen2) {
-               window.setTimeout(function () {
-                  einstellungen2.click();
-               }, 202);
-            } else if (akzeptieren) {
-               beenden();
-               window.setTimeout(function () {
-                  akzeptieren.click();
-               }, 202);
-            }
-         }
-
-         // klaro.org 2
-         const klarozwei = document.querySelector('div[id="timm4-cookie-consent"] > div[class^="klaro"], div[id="hbaccept"] > div[class^="klaro"]');
-         if (klarozwei && document.cookie.includes('timm4cookie-consent') === false && window.localStorage.getItem('hbaccept') === null) {
-            console.log('[Cookie auto decline] Detected: klaro.org 2');
-            speichern = klarozwei.querySelector('button.cm-btn-accept[type="button"]');
-            ablehnen = klarozwei.querySelector('button.cn-decline');
+            cookiebannerstatus.anbieter = 'klaro.org';
+            ablehnen = klaro.querySelector('button.cn-decline');
+            einstellungen = klaro.querySelector('#klaro a.cn-learn-more[href="#"]');
+            speichern = klaro.querySelector('button.cm-btn-accept, button.btn-accept, button.inbtn--primary');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -975,6 +995,7 @@
          const cookienotehide = document.querySelector('div[id="cookie-note"][style="display: block;"].cookie-note');
          if (cookienotehide && document.cookie.includes('ikiss-cookie-note-off') === false) {
             console.log('[Cookie auto decline] Detected: cookie-note-hide (germany)');
+            cookiebannerstatus.anbieter = 'cookie-note-hide (germany)';
             ablehnen = cookienotehide.querySelector('button#cookie-note-hide');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -983,6 +1004,7 @@
          const cookieconsentformdescription = document.querySelector('dialog.cookie-consent-form[aria-labelledby="cookie-consent-form__description"][open]');
          if (cookieconsentformdescription && document.cookie.includes('hide_cn') === false) {
             console.log('[Cookie auto decline] Detected: cookie-consent-form__description (germany)');
+            cookiebannerstatus.anbieter = 'cookie-consent-form__description (germany)';
             advancedrun = false;
             const allesauswählen = cookieconsentformdescription.querySelector('button.cookie-consent-form__permit-button');
             const trackingverbieten = cookieconsentformdescription.querySelector('input[id][aria-describedby*="tracking"]');
@@ -1010,15 +1032,17 @@
          const sgalinski = document.querySelector('#SgCookieOptin');
          if (sgalinski) {
             console.log('[Cookie auto decline] Detected: sgalinski.de');
+            cookiebannerstatus.anbieter = 'sgalinski.de';
             speichern = sgalinski.querySelector('.sg-cookie-optin-box-button button.sg-cookie-optin-box-button-accept-specific');
             einstellungen = sgalinski.querySelector('.sg-cookie-optin-banner-button button.sg-cookie-optin-banner-button-settings');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
-         // cookieman-modal
+         // https://extensions.typo3.org/extension/cookieman
          const cookiemanmodal = document.querySelector('#cookieman-modal[data-cookieman-settings]');
          if (cookiemanmodal) {
-            console.log('[Cookie auto decline] Detected: cookieman-modal');
+            console.log('[Cookie auto decline] Detected: https://extensions.typo3.org/extension/cookieman');
+            cookiebannerstatus.anbieter = 'https://extensions.typo3.org/extension/cookieman';
             ablehnen = cookiemanmodal.querySelector('button[data-cookieman-accept-none], a.data-cookieman-not-accept');
             speichern = cookiemanmodal.querySelector('button[data-cookieman-accept-all]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -1029,6 +1053,7 @@
          const usercentricsbutton2 = document.querySelector('#usercentrics-button');
          if (usercentricsbutton && usercentricsbutton2) {
             console.log('[Cookie auto decline] Detected: usercentrics-button');
+            cookiebannerstatus.anbieter = 'usercentrics';
             ablehnen = document.querySelector('#usercentrics-button button#uc-btn-deny-banner');
             einstellungen = document.querySelector('#usercentrics-button button#uc-btn-more-info-banner');
             speichern = document.querySelector('#usercentrics-button .uc-save-settings-button');
@@ -1036,10 +1061,11 @@
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
-         // cky-consent
+         // cookieyes.com
          const ckyconsent = document.querySelector('.cky-consent-container');
          if (ckyconsent && document.cookie.includes('action:yes,necessary:yes') === false) {
-            console.log('[Cookie auto decline] Detected: cky-consent');
+            console.log('[Cookie auto decline] Detected: cookieyes.com');
+            cookiebannerstatus.anbieter = 'cookieyes.com';
             ablehnen = ckyconsent.querySelector('button.cky-btn-reject');
             einstellungen = ckyconsent.querySelector('button.cky-btn-customize');
             speichern = document.querySelector('.cky-preference-center button.cky-btn-preferences');
@@ -1050,6 +1076,7 @@
          const framer = document.querySelector('.--framer-cookie-banner-container');
          if (framer && window.localStorage.getItem('framerCookiesDismissed') === null) {
             console.log('[Cookie auto decline] Detected: --framer-cookie-banner-container');
+            cookiebannerstatus.anbieter = 'framer.com';
             ablehnen = framer.querySelector('div[style="display: flex; flex-direction: row; gap: 10px; margin-top: 16px;"] > input:first-child');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1058,6 +1085,7 @@
          const privacy_optin = document.querySelector('div[id^="privacy_optin_"][class^="mod_privacy_optin"].open');
          if (privacy_optin && window.localStorage.getItem('user_privacy_settings') === null) {
             console.log('[Cookie auto decline] Detected: privacy_optin');
+            cookiebannerstatus.anbieter = 'privacy_optin';
             advancedrun = false;
             const ablehnen = privacy_optin.querySelector('.privacy_buttons > input[name="save_tech_settings"]');
             const speichern = privacy_optin.querySelector('.privacy_buttons > input[name="save_settings"]:not([disabled])');
@@ -1082,8 +1110,9 @@
          const tealiumGDPR = document.querySelector('div[id^="__tealiumGDPR"]:not(:empty)');
          if (tealiumGDPR) {
             console.log('[Cookie auto decline] Detected: tealiumGDPR');
+            cookiebannerstatus.anbieter = 'tealiumGDPR';
             advancedrun = false;
-            ablehnen = tealiumGDPR.querySelector('button#rejectAll, button#consent_prompt_reject, a#no_consent, button.js-btn-reject-all, button#cm-acceptNone, #consent_prompt_decline_submit, #consent_wall_optout');
+            ablehnen = tealiumGDPR.querySelector('button#rejectAll, button#consent_prompt_reject, a#no_consent, button.js-btn-reject-all, button#cm-acceptNone, #consent_prompt_decline_submit, #consent_wall_optoutm, .t_cm_ec_reject_button');
             speichern = document.querySelector('#__tealiumGDPRcpPrefs button#save, #__tealiumGDPRcpPrefs #pref_submit');
             einstellungen = tealiumGDPR.querySelector('button.js-btn-edit-cookie-settings, a#preferences, button#pref_details');
             nureinklickeinstellungen = true;
@@ -1094,6 +1123,7 @@
          const avia = document.querySelector('.avia-cookie-consent-wrap');
          if (avia) {
             console.log('[Cookie auto decline] Detected: avia');
+            cookiebannerstatus.anbieter = 'avia';
             akzeptieren = avia.querySelector('.avia-cookie-consent a[href="#"][class*="avia-cookie-consent-button-"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1102,7 +1132,9 @@
          const cookiebaroptin219 = document.querySelector('#cookiebar_optin_219.mod_cookiebar_optin_slim');
          if (cookiebaroptin219) {
             console.log('[Cookie auto decline] Detected: cookiebar_optin_219');
+            cookiebannerstatus.anbieter = 'cookiebar_optin_219';
             ablehnen = cookiebaroptin219.querySelector('.cookiebar_disagree > a[data-privacy]');
+            akzeptieren = cookiebaroptin219.querySelector('.cookiebar_agree > a');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1110,6 +1142,7 @@
          const sirdatacom = document.querySelector('#sd-cmp[class^="sd-cmp-"]');
          if (sirdatacom && document.cookie.includes('euconsent-v2') === false) {
             console.log('[Cookie auto decline] Detected: sirdata.com');
+            cookiebannerstatus.anbieter = 'sirdata.com';
             ablehnen = sirdatacom.querySelector('button:has(+ button + button), div > button:has(+ div > a[href="https://cmp.sirdata.com/"]), div:not([id], [class]) > div > button:only-child');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1118,6 +1151,7 @@
          const setupad = document.querySelector('body > .stpd_cmp');
          if (setupad && localStorage.getItem('additional-consent') === null) {
             console.log('[Cookie auto decline] Detected: https://setupad.com/');
+            cookiebannerstatus.anbieter = 'setupad.com';
             advancedrun = false;
             const einstellungen = setupad.querySelector('.stpd_consent_wrapper > .stpd_button_wrapper > .stpd_flexed_btns > button.stpd_submit_btn[type="button"]');
             const speichern = setupad.querySelector('.stpd_return_btn + div + .stpd_consent_wrapper > div > .stpd_flexed_btns > button.stpd_submit_btn[type="submit"]');
@@ -1145,6 +1179,7 @@
          const mkmlegal = document.querySelector('#jmdCookieConsentWrapper');
          if (mkmlegal && document.cookie.includes('mkm_cbconsent') === false) {
             console.log('[Cookie auto decline] Detected: https://mkm.legal/');
+            cookiebannerstatus.anbieter = 'mkm.legal';
             ablehnen = mkmlegal.shadowRoot.querySelector('#cookieConsent button.deny');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1153,6 +1188,7 @@
          const twobadvice = document.querySelector('#bbcdBanner.b-banner[style], #bbcdSettings.b-settings[style]');
          if (twobadvice && document.cookie.includes('_2BCookieSettings') === false) {
             console.log('[Cookie auto decline] Detected: https://2b-advice.com/');
+            cookiebannerstatus.anbieter = '2b-advice.com';
             einstellungen = twobadvice.querySelector('button#bbcdBannerButtonSettings');
             speichern = document.querySelector('#bbcdSettings button#bbcdButtonOK_dialog_St');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -1162,6 +1198,7 @@
          const webstollen = document.getElementById('ws_eu-cookie-container');
          if (webstollen && document.cookie.includes('eu_cookie_store') === false) {
             console.log('[Cookie auto decline] Detected: https://webstollen.de/');
+            cookiebannerstatus.anbieter = 'webstollen.de';
             advancedrun = false;
             const buttons = webstollen.querySelectorAll('[class*="button"] > button');
             const speichern = webstollen.querySelectorAll('[class*="Cat_buttons"] > a');
@@ -1198,6 +1235,7 @@
          const jtlsoftwarede = document.querySelector('#consent-manager.active, #consent.active');
          if (jtlsoftwarede && window.localStorage.getItem('consent') === null) {
             console.log('[Cookie auto decline] Detected: https://www.jtl-software.de/');
+            cookiebannerstatus.anbieter = 'jtl-software.de';
             ablehnen = document.querySelector('#consent-manager.active button#consent-banner-btn-close, #consent.active button#consent--banner-btn-decline');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1206,6 +1244,7 @@
          const blogspot = document.querySelector('#cookieChoiceInfo.cookie-choices-info');
          if (blogspot && document.cookie.includes('displayCookieNotice') === false) {
             console.log('[Cookie auto decline] Detected: blogspot.com');
+            cookiebannerstatus.anbieter = 'blogspot.com (google)';
             ablehnen = document.querySelector('#cookieChoiceInfo a#cookieChoiceDismiss');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1214,6 +1253,7 @@
          const jimdo = document.querySelector('div[aria-describedby="cc-individual-cookie-settings"], [class="sR5JB"]');
          if (jimdo && document.cookie.includes('ckies_') === false) {
             console.log('[Cookie auto decline] Detected: jimdo.com');
+            cookiebannerstatus.anbieter = 'jimdo.com';
             ablehnen = jimdo.querySelector('button#cookie-settings-reject-all, [data-gi-selector="reject-all-cookies"] > a');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1222,6 +1262,7 @@
          const ampconsent = document.querySelector('amp-consent.i-amphtml-element');
          if (ampconsent && (window.localStorage.key(0) === null || (window.localStorage.key(0) && window.localStorage.key(0).includes('amp-store:') === false))) {
             console.log('[Cookie auto decline] Detected: amp-consent');
+            cookiebannerstatus.anbieter = 'amp-consent';
             ablehnen = ampconsent.querySelector('button[on="tap:consent-element.reject"], button[on="tap:consent.dismiss"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1230,6 +1271,7 @@
          const shapepress = document.querySelector('div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"]');
          if (shapepress && document.cookie.includes('sp_dsgvo_cookie_settings') === false) {
             console.log('[Cookie auto decline] Detected: shapepress');
+            cookiebannerstatus.anbieter = 'shapepress';
             if (window.screen.availWidth >= 576) {
                ablehnen = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-nothing');
                akzeptieren = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-all');
@@ -1244,16 +1286,18 @@
          const cookiesjsr = document.querySelector('[id$="cookiesui"] #cookiesjsr');
          if (cookiesjsr && document.cookie.includes('cookiesjsr') === false) {
             console.log('[Cookie auto decline] Detected: cookiesjsr');
+            cookiebannerstatus.anbieter = 'cookiesjsr';
             ablehnen = cookiesjsr.querySelector('button.denyAll');
             einstellungen = cookiesjsr.querySelector('.cookiesjsr-settings');
             speichern = cookiesjsr.querySelector('button.save.dialog-last-tab');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
-         // moove_gdpr_cookie_info_bar
+         // mooveagency.com
          const moove = document.querySelector('aside#moove_gdpr_cookie_info_bar');
          if (moove && document.cookie.includes('moove_gdpr_popup') === false) {
-            console.log('[Cookie auto decline] Detected: moove_gdpr_cookie_info_bar');
+            console.log('[Cookie auto decline] Detected: mooveagency.com');
+            cookiebannerstatus.anbieter = 'mooveagency.com';
             ablehnen = moove.querySelector('button.moove-gdpr-infobar-reject-btn');
             einstellungen = moove.querySelector('button.moove-gdpr-infobar-settings-btn');
             speichern = document.querySelector('#moove_gdpr_cookie_modal button.moove-gdpr-modal-reject-all');
@@ -1265,7 +1309,8 @@
          // cookieinformation.com
          const cookieinformationcom = document.querySelector('#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"]');
          if (cookieinformationcom && document.cookie.includes('CookieInformationConsent') === false) {
-            console.log('[Cookie auto decline] Detected: https://cookieinformation.com/');
+            console.log('[Cookie auto decline] Detected: cookieinformation.com');
+            cookiebannerstatus.anbieter = 'cookieinformation.com';
             ablehnen = cookieinformationcom.querySelector('button#declineButton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1273,7 +1318,8 @@
          // cookieinfoscript.com
          const cookieinfoscriptcom = document.querySelector('.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "]');
          if (cookieinfoscriptcom && document.cookie.includes('CookieInfoScript') === false) {
-            console.log('[Cookie auto decline] Detected: https://cookieinfoscript.com');
+            console.log('[Cookie auto decline] Detected: cookieinfoscript.com');
+            cookiebannerstatus.anbieter = 'cookieinfoscript.com';
             ablehnen = cookieinfoscriptcom.querySelector('.cookieinfo-close');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1287,6 +1333,7 @@
                window.location.reload();
             }
             console.log('[Cookie auto decline] Detected: cookie-permission-container');
+            cookiebannerstatus.anbieter = 'cookie-permission-container';
             ablehnen = cookiepermissioncontainer.querySelector('button.btn-primary');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1295,6 +1342,7 @@
          const mwcookiewarningcontainer = document.querySelector('[class="mw-cookiewarning-container"]');
          if (mwcookiewarningcontainer && document.cookie.includes('cookiewarning_dismissed') === false) {
             console.log('[Cookie auto decline] Detected: mw-cookiewarning-container');
+            cookiebannerstatus.anbieter = 'mw-cookiewarning-container';
             akzeptieren = mwcookiewarningcontainer.querySelector('form [name="disablecookiewarning"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1303,7 +1351,9 @@
          const tcprivacywrapper = document.querySelector('#tc-privacy-wrapper.tc-privacy-wrapper.tc-privacy-override > [id$="tc_privacy"]');
          if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
             console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
-            ablehnen = tcprivacywrapper.querySelector('button[id*="_tc_privacy_button"].tc-privacy-button:is([title="Weiter ohne Zustimmung"], [title*="blehnen"], [title="Refuse all"], [title="Continue browsing"], [title="Weiter ohne zulassen "], [title="Continue without accepting"], [aria-label*="efuse"])');
+            cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
+            ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"])');
+            einstellungen = tcprivacywrapper.querySelector('button:is([title*="ption"], [title*="etting"])');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1311,6 +1361,7 @@
          const tarteaucitronroot = document.getElementById('tarteaucitronRoot');
          if (tarteaucitronroot && document.cookie.includes('=wait') === true) {
             console.log('[Cookie auto decline] Detected: tarteaucitronRoot');
+            cookiebannerstatus.anbieter = 'tarteaucitronRoot';
             advancedrun = false;
             const ablehnen = tarteaucitronroot.querySelector('button[id^="tarteaucitronAllDenied2"], [onclick="tarteaucitron.userInterface.respondAll(false);"]');
             const speichern = tarteaucitronroot.querySelector('button#tarteaucitronSave');
@@ -1343,8 +1394,9 @@
          const offcanvas = document.querySelector('[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"]');
          if (offcanvas && offcanvas.innerText.includes('Cookies') && document.cookie.includes('cookie-preference') === false) {
             console.log('[Cookie auto decline] Detected: offcanvas (shopping sites)');
+            cookiebannerstatus.anbieter = 'offcanvas (shopping sites)';
             advancedrun = false;
-            const speichern = offcanvas.querySelector('button[class="btn btn-primary btn-block js-offcanvas-cookie-submit"]');
+            const speichern = offcanvas.querySelector('button.js-offcanvas-cookie-submit');
             if (speichern && (speichern.innerText.toLowerCase().includes('akzeptieren') || speichern.innerText.toLowerCase().includes('speichern'))) {
                beenden();
                window.setTimeout(function () {
@@ -1357,6 +1409,7 @@
          const eightworkscookieconsentplus = document.querySelector('#eightworks-cookie-consent-plus[data-cookie-permission="true"], .eightworks-cookie-consent-plus[data-cookie-permission="true"]');
          if (eightworkscookieconsentplus && document.cookie.includes('reference') === false) {
             console.log('[Cookie auto decline] Detected: eightworks-cookie-consent-plus');
+            cookiebannerstatus.anbieter = 'eightworks-cookie-consent-plus';
             findconsentintervalzahl = 502;
             findconsentintervalzahländern();
             einstellungen = eightworkscookieconsentplus.querySelector('a.cookie-permission--configure-button[href="#"]');
@@ -1368,6 +1421,7 @@
          const ccbannerwrapper = document.querySelector('div[class="cc_banner-wrapper "] :is(div[class="cc_banner cc_container cc_container--open"], div[class="cc-banner cc_container cc_container--open"])');
          if (ccbannerwrapper && document.cookie.includes('cookieconsent_dismissed') === false) {
             console.log('[Cookie auto decline] Detected: cc_banner-wrapper');
+            cookiebannerstatus.anbieter = 'cc_banner-wrapper';
             ablehnen = ccbannerwrapper.querySelector('a[data-cc-event="click:dismiss"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1376,6 +1430,7 @@
          const transcend = document.querySelector('#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"]');
          if (transcend && window.localStorage.getItem('tcmConsent') === null) {
             console.log('[Cookie auto decline] Detected: transcend.io');
+            cookiebannerstatus.anbieter = 'transcend.io';
             advancedrun = false;
             // Shadow Root is closed so the addon need to go this way.
             window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
@@ -1387,8 +1442,9 @@
          const ketch = document.querySelector('#ketch-modal.ketch-flex, #ketch-banner.ketch-flex, [class^="ketch-fixed ketch-z-ketch-max-z-index ketch-top-0 ketch-left-0 ketch-bottom-0 ketch-right-0"]');
          if (ketch) {
             console.log('[Cookie auto decline] Detected: ketch.com');
-            ablehnen = ketch.querySelector('button:is([aria-label="Reject All"], [aria-label="Alle ablehnen"], [aria-label="DECLINE"], [aria-label="Decline All"])');
-            speichern = ketch.querySelector('button:is([aria-label="Save choices"], [aria-label="Confirm My Choices"])');
+            cookiebannerstatus.anbieter = 'ketch.com';
+            ablehnen = ketch.querySelector('#ketch-banner-buttons-container-standard > button#ketch-banner-button-tertiary, #ketch-banner-buttons-container-compact button#ketch-banner-button-secondary');
+            speichern = ketch.querySelector('[class="ketch-flex ketch-w-full ketch-items-center ketch-gap-6 sm:ketch-w-auto"] > button');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
@@ -1396,6 +1452,7 @@
          const otckappdata = document.querySelector('.otCookiesNotification > #cookies-wrapper');
          if (otckappdata && document.cookie.includes('_consentik_cookie') === false) {
             console.log('[Cookie auto decline] Detected: otCKAppData');
+            cookiebannerstatus.anbieter = 'otCKAppData';
             ablehnen = otckappdata.querySelector('#cookies-dismiss[role="button"]');
             einstellungen = otckappdata.querySelector('#cookies-preferences[role="button"]');
             speichern = document.querySelector('#cookies-popup button.decline-btn');
@@ -1406,6 +1463,7 @@
          const slidingpopup = document.querySelector('div[id="sliding-popup"][class="sliding-popup-bottom"][style]');
          if (slidingpopup && document.cookie.includes('cookie-agreed=') === false) {
             console.log('[Cookie auto decline] Detected: sliding-popup');
+            cookiebannerstatus.anbieter = 'sliding-popup';
             ablehnen = slidingpopup.querySelector('button.decline-button');
             speichern = slidingpopup.querySelector('.eu-cookie-compliance-save-preferences-button');
             akzeptieren = slidingpopup.querySelector('.agree-button');
@@ -1416,6 +1474,7 @@
          const evidon = document.querySelector('#_evidon_banner, #_evidon-barrier-wrapper');
          if (evidon && evidon.offsetHeight >= 1) {
             console.log('[Cookie auto decline] Detected: evidon');
+            cookiebannerstatus.anbieter = 'evidon';
             ablehnen = evidon.querySelector('button#_evidon-decline-button, button#_evidon-barrier-declinebutton');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1424,6 +1483,7 @@
          const axept = document.querySelector('#axeptio_overlay.axeptio_mount[data-project-id]');
          if (axept && document.cookie.includes('axeptio') === true && document.cookie.includes('%2Cgoogle_analytics%2C') === false) {
             console.log('[Cookie auto decline] Detected: axept.io');
+            cookiebannerstatus.anbieter = 'axept.io';
             advancedrun = false;
             const ablehnen = axept.querySelector('button#axeptio_btn_dismiss');
             let shadowroot = axept.querySelector('.needsclick');
@@ -1475,7 +1535,8 @@
          // wordpress.com
          const wordpress = document.querySelector('#cmp-app-container iframe');
          if (wordpress && document.cookie.includes('euconsent-v2') === false) {
-            console.log('[Cookie auto decline] Detected: wordpress cookie banner');
+            console.log('[Cookie auto decline] Detected: wordpress.com');
+            cookiebannerstatus.anbieter = 'wordpress.com';
             einstellungen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button is-secondary"]');
             ablehnen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button white-space-normal is-secondary"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -1485,6 +1546,7 @@
          const cookiehub = document.querySelector('div[role="dialog"].ch2-visible.ch2-dialog, div[class="ch2-settings ch2-settings-scan ch2-visible"]');
          if (cookiehub && document.cookie.includes('cookiehub') === false) {
             console.log('[Cookie auto decline] Detected: cookiehub.com');
+            cookiebannerstatus.anbieter = 'cookiehub.com';
             einstellungen = cookiehub.querySelector('button.ch2-open-settings-btn');
             speichern = document.querySelector('div[class="ch2-settings ch2-settings-scan ch2-visible"] button.ch2-deny-all-btn');
             nureinklickeinstellungen = true;
@@ -1495,6 +1557,7 @@
          const xenforo = document.querySelector('li[class="notice js-notice notice--primary notice--cookie"]');
          if (xenforo && document.cookie.includes('xf_notice_dismiss') === false) {
             console.log('[Cookie auto decline] Detected: xenforo.com');
+            cookiebannerstatus.anbieter = 'xenforo.com';
             akzeptieren = xenforo.querySelector('a.js-noticeDismiss[href$="/account/dismiss-notice"]');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1503,6 +1566,7 @@
          const cookiesplusoverlay = document.querySelector('#cookiesplus-modal-container.cookiesplus-move');
          if (cookiesplusoverlay && document.cookie.includes('consent_date') === false) {
             console.log('[Cookie auto decline] Detected: cookiesplus-overlay');
+            cookiebannerstatus.anbieter = 'baycloud.ie (iFrame)';
             ablehnen = cookiesplusoverlay.querySelector('button.cookiesplus-reject');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1511,6 +1575,7 @@
          const sovy = document.querySelector('#sccm');
          if (sovy && document.cookie.includes('%22consentId%22%3A%') === false) {
             console.log('[Cookie auto decline] Detected: sovy.com');
+            cookiebannerstatus.anbieter = 'sovy.com';
             ablehnen = sovy.querySelector('.rejectcookies');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1519,6 +1584,7 @@
          const freeprivacypolicycom = document.querySelector('[id$="---nb"][aria-describedby="cc-nb-text"], #cc_dialog[aria-labelledby="cc_dialog"].cc_css_reboot');
          if (freeprivacypolicycom && document.cookie.includes('cookie_consent_user_accepted') === false) {
             console.log('[Cookie auto decline] Detected: freeprivacypolicy.com');
+            cookiebannerstatus.anbieter = 'freeprivacypolicy.com';
             nureinklickeinstellungen = true;
             ablehnen = freeprivacypolicycom.querySelector('button.cc-nb-reject');
             einstellungen = freeprivacypolicycom.querySelector('button.cc_b_cp');
@@ -1530,6 +1596,7 @@
          const dmscookie = document.querySelector('#dmsCookiePopup');
          if (dmscookie && document.cookie.includes('marketing') === false) {
             console.log('[Cookie auto decline] Detected: dmscookie.com');
+            cookiebannerstatus.anbieter = 'dmscookie.com';
             akzeptieren = dmscookie.querySelector('button[onclick="dmsCookie.loadScript()"]');
             let switchesgeklickt = false;
             const switches = dmscookie.querySelectorAll('#checkboxContainer input[type="checkbox"]');
@@ -1550,6 +1617,7 @@
          const redimde = document.querySelector('#redim-cookiehint-bottom, #redim-cookiehint-modal');
          if (redimde && document.cookie.includes('reDimCookieHint') === false) {
             console.log('[Cookie auto decline] Detected: redim.de');
+            cookiebannerstatus.anbieter = 'redim.de';
             akzeptieren = redimde.querySelector('#cookiehintsubmit');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
@@ -1558,16 +1626,27 @@
          const ethyca = document.querySelector('#fides-banner-container.fides-banner:not(.fides-banner-hidden), .fides-modal-container[data-testid="consent-modal"]:not([aria-hidden="true"])');
          if (ethyca && document.cookie.includes('fides_consent') === false) {
             console.log('[Cookie auto decline] Detected: ethyca.com');
+            cookiebannerstatus.anbieter = 'ethyca.com';
             nureinklickeinstellungen = true;
             ablehnen = ethyca.querySelector('button.fides-reject-all-button');
             einstellungen = ethyca.querySelector('button.fides-manage-preferences-button');
             klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
          }
 
+         // pixelmate
+         const pixelmate = document.querySelector('.pixelmate-big-wrapper.pixelmate-general-banner-wrapper');
+         if (pixelmate && document.cookie.includes('pixelmate') === false) {
+            console.log('[Cookie auto decline] Detected: pixelmate');
+            cookiebannerstatus.anbieter = 'pixelmate';
+            ablehnen = pixelmate.querySelector('button.pixelmate-general-deny');
+            klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+         }
+
          // Volksbanken (100+ Seiten)
          const volksbanken = document.querySelector('div[class="cookie-consent  "]');
          if (volksbanken && document.cookie.includes('cookieConsent') === false) {
-            console.log('[Cookie auto decline] Detected: Volksbank Seite');
+            console.log('[Cookie auto decline] Detected: Cookie Banner auf einer Volksbank Seite.');
+            cookiebannerstatus.anbieter = 'Cookie Banner auf einer Volksbank Seite.';
             const checkbox = volksbanken.querySelector('li.cookie-consent__list__item > input#cookie-consent-komfort[type="checkbox"]');
             speichern = volksbanken.querySelector('.cookie-consent__footer button[type="submit"]:not([data-button="selectAll"])');
             if (checkbox && checkbox.checked === false) {
@@ -1613,6 +1692,7 @@
                      text.includes('this site uses cookies') ||
                      text.includes('uses cookies from') ||
                      text.includes('uses cookies to personalize') ||
+                     text.includes('uses cookies to enhance the user') ||
                      text.includes('we use cookies') ||
                      text.includes('cookies and similar technology') ||
                      text.includes('we use essential cookies') ||
@@ -1644,18 +1724,22 @@
                               }
                               // Ablehnen
                               if ((btn.includes('ablehnen') || btn.includes('lehne') || btn.includes('nein') || btn.includes('notwendige') || btn.includes('schließen') || btn.includes('nur technisch') || btn.includes('verweigern') || btn.includes('essenzielle') || btn.includes('keine tracking-cookies') || btn.includes('nur das nötigste') || btn.includes('ohne ') || btn.includes('eingeschränkte funktionalität') || btn.includes('reject') || btn.includes('decline') || btn.includes('deny') || btn.includes('refuse') || btn.includes('disallow') || btn.includes('necassy') || btn.includes('dismiss') || btn.includes('close') || btn.includes('no thanks') || btn.includes('necessary') || btn.includes('nie akceptuję') || btn.includes('no, ') || btn.includes('no ') || btn.includes('rejeitar') || btn === 'no') && btn.length < 45) {
+                                 cookiebannerstatus.knopfstatus = 'abgelehnt';
                                  finalerbutton = buttons[k];
                                  break;
                                  // Speichern
-                              } else if ((btn.includes('einstellungen übernehmen') || btn.includes('speichern') || btn.includes('auswahl ') || btn.includes('ausgewählte') || btn.includes('keuze opslaan')) && btn.length < 45) {
+                              } else if ((btn.includes('einstellungen übernehmen') || btn.includes('speichern') || btn.includes('auswahl ') || btn.includes('ausgewählte') || btn.includes('keuze opslaan') || btn.includes('udvalgte cookies')) && btn.length < 45) {
+                                 cookiebannerstatus.knopfstatus = 'gespeichert';
                                  finalerbutton = buttons[k];
                                  gewichtung = 1;
                                  // Attributchecker für Symbol Schaltflächen
                               } else if (attributchecker(a) && gewichtung > 1) {
+                                 cookiebannerstatus.knopfstatus = 'geschlossen';
                                  finalerbutton = buttons[k];
                                  gewichtung = 2;
                                  // Akzeptieren
                               } else if ((btn.includes('akzeptier') || btn.includes('ich stimme') || btn.includes('zustimmen') || btn.includes('alle auswählen') || btn.includes('alles klar') || btn.includes('agree') || btn.includes('accept') || btn.includes('verstanden') || btn.includes('ausblenden') || btn.includes('erlauben') || btn.includes('nicht mehr anzeigen') || btn.includes('bestätige') || btn.includes('got it') || btn.includes('continue') || btn.includes('閉じる') || btn === 'ok' || btn === 'ein­ver­standen' || btn === 'okey' || btn === 'consent') && btn.length < 45 && gewichtung > 2) {
+                                 cookiebannerstatus.knopfstatus = 'akzeptiert';
                                  finalerbutton = buttons[k];
                                  gewichtung = 3;
                               }
@@ -1666,6 +1750,7 @@
                            beenden();
                            window.setTimeout(function () {
                               console.log('[Cookie auto decline] Detected: Unbekannter Cookie Banner.');
+                              cookiebannerstatus.suchstatus = 'gefunden';
                               klickbutton.click();
                            }, 202);
                         }
@@ -2126,7 +2211,7 @@
          seite: 'websummit.com',
          selector: '[class*="CivicCookieBanner"] .civic_cookie__buttons > button + button'
       }, {
-         seite: 'google.ac,google.ae,google.at,google.be,google.bg,google.by,google.ca,google.ch,google.cl,google.co.id,google.co.il,google.coIn,google.co.jp,google.co.ke,google.co.kr,google.co.nz,google.co.th,google.co.uk,google.co.ve,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.co,google.com.ec,google.com.eg,google.com.hk,google.com.mx,google.com.my,google.com.pe,google.com.ph,google.com.pk,google.com.py,google.com.sa,google.com.sg,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vn,google.cz,google.de,google.dk,google.dz,google.ee,google.es,google.fi,google.fr,google.gr,google.hr,google.hu,google.ie,google.it,google.lt,google.lv,google.nl,google.no,google.pl,google.pt,google.ro,google.rs,google.ru,google.se,google.sk,google.coIn',
+         seite: 'google.ac,google.ae,google.at,google.be,google.bg,google.by,google.ca,google.ch,google.cl,google.co.id,google.co.il,google.coIn,google.co.jp,google.co.ke,google.co.kr,google.co.nz,google.co.th,google.co.uk,google.co.ve,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.co,google.com.ec,google.com.eg,google.com.hk,google.com.mx,google.com.my,google.com.pe,google.com.ph,google.com.pk,google.com.py,google.com.sa,google.com.sg,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vn,google.cz,google.de,google.dk,google.dz,google.ee,google.es,google.fi,google.fr,google.gr,google.hr,google.hu,google.ie,google.it,google.lt,google.lv,google.nl,google.no,google.pl,google.pt,google.ro,google.rs,google.ru,google.se,google.sk,google.coIn,googleusercontent.com',
          checkcookie: 'SOCS',
          selector: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child',
          selectormobile: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
@@ -2288,6 +2373,10 @@
          checkcookie: 'CONSENT_COOKIE',
          selector: '#cookieModal button.cookie-cancel'
       }, {
+         seite: 'bestellen.bayern.de',
+         checkcookie: 'cb-enabled',
+         selector: '#cookie-bar a.cb-disable'
+      }, {
          seite: 'bayern.de',
          checkcookie: 'BayernMatomo',
          selector: '#cookie button#cookie-button-deact'
@@ -2434,10 +2523,6 @@
          seite: 'safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev,android.com,research.google,blog.google',
          checkstorage: 'glue.CookieNotificationBar',
          selector: '.glue-cookie-notification-bar button.glue-cookie-notification-bar__accept'
-      }, {
-         seite: 'xing.com',
-         checkcookie: 'userConsent',
-         selector: 'button#consent-settings-button -> button.consent-banner-button-accept-overlay'
       }, {
          seite: 'jobcenter-ge.de',
          checkcookie: 'cookie_consent',
@@ -3006,8 +3091,8 @@
          selector: '#twcc__mechanism button#twcc__decline-button'
       }, {
          seite: 'comdirect.de',
-         checkcookie: 'consent',
-         selector: '#privacy-init-wall button#privacy-init-wall-button-deny'
+         checkcookie: 'cmp_consent',
+         selector: 'com-consent-layer >> #cmpDenyAll >> button'
       }, {
          seite: 'nah.sh.hafas.de',
          checkcookie: 'consent',
@@ -3061,6 +3146,35 @@
          seite: 'nike.com',
          checkcookie: 'AKA_A2',
          selector: '.cookie-modal-base button.modal-actions-decline-btn'
+      }, {
+         seite: 'homebanking-hilfe.de',
+         checkcookie: 'hbh42_cn',
+         selector: 'a[onclick^="eu_cookie_consent_accept'
+      }, {
+         seite: 'magentatv.de',
+         checkstorage: 'DTAG_GUEST_PRIVACY_FLAGS',
+         selector: 'button#OVERLAY-REJECT'
+      }, {
+         seite: 'uvex-safety.com',
+         checkcookie: 'uvex-consent',
+         selector: 'uvex-cookie-banner a:has(> [slot="button-reject"])'
+      }, {
+         seite: 'retnemt.dk',
+         checkstorage: 'ajs_user_traits',
+         selector: '#cookies button#accept-selected-cookies-btn'
+      }, {
+         seite: 'wetter.com',
+         checkcookie: 'receive-cookie-deprecation',
+         selector: '#cmp-content button#cmp-btn-accept',
+         selectormobile: 'div[class^="styles_wrapper__"] > div[class^="styles_contentWrapper__"] > div:first-child + div + button[class*="buttonCmp"]'
+      }, {
+         seite: 'jobvector.de',
+         checkstorage: 'cc_essential',
+         selector: '.ddt-modal button[onclick="ddt_openSettingpage();"] -> .ddt-modal button[onclick^="dd_saveSettings();"]'
+      }, {
+         seite: 'action1.com',
+         checkstorage: 'cookie-notice-consent',
+         selector: '#cookie-banner button#cookie-banner__reject-btn'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -3116,6 +3230,8 @@
                                     if (selectors.length > 1) {
                                        tiefe++;
                                     }
+                                    cookiebannerstatus.suchstatus = 'gefunden';
+                                    cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung.';
                                     getfinalshadowrootselector.click();
                                     console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                  }
@@ -3130,6 +3246,8 @@
                                  if (selectors.length > 1) {
                                     tiefe++;
                                  }
+                                 cookiebannerstatus.suchstatus = 'gefunden';
+                                 cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung.';
                                  normalselector.click();
                                  console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                               }
@@ -3219,6 +3337,7 @@
             cookiebannerfinalakzeptiertcounter = 0;
             forcesessionstorage();
             console.log('[Cookie auto decline] Cookie Banner abgelehnt.');
+            cookiebannerstatus.knopfstatus = 'abgelehnt';
             if (window.self !== window.top) {
                beenden();
             }
@@ -3232,6 +3351,7 @@
             cookiebannerfinalakzeptiertcounter = 0;
             forcesessionstorage();
             console.log('[Cookie auto decline] Cookie Banner Einstellungen gespeichert.');
+            cookiebannerstatus.knopfstatus = 'gespeichert';
             if (window.self !== window.top) {
                beenden();
             }
@@ -3244,6 +3364,7 @@
             bereitsgeklickt = true;
             cookiebannerfinalakzeptiertcounter = 0;
             console.log('[Cookie auto decline] Cookie Banner Einstellungen geöffnet.');
+            cookiebannerstatus.knopfstatus = 'einstellungen';
             einstellungen.click();
             return;
          }
@@ -3254,6 +3375,7 @@
             cookiebannerfinalakzeptiertcounter = 0;
             forcesessionstorage();
             console.log('[Cookie auto decline] Cookie Banner geschlossen.');
+            cookiebannerstatus.knopfstatus = 'geschlossen';
             if (window.self !== window.top) {
                beenden();
             }
@@ -3267,6 +3389,7 @@
             cookiebannerfinalakzeptiertcounter = 0;
             forcesessionstorage();
             console.log('[Cookie auto decline] Cookie Banner akzeptiert.');
+            cookiebannerstatus.knopfstatus = 'akzeptiert';
             if (window.self !== window.top) {
                beenden();
             }
@@ -3291,12 +3414,14 @@
       };
 
       // Weitere Sonderfälle die gar nicht oben reinpassen.
-      if (window.location.hostname.endsWith('.de') && (window.location.hostname.includes('sparkasse-') || window.location.hostname.includes('-sparkasse') || window.location.hostname.includes('stadtsparkasse-') || window.location.hostname.startsWith('www.ssk') || window.location.hostname.startsWith('www.spk') || window.location.hostname.endsWith('haspa.de')) && document.cookie.includes('ePrivacyStatus') === false) {
+      if (window.location.hostname.endsWith('.de') && (window.location.hostname.includes('sparkasse-') || window.location.hostname.includes('-sparkasse') || window.location.hostname.includes('stadtsparkasse-') || window.location.hostname.startsWith('www.ssk') || window.location.hostname.startsWith('www.spk') || window.location.hostname.endsWith('haspa.de') || window.location.hostname.startsWith('www.ksk-')) && document.cookie.includes('ePrivacyStatus') === false) {
+         cookiebannerstatus.anbieter = 'Sparkasse';
          console.log('[Cookie auto decline] Detected: Sparkasse cookie banner');
          window.setTimeout(function () {
             const check = document.querySelector('div[class*="privacy"] .ebutton > a[data-form=".eprivacy_optin_decline"]');
             if (check) {
                forcesessionstorage();
+               cookiebannerstatus.knopfstatus = 'abgelehnt';
                check.click();
             }
          }, 202);
@@ -3304,10 +3429,12 @@
          let findecookiebanner = window.setInterval(function () {
             const ablehnen = document.querySelector('.drift-widget-chat-wrapper__GDPR button.drift-gdpr-action--deny-consent');
             if (ablehnen) {
+               cookiebannerstatus.anbieter = 'js.driftt.com';
                console.log('[Cookie auto decline] Detected: js.driftt.com cookie banner chat iframe');
                forcesessionstorage();
                clearInterval(findecookiebanner);
                window.setTimeout(function () {
+                  cookiebannerstatus.knopfstatus = 'abgelehnt';
                   ablehnen.click();
                }, 202);
             }
@@ -3325,5 +3452,44 @@
             }
          }, 502);
       }
+   } else {
+      if (window.self === window.top) {
+         cookiebannerstatus.suchstatus = 'nicht ausgeführt';
+      }
    }
+
+   // Cookie Banner Status an das Popup Panel weiterleiten.
+   if (document.hidden !== true && window.self === window.top) {
+      let senderbereitsaufgerufen = false;
+      browser.runtime.onMessage.addListener(function (request) {
+         if (request.popupstatus === 'geöffnet' && senderbereitsaufgerufen === false) {
+            senderbereitsaufgerufen = true;
+
+            function erfolg() {}
+
+            function fehler() {
+               console.log("[Cookie auto decline] Erweiterungspopup geschlossen, beende Übertragung.");
+               senderbereitsaufgerufen = false;
+               clearInterval(sendecookiebannerstatus);
+            }
+
+            // Sende Daten solange das Popup geöffnet ist oder bis 10 Sekunden lang.
+            browser.runtime.sendMessage({
+               nachricht: cookiebannerstatus
+            }).then(erfolg, fehler);
+            let sendecookiebannerstatus = setInterval(function () {
+               if (document.hidden !== true) {
+                  if (cookiebannerstatus.anbieter !== 'unbekannt' || cookiebannerstatus.knopfstatus !== 'suche') {
+                     cookiebannerstatus.suchstatus = 'gefunden';
+                  }
+                  browser.runtime.sendMessage({
+                     nachricht: cookiebannerstatus
+                  }).then(erfolg, fehler);
+               }
+            }, 500);
+         }
+      });
+   }
+
+
 })();
