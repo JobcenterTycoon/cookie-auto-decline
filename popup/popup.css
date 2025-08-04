@@ -1,0 +1,31 @@
+body {
+    background-color: #212121;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#main, #anbietercontainer, #knopfstatuscontainer, #suchstatuscookie {
+   display: none;
+}
+
+#main {
+    text-align: left;
+    margin: 0px 0px 20px 20px;
+}
+
+#main > div {
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 27px;
+}
+#logo {
+    margin-top: 10px;
+}
+
+b {
+    text-decoration: underline solid gray 1px;
+}
