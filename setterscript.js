@@ -7,7 +7,7 @@
       window.addEventListener('DOMContentLoaded', function () {
          if (document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('body > div:first-child + script[src^="https://mcl.spur.us/d/mcl.js?"] + script:last-child') === null) {
             let css = document.createElement('style');
-            css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"],.amgdprjs-bar-template,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,li[class="notice js-notice notice--primary notice--cookie"],#freeprivacypolicy-com---nb[aria-describedby="cc-nb-text"],#cc_dialog[aria-labelledby="cc_dialog"].cc_css_reboot,#redim-cookiehint-bottom,#redim-cookiehint-modal,#dmsCookiePopup,#cookiesplus-modal-container.cookiesplus-move,#fides-banner-container.fides-banner:not(.fides-banner-hidden),.fides-modal-container[data-testid="consent-modal"]:not([aria-hidden="true"]),#fides-overlay.fides-overlay{clip-path:circle(0)!important;pointer-events:none!important;}';
+            css.innerText = 'div[style*="blur"]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]) *, div[style]:has(> .wp-exclude-emoji > .animate__animated div > a[href="#"][style="order: 1;"][role]), body > .js-modal[style="z-index: 2147483647 !important"]:has(.js-modal--cookies),.sp-message-open{overflow:auto!important;}:is(div, form, dialog, section, aside, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="c-disclaimer"], [class*="cc_banner"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .gridAndInfoContainer),#BorlabsCookieBox,[data-borlabs-cookie-wrap],div[id*="Cookiebot"], div#cookiebot,#_cp_wall,#bnp_cookie_banner,#cc_privacy_layer,#cmp-style-reset,#cmpbox,#cmpbox2,#cmpwrapper,#ez-cookie-dialog-wrapper,#ez-cookie-loader-wrapper,#gdpr-banner[aria-hidden],#gdpr-consent-tool-wrapper,#gdpr-privacy-settings,#gdpr-single-choice-overlay,#jentis_consent,#onetrust-consent-sdk,#truste-consent-track,#uhfCookieAlert,[id^="usercentrics-"]:not(script),#comspace-usercentrics,.CookieComplianceContainer-veil,.artdeco-global-alert--COOKIE_CONSENT[type=COOKIE_CONSENT],.c-cookie-consent--default,.truste_box_overlay,.truste_overlay,.waconcookiemanagement,app-required-consent-overlay,body>#cmplz-cookiebanner-container,body>#portal-root>div:not([id],[class])>div[class^=Overlay__container___][class*=Overlay__containerActive___],body>#react-root>div>div>div>div>div:last-child>div>div[data-testid=BottomBar],body>[data-react-modal-body-trap]+.ReactModalPortal,body>div#a-page>span.a-declarative[data-action=sp-cc][data-csa-c-type=widget][data-csa-c-func-deps=aui-da-sp-cc][data-sp-cc*="/privacyprefs/"],body>div>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[aria-label*=oogle][id][class][aria-modal][role=dialog][tabindex="0"][data-ved][style="display: block;"],body>div[data-testid=cookie-policy-manage-dialog],body>div[data-testid=wa_cookies_banner_modal],body>tp-yt-iron-overlay-backdrop[opened],body>ytd-app>ytd-consent-bump-v2-lightbox#lightbox,.cmp-root-container,div[class^=Layout-sc-][class$=consent-banner],div[data-enzyme-id=CookieComplianceModal],div[data-tracking-opt-in-overlay],div[id^=sp_message_container_],script[src^="https://k.twitchcdn.net"]+.ReactModalPortal,tiktok-cookie-banner,.osano-cm-window,#didomi-host,#qc-cmp2-container,#cookieBanner,#iubenda-cs-banner,#cookie-banner_flag + #banner-wrapper,#gd-cookie-consent,.gdpr-wrapper,fainin-cookie-consent,#precmpdialog,.js-consent-banner,#hellotrust_cookie_popup,#cookiebanner,#cookiePrefPopup,.cookie-consent-spice,#cookie_accept_msg_block,#optanon,.optanon-alert-box-wrapper,iframe#fast-cmp-iframe,#cookieDialog,#cookie-notice,#cookie-consent,.mnd-cookie-modal,#cookie-law-info-bar,#consent-manager,#cookiefirst-root,.cookiefirst-root,#form-cookies-banner,#appconsent,#cookieConsent,.cookie-disclaimer-intrusive,#cookieconsent_options,#cookie-overlay,#cookieNotice,#cookie-consent-wrapper,.cc-window[role="dialog"][aria-label="cookieconsent"][aria-describedby="cookieconsent:desc"],[aria-describedby="cookiebar-desc"],div[aria-describedby="cookieconsent:desc"].cc-window + div > div[id="cookieconsent:settings"],#cookie_consent,.cookie-panel__description,.as-oil-content-overlay,.mnd-cookie-wrapper,.mnd-cookie-modal,#colorbox.cookie-popup,.individual-cookie-wrap,#cookie-manage,#cookiebarNew,#cookiesMessage,.page-wrap--cookie-permission,.js-cookiebox,#idxrcookies,form#cookiebar,.cookie-popup[x-data],.c24-cookie-consent-wrapper,.cookie-banner,#modalCookie,.cookie-modal,#cookieModal,#cookie_banner,#ccc,#cc--main.c--anim[style],#cc-main,.mmcm-container,cmp-banner,sibbo-cmp-layout,.cookies_modalbox,div[id="orejime"],.acris-cookie-consent,#gdpr-dialog,#GDPRConsentManagerContainer,.TraminoConsent,#cookieNote,#cookie-disclosure,.adsk-gdpr-footer-wrapper,#p_p_id_CookiePortlet_,div[id="klaro"],div[id="timm4-cookie-consent"],#SgCookieOptin,#usercentrics-button,#bgc-cookie-popup,#sd-cmp[class^="sd-cmp-"],.cky-consent-container,#acris--cookie-permission--modal-overlay,#acris--page-wrap--cookie-permission,#shopify-pc__banner[role="alertdialog"][aria-labelledby][style="display: block;"],.--framer-cookie-banner-container,#privacy_optin_611,div[id^="__tealiumGDPR"],.avia-cookie-consent-wrap,#cookiebar_optin_219.mod_cookiebar_optin_slim,iframe[src^="https://cdn.baycloud.com/"],#sd-cmp[class^="sd-cmp-"],.ccm-root,body > .stpd_cmp,#jmdCookieConsentWrapper,#bbcdBanner,#consent-manager.active,#consent.active,#cookieChoiceInfo.cookie-choices-info,div[aria-describedby="cc-individual-cookie-settings"],.cc-individual-cookie-settings-overlay,div[class="sp-dsgvo sp-dsgvo-popup-overlay not-accepted"],aside#moove_gdpr_cookie_info_bar,[class^="gdpr_lightbox gdpr_lightbox-opened"],#moove_gdpr_cookie_modal,#coiOverlay[role="banner"][style="display: flex;"][aria-hidden="false"],.cookieinfo[style^="position: fixed; left: 0px; right: 0px; height: auto; min-height: 21px; z-index: 2147483647; "],.cookie-permission-container[data-cookie-permission="true"][style="display: block;"],[class="mw-cookiewarning-container"],#tarteaucitronRoot,div[class="cc_banner-wrapper "],#eightworks-cookie-consent-plus[data-cookie-permission="true"],[class^="offcanvas offcanvas-"][class$="show"][aria-modal="true"][role="dialog"],#ketch-modal.ketch-flex, #ketch-banner.ketch-flex,#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"],#axeptio_overlay.axeptio_mount[data-project-id],#cmp-app-container,div[role="dialog"].ch2-visible.ch2-dialog,div[class="ch2-settings ch2-settings-scan ch2-visible"],.amgdprjs-bar-template,.amgdprcookie-modal-container,.amgdprcookie-modal-container + .modals-overlay,li[class="notice js-notice notice--primary notice--cookie"],#freeprivacypolicy-com---nb[aria-describedby="cc-nb-text"],#cc_dialog[aria-labelledby="cc_dialog"].cc_css_reboot,#redim-cookiehint-bottom,#redim-cookiehint-modal,#dmsCookiePopup,#cookiesplus-modal-container.cookiesplus-move,#fides-banner-container.fides-banner:not(.fides-banner-hidden),.fides-modal-container[data-testid="consent-modal"]:not([aria-hidden="true"]),#fides-overlay.fides-overlay,.pixelmate-big-wrapper.pixelmate-general-banner-wrapper{clip-path:circle(0)!important;pointer-events:none!important;}';
             css.setAttribute('id', 'q3xyktv21es96by0ybwvb1e9a37y5pu');
             if (document.head !== null) {
                document.head.appendChild(css);
@@ -57,7 +57,7 @@
          setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40_43_44_46;'
       }, {
          seite: 'welt.de',
-         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36_41_43_44;'
+         setcookie: 'consentUUID=6c38740a-9fcf-4ac4-8841-f3cee0293e84_34_36_41_43_44_46;'
       }, {
          seite: 't-online.de',
          setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36_44;'
@@ -383,8 +383,11 @@
          seite: 'huss-licht-ton.de',
          setcookie: 'huss_cookie_version=1; , huss_cookie=%7B%22acceptcookies%22%3A%5B%5D%2C%22user_hash%22%3A%22196df052e3382111587910b112cd9e504cc586da8fec77a0289248447766b588%22%7D;'
       }, {
-         seite: 'bosch-homecomfort.com,bosch-presse.de,bosch-smarthome.com',
-         setcookie: 'do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:" + cookiezeit + "%2C%22version%22:4};'
+         seite: 'bosch-homecomfort.com,bosch-presse.de,bosch-smarthome.com,bosch-professional.com,bosch-ebike.com,bosch-bkk.de',
+         setcookie: 'do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22advertising%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:' + cookiezeit + '%2C%22version%22:4};'
+      }, {
+         seite: 'bosch-professional.com',
+         setcookie: 'privacy-consents-v4={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22advertising%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:' + cookiezeit + '%2C%22version%22:4};'
       }, {
          seite: 'alpenverein-muenchen-oberland.de',
          setcookie: 'cookie_accept=0; , wgDisable3rdParty=1; , wgDisableAnalytics=1;'
@@ -428,10 +431,8 @@
          seite: 'bike24.de',
          setcookie: 'cookieConsent={"algolia":false,"basket-store":true,"dy":false,"emarsys":false,"taboola":false,"google-ga":false,"google-tm":false,"facebook":false,"bing":false,"clarity":false,"rememberMe":true,"trbo":false,"zenloop":false,"version":"1.4"};'
       }, {
-         seite: 'xhamster.com,xhamster.desi,xhamster.xxx,buktube.com,fullxh.com,galleryxh.site,megaxh.com,movingxh.world,seexh.com,taoxh.life,unlockxh4.com,xhaccess.com,xhadult2.com,xhadult3.com,xhadult4.com,xhadult5.com,xhamster46.com,xhbig.com,xhbranch5.com,xhday.com,xhday1.com,xhmoon5.com,xhplanet1.com,xhplanet2.com,xhreal2.com,xhreal3.com,xhtab2.com,xhtab4.com,xhtree.com,xhvictory.com,xhwebsite.com,xhwebsite2.com,xhwide1.com',
-         setcookie: 'cookie_accept=%7B%22e%22%3A1%2C%22n%22%3A0%2C%22tp%22%3A0%7D;',
-         setstoragename: 'cookiesBannerClosed',
-         setstoragecontent: cookiezeit
+         seite: 'xhamster.com,xhamster.desi,xhamster.xxx,buktube.com,fullxh.com,galleryxh.site,megaxh.com,movingxh.world,seexh.com,taoxh.life,unlockxh4.com,xhaccess.com,xhadult2.com,xhadult3.com,xhadult4.com,xhadult5.com,xhamster46.com,xhbig.com,xhbranch5.com,xhday.com,xhday1.com,xhmoon5.com,xhplanet1.com,xhplanet2.com,xhreal2.com,xhreal3.com,xhtab2.com,xhtab4.com,xhtree.com,xhvictory.com,xhwebsite.com,xhwebsite2.com,xhwide1.com,woxh.world',
+         setcookie: 'cookie_accept_v2=%7B%22e%22%3A1%2C%22f%22%3A0%2C%22t%22%3A0%2C%22a%22%3A0%7D;'
       }, {
          seite: 'utiq.com',
          setstoragename: 'utiqCookieAcknowledged',
@@ -745,9 +746,6 @@
          seite: 'storefront.prod.kulturpass.de',
          setcookie: 'kp-cookie-banner-accepted=" + cookiezeit + ";'
       }, {
-         seite: 'bosch-bkk.de',
-         setcookie: 'do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:60%2C%22timestamp%22:" + cookiezeit + "%2C%22version%22:4};'
-      }, {
          seite: 'swissgrid.ch',
          setcookie: 'acceptedCookie=true;'
       }, {
@@ -764,9 +762,6 @@
          seite: 'freiewaehler.eu',
          setcookie: 'ccm_consent=c1.2.5;',
          reload: true
-      }, {
-         seite: 'bosch-ebike.com',
-         setcookie: 'do-consent={%22consent%22:{%22convenience%22:true%2C%22analysis%22:false%2C%22marketing%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:182%2C%22timestamp%22:" + cookiezeit + "%2C%22version%22:4};'
       }, {
          seite: 'longi.com',
          setcookie: 'CookieConsent=false;'
@@ -790,9 +785,6 @@
       }, {
          seite: 'developer.twitter.com,developer.x.com,help.x.com',
          setcookie: 'twtr_pixel_opt_in=N;'
-      }, {
-         seite: 'tischlerei-hoppe.de',
-         setcookie: 'pixelmate={"gen_tracking":"deny","didConsent":"yes","stats":"deny","ads":"deny","videos":"no","else":"deny","uuid":"7eda854b-315a-4be1-9d61-15976747d84d","ga_tracking":"deny","fb_tracking":"deny","youtubeConsent":"deny","vimeoConsent":"deny","gmapsConsent":"deny","trustindexConsent":"deny","video":"deny"};'
       }, {
          seite: 'offgridtec.com',
          setcookie: 'cookie-preference=1; , acris_persistent_cart_sw=1; , youtube-cookie=true;'
@@ -1616,9 +1608,6 @@
          seite: 'fusionbase.com',
          setcookie: 'cookie_consent=%7B%22ad_storage%22%3A%22denied%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%7D;'
       }, {
-         seite: 'meine-bandscheibe.de',
-         setcookie: 'pixelmate={"gen_tracking":"deny","didConsent":"yes","stats":"deny","ads":"deny","videos":"no","else":"deny","uuid":"e44ceefa-fc44-4a20-9c3d-f711a701ac58","ga_tracking":"deny","fb_tracking":"deny","youtubeConsent":"deny","vimeoConsent":"deny","gmapsConsent":"deny","trustindexConsent":"deny","video":"deny"};'
-      }, {
          seite: 'emlakjet.com',
          setstoragename: 'efl-saved-consent',
          setstoragecontent: '{"updatedAt":1742743804412,"categories":{"essential":true,"functional":false,"marketing":false,"other":false},"browserData":{"userAgent":"' + navigator.userAgent + '","pageLoad":2070,"language":"' + navigator.language + '","networkType":"","screen":{"devicePixelRatio":1.5,"height":1080,"width":1920},"uuid":"e3a89f10-056b-48e2-9a69-5cfbf1fefaaf"}}'
@@ -1751,6 +1740,51 @@
       }, {
          seite: 'smallpdf.com',
          setcookie: '_s.cookie_consent=marketing=0:analytics=0:version=2021-07-01:timestamp=' + cookiezeit + ';'
+      }, {
+         seite: 'tp-link.com',
+         setcookie: 'tp_privacy_banner=1; , tp_privacy_base=1;'
+      }, {
+         seite: 'herlitz.de',
+         setcookie: 'necessary-opt-in=true;'
+      }, {
+         seite: 'brennenstuhl.com',
+         setcookie: 'privacy={"core":"1"};',
+         reload: true
+      }, {
+         seite: 'e-tec.at',
+         setcookie: 'cc_analytic=false; , cc_functional=false; , cc_granted=true; , cc_marketing=false;'
+      }, {
+         seite: 'eneba.com',
+         setcookie: 'cconsent=1100;'
+      }, {
+         seite: 'crew-united.com',
+         setcookie: 'ccb=googleAdSenseAccepted=0&googleAnalyticsAccepted=0&commonCookies=1;',
+         reload: true
+      }, {
+         seite: 'cloudmounter.net',
+         setcookie: 'Sticky_gdpr=1;'
+      }, {
+         seite: 'nigrin.com',
+         setcookie: 'allowAnalytics=false; , allowGeneral=true;'
+      }, {
+         seite: 'browser.ai',
+         setcookie: 'allow_browserai_cookie={%22n%22:true%2C%22pers%22:false%2C%22perf%22:false%2C%22mark%22:false};',
+         reload: true
+      }, {
+         seite: 'windowsonarm.org',
+         setstoragename: 'cookieConsent',
+         setstoragecontent: 'true'
+      }, {
+         seite: 'sis.de',
+         setstoragename: 'SW_PRIVACY_CONSENT',
+         setstoragecontent: '{"tools":{"GoogleAnalytics":false,"GoogleTagManager":false,"GoogleAdsConversionTracking":false,"Youtube":false},"changed":"' + cookiedatum + '"}'
+      }, {
+         seite: 'arte.tv',
+         setcookie: 'user_consent=audience%3Doff%2Ctechnical%3Doff;'
+      }, {
+         seite: 'theonion.com',
+         setstoragename: 'consent_preferences',
+         setstoragecontent: '{"analytics_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
@@ -1769,6 +1803,30 @@
                   }
                   if (regeln[i].checkcookie && document.cookie.includes(regeln[i].checkcookie)) {
                      return;
+                  }
+
+                  // Cookie Banner Status an das Popup Panel weiterleiten.
+                  if (document.hidden !== true) {
+                     browser.runtime.onMessage.addListener(function (request) {
+                        if (request.popupstatus === 'geöffnet') {
+                           console.log(request.popupstatus);
+
+                           function erfolg() {
+                              console.log(cookiebannerstatus);
+                           }
+
+                           function fehler() {
+                              console.log("Erweiterungspopup geschlossen, beende Übertragung.");
+                           }
+                           const cookiebannerstatus = {
+                              cookiegesetzt: true
+                           };
+                           // Sende Daten solange das Popup geöffnet ist oder bis 10 Sekunden lang.
+                           browser.runtime.sendMessage({
+                              nachricht: cookiebannerstatus
+                           }).then(erfolg, fehler);
+                        }
+                     });
                   }
 
                   // Cookies oder/und LocalStorage setzen
