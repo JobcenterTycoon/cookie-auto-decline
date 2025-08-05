@@ -32,8 +32,12 @@ browser.tabs.query({
          popupstatus: "geöffnet"
       }).then(function () {
          console.log("[Cookie auto decline] geöffnet nachricht vom popup script an den content script gesendet");
+         main.style.display = 'block';
+         logo.src = "icon_64.png";
       }).catch(function () {
          console.error("[Cookie auto decline] Kein Content Script erreichbar.");
+         main.style.display = 'none';
+         logo.src = "icon_64_off.png";
       });
    }
 });
