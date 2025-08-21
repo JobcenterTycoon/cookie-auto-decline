@@ -29,3 +29,8 @@ h1 {
 b {
     text-decoration: underline solid gray 1px;
 }
+
+#checkbox {
+    height: 17px;
+    width: 17px;
+}
