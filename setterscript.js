@@ -262,7 +262,7 @@
          seite: 'catsbest.de',
          setcookie: 'gdpr-cookie=eyJ2ZXJzaW9uIjoiMiIsImdyb3VwcyI6eyJlc3NlbnRpYWwiOnRydWUsInN0YXRpc3RpY3MiOmZhbHNlLCJleHRlcm5hbC1tZWRpYSI6dHJ1ZX0sImNvb2tpZXMiOnsiZ29vZ2xlLWFuYWx5dGljcyI6ZmFsc2UsImZiLXBpeGVsIjpmYWxzZSwiZ29vZ2xlLXRhZy1tYW5hZ2VyIjpmYWxzZSwieW91dHViZSI6dHJ1ZX19;'
       }, {
-         seite: 'metro.de,metro.fr,metro.at,metro.bg,makro.nl,metro.it,metro.pe,makro.cz,makro.pt,makro.pl,metro.co.uk',
+         seite: 'metro.de,metro.fr,metro.at,metro.bg,makro.nl,metro.it,metro.pe,makro.cz,makro.pt,makro.pl',
          setcookie: 'allowedCookieCategories=necessary%7Cfunctional%7CUncategorized%7Cv1;'
       }, {
          seite: 'eundl.de',
@@ -386,7 +386,7 @@
          seite: 'bosch-homecomfort.com,bosch-presse.de,bosch-smarthome.com,bosch-professional.com,bosch-ebike.com,bosch-bkk.de',
          setcookie: 'do-consent={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22advertising%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:' + cookiezeit + '%2C%22version%22:4};'
       }, {
-         seite: 'bosch-professional.com',
+         seite: 'bosch-professional.com,dremel.com',
          setcookie: 'privacy-consents-v4={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22advertising%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:31%2C%22timestamp%22:' + cookiezeit + '%2C%22version%22:4};'
       }, {
          seite: 'alpenverein-muenchen-oberland.de',
@@ -702,10 +702,6 @@
          seite: 'waze.com',
          setcookie: 'ads-cookie-consent=disallow;'
       }, {
-         seite: 'hama.com',
-         setcookie: 'OPT_OUT=-96405886582557098138335614482657689069;',
-         reload: true
-      }, {
          seite: 'netcup.com',
          setcookie: 'js-cookie-opt-in__consent=needed,preference;'
       }, {
@@ -726,9 +722,6 @@
          setcookie: 'privacy_setting=100;',
          setstoragename: 'cookie_prompt_times,last_prompt_time',
          setstoragecontent: '1 ; ' + cookiezeit + ''
-      }, {
-         seite: 'kram.store',
-         setcookie: 'tinycookie=1; , tinycookie_acc=req;'
       }, {
          seite: 'karriere-feuerwehr.hamburg',
          setcookie: 'hsnCookieAllowed={"gtm":false,"youtube":true};'
@@ -1244,9 +1237,6 @@
          setcookie: 'cookieConsentAtBolighub={%22choices%22:{%22necessary%22:true%2C%22functional%22:true%2C%22analytics%22:false%2C%22marketing%22:false}};',
          reload: true
       }, {
-         seite: 'sozialgerichtsbarkeit.de',
-         setcookie: 'cookie-agreed=0;'
-      }, {
          seite: 'eurodns.com',
          setcookie: 'cookiesAccepted=ok;'
       }, {
@@ -1475,13 +1465,6 @@
          seite: 'betterplace.org',
          setcookie: 'betterplace-tracking-accepted=rejected;'
       }, {
-         seite: 'fischer-bike.com',
-         setstoragename: 'mmFbPixel.1.optin',
-         setstoragecontent: '0'
-      }, {
-         seite: 'segway.com',
-         setcookie: 'allowed_save_cookie=%7B%221%22%3A1%2C%222%22%3A1%2C%223%22%3A1%2C%224%22%3A1%2C%225%22%3A1%2C%226%22%3A1%2C%227%22%3A1%2C%229%22%3A1%2C%2210%22%3A1%2C%2211%22%3A1%2C%2212%22%3A1%2C%2213%22%3A1%7D;'
-      }, {
          seite: 'hbswelding.systems',
          setcookie: 'consent=false;',
          reload: true
@@ -1542,10 +1525,6 @@
          seite: 'sparwelt.de',
          setcookie: 'consent-1.0=%7B%22functional%22%3Atrue%2C%22analytics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22isSet%22%3Atrue%7D;',
          checkcookie: '%22%3Atrue%7D'
-      }, {
-         seite: 'here.com',
-         setstoragename: 'CONSENT',
-         setstoragecontent: 'REJECTED'
       }, {
          seite: 'fruugo.de',
          setcookie: 'consents=essential;'
@@ -1615,9 +1594,6 @@
          seite: 'sucuri.net',
          setcookie: 'pwinteraction=Sun%2C%2023%20Mar%202025%2015%3A34%3A49%20GMT;'
       }, {
-         seite: 'yorks-scooter.de',
-         setcookie: 'ginger-cookie=Y;'
-      }, {
          seite: 'dave.com',
          setcookie: 'daveConsentChoices={"analytics_storage":"denied","personalization_storage":"granted","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied","functionality_storage":"granted","security_storage":"granted"};'
       }, {
@@ -1638,9 +1614,6 @@
          seite: 'zoologo.de',
          setcookie: 'cookie-consent=%7B%22customerCookieConsentId%22%3A%221744821781714-7jfollnepk6s84f7v905si4hnv%22%2C%22necessary%22%3A%221%22%2C%22functional%22%3Anull%2C%22performance%22%3A%220%22%2C%22marketing%22%3A%220%22%2C%22createdAt%22%3A%222025-04-16T16%3A43%3A01%2B00%3A00%22%2C%22updatedAt%22%3A%222025-04-16T16%3A43%3A01%2B00%3A00%22%7D;',
          reload: true
-      }, {
-         seite: 'malwarebytes.com',
-         setcookie: 'ips4_cookie_consent=1;'
       }, {
          seite: 'einforstungsverband.at',
          setstoragename: 'pw_dch_banner',
@@ -1785,6 +1758,31 @@
          seite: 'theonion.com',
          setstoragename: 'consent_preferences',
          setstoragecontent: '{"analytics_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}'
+      }, {
+         seite: 'praxis121.de',
+         setstoragename: 'cookieNotificationHasBeenSeen',
+         setstoragecontent: 'true'
+      }, {
+         seite: 'iosgods.com',
+         setcookie: 'ips4_cookie_consent=1;'
+      }, {
+         seite: 'gkv-90prozent.de',
+         setstoragename: 'cookie-consent',
+         setstoragecontent: '{"date":' + cookiezeit + ',"version":1,"statistics":false}'
+      }, {
+         seite: 'go-aheadnordic.no',
+         setstoragename: 'GOA:SETTINGS',
+         setstoragecontent: '{"LANGUAGE":"no","GOA_NECCESSARY_COOKIE":"ON","GOA_ANALYTICAL_COOKIE":"OFF","GOA_AD_COOKIE":"OFF"}'
+      }, {
+         seite: 'vy.se,vy.no',
+         setstoragename: 'Vy.User.Cookie.Settings',
+         setstoragecontent: '{"analytics":false,"marketing":false}'
+      }, {
+         seite: 'norrtag.se',
+         setcookie: '__mmgdpr={%22version%22:%221.0.1%22%2C%22categories%22:[{%22id%22:1%2C%22approved%22:true}%2C{%22id%22:2%2C%22approved%22:false}%2C{%22id%22:3%2C%22approved%22:true}]};'
+      }, {
+         seite: 'trafikverket.se',
+         setcookie: 'TrvCookieConsent=functional%3Dfalse%26analytical%3Dfalse;'
       }];
 
       for (let i = 0; i < regeln.length; i++) {
