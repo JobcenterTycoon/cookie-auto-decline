@@ -1957,7 +1957,7 @@
                                        cookiebannerfinalakzeptiert = true;
                                        cookiebannerfinalakzeptiertcounter = 0;
                                        cookiebannerfinalakzeptiertversuche++;
-                                       console.log(finalerknopf);
+                                       // console.log(finalerknopf);
                                        forcesessionstorage();
                                        cookiebannerstatus.suchstatus = 'gefunden';
                                        cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung. Erkennung über den erweiterten Erkennungsscript.';
@@ -3454,7 +3454,7 @@
                               const normalselector = document.querySelector(selectors[tiefe]);
                               const a = normalselector;
                               if (normalselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
-                                 console.log(normalselector)
+                                 // console.log(normalselector)
                                  cookiebannerspecificakzeptiert = true;
                                  foundbutton = true;
                                  forcesessionstorage();
