@@ -91,6 +91,10 @@ browser.runtime.onMessage.addListener(function (message) {
          knopfstatuscontainer.style.display = 'none';
       }
 
+       if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.') {
+         knopfstatuscontainer.style.display = 'none';
+      }
+
       switch (message.nachricht.knopfstatus) {
          case 'abgelehnt':
             knopfstatus.innerText = 'Abgelehnt.';
