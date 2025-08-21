@@ -1131,7 +1131,7 @@
          seite: 'koramaup.com',
          setcookie: 'cookieconsent=1;'
       }, {
-         seite: 'sites.google.com',
+         seite: 'sites.google.com,openfietsmap.nl',
          setcookie: 'SITES_NON_ESSENTIAL_COOKIES_CONSENT=0; , SITES_CONSENT=1;',
          reload: true
       }, {
@@ -1688,7 +1688,7 @@
          setcookie: 'sv-cookie-consent=.X3BrX2lkLF9wa19zZXMsc3RnX3JldHVybmluZ192aXNpdG9yLHN0Z3RyYWZmaWNzb3VyY2Vwcmlvcml0eSxzdGdfbGFzdF9pbnRlcmFjdGlvbixzdi1pbnRlcm5hbC1zdi13ZWItYW5hbHl0aWNzLHN2LWludGVybmFsLXN2LXdlYi1hbmFseXRpY3MtbWFya2V0aW5nLGltYm94;',
          reload: true
       }, {
-         seite: 'wpforms.com',
+         seite: 'wpforms.com,9to5linux.com',
          setcookie: 'wpconsent_preferences={"essential":true,"statistics":false,"marketing":false};'
       }, {
          seite: 'beacons.ai',
