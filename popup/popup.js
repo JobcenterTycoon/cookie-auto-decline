@@ -91,19 +91,15 @@ browser.runtime.onMessage.addListener(function (message) {
          knopfstatuscontainer.style.display = 'none';
       }
 
-      if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.') {
-         knopfstatuscontainer.style.display = 'none';
-      }
-
       switch (message.nachricht.knopfstatus) {
          case 'abgelehnt':
-            knopfstatus.innerText = 'Abgelehnt';
+            knopfstatus.innerText = 'Abgelehnt.';
             break;
          case 'geschlossen':
-            knopfstatus.innerText = 'Geschlossen';
+            knopfstatus.innerText = 'Geschlossen.';
             break;
          case 'akzeptiert':
-            knopfstatus.innerText = 'Akzeptiert';
+            knopfstatus.innerText = 'Akzeptiert.';
             break;
          case 'einstellungen':
             knopfstatus.innerText = 'Einstellungen geöffnet.';
@@ -115,5 +111,23 @@ browser.runtime.onMessage.addListener(function (message) {
             knopfstatus.innerText = 'Knopf nicht gefunden.';
             break;
       }
+   }
+});
+
+// Erweiterte Cookie Banner Erkennung Checkbox
+const checkbox = document.getElementById('checkbox');
+checkbox.addEventListener('click', function() {
+   if (checkbox.checked) {
+      browser.storage.local.set({
+         erweitertecookiebannererkennung: { enabled: true },
+      });
+   } else {
+      browser.storage.local.remove('erweitertecookiebannererkennung');
+   }
+})
+
+browser.storage.local.get("erweitertecookiebannererkennung").then(function(a) {
+   if (a && a.erweitertecookiebannererkennung && a.erweitertecookiebannererkennung.enabled === true && checkbox.checked === false) {
+      checkbox.click();
    }
 });
