@@ -8,27 +8,20 @@ const knopfstatus = document.getElementById('knopfstatus');
 const knopfstatuscontainer = document.getElementById('knopfstatuscontainer');
 const main = document.getElementById('main');
 const logo = document.getElementById('logo');
+const keineseite = document.getElementById('keineseite');
+const zufrühgeöffnet = document.getElementById('zufrühgeöffnet');
 let wiederholungverhindern;
-
-browser.tabs.query({
-   currentWindow: true,
-   active: true
-}).then(function (tabs) {
-   if (tabs[0].url.startsWith('http')) {
-      main.style.display = 'block';
-      logo.src = "icon_64.png";
-   } else {
-      main.style.display = 'none';
-      logo.src = "icon_64_off.png";
-   }
-});
+let domain;
 
 browser.tabs.query({
    currentWindow: true,
    active: true,
 }).then(function (tabs) {
-   for (const tab of tabs) {
-      browser.tabs.sendMessage(tab.id, {
+   if (tabs[0].url.startsWith('http')) {
+      // Ändere URL zu Domain und entfernen das www sowie www mit Zahlen (z.b. www2)
+      domain = tabs[0].url.replace(/^https?:\/\/(www([0-9]{1,2})?\.)?/, '').replace(/\/.*/, '');
+      // Popup Kommunikation
+      browser.tabs.sendMessage(tabs[0].id, {
          popupstatus: "geöffnet"
       }).then(function () {
          console.log("[Cookie auto decline] geöffnet nachricht vom popup script an den content script gesendet");
@@ -36,25 +29,33 @@ browser.tabs.query({
          logo.src = "icon_64.png";
       }).catch(function () {
          console.error("[Cookie auto decline] Kein Content Script erreichbar.");
-         main.style.display = 'none';
-         logo.src = "icon_64_off.png";
+        main.style.display = 'none';
+        logo.src = "icon_64_off.png";
+        logo.style.pointerEvents = 'none';
+        zufrühgeöffnet.style.display = 'block';
       });
+      // Logo updaten je nach dem ob die Seite valid (http) oder invalid ist.
+      main.style.display = 'block';
+      keineseite.style.display = 'none';
+      logo.src = "icon_64.png";
+      logo.style.pointerEvents = 'auto';
+   } else {
+      main.style.display = 'none';
+      keineseite.style.display = 'block';
+      logo.src = "icon_64_off.png";
+      logo.style.pointerEvents = 'none';
    }
 });
 
 browser.runtime.onMessage.addListener(function (message) {
-
    // Verhindern das der selbe Wert immer wieder neu ins Popup geschrieben wird.
    if (wiederholungverhindern && message.nachricht && message.nachricht.suchstatus === wiederholungverhindern.suchstatus && message.nachricht.anbieter === wiederholungverhindern.anbieter && message.nachricht.knopfstatus === wiederholungverhindern.knopfstatus) {
       return;
    }
    wiederholungverhindern = message.nachricht;
-
-
    // Aktualisiere Status
    if (message.nachricht && message.nachricht.cookiegesetzt === true) {
       suchstatuscookie.style.display = 'block';
-      suchstatuscookie.innerText = 'Cookie oder LocalStorage gesetzt.';
 
    } else if (message.nachricht && message.nachricht.suchstatus) {
       // Suchstatus auf dem Popup anzeigen
@@ -91,7 +92,7 @@ browser.runtime.onMessage.addListener(function (message) {
          knopfstatuscontainer.style.display = 'none';
       }
 
-       if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.') {
+      if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.') {
          knopfstatuscontainer.style.display = 'none';
       }
 
@@ -120,18 +121,67 @@ browser.runtime.onMessage.addListener(function (message) {
 
 // Erweiterte Cookie Banner Erkennung Checkbox
 const checkbox = document.getElementById('checkbox');
-checkbox.addEventListener('click', function() {
+checkbox.addEventListener('click', function () {
    if (checkbox.checked) {
       browser.storage.local.set({
-         erweitertecookiebannererkennung: { enabled: true },
+         erweitertecookiebannererkennung: {
+            enabled: true
+         },
       });
    } else {
       browser.storage.local.remove('erweitertecookiebannererkennung');
    }
-})
+});
 
-browser.storage.local.get("erweitertecookiebannererkennung").then(function(a) {
+browser.storage.local.get("erweitertecookiebannererkennung").then(function (a) {
    if (a && a.erweitertecookiebannererkennung && a.erweitertecookiebannererkennung.enabled === true && checkbox.checked === false) {
       checkbox.click();
    }
+});
+
+// Addon aktivieren/deaktivieren Option
+browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
+   if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
+      const seiten = a.aufdiesenseitendeaktiviert.seiten;
+      for (let i = 0; i < seiten.length; i++) {
+         if (seiten[i] === domain) {
+            main.style.display = 'none';
+            logo.src = "icon_64_off.png";
+         }
+      }
+   } else {
+      browser.storage.local.set({
+         aufdiesenseitendeaktiviert: {
+            seiten: []
+         },
+      });
+   }
+   logo.addEventListener('click', function () {
+      const seiten = a.aufdiesenseitendeaktiviert.seiten;
+      let domaingelöscht = false;
+      for (let i = 0; i < seiten.length; i++) {
+         if (seiten[i] === domain) {
+            main.style.display = 'block';
+            logo.src = "icon_64.png";
+            seiten.splice(i, 1);
+            domaingelöscht = true;
+            browser.storage.local.set({
+               aufdiesenseitendeaktiviert: {
+                  seiten: seiten
+               },
+            });
+            break;
+         }
+      }
+      if (seiten.toString().includes(domain) === false && domaingelöscht === false) {
+         main.style.display = 'none';
+         logo.src = "icon_64_off.png";
+         seiten.push(domain);
+         browser.storage.local.set({
+            aufdiesenseitendeaktiviert: {
+               seiten: seiten
+            },
+         });
+      }
+   });
 });
