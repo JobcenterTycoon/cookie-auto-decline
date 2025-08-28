@@ -24,6 +24,7 @@ h1 {
 }
 #logo {
     margin-top: 10px;
+    cursor: pointer;
 }
 
 b {
@@ -33,4 +34,9 @@ b {
 #checkbox {
     height: 17px;
     width: 17px;
+}
+
+#keineseite, #zufrühgeöffnet {
+    display: none;
+    color: #ffd1d1
 }
