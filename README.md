@@ -55,7 +55,7 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
 <details>
   <summary>permission details</summary>
   <ul>
-    <li><b>host_permissions all_urls</b> is needed for the addon to be able to access the website HTML code to be able to find and click cookie banners and placing cookies.</li>
+    <li><b>host_permissions all_urls</b> is needed for the addon to be able to access the website HTML code to be able to find and click cookie banner and placing cookies.</li>
     <li><b>activeTab</b> is needed to communicate between the content script (the script which runs on the website) and the popup script (the script which runs inside the popup when a user opens it). This is needed to display the cookie banner info (like cookie banner found? yes/no).</li>
     <li><b>storage</b> is needed to save the user settings (example: On which sites the addon got disabled by the user). When the addon getting uninstalled the saved data getting deleted by the browser.</li>
   </ul>
