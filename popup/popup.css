@@ -11,6 +11,7 @@ body {
 }
 
 #main {
+    display: none;
     text-align: left;
     margin: 0px 0px 20px 20px;
 }
