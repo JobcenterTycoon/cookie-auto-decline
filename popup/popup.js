@@ -25,14 +25,12 @@ browser.tabs.query({
          popupstatus: "geöffnet"
       }).then(function () {
          console.log("[Cookie auto decline] geöffnet nachricht vom popup script an den content script gesendet");
-         main.style.display = 'block';
-         logo.src = "icon_64.png";
       }).catch(function () {
          console.error("[Cookie auto decline] Kein Content Script erreichbar.");
-        main.style.display = 'none';
-        logo.src = "icon_64_off.png";
-        logo.style.pointerEvents = 'none';
-        zufrühgeöffnet.style.display = 'block';
+         main.style.display = 'none';
+         logo.src = "icon_64_off.png";
+         logo.style.pointerEvents = 'none';
+         zufrühgeöffnet.style.display = 'block';
       });
       // Logo updaten je nach dem ob die Seite valid (http) oder invalid ist.
       main.style.display = 'block';
