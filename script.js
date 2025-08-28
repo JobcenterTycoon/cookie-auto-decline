@@ -116,7 +116,7 @@
          const maxheight = Math.max(window.innerHeight, document.body.offsetHeight, document.body.scrollHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight, screen.availHeight);
          const maxwidth = Math.max(window.innerWidth, document.body.offsetWidth, document.body.scrollWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth, screen.availWidth);
 
-         if (check.getPropertyValue("display") !== "none" && check.getPropertyValue("visibility") === "visible" && check.getPropertyValue("content-visibility") === "visible" && check.getPropertyValue("opacity") > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height <= maxheight) && (rect.right - rect.width <= maxwidth) && (rect.top + rect.height >= 0) && (rect.left + rect.width >= 0)) {
+         if (check.getPropertyValue("display") !== "none" && check.getPropertyValue("visibility") === "visible" && check.getPropertyValue("content-visibility") === "visible" && check.getPropertyValue("opacity") > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height <= maxheight) && (rect.right - rect.width <= maxwidth) && (rect.top + rect.height >= 0) && (rect.left + rect.width >= 0) && a.checkVisibility()) {
             return true;
          } else {
             return false;
@@ -2448,7 +2448,8 @@
             checkcookie: 'SOCS',
             selector: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child',
             selectormobile: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
-            noframe: true
+            noframe: true,
+            keinesichtbarkeitsprüfung: true
          }, {
             seite: 'plus.web.de,plus.gmx.net',
             checkcookie: 'consentLevel',
@@ -3479,7 +3480,7 @@
                               } else {
                                  const normalselector = document.querySelector(selectors[tiefe]);
                                  const a = normalselector;
-                                 if (normalselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
+                                 if (normalselector && (sichtbarkeitsprüfung(a) || (regeln[i].keinesichtbarkeitsprüfung === true && normalselector.checkVisibility({checkDisplayNone:true})))) {
                                     // console.log(normalselector)
                                     cookiebannerspecificakzeptiert = true;
                                     foundbutton = true;
