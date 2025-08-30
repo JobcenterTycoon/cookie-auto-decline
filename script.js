@@ -81,7 +81,7 @@
       };
       let knöpfetextcheck = function (b) {
          const c = b;
-         const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'verweigern', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige'];
+         const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'verweigern', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && preventpaybuttons(c) !== true && b.includes('einstellungen') === false) {
                return 'ablehntext';
@@ -93,7 +93,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if (b.includes(akzeptiertext[i]) && preventpaybuttons(c) !== true) {
                return 'akzeptiertext';
@@ -466,7 +466,7 @@
 
             // cookiebot.com
             const cookiebot = document.querySelector('div[id*="Cookiebot"], div#cookiebot, #cookiebanner[name="cookiebanner"][ng-non-bindable], #cookieBotLayer');
-            if (cookiebot && document.cookie.includes('%2Cutc:16') === false && false) {
+            if (cookiebot && document.cookie.includes('%2Cutc:16') === false) {
                console.log('[Cookie auto decline] Detected: cookiebot.com');
                cookiebannerstatus.anbieter = 'cookiebot.com';
                ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
@@ -497,16 +497,19 @@
                for (let i = 0; i < realcookiebannerpro.length; i++) {
                   if (realcookiebannerpro[i].offsetWidth > 0) {
                      if (realcookiebannerpro[i].innerText.includes('Einstellungen')) {
+                        cookiebannerstatus.knopfstatus = 'einstellungen';
                         realcookiebannerpro[i].click();
                         window.setTimeout(function () {
                            realcookiebannerpro = document.querySelectorAll('body > div[id^="a"][class^="a"] > dialog.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > a:first-child + div + div[class*="-ext-"] > div:first-child > div[class*="-ext-"] > a[href="#"], body > div[id^="a"][class]> div.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > div[style^="background"] > div:only-child > div + div > div[style*="order"]');
                            for (let k = 0; k < realcookiebannerpro.length; k++) {
                               if (realcookiebannerpro[k].offsetWidth > 0 && realcookiebannerpro[k].innerText.includes('speichern')) {
+                                 cookiebannerstatus.knopfstatus = 'gespeichert';
                                  realcookiebannerpro[k].click();
                               }
                            }
                         }, 502);
                      } else if (realcookiebannerpro[i].innerText.includes('Weiter ohne Einwilligung') || realcookiebannerpro[i].innerText.includes('Continue without consent')) {
+                        cookiebannerstatus.knopfstatus = 'abgelehnt';
                         realcookiebannerpro[i].click();
                         beenden();
                      }
