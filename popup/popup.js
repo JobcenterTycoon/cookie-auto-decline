@@ -163,7 +163,7 @@ browser.runtime.onMessage.addListener(function (message) {
          knopfstatuscontainer.style.display = 'none';
       }
 
-      if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.') {
+      if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.' || message.nachricht.anbieter === 'Looks self programmed.') {
          knopfstatuscontainer.style.display = 'none';
       }
 
