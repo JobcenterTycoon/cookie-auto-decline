@@ -227,22 +227,9 @@
                   console.log('[Cookie auto decline] Detected: privacy-mgmt.com (iFrame)');
                   cookiebannerstatus.anbieter = 'privacy-mgmt.com (iFrame)';
                   advancedrun = false;
-                  ablehnen = document.querySelector('button.sp_choice_type_13');
-                  const akzeptierenbutton = document.querySelectorAll('button.sp_choice_type_11, .sp_choice_type_ACCEPT_ALL');
-                  if (akzeptierenbutton.length > 0) {
-                     for (let i = 0; i < akzeptierenbutton.length; i++) {
-                        const a = akzeptierenbutton[i];
-                        if (sichtbarkeitsprüfung(a)) {
-                           akzeptieren = a;
-                        }
-                     }
-                  }
-                  einstellungen = document.querySelector('button.sp_choice_type_12, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
-                  speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not([disabled])');
-                  if (window.screen.availWidth < 669) {
-                     einstellungen = document.querySelector('button.sp_choice_type_12.mobile, .sp_choice_type_11 + p > strong > a[data-choice][target="_blank"][href="#"]');
-                  }
-                  klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+                  nureinklickeinstellungen = true;
+                  ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL');
+                  einstellungen = document.querySelector('button.sp_choice_type_12');
                   const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                   if (einstellungenknöpfe.length > 0) {
                      advancedrun = false;
@@ -254,12 +241,12 @@
                         }
                      }
                   }
-                  window.setTimeout(function () {
-                     if (speichern && speichern.offsetHeight >= 1) {
-                        cookiebannerstatus.knopfstatus = 'gespeichert';
-                        speichern.click();
-                     }
-                  }, 702);
+                  speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not(:disabled)');
+                  akzeptieren = document.querySelector('button.accept-all');
+                  if (!einstellungen && !speichern) {
+                     akzeptieren = document.querySelector('button.accept-all, .sp_choice_type_11');
+                  }
+                  klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                }
 
                // privacymanager.io (iframe klicker)
