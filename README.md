@@ -1,4 +1,4 @@
-# cookie-auto-decline
+# Cookie auto decline
 
 ***
 
