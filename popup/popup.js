@@ -37,7 +37,7 @@ let suchstatusfehler;
 if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
    suchstatuscookie.innerText = 'Cookie oder LocalStorage gesetzt.';
    anbietertext.innerText = 'Cookie Banner Anbieter:';
-   einwilligungsstatustext.innerText = 'Einwilligungsstatus:'
+   einwilligungsstatustext.innerText = 'Einwilligungsstatus:';
    keineseitetext.innerText = 'Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert.';
    zufrühgeöffnettext.innerText = 'Fehler beim Abrufen des Status. Öffne das Popup neu für einen neuen Versuch.';
    erweiterteerkennungtext.innerHTML = 'Erweiterte Cookie Banner Erkennung (beta): ';
@@ -56,7 +56,7 @@ if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
 } else {
    suchstatuscookie.innerText = 'Set cookie or localStorage';
    anbietertext.innerText = 'Cookie banner provider:';
-   einwilligungsstatustext.innerText = 'Accept status:'
+   einwilligungsstatustext.innerText = 'Accept status:';
    keineseitetext.innerText = 'Unsupported site. The addon is disabled on this site.';
    zufrühgeöffnettext.innerText = 'Error while fetching the status. Reopen this popup for a new try.';
    erweiterteerkennungtext.innerHTML = 'Advanced cookie banner detection (beta): ';
