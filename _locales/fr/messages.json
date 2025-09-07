@@ -1,0 +1,77 @@
+{
+	"extensionName": {
+		"message": "Cookie Auto Decline"
+	},
+	"extensionDescription": {
+		"message": "Renseigne automatiquement les bannières de cookies avec un consentement minimal."
+	},
+	"statusLabel": {
+		"message": "État :"
+	},
+	"searchStatusCookieMessage": {
+		"message": "Cookie ou stockage local défini"
+	},
+	"providerLabel": {
+		"message": "Fournisseur de bannière :"
+	},
+	"acceptStatusLabel": {
+		"message": "Consentement :"
+	},
+	"unsupportedSiteMessage": {
+		"message": "L’extension est désactivée sur ce type de page."
+	},
+	"earlyOpenedMessage": {
+		"message": "Erreur lors de la récupération de l’état, rouvrir ce panneau pour réessayer."
+	},
+	"advancedDetectionLabel": {
+		"message": "Détection avancée des bannières de cookies (bêta) :"
+	},
+	"buttonStatusDeclinedMessage": {
+		"message": "refusé"
+	},
+	"buttonStatusClosedMessage": {
+		"message": "fermé"
+	},
+	"buttonStatusAcceptedMessage": {
+		"message": "accepté"
+	},
+	"buttonStatusSettingsOpenedMessage": {
+		"message": "options ouvertes"
+	},
+	"buttonStatusSettingsSavedMessage": {
+		"message": "options enregistrées"
+	},
+	"buttonStatusDefaultMessage": {
+		"message": "bouton non trouvé"
+	},	
+	"searchStatusNotExecutedMessage": {
+		"message": "non effectué"
+	},
+	"searchStatusSearchingMessage": {
+		"message": "recherche en cours…"
+	},
+	"searchStatusNothingFoundMessage": {
+		"message": "aucune bannière de cookies trouvée"
+	},
+	"searchStatusFoundMessage": {
+		"message": "bannière de cookies trouvée"
+	},
+	"searchStatusErrorMessage": {
+		"message": "erreur"
+	},
+	"providerSelfProgrammedMessage": {
+		"message": "conception maison probable"
+	},
+	"providerSelfProgrammedBasicDetectionMessage": {
+		"message": "conception maison probable (repéré par le script de détection simple)"
+	},
+	"providerSelfProgrammedAdvancedDetectionMessage": {
+		"message": "conception maison probable (repéré par le script de détection avancée)"
+	},
+	"clickToEnable": {
+		"message": "L’extension est désactivée sur ce site, cliquer ici pour l’activer."
+	},
+	"clickToDisable": {
+		"message": "L’extension est activée sur ce site, cliquer ici pour la désactiver."
+	}
+}

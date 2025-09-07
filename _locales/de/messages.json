@@ -1,0 +1,77 @@
+{
+	"extensionName": {
+		"message": "Cookie Auto Decline"
+	},
+	"extensionDescription": {
+		"message": "Die Erweiterung akzeptiert Cookie Banner automatisch mit minimaler Zustimmung."
+	},
+	"statusLabel": {
+		"message": "Status:"
+	},
+	"searchStatusCookieMessage": {
+		"message": "Cookie oder LocalStorage gesetzt."
+	},
+	"providerLabel": {
+		"message": "Cookie Banner Anbieter:"
+	},
+	"acceptStatusLabel": {
+		"message": "Einwilligungsstatus:"
+	},
+	"unsupportedSiteMessage": {
+		"message": "Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert."
+	},
+	"earlyOpenedMessage": {
+		"message": "Fehler beim Abrufen des Status. Öffne dieses Popup neu für einen neuen Versuch."
+	},
+	"advancedDetectionLabel": {
+		"message": "Erweiterte Cookie Banner Erkennung (beta):"
+	},
+	"buttonStatusDeclinedMessage": {
+		"message": "Abgelehnt."
+	},
+	"buttonStatusClosedMessage": {
+		"message": "Geschlossen."
+	},
+	"buttonStatusAcceptedMessage": {
+		"message": "Akzeptiert."
+	},
+	"buttonStatusSettingsOpenedMessage": {
+		"message": "Einstellungen geöffnet."
+	},
+	"buttonStatusSettingsSavedMessage": {
+		"message": "Einstellungen gespeichert."
+	},
+	"buttonStatusDefaultMessage": {
+		"message": "Knopf nicht gefunden."
+	},
+	"searchStatusNotExecutedMessage": {
+		"message": "Nicht ausgeführt."
+	},
+	"searchStatusSearchingMessage": {
+		"message": "Suche..."
+	},
+	"searchStatusNothingFoundMessage": {
+		"message": "Kein Cookie Banner gefunden."
+	},
+	"searchStatusFoundMessage": {
+		"message": "Cookie Banner gefunden."
+	},
+	"searchStatusErrorMessage": {
+		"message": "Fehler"
+	},
+	"providerSelfProgrammedMessage": {
+		"message": "Wahrscheinlich Eigenentwicklung."
+	},
+	"providerSelfProgrammedBasicDetectionMessage": {
+		"message": "Wahrscheinlich Eigenentwicklung. Erkennung über den einfachen Erkennungsscript."
+	},
+	"providerSelfProgrammedAdvancedDetectionMessage": {
+		"message": "Wahrscheinlich Eigenentwicklung. Erkennung über den erweiterten Erkennungsscript."
+	},
+	"clickToEnable": {
+		"message": "Das Addon ist auf dieser Seite deaktiviert. Klicken Sie hier, um es zu aktivieren."
+	},
+	"clickToDisable": {
+		"message": "Das Addon ist auf dieser Seite aktiviert. Klicken Sie hier, um es zu deaktivieren."
+	}
+}
