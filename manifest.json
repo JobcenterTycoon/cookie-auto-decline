@@ -2,7 +2,7 @@
    "manifest_version":3,
    "name":"Cookie auto decline",
    "author":"JobcenterTycoon",
-   "version":"6.1",
+   "version":"6.2",
    "description":"Die Erweiterung akzeptiert Cookie Banner automatisch mit minimaler Zustimmung.",
    "homepage_url":"https://github.com/JobcenterTycoon/cookie-auto-decline",
    "icons":{
@@ -48,6 +48,11 @@
          "run_at":"document_start"
       }
    ],
+   "background":{
+      "scripts":[
+         "background-script.js"
+      ]
+   },
    "host_permissions":[
       "<all_urls>"
    ],
