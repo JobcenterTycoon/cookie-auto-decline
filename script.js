@@ -1,5 +1,7 @@
 'use strict';
 (function () {
+   
+   const _ = browser.i18n.getMessage;
    // Addon Popup Variablen
    let cookiebannerstatus = {
       suchstatus: "suche",
@@ -1898,11 +1900,7 @@
                               // console.log(finalerknopf);
                               forcesessionstorage();
                               cookiebannerstatus.suchstatus = 'gefunden';
-                              if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
-                                 cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung. Erkennung über den einfachen Erkennungsscript.';
-                              } else {
-                                 cookiebannerstatus.anbieter = 'Looks self programmed. Detection from the basic detection script.';
-                              }
+                              cookiebannerstatus.anbieter = _('providerSelfProgrammedBasicDetectionMessage');
                               console.log('[Cookie auto decline] Detected (alter Erkennungsscript): Unbekannter Cookie Banner.');
                               finalerknopf.click();
                               break;
@@ -2020,11 +2018,7 @@
                                           // console.log(finalerknopf);
                                           forcesessionstorage();
                                           cookiebannerstatus.suchstatus = 'gefunden';
-                                          if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
-                                             cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung. Erkennung über den erweiterten Erkennungsscript.';
-                                          } else {
-                                             cookiebannerstatus.anbieter = 'Looks self programmed. Detection from the advanced detection script.';
-                                          }
+                                          cookiebannerstatus.anbieter = _('providerSelfProgrammedAdvancedDetectionMessage');
                                           console.log('[Cookie auto decline] Detected (erweiterte Erkennung): Unbekannter Cookie Banner.');
                                           finalerknopf.click();
                                           break;
@@ -3492,11 +3486,7 @@
                                           tiefe++;
                                        }
                                        cookiebannerstatus.suchstatus = 'gefunden';
-                                       if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
-                                          cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung.';
-                                       } else {
-                                          cookiebannerstatus.anbieter = 'Looks self programmed.';
-                                       }
+                                       cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
                                        getfinalshadowrootselector.click();
                                        console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                     }
@@ -3513,11 +3503,7 @@
                                        tiefe++;
                                     }
                                     cookiebannerstatus.suchstatus = 'gefunden';
-                                    if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
-                                       cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung.';
-                                    } else {
-                                       cookiebannerstatus.anbieter = 'Looks self programmed.';
-                                    }
+                                    cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
                                     normalselector.click();
                                     console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                  }
