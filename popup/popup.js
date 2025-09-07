@@ -8,7 +8,6 @@ const anbietercontainer = document.getElementById('anbietercontainer');
 const knopfstatus = document.getElementById('knopfstatus');
 const knopfstatuscontainer = document.getElementById('knopfstatuscontainer');
 const main = document.getElementById('main');
-const logo = document.getElementById('logo');
 const keineseite = document.getElementById('keineseite');
 const keineseitetext = document.getElementById('keineseitetext');
 const zufrühgeöffnet = document.getElementById('zufrühgeöffnet');
@@ -16,6 +15,21 @@ const zufrühgeöffnettext = document.getElementById('zufrühgeöffnettext');
 const anbietertext = document.getElementById('anbietertext');
 const einwilligungsstatustext = document.getElementById('einwilligungsstatustext');
 const erweiterteerkennungtext = document.getElementById('erweiterteerkennungtext');
+
+
+const schaltercheckbox = document.getElementById('schaltercheckbox');
+const schalterhintergrund = document.getElementById('schalterhintergrund');
+
+function schalteranimationsofort(a) {
+   if (a) {
+      document.documentElement.style.setProperty('--transition', "left 0.0s");
+      schalterhintergrund.style.transition = 'background-color 0.0s';
+   } else {
+      document.documentElement.style.setProperty('--transition', "left 0.5s");
+      schalterhintergrund.style.transition = 'background-color 0.5s';
+   }
+}
+
 
 let wiederholungverhindern;
 let domain;
@@ -90,8 +104,9 @@ browser.tabs.query({
       }).catch(function () {
          console.error("[Cookie auto decline] Kein Content Script erreichbar.");
          main.style.display = 'none';
-         logo.src = "icon_64_off.png";
-         logo.style.pointerEvents = 'none';
+         schalteranimationsofort(true);
+         schaltercheckbox.checked = false;
+         schalterhintergrund.style.pointerEvents = 'none';
          if (ungültigedomains.toString().includes(domain) === false) {
             zufrühgeöffnet.style.display = 'block';
          }
@@ -101,20 +116,23 @@ browser.tabs.query({
       if (ungültigedomains.toString().includes(domain) === false) {
          main.style.display = 'block';
          keineseite.style.display = 'none';
-         logo.src = "icon_64.png";
-         logo.style.pointerEvents = 'auto';
+         schalteranimationsofort(true);
+         schaltercheckbox.checked = true;
+         schalterhintergrund.style.pointerEvents = 'auto';
       } else {
          main.style.display = 'none';
          keineseite.style.display = 'block';
-         logo.src = "icon_64_off.png";
-         logo.style.pointerEvents = 'none';
+         schalteranimationsofort(true);
+         schaltercheckbox.checked = false;
+         schalterhintergrund.style.pointerEvents = 'none';
          zufrühgeöffnet.style.display = 'none';
       }
    } else {
       main.style.display = 'none';
       keineseite.style.display = 'block';
-      logo.src = "icon_64_off.png";
-      logo.style.pointerEvents = 'none';
+      schalteranimationsofort(true);
+      schaltercheckbox.checked = false;
+      schalterhintergrund.style.pointerEvents = 'none';
    }
 });
 
@@ -217,23 +235,19 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
       for (let i = 0; i < seiten.length; i++) {
          if (seiten[i] === domain) {
             main.style.display = 'none';
-            logo.src = "icon_64_off.png";
+            schalteranimationsofort(true);
+            schaltercheckbox.checked = false;
          }
       }
-   } else {
-      browser.storage.local.set({
-         aufdiesenseitendeaktiviert: {
-            seiten: []
-         },
-      });
    }
-   logo.addEventListener('click', function () {
+   schaltercheckbox.addEventListener('click', function () {
       const seiten = a.aufdiesenseitendeaktiviert.seiten;
       let domaingelöscht = false;
       for (let i = 0; i < seiten.length; i++) {
          if (seiten[i] === domain) {
             main.style.display = 'block';
-            logo.src = "icon_64.png";
+            schalteranimationsofort(false);
+            schaltercheckbox.checked = true;
             seiten.splice(i, 1);
             domaingelöscht = true;
             browser.storage.local.set({
@@ -246,7 +260,8 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
       }
       if (seiten.toString().includes(domain) === false && domaingelöscht === false) {
          main.style.display = 'none';
-         logo.src = "icon_64_off.png";
+         schalteranimationsofort(false);
+         schaltercheckbox.checked = false;
          seiten.push(domain);
          browser.storage.local.set({
             aufdiesenseitendeaktiviert: {
@@ -254,5 +269,8 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
             },
          });
       }
+      browser.runtime.sendMessage({
+         contentscriptausgeführt: true
+      });
    });
 });
