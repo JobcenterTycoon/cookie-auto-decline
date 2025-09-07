@@ -9,13 +9,8 @@ const knopfstatus = document.getElementById('knopfstatus');
 const knopfstatuscontainer = document.getElementById('knopfstatuscontainer');
 const main = document.getElementById('main');
 const keineseite = document.getElementById('keineseite');
-const keineseitetext = document.getElementById('keineseitetext');
 const zufrühgeöffnet = document.getElementById('zufrühgeöffnet');
-const zufrühgeöffnettext = document.getElementById('zufrühgeöffnettext');
-const anbietertext = document.getElementById('anbietertext');
-const einwilligungsstatustext = document.getElementById('einwilligungsstatustext');
-const erweiterteerkennungtext = document.getElementById('erweiterteerkennungtext');
-
+const _ = browser.i18n.getMessage;
 
 const schaltercheckbox = document.getElementById('schaltercheckbox');
 const schalterhintergrund = document.getElementById('schalterhintergrund');
@@ -30,64 +25,16 @@ function schalteranimationsofort(a) {
    }
 }
 
-
 let wiederholungverhindern;
 let domain;
 
-// Deutsch oder Englisch auswählen
-let knopfstatusablehntext;
-let knopfstatusgeschlossentext;
-let knopfstatusakzeptierttext;
-let knopfstatuseinstellungtext;
-let knopfstatusgespeicherttext;
-let knopfstatusdefaulttext;
-
-let suchstatusnichtausgeführt;
-let suchstatussuche;
-let suchstatusnichtsgefunden;
-let suchstatusgefunden;
-let suchstatusfehler;
-
-if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
-   suchstatuscookie.innerText = 'Cookie oder LocalStorage gesetzt.';
-   anbietertext.innerText = 'Cookie Banner Anbieter:';
-   einwilligungsstatustext.innerText = 'Einwilligungsstatus:';
-   keineseitetext.innerText = 'Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert.';
-   zufrühgeöffnettext.innerText = 'Fehler beim Abrufen des Status. Öffne das Popup neu für einen neuen Versuch.';
-   erweiterteerkennungtext.innerHTML = 'Erweiterte Cookie Banner Erkennung (beta): ';
-   knopfstatusablehntext = 'Abgelehnt.';
-   knopfstatusgeschlossentext = 'Geschlossen.';
-   knopfstatusakzeptierttext = 'Akzeptiert.';
-   knopfstatuseinstellungtext = 'Einstellungen geöffnet.';
-   knopfstatusgespeicherttext = 'Einstellungen gespeichert.';
-   knopfstatusdefaulttext = 'Knopf nicht gefunden.';
-
-   suchstatusnichtausgeführt = 'Nicht ausgeführt.';
-   suchstatussuche = 'Suche...';
-   suchstatusnichtsgefunden = 'Kein Cookie Banner gefunden.';
-   suchstatusgefunden = 'Cookie Banner gefunden.';
-   suchstatusfehler = 'Fehler';
-} else {
-   suchstatuscookie.innerText = 'Set cookie or localStorage';
-   anbietertext.innerText = 'Cookie banner provider:';
-   einwilligungsstatustext.innerText = 'Accept status:';
-   keineseitetext.innerText = 'Unsupported site. The addon is disabled on this site.';
-   zufrühgeöffnettext.innerText = 'Error while fetching the status. Reopen this popup for a new try.';
-   erweiterteerkennungtext.innerHTML = 'Advanced cookie banner detection (beta): ';
-   knopfstatusablehntext = 'Declined.';
-   knopfstatusgeschlossentext = 'Closed.';
-   knopfstatusakzeptierttext = 'Accepted.';
-   knopfstatuseinstellungtext = 'Settings opened.';
-   knopfstatusgespeicherttext = 'Settings saved.';
-   knopfstatusdefaulttext = 'Button not found.';
-
-   suchstatusnichtausgeführt = 'Not executed.';
-   suchstatussuche = 'Searching...';
-   suchstatusnichtsgefunden = 'No cookie banner found.';
-   suchstatusgefunden = 'Cookie banner found.';
-   suchstatusfehler = 'Error';
-}
-// ENDE - Deutsch oder Englisch auswählen - ENDE
+// localization code
+[...document.querySelectorAll('[data-i18n]')].forEach(e => {
+  e[e.dataset.i18nValue || 'textContent'] = chrome.i18n.getMessage(e.dataset.i18n);
+  if (e.dataset.i18nTitle) {
+    e.title = chrome.i18n.getMessage(e.dataset.i18nTitle);
+  }
+});
 
 browser.tabs.query({
    currentWindow: true,
@@ -150,19 +97,19 @@ browser.runtime.onMessage.addListener(function (message) {
       // Suchstatus auf dem Popup anzeigen
       switch (message.nachricht.suchstatus) {
          case 'nicht ausgeführt':
-            suchstatus.innerText = suchstatusnichtausgeführt;
+            suchstatus.innerText = _('searchStatusNotExecutedMessage');
             break;
          case 'suche':
-            suchstatus.innerText = suchstatussuche;
+            suchstatus.innerText = _('searchStatusSearchingMessage');
             break;
          case 'nichts gefunden':
-            suchstatus.innerText = suchstatusnichtsgefunden;
+            suchstatus.innerText = _('searchStatusNothingFoundMessage');
             break;
          case 'gefunden':
-            suchstatus.innerText = suchstatusgefunden;
+            suchstatus.innerText = _('searchStatusFoundMessage');
             break;
          default:
-            suchstatus.innerText = suchstatusfehler;
+            suchstatus.innerText = _('searchStatusErrorMessage');
             break;
       }
 
@@ -181,28 +128,28 @@ browser.runtime.onMessage.addListener(function (message) {
          knopfstatuscontainer.style.display = 'none';
       }
 
-      if (message.nachricht.anbieter === 'Wahrscheinlich Eigenentwicklung.' || message.nachricht.anbieter === 'Looks self programmed.') {
+      if (message.nachricht.anbieter === _('providerSelfProgrammedMessage')) {
          knopfstatuscontainer.style.display = 'none';
       }
 
       switch (message.nachricht.knopfstatus) {
          case 'abgelehnt':
-            knopfstatus.innerText = knopfstatusablehntext;
+            knopfstatus.innerText = _('buttonStatusDeclinedMessage');
             break;
          case 'geschlossen':
-            knopfstatus.innerText = knopfstatusgeschlossentext;
+            knopfstatus.innerText = _('buttonStatusClosedMessage');
             break;
          case 'akzeptiert':
-            knopfstatus.innerText = knopfstatusakzeptierttext;
+            knopfstatus.innerText = _('buttonStatusAcceptedMessage');
             break;
          case 'einstellungen':
-            knopfstatus.innerText = knopfstatuseinstellungtext;
+            knopfstatus.innerText = _('buttonStatusSettingsOpenedMessage');
             break;
          case 'gespeichert':
-            knopfstatus.innerText = knopfstatusgespeicherttext;
+            knopfstatus.innerText = _('buttonStatusSettingsSavedMessage');
             break;
          default:
-            knopfstatus.innerText = knopfstatusdefaulttext;
+            knopfstatus.innerText = _('buttonStatusDefaultMessage');
             break;
       }
    }
@@ -237,6 +184,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
             main.style.display = 'none';
             schalteranimationsofort(true);
             schaltercheckbox.checked = false;
+            schaltercontainer.title = _('clickToEnable');
          }
       }
    }
@@ -248,6 +196,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
             main.style.display = 'block';
             schalteranimationsofort(false);
             schaltercheckbox.checked = true;
+            schaltercontainer.title = _('clickToDisable');
             seiten.splice(i, 1);
             domaingelöscht = true;
             browser.storage.local.set({
@@ -262,6 +211,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
          main.style.display = 'none';
          schalteranimationsofort(false);
          schaltercheckbox.checked = false;
+         schaltercontainer.title = _('clickToEnable');
          seiten.push(domain);
          browser.storage.local.set({
             aufdiesenseitendeaktiviert: {
