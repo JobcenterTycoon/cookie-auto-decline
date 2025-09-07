@@ -4,6 +4,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
     text-align: center;
+    font-size: 16px;
 }
 
 #main, #anbietercontainer, #knopfstatuscontainer, #suchstatuscookie {
@@ -40,4 +41,53 @@ b {
 #keineseite, #zufrühgeöffnet {
     display: none;
     color: #ffd1d1
+}
+
+#schaltercontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+}
+
+#schalterhintergrund {
+    height: 35px;
+    width: 70px;
+    background-color: #700000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+#schalterhintergrund:has(#schaltercheckbox:checked) {
+    background-color: #007000;
+}
+
+#schalterlogo {
+    position: relative;
+}
+
+#schaltercheckbox {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+#schaltercheckbox:checked + #schalterlogo:before {
+     left: 0px;
+}
+
+:root {
+  --transition: left 0.5s;
+}
+
+#schalterlogo:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  left: -55px;
+  top: -8px;
+  background: url("cookieswitch.png") no-repeat center;
+  transition: var(--transition);
 }
