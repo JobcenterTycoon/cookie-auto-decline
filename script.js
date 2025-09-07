@@ -92,7 +92,7 @@
          }
          b = textcomplete;
          const c = b;
-         const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων'];
+         const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && preventpaybuttons(c) !== true && b.includes('einstellungen') === false) {
                return 'ablehntext';
@@ -104,7 +104,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && preventpaybuttons(c) !== true) {
                return 'akzeptiertext';
@@ -483,9 +483,9 @@
                ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
                speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"], [onclick*="submitConsent"]):is(button, a, span)');
                einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
+               akzeptieren = cookiebot.querySelector('button#CybotCookiebotDialogBodyButtonAccept');
                nureinklickeinstellungen = true;
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
-
             }
 
             // trustarc.com
@@ -1978,7 +1978,8 @@
                                        for (let k = 0; k < knöpfe.length; k++) {
                                           const a = knöpfe[k];
                                           let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
-                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && window.getComputedStyle(knöpfe[k]).getPropertyValue('cursor') === 'pointer') {
+                                          const knopfcss = window.getComputedStyle(knöpfe[k]);
+                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || knöpfe[k].href.includes('/') === false || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
                                              // console.log(knöpfe[k])
 
                                              // Knöpfe start
@@ -2022,7 +2023,7 @@
                                           if (navigator.language === 'de' || navigator.language.startsWith('de-')) {
                                              cookiebannerstatus.anbieter = 'Wahrscheinlich Eigenentwicklung. Erkennung über den erweiterten Erkennungsscript.';
                                           } else {
-                                             cookiebannerstatus.anbieter = 'Looks self programmed. Detection from the advanced detection script.'
+                                             cookiebannerstatus.anbieter = 'Looks self programmed. Detection from the advanced detection script.';
                                           }
                                           console.log('[Cookie auto decline] Detected (erweiterte Erkennung): Unbekannter Cookie Banner.');
                                           finalerknopf.click();
@@ -2645,10 +2646,6 @@
             selector: '#cookies_consent button#btnSave[onclick]',
             countdown: 500
          }, {
-            seite: 'handyhuellen.de',
-            checkstorage: 'mage_consent',
-            selector: '#consent a[href="consent/data/preferences"] -> #consent a[href="#save"]'
-         }, {
             seite: 'kevag-telekom.de',
             selector: '#fullScreenLockBlockOverlayKp .notConfirmKp'
          }, {
@@ -2978,11 +2975,6 @@
             seite: 'kaspersky.com',
             checkstorage: 'areCookiesAccepted',
             selector: 'button[class*="CookiesAccept_acceptButton"]'
-         }, {
-            seite: 'verivox.de',
-            checkstorage: 'uc_gcm',
-            selector: 'button.gdpr-deny-all',
-            countdown: 1200
          }, {
             seite: 'futurezone.at',
             checkcookie: '__pid',
@@ -3729,6 +3721,20 @@
                   check.click();
                }
             }, 502);
+         } else if (window.location.hostname === 'www.verivox.de') {
+            if (window.localStorage.getItem('uc_gcm') === null) {
+               let findecookiebanner = window.setInterval(function () {
+                  const ablehnen = document.querySelector('.cmp-container button.gdpr-deny-all');
+                  if (ablehnen && ablehnen.checkVisibility()) {
+                     console.log('[Cookie auto decline] Detected: www.verivox.de cookie banner');
+                     forcesessionstorage();
+                     ablehnen.click();
+                  }
+               }, 400);
+               window.setTimeout(function () {
+                  clearInterval(findecookiebanner);
+               }, 2000);
+            }
          }
       } else {
          if (window.self === window.top) {
