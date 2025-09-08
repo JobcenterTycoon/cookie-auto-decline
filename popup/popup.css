@@ -24,10 +24,6 @@ body {
 h1 {
     font-size: 27px;
 }
-#logo {
-    margin-top: 10px;
-    cursor: pointer;
-}
 
 b {
     text-decoration: underline solid gray 1px;
@@ -91,3 +87,4 @@ b {
   background: url("cookieswitch.png") no-repeat center;
   transition: var(--transition);
 }
+

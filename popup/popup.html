@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,25 +13,25 @@
             <span id="schalterlogo"></span>
          </label>
       </div>
-      <h1>Cookie Auto Decline</h1>
+      <h1 data-i18n="extensionName"></h1>
       <div id="main">
          <div>
-            <b>Status:</b><span> </span>
+            <b data-i18n="statusLabel"></b>&nbsp;
             <span id="suchstatus"></span>
          </div>
-         <div id="suchstatuscookie">Cookie oder LocalStorage gesetzt.</div>
+         <div id="suchstatuscookie" data-i18n="searchStatusCookieMessage"></div>
          <div id="anbietercontainer">
-            <b id="anbietertext">Cookie Banner Anbieter:</b><span> </span>
+            <b data-i18n="providerLabel"></b>&nbsp;
             <span id="anbieter"></span>
          </div>
          <div id="knopfstatuscontainer">
-            <b id="einwilligungsstatustext">Einwilligungsstatus:</b><span> </span>
+            <b data-i18n="acceptStatusLabel"></b>&nbsp;
             <span id="knopfstatus"></span>
          </div>
       </div>
-      <div id="keineseite"><span id="keineseitetext">Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert.</span><br><br></div>
-      <div id="zufrühgeöffnet"><span id="zufrühgeöffnettext">Fehler beim Abrufen des Status. Öffne dieses Popup neu für einen neuen Versuch.</span><br><br></div>
-      <div><span id="erweiterteerkennungtext">Erweiterte Cookie Banner Erkennung (beta): </span><input type="checkbox" id="checkbox"></div>
+      <div id="keineseite"><span data-i18n="unsupportedSiteMessage"></span><br><br></div>
+      <div id="zufrühgeöffnet"><span data-i18n="earlyOpenedMessage"></span><br><br></div>
+      <div><span data-i18n="advancedDetectionLabel"></span>&nbsp;<input type="checkbox" id="checkbox"></div>
       <script src="popup.js"></script>
    </body>
 </html>

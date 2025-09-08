@@ -1,0 +1,77 @@
+{
+	"extensionName": {
+		"message": "Cookie Auto Decline"
+	},
+	"extensionDescription": {
+		"message": "Automatically accepts cookie banners with minimal consent."
+	},
+	"statusLabel": {
+		"message": "Status:"
+	},
+	"searchStatusCookieMessage": {
+		"message": "Set cookie or localStorage"
+	},
+	"providerLabel": {
+		"message": "Cookie banner provider:"
+	},
+	"acceptStatusLabel": {
+		"message": "Accept status:"
+	},
+	"unsupportedSiteMessage": {
+		"message": "Unsupported site. The addon is disabled on this site."
+	},
+	"earlyOpenedMessage": {
+		"message": "Error while fetching the status. Reopen this popup for a new try."
+	},
+	"advancedDetectionLabel": {
+		"message": "Advanced cookie banner detection (beta):"
+	},
+	"buttonStatusDeclinedMessage": {
+		"message": "Declined."
+	},
+	"buttonStatusClosedMessage": {
+		"message": "Closed."
+	},
+	"buttonStatusAcceptedMessage": {
+		"message": "Accepted."
+	},
+	"buttonStatusSettingsOpenedMessage": {
+		"message": "Settings opened."
+	},
+	"buttonStatusSettingsSavedMessage": {
+		"message": "Settings saved."
+	},
+	"buttonStatusDefaultMessage": {
+		"message": "Button not found."
+	},
+	"searchStatusNotExecutedMessage": {
+		"message": "Not executed."
+	},
+	"searchStatusSearchingMessage": {
+		"message": "Searching..."
+	},
+	"searchStatusNothingFoundMessage": {
+		"message": "No cookie banner found."
+	},
+	"searchStatusFoundMessage": {
+		"message": "Cookie banner found."
+	},
+	"searchStatusErrorMessage": {
+		"message": "Error"
+	},
+	"providerSelfProgrammedMessage": {
+		"message": "Looks self programmed."
+	},
+	"providerSelfProgrammedBasicDetectionMessage": {
+		"message": "Looks self programmed. Detection from the basic detection script."
+	},
+	"providerSelfProgrammedAdvancedDetectionMessage": {
+		"message": "Looks self programmed. Detection from the advanced detection script."
+	},
+	"clickToEnable": {
+		"message": "The addon is disabled on this site. Click here to enable it."
+	},
+	"clickToDisable": {
+		"message": "The addon is enabled on this site. Click to disable it."
+	}
+}
