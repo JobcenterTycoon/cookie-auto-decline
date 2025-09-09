@@ -1,7 +1,8 @@
 'use strict';
 (function () {
-   
+   // Sprache
    const _ = browser.i18n.getMessage;
+
    // Addon Popup Variablen
    let cookiebannerstatus = {
       suchstatus: "suche",
@@ -82,47 +83,49 @@
          }
       };
       let knöpfetextcheck = function (b) {
-         let textcomplete = b.innerText.toLowerCase().trim();
+         let textcomplete = b.innerText.toLowerCase();
          if (getComputedStyle(b, '::before').content !== 'none') {
-            textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
+            textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase();
          }
          if (getComputedStyle(b, '::after').content !== 'none') {
-            textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
+            textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase();
          }
-         if (b.value) {
+         if (b && b.length < 2 && b.value) {
             textcomplete = textcomplete + b.value;
          }
          b = textcomplete;
          const c = b;
+         const paybutton = preventpaybuttons(c);
+
          const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
-            if (b.includes(ablehntext[i]) && preventpaybuttons(c) !== true && b.includes('einstellungen') === false) {
+            if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
                return 'ablehntext';
             }
          }
          const speichertext = ['speichern', 'einstellungen übernehmen', 'auswahl ', 'ausgewählte', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών'];
          for (let i = 0; i < speichertext.length; i++) {
-            if (b.includes(speichertext[i]) && preventpaybuttons(c) !== true) {
+            if (b.includes(speichertext[i]) && paybutton !== true) {
                return 'speichertext';
             }
          }
          const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
          for (let i = 0; i < akzeptiertext.length; i++) {
-            if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && preventpaybuttons(c) !== true) {
+            if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
                return 'akzeptiertext';
             }
          }
       };
       let preventpaybuttons = function (c) {
          if (typeof (c) !== 'string') {
-            let textcomplete = c.innerText.toLowerCase().trim();
+            let textcomplete = c.innerText.toLowerCase();
             if (getComputedStyle(c, '::before').content !== 'none') {
-               textcomplete = textcomplete + getComputedStyle(c, '::before').content.toLowerCase().trim();
+               textcomplete = textcomplete + getComputedStyle(c, '::before').content.toLowerCase();
             }
             if (getComputedStyle(c, '::after').content !== 'none') {
-               textcomplete = textcomplete + getComputedStyle(c, '::after').content.toLowerCase().trim();
+               textcomplete = textcomplete + getComputedStyle(c, '::after').content.toLowerCase();
             }
-            if (c.value) {
+            if (c && c.length < 2 && c.value) {
                textcomplete = textcomplete + c.value;
             }
             c = textcomplete;
@@ -132,7 +135,6 @@
             if (c.includes(paytext[i]) || c.match(/[0-9]/)) {
                return true;
             }
-
          }
       };
       // ENDE Funktionen für die Cookie Banner erkennung.
@@ -590,7 +592,10 @@
                console.log('[Cookie auto decline] Detected: privacy-center.org');
                cookiebannerstatus.anbieter = 'privacy-center.org';
                nureinklickeinstellungen = true;
-               ablehnen = privacycenter.querySelector('.didomi-continue-without-agreeing, button#btn-toggle-disagree, button#didomi-notice-disagree-button');
+               const c = privacycenter;
+               if (preventpaybuttons(c) !== true) {
+                  ablehnen = privacycenter.querySelector('.didomi-continue-without-agreeing, button#btn-toggle-disagree, button#didomi-notice-disagree-button');
+               }
                einstellungen = privacycenter.querySelector('button#didomi-notice-learn-more-button');
                akzeptieren = privacycenter.querySelector('button#didomi-notice-agree-button, button#ue-accept-notice-button, button#btn-toggle-agree');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -1863,7 +1868,7 @@
                               const a = knöpfe[k];
                               if (sichtbarkeitsprüfung(a)) {
                                  // console.log(a)
-                                 let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
+                                 let knöpfetext = knöpfe[k].innerText.toLowerCase();
                                  // Knöpfe start
                                  const knöpfevalue = knöpfe[k].value;
                                  if (knöpfevalue && knöpfetext.length <= 1) {
@@ -1872,11 +1877,12 @@
                                  const b = knöpfe[k];
                                  if (knöpfetext.length <= 45) {
                                     // Text
-                                    if (knöpfetextcheck(b) === 'ablehntext') {
+                                    const knöpfetextgeprüft = knöpfetextcheck(b);
+                                    if (knöpfetextgeprüft === 'ablehntext') {
                                        cookiebannerstatus.knopfstatus = 'abgelehnt';
                                        finalerknopf = knöpfe[k];
                                        break;
-                                    } else if (knöpfetextcheck(b) === 'speichertext') {
+                                    } else if (knöpfetextgeprüft === 'speichertext') {
                                        cookiebannerstatus.knopfstatus = 'gespeichert';
                                        finalerknopf = knöpfe[k];
                                        gewichtung = 1;
@@ -1884,7 +1890,7 @@
                                        cookiebannerstatus.knopfstatus = 'geschlossen';
                                        finalerknopf = knöpfe[k];
                                        gewichtung = 2;
-                                    } else if (knöpfetextcheck(b) === 'akzeptiertext' && gewichtung > 2) {
+                                    } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
                                        cookiebannerstatus.knopfstatus = 'akzeptiert';
                                        finalerknopf = knöpfe[k];
                                        gewichtung = 3;
@@ -1968,7 +1974,7 @@
                                     }
                                     if (finalercontainer) {
                                        // console.log(finalercontainer);
-                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"]), div:has(> span:only-child:empty)');
+                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"], [class*="checkmark"]), div:has(> span:only-child:empty)');
 
                                        let gewichtung = 3;
                                        let finalerknopf;
@@ -1988,11 +1994,12 @@
                                              const b = knöpfe[k];
                                              if (knöpfetext.length <= 45) {
                                                 // Text
-                                                if (knöpfetextcheck(b) === 'ablehntext') {
+                                                const knöpfetextgeprüft = knöpfetextcheck(b);
+                                                if (knöpfetextgeprüft === 'ablehntext') {
                                                    cookiebannerstatus.knopfstatus = 'abgelehnt';
                                                    finalerknopf = knöpfe[k];
                                                    break;
-                                                } else if (knöpfetextcheck(b) === 'speichertext') {
+                                                } else if (knöpfetextgeprüft === 'speichertext') {
                                                    cookiebannerstatus.knopfstatus = 'gespeichert';
                                                    finalerknopf = knöpfe[k];
                                                    gewichtung = 1;
@@ -2000,7 +2007,7 @@
                                                    cookiebannerstatus.knopfstatus = 'geschlossen';
                                                    finalerknopf = knöpfe[k];
                                                    gewichtung = 2;
-                                                } else if (knöpfetextcheck(b) === 'akzeptiertext' && gewichtung > 2) {
+                                                } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
                                                    cookiebannerstatus.knopfstatus = 'akzeptiert';
                                                    finalerknopf = knöpfe[k];
                                                    gewichtung = 3;
@@ -2121,7 +2128,7 @@
          }, {
             seite: 'etsy.com',
             checkcookie: ' p=',
-            selector: '[data-gdpr-consent-prompt] + div button[data-gdpr-open-full-settings] -> #gdpr-privacy-settings button[data-wt-overlay-close] -> #gdpr-privacy-settings button[data-wt-overlay-close]'
+            selector: '#gdpr-single-choice-overlay button[data-gdpr-single-choice-reject="true"]'
          }, {
             seite: 'rp-online.de,wz.de,ga.de',
             checkcookie: 'OptanonAlertBoxClosed',
