@@ -1,6 +1,9 @@
 'use-strict';
 
+const _ = browser.i18n.getMessage;
+
 const ungültigedomains = ['accounts-static.cdn.mozilla.net', 'accounts.firefox.com', 'addons.cdn.mozilla.net', 'addons.mozilla.org', 'api.accounts.firefox.com', 'content.cdn.mozilla.net', 'discovery.addons.mozilla.org', 'oauth.accounts.firefox.com', 'profile.accounts.firefox.com', 'support.mozilla.org', 'sync.services.mozilla.com', '127.0.0.1', '0.0.0.0', '[::]', '[::1]', 'localhost', 'fritz.box', 'fritz.nas', 'fritz.repeater', 'myfritz.box', 'giga.cube', 'congstar.box', 'easy.box', 'kabel.box', 'pi.hole', 'speedport.ip', 'my.router', 'home.arpa'];
+
 const suchstatus = document.getElementById('suchstatus');
 const suchstatuscookie = document.getElementById('suchstatuscookie');
 const anbieter = document.getElementById('anbieter');
@@ -10,8 +13,6 @@ const knopfstatuscontainer = document.getElementById('knopfstatuscontainer');
 const main = document.getElementById('main');
 const keineseite = document.getElementById('keineseite');
 const zufrühgeöffnet = document.getElementById('zufrühgeöffnet');
-const _ = browser.i18n.getMessage;
-
 const schaltercheckbox = document.getElementById('schaltercheckbox');
 const schalterhintergrund = document.getElementById('schalterhintergrund');
 
@@ -30,10 +31,10 @@ let domain;
 
 // localization code
 [...document.querySelectorAll('[data-i18n]')].forEach(e => {
-  e[e.dataset.i18nValue || 'textContent'] = chrome.i18n.getMessage(e.dataset.i18n);
-  if (e.dataset.i18nTitle) {
-    e.title = chrome.i18n.getMessage(e.dataset.i18nTitle);
-  }
+   e[e.dataset.i18nValue || 'textContent'] = chrome.i18n.getMessage(e.dataset.i18n);
+   if (e.dataset.i18nTitle) {
+      e.title = chrome.i18n.getMessage(e.dataset.i18nTitle);
+   }
 });
 
 browser.tabs.query({
@@ -184,7 +185,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
             main.style.display = 'none';
             schalteranimationsofort(true);
             schaltercheckbox.checked = false;
-            schaltercontainer.title = _('clickToEnable');
+            schalterhintergrund.title = _('clickToEnable');
          }
       }
    }
@@ -196,7 +197,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
             main.style.display = 'block';
             schalteranimationsofort(false);
             schaltercheckbox.checked = true;
-            schaltercontainer.title = _('clickToDisable');
+            schalterhintergrund.title = _('clickToDisable');
             seiten.splice(i, 1);
             domaingelöscht = true;
             browser.storage.local.set({
@@ -211,7 +212,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
          main.style.display = 'none';
          schalteranimationsofort(false);
          schaltercheckbox.checked = false;
-         schaltercontainer.title = _('clickToEnable');
+         schalterhintergrund.title = _('clickToEnable');
          seiten.push(domain);
          browser.storage.local.set({
             aufdiesenseitendeaktiviert: {
