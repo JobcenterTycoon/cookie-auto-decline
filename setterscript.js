@@ -1828,6 +1828,16 @@
             seite: 'tanuloknak.hu',
             setcookie: 'gdpr_level=3;',
             reload: true
+         }, {
+            seite: 'vitaminwell.com',
+            setcookie: 'cookies_and_content_security_policy=[];'
+         }, {
+            seite: 'cyberport.de',
+            setcookie: 'consent=0.1757376000000.1757376000000.c55969|c55964|s94|s40|c23451|s65|s23|c55979|c23259.c69656|s1522|c23318|s981|c27726|s1750|c74612|s1598|s115|c29334|c55977|s72|s1505|s7|c69655|s1|s26|c69653|s1513|c69654|s11|s2631|c23261|s267|c76332|s1097|s366|c23263|c66744|c69652|s194|s3009|s1537|s1484|s915|s30|c23262;',
+            reload: true
+         }, {
+            seite: 'drewag.de',
+            setcookie: 'cookiesAccepted=true; , allowAnalyticalCookies=false;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
