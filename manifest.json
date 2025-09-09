@@ -26,27 +26,9 @@
       "matches": [
         "*://*/*"
       ],
-      "exclude_matches": [
-        "*://127.0.0.1/*",
-        "*://0.0.0.0/*",
-        "*://[::]/*",
-        "*://[::1]/*",
-        "*://localhost/*",
-        "*://*.local/*",
-        "*://*.internal/*",
-        "*://fritz.box/*",
-        "*://fritz.nas/*",
-        "*://fritz.repeater/*",
-        "*://myfritz.box/*",
-        "*://giga.cube/*",
-        "*://congstar.box/*",
-        "*://easy.box/*",
-        "*://kabel.box/*",
-        "*://pi.hole/*",
-        "*://speedport.ip/*",
-        "*://my.router/*",
-        "*://home.arpa/*"
-      ],
+      "exclude_matches":[
+            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+         ],
       "js": [
         "script.js"
       ],
@@ -57,27 +39,9 @@
       "matches": [
         "*://*/*"
       ],
-      "exclude_matches": [
-        "*://127.0.0.1/*",
-        "*://0.0.0.0/*",
-        "*://[::]/*",
-        "*://[::1]/*",
-        "*://localhost/*",
-        "*://*.local/*",
-        "*://*.internal/*",
-        "*://fritz.box/*",
-        "*://fritz.nas/*",
-        "*://fritz.repeater/*",
-        "*://myfritz.box/*",
-        "*://giga.cube/*",
-        "*://congstar.box/*",
-        "*://easy.box/*",
-        "*://kabel.box/*",
-        "*://pi.hole/*",
-        "*://speedport.ip/*",
-        "*://my.router/*",
-        "*://home.arpa/*"
-      ],
+      "exclude_matches":[
+            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+         ],
       "js": [
         "setterscript.js"
       ],
