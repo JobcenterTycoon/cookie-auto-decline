@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "author": "JobcenterTycoon",
-  "version": "6.2",
+  "version": "6.3",
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/JobcenterTycoon/cookie-auto-decline",
   "default_locale": "en",
@@ -15,10 +15,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "jobcentertycoon@gmail.com",
-      "strict_min_version": "109.0"
+      "strict_min_version": "121.0"
     },
     "gecko_android": {
-      "strict_min_version": "113.0"
+      "strict_min_version": "121.0"
     }
   },
   "content_scripts": [
@@ -72,3 +72,4 @@
     "default_popup": "popup/popup.html"
   }
 }
+
