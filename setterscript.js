@@ -1842,6 +1842,10 @@
             seite: 'svt.se',
             setcookie: 'cookie-consent-news-3={"optedIn":true,"statistics":false,"functionality":false};',
             nowww: true
+         }, {
+            seite: 'homelink.de',
+            setcookie: 'disclaimer21=true;',
+            reload: true
          }];
 
          for (let i = 0; i < regeln.length; i++) {
