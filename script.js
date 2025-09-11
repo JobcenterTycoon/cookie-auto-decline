@@ -108,7 +108,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
                return 'akzeptiertext';
