@@ -53,6 +53,7 @@ b {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.5s;
+    border: 1px solid #0f0f0f;
 }
 
 #schalterhintergrund:has(#schaltercheckbox:checked) {
