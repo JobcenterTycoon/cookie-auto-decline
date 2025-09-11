@@ -1838,6 +1838,10 @@
          }, {
             seite: 'drewag.de',
             setcookie: 'cookiesAccepted=true; , allowAnalyticalCookies=false;'
+         }, {
+            seite: 'svt.se',
+            setcookie: 'cookie-consent-news-3={"optedIn":true,"statistics":false,"functionality":false};',
+            nowww: true
          }];
 
          for (let i = 0; i < regeln.length; i++) {
