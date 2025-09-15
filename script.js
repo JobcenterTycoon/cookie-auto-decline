@@ -129,9 +129,9 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order', 'login', 'regist', 'donate', 'suscrib', 'pagar', 'download'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'regist', 'donate', 'suscrib', 'pagar', 'download'];
          for (let i = 0; i < paytext.length; i++) {
-            if (c.includes(paytext[i]) || c.match(/[0-9]/)) {
+            if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
             }
          }
@@ -1093,6 +1093,7 @@
                ablehnen = klaro.querySelector('button.cn-decline');
                einstellungen = klaro.querySelector('#klaro a.cn-learn-more[href="#"]');
                speichern = klaro.querySelector('button.cm-btn-accept, button.btn-accept, button.inbtn--primary');
+               akzeptieren = klaro.querySelector('button.cm-btn-accept-all');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -1224,7 +1225,9 @@
                speichern = document.querySelector('#__tealiumGDPRcpPrefs button#save, #__tealiumGDPRcpPrefs #pref_submit, a#preferences_prompt_submit');
                einstellungen = tealiumGDPR.querySelector('button.js-btn-edit-cookie-settings, a#preferences, button#pref_details, a#consent_prompt_manage--secondary');
                nureinklickeinstellungen = true;
-               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+               if (ablehnen || speichern || einstellungen) {
+                  klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+               }
             }
 
             // avia
@@ -1806,7 +1809,7 @@
             }
 
             // Advanced
-            if (advancedcounter >= 5 && advancedrun === true && (window.self === window.top || window.innerHeight > window.outerHeight / 2)) {
+            if (advancedcounter >= 5 && advancedrun === true && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
                // Einfachr alter Erkennungsscript
                const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, li, footer, app-cookie, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [id*="cc_banner"], [class*="cc_overlay"], [id*="cc_overlay"], [class*="cc-overlay"], [id*="cc-overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [class^="cc-notification"], [id^="cc-notification"], [data-testid="consent-banner"], [cc_data]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .default-layout.cookie-is-shown)');
@@ -3139,7 +3142,7 @@
             checkcookie: 'euconsent-v2'
          }, {
             seite: 'stepstone.de',
-            selector: '#GDPRConsentManagerContainer #ccmgt_explicit_preferences -> #GDPRConsentManagerContainer #ccmgt_preferences_reject',
+            selector: '#GDPRConsentManagerContainer #ccmgt_explicit_accept',
             checkcookie: 'CONSENTMGR'
          }, {
             seite: 'idnes.cz',
