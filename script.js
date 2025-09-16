@@ -614,13 +614,13 @@
                      }
                   }
                }
-               if(schalterrequired && schalterrequired.checkVisibility()) {
+               if (schalterrequired && schalterrequired.checkVisibility()) {
                   schalterrequired.click();
                }
                einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
                if (einstellungen && einstellungen.checkVisibility()) {
                   const a = einstellungen;
-                  if(sichtbarkeitsprüfung(a)) {
+                  if (sichtbarkeitsprüfung(a)) {
                      didomieinstellungengeöffnet = true;
                   }
                }
