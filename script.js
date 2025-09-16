@@ -129,7 +129,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'regist', 'donate', 'suscrib', 'pagar', 'download'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
@@ -194,6 +194,9 @@
          let cookiebannerfinalakzeptiert = false;
          let cookiebannerfinalakzeptiertcounter = 0;
          let cookiebannerfinalakzeptiertversuche = 0;
+
+         let didomibezahlknopf = false;
+         let didomieinstellungengeöffnet = false;
 
          // Suchintervall
          findconsent = function () {
@@ -585,18 +588,47 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
-            // privacy-center.org
-            const privacycenter = document.querySelector('#didomi-host:has(> * > *)');
-            if (privacycenter && document.cookie.includes('euconsent-v2') === false && window.localStorage.getItem('euconsent-v2') === null) {
-               console.log('[Cookie auto decline] Detected: privacy-center.org');
-               cookiebannerstatus.anbieter = 'privacy-center.org';
+            // didomi.io
+            const didomi = document.querySelector('#didomi-host:has(> * > *)');
+            if (didomi && document.cookie.includes('euconsent-v2') === false && window.localStorage.getItem('euconsent-v2') === null) {
+               console.log('[Cookie auto decline] Detected: didomi.io');
+               cookiebannerstatus.anbieter = 'didomi.io';
                nureinklickeinstellungen = true;
-               const c = privacycenter;
-               if (preventpaybuttons(c) !== true) {
-                  ablehnen = privacycenter.querySelector('.didomi-continue-without-agreeing, button#btn-toggle-disagree, button#didomi-notice-disagree-button');
+
+               ablehnen = didomi.querySelector('.didomi-continue-without-agreeing, button#btn-toggle-disagree, button#didomi-notice-disagree-button');
+               const c = ablehnen;
+               if (didomibezahlknopf) {
+                  ablehnen = undefined;
                }
-               einstellungen = privacycenter.querySelector('button#didomi-notice-learn-more-button');
-               akzeptieren = privacycenter.querySelector('button#didomi-notice-agree-button, button#ue-accept-notice-button, button#btn-toggle-agree');
+               if (ablehnen && preventpaybuttons(c) === true) {
+                  didomibezahlknopf = true;
+                  ablehnen = undefined;
+               }
+
+               const schalter = document.querySelectorAll('.didomi-consent-popup-preferences .didomi-consent-popup-categories .didomi-components-radio > button:first-child:not([aria-pressed="true"])');
+               const schalterrequired = document.querySelector('.didomi-consent-popup-preferences .didomi-consent-popup-categories > div:has(.didomi-consent-popup-data-processing__essential_purpose) + div .didomi-components-radio > button:first-child:not([aria-pressed="true"]) + button');
+               for (let i = 0; i < schalter.length; i++) {
+                  if ((schalterrequired && i >= 1) || !schalterrequired) {
+                     if (schalter[i].checkVisibility()) {
+                        schalter[i].click();
+                     }
+                  }
+               }
+               if(schalterrequired && schalterrequired.checkVisibility()) {
+                  schalterrequired.click();
+               }
+               einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
+               if (einstellungen && einstellungen.checkVisibility()) {
+                  const a = einstellungen;
+                  if(sichtbarkeitsprüfung(a)) {
+                     didomieinstellungengeöffnet = true;
+                  }
+               }
+               speichern = didomi.querySelector('button#btn-toggle-save:not(:disabled)');
+
+               if (!didomieinstellungengeöffnet) {
+                  akzeptieren = didomi.querySelector('button#didomi-notice-agree-button, button#ue-accept-notice-button, button#btn-toggle-agree');
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
