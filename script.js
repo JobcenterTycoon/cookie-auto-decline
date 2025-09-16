@@ -1989,12 +1989,15 @@
                            }
                            const sprungmarken = elemente[i].querySelectorAll('a[href^="#"]:not([href$="#"])');
                            let sprungmarken2 = false;
+                           let anzahlsprungmarken = 0;
                            for (let k = 0; k < sprungmarken.length; k++) {
                               if (document.getElementById(sprungmarken[k].getAttribute('href').replace('#', '')) && sprungmarken[k].outerHTML.toLowerCase().includes('cookie') === false) {
-                                 sprungmarken2 = true;
+                                 anzahlsprungmarken++;
+                                 if (anzahlsprungmarken > 1) {
+                                    sprungmarken2 = true;
+                                 }
                                  break;
                               }
-
                            }
                            if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && inputs2.length === 0 && sprungmarken2 === false) {
                               // console.log(elemente[i])
@@ -3463,6 +3466,9 @@
             seite: 'marca.com',
             checkcookie: 'euconsent-v2',
             selector: '#ue-initial-modal button[action-name="agreeAll"]'
+         }, {
+            seite: 'parship.de',
+            selector: 'uc-custom-layer.is-open >> a.js-rejectAllConsent'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
