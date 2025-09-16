@@ -96,7 +96,7 @@
          b = textcomplete;
          const c = b;
          const paybutton = preventpaybuttons(c);
-         const ablehntext = ['ablehnen', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
+         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
                return 'ablehntext';
@@ -108,7 +108,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím se vším', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
                return 'akzeptiertext';
@@ -250,7 +250,12 @@
                   speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not(:disabled)');
                   akzeptieren = document.querySelector('button.accept-all');
                   if (!einstellungen && !speichern) {
-                     akzeptieren = document.querySelector('button.accept-all, .sp_choice_type_11');
+                     akzeptieren = document.querySelectorAll('button.accept-all, .sp_choice_type_11');
+                     for (let i = 0; i < akzeptieren.length; i++) {
+                        if (akzeptieren[i].checkVisibility()) {
+                           akzeptieren = akzeptieren[i];
+                        }
+                     }
                   }
                   klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                }
@@ -782,7 +787,7 @@
                cookiebannerstatus.anbieter = 'cookieconsent:desc';
                advancedrun = false;
                nureinklickeinstellungen = true;
-               ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss, .cc-dialog-button-decline');
+               ablehnen = cookieconsentdesc.querySelector('a[aria-labelledby="cc-deny-01"], .cc-deny, .cc-dismiss, .cc-dialog-button-decline, .reject-all-btn');
                speichern = cookieconsentdesc.querySelector('a[data-action="save-cc"], button.cc-save, [aria-label*="speichern"], [aria-label*="save"], button[class="cc-btn cc-allow"]');
                einstellungen = cookieconsentdesc.querySelector('[aria-label="Einstellungen"], [aria-label="settings cookies"], .cc-settings');
                const einstellungsmenu = document.querySelector('div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + #pd-cp-preferences, div[aria-describedby="cookieconsent:desc"][class*="cc-window"] + div > div[id="cookieconsent:settings"]');
@@ -1478,14 +1483,14 @@
             // cookie-permission-container
             const cookiepermissioncontainer = document.querySelector('.cookie-permission-container[data-cookie-permission="true"][style="display: block;"]');
             if (cookiepermissioncontainer && document.cookie.includes('cookie-preference') === false) {
-               if (window.screen.availWidth < 500) {
+               ablehnen = cookiepermissioncontainer.querySelector('.js-cookie-permission-button > button');
+               if (window.screen.availWidth < 500 || (cookiepermissioncontainer.querySelector('.js-cookie-configuration-button > button') && (!ablehnen || (ablehnen && !ablehnen.checkVisibility())))) {
                   document.cookie = 'cookie-preference=1;' + nc;
                   beenden();
                   window.location.reload();
                }
                console.log('[Cookie auto decline] Detected: cookie-permission-container');
                cookiebannerstatus.anbieter = 'cookie-permission-container';
-               ablehnen = cookiepermissioncontainer.querySelector('button.btn-primary');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -2267,20 +2272,12 @@
             checkcookie: '_cookie_consent',
             selector: '#cookie-consent .coc-accept-link.button[onclick*="cookie_consent_accept(false"]'
          }, {
-            seite: 'photovoltaik4all.de',
-            checkcookie: 'cookie-preference',
-            selector: '.cookie-permission-container button.btn-primary'
-         }, {
             seite: 'diebayerische.de',
             checkcookie: 'cookieConsent',
             selector: '#cookie-consent-layer button.js_cc-accept-custom'
          }, {
             seite: 'xnxx.com,xvideos.com',
             selector: '#disclaimer_background button#disclaimer-reject_cookies-btn[onclick]'
-         }, {
-            seite: 'vanille-shop.de',
-            checkcookie: 'cookie-preference',
-            selector: '.cookie-permission-container .cookie-permission-button > button.btn-primary'
          }, {
             seite: 'dehogerielen.be',
             checkcookie: 'CookieConsent',
@@ -2638,10 +2635,6 @@
             checkcookie: 'cookienote=set',
             selector: '#cookieSelectionForm button#adjust-cookie-settings -> #cookieSelectionForm button#saveCookieSelection'
          }, {
-            seite: 'heldenlounge.de',
-            checkcookie: 'cookie-preference',
-            selector: '.cookie-permission-container button.btn-primary'
-         }, {
             seite: 'henschel-schauspiel.de',
             checkcookie: 'ck_consent',
             selector: 'input#cconsentcheck -> #approveform a.arrlink'
@@ -2924,10 +2917,6 @@
             seite: 'strafverteidiger-berlin.info',
             checkstorage: 'publii-gdpr-allowed-cookies-v1',
             selector: '.pcb button.pcb__btn--reject'
-         }, {
-            seite: 'retol.de',
-            checkcookie: 'cookie-preference',
-            selector: '.cookie-permission-container .js-cookie-configuration-button > button -> .offcanvas-cookie button.js-offcanvas-cookie-submit',
          }, {
             seite: 'fertighauswelt.de',
             checkcookie: 'cb-enabled',
