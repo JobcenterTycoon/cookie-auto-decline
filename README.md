@@ -2,7 +2,7 @@
 
 ***
 
-<p align="center"><a href="https://addons.mozilla.org/de/firefox/addon/cookie-auto-decline/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get Cookie auto decline for Firefox"></a></p>
+<p align="center"><a href="https://addons.mozilla.org/firefox/addon/cookie-auto-decline/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get Cookie auto decline for Firefox"></a></p>
 
 ***
 
@@ -61,5 +61,5 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
   </ul>
 </details>
 
-Link to the firefox addon (english): https://addons.mozilla.org/en-US/firefox/addon/cookie-auto-decline/
+Link to the Firefox addon: https://addons.mozilla.org/firefox/addon/cookie-auto-decline/
 </details>
