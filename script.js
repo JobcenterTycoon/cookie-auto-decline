@@ -2517,7 +2517,7 @@
             countdown: 1000
          }, {
             seite: 'reddit.com',
-            selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button',
+            selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
             checkcookie: 'eu_cookie'
          }, {
             seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at',
@@ -3493,31 +3493,49 @@
                            regeln[i].selector = regeln[i].selectormobile;
                         }
 
-                        const selectors = regeln[i].selector.split(' -> ');
-                        if (selectors.length > 1) {
-                           advancedrun = false;
-                        }
-
+                        const mehrereselectoren = regeln[i].selector.split(' ,, ');
                         // findcookiebanner setInterval
                         findcookiebannerspecific = function () {
-                           if (selectors[tiefe] && document.cookie.includes(regeln[i].checkcookie) === false && localStorage.getItem(regeln[i].checkstorage) === null) {
-                              let foundbutton = false;
-                              const shadowroots = selectors[tiefe].split(' >> ');
-                              if (shadowroots.length > 1) {
-                                 let getfinalshadowrootselector = document.querySelector(shadowroots[0]);
-                                 if (getfinalshadowrootselector) {
-                                    for (let j = 1; j < shadowroots.length; j++) {
-                                       if (getfinalshadowrootselector && getfinalshadowrootselector.shadowRoot) {
-                                          getfinalshadowrootselector = getfinalshadowrootselector.shadowRoot.querySelector(shadowroots[j]);
-                                       } else if (getfinalshadowrootselector && getfinalshadowrootselector.contentDocument) {
-                                          getfinalshadowrootselector = getfinalshadowrootselector.contentDocument.querySelector(shadowroots[j]);
-                                       } else {
-                                          getfinalshadowrootselector = undefined;
-                                          break;
+                           for (let j = 0; j < mehrereselectoren.length; j++) {
+                              const selectors = mehrereselectoren[j].split(' -> ');
+                              if (selectors.length > 1) {
+                                 advancedrun = false;
+                              }
+                              if (selectors[tiefe] && document.cookie.includes(regeln[i].checkcookie) === false && localStorage.getItem(regeln[i].checkstorage) === null) {
+                                 let foundbutton = false;
+                                 const shadowroots = selectors[tiefe].split(' >> ');
+                                 if (shadowroots.length > 1) {
+                                    let getfinalshadowrootselector = document.querySelector(shadowroots[0]);
+                                    if (getfinalshadowrootselector) {
+                                       for (let j = 1; j < shadowroots.length; j++) {
+                                          if (getfinalshadowrootselector && getfinalshadowrootselector.shadowRoot) {
+                                             getfinalshadowrootselector = getfinalshadowrootselector.shadowRoot.querySelector(shadowroots[j]);
+                                          } else if (getfinalshadowrootselector && getfinalshadowrootselector.contentDocument) {
+                                             getfinalshadowrootselector = getfinalshadowrootselector.contentDocument.querySelector(shadowroots[j]);
+                                          } else {
+                                             getfinalshadowrootselector = undefined;
+                                             break;
+                                          }
+                                       }
+                                       const a = getfinalshadowrootselector;
+                                       if (getfinalshadowrootselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
+                                          cookiebannerspecificakzeptiert = true;
+                                          foundbutton = true;
+                                          forcesessionstorage();
+                                          if (selectors.length > 1) {
+                                             tiefe++;
+                                          }
+                                          cookiebannerstatus.suchstatus = 'gefunden';
+                                          cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
+                                          cookiebannerfinalakzeptiertversuche++;
+                                          getfinalshadowrootselector.click();
+                                          console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                        }
                                     }
-                                    const a = getfinalshadowrootselector;
-                                    if (getfinalshadowrootselector && (sichtbarkeitsprüfung(a) || regeln[i].keinesichtbarkeitsprüfung === true)) {
+                                 } else {
+                                    const normalselector = document.querySelector(selectors[tiefe]);
+                                    const a = normalselector;
+                                    if (normalselector && (sichtbarkeitsprüfung(a) || (regeln[i].keinesichtbarkeitsprüfung === true && normalselector.checkVisibility({checkDisplayNone: true})))) {
                                        cookiebannerspecificakzeptiert = true;
                                        foundbutton = true;
                                        forcesessionstorage();
@@ -3526,38 +3544,22 @@
                                        }
                                        cookiebannerstatus.suchstatus = 'gefunden';
                                        cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
-                                       getfinalshadowrootselector.click();
+                                       cookiebannerfinalakzeptiertversuche++;
+                                       normalselector.click();
                                        console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                     }
                                  }
-                              } else {
-                                 const normalselector = document.querySelector(selectors[tiefe]);
-                                 const a = normalselector;
-                                 if (normalselector && (sichtbarkeitsprüfung(a) || (regeln[i].keinesichtbarkeitsprüfung === true && normalselector.checkVisibility({checkDisplayNone: true})))) {
-                                    // console.log(normalselector)
-                                    cookiebannerspecificakzeptiert = true;
-                                    foundbutton = true;
-                                    forcesessionstorage();
-                                    if (selectors.length > 1) {
-                                       tiefe++;
+                                 if (cookiebannerspecificakzeptiert === true && selectors.length === 1) {
+                                    if (foundbutton === false) {
+                                       beenden();
                                     }
-                                    cookiebannerstatus.suchstatus = 'gefunden';
-                                    cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
-                                    normalselector.click();
-                                    console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                  }
+                              } else {
+                                 beenden();
                               }
 
-                              if (cookiebannerspecificakzeptiert === true && selectors.length === 1) {
-                                 if (foundbutton === false) {
-                                    beenden();
-                                 }
-                              }
-                           } else {
-                              beenden();
                            }
                         };
-
 
                         // Intervall nur laufen lassen wenn das Fenster sichtbar ist.
                         checkpagevisibility2 = function () {
