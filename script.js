@@ -436,6 +436,10 @@
                ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
                akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
                einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
+               if (!einstellungen || einstellungen && !einstellungen.checkVisibility()) {
+                  einstellungen = cmpboxshadowroot.shadowRoot.querySelector('#cmpwelcomebtncustom a.cmpboxbtncustom');
+               }
+               speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
