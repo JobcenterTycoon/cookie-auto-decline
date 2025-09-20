@@ -95,7 +95,7 @@
          }
          b = textcomplete;
          const c = b;
-         const paybutton = preventpaybuttons(c);
+         const paybutton = paybuttons(c);
          const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
@@ -114,8 +114,14 @@
                return 'akzeptiertext';
             }
          }
+         const optionstext = ['einstellungen', 'option', 'setting'];
+         for (let i = 0; i < optionstext.length; i++) {
+            if (b.includes(optionstext[i]) && paybutton !== true) {
+               return 'optionstext';
+            }
+         }
       };
-      let preventpaybuttons = function (c) {
+      let paybuttons = function (c) {
          if (typeof (c) !== 'string') {
             let textcomplete = c.innerText.toLowerCase();
             if (getComputedStyle(c, '::before').content !== 'none') {
@@ -606,7 +612,7 @@
                if (didomibezahlknopf) {
                   ablehnen = undefined;
                }
-               if (ablehnen && preventpaybuttons(c) === true) {
+               if (ablehnen && paybuttons(c) === true) {
                   didomibezahlknopf = true;
                   ablehnen = undefined;
                }
@@ -1834,6 +1840,7 @@
             const sfbxio = document.querySelector('#appconsent > iframe');
             if (sfbxio) {
                console.log('[Cookie auto decline] Detected: sfbx.io');
+               cookiebannerstatus.anbieter = 'sfbx.io';
                const sfbxiohtml = sfbxio.contentDocument;
                ablehnen = sfbxiohtml.querySelector('button.button__refuseAll, button.button__skip');
                if (ablehnen) {
@@ -1847,6 +1854,28 @@
                const popincmp = document.querySelector('#popin.popin-cmp [class="popin-buttons choice"] > button:first-child + button');
                if (popincmp && popincmp.innerText.toLowerCase().includes('accept')) {
                   akzeptieren = popincmp;
+               }
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
+            // uniconsent.com
+            const uniconsent = document.querySelector('#uniccmp[data-nosnippet=""]');
+            if (uniconsent && document.cookie.includes('uniconsent') === false) {
+               console.log('[Cookie auto decline] Detected: uniconsent.com');
+               cookiebannerstatus.anbieter = 'uniconsent.com';
+               const knöpfe = uniconsent.querySelectorAll('button');
+               for (let i = 0; i < knöpfe.length; i++) {
+                  const b = knöpfe[i];
+                  const textgeprüft = knöpfetextcheck(b);
+                  if (textgeprüft === 'ablehntext') {
+                     ablehnen = knöpfe[i];
+                  } else if(textgeprüft === 'speichertext') {
+                     speichern = knöpfe[i];
+                  } else if(textgeprüft === 'akzeptiertext') {
+                     akzeptieren = knöpfe[i];
+                  } else if(textgeprüft === 'optionstext') {
+                     einstellungen = knöpfe[i];
+                  }
                }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -3658,7 +3687,7 @@
             let c;
             a = ablehnen;
             c = ablehnen;
-            if (ablehnen && sichtbarkeitsprüfung(a) === true && preventpaybuttons(c) !== true) {
+            if (ablehnen && sichtbarkeitsprüfung(a) === true && paybuttons(c) !== true) {
                cookiebannerfinalakzeptiert = true;
                cookiebannerfinalakzeptiertcounter = 0;
                cookiebannerfinalakzeptiertversuche++;
@@ -3674,7 +3703,7 @@
 
             a = speichern;
             c = speichern;
-            if (speichern && sichtbarkeitsprüfung(a) === true && preventpaybuttons(c) !== true) {
+            if (speichern && sichtbarkeitsprüfung(a) === true && paybuttons(c) !== true) {
                cookiebannerfinalakzeptiert = true;
                cookiebannerfinalakzeptiertcounter = 0;
                cookiebannerfinalakzeptiertversuche++;
@@ -3690,7 +3719,7 @@
 
             a = einstellungen;
             c = einstellungen;
-            if (einstellungen && sichtbarkeitsprüfung(a) === true && preventpaybuttons(c) !== true && ((nureinklickeinstellungen === true && bereitsgeklickt === false) || !nureinklickeinstellungen)) {
+            if (einstellungen && sichtbarkeitsprüfung(a) === true && paybuttons(c) !== true && ((nureinklickeinstellungen === true && bereitsgeklickt === false) || !nureinklickeinstellungen)) {
                bereitsgeklickt = true;
                cookiebannerfinalakzeptiertcounter = 0;
                cookiebannerfinalakzeptiertversuche++;
@@ -3702,7 +3731,7 @@
 
             a = schließen;
             c = schließen;
-            if (schließen && sichtbarkeitsprüfung(a) === true && preventpaybuttons(c) !== true) {
+            if (schließen && sichtbarkeitsprüfung(a) === true && paybuttons(c) !== true) {
                cookiebannerfinalakzeptiert = true;
                cookiebannerfinalakzeptiertcounter = 0;
                cookiebannerfinalakzeptiertversuche++;
@@ -3718,7 +3747,7 @@
 
             a = akzeptieren;
             c = akzeptieren;
-            if (akzeptieren && sichtbarkeitsprüfung(a) === true && preventpaybuttons(c) !== true) {
+            if (akzeptieren && sichtbarkeitsprüfung(a) === true && paybuttons(c) !== true) {
                cookiebannerfinalakzeptiert = true;
                cookiebannerfinalakzeptiertcounter = 0;
                cookiebannerfinalakzeptiertversuche++;
