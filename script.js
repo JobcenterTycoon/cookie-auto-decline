@@ -1179,6 +1179,7 @@
                cookiebannerstatus.anbieter = 'sgalinski.de';
                speichern = sgalinski.querySelector('.sg-cookie-optin-box-button button.sg-cookie-optin-box-button-accept-specific');
                einstellungen = sgalinski.querySelector('.sg-cookie-optin-banner-button button.sg-cookie-optin-banner-button-settings');
+               akzeptieren = sgalinski.querySelector('button.sg-cookie-optin-box-button-accept-all');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -3469,6 +3470,10 @@
          }, {
             seite: 'parship.de',
             selector: 'uc-custom-layer.is-open >> a.js-rejectAllConsent'
+         }, {
+            seite: 'asew.de',
+            checkcookie: 'HRCookieManager',
+            selector: '[aria-labelledby="consent-dialog-title"] button[id^="speichern_btn_"]'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
@@ -3498,7 +3503,7 @@
                         findcookiebannerspecific = function () {
                            for (let j = 0; j < mehrereselectoren.length; j++) {
                               const selectors = mehrereselectoren[j].split(' -> ');
-                              if (selectors.length > 1) {
+                              if (selectors.length > 0) {
                                  advancedrun = false;
                               }
                               if (selectors[tiefe] && document.cookie.includes(regeln[i].checkcookie) === false && localStorage.getItem(regeln[i].checkstorage) === null) {
