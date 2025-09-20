@@ -197,6 +197,7 @@
 
          let didomibezahlknopf = false;
          let didomieinstellungengeöffnet = false;
+         let sfbxabgelehnt = false;
 
          // Suchintervall
          findconsent = function () {
@@ -1826,6 +1827,27 @@
                console.log('[Cookie auto decline] Detected: huconsent');
                cookiebannerstatus.anbieter = 'huconsent';
                speichern = huconsent.querySelector('button#hu-cookies-save');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
+            // sfbx.io (only appear when no adblocker is used)
+            const sfbxio = document.querySelector('#appconsent > iframe');
+            if (sfbxio) {
+               console.log('[Cookie auto decline] Detected: sfbx.io');
+               const sfbxiohtml = sfbxio.contentDocument;
+               ablehnen = sfbxiohtml.querySelector('button.button__refuseAll, button.button__skip');
+               if (ablehnen) {
+                  sfbxabgelehnt = true;
+               }
+               akzeptieren = sfbxiohtml.querySelector('button.button__acceptAll');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+            if (sfbxabgelehnt) {
+               // Akzeptiere wenn zum ablehnen ein Abo/Account erforderlich ist.
+               const popincmp = document.querySelector('#popin.popin-cmp [class="popin-buttons choice"] > button:first-child + button');
+               if (popincmp && popincmp.innerText.toLowerCase().includes('accept')) {
+                  akzeptieren = popincmp;
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
