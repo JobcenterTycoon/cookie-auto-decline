@@ -1531,7 +1531,8 @@
             reload: true
          }, {
             seite: 'parqet.com',
-            setcookie: 'ParqetGDPR=denied;'
+            setcookie: 'ParqetGDPR=denied;',
+            nowww: true
          }, {
             seite: 'spaness.de',
             setcookie: 'kookiesSet=6;'
