@@ -96,7 +96,7 @@
          b = textcomplete;
          const c = b;
          const paybutton = paybuttons(c);
-         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
+         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
                return 'ablehntext';
@@ -108,7 +108,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'i understand', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'i understand', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
                return 'akzeptiertext';
@@ -259,7 +259,8 @@
                   if (!einstellungen && !speichern) {
                      akzeptieren = document.querySelectorAll('button.accept-all, .sp_choice_type_11');
                      for (let i = 0; i < akzeptieren.length; i++) {
-                        if (akzeptieren[i].checkVisibility()) {
+                        const c = akzeptieren[i]
+                        if (akzeptieren[i].checkVisibility() && paybuttons(c) !== true) {
                            akzeptieren = akzeptieren[i];
                         }
                      }
@@ -1520,7 +1521,7 @@
             if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
                console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
                cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
-               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"])');
+               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"])');
                einstellungen = tcprivacywrapper.querySelector('button:is([title*="ption"], [title*="etting"])');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -2055,7 +2056,7 @@
                                  break;
                               }
                            }
-                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && inputs2.length === 0 && sprungmarken2 === false) {
+                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && inputs2.length === 0 && sprungmarken2 === false) {
                               // console.log(elemente[i])
 
                               const elementcss = window.getComputedStyle(elemente[i]);
@@ -3529,6 +3530,13 @@
             seite: 'asew.de',
             checkcookie: 'HRCookieManager',
             selector: '[aria-labelledby="consent-dialog-title"] button[id^="speichern_btn_"]'
+         }, {
+            seite: 'bmw.com',
+            checkcookie: 'cc_consentCookie',
+            selector: 'epaas-consent-drawer-shell >> .consentDrawer .reject-button'
+         }, {
+            seite: 'npo.nl,nos.nl',
+            selector: 'ccm-notification >> button.ccm_btn--save, button#ccm_close'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
