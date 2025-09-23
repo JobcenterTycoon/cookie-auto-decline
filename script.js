@@ -568,7 +568,7 @@
                ablehnen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-reject-all-handler, #cookie-disclosure button#cookie-disclosure-reject');
                einstellungen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-pc-btn-handler');
                speichern = document.querySelector('button.save-preference-btn-handler, button#cookie-onetrust-accept-all');
-               akzeptieren = document.querySelector('#onetrust-accept-btn-handler');
+               akzeptieren = document.querySelector('#onetrust-accept-btn-handler, [onclick="OneTrust.AllowAll()"]')
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -2581,7 +2581,7 @@
             selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
             checkcookie: 'eu_cookie'
          }, {
-            seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at',
+            seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at,ran.de',
             checkcookie: 'cmp-settings',
             selector: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
             keinesichtbarkeitsprüfung: true
@@ -3710,9 +3710,6 @@
                forcesessionstorage();
                console.log('[Cookie auto decline] Cookie Banner abgelehnt.');
                cookiebannerstatus.knopfstatus = 'abgelehnt';
-               if (window.self !== window.top) {
-                  beenden();
-               }
                ablehnen.click();
                return;
             }
@@ -3726,9 +3723,6 @@
                forcesessionstorage();
                console.log('[Cookie auto decline] Cookie Banner Einstellungen gespeichert.');
                cookiebannerstatus.knopfstatus = 'gespeichert';
-               if (window.self !== window.top) {
-                  beenden();
-               }
                speichern.click();
                return;
             }
@@ -3754,9 +3748,6 @@
                forcesessionstorage();
                console.log('[Cookie auto decline] Cookie Banner geschlossen.');
                cookiebannerstatus.knopfstatus = 'geschlossen';
-               if (window.self !== window.top) {
-                  beenden();
-               }
                schließen.click();
                return;
             }
@@ -3770,9 +3761,6 @@
                forcesessionstorage();
                console.log('[Cookie auto decline] Cookie Banner akzeptiert.');
                cookiebannerstatus.knopfstatus = 'akzeptiert';
-               if (window.self !== window.top) {
-                  beenden();
-               }
                akzeptieren.click();
                return;
             }
