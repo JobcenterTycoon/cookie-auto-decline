@@ -172,7 +172,6 @@
 
          const nc = 'domain=' + window.location.hostname + ';secure=true; max-age=86400; SameSite=None; path=/';
          const cookiedatum = new Date().toISOString();
-         const cookiezeit = new Date().getTime();
 
          // Intervall nur laufen lassen wenn das Fenster sichtbar ist.
          checkpagevisibility = function () {
@@ -259,7 +258,7 @@
                   if (!einstellungen && !speichern) {
                      akzeptieren = document.querySelectorAll('button.accept-all, .sp_choice_type_11');
                      for (let i = 0; i < akzeptieren.length; i++) {
-                        const c = akzeptieren[i]
+                        const c = akzeptieren[i];
                         if (akzeptieren[i].checkVisibility() && paybuttons(c) !== true) {
                            akzeptieren = akzeptieren[i];
                         }
@@ -568,7 +567,7 @@
                ablehnen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-reject-all-handler, #cookie-disclosure button#cookie-disclosure-reject');
                einstellungen = document.querySelector('#onetrust-banner-sdk #onetrust-button-group button#onetrust-pc-btn-handler');
                speichern = document.querySelector('button.save-preference-btn-handler, button#cookie-onetrust-accept-all');
-               akzeptieren = document.querySelector('#onetrust-accept-btn-handler, [onclick="OneTrust.AllowAll()"]')
+               akzeptieren = document.querySelector('#onetrust-accept-btn-handler, [onclick="OneTrust.AllowAll()"]');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
