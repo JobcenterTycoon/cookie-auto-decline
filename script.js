@@ -241,7 +241,7 @@
                   cookiebannerstatus.anbieter = 'privacy-mgmt.com (iFrame)';
                   advancedrun = false;
                   nureinklickeinstellungen = true;
-                  ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL');
+                  ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL, .sp_choice_type_13');
                   einstellungen = document.querySelector('button.sp_choice_type_12');
                   const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                   if (einstellungenknöpfe.length > 0) {
@@ -1271,7 +1271,7 @@
                console.log('[Cookie auto decline] Detected: tealiumGDPR');
                cookiebannerstatus.anbieter = 'tealiumGDPR';
                advancedrun = false;
-               ablehnen = tealiumGDPR.querySelector(':is(a, button):is([class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"]), a#no_consent, button#cm-acceptNone, #consent_wall_optoutm');
+               ablehnen = tealiumGDPR.querySelector(':is(a, button):is([class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"]), a#no_consent, button#cm-acceptNone, #consent_wall_optoutm, #consent_prompt_decline_submit');
                speichern = document.querySelector('#__tealiumGDPRcpPrefs button#save, #__tealiumGDPRcpPrefs #pref_submit, a#preferences_prompt_submit');
                einstellungen = tealiumGDPR.querySelector('button.js-btn-edit-cookie-settings, a#preferences, button#pref_details, a#consent_prompt_manage--secondary');
                nureinklickeinstellungen = true;
@@ -2211,7 +2211,7 @@
             selector: '[role="dialog"] [tabindex="0"]:is([aria-label*="ookies"], [aria-label*="lapukus"])',
             noframe: true
          }, {
-            seite: 'threads.net',
+            seite: 'threads.net,threads.com',
             checkstorage: 'Session',
             selector: 'div[role="dialog"] div[aria-hidden="false"] div[role="button"][tabindex="0"] + div[role="button"][tabindex="0"]'
          }, {
@@ -2264,6 +2264,10 @@
          }, {
             seite: 'bbc.com',
             selector: '#cookiePrompt > section.bbccookies-banner button#bbccookies-continue-button.continue-button'
+         }, {
+            seite: 'music.amazon.de,music.amazon.com,music.amazon.co.uk,music.amazon.it,music.amazon.es,music.amazon.com.tr,music.amazon.pl',
+            selector: '#banner music-button[variant="outline"] >> button[class="button music-t1"]',
+            checkcookie: 'com.amazon.tempo.cookies.status'
          }, {
             seite: 'luna.amazon.de,luna.amazon.com,luna.amazon.co.uk,luna.amazon.it,luna.amazon.es,luna.amazon.com.tr,luna.amazon.pl',
             selector: '#cookie_consent_dialog button#item_cookie_consent_accept_button',
@@ -2698,10 +2702,6 @@
             seite: 'henschel-schauspiel.de',
             checkcookie: 'ck_consent',
             selector: 'input#cconsentcheck -> #approveform a.arrlink'
-         }, {
-            seite: 'mediathekviewweb.de',
-            checkstorage: 'allowCookies',
-            selector: '#cookieModal button#cookieDenyButton'
          }, {
             seite: 'virginaustralia.com',
             checkcookie: 'virginCookiesAccepted',
@@ -3537,6 +3537,10 @@
          }, {
             seite: 'npo.nl,nos.nl',
             selector: 'ccm-notification >> button.ccm_btn--save, button#ccm_close'
+         }, {
+            seite: 'rajapack.de',
+            selector: '.otsdk-rajapack button.js-ot-deny',
+            checkcookie: 'OptanonConsent'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
