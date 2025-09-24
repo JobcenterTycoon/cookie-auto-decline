@@ -1857,6 +1857,9 @@
          }, {
             seite: 'mediensuchthilfe.info',
             setcookie: 'cookie_consent=true;'
+         }, {
+            seite: 'macaddress.io',
+            setcookie: 'macaddress-cookies-message=true;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
