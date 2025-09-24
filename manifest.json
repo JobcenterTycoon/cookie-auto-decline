@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "author": "JobcenterTycoon",
-  "version": "6.4",
+  "version": "6.5",
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/JobcenterTycoon/cookie-auto-decline",
   "default_locale": "en",
@@ -78,4 +78,5 @@
     "default_popup": "popup/popup.html"
   }
 }
+
 
