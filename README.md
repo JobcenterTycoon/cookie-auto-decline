@@ -9,7 +9,7 @@
   <br>
 Immer mehr Cookie Banner, Consent Banner und GDPR Banner lassen sich nicht mehr blockieren oder verstecken ohne die Webseiten zu beschädigen. Das Addon "Cookie auto decline" löst dieses Dilemmer indem es solche Cookie Banner nicht einfach versteckt oder blockiert sondern diese wirklich im Hintergrund mit minimaler Zustimmung akzeptiert oder die erforderlichen Cookies setzt damit der Cookie Banner nicht erscheint. Das Addon arbeitet dafür unauffällig im Hintergrund.<br><br>
 
-Das Addon unterstützt viele bekannte Cookie Banner wie [Contentpass](https://www.contentpass.net/de), [consentmanager.net](https://www.consentmanager.net/), [onetrust.com](https://www.onetrust.com/), consensu, cookiebot, privacy-mgmt.com, [usercentrics.eu](https://usercentrics.com/) und viele mehr. Auch größere individuelle Seiten wie Google, Youtube, Yahoo, facebook usw. werden unterstützt. Dadurch ist es möglich den Cookie Banner auf über 1.000.000 Seiten zu erkennen und abzulehnen.<br>
+Das Addon unterstützt viele bekannte Cookie Banner wie [Contentpass](https://www.contentpass.net/de), [consentmanager.net](https://www.consentmanager.net/), [onetrust.com](https://www.onetrust.com/), consensu, cookiebot, privacy-mgmt.com, [usercentrics.eu](https://usercentrics.com/) und viele mehr. Auch viele individuelle Seiten wie Google, Youtube, Yahoo, facebook usw. werden unterstützt. Dadurch ist es möglich den Cookie Banner auf über 1.000.000 Seiten zu erkennen und abzulehnen.<br>
 
 Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Einstellungen Funktion geben werden die Cookies normal akzeptiert.
 
@@ -38,7 +38,7 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
   <br>
   More and more cookie banner, consent banner and GDPR banner can't be blocked or hidden without breaking the website. The Addon "Cookie auto decline" solving the problem by clicking the button or setting the required cookie so the banner doesn't appear. The addon works in the background without the need of further interaction.<br><br>
   
-  The addon supports many cookie banner scripts like [Contentpass](https://www.contentpass.net/de), [consentmanager.net](https://www.consentmanager.net/), [onetrust.com](https://onetrust.com/), consensu, cookiebot, privacy-mgmt.com, [usercentrics.eu](https://usercentrics.com/) and more. Also self made cookie banner on bigger sites like on Google, Youtube, Yahoo or Facebook are supported. With this its possible to detect and decline the cookie banner on over 1.000.000 websites.<br>
+  The addon supports many cookie banner scripts like [Contentpass](https://www.contentpass.net/de), [consentmanager.net](https://www.consentmanager.net/), [onetrust.com](https://onetrust.com/), consensu, cookiebot, privacy-mgmt.com, [usercentrics.eu](https://usercentrics.com/) and more. Also self made cookie banner on many sites like on Google, Youtube, Yahoo or Facebook are supported. With this its possible to detect and decline the cookie banner on over 1.000.000 websites.<br>
 
 Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no decline or settings button the addon will click the accept button.
 
