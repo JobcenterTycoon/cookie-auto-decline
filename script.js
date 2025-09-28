@@ -135,7 +135,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
@@ -433,13 +433,16 @@
             if (cmpboxshadowroot) {
                console.log('[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)');
                cookiebannerstatus.anbieter = '#cmpbox shadowroot (consensu.org, consentmanager.net)';
-               ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
-               akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
-               einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
-               if (!einstellungen || einstellungen && !einstellungen.checkVisibility()) {
-                  einstellungen = cmpboxshadowroot.shadowRoot.querySelector('#cmpwelcomebtncustom a.cmpboxbtncustom');
+               const contentpassvorhanden = cmpboxshadowroot.shadowRoot.querySelector('.cmpcontentpass');
+               if (!contentpassvorhanden) {
+                  ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
+                  einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
+                  if (!einstellungen || einstellungen && !einstellungen.checkVisibility()) {
+                     einstellungen = cmpboxshadowroot.shadowRoot.querySelector('#cmpwelcomebtncustom a.cmpboxbtncustom');
+                  }
+                  speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save');
                }
-               speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save');
+               akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -504,7 +507,7 @@
                cookiebannerstatus.anbieter = 'cookiebot.com';
                ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
                speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"], [onclick*="submitConsent"]):is(button, a, span)');
-               einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize');
+               einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize, #CybotCookiebotDialogBodyButtonDetails');
                akzeptieren = cookiebot.querySelector('button#CybotCookiebotDialogBodyButtonAccept');
                nureinklickeinstellungen = true;
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
