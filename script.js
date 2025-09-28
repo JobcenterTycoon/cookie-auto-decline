@@ -1887,6 +1887,17 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
+            // omcookie
+            const omcookie = document.querySelector('.tx-om-cookie-consent');
+            if (omcookie && document.cookie.includes('omCookieConsent') === false) {
+               console.log('[Cookie auto decline] Detected: omcookie');
+               cookiebannerstatus.anbieter = 'omcookie';
+               ablehnen = omcookie.querySelector('button[data-omcookie-panel-save="min"]');
+               speichern = omcookie.querySelector('button[data-omcookie-panel-save="save"]');
+               akzeptieren = omcookie.querySelector('button[data-omcookie-panel-save="all"]');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
             // Volksbanken (100+ Seiten)
             const volksbanken = document.querySelector('div[class="cookie-consent  "]');
             if (volksbanken && document.cookie.includes('cookieConsent') === false) {
