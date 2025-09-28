@@ -96,7 +96,7 @@
          b = textcomplete;
          const c = b;
          const paybutton = paybuttons(c);
-         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
+         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'nur wesentliche', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
                return 'ablehntext';
@@ -108,7 +108,7 @@
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'i understand', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit'];
+         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'alle annehmen', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'i understand', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
                return 'akzeptiertext';
@@ -2087,7 +2087,7 @@
                                           const a = knöpfe[k];
                                           let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
                                           const knopfcss = window.getComputedStyle(knöpfe[k]);
-                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || knöpfe[k].href.includes('/') === false || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
+                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || knöpfe[k].getAttribute('href').includes('/') === false || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
                                              // console.log(knöpfe[k])
 
                                              // Knöpfe start
