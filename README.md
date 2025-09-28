@@ -24,8 +24,10 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
 </ul>
 <details>
   <summary>Weitere Informationen</summary>
+  <br>
   <ul>
     <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Berechtigungen,-Permissions">Details zu den benötigten Berechtigungen</a></b></li>
+    <br>
     <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Datenschutzerkl%C3%A4rung,-Privacy-Policy">Datenschutzerklärung</a></b></li>
   </ul>
   
@@ -53,8 +55,10 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
 
 <details>
   <summary>More informations</summary>
+  <br>
   <ul>
     <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Berechtigungen,-Permissions">Permission details</a></b></li>
+    <br>
     <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Datenschutzerkl%C3%A4rung,-Privacy-Policy">Privacy Policy</a></b></li>
   </ul>
 </details>
