@@ -23,11 +23,10 @@ Hinweis: Das Addon umgeht keine "Cookie Paywalls". Sollte es keine Ablehnen/Eins
   <li>Da das Addon keine Cookie Banner dauerhaft versteckt und nur für die ersten Sekunden aktiv ist können Cookie Banner im Nachhinein bei Bedarf aufgerufen und Einstellungen geändert werden.</li>
 </ul>
 <details>
-  <summary>Details zu den Berechtigungen</summary>
+  <summary>Weitere Informationen</summary>
   <ul>
-    <li><b>host_permissions all_urls</b> wird benötigt damit das Addon auf das HTML der Webseite zugreifen kann. Dies wird benötigt um Cookie Banner zu finden und zu klicken sowie Cookies zu setzen.</li>
-    <li><b>activeTab</b> wird benötigt damit das Addon zwischen dem Content Script (der Script der direkt auf der Webseite ausgeführt wird) und dem Popup Script (der Script der im Popup läuft sobald man ihn öffnet) kommunizieren kann. Dies wird benötigt um den Cookie Banner Status zu übermitteln (z.b. Cookie Banner gefunden? Ja/Nein). </li>
-    <li><b>storage</b> wird benötigt um Nutzereinstellungen zu speichern (z.b. ob das Addon auf der Webseite vom Nutzer deaktiviert wurde). Bei der deinstallation des Addons werden die Daten vom Browser gelöscht.</li>
+    <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Berechtigungen,-Permissions">Details zu den benötigten Berechtigungen</a></b></li>
+    <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Datenschutzerkl%C3%A4rung,-Privacy-Policy">Datenschutzerklärung</a></b></li>
   </ul>
   
 </details>
@@ -53,11 +52,10 @@ Note: The addon doesn't circumvent "Cookie banner paywalls". When there is no de
 </ul>
 
 <details>
-  <summary>permission details</summary>
+  <summary>More informations</summary>
   <ul>
-    <li><b>host_permissions all_urls</b> is needed for the addon to be able to access the website HTML code to be able to find and click cookie banner and placing cookies.</li>
-    <li><b>activeTab</b> is needed to communicate between the content script (the script which runs on the website) and the popup script (the script which runs inside the popup when a user opens it). This is needed to display the cookie banner info (like cookie banner found? yes/no).</li>
-    <li><b>storage</b> is needed to save the user settings (example: On which sites the addon got disabled by the user). When the addon getting uninstalled the saved data getting deleted by the browser.</li>
+    <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Berechtigungen,-Permissions">Permission details</a></b></li>
+    <li><b><a href="https://github.com/JobcenterTycoon/cookie-auto-decline/wiki/Datenschutzerkl%C3%A4rung,-Privacy-Policy">Privacy Policy</a></b></li>
   </ul>
 </details>
 
