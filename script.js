@@ -71,7 +71,9 @@
       // Funktionen für die Cookie Banner erkennung.
       let attributchecker = function (a) {
          const htmltext = a.outerHTML.toLowerCase();
-         if ((htmltext.includes('schließen') || htmltext.includes('close') || htmltext.includes('dismiss') || htmltext.includes('reject') || htmltext.includes('disallow') || htmltext.includes('akceptuję')) && a.innerText.length < 5) {}
+         if ((htmltext.includes('schließen') || htmltext.includes('close') || htmltext.includes('dismiss') || htmltext.includes('reject') || htmltext.includes('disallow') || htmltext.includes('akceptuję')) && a.innerText.length < 5) {
+            return true;
+         }
       };
       let attributcheckeradvancedchecker = function (a) {
          const links = a.getElementsByTagName('a');
