@@ -74,7 +74,7 @@
          const regeln = [{
             // privacy-mgmt.com
             seite: 'heise.de',
-            setcookie: 'consentUUID=cc3fda07-066e-4c67-a9eb-72d5dce1a921_32_33_37_39_44;'
+            setcookie: 'consentUUID=cc3fda07-066e-4c67-a9eb-72d5dce1a921_32_33_37_39_44_48;'
          }, {
             seite: 'spiegel.de',
             setcookie: 'consentUUID=5aca01af-a126-44e3-ae3c-b26b6baa419f_43_45;'
@@ -98,10 +98,10 @@
             setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47;'
          }, {
             seite: 'stern.de',
-            setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46;'
+            setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46_48;'
          }, {
             seite: 'pcwelt.de',
-            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47;'
+            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48;'
          }, {
             seite: 'focus.de',
             setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46;'
@@ -110,7 +110,7 @@
             setcookie: 'consentUUID=7bcfd185-6b83-49c5-8d8e-3afd092ba512_45;'
          }, {
             seite: 'geo.de',
-            setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46;'
+            setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46_48;'
          }, {
             seite: 'giga.de',
             setcookie: 'consentUUID=f16bebe9-e880-48aa-a19a-5ad09c3b0c2d_47;'
@@ -125,14 +125,14 @@
             setcookie: 'consentUUID=ada63ca7-2651-4dc8-8b29-d77b19fd2b81_46;'
          }, {
             seite: 'likehifi.de',
-            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47;'
+            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48;'
          }, {
             seite: 'backenmachtgluecklich.de',
             setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41_46_47;',
             nowww: true
          }, {
             seite: 'raspberry-pi-geek.de',
-            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47;'
+            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48;'
          }, {
             seite: 'n-tv.de',
             setcookie: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44_46;'
@@ -144,10 +144,10 @@
             setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44_46;'
          }, {
             seite: 'weather.com',
-            setcookie: 'consentUUID=43158759-e592-419e-bf11-429409f91eae_46;'
+            setcookie: 'consentUUID=1c36ef9b-6a93-4021-9780-816b729923a1_48;'
          }, {
             seite: 'cinestar.de',
-            setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43_44_46;'
+            setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43_44_46_48;'
          }, {
             seite: 'forschung-und-wissen.de',
             setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34_47;'
@@ -156,7 +156,7 @@
             setcookie: 'consentUUID=10a7171e-7071-4c34-9012-fe991aca25b7_42_44;'
          }, {
             seite: 'telepolis.de',
-            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46;'
+            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46_48;'
          }, {
             seite: 'manager-magazin.de',
             setcookie: 'consentUUID=988dfc32-83c2-4b4c-96c1-4d5aa8889227_42;'
@@ -488,7 +488,7 @@
             setcookie: 'pcbwaycookies_analytics=1; , pcbwaycookies_functional=0; , pcbwaycookies=true;',
             reload: true
          }, {
-            seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de,deutsche-rohstoffagentur.de',
+            seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de,deutsche-rohstoffagentur.de,bka.de',
             setcookie: 'gsbbanner=closed; , cookieConsent=NO;'
          }, {
             seite: 'vdk.de',
