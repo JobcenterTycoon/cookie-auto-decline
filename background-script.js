@@ -62,6 +62,21 @@ browser.tabs.onUpdated.addListener(function () {
 browser.runtime.onInstalled.addListener(function () {
    prüfestatus();
 });
+browser.runtime.onStartup.addListener(function () {
+   prüfestatus();
+});
+
+// Lösche die alten zwischengespeicherten Cookie Banner Statuse beim starten des Browsers.
+browser.storage.session.get("browsergestartet").then(function (a) {
+   if (!a || !a.browsergestartet || !a.browsergestartet.gestartet) {
+      browser.storage.local.remove('cookiebannerstatuscookie');
+      browser.storage.session.set({
+         browsergestartet: {
+            gestartet: true
+         },
+      });
+   }
+});
 
 // Funktion erneut ausführen wenn das Contenr Script geladen wurde
 
