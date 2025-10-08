@@ -527,7 +527,7 @@
             setcookie: 'pcbwaycookies_analytics=1; , pcbwaycookies_functional=0; , pcbwaycookies=true;',
             reload: true
          }, {
-            seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de,deutsche-rohstoffagentur.de,bka.de',
+            seite: 'destatis.de,bmel.de,zensus2022.de,ble.de,bafa.de,aufstiegs-bafoeg.de,verfassungsschutz.de,bundespolizei.de,bund.de,deutsche-rohstoffagentur.de,bka.de,rki.de',
             setcookie: 'gsbbanner=closed; , cookieConsent=NO;'
          }, {
             seite: 'vdk.de',
@@ -1144,10 +1144,6 @@
          }, {
             seite: 'ibisworld.com',
             setcookie: 'cookieyes-consent=consentid:QUx1QUR2UlViUkEyeFBZaTNaZ2QxS0NKTmlGUlk5cVY,consent:yes,action:yes,necessary:yes,functional:no,analytics:no,performance:no,advertisement:no,other:no;'
-         }, {
-            seite: 'bike-components.de',
-            setcookie: 'privacy-202408230938=0;',
-            reload: true
          }, {
             seite: 'pcloud.link',
             setcookie: 'cookieconsent=0;'
