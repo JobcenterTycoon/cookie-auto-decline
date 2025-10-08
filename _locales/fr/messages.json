@@ -20,9 +20,6 @@
 	"unsupportedSiteMessage": {
 		"message": "L’extension est désactivée sur ce type de page."
 	},
-	"earlyOpenedMessage": {
-		"message": "Erreur lors de la récupération de l’état, rouvrir ce panneau pour réessayer."
-	},
 	"advancedDetectionLabel": {
 		"message": "Détection avancée des bannières de cookies (bêta) :"
 	},
