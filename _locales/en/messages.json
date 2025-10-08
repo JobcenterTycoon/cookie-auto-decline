@@ -20,9 +20,6 @@
 	"unsupportedSiteMessage": {
 		"message": "Unsupported site. The addon is disabled on this site."
 	},
-	"earlyOpenedMessage": {
-		"message": "Error while fetching the status. Reopen this popup for a new try."
-	},
 	"advancedDetectionLabel": {
 		"message": "Advanced cookie banner detection (beta):"
 	},
