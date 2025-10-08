@@ -34,7 +34,7 @@ b {
     width: 17px;
 }
 
-#keineseite, #zufrühgeöffnet {
+#keineseite {
     display: none;
     color: #ffd1d1
 }
