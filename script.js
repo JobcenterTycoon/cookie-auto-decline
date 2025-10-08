@@ -4,14 +4,19 @@
    const _ = browser.i18n.getMessage;
 
    // Addon Popup Variablen
+   let domainohnewww = window.location.hostname;
+   if (window.location.hostname.startsWith('www.')) {
+      domainohnewww = domainohnewww.replace(/^(www([0-9]{1,2})?\.)?/, '');
+   }
    let cookiebannerstatus = {
+      seite: domainohnewww,
       suchstatus: "suche",
       anbieter: "unbekannt",
       knopfstatus: "suche"
    };
 
    let erweitertecookiebannererkennungaktiviert = false;
-   browser.storage.local.get("erweitertecookiebannererkennung").then(function (a) {
+   browser.storage.local.get('erweitertecookiebannererkennung').then(function (a) {
       if (a && a.erweitertecookiebannererkennung && a.erweitertecookiebannererkennung.enabled === true) {
          erweitertecookiebannererkennungaktiviert = true;
       }
@@ -19,30 +24,75 @@
 
    // Führe den Hauptscript nur aus wenn das Addon nicht für die Seite deaktiviert ist. Wird es deaktiviert stoppe das Intervall. Wird es aktiviert führe das Script einmalig aus.
    let scriptdeaktiviert = false;
-   let scriptbereitsausgeführt = false;
-   const domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
-   const prüfeobdasaddondeaktiviertist = function () {
-      scriptdeaktiviert = false;
-      browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
-         if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
-            const seiten = a.aufdiesenseitendeaktiviert.seiten;
-            for (let i = 0; i < seiten.length; i++) {
-               if (seiten[i] === domainkeinwww) {
-                  scriptdeaktiviert = true;
+   let prüfeobdasaddondeaktiviertist;
+   if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
+      let scriptbereitsausgeführt = false;
+      const domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
+      prüfeobdasaddondeaktiviertist = function () {
+         scriptdeaktiviert = false;
+         browser.storage.local.get('aufdiesenseitendeaktiviert').then(function (a) {
+            if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
+               const seiten = a.aufdiesenseitendeaktiviert.seiten;
+               for (let i = 0; i < seiten.length; i++) {
+                  if (seiten[i] === domainkeinwww) {
+                     scriptdeaktiviert = true;
+                  }
+               }
+               if (scriptdeaktiviert === false && scriptbereitsausgeführt === false) {
+                  scriptbereitsausgeführt = true;
+                  findecookiebannerhauptscript();
                }
             }
-            if (scriptdeaktiviert === false && scriptbereitsausgeführt === false) {
-               scriptbereitsausgeführt = true;
-               findecookiebannerhauptscript();
-            }
-         }
-      });
-   };
-   prüfeobdasaddondeaktiviertist();
-   browser.storage.local.onChanged.addListener(prüfeobdasaddondeaktiviertist);
+         });
+      };
+      prüfeobdasaddondeaktiviertist();
+      browser.storage.local.onChanged.addListener(prüfeobdasaddondeaktiviertist);
+   }
 
    // Hauptscript
    const findecookiebannerhauptscript = function () {
+
+      // Cookie Banner Status Addon global mittels Storage setzen.
+      const updatecookiebannerstatuscookie = function () {
+         if (document.hidden !== true && window.self === window.top) {
+            if (cookiebannerstatus.anbieter !== 'unbekannt' || cookiebannerstatus.knopfstatus !== 'suche') {
+                     cookiebannerstatus.suchstatus = 'gefunden';
+                  }
+
+            browser.storage.local.get('cookiebannerstatuscookie').then(function (a) {
+               if (a && a.cookiebannerstatuscookie) {
+                  let tempcookiebannerstatus = a.cookiebannerstatuscookie;
+                  let istdiedomainvorhanden = false;
+                  for (let i = 0; i < tempcookiebannerstatus.length; i++) {
+                     if (tempcookiebannerstatus[i].seite === domainohnewww) {
+                        if (Object.entries(tempcookiebannerstatus[i]).toString() !== Object.entries(cookiebannerstatus).toString()) {
+                           if (tempcookiebannerstatus[i].cookieoderstoragegesetzt) {
+                              cookiebannerstatus.cookieoderstoragegesetzt = true;
+                           }
+                           tempcookiebannerstatus[i] = cookiebannerstatus;
+                           browser.storage.local.set({
+                              cookiebannerstatuscookie: tempcookiebannerstatus
+                           });
+                        }
+                        istdiedomainvorhanden = true;
+                     }
+                  }
+                  if (istdiedomainvorhanden === false) {
+                     tempcookiebannerstatus.push(cookiebannerstatus);
+                     browser.storage.local.set({
+                              cookiebannerstatuscookie: tempcookiebannerstatus
+                           });
+                  }
+               } else {
+                  browser.storage.local.set({
+                     cookiebannerstatuscookie: [
+                        cookiebannerstatus
+                     ]
+                  });
+               }
+            });
+         }
+      };
 
       // Variablen
       let findconsent;
@@ -67,6 +117,12 @@
          window.removeEventListener('visibilitychange', checkpagevisibility);
          window.removeEventListener('visibilitychange', checkpagevisibility2);
          forcesessionstorage();
+      };
+      let beendenohnestorage = function () {
+         window.clearInterval(findconsentinterval);
+         window.clearInterval(findcookiebannerspecificinterval);
+         window.removeEventListener('visibilitychange', checkpagevisibility);
+         window.removeEventListener('visibilitychange', checkpagevisibility2);
       };
       // Funktionen für die Cookie Banner erkennung.
       let attributchecker = function (a) {
@@ -151,7 +207,7 @@
          const maxheight = Math.max(window.innerHeight, document.body.offsetHeight, document.body.scrollHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight, screen.availHeight);
          const maxwidth = Math.max(window.innerWidth, document.body.offsetWidth, document.body.scrollWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth, screen.availWidth);
 
-         if (check.getPropertyValue("display") !== "none" && check.getPropertyValue("visibility") === "visible" && check.getPropertyValue("content-visibility") === "visible" && check.getPropertyValue("opacity") > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height <= maxheight) && (rect.right - rect.width <= maxwidth) && (rect.top + rect.height >= 0) && (rect.left + rect.width >= 0) && a.checkVisibility()) {
+         if (check.getPropertyValue('display') !== "none" && check.getPropertyValue('visibility') === 'visible' && check.getPropertyValue('content-visibility') === 'visible' && check.getPropertyValue('opacity') > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height <= maxheight) && (rect.right - rect.width <= maxwidth) && (rect.top + rect.height >= 0) && (rect.left + rect.width >= 0) && a.checkVisibility()) {
             return true;
          } else {
             return false;
@@ -218,11 +274,11 @@
             }
             if (findconsentcounter >= (10000 / findconsentintervalzahl)) {
                cookiebannerstatus.suchstatus = 'nichts gefunden';
-               beenden();
+               beendenohnestorage();
             }
             if (scriptdeaktiviert === true) {
                browser.storage.local.onChanged.removeListener(prüfeobdasaddondeaktiviertist);
-               beenden();
+               beendenohnestorage();
                sessionStorage.removeItem('mpowlesu908hxfyw37ghg5ikx90jdzt');
             }
 
@@ -698,7 +754,7 @@
             if (gdprlegalcookiemyshopify && document.cookie.includes('_bc_c_set') === false) {
                console.log('[Cookie auto decline] Detected: gdpr-legal-cookie.myshopify.com');
                cookiebannerstatus.anbieter = 'gdpr-legal-cookie.myshopify.com';
-               ablehnen = gdprlegalcookiemyshopify.querySelector("#essential_accept");
+               ablehnen = gdprlegalcookiemyshopify.querySelector('#essential_accept');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -1878,11 +1934,11 @@
                   const textgeprüft = knöpfetextcheck(b);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
-                  } else if(textgeprüft === 'speichertext') {
+                  } else if (textgeprüft === 'speichertext') {
                      speichern = knöpfe[i];
-                  } else if(textgeprüft === 'akzeptiertext') {
+                  } else if (textgeprüft === 'akzeptiertext') {
                      akzeptieren = knöpfe[i];
-                  } else if(textgeprüft === 'optionstext') {
+                  } else if (textgeprüft === 'optionstext') {
                      einstellungen = knöpfe[i];
                   }
                }
@@ -2044,7 +2100,7 @@
                   if (advancedslowdown === 0) {
                      let elemente = document.querySelectorAll('body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], :empty, :disabled)');
 
-                     // console.log("-----------------------");
+                     // console.log('-----------------------');
 
                      for (let i = 0; i < elemente.length; i++) {
                         const elementtext = elemente[i].innerText.toLowerCase();
@@ -2164,6 +2220,8 @@
             if (cookiebannerfinalakzeptiertcounter >= 7) {
                beenden();
             }
+            // Cookie Banner Status Cookie aktualisieren
+            updatecookiebannerstatuscookie();
 
             // Ende Suchintervall
          };
@@ -3646,6 +3704,8 @@
                               }
 
                            }
+                           // Cookie Banner Status Cookie aktualisieren
+                           updatecookiebannerstatuscookie();
                         };
 
                         // Intervall nur laufen lassen wenn das Fenster sichtbar ist.
@@ -3845,35 +3905,5 @@
       }
    };
 
-   // Cookie Banner Status an das Popup Panel weiterleiten.
-   if (document.hidden !== true && window.self === window.top) {
-      let senderbereitsaufgerufen = false;
-      browser.runtime.onMessage.addListener(function (request) {
-         if (request.popupstatus === 'geöffnet' && senderbereitsaufgerufen === false) {
-            senderbereitsaufgerufen = true;
 
-            function erfolg() {}
-
-            function fehler() {
-               console.log("[Cookie auto decline] Erweiterungspopup geschlossen, beende Übertragung.");
-               senderbereitsaufgerufen = false;
-               clearInterval(sendecookiebannerstatus);
-            }
-            // Sende Daten solange das Popup geöffnet ist oder bis 10 Sekunden lang.
-            browser.runtime.sendMessage({
-               nachricht: cookiebannerstatus
-            }).then(erfolg, fehler);
-            let sendecookiebannerstatus = setInterval(function () {
-               if (document.hidden !== true) {
-                  if (cookiebannerstatus.anbieter !== 'unbekannt' || cookiebannerstatus.knopfstatus !== 'suche') {
-                     cookiebannerstatus.suchstatus = 'gefunden';
-                  }
-                  browser.runtime.sendMessage({
-                     nachricht: cookiebannerstatus
-                  }).then(erfolg, fehler);
-               }
-            }, 500);
-         }
-      });
-   }
 })();
