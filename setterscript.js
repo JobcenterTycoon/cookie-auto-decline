@@ -3,29 +3,62 @@
 
    // Führe den Hauptscript nur aus wenn das Addon nicht für die Seite deaktiviert ist. Startet den Script einmalig wenn im laufenden Betrieb das Addon aktiviert wird.
    let scriptdeaktiviert = false;
-   const domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
-   const prüfeobdasaddondeaktiviertist = function () {
-      scriptdeaktiviert = false;
-      browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
-         if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
-            const seiten = a.aufdiesenseitendeaktiviert.seiten;
-            for (let i = 0; i < seiten.length; i++) {
-               if (seiten[i] === domainkeinwww) {
-                  scriptdeaktiviert = true;
+   const domainohnewww = window.location.hostname.replace(/^(www([0-9]{1,2})?\.)?/, '');
+   if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
+      const prüfeobdasaddondeaktiviertist = function () {
+         scriptdeaktiviert = false;
+         browser.storage.local.get('aufdiesenseitendeaktiviert').then(function (a) {
+            if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
+               const seiten = a.aufdiesenseitendeaktiviert.seiten;
+               for (let i = 0; i < seiten.length; i++) {
+                  if (seiten[i] === domainohnewww) {
+                     scriptdeaktiviert = true;
+                  }
+               }
+               if (scriptdeaktiviert === false) {
+                  browser.storage.local.onChanged.removeListener(prüfeobdasaddondeaktiviertist);
+                  setzecookiehauptscript();
                }
             }
-            if (scriptdeaktiviert === false) {
-               browser.storage.local.onChanged.removeListener(prüfeobdasaddondeaktiviertist);
-               setzecookiehauptscript();
-            }
-         }
-      });
-   };
-   prüfeobdasaddondeaktiviertist();
-   browser.storage.local.onChanged.addListener(prüfeobdasaddondeaktiviertist);
+         });
+      };
+      prüfeobdasaddondeaktiviertist();
+      browser.storage.local.onChanged.addListener(prüfeobdasaddondeaktiviertist);
+   }
 
    // Hauptscript
    const setzecookiehauptscript = function () {
+
+      // Cookie Banner Status globaler Cookie setzen wenn der nicht existiert.
+      let cookiebannerstatus = {
+         seite: domainohnewww,
+         suchstatus: "suche",
+         anbieter: "unbekannt",
+         knopfstatus: "suche"
+      };
+      browser.storage.local.get('cookiebannerstatuscookie').then(function (a) {
+         if (a && a.cookiebannerstatuscookie) {
+            let tempcookiebannerstatus = a.cookiebannerstatuscookie;
+            let istdiedomainvorhanden = false;
+            for (let i = 0; i < tempcookiebannerstatus.length; i++) {
+               if (tempcookiebannerstatus[i].seite === domainohnewww) {
+                  istdiedomainvorhanden = true;
+               }
+            }
+            if (istdiedomainvorhanden === false) {
+               tempcookiebannerstatus.push(cookiebannerstatus);
+               browser.storage.local.set({
+                  cookiebannerstatuscookie: tempcookiebannerstatus
+               });
+            }
+         } else {
+            browser.storage.local.set({
+               cookiebannerstatuscookie: [
+                  cookiebannerstatus
+               ]
+            });
+         }
+      });
 
       // Session Storage Funktion
       let forcesessionstorage = function () {
@@ -34,8 +67,14 @@
          }
       };
 
+      let forcesessionstoragecss = function () {
+         if (sessionStorage.getItem('8uf0f6a8qozu0jsl16de9vjq7rwqpox6') !== '5qw4p46frzs2autdmnxr9jhfltpg5hsh') {
+            sessionStorage.setItem('8uf0f6a8qozu0jsl16de9vjq7rwqpox6', '5qw4p46frzs2autdmnxr9jhfltpg5hsh');
+         }
+      };
+
       // Teil Hauptscript
-      if ((sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && (window.innerHeight > 400 || window.innerHeight === 0)) && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
+      if ((sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && sessionStorage.getItem('8uf0f6a8qozu0jsl16de9vjq7rwqpox6') !== '5qw4p46frzs2autdmnxr9jhfltpg5hsh' && (window.innerHeight > 400 || window.innerHeight === 0)) && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
          // Cookie Banner die ersten 5 Sekunden verstecken.
          window.addEventListener('DOMContentLoaded', function () {
@@ -49,7 +88,7 @@
                window.setTimeout(function () {
                   let csscheck1 = document.getElementById('q3xyktv21es96by0ybwvb1e9a37y5pu');
                   if (csscheck1 !== null) {
-                     forcesessionstorage();
+                     forcesessionstoragecss();
                      csscheck1.remove();
                   }
                }, 8000);
@@ -1851,6 +1890,9 @@
          }, {
             seite: 'macaddress.io',
             setcookie: 'macaddress-cookies-message=true;'
+         }, {
+            seite: 'haberdeger.com',
+            setcookie: 'KVKKClosed=1;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
@@ -1871,26 +1913,42 @@
                         return;
                      }
 
-                     // Cookie Banner Status an das Popup Panel weiterleiten.
+                     // Cookie Banner Status Addon global mittels Storage setzen.
                      if (document.hidden !== true) {
-                        browser.runtime.onMessage.addListener(function (request) {
-                           if (request.popupstatus === 'geöffnet') {
-                              console.log(request.popupstatus);
-
-                              function erfolg() {
-                                 console.log(cookiebannerstatus);
+                        let cookiebannerstatus = {
+                           seite: domainohnewww,
+                           cookieoderstoragegesetzt: true,
+                           suchstatus: "suche",
+                           anbieter: "unbekannt",
+                           knopfstatus: "suche"
+                        };
+                        browser.storage.local.get('cookiebannerstatuscookie').then(function (a) {
+                           if (a && a.cookiebannerstatuscookie) {
+                              let tempcookiebannerstatus = a.cookiebannerstatuscookie;
+                              let istdiedomainvorhanden = false;
+                              for (let i = 0; i < tempcookiebannerstatus.length; i++) {
+                                 if (tempcookiebannerstatus[i].seite === domainohnewww) {
+                                    if (Object.entries(tempcookiebannerstatus[i]).toString() !== Object.entries(cookiebannerstatus).toString()) {
+                                       tempcookiebannerstatus[i].cookieoderstoragegesetzt = true;
+                                       browser.storage.local.set({
+                                          cookiebannerstatuscookie: tempcookiebannerstatus
+                                       });
+                                    }
+                                    istdiedomainvorhanden = true;
+                                 }
                               }
-
-                              function fehler() {
-                                 console.log("Erweiterungspopup geschlossen, beende Übertragung.");
+                              if (istdiedomainvorhanden === false) {
+                                 tempcookiebannerstatus.push(cookiebannerstatus);
+                                 browser.storage.local.set({
+                                    cookiebannerstatuscookie: tempcookiebannerstatus
+                                 });
                               }
-                              const cookiebannerstatus = {
-                                 cookiegesetzt: true
-                              };
-                              // Sende Daten solange das Popup geöffnet ist oder bis 10 Sekunden lang.
-                              browser.runtime.sendMessage({
-                                 nachricht: cookiebannerstatus
-                              }).then(erfolg, fehler);
+                           } else {
+                              browser.storage.local.set({
+                                 cookiebannerstatuscookie: [
+                                    cookiebannerstatus
+                                 ]
+                              });
                            }
                         });
                      }
@@ -1931,7 +1989,7 @@
          // Sonderfälle
          if (window.location.hostname === 'cmp.seznam.cz') {
             // Öffene geschlossenes Shadowroot (closed -> open)
-            let openshadowroot = document.createElement("script");
+            let openshadowroot = document.createElement('script');
             openshadowroot.innerText = 'Element.prototype.attachShadow = new Proxy(Element.prototype.attachShadow, { apply(target, thisArg, args) { args[0].mode = "open"; return Reflect.apply(target, thisArg, args); } });';
             document.documentElement.appendChild(openshadowroot);
             document.querySelector('html > script:first-child').remove();
