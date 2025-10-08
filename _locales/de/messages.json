@@ -20,9 +20,6 @@
 	"unsupportedSiteMessage": {
 		"message": "Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert."
 	},
-	"earlyOpenedMessage": {
-		"message": "Fehler beim Abrufen des Status. Öffne dieses Popup neu für einen neuen Versuch."
-	},
 	"advancedDetectionLabel": {
 		"message": "Erweiterte Cookie Banner Erkennung (beta):"
 	},
