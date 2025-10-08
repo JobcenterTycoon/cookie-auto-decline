@@ -148,7 +148,7 @@
          if (getComputedStyle(b, '::after').content !== 'none') {
             textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase();
          }
-         if (b && b.length < 2 && b.value) {
+         if (textcomplete.length < 2 && b.value) {
             textcomplete = textcomplete + b.value;
          }
          b = textcomplete;
@@ -1581,7 +1581,7 @@
             if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
                console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
                cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
-               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"])');
+               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"], [aria-label*="blehnen"])');
                einstellungen = tcprivacywrapper.querySelector('button:is([title*="ption"], [title*="etting"])');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -1676,7 +1676,18 @@
             if (ketch) {
                console.log('[Cookie auto decline] Detected: ketch.com');
                cookiebannerstatus.anbieter = 'ketch.com';
-               ablehnen = ketch.querySelector('#ketch-banner-buttons-container-standard > button#ketch-banner-button-tertiary, #ketch-banner-buttons-container-compact button#ketch-banner-button-secondary');
+               const knöpfe = ketch.querySelectorAll('button[id^="ketch-"]');
+               for (let i = 0; i < knöpfe.length; i++) {
+                  const b = knöpfe[i];
+                  const textgeprüft = knöpfetextcheck(b);
+                  if (textgeprüft === 'ablehntext') {
+                     ablehnen = knöpfe[i];
+                  } else if (textgeprüft === 'speichertext') {
+                     speichern = knöpfe[i];
+                  } else if (textgeprüft === 'akzeptiertext') {
+                     akzeptieren = knöpfe[i];
+                  }
+               }
                speichern = ketch.querySelector('[class="ketch-flex ketch-w-full ketch-items-center ketch-gap-6 sm:ketch-w-auto"] > button');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
@@ -1825,8 +1836,8 @@
                cookiebannerstatus.anbieter = 'freeprivacypolicy.com';
                nureinklickeinstellungen = true;
                ablehnen = freeprivacypolicycom.querySelector('button.cc-nb-reject');
-               einstellungen = freeprivacypolicycom.querySelector('button.cc_b_cp');
-               speichern = document.querySelector('#cookie-consent-preferences-centre .cc_cp_f_save > button');
+               einstellungen = freeprivacypolicycom.querySelector('button.cc_b_cp, button.cc-nb-changep');
+               speichern = document.querySelector('#cookie-consent-preferences-centre .cc_cp_f_save > button, #termsfeed-com---preferences-center button.cc-cp-foot-save');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -2147,7 +2158,7 @@
                                     }
                                     if (finalercontainer) {
                                        // console.log(finalercontainer);
-                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"], [class*="checkmark"]), div:has(> span:only-child:empty)');
+                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"], [class*="checkmark"]), div:has(> span:only-child:empty)');
 
                                        let gewichtung = 3;
                                        let finalerknopf;
@@ -3614,6 +3625,9 @@
             seite: 'rajapack.de',
             selector: '.otsdk-rajapack button.js-ot-deny',
             checkcookie: 'OptanonConsent'
+         }, {
+            seite: 'myprivacy.dpgmedia.nl,myprivacy.dpgmediagroup.net,nu.nl',
+            selector: '#pg-host-shadow-root >> button.pg-btn-secondary -> #pg-host-shadow-root >> button#pg-reject-btn'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
