@@ -298,7 +298,6 @@
                   cookiebannerstatus.anbieter = 'privacy-mgmt.com (iFrame)';
                   advancedrun = false;
                   nureinklickeinstellungen = true;
-                  ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL, .sp_choice_type_13');
                   einstellungen = document.querySelector('button.sp_choice_type_12');
                   const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                   if (einstellungenknöpfe.length > 0) {
@@ -310,6 +309,8 @@
                            a.click();
                         }
                      }
+                  } else {
+                     ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL, .sp_choice_type_13');
                   }
                   speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not(:disabled)');
                   akzeptieren = document.querySelector('button.accept-all');
