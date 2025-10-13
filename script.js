@@ -193,7 +193,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
@@ -260,6 +260,7 @@
 
          let didomibezahlknopf = false;
          let didomieinstellungengeöffnet = false;
+         let didomiswitchesaktiviert = false;
          let sfbxabgelehnt = false;
 
          // Suchintervall
@@ -667,7 +668,14 @@
             }
 
             // didomi.io
-            const didomi = document.querySelector('#didomi-host:has(> * > *)');
+            let didomi = document.querySelector('#didomi-host:has(> * > *)');
+            const didomi2 = document.querySelector('#didomi-host #didomi-notice');
+            if ((!didomi2 || didomi2 && !didomi2.checkVisibility()) && document.querySelector('#cpexSubs_modalWrapper a#cpexSubs_linkPurposes') && window.location.hostname.endsWith('.cz')) {
+               didomi = document.querySelector('#cpexSubs_modalWrapper');
+               if (document.querySelector('#didomi-host #didomi-consent-popup')) {
+                  didomi = document.querySelector('#didomi-host #didomi-consent-popup');
+               }
+            }
             if (didomi && document.cookie.includes('euconsent-v2') === false && window.localStorage.getItem('euconsent-v2') === null) {
                console.log('[Cookie auto decline] Detected: didomi.io');
                cookiebannerstatus.anbieter = 'didomi.io';
@@ -683,19 +691,24 @@
                   ablehnen = undefined;
                }
 
-               const schalter = document.querySelectorAll('.didomi-consent-popup-preferences .didomi-consent-popup-categories .didomi-components-radio > button:first-child:not([aria-pressed="true"])');
-               const schalterrequired = document.querySelector('.didomi-consent-popup-preferences .didomi-consent-popup-categories > div:has(.didomi-consent-popup-data-processing__essential_purpose) + div .didomi-components-radio > button:first-child:not([aria-pressed="true"]) + button');
-               for (let i = 0; i < schalter.length; i++) {
-                  if ((schalterrequired && i >= 1) || !schalterrequired) {
-                     if (schalter[i].checkVisibility()) {
-                        schalter[i].click();
+               if (!didomiswitchesaktiviert) {
+                  const schalter = document.querySelectorAll('.didomi-consent-popup-preferences .didomi-consent-popup-categories .didomi-components-radio > button:not([aria-pressed="true"])');
+                  const schalterrequired = document.querySelector('.didomi-consent-popup-preferences .didomi-consent-popup-categories > div:has(.didomi-consent-popup-data-processing__essential_purpose) + div .didomi-components-radio > button:first-child:not([aria-pressed="true"]) + button');
+                  for (let i = 0; i < schalter.length; i++) {
+                     if ((schalterrequired && i >= 1) || !schalterrequired) {
+                        const a = schalter[i];
+                        if (sichtbarkeitsprüfung(a)) {
+                           didomiswitchesaktiviert = true;
+                           schalter[i].click();
+                           i++;
+                        }
                      }
                   }
+                  if (schalterrequired && schalterrequired.checkVisibility()) {
+                     schalterrequired.click();
+                  }
                }
-               if (schalterrequired && schalterrequired.checkVisibility()) {
-                  schalterrequired.click();
-               }
-               einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
+               einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button, a#cpexSubs_linkPurposes');
                if (einstellungen && einstellungen.checkVisibility()) {
                   const a = einstellungen;
                   if (sichtbarkeitsprüfung(a)) {
