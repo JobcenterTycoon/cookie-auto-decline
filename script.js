@@ -1595,9 +1595,11 @@
             if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
                console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
                cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
-               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"], [aria-label*="blehnen"])');
+               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"], [title*="blehnen"], [aria-label*="blehnen"])');
                einstellungen = tcprivacywrapper.querySelector('button:is([title*="ption"], [title*="etting"])');
-               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+               if (ablehnen || einstellungen) {
+                  klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+               }
             }
 
             // tarteaucitronRoot
@@ -1999,7 +2001,7 @@
             }
 
             // Advanced
-            if (advancedcounter >= 5 && advancedrun === true && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
+            if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
                // Einfachr alter Erkennungsscript
                const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, li, footer, app-cookie, cms-cookie-bar):is([class*="cookie"], [class*="Cookie"], [id*="cookie"], [id*="Cookie"], [class*="keks"], [id*="keks"], [aria-labelledby*="cookie"], [aria-labelledby*="consent"], [aria-label*="ookie"], [aria-label*="consent"], cookie-law, [class*="consent"], [id*="consent"], [class*="privacy"], [id*="privacy"], [class*="c-disclaimer"], [class*="cc_banner"], [id*="cc_banner"], [class*="cc_overlay"], [id*="cc_overlay"], [class*="cc-overlay"], [id*="cc-overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [class^="cc-notification"], [id^="cc-notification"], [data-testid="consent-banner"], [cc_data]):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .default-layout.cookie-is-shown)');
@@ -3157,10 +3159,6 @@
             checkcookie: 'CanyonCookieSeen',
             selector: '.cookiesModal .js-saveCookiesChoice.button--secondary'
          }, {
-            seite: 'kaspersky.com',
-            checkstorage: 'areCookiesAccepted',
-            selector: 'button[class*="CookiesAccept_acceptButton"]'
-         }, {
             seite: 'futurezone.at',
             checkcookie: '__pid',
             selector: '.consentOverlay button',
@@ -3340,10 +3338,6 @@
             selector: '.cookie a.hide',
             checkstorage: 'cookie_consent_202008181030'
          }, {
-            seite: 'paypal.com',
-            selector: '#gdprCookieBanner button#bannerDeclineButton.gdprCookieBanner_decline-button',
-            checkcookie: 'tcs'
-         }, {
             seite: 'datadoghq.com',
             selector: '#consent-banner button#truste-consent-required',
             checkcookie: 'cmapi_cookie_privacy'
@@ -3397,10 +3391,6 @@
             seite: 'medpets.de',
             selector: '[ref="cookie-modal"] .gtm-button-deny-cookies-all-pages',
             checkcookie: 'op_tracking'
-         }, {
-            seite: 'pons.com',
-            selector: '#feature-guard button[data-e2e="pure-accept-ads"]',
-            checkcookie: 'OTAdditionalConsentString'
          }, {
             seite: 'lebegesund.de',
             selector: 'lgv-cookie-manager button[data-cookie-save="technical"]',
@@ -3642,6 +3632,10 @@
          }, {
             seite: 'myprivacy.dpgmedia.nl,myprivacy.dpgmediagroup.net,nu.nl',
             selector: '#pg-host-shadow-root >> button.pg-btn-secondary -> #pg-host-shadow-root >> button#pg-reject-btn'
+         }, {
+            seite: 'pons.com',
+            selector: '[data-e2e="fg-modal"] button[data-e2e="fg-accept-ads-trigger"]',
+            checkcookie: 'OptanonAlertBoxClosed'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
