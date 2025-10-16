@@ -3636,6 +3636,10 @@
             seite: 'pons.com',
             selector: '[data-e2e="fg-modal"] button[data-e2e="fg-accept-ads-trigger"]',
             checkcookie: 'OptanonAlertBoxClosed'
+         }, {
+            seite: 'online-mahnantrag.de',
+            selector: '#CookiesButtons a[onclick="setCookieAndGo()"]',
+            checkcookie: 'cookieZustimmung'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
