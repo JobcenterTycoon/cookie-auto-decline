@@ -23,11 +23,12 @@
    });
 
    // Führe den Hauptscript nur aus wenn das Addon nicht für die Seite deaktiviert ist. Wird es deaktiviert stoppe das Intervall. Wird es aktiviert führe das Script einmalig aus.
+   let domainkeinwww;
    let scriptdeaktiviert = false;
    let prüfeobdasaddondeaktiviertist;
    if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
       let scriptbereitsausgeführt = false;
-      const domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
+      domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
       prüfeobdasaddondeaktiviertist = function () {
          scriptdeaktiviert = false;
          browser.storage.local.get('aufdiesenseitendeaktiviert').then(function (a) {
@@ -228,7 +229,7 @@
       // Find Cookie Banner
       if (scriptdeaktiviert === false && sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body > .main-wrapper:first-child + script + script[src^="https://static.cloudflareinsights.com/beacon.min.js/"]:last-child') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && document.querySelector('body > div:first-child + script[src^="https://mcl.spur.us/d/mcl.js?"] + script:last-child') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
-         const nc = 'domain=' + window.location.hostname + ';secure=true; max-age=86400; SameSite=None; path=/';
+         const nc = 'domain=' + domainkeinwww + ';secure=true; max-age=86400; SameSite=None; path=/';
          const cookiedatum = new Date().toISOString();
 
          // Intervall nur laufen lassen wenn das Fenster sichtbar ist.
@@ -1676,15 +1677,21 @@
             }
 
             // transcend.io
-            const transcend = document.querySelector('#transcend-consent-manager[style="position: fixed; z-index: 2147483647;"]');
+            const transcend = document.querySelector('#transcend-consent-manager[style^="position: fixed; z-index: "]');
             if (transcend && window.localStorage.getItem('tcmConsent') === null) {
                console.log('[Cookie auto decline] Detected: transcend.io');
                cookiebannerstatus.anbieter = 'transcend.io';
                advancedrun = false;
                // Shadow Root is closed so the addon need to go this way.
-               window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
-               beenden();
-               location.reload();
+               if (transcend.shadowRoot === null) {
+                  window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
+                  beenden();
+                  location.reload();
+               } else {
+                  document.cookie = 'tcm={"purposes":{"SaleOfInfo":false,"Functional":true,"Analytics":false,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":false,"updated":true};' + nc;
+                  beenden();
+                  location.reload();
+               }
             }
 
             // ketch.com
@@ -2552,11 +2559,6 @@
             checkcookie: 'GDPRp',
             selector: '.cookie-banner form[action*="cookies"] > button[name="cookies_deny"]'
          }, {
-            seite: 'schell.eu',
-            checkcookie: 'cookieStaticdata',
-            setcookie: 'cookieStaticdata=1;',
-            selector: '#modalCookie button.btn-secondary.allow-all'
-         }, {
             seite: 'steampowered.com,steamcommunity.com',
             selector: '#cookiePrefPopup .buttonGroup > div#rejectAllButton',
             countdown: 4502
@@ -2888,11 +2890,6 @@
             checkcookie: 'CookieConsent',
             selector: '#cookie-manager-window button#accept-selected'
          }, {
-            seite: 'webnode.com',
-            checkcookie: 'essential',
-            setcookie: 'ac={"essential":true,"functional":false};',
-            selector: '.w-cookie-bar a.w-cookie-bar-close'
-         }, {
             seite: 'lemonde.fr',
             checkcookie: 'euconsent',
             selector: '.gdpr-lmd-wall button.gdpr-lmd-button'
@@ -3012,11 +3009,6 @@
             seite: 'jobcenter-stade.de',
             checkstorage: 'cookie_consent',
             selector: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn"]'
-         }, {
-            seite: 'jobcenter-augsburger-land.de',
-            checkcookie: 'reDimCookieHint',
-            setcookie: 'reDimCookieHint=1;',
-            selector: '#redim-cookiehint #cookiehintsubmit'
          }, {
             seite: 'wuppertal.de,kassel.de,remscheid.de',
             checkcookie: 'cookies-accepted',
