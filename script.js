@@ -2190,7 +2190,7 @@
                                           const a = knöpfe[k];
                                           let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
                                           const knopfcss = window.getComputedStyle(knöpfe[k]);
-                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || knöpfe[k].getAttribute('href').includes('/') === false || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
+                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || (knöpfe[k].getAttribute('href') && knöpfe[k].getAttribute('href').includes('/') === false) || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
                                              // console.log(knöpfe[k])
 
                                              // Knöpfe start
