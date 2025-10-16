@@ -1889,6 +1889,12 @@
          }, {
             seite: 'haberdeger.com',
             setcookie: 'KVKKClosed=1;'
+         }, {
+            seite: '2024.graduateshow.eca.ed.ac.uk',
+            setcookie: '_uoeCookiePrefsV4=eyJuZWNlc3NhcnkiOnRydWUsInBlcmZvcm1hbmNlIjpmYWxzZSwiYWR2ZXJ0aXNpbmciOmZhbHNlfQ==;'
+         }, {
+            seite: 'lgbtqia.wiki',
+            setcookie: 'lgbtawikicookiewarning_dismissed=true;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
