@@ -1205,9 +1205,10 @@
             if (amgdpr && document.cookie.includes('amcookie_allowed') === false) {
                console.log('[Cookie auto decline] Detected: amgdpr');
                cookiebannerstatus.anbieter = 'amgdpr';
-               ablehnen = amgdpr.querySelector('button.-decline, button.g-c-button-reject');
-               einstellungen = amgdpr.querySelector('button.-settings');
-               speichern = document.querySelector('[class*="cookie"] button.-save, .amgdprcookie-cookie-settings-modal._show button.amgdprcookie-done');
+               ablehnen = amgdpr.querySelector('button.-decline:not(:disabled), button.g-c-button-reject:not(:disabled)');
+               einstellungen = amgdpr.querySelector('button.-settings:not(:disabled)');
+               speichern = document.querySelector(':is([class*="cookie"] button.-save, .amgdprcookie-cookie-settings-modal._show button.amgdprcookie-done):not(:disabled)');
+               console.log(einstellungen)
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
