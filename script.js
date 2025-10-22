@@ -3483,7 +3483,7 @@
          }, {
             seite: 'nature.com',
             checkcookie: '26C%3DC01%26D%3Dtrue',
-            selector: '.cc-banner button.cc-banner__button-reject'
+            selector: '.cc-banner button.cc-banner__button-reject, .cc-banner:not(:has(button.cc-banner__button-reject)) button[data-cc-action="preferences"] -> .cc-preferences__dialog button[data-cc-action="reject"]'
          }, {
             seite: 'dsisolar.com',
             selector: '#wmkcprivacy em[title*="eject"]'
