@@ -116,37 +116,37 @@
             setcookie: 'consentUUID=cc3fda07-066e-4c67-a9eb-72d5dce1a921_32_33_37_39_44_48;'
          }, {
             seite: 'spiegel.de',
-            setcookie: 'consentUUID=5aca01af-a126-44e3-ae3c-b26b6baa419f_43_45;'
+            setcookie: 'consentUUID=5aca01af-a126-44e3-ae3c-b26b6baa419f_43_45_49;'
          }, {
             seite: 't3n.de',
             setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40_43_44_46;'
          }, {
             seite: 'welt.de',
-            setcookie: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47;'
+            setcookie: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47_49;'
          }, {
             seite: 't-online.de',
             setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36_44;'
          }, {
             seite: 'autobild.de',
-            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47;'
+            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47_49;'
          }, {
             seite: 'bild.de',
-            setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44_47;'
+            setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44_47_49;'
          }, {
             seite: 'computerbild.de',
-            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47;'
+            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47_49;'
          }, {
             seite: 'stern.de',
             setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46_48;'
          }, {
             seite: 'pcwelt.de',
-            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48;'
+            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49;'
          }, {
             seite: 'focus.de',
             setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46;'
          }, {
             seite: 'krzbb.de',
-            setcookie: 'consentUUID=7bcfd185-6b83-49c5-8d8e-3afd092ba512_45;'
+            setcookie: 'consentUUID=d67edd5b-49a2-4930-a0e2-c9527d32ba8d_49;'
          }, {
             seite: 'geo.de',
             setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46_48;'
@@ -183,7 +183,7 @@
             setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44_46;'
          }, {
             seite: 'weather.com',
-            setcookie: 'consentUUID=1c36ef9b-6a93-4021-9780-816b729923a1_48;'
+            setcookie: 'consentUUID=3850e4bf-d403-47e6-b9c8-7f4d98bcf444_49;'
          }, {
             seite: 'cinestar.de',
             setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43_44_46_48;'
