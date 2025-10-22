@@ -300,6 +300,8 @@
                   cookiebannerstatus.anbieter = 'privacy-mgmt.com (iFrame)';
                   advancedrun = false;
                   nureinklickeinstellungen = true;
+                  findconsentintervalzahl = 602;
+                  findconsentintervalzahländern();
                   einstellungen = document.querySelector('button.sp_choice_type_12');
                   const einstellungenknöpfe = document.querySelectorAll('.pm-main .pur-buttons-container > button');
                   if (einstellungenknöpfe.length > 0) {
@@ -2161,7 +2163,7 @@
                                  break;
                               }
                            }
-                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && inputs2.length === 0 && sprungmarken2 === false) {
+                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && elemente[i].querySelectorAll('a:has(> * > * > *)').length === 0 && inputs2.length === 0 && sprungmarken2 === false) {
                               // console.log(elemente[i])
 
                               const elementcss = window.getComputedStyle(elemente[i]);
