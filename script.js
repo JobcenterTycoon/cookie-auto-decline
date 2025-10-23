@@ -1301,8 +1301,12 @@
                console.log('[Cookie auto decline] Detected: cookieyes.com');
                cookiebannerstatus.anbieter = 'cookieyes.com';
                ablehnen = ckyconsent.querySelector('button.cky-btn-reject');
-               einstellungen = ckyconsent.querySelector('button.cky-btn-customize');
-               speichern = document.querySelector('.cky-preference-center button.cky-btn-preferences');
+               einstellungen = ckyconsent.querySelector('button.cky-btn-customize, button.cky-btn-do-not-sell');
+               const checkbox = document.querySelector('.cky-opt-out-wrapper input#ckyCCPAOptOut:not(:checked)');
+               if (checkbox && checkbox.checkVisibility()) {
+                  checkbox.click();
+               }
+               speichern = document.querySelector('.cky-preference-center button.cky-btn-preferences, .cky-preference-center .cky-btn-confirm');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -1908,11 +1912,11 @@
             }
 
             // pixelmate
-            const pixelmate = document.querySelector('.pixelmate-big-wrapper.pixelmate-general-banner-wrapper');
+            const pixelmate = document.querySelector('.pixelmate-big-wrapper.pixelmate-general-banner-wrapper, .pixelmate-wrapper-bottom');
             if (pixelmate && document.cookie.includes('pixelmate') === false) {
                console.log('[Cookie auto decline] Detected: pixelmate');
                cookiebannerstatus.anbieter = 'pixelmate';
-               ablehnen = pixelmate.querySelector('button.pixelmate-general-deny');
+               ablehnen = pixelmate.querySelector('button.pixelmate-general-deny, button.pixelmate-general-deny-bottom');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
