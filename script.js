@@ -1208,7 +1208,6 @@
                ablehnen = amgdpr.querySelector('button.-decline:not(:disabled), button.g-c-button-reject:not(:disabled)');
                einstellungen = amgdpr.querySelector('button.-settings:not(:disabled)');
                speichern = document.querySelector(':is([class*="cookie"] button.-save, .amgdprcookie-cookie-settings-modal._show button.amgdprcookie-done):not(:disabled)');
-               console.log(einstellungen)
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
