@@ -1602,7 +1602,7 @@
             if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
                console.log('[Cookie auto decline] Detected: tc-privacy-wrapper');
                cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
-               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"], [title*="blehnen"], [aria-label*="blehnen"])');
+               ablehnen = tcprivacywrapper.querySelector('button:is([title="Weiter ohne Zustimmung"], [title="Continuer sans accepter"], [title*="efuse"], [title*="ecline"], [title*="otwendige"], [title*="Continue without accepting"], [title*="blehnen"], [aria-label*="blehnen"], .essentialCat-button)');
                einstellungen = tcprivacywrapper.querySelector('button:is([title*="ption"], [title*="etting"])');
                if (ablehnen || einstellungen) {
                   klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -1669,7 +1669,7 @@
                findconsentintervalzahl = 502;
                findconsentintervalzahländern();
                einstellungen = eightworkscookieconsentplus.querySelector('a.cookie-permission--configure-button[href="#"]');
-               speichern = eightworkscookieconsentplus.querySelector('button[class="btn btn-default js-offcanvas-cookie-submit eightworks-cookie-consent-plus-button eightworks-cookie-consent-plus-button-mod1"][title="Speichern"], a.cookie-consent--save-button');
+               speichern = eightworkscookieconsentplus.querySelector('button[class="btn btn-default js-offcanvas-cookie-submit eightworks-cookie-consent-plus-button eightworks-cookie-consent-plus-button-mod1"][title="Speichern"], a.cookie-consent--save-button, button.eightworks-cookie-consent-plus-button-secondary');
                nureinklickeinstellungen = true;
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
