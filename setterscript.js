@@ -1895,6 +1895,18 @@
          }, {
             seite: 'lgbtqia.wiki',
             setcookie: 'lgbtawikicookiewarning_dismissed=true;'
+         }, {
+            seite: 'quantamagazine.org',
+            setcookie: 'privacy-consent-given=revoke;'
+         }, {
+            seite: 'lmarena.ai',
+            setcookie: 'cookie-preferences={"advertising":false,"functionality":true,"analytics":false,"socialMedia":false,"lastUpdated":"' + cookiedatum + '"};'
+         }, {
+            seite: 'boschrexroth.com',
+            setcookie: 'privacy-settings={%22consent%22:{%22convenience%22:false%2C%22analysis%22:false%2C%22marketing%22:false%2C%22advertising%22:false%2C%22custom%22:[]}%2C%22timeToLive%22:60%2C%22timestamp%22:' + cookiezeit + '%2C%22version%22:4};'
+         }, {
+            seite: 'swisstransfer.com',
+            setcookie: 'cookieConsent=consent_1; , googleConsent=%7B%22version%22:2,%22ad_storage%22:%22denied%22,%22ad_personalization%22:%22denied%22,%22ad_user_data%22:%22denied%22,%22analytics_storage%22:%22denied%22,%22functionality_storage%22:%22denied%22,%22personalization_storage%22:%22denied%22,%22security_storage%22:%22denied%22%7D;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
