@@ -1907,6 +1907,9 @@
          }, {
             seite: 'swisstransfer.com',
             setcookie: 'cookieConsent=consent_1; , googleConsent=%7B%22version%22:2,%22ad_storage%22:%22denied%22,%22ad_personalization%22:%22denied%22,%22ad_user_data%22:%22denied%22,%22analytics_storage%22:%22denied%22,%22functionality_storage%22:%22denied%22,%22personalization_storage%22:%22denied%22,%22security_storage%22:%22denied%22%7D;'
+         }, {
+            seite: 'offene-werkstaetten.org',
+            setcookie: 'offene-werkstaetten.org=Cookies policy accepted;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
