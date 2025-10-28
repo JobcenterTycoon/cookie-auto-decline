@@ -155,7 +155,7 @@
          b = textcomplete;
          const c = b;
          const paybutton = paybuttons(c);
-         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'nur wesentliche', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento'];
+         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'nur wesentliche', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
                return 'ablehntext';
@@ -2689,7 +2689,7 @@
             selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
             checkcookie: 'eu_cookie'
          }, {
-            seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at,ran.de',
+            seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at,ran.de,7pass.de',
             checkcookie: 'cmp-settings',
             selector: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
             keinesichtbarkeitsprüfung: true
