@@ -2145,7 +2145,7 @@
                      for (let i = 0; i < elemente.length; i++) {
                         const elementtext = elemente[i].innerText.toLowerCase();
                         const elementhtml = elemente[i].outerHTML.toLowerCase();
-                        if (elementtext && elementtext.length >= 50 && elementtext.length < 3500 && (elementhtml.includes('cookie') || elementhtml.includes('privacy policy') || elementhtml.includes('datenschutzerklärung') || elementhtml.includes('datenschutzeinstellung') || (document.documentElement.lang && (document.documentElement.lang.toLowerCase() === 'tr' && elementtext.includes('çerezler')) || (document.documentElement.lang.toLowerCase() === 'fi' && elementtext.includes('tietosuojalauseke'))))) {
+                        if (elementtext && elementtext.length >= 50 && elementtext.length < 3500 && (elementhtml.includes('cookie') || elementhtml.includes('privacy policy') || elementhtml.includes('privacy-policy') || elementhtml.includes('datenschutzerklärung') || elementhtml.includes('datenschutzeinstellung') || (document.documentElement.lang && (document.documentElement.lang.toLowerCase() === 'tr' && elementtext.includes('çerezler')) || (document.documentElement.lang.toLowerCase() === 'fi' && elementtext.includes('tietosuojalauseke'))))) {
                            // console.log(elemente[i])
                            const elementscripte = elemente[i].querySelectorAll('script:not([type="application/json"])');
                            const inputs = elemente[i].querySelectorAll('input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="submit"], [type="image"])');
@@ -3638,6 +3638,10 @@
             seite: 'online-mahnantrag.de',
             selector: '#CookiesButtons a[onclick="setCookieAndGo()"]',
             checkcookie: 'cookieZustimmung'
+         }, {
+            seite: 'chat.mistral.ai',
+            selector: 'div[data-state][style="pointer-events: auto;"][aria-labelledby]:has(> div:first-child > h2:first-child + p:last-child > a[href="https://mistral.ai/terms/#privacy-policy"]) > button',
+            checkcookie: 'intercom.intercom-state'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
