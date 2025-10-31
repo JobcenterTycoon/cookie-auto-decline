@@ -1910,6 +1910,10 @@
          }, {
             seite: 'offene-werkstaetten.org',
             setcookie: 'offene-werkstaetten.org=Cookies policy accepted;'
+         }, {
+            seite: 'fastweb.it',
+            setcookie: 'ck_consent=AT;',
+            reload: true
          }];
 
          for (let i = 0; i < regeln.length; i++) {
