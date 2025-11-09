@@ -135,7 +135,7 @@
       let attributcheckeradvancedchecker = function (a) {
          const links = a.getElementsByTagName('a');
          for (let i = 0; i < links.length; i++) {
-            const linkhtml = links[i].outerHTML.toLowerCase();
+            const linkhtml = links[i].outerHTML.toLowerCase().trim();
             if (linkhtml.includes('datenschutz') || linkhtml.includes('cookie') || linkhtml.includes('privacy')) {
                return true;
             }
@@ -144,10 +144,10 @@
       let knöpfetextcheck = function (b) {
          let textcomplete = b.innerText.toLowerCase();
          if (getComputedStyle(b, '::before').content !== 'none') {
-            textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase();
+            textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
          }
          if (getComputedStyle(b, '::after').content !== 'none') {
-            textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase();
+            textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
          }
          if (textcomplete.length < 2 && b.value) {
             textcomplete = textcomplete + b.value;
@@ -155,25 +155,25 @@
          b = textcomplete;
          const c = b;
          const paybutton = paybuttons(c);
-         const ablehntext = ['ablehnen', 'lehne ab', 'notwendige', 'schließen', 'nur technisch', 'nur erforderlich', 'nur wesentliche', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne ', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'reject', 'decline', 'deny', 'refuse', 'disallow', 'necassy', 'dismiss', 'close', 'no thanks', 'necessary', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare'];
+         const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'schließen', 'nur technisch', 'nur technische', 'nur technische cookies', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weiger', 'essenzielle', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'cookies verbieten', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'tout accepter', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'povolit jen nezbytné', 'odrzuć niewymagane'];
          for (let i = 0; i < ablehntext.length; i++) {
-            if (b.includes(ablehntext[i]) && b.includes('einstellungen') === false && paybutton !== true) {
+            if (b === ablehntext[i] && b.includes('einstellungen') === false) {
                return 'ablehntext';
             }
          }
-         const speichertext = ['speichern', 'einstellungen übernehmen', 'auswahl ', 'ausgewählte', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών'];
+         const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl speichern', 'auswahl übernehmen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan'];
          for (let i = 0; i < speichertext.length; i++) {
-            if (b.includes(speichertext[i]) && paybutton !== true) {
+            if (b === speichertext[i]) {
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptier', 'ich stimme', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'in ordnung', 'alle annehmen', 'okay', 'okey', 'nehme an', 'agree', 'accept', 'got it', 'continue', 'consent', 'allow all', 'hide', 'i understand', 'analytics only', '閉じる', 'sutinku su visais', 'acceptér', 'ja, det er greit', 'godkänn', 'godta', 'принять', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'ยอมรับ', 'aceitar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit'];
+         const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'alles akzeptieren', 'alle cookies akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'cookies erlauben', 'alle cookies erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen und weiter', 'akzeptieren und weiter', 'weiter mit den empfohlenen cookies', 'okay', 'okey', 'ok', 'ок', 'nehme an', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'accept all cookies', 'got it', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'acknowledge', 'analytics only', 'ok, i agree', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'aceptar', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter & fermer', 'accepter and fermer', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno'];
          for (let i = 0; i < akzeptiertext.length; i++) {
-            if ((b.includes(akzeptiertext[i]) || b === 'ok' || b === 'ок') && paybutton !== true) {
+            if (b === akzeptiertext[i]) {
                return 'akzeptiertext';
             }
          }
-         const optionstext = ['einstellungen', 'option', 'setting'];
+         const optionstext = ['einstellungen', 'option', 'setting', 'cookies verwalten', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia'];
          for (let i = 0; i < optionstext.length; i++) {
             if (b.includes(optionstext[i]) && paybutton !== true) {
                return 'optionstext';
@@ -194,7 +194,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass', 'abonne'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
@@ -262,6 +262,7 @@
          let didomibezahlknopf = false;
          let didomieinstellungengeöffnet = false;
          let didomiswitchesaktiviert = false;
+         let didomischalterrequired = false;
          let sfbxabgelehnt = false;
 
          // Suchintervall
@@ -496,7 +497,7 @@
             if (cmpboxshadowroot) {
                console.log('[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)');
                cookiebannerstatus.anbieter = '#cmpbox shadowroot (consensu.org, consentmanager.net)';
-               const contentpassvorhanden = cmpboxshadowroot.shadowRoot.querySelector('.cmpcontentpass');
+               const contentpassvorhanden = cmpboxshadowroot.shadowRoot.querySelector('.cmpcontentpass, a[href*="-pur-"]');
                if (!contentpassvorhanden) {
                   ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
                   einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a[onclick^="__cmp(\'showScreenAdvanced\')"]');
@@ -706,6 +707,9 @@
                            i++;
                         }
                      }
+                     if (schalterrequired) {
+                        didomischalterrequired = true;
+                     }
                   }
                   if (schalterrequired && schalterrequired.checkVisibility()) {
                      schalterrequired.click();
@@ -719,6 +723,10 @@
                   }
                }
                speichern = didomi.querySelector('button#btn-toggle-save:not(:disabled)');
+               if (!didomischalterrequired && didomibezahlknopf && didomieinstellungengeöffnet) {
+                  akzeptieren = didomi.querySelector('button#didomi-notice-agree-button, button#ue-accept-notice-button, button#btn-toggle-agree');
+                  speichern = undefined;
+               }
 
                if (!didomieinstellungengeöffnet) {
                   akzeptieren = didomi.querySelector('button#didomi-notice-agree-button, button#ue-accept-notice-button, button#btn-toggle-agree');
@@ -732,28 +740,11 @@
                console.log('[Cookie auto decline] Detected: quantcast.com');
                cookiebannerstatus.anbieter = 'quantcast.com';
                advancedrun = false;
-               let ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
-               const einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
-               const speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
-               if (ablehnen) {
-                  beenden();
-                  window.setTimeout(function () {
-                     ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
-                     cookiebannerstatus.knopfstatus = 'abgelehnt';
-                     ablehnen.click();
-                  }, 702);
-               } else if (einstellungen) {
-                  window.setTimeout(function () {
-                     cookiebannerstatus.knopfstatus = 'einstellungen';
-                     einstellungen.click();
-                  }, 202);
-               } else if (speichern) {
-                  beenden();
-                  window.setTimeout(function () {
-                     cookiebannerstatus.knopfstatus = 'gespeichert';
-                     speichern.click();
-                  }, 202);
-               }
+
+               ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
+               einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
+               speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
             // iubenda.com
@@ -1683,16 +1674,26 @@
             }
 
             // transcend.io
-            const transcend = document.querySelector('#transcend-consent-manager[style^="position: fixed; z-index: "]');
+            const transcend = document.querySelector('#transcend-consent-manager[style^="position: fixed; z-index: "], #transcend-consent-manager-tcf-ui[style^="position: fixed;"][style*="z-index: "]');
             if (transcend && window.localStorage.getItem('tcmConsent') === null) {
                console.log('[Cookie auto decline] Detected: transcend.io');
                cookiebannerstatus.anbieter = 'transcend.io';
                advancedrun = false;
+               const transcendneu = document.querySelector('#transcend-consent-manager-tcf-ui[style^="position: fixed;"][style*="z-index: "]');
                // Shadow Root is closed so the addon need to go this way.
                if (transcend.shadowRoot === null) {
-                  window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
-                  beenden();
-                  location.reload();
+                  if (!transcendneu) {
+                     window.localStorage.setItem('tcmConsent', '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}');
+                     cookiebannerstatus.knopfstatus = 'abgelehnt';
+                     beenden();
+                     location.reload();
+                  } else {
+                     window.localStorage.setItem('tcmConsent', '{"purposes":{"GcmAdvanced":"false","Advertising":false,"Functional":true,"SaleOfInfo":"false","Analytics":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":false,"updated":true,"metadata":{"tcmp":{"tcf":{"tcString":"CQann8AQann8AGPABAENCDFgAAAAAAAAAAAAAAALzgAAAAAA.YAAAAAAAAAAA"}}},"metadataTimestamp":"' + cookiedatum + '"}');
+                     window.localStorage.setItem('tcmTcf', '"CQann8AQann8AGPABAENCDFgAAAAAAAAAAAAAAALzgAAAAAA.YAAAAAAAAAAA"');
+                     cookiebannerstatus.knopfstatus = 'abgelehnt';
+                     beenden();
+                     location.reload();
+                  }
                } else {
                   document.cookie = 'tcm={"purposes":{"SaleOfInfo":false,"Functional":true,"Analytics":false,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":false,"updated":true};' + nc;
                   beenden();
@@ -2138,11 +2139,20 @@
                   }
 
                   if (advancedslowdown === 0) {
-                     let elemente = document.querySelectorAll('body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], :empty, :disabled)');
+                     let elemente = document.querySelectorAll('body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], :disabled, *:has(nav, address, video, audio, input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="submit"], [type="image"], [type="submit"], [type="text"], [type="url"])))');
+                     elemente = Array.from(elemente);
 
                      // console.log('-----------------------');
 
                      for (let i = 0; i < elemente.length; i++) {
+                        if (elemente[i].shadowRoot) {
+                           // console.log(elemente[i])
+                           let shadowrootelemente = elemente[i].shadowRoot.querySelectorAll('*:not(html, body, head, abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], :empty, :disabled)');
+                           shadowrootelemente = Array.from(shadowrootelemente);
+                           elemente = elemente.concat(shadowrootelemente);
+                        }
+
+                        // console.log(elemente)
                         const elementtext = elemente[i].innerText.toLowerCase();
                         const elementhtml = elemente[i].outerHTML.toLowerCase();
                         if (elementtext && elementtext.length >= 50 && elementtext.length < 3500 && (elementhtml.includes('cookie') || elementhtml.includes('privacy policy') || elementhtml.includes('privacy-policy') || elementhtml.includes('datenschutzerklärung') || elementhtml.includes('datenschutzeinstellung') || (document.documentElement.lang && (document.documentElement.lang.toLowerCase() === 'tr' && elementtext.includes('çerezler')) || (document.documentElement.lang.toLowerCase() === 'fi' && elementtext.includes('tietosuojalauseke'))))) {
@@ -2174,7 +2184,7 @@
                               const elementrect = elemente[i].getBoundingClientRect();
                               const bodycss = window.getComputedStyle(document.querySelector('body'));
 
-                              if ((elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' || (bodycss.getPropertyValue('overflow') === 'hidden' && parseInt(bodycss.getPropertyValue('height')) > window.innerHeight)) && (elementrect.top + 100) > (window.innerHeight - elementrect.bottom)) {
+                              if ((elemente[i].getRootNode().toString() === '[object ShadowRoot]' || (elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' || (bodycss.getPropertyValue('overflow') === 'hidden' && parseInt(bodycss.getPropertyValue('height')) > window.innerHeight))) && (elementrect.top + 100) > (window.innerHeight - elementrect.bottom)) {
                                  const a = elemente[i];
                                  if (sichtbarkeitsprüfung(a) === true) {
                                     // console.log(elemente[i]);
@@ -2196,7 +2206,7 @@
                                           const a = knöpfe[k];
                                           let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
                                           const knopfcss = window.getComputedStyle(knöpfe[k]);
-                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON') && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || (knöpfe[k].getAttribute('href') && knöpfe[k].getAttribute('href').includes('/') === false) || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
+                                          if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON' || (knöpfe[k].parentElement.nodeName !== 'p' && knöpfe[k].parentElement.innerText.length < 150 && knöpfe[k].offsetHeight > 25)) && knöpfe[k].attributes.length >= 1 && knopfcss.getPropertyValue('cursor') === 'pointer' && (knöpfe[k].nodeName !== 'A' || (knöpfe[k].getAttribute('href') && knöpfe[k].getAttribute('href').includes('/') === false) || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
                                              // console.log(knöpfe[k])
 
                                              // Knöpfe start
@@ -2229,7 +2239,6 @@
                                              }
                                              // Knöpfe ende
                                           }
-
                                        }
                                        if (finalerknopf) {
                                           cookiebannerfinalakzeptiert = true;
@@ -2926,10 +2935,6 @@
             checkcookie: 'show_gdpr_consent_messaging',
             selector: 'body #cx_bottom_banner > button#cx_button_close'
          }, {
-            seite: 'canva.com',
-            checkcookie: 'CTC',
-            selector: 'div[class][role="dialog"][aria-modal="false"][aria-labelledby=":r0:"][aria-describedby=":r1:"] button + button[type="button"]'
-         }, {
             seite: 'oup.com',
             checkcookie: 'oup-cookie',
             selector: '#cookieMessage_content a.cookiepolicycontinue'
@@ -3484,7 +3489,7 @@
             seite: 'assets.poool.fr',
             selector: '#app .p3-widget-consent > :not(.p3-d-xl-none) .consent-action > .p3-button-wrapper > button.p3-unlock-button + button'
          }, {
-            seite: 'nature.com',
+            seite: 'nature.com,scientificamerican.com',
             checkcookie: '26C%3DC01%26D%3Dtrue',
             selector: '.cc-banner button.cc-banner__button-reject, .cc-banner:not(:has(button.cc-banner__button-reject)) button[data-cc-action="preferences"] -> .cc-preferences__dialog button[data-cc-action="reject"]'
          }, {
@@ -3642,6 +3647,10 @@
             seite: 'chat.mistral.ai',
             selector: 'div[data-state][style="pointer-events: auto;"][aria-labelledby]:has(> div:first-child > h2:first-child + p:last-child > a[href="https://mistral.ai/terms/#privacy-policy"]) > button',
             checkcookie: 'intercom.intercom-state'
+         }, {
+            seite: 'trakt.tv',
+            selector: '.trakt-cookie-notice button[data-testid="consent-button"]',
+            checkcookie: '_traktconsent'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
