@@ -143,10 +143,12 @@
       };
       let knöpfetextcheck = function (b) {
          let textcomplete = b.innerText.toLowerCase();
-         if (getComputedStyle(b, '::before').content !== 'none') {
+         const cssbefore = getComputedStyle(b, '::before').content;
+         const cssafter = getComputedStyle(b, '::after').content;
+         if (cssbefore && cssbefore !== 'none' && cssbefore !== '""') {
             textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
          }
-         if (getComputedStyle(b, '::after').content !== 'none') {
+         if (cssafter && cssafter !== 'none' && cssafter !== '""') {
             textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
          }
          if (textcomplete.length < 2 && b.value) {
@@ -161,13 +163,13 @@
                return 'ablehntext';
             }
          }
-         const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl speichern', 'auswahl übernehmen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan'];
+         const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan'];
          for (let i = 0; i < speichertext.length; i++) {
             if (b === speichertext[i]) {
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'alles akzeptieren', 'alle cookies akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'cookies erlauben', 'alle cookies erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen und weiter', 'akzeptieren und weiter', 'weiter mit den empfohlenen cookies', 'okay', 'okey', 'ok', 'ок', 'nehme an', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'accept all cookies', 'got it', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'acknowledge', 'analytics only', 'ok, i agree', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'aceptar', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter & fermer', 'accepter and fermer', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno'];
+         const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'alles akzeptieren', 'alle cookies akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'zustimmen', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'cookies erlauben', 'alle cookies erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen und weiter', 'akzeptieren und weiter', 'weiter mit den empfohlenen cookies', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'accept all cookies', 'got it', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'acknowledge', 'analytics only', 'ok, i agree', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'přijmout', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'aceptar', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter & fermer', 'accepter and fermer', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if (b === akzeptiertext[i]) {
                return 'akzeptiertext';
@@ -194,7 +196,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass', 'abonne'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'pur', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
@@ -2295,7 +2297,7 @@
             noframe: true
          }, {
             seite: 'europa.eu',
-            selector: '#cookie-consent-banner a[href="#refuse"].cck-actions-button',
+            selector: '#cookie-consent-banner a[href="#refuse"]',
             checkcookie: 'consent_cookies'
          }, {
             seite: 'deutsche-islam-konferenz.de,digital-fuer-deutschland.de,bvl.bund.de,auslandsschulwesen.de,bamf.de,thw.de,itzbund.de,bafin.de',
@@ -3098,8 +3100,8 @@
             selector: '#cookie-notice button#accept-cookies-usage'
          }, {
             seite: 'tk.de',
-            checkcookie: 'tkConsentNutzergerechteGestaltung',
-            selector: '.g-consentmanager a[data-tk-trackaction*="estätigen"]'
+            checkcookie: 'CONSENTMGR',
+            selector: '.consent-manager .consent-manager__button-container > tkds-button[variant="secondary"]'
          }, {
             seite: 'vdek.com',
             checkcookie: 'consent_gkv',
@@ -3161,11 +3163,6 @@
             seite: 'canyon.com',
             checkcookie: 'CanyonCookieSeen',
             selector: '.cookiesModal .js-saveCookiesChoice.button--secondary'
-         }, {
-            seite: 'futurezone.at',
-            checkcookie: '__pid',
-            selector: '.consentOverlay button',
-            countdown: 1500
          }, {
             seite: 'robert-thomas.de',
             checkcookie: 'cookieAllow',
