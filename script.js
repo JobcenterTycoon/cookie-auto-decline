@@ -573,8 +573,8 @@
                cookiebannerstatus.anbieter = 'cookiebot.com';
                ablehnen = cookiebot.querySelector('button.cint-cookiebot__buttons__deny, :not([style="display: none;"]) > #CybotCookiebotDialogBodyButtonDecline, button.cookie-alert-decline-button, [class*="cookie"] a[href="javascript:void(0)"][onclick="Cookiebot.dialog.submitDecline()"], #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll');
                speichern = cookiebot.querySelector(':is([id*="OptinAllowallSelection"], [id*="AcceptSelected"], [onclick*="submitConsent"]):is(button, a, span)');
-               einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize, #CybotCookiebotDialogBodyButtonDetails');
-               akzeptieren = cookiebot.querySelector('button#CybotCookiebotDialogBodyButtonAccept');
+               einstellungen = cookiebot.querySelector('#CybotCookiebotDialogBodyLevelButtonCustomize, #CybotCookiebotDialogBodyButtonDetails, #CybotCookiebotDialogBodyLevelDetailsButton');
+               akzeptieren = cookiebot.querySelector('button#CybotCookiebotDialogBodyButtonAccept, #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll');
                nureinklickeinstellungen = true;
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
