@@ -128,19 +128,19 @@
             setcookie: 'consentUUID=f9b4fee9-ba11-428f-8246-1658e587879d_36_44;'
          }, {
             seite: 'autobild.de',
-            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47_49;'
+            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47_49_50;'
          }, {
             seite: 'bild.de',
             setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44_47_49;'
          }, {
             seite: 'computerbild.de',
-            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47_49;'
+            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47_49_50;'
          }, {
             seite: 'stern.de',
-            setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46_48;'
+            setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46_48_50;'
          }, {
             seite: 'pcwelt.de',
-            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49;'
+            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49_50;'
          }, {
             seite: 'focus.de',
             setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46_49;'
@@ -149,7 +149,7 @@
             setcookie: 'consentUUID=d67edd5b-49a2-4930-a0e2-c9527d32ba8d_49;'
          }, {
             seite: 'geo.de',
-            setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46_48;'
+            setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46_48_50;'
          }, {
             seite: 'giga.de',
             setcookie: 'consentUUID=f16bebe9-e880-48aa-a19a-5ad09c3b0c2d_47;'
@@ -164,14 +164,14 @@
             setcookie: 'consentUUID=ada63ca7-2651-4dc8-8b29-d77b19fd2b81_46;'
          }, {
             seite: 'likehifi.de',
-            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48;'
+            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48_50;'
          }, {
             seite: 'backenmachtgluecklich.de',
             setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41_46_47;',
             nowww: true
          }, {
             seite: 'raspberry-pi-geek.de',
-            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48;'
+            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48_50;'
          }, {
             seite: 'n-tv.de',
             setcookie: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44_46_49;'
@@ -195,7 +195,7 @@
             setcookie: 'consentUUID=10a7171e-7071-4c34-9012-fe991aca25b7_42_44;'
          }, {
             seite: 'telepolis.de',
-            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46_48;'
+            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46_48_50;'
          }, {
             seite: 'manager-magazin.de',
             setcookie: 'consentUUID=988dfc32-83c2-4b4c-96c1-4d5aa8889227_42;'
@@ -1918,6 +1918,10 @@
             seite: 'streamawards.de',
             setstoragename: 'cookie-consent',
             setstoragecontent: 'declined'
+         }, {
+            seite: 'groupsumi.de',
+            setstoragename: '@sumi/consent',
+            setstoragecontent: '{"essential":true,"performance":false,"functional":true,"advertising":false}'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
