@@ -142,7 +142,7 @@
          }
       };
       let knöpfetextcheck = function (b) {
-         let textcomplete = b.innerText.toLowerCase().trim();;
+         let textcomplete = b.innerText.toLowerCase().trim();
          const cssbefore = getComputedStyle(b, '::before').content;
          const cssafter = getComputedStyle(b, '::after').content;
          if (cssbefore && cssbefore !== 'none' && cssbefore !== '""') {
