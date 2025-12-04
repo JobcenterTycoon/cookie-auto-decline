@@ -1922,6 +1922,13 @@
             seite: 'groupsumi.de',
             setstoragename: '@sumi/consent',
             setstoragecontent: '{"essential":true,"performance":false,"functional":true,"advertising":false}'
+         }, {
+            seite: 'brekz.de',
+            setstoragename: 'brekzConsentCookiebar_settings',
+            setstoragecontent: '{"ad_user_data":false,"ad_personalization":false,"ad_storage":false,"analytics_storage":false,"personalization_storage":false,"functionality_storage":true}'
+         }, {
+            seite: 'petcure.nl',
+            setcookie: 'cookie_consent=dismiss;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
