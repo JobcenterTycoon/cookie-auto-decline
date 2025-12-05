@@ -1929,6 +1929,10 @@
          }, {
             seite: 'petcure.nl',
             setcookie: 'cookie_consent=dismiss;'
+         }, {
+            seite: 'posthog.com',
+            setstoragename: 'cookie_consent',
+            setstoragecontent: 'acknowledged'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
