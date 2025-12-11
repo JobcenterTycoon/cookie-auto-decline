@@ -313,7 +313,13 @@
                         const a = einstellungenknöpfe[i];
                         if (getComputedStyle(a).getPropertyValue('display') !== 'none' && getComputedStyle(a).getPropertyValue('visibility') !== 'hidden') {
                            cookiebannerstatus.knopfstatus = 'einstellungen';
-                           a.click();
+                           if (einstellungenknöpfe[i].parentElement.parentElement.querySelector('.required-consent')) {
+                              if (einstellungenknöpfe[i].innerText.toLowerCase().trim() === 'zustimmen') {
+                                 a.click();
+                              }
+                           } else {
+                              a.click();
+                           }
                         }
                      }
                   } else {
@@ -2200,7 +2206,7 @@
                                     }
                                     if (finalercontainer) {
                                        // console.log(finalercontainer);
-                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), a:is([class*="button"], [class*="btn"], [id*="button"], [id*="btn"], [class*="Button"], [id*="Button"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"], [class*="checkmark"]), div:has(> span:only-child:empty)');
+                                       const knöpfe = finalercontainer.querySelectorAll('button:not(:disabled), [type="button"]:not(button), [role="button"]:not(button), a:not([href^="https://"], [href^="http://"]), a:is([class*="button"], [id*="button"], [class*="Button"], [id*="Button"], [class*="btn"], [id*="btn"]), *:not(:has(> *)):not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, label, legend, li, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], footer, aside, dialog, :disabled, [class*="toggle"], [class*="switch"], [class*="checkmark"]), div:has(> span:only-child:empty)');
 
                                        let gewichtung = 3;
                                        let finalerknopf;
