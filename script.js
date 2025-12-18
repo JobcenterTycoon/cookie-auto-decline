@@ -57,8 +57,8 @@
       const updatecookiebannerstatuscookie = function () {
          if (document.hidden !== true && window.self === window.top) {
             if (cookiebannerstatus.anbieter !== 'unbekannt' || cookiebannerstatus.knopfstatus !== 'suche') {
-                     cookiebannerstatus.suchstatus = 'gefunden';
-                  }
+               cookiebannerstatus.suchstatus = 'gefunden';
+            }
 
             browser.storage.local.get('cookiebannerstatuscookie').then(function (a) {
                if (a && a.cookiebannerstatuscookie) {
@@ -81,8 +81,8 @@
                   if (istdiedomainvorhanden === false) {
                      tempcookiebannerstatus.push(cookiebannerstatus);
                      browser.storage.local.set({
-                              cookiebannerstatuscookie: tempcookiebannerstatus
-                           });
+                        cookiebannerstatuscookie: tempcookiebannerstatus
+                     });
                   }
                } else {
                   browser.storage.local.set({
@@ -294,7 +294,7 @@
             let akzeptieren;
             let nureinklickeinstellungen;
 
-            // iframe klicker
+            // iFrame Klicker
             if (window.self !== window.top) {
 
                // cdn.privacy-mgmt.com
@@ -314,7 +314,8 @@
                         if (getComputedStyle(a).getPropertyValue('display') !== 'none' && getComputedStyle(a).getPropertyValue('visibility') !== 'hidden') {
                            cookiebannerstatus.knopfstatus = 'einstellungen';
                            if (einstellungenknöpfe[i].parentElement.parentElement.querySelector('.required-consent')) {
-                              if (einstellungenknöpfe[i].innerText.toLowerCase().trim() === 'zustimmen') {
+                              const einstellungenknöpfetext = einstellungenknöpfe[i].innerText.toLowerCase().trim();
+                              if (einstellungenknöpfetext === 'zustimmen' || einstellungenknöpfetext === 'einwilligen') {
                                  a.click();
                               }
                            } else {
@@ -334,6 +335,9 @@
                         if (akzeptieren[i].checkVisibility() && paybuttons(c) !== true) {
                            akzeptieren = akzeptieren[i];
                         }
+                     }
+                     if (akzeptieren.length === 0) {
+                        akzeptieren = undefined;
                      }
                   }
                   klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -608,7 +612,7 @@
                         cookiebannerstatus.knopfstatus = 'einstellungen';
                         realcookiebannerpro[i].click();
                         window.setTimeout(function () {
-                           realcookiebannerpro = document.querySelectorAll('body > div[id^="a"][class^="a"] > dialog.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > a:first-child + div + div[class*="-ext-"] > div:first-child > div[class*="-ext-"] > a[href="#"], body > div[id^="a"][class]> div.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > div[style^="background"] > div:only-child > div > div[style*="order"]'); 
+                           realcookiebannerpro = document.querySelectorAll('body > div[id^="a"][class^="a"] > dialog.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > a:first-child + div + div[class*="-ext-"] > div:first-child > div[class*="-ext-"] > a[href="#"], body > div[id^="a"][class]> div.wp-exclude-emoji > [class^="animate__animated animate__"] > div:only-child > div[style^="background"] > div:only-child > div > div[style*="order"]');
                            for (let k = 0; k < realcookiebannerpro.length; k++) {
                               if (realcookiebannerpro[k].offsetWidth > 0 && (realcookiebannerpro[k].innerText.includes('speichern') || realcookiebannerpro[k].innerText.includes('Potvrdit moje volby'))) {
                                  cookiebannerstatus.knopfstatus = 'gespeichert';
@@ -2003,6 +2007,16 @@
                ablehnen = omcookie.querySelector('button[data-omcookie-panel-save="min"]');
                speichern = omcookie.querySelector('button[data-omcookie-panel-save="save"]');
                akzeptieren = omcookie.querySelector('button[data-omcookie-panel-save="all"]');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
+            // utiq.com
+            // Der utiq.com Einwilligungsbanner erscheint nur mit deaktivierten Adblocker und erst nachdem der "normale" Cookie Banner abgelehnt wurde.
+            const utiq = document.querySelector('div[id^="utiq"]:has(a[href^="https://consenthub.utiq.com/"])');
+            if (utiq && document.cookie.includes('utiq_consent_status') === false && domainohnewww != 'utiq.com') {
+               console.log('[Cookie auto decline] Detected: utiq.com');
+               cookiebannerstatus.anbieter = 'utiq.com';
+               ablehnen = utiq.querySelector('#utiqConsCloseButton, button#utiq__reject_button');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -3734,7 +3748,9 @@
                                  } else {
                                     const normalselector = document.querySelector(selectors[tiefe]);
                                     const a = normalselector;
-                                    if (normalselector && (sichtbarkeitsprüfung(a) || (regeln[i].keinesichtbarkeitsprüfung === true && normalselector.checkVisibility({checkDisplayNone: true})))) {
+                                    if (normalselector && (sichtbarkeitsprüfung(a) || (regeln[i].keinesichtbarkeitsprüfung === true && normalselector.checkVisibility({
+                                          checkDisplayNone: true
+                                       })))) {
                                        cookiebannerspecificakzeptiert = true;
                                        foundbutton = true;
                                        forcesessionstorage();
@@ -3958,6 +3974,4 @@
          }
       }
    };
-
-
 })();
