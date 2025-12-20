@@ -145,10 +145,10 @@
          let textcomplete = b.innerText.toLowerCase().trim();
          const cssbefore = getComputedStyle(b, '::before').content;
          const cssafter = getComputedStyle(b, '::after').content;
-         if (cssbefore && cssbefore !== 'none' && cssbefore !== '""' && (cssbefore !== cssbefore.toLowerCase() || cssbefore !== cssbefore.toUpperCase())) {
+         if (cssbefore && cssbefore !== 'none' && cssbefore !== '""' && (cssbefore !== cssbefore.toLowerCase() || cssbefore !== cssbefore.toUpperCase() || cssbefore.match(/([0-9]|€|\$|\?)/))) {
             textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
          }
-         if (cssafter && cssafter !== 'none' && cssafter !== '""' && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase())) {
+         if (cssafter && cssafter !== 'none' && cssafter !== '""' && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase() || cssafter.match(/([0-9]|€|\$|\?)/))) {
             textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
          }
          if (textcomplete.length < 2 && b.value) {
