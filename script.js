@@ -3964,6 +3964,12 @@
             }, 502);
          } else if (window.location.hostname === 'www.verivox.de') {
             if (window.localStorage.getItem('uc_gcm') === null) {
+               let banner = document.querySelector('.cmp-container');
+               let bannerhintergrund = document.querySelector('.usercentrics-bg');
+               if (banner && bannerhintergrund) {
+                  banner.style.visibility = 'hidden';
+                  bannerhintergrund.style.visibility = 'hidden';
+               }
                let findecookiebanner = window.setInterval(function () {
                   const ablehnen = document.querySelector('.cmp-container button.gdpr-deny-all');
                   if (ablehnen && ablehnen.checkVisibility()) {
@@ -3974,7 +3980,13 @@
                }, 400);
                window.setTimeout(function () {
                   clearInterval(findecookiebanner);
-               }, 2000);
+                  banner = document.querySelector('.cmp-container');
+                  bannerhintergrund = document.querySelector('.usercentrics-bg');
+                  if (banner && bannerhintergrund) {
+                     banner.style.visibility = 'visible';
+                     bannerhintergrund.style.visibility = 'visible';
+                  }
+               }, 4000);
             }
          }
       } else {
