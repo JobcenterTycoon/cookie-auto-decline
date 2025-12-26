@@ -808,14 +808,19 @@
             }
 
             // fastcmp.com
-            const fastcmp = document.querySelector('script[src="https://static.fastcmp.com/fast-cmp-stub.js"]');
+            const fastcmp = document.querySelector('script[src^="https://static.fastcmp.com/"]');
             if (fastcmp && document.cookie.includes('fastCMP-addtlConsent') === false) {
                console.log('[Cookie auto decline] Detected: fastcmp.com');
                cookiebannerstatus.anbieter = 'fastcmp.com';
                advancedrun = false;
                const check = document.querySelector('iframe#fast-cmp-iframe');
                if (check) {
-                  ablehnen = check.contentWindow.document.querySelector('.fast-cmp-home-refuse > button.fast-cmp-button-secondary');
+                  const ablehnenbuttons = check.contentWindow.document.querySelectorAll('.fast-cmp-home-refuse > button.fast-cmp-button-secondary');
+                  for (let i = 0; i < ablehnenbuttons.length; i++) {
+                     if (ablehnenbuttons[i].checkVisibility()) {
+                        ablehnen = ablehnenbuttons[i]
+                     }
+                  }
                   akzeptieren = document.querySelector('iframe#fast-cmp-iframe').contentWindow.document.querySelector('.fast-cmp-paywall-home__nav-box > button.fast-cmp-button-primary');
                   klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                }
