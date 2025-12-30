@@ -154,28 +154,29 @@
          if (textcomplete.length < 2 && b.value) {
             textcomplete = textcomplete + b.value.toLowerCase().trim();
          }
+         textcomplete = textcomplete.replace(/( | | |​|­)/, ' ').trim();
          b = textcomplete;
          const c = b;
          const paybutton = paybuttons(c);
-         const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'Odmítnout', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'odmítnout vše', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'tout accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'povolit jen nezbytné', 'odrzuć niewymagane', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies'];
+         const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'tout accepter', 'accepter tout', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'odrzuć niewymagane', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'odrzuć wszystko', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas'];
          for (let i = 0; i < ablehntext.length; i++) {
             if (b === ablehntext[i] && b.includes('einstellungen') === false) {
                return 'ablehntext';
             }
          }
-         const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'einstellungen verwalten', 'auswahl speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren'];
+         const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'speichern & schließen', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren', 'accepteer selectie'];
          for (let i = 0; i < speichertext.length; i++) {
             if (b === speichertext[i]) {
                return 'speichertext';
             }
          }
-         const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'got it', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter & fermer', 'accepter and fermer', 'acceptera alla', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu'];
+         const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'acceptera', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden'];
          for (let i = 0; i < akzeptiertext.length; i++) {
             if (b === akzeptiertext[i]) {
                return 'akzeptiertext';
             }
          }
-         const optionstext = ['einstellungen', 'option', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies'];
+         const optionstext = ['einstellungen', 'einstellungen verwalten', 'option', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies', 'hantera', 'ustawienia plików cookie', 'ayarları değiştir', 'ajustes', 'dostosuj', 'podrobné nastavení', 'voorkeuren instellen', 'voorkeuren aanpassen', 'paramétrage', 'anpassa cookies', 'pas aan', 'kişiselleştirin', 'ustawienia plików cookies', 'hallitse', 'indstillinger', 'manage settings', 'configurar', 'configurar as minhas escolhas'];
          for (let i = 0; i < optionstext.length; i++) {
             if (b.includes(optionstext[i]) && paybutton !== true) {
                return 'optionstext';
@@ -640,7 +641,7 @@
             }
 
             // onetrust.com
-            const onetrust = document.querySelector('#onetrust-consent-sdk, #onetrust-cookie-popup');
+            const onetrust = document.querySelector('#onetrust-consent-sdk:has(> * > *), #onetrust-cookie-popup');
             if (onetrust) {
                console.log('[Cookie auto decline] Detected: onetrust.com');
                cookiebannerstatus.anbieter = 'onetrust.com';
@@ -818,7 +819,7 @@
                   const ablehnenbuttons = check.contentWindow.document.querySelectorAll('.fast-cmp-home-refuse > button.fast-cmp-button-secondary');
                   for (let i = 0; i < ablehnenbuttons.length; i++) {
                      if (ablehnenbuttons[i].checkVisibility()) {
-                        ablehnen = ablehnenbuttons[i]
+                        ablehnen = ablehnenbuttons[i];
                      }
                   }
                   akzeptieren = document.querySelector('iframe#fast-cmp-iframe').contentWindow.document.querySelector('.fast-cmp-paywall-home__nav-box > button.fast-cmp-button-primary');
@@ -2108,7 +2109,7 @@
                         text.includes('نستخدم ملفات') ||
                         text.includes('çerez konumlandırmaktayız')) {
                         // Buttons suchen und klicken.
-                        const knöpfe = a.querySelectorAll('button:not(:disabled), a:not([href*="/"]), a[href*="optOut"], a[href*="optout"], a[class*="button"], [role="button"], input[type="button"], input[type="submit"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"], [id*="essential"], [class*="essential"], [id*="chose_no"], [class*="chose_no"], [title*="blehnen"]):is(span, div):not(:has(button, a, input[type="checkbox"]))');
+                        const knöpfe = a.querySelectorAll('button:not(:disabled), a:not([href*="/"]), a[href*="optOut"], a[href*="optout"], a[class*="button"], [role="button"], input[type="button"], input[type="submit"], span[class*="button"], :is([class*="dismiss"], [id*="dismiss"], [class*="preferences"], [id*="preferences"], [class*="submit"], [id*="submit"], [class*="close"], [id*="close"], [class*="reject"], [id*="reject"], [class*="decline"], [id*="decline"], [class*="mandatory"], [id*="mandatory"], [class*="accept"], [id*="accept"], [id*="ausblenden"], [class*="ausblenden"], [id*="essential"], [class*="essential"], [id*="chose_no"], [class*="chose_no"], [title*="blehnen"]):is(span, div):not(:has(button, a, input[type="checkbox"]))');
                         if (knöpfe.length > 0) {
                            let finalerknopf;
                            let gewichtung = 3;
@@ -2166,7 +2167,7 @@
                   }
                }
 
-               // ENDE Einfachr alter Erkennungsscript
+               // ENDE Einfacher alter Erkennungsscript
 
                // Erweiterte Cookie Banner Erkennung
                if (erweitertecookiebannererkennungaktiviert === true && altererkennungsscriptausgeführt === false) {
@@ -2215,14 +2216,14 @@
                                  break;
                               }
                            }
-                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button, input[type="button"]').length < 12 && elemente[i].querySelectorAll('a:has(> *:not(svg) > *:not(svg) > *:not(svg))').length === 0 && inputs2.length === 0 && sprungmarken2 === false) {
-                              // console.log(elemente[i])
+                           if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && elemente[i].querySelectorAll('button:not([class*="dropdown"]), input[type="button"]').length < 12 && elemente[i].querySelectorAll('a:has(> *:not(svg, i, strong, p) > *:not(svg, i, strong, p) > *:not(svg, i, strong, p))').length === 0 && inputs2.length === 0 && sprungmarken2 === false) {
+                               // console.log(elemente[i])
 
                               const elementcss = window.getComputedStyle(elemente[i]);
                               const elementrect = elemente[i].getBoundingClientRect();
                               const bodycss = window.getComputedStyle(document.querySelector('body'));
 
-                              if ((elemente[i].getRootNode().toString() === '[object ShadowRoot]' || (elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' || (bodycss.getPropertyValue('overflow') === 'hidden' && parseInt(bodycss.getPropertyValue('height')) > window.innerHeight))) && (elementrect.top + 100) > (window.innerHeight - elementrect.bottom)) {
+                              if ((elemente[i].getRootNode().toString() === '[object ShadowRoot]' || elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' ||(bodycss.getPropertyValue('overflow') === 'hidden' && (parseInt(bodycss.getPropertyValue('height')) > window.innerHeight || bodycss.getPropertyValue('max-height') !== 'none'))) && (elementrect.top + 100) > (window.innerHeight - elementrect.bottom)) {
                                  const a = elemente[i];
                                  if (sichtbarkeitsprüfung(a) === true) {
                                     // console.log(elemente[i]);
@@ -2250,7 +2251,6 @@
                                           let knöpfetext = knöpfe[k].innerText.toLowerCase().trim();
                                           const knopfcss = window.getComputedStyle(knöpfe[k]);
                                           if (sichtbarkeitsprüfung(a) === true && knöpfe[k].offsetHeight < 70 && knöpfe[k].attributes.length >= 1 && (knöpfe[k].offsetWidth < 390 || (knöpfe[k].offsetWidth < 470 && knöpfetext.length > 40) || knöpfe[k].nodeName === 'BUTTON' || (knöpfe[k].parentElement.nodeName !== 'p' && knöpfe[k].parentElement.innerText.length < 150 && knöpfe[k].offsetHeight > 25)) && (knopfcss.getPropertyValue('cursor') === 'pointer' || knöpfeclassidisbutton) && (knöpfe[k].nodeName !== 'A' || knöpfeclassidisbutton === true || (knöpfe[k].getAttribute('href') && knöpfe[k].getAttribute('href').includes('/') === false) || knopfcss.getPropertyValue('border').startsWith('0px') === false || knopfcss.getPropertyValue('padding') !== '0px')) {
-
                                              // Knöpfe start
                                              const knöpfevalue = knöpfe[k].value;
                                              if (knöpfevalue && knöpfetext.length <= 1) {
@@ -2761,9 +2761,6 @@
             checkcookie: 'cookie_warning_dismissed',
             selector: '.widget-cookie-banner a[id$="-decline"][data-aid="FOOTER_COOKIE_DECLINE_RENDERED"]'
          }, {
-            seite: 'smdv.de,voelkner.de,digitalo.de,getgoods.com',
-            selector: '.reveal__overlay[style="display: block;"] button[class$="button_decline"][data-cookie_consent]'
-         }, {
             seite: 'phoenix.de',
             checkstorage: 'user_anonymous_profile',
             setstoragename: 'user_anonymous_profile',
@@ -3176,7 +3173,7 @@
             checkcookie: 'cookie-banner',
             selector: '.bhh-cookie-banner button.bhh-cookie-banner__btn--close'
          }, {
-            seite: 'mediamarkt.de,saturn.de',
+            seite: 'mediamarkt.de,saturn.de,mediamarkt.pl',
             checkcookie: 'pwaconsent',
             selector: '[data-test="mms-privacy-layer"] button[data-test="pwa-consent-layer-deny-all"]'
          }, {
@@ -3681,10 +3678,6 @@
             selector: '.trakt-cookie-notice button[data-testid="consent-button"]',
             checkcookie: '_traktconsent'
          }, {
-            seite: 'mediamarkt.nl',
-            selector: '.pwa-consent-modal-wrapper button[data-test="pwa-consent-layer-save-settings"]',
-            checkcookie: 'pwaconsent'
-         }, {
             seite: 'sparkasse.de',
             selector: '[data-testid="consentManager"] button[data-testid="privacyBanner-rejectAll"]',
             checkcookie: 'TC_PRIVACY'
@@ -3696,6 +3689,26 @@
             seite: 'leo.org',
             selector: 'ion-modal .leo-abo-hint ion-button[class="ion-color ion-color-success md button button-solid ion-activatable ion-focusable hydrated"]',
             checkcookie: 'eupubconsent-v2'
+         }, {
+            seite: 'ihrlabor.befundpost.at',
+            selector: '#privacyConsent a#privacyButton',
+            checkcookie: 'consent'
+         }, {
+            seite: 'tradingview.com',
+            selector: '[style="position: fixed; z-index: 0;"] button[class^="managePreferences"] -> [class^="privacyPreferenceDialog"] button[data-overflow-tooltip-text="Sauvegarder les préférences"]',
+            checkcookie: 'cookiesSettings'
+         }, {
+            seite: 'bondix.de',
+            selector: '#Compliance-cs-banner button.Compliance-cs-reject-btn',
+            checkcookie: '_cmplc_previous_preference_id'
+         }, {
+            seite: 'united-domains.de',
+            selector: '.cookie-layer-dialog form.cookie-layer-form button.show-details -> .cookie-layer-dialog form.cookie-layer-form button.confirm-selection',
+            checkcookie: 'CookieSettingsGroupId'
+         }, {
+            seite: 'santander.nl',
+            selector: '.cookie-notification a#btnCookieShowSettings -> .cookie-notification-moreinfo a#btnCookieSaveSettings',
+            checkcookie: 'santander_cookie_consent_gtm'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
