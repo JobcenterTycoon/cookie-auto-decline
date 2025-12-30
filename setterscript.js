@@ -561,10 +561,6 @@
             seite: 'uni-bielefeld.de',
             setcookie: 'ubf-cookie-consent=false;'
          }, {
-            seite: 'united-domains.de',
-            setcookie: 'CookieSettingsGroupId=01917f6d-780c-7172-96cb-8560844fcd8d.12;',
-            reload: true
-         }, {
             seite: 'poolmegastore.de',
             setcookie: 'PrivacyBanner={%22tm%22:%2223-08-2024@15:30:14%22%2C%22PrivacyBanner%22:true%2C%22ttcms%22:true%2C%22website_statistic%22:false%2C%22google_analytics%22:false%2C%22ga-disable%22:true%2C%22mollie%22:true%2C%22klarna%22:true%2C%22klarna_paylater%22:false%2C%22amazon_pay%22:true%2C%22paypal_checkout%22:true%2C%22paypal_account%22:true%2C%22matomo%22:false%2C%22matomo_functional%22:true%2C%22google_youtube%22:true%2C%22PrivacyBanner_Youtube%22:true%2C%22google_maps%22:true%2C%22PrivacyBanner_GoogleMaps%22:true%2C%22google_ads_remarketing%22:false%2C%22Kelkoo%22:false%2C%22PhpBB%22:true};'
          }, {
@@ -1932,6 +1928,16 @@
          }, {
             seite: 'optimism.io',
             setcookie: 'cookieAccepted=true;'
+         }, {
+            seite: 'valtiolle.fi',
+            setcookie: 'consent={"necessary":true,"preferences":false,"analytics":false,"marketing":false,"uncategorized":false};'
+         }, {
+            seite: 'portal.csav.fr',
+            setstoragename: 'app.cookieConsent',
+            setstoragecontent: '{"sys":"ACCEPTED","ux":"REJECTED"}'
+         }, {
+            seite: 'springest.de',
+            setcookie: 'CookieConsent=%7B%22settings%22%3A%7B%22functional%22%3A1%7D%2C%22version%22%3A2%7D;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
