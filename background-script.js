@@ -2,6 +2,7 @@
 
 const ungültigedomains = ['accounts-static.cdn.mozilla.net', 'accounts.firefox.com', 'addons.cdn.mozilla.net', 'addons.mozilla.org', 'api.accounts.firefox.com', 'content.cdn.mozilla.net', 'discovery.addons.mozilla.org', 'oauth.accounts.firefox.com', 'profile.accounts.firefox.com', 'support.mozilla.org', 'sync.services.mozilla.com', '127.0.0.1', '0.0.0.0', '[::]', '[::1]', 'localhost', 'fritz.box', 'fritz.nas', 'fritz.repeater', 'myfritz.box', 'giga.cube', 'congstar.box', 'easy.box', 'kabel.box', 'pi.hole', 'speedport.ip', 'my.router', 'home.arpa'];
 let domain;
+let windowidd;
 
 function prüfestatus() {
    let storagechecknichtausführen = false;
@@ -9,6 +10,7 @@ function prüfestatus() {
       currentWindow: true,
       active: true,
    }).then(function (tabs) {
+      windowidd = tabs[0].windowId;
       if (tabs[0] && tabs[0].url && tabs[0].url.startsWith('http')) {
          // Ändere URL zu Domain und entfernen das www sowie www mit Zahlen (z.b. www2)
          domain = tabs[0].url.replace(/^https?:\/\/(www([0-9]{1,2})?\.)?/, '').replace(/\/.*/, '');
@@ -90,6 +92,7 @@ browser.runtime.onMessage.addListener(function (message) {
 function browserleisteicon(a) {
    if (a) {
       browser.action.setIcon({
+         windowId: windowidd,
          path: {
             16: 'icons/icon_16.png',
             32: 'icons/icon_32.png',
@@ -99,6 +102,7 @@ function browserleisteicon(a) {
       });
    } else {
       browser.action.setIcon({
+         windowId: windowidd,
          path: {
             64: "popup/icon_64_off.png"
          },
