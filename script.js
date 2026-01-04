@@ -24,18 +24,22 @@
 
    // Führe den Hauptscript nur aus wenn das Addon nicht für die Seite deaktiviert ist. Wird es deaktiviert stoppe das Intervall. Wird es aktiviert führe das Script einmalig aus.
    let domainkeinwww;
+   let iframereferrer;
    let scriptdeaktiviert = false;
    let prüfeobdasaddondeaktiviertist;
    if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
       let scriptbereitsausgeführt = false;
       domainkeinwww = window.location.hostname.replace(/(www([0-9]{1,2})?\.)/, '');
+      if (window.self !== window.top) {
+         iframereferrer = document.referrer.replace(/(www([0-9]{1,2})?\.)/, '').replace(/https?\:\/\//, '').replace(/\/.*/, '');
+      }
       prüfeobdasaddondeaktiviertist = function () {
          scriptdeaktiviert = false;
          browser.storage.local.get('aufdiesenseitendeaktiviert').then(function (a) {
             if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
                const seiten = a.aufdiesenseitendeaktiviert.seiten;
                for (let i = 0; i < seiten.length; i++) {
-                  if (seiten[i] === domainkeinwww) {
+                  if (seiten[i] === domainkeinwww || seiten[i] === iframereferrer) {
                      scriptdeaktiviert = true;
                   }
                }
