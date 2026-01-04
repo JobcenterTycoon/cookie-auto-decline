@@ -3,6 +3,10 @@
 
    // Führe den Hauptscript nur aus wenn das Addon nicht für die Seite deaktiviert ist. Startet den Script einmalig wenn im laufenden Betrieb das Addon aktiviert wird.
    let scriptdeaktiviert = false;
+   let iframereferrer;
+   if (window.self !== window.top) {
+         iframereferrer = document.referrer.replace(/(www([0-9]{1,2})?\.)/, '').replace(/https?\:\/\//, '').replace(/\/.*/, '');
+      }
    const domainohnewww = window.location.hostname.replace(/^(www([0-9]{1,2})?\.)?/, '');
    if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
       const prüfeobdasaddondeaktiviertist = function () {
@@ -11,7 +15,7 @@
             if (a && a.aufdiesenseitendeaktiviert && a.aufdiesenseitendeaktiviert.seiten) {
                const seiten = a.aufdiesenseitendeaktiviert.seiten;
                for (let i = 0; i < seiten.length; i++) {
-                  if (seiten[i] === domainohnewww) {
+                  if (seiten[i] === domainohnewww || seiten[i] === iframereferrer) {
                      scriptdeaktiviert = true;
                   }
                }
