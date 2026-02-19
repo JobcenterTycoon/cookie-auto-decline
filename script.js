@@ -232,7 +232,7 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'abbonati', 'pur ', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro ', 'premium', 'order ', 'login', 'register', 'registrieren', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'abbonati', 'pur ', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro ', 'premium', 'order ', 'login', 'register', 'registrieren', 'registrarse', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass'];
          for (let i = 0; i < paytext.length; i++) {
             if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
                return true;
