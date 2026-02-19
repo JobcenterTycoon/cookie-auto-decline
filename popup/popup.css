@@ -88,3 +88,13 @@ b {
   background: url("cookieswitch.png") no-repeat center;
   transition: var(--transition);
 }
+
+#cookieeinstellungscontainer {
+    text-align: left;
+    margin: 10px 0px 0px 4px;
+}
+
+#cookieeinstellungen {
+    background-color: #c0c0c0;
+    border-radius: 5px;
+}
