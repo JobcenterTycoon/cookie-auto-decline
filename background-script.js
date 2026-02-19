@@ -63,6 +63,15 @@ browser.tabs.onUpdated.addListener(function () {
 });
 browser.runtime.onInstalled.addListener(function () {
    prüfestatus();
+   browser.storage.local.get("cookieeinstellung").then(function (a) {
+         if (!a || (a && !a.cookieeinstellung) || (a && a.cookieeinstellung && !a.cookieeinstellung.einstellung)) {
+            browser.storage.local.set({
+               cookieeinstellung: {
+                  einstellung: 'ablehnen'
+               },
+            });
+         }
+      });
 });
 browser.runtime.onStartup.addListener(function () {
    prüfestatus();
