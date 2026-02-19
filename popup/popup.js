@@ -52,7 +52,6 @@ browser.tabs.query({
    if (tabs[0].url.startsWith('http')) {
       // Ändere Tab URL zu Domain und entfernen das www sowie www mit Zahlen (z.b. www2)
       domain = tabs[0].url.replace(/^https?:\/\/(www([0-9]{1,2})?\.)?/, '').replace(/\/.*/, '');
-
       statusanzeigen = function () {
          // Status anzeigen
          browser.storage.local.get('cookiebannerstatuscookie').then(function (a) {
@@ -133,7 +132,6 @@ browser.tabs.query({
             }
          });
       };
-      // statusanzeigen();
       browser.storage.local.onChanged.addListener(statusanzeigen);
 
       // Addon als ausgeschaltet anzeigen wenn die Domain eine geschütte Mozilla Domain ist.
@@ -170,6 +168,31 @@ browser.storage.local.get("erweitertecookiebannererkennung").then(function (a) {
       checkbox.click();
    }
 });
+
+// Cookie Einstellungen
+const cookieeinstellungen = document.getElementById('cookieeinstellungen');
+let cookieeinstellung = cookieeinstellungen.value;
+
+cookieeinstellungen.addEventListener('change', function() {
+   cookieeinstellung = cookieeinstellungen.value;
+   browser.storage.local.set({
+         cookieeinstellung: {
+            einstellung: cookieeinstellungen.value
+         },
+      });
+});
+
+browser.storage.local.get("cookieeinstellung").then(function (a) {
+      if (a && a.cookieeinstellung && a.cookieeinstellung.einstellung) {
+         if (a.cookieeinstellung.einstellung === 'ablehnen') {
+            document.querySelector('#cookieeinstellungscontainer option[value="ablehnen"]').setAttribute('selected', 'true');
+         } else if(a.cookieeinstellung.einstellung === 'funktional') {
+            document.querySelector('#cookieeinstellungscontainer option[value="funktional"]').setAttribute('selected', 'true');
+         } else if(a.cookieeinstellung.einstellung === 'akzeptieren') {
+            document.querySelector('#cookieeinstellungscontainer option[value="akzeptieren"]').setAttribute('selected', 'true');
+         }
+      }
+   });
 
 // Addon aktivieren/deaktivieren Option
 browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
@@ -220,5 +243,7 @@ browser.storage.local.get("aufdiesenseitendeaktiviert").then(function (a) {
          contentscriptausgeführt: true
       });
    });
-   statusanzeigen();
+   if (statusanzeigen) {
+      statusanzeigen();
+   }
 });
