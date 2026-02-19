@@ -1942,6 +1942,9 @@
          }, {
             seite: 'springest.de',
             setcookie: 'CookieConsent=%7B%22settings%22%3A%7B%22functional%22%3A1%7D%2C%22version%22%3A2%7D;'
+         }, {
+            seite: 'ihk.de',
+            setcookie: 'ccm_consent=eyIvYm9kZW5zZWUtb2JlcnNjaHdhYmVuLyI6eyJnZW4iOjIsInVjaWQiOiI3OTQ0ZDFhZTFjYmI0NDM3IiwiY29uc2VudCI6dHJ1ZSwiZW1iZWRkaW5ncyI6WyJjYWZhOTk2IiwiOWE0YTlmNSJdLCJjcmVhdGVkIjoxNzcxNTQ0Nzg3MCwidXBkYXRlZCI6MTc3MTU0NDc4NzAsImNsaWNrZWRCdXR0b24iOiJkZWNsaW5lIiwiaWZyYW1lQ29uc2VudERvbWFpbnMiOltdLCJ0Y2YiOnsicCI6W10sImxpcCI6W10sInNmIjpbXSwidiI6W10sImxpdiI6W10sImdhZCI6W119LCJsYW5nIjoiZGVfREUifX0%3D;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
