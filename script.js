@@ -2544,11 +2544,11 @@
             }
 
             // redim.de
-            const redimde = document.querySelector('#redim-cookiehint-bottom, #redim-cookiehint-modal');
+            const redimde = document.querySelector('#redim-cookiehint-bottom, #redim-cookiehint-modal, #Xredim-cookiehint-center');
             if (redimde && document.cookie.includes('reDimCookieHint') === false) {
                console.log('[Cookie auto decline] Detected: redim.de');
                cookiebannerstatus.anbieter = 'redim.de';
-               akzeptieren = redimde.querySelector('#cookiehintsubmit');
+               akzeptieren = redimde.querySelector('#cookiehintsubmit, button.uk-button-primary');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
