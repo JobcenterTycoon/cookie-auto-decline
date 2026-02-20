@@ -1952,6 +1952,9 @@
          }, {
             seite: 'budgetthuis.nl',
             setcookie: 'bt_privacy_consent=Agreed_Necessary;'
+         }, {
+            seite: 'contactimpro-tuebingen.de',
+            setcookie: 'gox_cookie_consent=;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
