@@ -1969,6 +1969,9 @@
             setcookie: 'ckies_cloudflare=allow; , ckies_google_maps=deny; , ckies_youtube=deny;',
             setstoragename: 'cookies-selected',
             setstoragecontent: 'true'
+         }, {
+            seite: 'gskill.com',
+            setcookie: 'popupWindow=1;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
