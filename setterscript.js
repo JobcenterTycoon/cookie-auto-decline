@@ -1955,6 +1955,9 @@
          }, {
             seite: 'contactimpro-tuebingen.de',
             setcookie: 'gox_cookie_consent=;'
+         }, {
+            seite: 'thunderfulgames.com',
+            setcookie: 'acceptedcookies=true;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
