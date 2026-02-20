@@ -1949,6 +1949,9 @@
             seite: 'busliniensuche.de',
             setcookie: 'CookieConfiguredOrAccepted=1;',
             reload: true
+         }, {
+            seite: 'budgetthuis.nl',
+            setcookie: 'bt_privacy_consent=Agreed_Necessary;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
