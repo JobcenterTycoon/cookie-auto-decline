@@ -1961,6 +1961,9 @@
          }, {
             seite: 'yle.fi',
             setcookie: 'userconsent=v2|;'
+         }, {
+            seite: 'bbc.com',
+            setcookie: 'ckns_explicit=1; , ckns_policy=010;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
