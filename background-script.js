@@ -5,7 +5,6 @@ let domain;
 let windowidd;
 let operatingsystem = browser.runtime.getPlatformInfo().then(function(a) {
          operatingsystem = a.os;
-         console.log(operatingsystem);
       });
 
 function prüfestatus() {
