@@ -3,6 +3,10 @@
 const ungültigedomains = ['accounts-static.cdn.mozilla.net', 'accounts.firefox.com', 'addons.cdn.mozilla.net', 'addons.mozilla.org', 'api.accounts.firefox.com', 'content.cdn.mozilla.net', 'discovery.addons.mozilla.org', 'oauth.accounts.firefox.com', 'profile.accounts.firefox.com', 'support.mozilla.org', 'sync.services.mozilla.com', '127.0.0.1', '0.0.0.0', '[::]', '[::1]', 'localhost', 'fritz.box', 'fritz.nas', 'fritz.repeater', 'myfritz.box', 'giga.cube', 'congstar.box', 'easy.box', 'kabel.box', 'pi.hole', 'speedport.ip', 'my.router', 'home.arpa'];
 let domain;
 let windowidd;
+let operatingsystem = browser.runtime.getPlatformInfo().then(function(a) {
+         operatingsystem = a.os;
+         console.log(operatingsystem);
+      });
 
 function prüfestatus() {
    let storagechecknichtausführen = false;
@@ -99,22 +103,41 @@ browser.runtime.onMessage.addListener(function (message) {
 
 
 function browserleisteicon(a) {
-   if (a) {
-      browser.action.setIcon({
-         windowId: windowidd,
-         path: {
-            16: 'icons/icon_16.png',
-            32: 'icons/icon_32.png',
-            64: 'icons/icon_64.png',
-            128: 'icons/icon_128.png',
-         },
-      });
+   if (operatingsystem === 'android') {
+      if (a) {
+         browser.action.setIcon({
+            path: {
+               16: 'icons/icon_16.png',
+               32: 'icons/icon_32.png',
+               64: 'icons/icon_64.png',
+               128: 'icons/icon_128.png',
+            },
+         });
+      } else {
+         browser.action.setIcon({
+            path: {
+               64: "popup/icon_64_off.png"
+            },
+         });
+      }
    } else {
-      browser.action.setIcon({
-         windowId: windowidd,
-         path: {
-            64: "popup/icon_64_off.png"
-         },
-      });
+      if (a) {
+         browser.action.setIcon({
+            windowId: windowidd,
+            path: {
+               16: 'icons/icon_16.png',
+               32: 'icons/icon_32.png',
+               64: 'icons/icon_64.png',
+               128: 'icons/icon_128.png',
+            },
+         });
+      } else {
+         browser.action.setIcon({
+            windowId: windowidd,
+            path: {
+               64: "popup/icon_64_off.png"
+            },
+         });
+      }
    }
 }
