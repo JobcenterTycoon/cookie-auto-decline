@@ -760,7 +760,8 @@
                speichern = document.querySelector('button.save-preference-btn-handler');
                akzeptieren = document.querySelector('#onetrust-accept-btn-handler, [onclick="OneTrust.AllowAll()"], button#cookie-onetrust-accept-all');
                if (cookieeinstellung === 'funktional') {
-                  const boxen = document.querySelectorAll('#onetrust-consent-sdk .category-menu-switch-handler');
+                  switchesdelay++;
+                  const boxen = document.querySelectorAll('#onetrust-consent-sdk :is(.category-menu-switch-handler, .accordion-text.category-item)');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i];
                      const textgeprüft = knöpfetextcheck(b);
@@ -768,7 +769,7 @@
                         boxen[i].click();
                      }
                   }
-                  let beschreibungen = onetrust.querySelectorAll('[class]:has(> h4[id^="ot-"].ot-cat-header)');
+                  let beschreibungen = onetrust.querySelectorAll('[class]:has(> h4[id^="ot-"])');
                   if (beschreibungen.length === 0) {
                      beschreibungen = document.querySelectorAll('#onetrust-consent-sdk .ot-grp-hdr1:has(> .ot-cat-header)');
                   }
@@ -956,6 +957,9 @@
                einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
                speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
                akzeptieren = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button#accept-btn');
+               if (speichern && !speichern.checkVisibility()) {
+                  speichern = document.querySelector('#qc-cmp2-container .qc-cmp2-footer > button#save-and-exit');
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
@@ -1013,6 +1017,7 @@
                   }
                }
                if (cookieeinstellung === 'funktional') {
+                  switchesdelay++;
                   const switchh = document.querySelector('#shopify-pc__prefs input[type="checkbox"]#shopify-pc__prefs__preferences-input:not([disabled], :checked)');
                   if (switchh && switchh.checkVisibility()) {
                      switchh.click();
