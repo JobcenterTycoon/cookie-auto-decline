@@ -1958,6 +1958,9 @@
          }, {
             seite: 'thunderfulgames.com',
             setcookie: 'acceptedcookies=true;'
+         }, {
+            seite: 'yle.fi',
+            setcookie: 'userconsent=v2|;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
