@@ -1964,6 +1964,11 @@
          }, {
             seite: 'bbc.com',
             setcookie: 'ckns_explicit=1; , ckns_policy=010;'
+         }, {
+            seite: 'free-beat-company.jimdosite.com',
+            setcookie: 'ckies_cloudflare=allow; , ckies_google_maps=deny; , ckies_youtube=deny;',
+            setstoragename: 'cookies-selected',
+            setstoragecontent: 'true'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
