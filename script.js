@@ -2807,22 +2807,42 @@
                                  if (knöpfetext.length <= 45) {
                                     // Text
                                     const knöpfetextgeprüft = knöpfetextcheck(b);
-                                    if (knöpfetextgeprüft === 'ablehntext') {
-                                       cookiebannerstatus.knopfstatus = 'abgelehnt';
-                                       finalerknopf = knöpfe[k];
-                                       break;
-                                    } else if (knöpfetextgeprüft === 'speichertext') {
-                                       cookiebannerstatus.knopfstatus = 'gespeichert';
-                                       finalerknopf = knöpfe[k];
-                                       gewichtung = 1;
-                                    } else if (attributchecker(a) && gewichtung > 1) {
-                                       cookiebannerstatus.knopfstatus = 'geschlossen';
-                                       finalerknopf = knöpfe[k];
-                                       gewichtung = 2;
-                                    } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
-                                       cookiebannerstatus.knopfstatus = 'akzeptiert';
-                                       finalerknopf = knöpfe[k];
-                                       gewichtung = 3;
+                                    if (cookieeinstellung !== 'akzeptieren') {
+                                       if (knöpfetextgeprüft === 'ablehntext') {
+                                          cookiebannerstatus.knopfstatus = 'abgelehnt';
+                                          finalerknopf = knöpfe[k];
+                                          break;
+                                       } else if (knöpfetextgeprüft === 'speichertext') {
+                                          cookiebannerstatus.knopfstatus = 'gespeichert';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 1;
+                                       } else if (attributchecker(a) && gewichtung > 1) {
+                                          cookiebannerstatus.knopfstatus = 'geschlossen';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 2;
+                                       } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
+                                          cookiebannerstatus.knopfstatus = 'akzeptiert';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 3;
+                                       }
+                                    } else {
+                                       if (knöpfetextgeprüft === 'akzeptiertext') {
+                                          cookiebannerstatus.knopfstatus = 'akzeptiert';
+                                          finalerknopf = knöpfe[k];
+                                          break;
+                                       } else if (attributchecker(a)) {
+                                          cookiebannerstatus.knopfstatus = 'geschlossen';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 1;
+                                       } else if (knöpfetextgeprüft === 'speichertext' && gewichtung > 1) {
+                                          cookiebannerstatus.knopfstatus = 'gespeichert';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 2;
+                                       } else if (knöpfetextgeprüft === 'ablehntext' && gewichtung > 2) {
+                                          cookiebannerstatus.knopfstatus = 'ablehnen';
+                                          finalerknopf = knöpfe[k];
+                                          gewichtung = 3;
+                                       }
                                     }
                                  }
                               }
@@ -2940,24 +2960,43 @@
                                              if (knöpfetext.length <= 45) {
                                                 // Text
                                                 const knöpfetextgeprüft = knöpfetextcheck(b);
-                                                if (knöpfetextgeprüft === 'ablehntext') {
-                                                   cookiebannerstatus.knopfstatus = 'abgelehnt';
-                                                   finalerknopf = knöpfe[k];
-                                                   break;
-                                                } else if (knöpfetextgeprüft === 'speichertext') {
-                                                   cookiebannerstatus.knopfstatus = 'gespeichert';
-                                                   finalerknopf = knöpfe[k];
-                                                   gewichtung = 1;
-                                                } else if (attributchecker(a) && gewichtung > 1) {
-                                                   cookiebannerstatus.knopfstatus = 'geschlossen';
-                                                   finalerknopf = knöpfe[k];
-                                                   gewichtung = 2;
-                                                } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
-                                                   cookiebannerstatus.knopfstatus = 'akzeptiert';
-                                                   finalerknopf = knöpfe[k];
-                                                   gewichtung = 3;
+                                                if (cookieeinstellung !== 'akzeptieren') {
+                                                   if (knöpfetextgeprüft === 'ablehntext') {
+                                                      cookiebannerstatus.knopfstatus = 'abgelehnt';
+                                                      finalerknopf = knöpfe[k];
+                                                      break;
+                                                   } else if (knöpfetextgeprüft === 'speichertext') {
+                                                      cookiebannerstatus.knopfstatus = 'gespeichert';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 1;
+                                                   } else if (attributchecker(a) && gewichtung > 1) {
+                                                      cookiebannerstatus.knopfstatus = 'geschlossen';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 2;
+                                                   } else if (knöpfetextgeprüft === 'akzeptiertext' && gewichtung > 2) {
+                                                      cookiebannerstatus.knopfstatus = 'akzeptiert';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 3;
+                                                   }
+                                                } else {
+                                                   if (knöpfetextgeprüft === 'akzeptiertext') {
+                                                      cookiebannerstatus.knopfstatus = 'akzeptiert';
+                                                      finalerknopf = knöpfe[k];
+                                                      break;
+                                                   } else if (attributchecker(a)) {
+                                                      cookiebannerstatus.knopfstatus = 'geschlossen';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 1;
+                                                   } else if (knöpfetextgeprüft === 'speichertext' && gewichtung > 1) {
+                                                      cookiebannerstatus.knopfstatus = 'gespeichert';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 2;
+                                                   } else if (knöpfetextgeprüft === 'ablehntext' && gewichtung > 2) {
+                                                      cookiebannerstatus.knopfstatus = 'ablehnen';
+                                                      finalerknopf = knöpfe[k];
+                                                      gewichtung = 3;
+                                                   }
                                                 }
-
                                              }
                                              // Knöpfe ende
                                           }
