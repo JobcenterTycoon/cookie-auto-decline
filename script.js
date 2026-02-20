@@ -4385,6 +4385,10 @@
             seite: 'santander.nl',
             selector: '.cookie-notification a#btnCookieShowSettings -> .cookie-notification-moreinfo a#btnCookieSaveSettings',
             checkcookie: 'santander_cookie_consent_gtm'
+         }, {
+            seite: 'hirose.com',
+            selector: '.termsAndConditions-section .js-cookie-notification-accept',
+            checkcookie: 'cookie-notification=3'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
