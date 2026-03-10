@@ -254,7 +254,7 @@
          const maxheight = Math.max(window.innerHeight, document.body.offsetHeight, document.body.scrollHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight, screen.availHeight);
          const maxwidth = Math.max(window.innerWidth, document.body.offsetWidth, document.body.scrollWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth, screen.availWidth);
 
-         if (check.getPropertyValue('display') !== "none" && check.getPropertyValue('visibility') === 'visible' && check.getPropertyValue('content-visibility') === 'visible' && check.getPropertyValue('opacity') > 0.3 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height < maxheight) && (rect.right - rect.width < maxwidth) && (rect.top + rect.height > 0) && (rect.left + rect.width > 0) && a.checkVisibility()) {
+         if (check.getPropertyValue('display') !== "none" && check.getPropertyValue('visibility') === 'visible' && check.getPropertyValue('content-visibility') === 'visible' && check.getPropertyValue('opacity') > 0.1 && (a.offsetHeight > 1 || a.offsetWidth > 1) && (rect.bottom - rect.height < maxheight) && (rect.right - rect.width < maxwidth) && (rect.top + rect.height > 0) && (rect.left + rect.width > 0) && a.checkVisibility()) {
             return true;
          } else {
             return false;
