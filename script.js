@@ -507,7 +507,8 @@
                ablehnen = cmpbox.querySelector('a.cmptxt_btn_no[role="button"]');
                speichern = cmpbox.querySelector('a.cmptxt_btn_save');
                akzeptieren = cmpbox.querySelector('a.cmptxt_btn_yes[role="button"]');
-               if (cmpbox.innerText.toLowerCase().includes('kostenfrei mit werb') === false) {
+               const cookiebannertext = cmpbox.innerText.toLowerCase();
+               if (cookiebannertext.includes('kostenfrei mit werb') === false && cookiebannertext.includes('contentpass') === false) {
                   einstellungen = cmpbox.querySelector('a.cmptxt_btn_settings[role="button"], a.cmptxt_btn_custom');
                }
                if (cookieeinstellung === 'funktional') {
