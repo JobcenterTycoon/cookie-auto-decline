@@ -2964,7 +2964,7 @@
                               const elementrect = elemente[i].getBoundingClientRect();
                               const bodycss = window.getComputedStyle(document.querySelector('body'));
 
-                              if ((elemente[i].getRootNode().toString() === '[object ShadowRoot]' || elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' || (bodycss.getPropertyValue('overflow') === 'hidden' && (parseInt(bodycss.getPropertyValue('height')) > window.innerHeight || bodycss.getPropertyValue('max-height') !== 'none'))) && (elementrect.top + 100) > (window.innerHeight - elementrect.bottom)) {
+                              if ((elemente[i].getRootNode().toString() === '[object ShadowRoot]' || elementcss.getPropertyValue('position') === 'fixed' || elementcss.getPropertyValue('position') === 'sticky' || (bodycss.getPropertyValue('overflow') === 'hidden' && (parseInt(bodycss.getPropertyValue('height')) > window.innerHeight || bodycss.getPropertyValue('max-height') !== 'none'))) && (elementrect.top + 100) > 5) {
                                  const a = elemente[i];
                                  if (sichtbarkeitsprüfung(a) === true) {
                                     // console.log(elemente[i]);
