@@ -1972,6 +1972,12 @@
          }, {
             seite: 'gskill.com',
             setcookie: 'popupWindow=1;'
+         }, {
+            seite: 'strassen-mv.de',
+            setcookie: 'cookieconsent_dismissed=yes;'
+         }, {
+            seite: 'e-mobileo.de',
+            setcookie: 'viewed_cookie_policy=yes;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
