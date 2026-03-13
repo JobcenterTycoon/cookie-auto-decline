@@ -318,7 +318,7 @@
             if (cookiebannerfinalakzeptiert === true) {
                cookiebannerfinalakzeptiertcounter++;
             }
-            if (cookiebannerfinalakzeptiertversuche >= 3) {
+            if (cookiebannerfinalakzeptiertversuche >= 4) {
                beenden();
             }
             if (findconsentcounter >= (10000 / findconsentintervalzahl)) {
@@ -972,6 +972,8 @@
                cookiebannerstatus.anbieter = 'iubenda.com';
                advancedrun = false;
                nureinklickeinstellungen = true;
+               findconsentintervalzahl = 502;
+               findconsentintervalzahländern();
                ablehnen = iubenda.querySelector('button.iubenda-cs-reject-btn');
                speichern = document.querySelector('#iubenda-iframe button#iubFooterBtn');
                akzeptieren = iubenda.querySelector('button.iubenda-cs-accept-btn');
