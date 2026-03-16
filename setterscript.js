@@ -1978,6 +1978,9 @@
          }, {
             seite: 'e-mobileo.de',
             setcookie: 'viewed_cookie_policy=yes;'
+         }, {
+            seite: 'sachsen-gigabit.com,sachsenenergie.de',
+            setcookie: 'allowAnalyticalCookies=false; , allowMarketingCookies=false; , cookiesAccepted=true;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
