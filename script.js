@@ -2153,15 +2153,6 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
-            // mw-cookiewarning-container
-            const mwcookiewarningcontainer = document.querySelector('[class="mw-cookiewarning-container"]');
-            if (mwcookiewarningcontainer && document.cookie.includes('cookiewarning_dismissed') === false) {
-               console.log('[Cookie auto decline] Detected: mw-cookiewarning-container');
-               cookiebannerstatus.anbieter = 'mw-cookiewarning-container';
-               akzeptieren = mwcookiewarningcontainer.querySelector('form [name="disablecookiewarning"]');
-               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
-            }
-
             // tc-privacy-wrapper
             const tcprivacywrapper = document.querySelector('#tc-privacy-wrapper.tc-privacy-wrapper.tc-privacy-override > [id$="tc_privacy"]');
             if (tcprivacywrapper && tcprivacywrapper.offsetWidth > 0 && document.cookie.includes('TC_PRIVACY') === false) {
