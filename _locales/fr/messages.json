@@ -21,7 +21,7 @@
 		"message": "L’extension est désactivée sur ce type de page."
 	},
 	"advancedDetectionLabel": {
-		"message": "Détection avancée des bannières de cookies (bêta) :"
+		"message": "Détection avancée des bannières de cookies:"
 	},
 	"buttonStatusDeclinedMessage": {
 		"message": "refusé"
@@ -70,5 +70,17 @@
 	},
 	"clickToDisable": {
 		"message": "L’extension est activée sur ce site, cliquer ici pour la désactiver."
+	},
+	"optionablehnen": {
+		"message": "Tout refuser"
+	},
+	"optionfunktional": {
+		"message": "Fonctionnel"
+	},
+	"optionakzeptieren": {
+		"message": "Tout accepter"
+	},
+	"cookieeinstellungentext": {
+		"message": "Cookie paramètres (beta):"
 	}
 }
