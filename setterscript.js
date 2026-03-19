@@ -121,7 +121,7 @@
          const regeln = [{
             // privacy-mgmt.com
             seite: 'heise.de',
-            setcookie: 'consentUUID=cc3fda07-066e-4c67-a9eb-72d5dce1a921_32_33_37_39_44_48;'
+            setcookie: 'consentUUID=cc3fda07-066e-4c67-a9eb-72d5dce1a921_32_33_37_39_44_48_54;'
          }, {
             seite: 'spiegel.de',
             setcookie: 'consentUUID=5aca01af-a126-44e3-ae3c-b26b6baa419f_43_45_49;'
@@ -130,71 +130,71 @@
             setcookie: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40_43_44_46_49;'
          }, {
             seite: 'welt.de',
-            setcookie: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47_49_51;'
+            setcookie: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47_49_51_54;'
          }, {
             seite: 't-online.de',
-            setcookie: 'consentUUID=c1fe44cb-41ae-4d2e-be8e-7903548984c1_51;'
+            setcookie: 'consentUUID=c1fe44cb-41ae-4d2e-be8e-7903548984c1_51_54;'
          }, {
             seite: 'autobild.de',
-            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47_49_50_51;'
+            setcookie: 'consentUUID=22adf7b9d-db7e-4444-b36e-d4c079dfd0e2_25_29_32_34_37_41_42_44_47_49_50_51_54;'
          }, {
             seite: 'bild.de',
-            setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44_47_49_51;'
+            setcookie: 'consentUUID=8d50c862-cc9e-4b60-b313-591952f29ab3_42_44_47_49_51_54;'
          }, {
             seite: 'computerbild.de',
-            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47_49_50_51;'
+            setcookie: 'consentUUID=b1aa470e-70cc-4891-8407-72f677cdec82_42_44_46_47_49_50_51_54;'
          }, {
             seite: 'stern.de',
             setcookie: 'consentUUID=f2196ea7-1afa-4986-87e4-2a28d05bd56b_32_33_38_41_44_46_48_50_51;'
          }, {
             seite: 'pcwelt.de',
-            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49_50_51;'
+            setcookie: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49_50_51_54;'
          }, {
             seite: 'focus.de',
-            setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46_49_51;'
+            setcookie: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46_49_51_54;'
          }, {
-            seite: 'krzbb.de',
-            setcookie: 'consentUUID=d67edd5b-49a2-4930-a0e2-c9527d32ba8d_49;'
+            seite: 'stuttgarter-nachrichten.de',
+            setcookie: 'consentUUID=a376db30-519c-4054-a0fd-684cb7151ed4_54;'
          }, {
             seite: 'geo.de',
             setcookie: 'consentUUID=9392cae7-796a-4291-98fd-802b3970a5ee_32_34_38e_39_41_44_46_48_50_51;'
          }, {
             seite: 'giga.de',
-            setcookie: 'consentUUID=f16bebe9-e880-48aa-a19a-5ad09c3b0c2d_47;'
+            setcookie: 'consentUUID=84cfca1a-5862-4f4b-aa1f-1cc0a50992f1_54;'
          }, {
             seite: 'familie.de',
-            setcookie: 'consentUUID=6a54e310-3bdb-4056-a31c-66ec9bbb4586_46;'
+            setcookie: 'consentUUID=d9910087-44a0-40a9-8006-ab765cd84e61_54;'
          }, {
             seite: 'sport1.de',
-            setcookie: 'consentUUID=89da2b14-cb6f-49e4-af96-67dc8d8a40f6_32_34_39_41;'
+            setcookie: 'consentUUID=89da2b14-cb6f-49e4-af96-67dc8d8a40f6_32_34_39_41_54;'
          }, {
             seite: 'kino.de',
-            setcookie: 'consentUUID=ada63ca7-2651-4dc8-8b29-d77b19fd2b81_46;'
+            setcookie: 'consentUUID=48cf35cc-b2f2-4848-b888-be52246e47a9_54;'
          }, {
             seite: 'likehifi.de',
-            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48_50;'
+            setcookie: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48_50_54;'
          }, {
             seite: 'backenmachtgluecklich.de',
-            setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41_46_47_51;',
+            setcookie: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41_46_47_51_54;',
             nowww: true
          }, {
             seite: 'raspberry-pi-geek.de',
-            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48_50;'
+            setcookie: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48_50_54;'
          }, {
             seite: 'n-tv.de',
-            setcookie: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44_46_49_51;'
+            setcookie: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44_46_49_51_54;'
          }, {
             seite: 'chip.de',
-            setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43_46_47_49_51;'
+            setcookie: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43_46_47_49_51_54;'
          }, {
             seite: 'rtl.de',
-            setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44_46_49_51;'
+            setcookie: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44_46_49_51_54;'
          }, {
             seite: 'weather.com',
             setcookie: 'consentUUID=3850e4bf-d403-47e6-b9c8-7f4d98bcf444_49;'
          }, {
             seite: 'cinestar.de',
-            setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43_44_46_48_51;'
+            setcookie: 'consentUUID=797b7d14-32c2-4a40-9935-9404824101d1_34_37_38_39_40_43_44_46_48_51_54;'
          }, {
             seite: 'forschung-und-wissen.de',
             setcookie: 'consentUUID=afebf0e1-6a7f-41d8-aad4-8245d1e40944_34_47;'
@@ -203,7 +203,7 @@
             setcookie: 'consentUUID=10a7171e-7071-4c34-9012-fe991aca25b7_42_44;'
          }, {
             seite: 'telepolis.de',
-            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46_48_50_51;'
+            setcookie: 'consentUUID=77de41d9-7918-43ba-b0c1-0365aa8942eb_36_39_44_46_48_50_51_54;'
          }, {
             seite: 'manager-magazin.de',
             setcookie: 'consentUUID=988dfc32-83c2-4b4c-96c1-4d5aa8889227_42;'
