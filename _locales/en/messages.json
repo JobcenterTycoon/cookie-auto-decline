@@ -21,7 +21,7 @@
 		"message": "Unsupported site. The addon is disabled on this site."
 	},
 	"advancedDetectionLabel": {
-		"message": "Advanced cookie banner detection (beta):"
+		"message": "Advanced cookie banner detection:"
 	},
 	"buttonStatusDeclinedMessage": {
 		"message": "Declined."
@@ -70,5 +70,17 @@
 	},
 	"clickToDisable": {
 		"message": "The addon is enabled on this site. Click to disable it."
+	},
+	"optionablehnen": {
+		"message": "Decline all"
+	},
+	"optionfunktional": {
+		"message": "Functional"
+	},
+	"optionakzeptieren": {
+		"message": "Accept all"
+	},
+	"cookieeinstellungentext": {
+		"message": "Cookie settings (beta):"
 	}
 }
