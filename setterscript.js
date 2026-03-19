@@ -1889,9 +1889,6 @@
             seite: '2024.graduateshow.eca.ed.ac.uk',
             setcookie: '_uoeCookiePrefsV4=eyJuZWNlc3NhcnkiOnRydWUsInBlcmZvcm1hbmNlIjpmYWxzZSwiYWR2ZXJ0aXNpbmciOmZhbHNlfQ==;'
          }, {
-            seite: 'lgbtqia.wiki',
-            setcookie: 'lgbtawikicookiewarning_dismissed=true;'
-         }, {
             seite: 'quantamagazine.org',
             setcookie: 'privacy-consent-given=revoke;'
          }, {
