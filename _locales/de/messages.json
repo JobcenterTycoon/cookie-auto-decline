@@ -21,7 +21,7 @@
 		"message": "Nicht unterstützte Seite. Das Addon ist auf dieser Seite dauerhaft deaktiviert."
 	},
 	"advancedDetectionLabel": {
-		"message": "Erweiterte Cookie Banner Erkennung (beta):"
+		"message": "Erweiterte Cookie Banner Erkennung:"
 	},
 	"buttonStatusDeclinedMessage": {
 		"message": "Abgelehnt."
@@ -70,5 +70,17 @@
 	},
 	"clickToDisable": {
 		"message": "Das Addon ist auf dieser Seite aktiviert. Klicken Sie hier, um es zu deaktivieren."
+	},
+	"optionablehnen": {
+		"message": "Alle Ablehnen"
+	},
+	"optionfunktional": {
+		"message": "Funktional"
+	},
+	"optionakzeptieren": {
+		"message": "Alle akzeptieren"
+	},
+	"cookieeinstellungentext": {
+		"message": "Cookie Einstellungen (beta):"
 	}
 }
