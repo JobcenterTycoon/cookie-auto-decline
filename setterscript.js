@@ -1978,6 +1978,9 @@
          }, {
             seite: 'sachsen-gigabit.com,sachsenenergie.de',
             setcookie: 'allowAnalyticalCookies=false; , allowMarketingCookies=false; , cookiesAccepted=true;'
+         }, {
+            seite: 'mapy.com',
+            setcookie: 'euconsent-v2=CQhUF0AQhUF0AD3ACzENCWFgAAAAAEPgAATIAAASrgKgAVABAADIAGgATAAxAB-AEIAI4ATgA7gCEAEWATaAqQBWQC3AF5gMsAZcBKsAAAAA.IJVwFQAKgAgABkADQAJgAYgA_ACEAEcAJwAdwBCACLAJtAVIArIBbgC8wGWAMuAlWAAA.YAAAAAAAAQAA;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
