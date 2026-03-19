@@ -556,7 +556,7 @@
                         }
                      }
                   }
-                  speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save');
+                  speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save, a.cmptxt_btn_save2');
                }
                akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
