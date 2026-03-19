@@ -4463,6 +4463,10 @@
             seite: 'hirose.com',
             selector: '.termsAndConditions-section .js-cookie-notification-accept',
             checkcookie: 'cookie-notification=3'
+         }, {
+            seite: 'nikkei.com',
+            selector: '#datasign_cmp__host >> a + button.datasign__dialogButtonTheme--index-module',
+            checkstorage: 'co.datasign.widget.operationState'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
