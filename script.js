@@ -833,6 +833,7 @@
                speichern = borlabs.querySelector('button#CookieBoxSaveButton, button.rbrl-save-settings, .not-visible[style*="opacity: 1;"] a#CookiePrefSave[role="button"][data-borlabs-cookie-actions="save"]');
                akzeptieren = borlabs.querySelector('button.brlbs-btn-accept-all, button.rbrl-accept-all, a._brlbs-btn-accept-all');
                if (cookieeinstellung === 'funktional') {
+                  advancedrun = false;
                   const switchh = borlabs.querySelector('input[type="checkbox"]:not([disabled], :checked):is(#external-media, #preferences-service-group-external-media)');
                   if (switchh) {
                      switchh.click();
