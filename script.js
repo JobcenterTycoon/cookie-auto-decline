@@ -186,7 +186,7 @@
                   return 'ablehntext';
                }
             }
-            const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'individuelle auswahlen speichern', 'auswahl speichern', 'individuelle auswahl speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'speichern & schließen', 'save', 'save choices', 'save custom choices', 'confirm choices', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren', 'accepteer selectie', 'potvrdit moje volby', 'spara val'];
+            const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'individuelle auswahlen speichern', 'auswahl speichern', 'individuelle auswahl speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'speichern & schließen', 'mit erforderlichen einstellungen fortfahren', 'save', 'save choices', 'save custom choices', 'confirm choices', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren', 'accepteer selectie', 'potvrdit moje volby', 'spara val'];
             for (let i = 0; i < speichertext.length; i++) {
                if (b === speichertext[i]) {
                   return 'speichertext';
@@ -4140,10 +4140,6 @@
             seite: 'filter-direkt.de',
             selector: '.cookie-bar button[data-testing="cookie-bar-save"]',
             checkcookie: 'necessary'
-         }, {
-            seite: 'huk.de',
-            selector: '.cookie-consent button.cookie-consent__button--primary + button.cookie-consent__button--secondary',
-            checkcookie: 'consent_version'
          }, {
             seite: 'smart.com',
             selector: '#cookie-pro-dialog button#cookie-pro-info-button',
