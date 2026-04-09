@@ -919,27 +919,34 @@
                      }
                      didomirequiredknopfvorhandenbereitsbearbeitet = true;
                   }
+                  const schalterannehmen = boxen[i].querySelector('.didomi-components-radio > button:first-child + button.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
+                  const schalterablehnen = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
                   if (cookieeinstellung === 'funktional') {
                      const boxtext = boxen[i].querySelector('span[id^="didomi-purpose-"]');
                      if (boxtext) {
                         const b = boxtext;
                         const textgeprüft = knöpfetextcheck(b);
                         if (textgeprüft === 'funktionaltext') {
-                           const switchh = boxen[i].querySelector('.didomi-components-radio > button:first-child + button.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
-                           if (switchh && switchh.checkVisibility()) {
-                              switchh.click();
+                           if (schalterannehmen && schalterannehmen.checkVisibility()) {
+                              schalterannehmen.click();
                            }
                         } else {
-                           const switchh = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
-                           if (switchh && switchh.checkVisibility()) {
-                              switchh.click();
+                           if (schalterablehnen) {
+                              if (schalterablehnen.checkVisibility()) {
+                                 schalterablehnen.click();
+                              } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                                 schalterannehmen.click();
+                              }
                            }
                         }
                      }
                   } else {
-                     const switchh = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
-                     if (switchh && switchh.checkVisibility()) {
-                        switchh.click();
+                     if (schalterablehnen) {
+                        if (schalterablehnen.checkVisibility()) {
+                           schalterablehnen.click();
+                        } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                           schalterannehmen.click();
+                        }
                      }
                   }
                }
