@@ -1992,6 +1992,12 @@
          }, {
             seite: 'agendadigitale.eu',
             setcookie: 'cookiepolicy=required;'
+         }, {
+            seite: 'kathond.nl',
+            setcookie: 'cookie_consent=dismiss;'
+         }, {
+            seite: 'studienteilnehmergesucht.de',
+            setcookie: 'cookieConsent=%7B%22cookie_necessary_enabled%22%3Afalse%2C%22cookie_functional_enabled%22%3Atrue%2C%22cookie_analytics_enabled%22%3Afalse%2C%22cookie_marketing_enabled%22%3Afalse%7D;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
