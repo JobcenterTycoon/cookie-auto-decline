@@ -4259,6 +4259,11 @@
             selector: 'ing-cc-manager >> ing-dialog-frame > ing-cc-dialog-level0 >> ing-button.cc-l0__button__more',
             noframe: true
          }, {
+            seite: 'ing.nl',
+            selector: 'ing-app-open-page >> #cookieDialog >> ing-feat-cookie-dialog-nl >> ing-feat-global-cookie-preference >> cookie-preference-main >> ing-button[data-testid="reject"]',
+            checkcookie: 'COOKIE_PREF',
+            noframe: true
+         }, {
             seite: 'wp.pl,money.pl,o2.pl,parenting.pl,pudelek.pl,autokult.pl,gadzetomania.pl,fotoblogia.pl,komorkomania.pl,polygamia.pl,abczdrowie.pl,benchmark.pl,kafeteria.pl,pysznosci.pl,dobreprogramy.pl,genialne.pl,autocentrum.pl,jastrzabpost.pl,deliciousmagazine.pl,wirtualnemedia.pl',
             selector: 'div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child + button:last-child -> div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child:has(+ button:last-child)',
             checkcookie: '__vads'
