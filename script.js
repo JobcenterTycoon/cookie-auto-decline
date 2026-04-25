@@ -695,12 +695,12 @@
             }
 
             // real-cookie-banner-pro (devowl.io)
-            const realcookiebannerpro = document.querySelector('div[class^="a"][id^="a"][consent-skip-blocker][data-bg][style^="background-color"] > dialog.wp-exclude-emoji[aria-labelledby^="a"][open=""], div[id^="a"][class=""][data-bg][style^="background"] > [class="wp-exclude-emoji "][style="display: flex; width: 100%; height: 100%; align-items: center; justify-content: center;"]');
+            const realcookiebannerpro = document.querySelector('div[class^="a"][id^="a"][consent-skip-blocker][data-bg][style^="background-color"] > dialog.wp-exclude-emoji[aria-labelledby^="a"][open=""], div[id^="a"][class=""][data-bg][style*="background"] > [class="wp-exclude-emoji "][style*="display: flex; width: 100%; height: 100%;');
             if (realcookiebannerpro && window.localStorage.getItem('real_cookie_banner-consent-queue-lock') === null && document.cookie.includes('%22main_essential%22%7D') === false) {
                console.log('[Cookie auto decline] Detected: real-cookie-banner-pro (devowl.io)');
                cookiebannerstatus.anbieter = 'real-cookie-banner-pro (devowl.io)';
                advancedrun = false;
-               const knöpfe = realcookiebannerpro.querySelectorAll('a[href="#"][role="button"], div[id^="bnnr-body-"] > div[style^="text-decoration:"][style*="display: flex; align-items: center; justify-content: center; order: "] > span');
+               const knöpfe = realcookiebannerpro.querySelectorAll('a[href="#"][role="button"], div[id^="bnnr-body-"] > div[style^="text-decoration:"][style*="display: flex; align-items: center; justify-content: center; "] > span');
                for (let i = 0; i < knöpfe.length; i++) {
                   const b = knöpfe[i];
                   const textgeprüft = knöpfetextcheck(b);
