@@ -4487,6 +4487,10 @@
             seite: 'nikkei.com',
             selector: '#datasign_cmp__host >> a + button.datasign__dialogButtonTheme--index-module',
             checkstorage: 'co.datasign.widget.operationState'
+         }, {
+            seite: 'privacy.samsung.com',
+            selector: '#cookie-eu button.cookie-eu__close',
+            checkstorage: 'ALLOW_FUNCTIONAL_COOKIES'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
@@ -4497,7 +4501,7 @@
                if ((location.hostname.endsWith('.' + seiten[k]) || location.hostname === seiten[k]) && regelsuchebereitsgelaufen === false) {
                   regelsuchebereitsgelaufen = true;
                   console.log('[Cookie auto decline] Regel für folgende Seite gefunden: ' + seiten[k]);
-                  if (document.cookie.includes(regeln[i].checkcookie) === false && localStorage.getItem(regeln[i].checkstorage) === null && ((regeln[i].noframe === true && window.self == window.top) || regeln[i].noframe !== true)) {
+                  if ((document.cookie.includes(regeln[i].checkcookie) === false || !regeln[i].checkcookie) && (localStorage.getItem(regeln[i].checkstorage) === null || !regeln[i].checkstorage) && ((regeln[i].noframe === true && window.self == window.top) || regeln[i].noframe !== true)) {
                      console.log('[Cookie auto decline] Cookie Banner noch nicht akzeptiert.');
                      // Cookie Banner finden und klicken
                      if (regeln[i].selector) {
@@ -4519,7 +4523,7 @@
                               if (selectors.length > 0) {
                                  advancedrun = false;
                               }
-                              if (selectors[tiefe] && document.cookie.includes(regeln[i].checkcookie) === false && localStorage.getItem(regeln[i].checkstorage) === null) {
+                              if (selectors[tiefe] && (document.cookie.includes(regeln[i].checkcookie) === false || !regeln[i].checkcookie) && (localStorage.getItem(regeln[i].checkstorage) === null || !regeln[i].checkstorage)) {
                                  let foundbutton = false;
                                  const shadowroots = selectors[tiefe].split(' >> ');
                                  if (shadowroots.length > 1) {
