@@ -210,7 +210,7 @@
                   return 'funktionaltext';
                }
             }
-            const funktionaltext2 = ['youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund'];
+            const funktionaltext2 = ['youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund', 'drittanbieter-inhalte', 'drittanbieter inhalte'];
             for (let i = 0; i < funktionaltext2.length; i++) {
                if (b.includes(funktionaltext2[i]) && b.length <= 25 && !marketingtracking) {
                   return 'funktionaltext';
@@ -2748,6 +2748,38 @@
                console.log('[Cookie auto decline] Detected: utiq.com');
                cookiebannerstatus.anbieter = 'utiq.com';
                ablehnen = utiq.querySelector('#utiqConsCloseButton, button#utiq__reject_button');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
+            // cms-accept-tags
+            const cmsaccepttags = document.querySelector('cms-accept-tags[data-cms-id]');
+            if (cmsaccepttags && document.cookie.includes('cms_cookies_saved') === false) {
+               console.log('[Cookie auto decline] Detected: cms-accept-tags');
+               cookiebannerstatus.anbieter = 'cms-accept-tags';
+               advancedrun = false;
+               akzeptieren = cmsaccepttags.querySelector('cms-button[role="button"][value="accept"][data-all="true"]');
+               speichern = cmsaccepttags.querySelector('cms-button[role="button"][value="accept"]:not([data-all="true"])');
+               if (cookieeinstellung !== 'akzeptieren') {
+                  const switches = cmsaccepttags.querySelectorAll('input[type="checkbox"]:checked:not([disabled], [rtayztwplpnfftousydd])');
+                  for (let i = 0; i < switches.length; i++) {
+                     switches[i].click();
+                  }
+               }
+               if (cookieeinstellung === 'funktional') {
+                  switchesdelay++;
+                  const boxen = cmsaccepttags.querySelectorAll('cms-taggroup-header');
+                  for (let i = 0; i < boxen.length; i++) {
+                     const b = boxen[i].querySelector('span');
+                     const textgeprüft = knöpfetextcheck(b);
+                     if (textgeprüft === 'funktionaltext') {
+                        const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
+                        if (checkbox) {
+                           checkbox.setAttribute('rtayztwplpnfftousydd', 'a');
+                           checkbox.click();
+                        }
+                     }
+                  }
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
