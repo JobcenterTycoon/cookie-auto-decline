@@ -308,7 +308,6 @@
          let cookiebannerfinalakzeptiertversuche = 0;
 
          let sfbxabgelehnt = false;
-         let didomirequiredknopfvorhanden = false;
          let switchesdelay = 0;
 
          // Suchintervall
@@ -884,76 +883,72 @@
             }
 
             // didomi.io
-            var didomi = document.querySelector('#didomi-host');
+            const didomi = document.querySelector('#didomi-host');
             if (didomi) {
+               let didomieinstellungenignorieren = false;
                console.log('[Cookie auto decline] Detected: didomi.io');
                cookiebannerstatus.anbieter = 'didomi.io';
                nureinklickeinstellungen = true;
-               const ablehnenknopf = didomi.querySelector('button#didomi-notice-disagree-button, .didomi-continue-without-agreeing[role="button"]');
+               advancedrun = false;
+               const ablehnenknopf = didomi.querySelector('#didomi-notice-disagree-button, button#ue-disagree-notice-button, .didomi-continue-without-agreeing[role="button"]');
                if (ablehnenknopf) {
                   const c = ablehnenknopf;
                   if (!paybuttons(c)) {
                      ablehnen = ablehnenknopf;
                   } else {
-                     didomirequiredknopfvorhanden = true;
+                     didomieinstellungenignorieren = true;
                   }
                }
-               if (!didomi.querySelector('.didomi-consent-popup-preferences')) {
-                  const akzeptierenbuttons = didomi.querySelectorAll('button#didomi-notice-agree-button, button#ue-accept-notice-button');
-                  for (let i = 0; i < akzeptierenbuttons.length; i++) {
-                     if (akzeptierenbuttons[i].checkVisibility()) {
-                        akzeptieren = akzeptierenbuttons[i];
-                     }
-                  }
+               if (didomieinstellungenignorieren === false) {
+                     einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
                }
-               einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
-               speichern = didomi.querySelector('button#btn-toggle-save:not([disabled])');
-               const boxen = didomi.querySelectorAll('.didomi-consent-popup-container-click-all + .didomi-consent-popup-categories [class]:has(> .didomi-components-accordion)');
-               let didomirequiredknopfvorhandenbereitsbearbeitet = false;
-               for (let i = 0; i < boxen.length; i++) {
-                  if (didomirequiredknopfvorhanden === true && didomirequiredknopfvorhandenbereitsbearbeitet === false) {
-                     const switchrequired = document.querySelector('.didomi-consent-popup-preferences .didomi-consent-popup-categories > div:has(.didomi-consent-popup-data-processing__essential_purpose) + div .didomi-components-radio > button:first-child + button:not([aria-pressed="true"])');
-                     if (switchrequired && switchrequired.checkVisibility()) {
-                        switchrequired.setAttribute('rtayztwplpnfftousydd', 'a');
-                        switchrequired.click();
-                     }
-                     didomirequiredknopfvorhandenbereitsbearbeitet = true;
-                  }
-                  const schalterannehmen = boxen[i].querySelector('.didomi-components-radio > button:first-child + button.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
-                  const schalterablehnen = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled]):not(:has(+ [rtayztwplpnfftousydd]))');
-                  if (cookieeinstellung === 'funktional') {
-                     const boxtext = boxen[i].querySelector('span[id^="didomi-purpose-"]');
-                     if (boxtext) {
-                        const b = boxtext;
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
-                           if (schalterannehmen && schalterannehmen.checkVisibility()) {
-                              schalterannehmen.click();
-                           }
-                        } else {
-                           if (schalterablehnen) {
-                              if (schalterablehnen.checkVisibility()) {
-                                 schalterablehnen.click();
-                              } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+               if (bereitsgeklickt === true) {
+                  const boxen = didomi.querySelectorAll('.didomi-consent-popup-container-click-all + .didomi-consent-popup-categories [class]:has(> .didomi-components-accordion)');
+                  for (let i = 0; i < boxen.length; i++) {
+                     const schalterannehmen = boxen[i].querySelector('.didomi-components-radio > button:first-child + button.didomi-components-radio__option--unselected:not([disabled])');
+                     const schalterablehnen = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled])');
+                     if (cookieeinstellung === 'funktional') {
+                        const boxtext = boxen[i].querySelector('span[id^="didomi-purpose-"]');
+                        if (boxtext) {
+                           const b = boxtext;
+                           const textgeprüft = knöpfetextcheck(b);
+                           if (textgeprüft === 'funktionaltext') {
+                              if (schalterannehmen && schalterannehmen.checkVisibility()) {
                                  schalterannehmen.click();
+                              }
+                           } else {
+                              if (schalterablehnen) {
+                                 if (schalterablehnen.checkVisibility()) {
+                                    schalterablehnen.click();
+                                 } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                                    schalterannehmen.click();
+                                 }
                               }
                            }
                         }
-                     }
-                  } else {
-                     if (schalterablehnen) {
-                        if (schalterablehnen.checkVisibility()) {
-                           schalterablehnen.click();
-                        } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
-                           schalterannehmen.click();
+                     } else {
+                        if (schalterablehnen) {
+                           if (schalterablehnen.checkVisibility()) {
+                              schalterablehnen.click();
+                           } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                              schalterannehmen.click();
+                           }
                         }
                      }
                   }
+               } else {
+                  akzeptieren = didomi.querySelectorAll('button#didomi-notice-agree-button, button#ue-accept-notice-button');
+                     for (let i = 0; i < akzeptieren.length; i++) {
+                        const c = akzeptieren[i];
+                        if (akzeptieren[i].checkVisibility() && paybuttons(c) !== true) {
+                           akzeptieren = akzeptieren[i];
+                        }
+                     }
+                     if (akzeptieren.length === 0) {
+                        akzeptieren = undefined;
+                     }
                }
-               if (domainohnewww === 'la-croix.com') {
-                  akzeptieren = didomi.querySelector('button#didomi-notice-agree-button');
-                  einstellungen = undefined;
-               }
+               speichern = didomi.querySelector('button#btn-toggle-save:not([disabled])');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
