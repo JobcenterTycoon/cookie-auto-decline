@@ -158,10 +158,10 @@
                textcomplete = b.innerText.toLowerCase().trim();
                const cssbefore = getComputedStyle(b, '::before').content;
                const cssafter = getComputedStyle(b, '::after').content;
-               if (cssbefore && cssbefore !== 'none' && cssbefore !== '""' && (cssbefore !== cssbefore.toLowerCase() || cssbefore !== cssbefore.toUpperCase() || cssbefore.match(/([0-9]|€|\$|\?)/))) {
+               if (cssbefore && cssbefore !== 'none' && cssbefore !== '""' && cssbefore.startsWith('url(') === false && (cssbefore !== cssbefore.toLowerCase() || cssbefore !== cssbefore.toUpperCase() || cssbefore.match(/([0-9]|€|\$|\?)/))) {
                   textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
                }
-               if (cssafter && cssafter !== 'none' && cssafter !== '""' && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase() || cssafter.match(/([0-9]|€|\$|\?)/))) {
+               if (cssafter && cssafter !== 'none' && cssafter !== '""' && cssafter.startsWith('url(') && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase() || cssafter.match(/([0-9]|€|\$|\?)/))) {
                   textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
                }
                if (textcomplete.length < 2 && b.value) {
@@ -221,10 +221,12 @@
       let paybuttons = function (c) {
          if (typeof (c) !== 'string') {
             let textcomplete = c.innerText.toLowerCase();
-            if (getComputedStyle(c, '::before').content !== 'none') {
+            const cssbefore = getComputedStyle(c, '::before').content;
+            const cssafter = getComputedStyle(c, '::after').content;
+            if (cssbefore !== 'none' && cssbefore.startsWith('url(') === false) {
                textcomplete = textcomplete + getComputedStyle(c, '::before').content.toLowerCase();
             }
-            if (getComputedStyle(c, '::after').content !== 'none') {
+            if (cssafter !== 'none' && cssafter.startsWith('url(') === false) {
                textcomplete = textcomplete + getComputedStyle(c, '::after').content.toLowerCase();
             }
             if (c && c.length < 2 && c.value) {
