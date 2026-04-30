@@ -905,7 +905,7 @@
                   }
                }
                if (didomieinstellungenignorieren === false) {
-                     einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
+                  einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
                }
                if (bereitsgeklickt === true) {
                   const boxen = didomi.querySelectorAll('.didomi-consent-popup-container-click-all + .didomi-consent-popup-categories [class]:has(> .didomi-components-accordion)');
@@ -925,7 +925,7 @@
                               if (schalterablehnen) {
                                  if (schalterablehnen.checkVisibility()) {
                                     schalterablehnen.click();
-                                 } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                                 } else if (schalterannehmen && schalterannehmen.checkVisibility()) {
                                     schalterannehmen.click();
                                  }
                               }
@@ -935,7 +935,7 @@
                         if (schalterablehnen) {
                            if (schalterablehnen.checkVisibility()) {
                               schalterablehnen.click();
-                           } else if(schalterannehmen && schalterannehmen.checkVisibility()) {
+                           } else if (schalterannehmen && schalterannehmen.checkVisibility()) {
                               schalterannehmen.click();
                            }
                         }
@@ -943,12 +943,12 @@
                   }
                } else {
                   const akzeptierenselektor = didomi.querySelectorAll('button#didomi-notice-agree-button, button#ue-accept-notice-button');
-                     for (let i = 0; i < akzeptierenselektor.length; i++) {
-                        const c = akzeptierenselektor[i];
-                        if (akzeptierenselektor[i].checkVisibility() && paybuttons(c) !== true) {
-                           akzeptieren = akzeptierenselektor[i];
-                        }
+                  for (let i = 0; i < akzeptierenselektor.length; i++) {
+                     const c = akzeptierenselektor[i];
+                     if (akzeptierenselektor[i].checkVisibility() && paybuttons(c) !== true) {
+                        akzeptieren = akzeptierenselektor[i];
                      }
+                  }
                }
                speichern = didomi.querySelector('button#btn-toggle-save:not([disabled])');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
@@ -2908,7 +2908,7 @@
                                        cookiebannerstatus.knopfstatus = 'ablehnen';
                                        finalerknopf = ablehnknopf;
                                     }
-                                 } else if(akzeptierenknopf) {
+                                 } else if (akzeptierenknopf) {
                                     const a = akzeptierenknopf;
                                     if (sichtbarkeitsprüfung(a)) {
                                        cookiebannerstatus.knopfstatus = 'akzeptiert';
@@ -2922,7 +2922,7 @@
                                        cookiebannerstatus.knopfstatus = 'akzeptiert';
                                        finalerknopf = akzeptierenknopf;
                                     }
-                                 } else if(ablehnknopf) {
+                                 } else if (ablehnknopf) {
                                     const a = ablehnknopf;
                                     if (sichtbarkeitsprüfung(a)) {
                                        cookiebannerstatus.knopfstatus = 'ablehnen';
@@ -4407,15 +4407,15 @@
             }
          }
       } else if (window.location.hostname === 'www.audioquest.com') {
-            console.log('[Cookie auto decline] Detected: shopify cookie banner');
-            window.setTimeout(function () {
-               const check = document.querySelector('.shopify-pc__banner__btns-granular #shopify-pc__banner__btn-decline');
-               if (check) {
-                  forcesessionstorage();
-                  check.click();
-               }
-            }, 502);
-         } else {
+         console.log('[Cookie auto decline] Detected: shopify cookie banner');
+         window.setTimeout(function () {
+            const check = document.querySelector('.shopify-pc__banner__btns-granular #shopify-pc__banner__btn-decline');
+            if (check) {
+               forcesessionstorage();
+               check.click();
+            }
+         }, 502);
+      } else {
          if (window.self === window.top) {
             cookiebannerstatus.suchstatus = 'nicht ausgeführt';
          }
