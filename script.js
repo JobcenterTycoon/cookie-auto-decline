@@ -982,7 +982,8 @@
                ablehnen = iubenda.querySelector('button.iubenda-cs-reject-btn');
                speichern = document.querySelector('#iubenda-iframe button#iubFooterBtn');
                akzeptieren = iubenda.querySelector('button.iubenda-cs-accept-btn');
-               if (!iubenda.querySelector('button.app-btn-subscribe')) {
+               const c = iubenda.querySelector('button.iubenda-cs-close-btn');
+               if (!iubenda.querySelector('button.app-btn-subscribe') && !paybuttons(c)) {
                   einstellungen = iubenda.querySelector('button.iubenda-cs-customize-btn');
                }
                if (cookieeinstellung === 'funktional') {
