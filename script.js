@@ -389,7 +389,9 @@
                            }
                         }
                      } else {
-                        ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL, .sp_choice_type_13');
+                        if (domainohnewww !== 'cmp.tag24.de') {
+                           ablehnen = document.querySelector('button.sp_choice_type_REJECT_ALL, .sp_choice_type_13');
+                        }
                      }
                   }
                   speichern = document.querySelector('button.sp_choice_type_SAVE_AND_EXIT:not(:disabled)');
