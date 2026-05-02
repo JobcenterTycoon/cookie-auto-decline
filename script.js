@@ -904,7 +904,7 @@
                      didomieinstellungenignorieren = true;
                   }
                }
-               if (didomieinstellungenignorieren === false) {
+               if (didomieinstellungenignorieren === false && domainohnewww !== 'nicematin.com') {
                   einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
                }
                if (bereitsgeklickt === true) {
