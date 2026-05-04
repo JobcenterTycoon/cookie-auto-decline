@@ -161,7 +161,7 @@
                if (cssbefore && cssbefore !== 'none' && cssbefore !== '""' && cssbefore.startsWith('url(') === false && (cssbefore !== cssbefore.toLowerCase() || cssbefore !== cssbefore.toUpperCase() || cssbefore.match(/([0-9]|€|\$|\?)/))) {
                   textcomplete = textcomplete + getComputedStyle(b, '::before').content.toLowerCase().trim();
                }
-               if (cssafter && cssafter !== 'none' && cssafter !== '""' && cssafter.startsWith('url(') && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase() || cssafter.match(/([0-9]|€|\$|\?)/))) {
+               if (cssafter && cssafter !== 'none' && cssafter !== '""' && cssafter.startsWith('url(') === false && (cssafter !== cssafter.toLowerCase() || cssafter !== cssafter.toUpperCase() || cssafter.match(/([0-9]|€|\$|\?)/))) {
                   textcomplete = textcomplete + getComputedStyle(b, '::after').content.toLowerCase().trim();
                }
                if (textcomplete.length < 2 && b.value) {
