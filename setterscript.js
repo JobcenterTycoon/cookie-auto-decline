@@ -2001,6 +2001,9 @@
          }, {
             seite: 'mystery-banksy.com',
             setcookie: 'borlabs-cookie=%7B%22consents%22%3A%7B%22essential%22%3A%5B%22borlabs-cookie%22%5D%7D%2C%22domainPath%22%3A%22mystery-banksy.com%2F%22%2C%22expires%22%3A%22Sat%2C%2027%20Jun%202026%2018%3A32%3A58%20GMT%22%2C%22uid%22%3A%22anonymous%22%2C%22v3%22%3Atrue%2C%22version%22%3A1%7D;'
+         }, {
+            seite: 'perfectgym.de',
+            setcookie: 'customTrackingKey=false; , websiteAnalyticsConsent=false;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
