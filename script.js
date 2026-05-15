@@ -180,7 +180,7 @@
             const d = b;
             const paybutton = paybuttons(c);
             const marketingtracking = marketingtrackingg(d);
-            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'odrzuć niewymagane', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'odrzuć wszystko', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels'];
+            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'schliessen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'nichts akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'alle verweigern', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'odrzuć', 'odrzuć niewymagane', 'odrzuć wszystko', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels'];
             for (let i = 0; i < ablehntext.length; i++) {
                if (b === ablehntext[i] && b.includes('einstellungen') === false) {
                   return 'ablehntext';
@@ -192,13 +192,13 @@
                   return 'speichertext';
                }
             }
-            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'přijmout'];
+            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle cookies zulassen', 'in ordnung', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'přijmout', 'potwierdź'];
             for (let i = 0; i < akzeptiertext.length; i++) {
                if (b === akzeptiertext[i]) {
                   return 'akzeptiertext';
                }
             }
-            const optionstext = ['einstellungen', 'einstellungen verwalten', 'ihre auswahl treffen', 'optionen', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies', 'hantera', 'ustawienia plików cookie', 'ayarları değiştir', 'ajustes', 'dostosuj', 'podrobné nastavení', 'voorkeuren instellen', 'voorkeuren aanpassen', 'paramétrage', 'anpassa cookies', 'pas aan', 'kişiselleştirin', 'ustawienia plików cookies', 'hallitse', 'indstillinger', 'manage settings', 'configurar', 'configurar as minhas escolhas', 'nastavení preferencí', 'ne, uprav', 'ei, säädä', 'nei, endre valg', 'nej, justera', 'nej, juster', 'いいえ、調整します', 'nee, pas aan', 'no, aggiusta', 'no, ajustar', 'non, ajuster', 'não, ajustar', 'personnaliser mes choix', 'configure', 'nastavení'];
+            const optionstext = ['einstellungen', 'einstellungen verwalten', 'ihre auswahl treffen', 'optionen', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies', 'hantera', 'ustawienia plików cookie', 'ayarları değiştir', 'ajustes', 'dostosuj', 'podrobné nastavení', 'voorkeuren instellen', 'voorkeuren aanpassen', 'paramétrage', 'anpassa cookies', 'pas aan', 'kişiselleştirin', 'ustawienia plików cookies', 'hallitse', 'indstillinger', 'manage settings', 'configurar', 'configurar as minhas escolhas', 'nastavení preferencí', 'ne, uprav', 'ei, säädä', 'nei, endre valg', 'nej, justera', 'nej, juster', 'いいえ、調整します', 'nee, pas aan', 'no, aggiusta', 'no, ajustar', 'non, ajuster', 'não, ajustar', 'personnaliser mes choix', 'configure', 'nastavení', 'ustawienia zaawansowane'];
             for (let i = 0; i < optionstext.length; i++) {
                if (b.includes(optionstext[i]) && !paybutton) {
                   return 'optionstext';
@@ -364,8 +364,7 @@
                               cookiebannerstatus.knopfstatus = 'einstellungen';
                               if (einstellungenknöpfe[i].parentElement.parentElement.querySelector('.required-consent')) {
                                  const b = einstellungenknöpfe[i];
-                                 const textgeprüft = knöpfetextcheck(b);
-                                 if (textgeprüft === 'akzeptiertext') {
+                                 if (knöpfetextcheck(b) === 'akzeptiertext') {
                                     a.click();
                                  }
                               } else {
@@ -435,8 +434,7 @@
                         if (switches[i].querySelector('.viewcookie')) {
                            b = switches[i].querySelector('p, span.gwt-InlineHTML h3');
                         }
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
                            if (switches[i].querySelector('.switch > .gwt-InlineHTML:first-child + .gwt-InlineHTML, .switchContainerLayerOne > .consentyes')) {
                               switches[i].querySelector('.switch > .gwt-InlineHTML:first-child + .gwt-InlineHTML, .switchContainerLayerOne > .consentyes').click();
                            }
@@ -522,8 +520,7 @@
                   const boxen = cmpbox.querySelectorAll('tr:has(a[role="checkbox"])');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('span[id^="cmpboxvendname"], td.cmpvendname');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('a[role="checkbox"][aria-checked="false"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -553,8 +550,7 @@
                      const boxen = cmpboxshadowroot.shadowRoot.querySelectorAll('.cmpwelcomeprps, .cmpboxnaviitem');
                      for (let i = 0; i < boxen.length; i++) {
                         const b = boxen[i].querySelector('label, .cmpboxnaviitemtxt');
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
                            const checkbox = boxen[i].querySelector('a[role="checkbox"][aria-checked="false"]:not([disabled], :checked)');
                            if (checkbox) {
                               checkbox.click();
@@ -612,9 +608,7 @@
                   if (cookieeinstellung === 'funktional') {
                      const kategorietext = usercentrics.shadowRoot.querySelectorAll('div[data-testid="uc-virtual-list"] [data-testid="uc-expandable-card"]');
                      for (let i = 0; i < kategorietext.length; i++) {
-                        const b = kategorietext[i];
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(kategorietext[i]) === 'funktionaltext') {
                            const switchh = kategorietext[i].querySelector('button[role="switch"][aria-checked="false"]');
                            if (switchh && switchh.checkVisibility()) {
                               switchh.click();
@@ -653,9 +647,7 @@
                if (cookieeinstellung === 'funktional') {
                   const boxen = document.querySelectorAll('#ez-cookie-dialog .ez-cmp-purpose');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"].ez-cmp-purpose-consent-checkbox:not(:checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -708,8 +700,7 @@
                advancedrun = false;
                const knöpfe = realcookiebannerpro.querySelectorAll('a[href="#"][role="button"], div[id^="bnnr-body-"] > div[style^="text-decoration:"][style*="display: flex; align-items: center; justify-content: center; "] > span');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'optionstext') {
@@ -723,9 +714,7 @@
                if (cookieeinstellung === 'funktional') {
                   const checkboxentext = realcookiebannerpro.querySelectorAll('fieldset > span > label > span, div[id^="bnnr-body-"] > div[style="margin-top: 10px; clear: both;"] > div > div > span');
                   for (let i = 0; i < checkboxentext.length; i++) {
-                     const b = checkboxentext[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(checkboxentext[i]) === 'funktionaltext') {
                         let checkbox = checkboxentext[i].parentElement;
                         if (checkbox) {
                            checkbox = checkbox.querySelector('fieldset input[type="checkbox"]:not([disabled], :checked), div[style*="color: rgb(240, 240, 240);"]');
@@ -771,9 +760,7 @@
                   switchesdelay++;
                   const boxen = document.querySelectorAll('#onetrust-consent-sdk :is(.category-menu-switch-handler, .accordion-text.category-item)');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext' && boxen[i].checkVisibility()) {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext' && boxen[i].checkVisibility()) {
                         boxen[i].click();
                      }
                   }
@@ -782,9 +769,7 @@
                      beschreibungen = document.querySelectorAll('#onetrust-consent-sdk .ot-grp-hdr1:has(> .ot-cat-header)');
                   }
                   for (let i = 0; i < beschreibungen.length; i++) {
-                     const b = beschreibungen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(beschreibungen[i]) === 'funktionaltext') {
                         const switchh = beschreibungen[i].querySelector('input.category-switch-handler[type="checkbox"]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -846,17 +831,13 @@
                   }
                   const tcfswitches = borlabs.querySelectorAll('input[id^="tcf-purpose-"][type="checkbox"]:not([disabled], :checked)');
                   for (let i = 0; i < tcfswitches.length; i++) {
-                     const b = tcfswitches[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(tcfswitches[i]) === 'funktionaltext') {
                         tcfswitches[i].click();
                      }
                   }
                   const tcfswitches2 = borlabs.querySelectorAll('#BorlabsCookieTabPurposes [data-borlabs-cookie-iabtcf] label:has(> span.sr-only + input[type="checkbox"])');
                   for (let i = 0; i < tcfswitches2.length; i++) {
-                     const b = tcfswitches2[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(tcfswitches2[i]) === 'funktionaltext') {
                         const switchh2 = tcfswitches2[i].querySelector('input[type="checkbox"][data-borlabs-cookie-switch]:not([disabled], :checked)');
                         if (switchh2) {
                            switchh2.click();
@@ -918,8 +899,7 @@
                         const boxtext = boxen[i].querySelector('span[id^="didomi-purpose-"]');
                         if (boxtext) {
                            const b = boxtext;
-                           const textgeprüft = knöpfetextcheck(b);
-                           if (textgeprüft === 'funktionaltext') {
+                           if (knöpfetextcheck(b) === 'funktionaltext') {
                               if (schalterannehmen && schalterannehmen.checkVisibility()) {
                                  schalterannehmen.click();
                               }
@@ -991,9 +971,7 @@
                if (cookieeinstellung === 'funktional') {
                   const boxen = document.querySelectorAll('#iubenda-iframe [class^="purposes-item purpose-item-"]');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -1067,8 +1045,7 @@
                      const boxen = check.contentWindow.document.querySelectorAll('.fast-cmp-consent-box');
                      for (let i = 0; i < boxen.length; i++) {
                         const b = boxen[i].querySelector('strong');
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
                            const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                            if (switchh && switchh.checkVisibility()) {
                               switchh.click();
@@ -1146,8 +1123,7 @@
                   const switches = document.querySelectorAll('.cookiefirst-root button[role="checkbox"][aria-checked="false"]:not([disabled])');
                   for (let i = 0; i < switches.length; i++) {
                      const b = switches[i].getAttribute('aria-label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         switches[i].setAttribute('rtayztwplpnfftousydd', 'a');
                         switches[i].click();
                      }
@@ -1204,8 +1180,7 @@
                   const boxen = oveleon.querySelectorAll('.cc-group:has(input[type="checkbox"][data-toggle-cookies]:not([disabled], :checked))');
                   for (let i = 0; i < boxen.length; i++) {
                      const d = boxen[i].innerText.toLowerCase();
-                     const textgeprüft = marketingtrackingg(d);
-                     if (!textgeprüft) {
+                     if (!marketingtrackingg(d)) {
                         const switchh = boxen[i].querySelector('input[type="checkbox"][data-toggle-cookies]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -1231,8 +1206,7 @@
                   const boxen = asoilcontentoverlay.querySelectorAll('.as-oil-cpc__category-container, .Purpose__Heading');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.as-oil-cpc__category-header, .as-oil-cpc__purpose-header-text');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh) {
                            switchh.click();
@@ -1298,9 +1272,7 @@
                cookiebannerstatus.anbieter = 'comply-consent-manager';
                const ablehnenspeichern = complyconsentmanager.querySelectorAll('button.comply-SaveSettingsButton');
                for (let i = 0; i < ablehnenspeichern.length; i++) {
-                  const b = ablehnenspeichern[i];
-                  const textgeprüft = knöpfetextcheck(b);
-                  if (textgeprüft === 'ablehntext') {
+                  if (knöpfetextcheck(ablehnenspeichern[i]) === 'ablehntext') {
                      ablehnen = ablehnenspeichern[i];
                   } else {
                      speichern = ablehnenspeichern[i];
@@ -1311,9 +1283,7 @@
                   switchesdelay++;
                   const boxen = complyconsentmanager.querySelectorAll('.comply-Row');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('.comply-ToggleWrapper[role="checkbox"][aria-checked="false"]');
                         if (switchh) {
                            switchh.click();
@@ -1353,8 +1323,7 @@
                   const boxen = document.querySelectorAll('#ccm-control-panel .ccm-control-panel--purpose');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('span[id^="ccm-control-panel--name"]');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -1389,8 +1358,7 @@
                nureinklickeinstellungen = true;
                const knöpfe = orestbida.querySelectorAll('button:not([aria-expanded], [aria-controls])');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -1412,9 +1380,7 @@
                if (cookieeinstellung === 'funktional') {
                   const boxen = orestbida.querySelectorAll('div[class="c-bl b-ex"], div[class="pm__section--toggle pm__section--expandable"]');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"][value]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -1439,9 +1405,7 @@
                   switchesdelay++;
                   const boxen = mandarinmedien.querySelectorAll('.mmcm-group');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.click();
@@ -1474,8 +1438,7 @@
                   const boxen = orejime.querySelectorAll('li.orejime-AppList-item');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.orejime-AppItem-title');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh && switchh.checkVisibility()) {
                            switchh.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -1528,8 +1491,7 @@
                      const boxen = acris.querySelectorAll('.card.cookie-consent-group, .cookie-setting--group');
                      for (let i = 0; i < boxen.length; i++) {
                         const b = boxen[i].querySelector('.pe-1, .title--name');
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
                            const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                            if (switchh) {
                               switchh.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -1725,8 +1687,7 @@
                   const boxen = privacy_optin.querySelectorAll('.privacy_item');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.privacy_label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         switchesdelay += 2;
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox && checkbox.checkVisibility()) {
@@ -1793,8 +1754,7 @@
                cookiebannerstatus.anbieter = 'sirdata.com';
                const knöpfe = sirdatacom.querySelectorAll('button');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -1816,8 +1776,7 @@
                      if (switches[i].checkVisibility()) {
                         const b = switches[i].parentElement.parentElement.parentElement;
                         if (b) {
-                           const textgeprüft = knöpfetextcheck(b);
-                           if (textgeprüft === 'funktionaltext') {
+                           if (knöpfetextcheck(b) === 'funktionaltext') {
                               const nebenswitches = b.parentElement.querySelectorAll('input[type="checkbox"]:not([disabled])');
                               for (let i = 0; i < nebenswitches.length; i++) {
                                  nebenswitches[i].setAttribute('rtayztwplpnfftousydd', 'a');
@@ -1840,8 +1799,7 @@
                advancedrun = false;
                const knöpfe = setupad.querySelectorAll('button[type]');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -1861,8 +1819,7 @@
                   const boxen = setupad.querySelectorAll('.stpd_purposes_list li');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.stpd_small_title');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh) {
                            switchh.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -1889,8 +1846,7 @@
                   const boxen = mkmlegal.shadowRoot.querySelectorAll('.category-header');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('h3');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -1932,9 +1888,7 @@
                if (!einstellungen) {
                   const lknöpfe = webstollen.querySelectorAll('a[href="javascript:void(0)"]');
                   for (let i = 0; i < lknöpfe.length; i++) {
-                     const b = lknöpfe[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'speichertext') {
+                     if (knöpfetextcheck(lknöpfe[i]) === 'speichertext') {
                         speichern = lknöpfe[i];
                      } else {
                         einstellungen = lknöpfe[i];
@@ -1946,9 +1900,7 @@
                   switchesdelay += 0.5;
                   const boxen = webstollen.querySelectorAll('div[style="display: flex;"]:has(> span > label > input)');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (switchh) {
                            switchh.click();
@@ -1959,9 +1911,7 @@
                if (bereitsgeklickt) {
                   const knöpfe2 = webstollen.querySelectorAll('button[class*="consentManagerButton"]');
                   for (let i = 0; i < knöpfe2.length; i++) {
-                     const b = knöpfe2[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'speichertext') {
+                     if (knöpfetextcheck(knöpfe2[i]) === 'speichertext') {
                         speichern = knöpfe2[i];
                      }
                   }
@@ -1987,8 +1937,7 @@
                   const boxen = document.querySelectorAll('#consent--settings > .consent--modal-content > .consent--accordion > .consent--accordion-row, #consent-settings .consent-switch');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('label.consent--label, label.consent-label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -2179,8 +2128,7 @@
                cookiebannerstatus.anbieter = 'tc-privacy-wrapper';
                const knöpfe = tcprivacywrapper.querySelectorAll('button.tc-privacy-button');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -2223,8 +2171,7 @@
                   const boxen = offcanvas.querySelectorAll('div[class="offcanvas-cookie-group"]');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('label.custom-control-label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked, [data-cookie-required])');
                         if (checkbox) {
                            checkbox.click();
@@ -2251,8 +2198,7 @@
                   const boxen = eightworkscookieconsentplus.querySelectorAll('div[class="offcanvas-cookie-group"], .cookie-consent--group');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('label.custom-control-label, .cookie-consent--state-label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked, [data-cookie-required])');
                         if (checkbox) {
                            checkbox.click();
@@ -2306,8 +2252,7 @@
                cookiebannerstatus.anbieter = 'ketch.com';
                const knöpfe = ketch.querySelectorAll('button[id^="ketch-"]');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -2341,8 +2286,7 @@
                   const boxen = otckappdata.querySelectorAll('.cst-category-item-header');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.cst-category-name');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], [checked])');
                         if (checkbox) {
                            checkbox.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -2396,8 +2340,7 @@
                      const boxen = axept.querySelectorAll('.ListSwitch__Item');
                      for (let i = 0; i < boxen.length; i++) {
                         const b = boxen[i].querySelector('.ListSwitch__Vendor__Title');
-                        const textgeprüft = knöpfetextcheck(b);
-                        if (textgeprüft === 'funktionaltext') {
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
                            const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                            if (checkbox) {
                               checkbox.click();
@@ -2473,8 +2416,7 @@
                   const boxen = cookiesplusoverlay.querySelectorAll('.cookiesplus-finality-header');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('strong');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('[id^="cookiesplus-finality-"][id$="-on"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -2500,9 +2442,7 @@
                   switchesdelay++;
                   const boxen = sovy.querySelectorAll('#cat_blocks > div:has(input[type="checkbox"])');
                   for (let i = 0; i < boxen.length; i++) {
-                     const b = boxen[i];
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(boxen[i]) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -2587,8 +2527,7 @@
                   const boxen = ethyca.querySelectorAll('.fides-notice-toggle-title');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('span.fides-justify-space-between');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox && checkbox.checkVisibility()) {
                            checkbox.click();
@@ -2686,8 +2625,7 @@
                advancedrun = false;
                const knöpfe = uniconsent.querySelectorAll('button');
                for (let i = 0; i < knöpfe.length; i++) {
-                  const b = knöpfe[i];
-                  const textgeprüft = knöpfetextcheck(b);
+                  const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
                      ablehnen = knöpfe[i];
                   } else if (textgeprüft === 'speichertext') {
@@ -2703,8 +2641,7 @@
                   const boxen = uniconsent.querySelectorAll('div[class="flex items-center justify-center w-full p-2 border-b "]:has(input)');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('.flex-1.cursor-pointer');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -2729,8 +2666,7 @@
                   const boxen = omcookie.querySelectorAll('.cookie-panel__checkbox-wrap, .form-check-inline');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('label');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.click();
@@ -2770,8 +2706,7 @@
                   const boxen = cmsaccepttags.querySelectorAll('cms-taggroup-header');
                   for (let i = 0; i < boxen.length; i++) {
                      const b = boxen[i].querySelector('span');
-                     const textgeprüft = knöpfetextcheck(b);
-                     if (textgeprüft === 'funktionaltext') {
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
                         const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                         if (checkbox) {
                            checkbox.setAttribute('rtayztwplpnfftousydd', 'a');
@@ -2905,28 +2840,24 @@
                            if (!finalerknopf) {
                               if (cookieeinstellung !== 'akzeptieren') {
                                  if (ablehnknopf) {
-                                    const a = ablehnknopf;
-                                    if (sichtbarkeitsprüfung(a)) {
+                                    if (sichtbarkeitsprüfung(ablehnknopf)) {
                                        cookiebannerstatus.knopfstatus = 'ablehnen';
                                        finalerknopf = ablehnknopf;
                                     }
                                  } else if (akzeptierenknopf) {
-                                    const a = akzeptierenknopf;
-                                    if (sichtbarkeitsprüfung(a)) {
+                                    if (sichtbarkeitsprüfung(akzeptierenknopf)) {
                                        cookiebannerstatus.knopfstatus = 'akzeptiert';
                                        finalerknopf = akzeptierenknopf;
                                     }
                                  }
                               } else {
                                  if (akzeptierenknopf) {
-                                    const a = akzeptierenknopf;
-                                    if (sichtbarkeitsprüfung(a)) {
+                                    if (sichtbarkeitsprüfung(akzeptierenknopf)) {
                                        cookiebannerstatus.knopfstatus = 'akzeptiert';
                                        finalerknopf = akzeptierenknopf;
                                     }
                                  } else if (ablehnknopf) {
-                                    const a = ablehnknopf;
-                                    if (sichtbarkeitsprüfung(a)) {
+                                    if (sichtbarkeitsprüfung(ablehnknopf)) {
                                        cookiebannerstatus.knopfstatus = 'ablehnen';
                                        finalerknopf = ablehnknopf;
                                     }
