@@ -204,13 +204,13 @@
                   return 'optionstext';
                }
             }
-            const funktionaltext = ['funktional', 'funktionel', 'funktions-', 'warenkorb speichern', 'warenkorbs zu speichern', 'anmeldedaten speichern', 'komfort', 'personalisierte inhalte', 'personalisierter inhalt', 'optimierten kundenservice', 'videos und bilder', 'präferenzen', 'übersetzungstool', 'optimized customer service', 'comfort', 'display videos', 'display images', 'functional', 'funzionale', 'fonctionnel', 'fonctionnalité', 'functioneel', 'functionele', 'funcionais', 'funcțional', 'funzionali', 'funcional', '機能的', '機能性', '功能性', 'foncionals', 'funksjonelle', 'i̇şlevsellik', 'swyddogaeth', 'функционалност', 'функціональності', 'Функционални', 'Функциональные', 'פונקציונליות', 'λειτουργικότητας', 'funksjonalitet', 'funkcionalitātes ', 'funkcionalumo', 'funktsionaal', 'funkcionalni', 'funkcjonalne', 'verwendung von profilen zur auswahl personalisierter inhalte', 'erstellung von profilen zur personalisierung von inhalten', 'verwendung reduzierter daten zur auswahl von inhalten', 'ein personalisiertes inhalts-profil erstellen', 'personalisierte inhalte auswählen', 'personalisierten inhalten', 'use limited data to select content', 'use profiles to select personalised content', 'create profiles to personalise content', 'utiliser des données limitées pour sélectionner le contenu', 'creare profili per la personalizzazione dei contenuti', 'utilizzare profili per la selezione di contenuti personalizzati', 'utilizzare dati limitati per la selezione dei contenuti', 'kreiranje profila za personalizaciju sadržaja', 'korišćenje profila za izbor personalizovanog sadržaja', 'sozial', 'social', 'preferenze', 'preferences', 'preferencias', 'préférences', 'external media', 'external content', 'externe medien', 'externe inhalte', 'externe dienste', 'externen inhalten', 'redaktionellen inhalten', 'redaktionelle inhalte', 'redaktionell empfohlene inhalte', 'toiminnallinen', 'funkční', 'third-party services', 'paypal express'];
+            const funktionaltext = ['funktional', 'funktionel', 'funktions-', 'notwendige cookies zulassen', 'warenkorb speichern', 'warenkorbs zu speichern', 'anmeldedaten speichern', 'komfort', 'personalisierte inhalte', 'personalisierter inhalt', 'optimierten kundenservice', 'videos und bilder', 'präferenzen', 'übersetzungstool', 'optimized customer service', 'comfort', 'display videos', 'display images', 'functional', 'funzionale', 'fonctionnel', 'fonctionnalité', 'functioneel', 'functionele', 'funcionais', 'funcțional', 'funzionali', 'funcional', '機能的', '機能性', '功能性', 'foncionals', 'funksjonelle', 'i̇şlevsellik', 'swyddogaeth', 'функционалност', 'функціональності', 'Функционални', 'Функциональные', 'פונקציונליות', 'λειτουργικότητας', 'funksjonalitet', 'funkcionalitātes ', 'funkcionalumo', 'funktsionaal', 'funkcionalni', 'funkcjonalne', 'verwendung von profilen zur auswahl personalisierter inhalte', 'erstellung von profilen zur personalisierung von inhalten', 'verwendung reduzierter daten zur auswahl von inhalten', 'ein personalisiertes inhalts-profil erstellen', 'personalisierte inhalte auswählen', 'personalisierten inhalten', 'use limited data to select content', 'use profiles to select personalised content', 'create profiles to personalise content', 'utiliser des données limitées pour sélectionner le contenu', 'creare profili per la personalizzazione dei contenuti', 'utilizzare profili per la selezione di contenuti personalizzati', 'utilizzare dati limitati per la selezione dei contenuti', 'kreiranje profila za personalizaciju sadržaja', 'korišćenje profila za izbor personalizovanog sadržaja', 'sozial', 'social', 'preferenze', 'preferences', 'preferencias', 'préférences', 'external media', 'external content', 'externe medien', 'externe inhalte', 'externe dienste', 'externen inhalten', 'redaktionellen inhalten', 'redaktionelle inhalte', 'redaktionell empfohlene inhalte', 'toiminnallinen', 'funkční', 'third-party services', 'paypal express'];
             for (let i = 0; i < funktionaltext.length; i++) {
                if (b.includes(funktionaltext[i]) && !marketingtracking) {
                   return 'funktionaltext';
                }
             }
-            const funktionaltext2 = ['youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund', 'drittanbieter-inhalte', 'drittanbieter inhalte', 'entertainment'];
+            const funktionaltext2 = ['erforderlich', 'erforderliche', 'nur erforderlich', 'nur erforderliche', 'youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund', 'drittanbieter-inhalte', 'drittanbieter inhalte', 'entertainment'];
             for (let i = 0; i < funktionaltext2.length; i++) {
                if (b.includes(funktionaltext2[i]) && b.length <= 25 && !marketingtracking) {
                   return 'funktionaltext';
@@ -1704,7 +1704,8 @@
                console.log('[Cookie auto decline] Detected: privacy_optin');
                cookiebannerstatus.anbieter = 'privacy_optin';
                advancedrun = false;
-               speichern = privacy_optin.querySelector('input[name="save_settings"]');
+               ablehnen = privacy_optin.querySelector('input[name="save_tech_settings"]');
+               speichern = privacy_optin.querySelector('input[name="save_settings"]:not(:disabled)');
                akzeptieren = privacy_optin.querySelector('input[name="save_all_settings"]');
                if (cookieeinstellung === 'funktional') {
                   const boxen = privacy_optin.querySelectorAll('.privacy_item');
@@ -1718,6 +1719,7 @@
                         }
                      }
                   }
+                  speichern = privacy_optin.querySelector('input[name="save_settings"]:not(:disabled)');
                }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
