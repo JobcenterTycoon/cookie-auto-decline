@@ -210,7 +210,7 @@
                   return 'funktionaltext';
                }
             }
-            const funktionaltext2 = ['youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund', 'drittanbieter-inhalte', 'drittanbieter inhalte'];
+            const funktionaltext2 = ['youtube', 'facebook', 'instagram', 'tiktok', 'twitter', 'twitch', 'linkedin', 'dailymotion', 'pinterest', 'vimeo', 'soundcloud', 'maps', 'kartendienst', 'sonstige', 'extern', 'navigation', 'embedd', 'eye-able', 'service', 'zahlungsanbieter', 'zusatzfunktionen', 'recaptcha', 'paypal', 'express checkout', 'bewertungen', 'cleverpush', 'flowbox', 'guuru', 'selligent', 'trbo', 'wonderpush', 'authorized.by', 'billiger.de', 'google fonts', 'idealo', 'trusted shops', 'händlerbund', 'drittanbieter-inhalte', 'drittanbieter inhalte', 'entertainment'];
             for (let i = 0; i < funktionaltext2.length; i++) {
                if (b.includes(funktionaltext2[i]) && b.length <= 25 && !marketingtracking) {
                   return 'funktionaltext';
@@ -499,6 +499,29 @@
                   klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
                }
 
+               // clym.io
+               if (window.location.host === 'widget-next.clym-sdk.net' || window.location.host === 'cf.clym-widget.net') {
+                  console.log('[Cookie auto decline] Detected: clym.io (iFrame)');
+                  cookiebannerstatus.anbieter = 'clym.io (iFrame)';
+                  advancedrun = false;
+                  ablehnen = document.querySelector('#clym-notice-layout button#handle-reject-all, #clym-app-layout button#handle-reject');
+                  akzeptieren = document.querySelector('#clym-notice-layout button#handle-continue, #clym-app-layout button#handle-accept');
+                  if (cookieeinstellung === 'funktional') {
+                     speichern = document.querySelector('#clym-notice-layout button#handle-continue, #clym-app-layout button#handle-accept');
+                     switchesdelay++;
+                     const boxen = document.querySelectorAll('[id^="clym-"] ul > li > label:not([data-disabled="true"])');
+                     for (let i = 0; i < boxen.length; i++) {
+                        const b = boxen[i].querySelector('p');
+                        if (knöpfetextcheck(b) === 'funktionaltext') {
+                           const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
+                           if (checkbox) {
+                              checkbox.click();
+                           }
+                        }
+                     }
+                  }
+                  klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+               }
             }
             // iframe klicker ENDE
 
