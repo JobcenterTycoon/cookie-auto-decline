@@ -4089,6 +4089,10 @@
             seite: 'porsche.com',
             selector: 'uc-layer2 >> uc-footer >> uc-p-button.deny >> button',
             checkstorage: 'uc_interaction_type'
+         }, {
+            seite: 'apollo-news.net',
+            selector: '#ad-free-sub-banner-container button#ad-free-sub-banner-btn-accept-all',
+            checkstorage: 'CookieConsent'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
