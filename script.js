@@ -2172,13 +2172,28 @@
                cookiebannerstatus.anbieter = 'tarteaucitronRoot';
                advancedrun = false;
                nureinklickeinstellungen = true;
-               ablehnen = tarteaucitronroot.querySelector('#tarteaucitronAlertBig :is([onclick="tarteaucitron.userInterface.respondAll(false);"], .tarteaucitronDeny)');
-               akzeptieren = tarteaucitronroot.querySelector('#tarteaucitronAlertBig :is([onclick="tarteaucitron.userInterface.respondAll(true);"], .tarteaucitronAllow)');
                if (cookieeinstellung === 'funktional') {
-                  document.cookie = "tarteaucitron=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                  document.cookie = 'tarteaucitron=!matomo=false!facebookpixel=false!gajs=false!vimeo=true!youtube=true!mycustomservice=true;' + nc;
+                  if (domainohnewww !== 'gruene-kleinostheim.de') {
+                     document.cookie = "tarteaucitron=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                     document.cookie = 'tarteaucitron=!tarteaucitron=true!website=true!youtube=true!vimeo=true!mycustomservice=true!addtoanyshare=false!iframe=false!facebookpixel=false!analytics=false!googletagmanager=false!regex_ads=false!regex_analytic=false!matomo=false!gajs=false;' + nc;
+                  } else {
+                     localStorage.setItem('dsgvoaio', 'dsgvoaiowp=!youtube=true!mycustomservice=true');
+                  }
                   beenden();
                   window.location.reload();
+               } else {
+                  const ablehnen1 = tarteaucitronroot.querySelectorAll('[onclick="tarteaucitron.userInterface.respondAll(false);"], .tarteaucitronCTAButton.tarteaucitronDeny');
+                  for (let i = 0; i < ablehnen1.length; i++) {
+                     if (ablehnen1[i].checkVisibility()) {
+                        ablehnen = ablehnen1[i];
+                     }
+                  }
+                  const akzeptieren1 = tarteaucitronroot.querySelectorAll('[onclick="tarteaucitron.userInterface.respondAll(true);"], .tarteaucitronCTAButton.tarteaucitronAllow');
+                  for (let i = 0; i < akzeptieren1.length; i++) {
+                     if (akzeptieren1[i].checkVisibility()) {
+                        akzeptieren = akzeptieren1[i];
+                     }
+                  }
                }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
