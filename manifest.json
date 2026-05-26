@@ -30,7 +30,7 @@
         "*://*/*"
       ],
       "exclude_matches":[
-            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://fritzbox.internal/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*", "*://fire.walla/*", "*://hitronhub.home/*", "*://homerouter.cpe/*", "*://mobile.hotspot/*", "*://mwlogin.net/*", "*://ntt.setup/*", "*://plex.direct/*", "*://repeater.asus.com/*", "*://router.asus.com/*", "*://samsung.router/*", "*://steamloopback.host/*", "*://telstra.gateway/*", "*://tplinkap.net/*", "*://tplinkeap.net/*", "*://tplinkmodem.net/*", "*://tplinkplclogin.net/*", "*://tplinkrepeater.net/*", "*://tplinkwifi.net/*", "*://unifi.localdomain/*", "*://web.setup/*", "*://web.setup.home/*", "*://web.setup.home/*"
          ],
       "js": [
         "script.js"
@@ -43,7 +43,7 @@
         "*://*/*"
       ],
       "exclude_matches":[
-            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*"
+            "*://127.0.0.1/*", "*://0.0.0.0/*", "*://[::]/*", "*://[::1]/*", "*://localhost/*", "*://*.local/*", "*://*.internal/*", "*://fritz.box/*", "*://fritz.nas/*", "*://fritz.repeater/*", "*://myfritz.box/*", "*://fritzbox.internal/*", "*://giga.cube/*", "*://congstar.box/*", "*://easy.box/*", "*://kabel.box/*", "*://pi.hole/*", "*://speedport.ip/*", "*://my.router/*", "*://home.arpa/*", "*://fire.walla/*", "*://hitronhub.home/*", "*://homerouter.cpe/*", "*://mobile.hotspot/*", "*://mwlogin.net/*", "*://ntt.setup/*", "*://plex.direct/*", "*://repeater.asus.com/*", "*://router.asus.com/*", "*://samsung.router/*", "*://steamloopback.host/*", "*://telstra.gateway/*", "*://tplinkap.net/*", "*://tplinkeap.net/*", "*://tplinkmodem.net/*", "*://tplinkplclogin.net/*", "*://tplinkrepeater.net/*", "*://tplinkwifi.net/*", "*://unifi.localdomain/*", "*://web.setup/*", "*://web.setup.home/*", "*://web.setup.home/*"
          ],
       "js": [
         "setterscript.js"
