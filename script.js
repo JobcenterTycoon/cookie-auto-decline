@@ -4070,6 +4070,10 @@
             seite: 'privacy.samsung.com',
             selector: '#cookie-eu button.cookie-eu__close',
             checkstorage: 'ALLOW_FUNCTIONAL_COOKIES'
+         }, {
+            seite: 'porsche.com',
+            selector: 'uc-layer2 >> uc-footer >> uc-p-button.deny >> button',
+            checkstorage: 'uc_interaction_type'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
