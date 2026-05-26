@@ -138,7 +138,7 @@
       // Funktionen für die Cookie Banner erkennung.
       let attributchecker = function (a) {
          const htmltext = a.outerHTML.toLowerCase();
-         if ((htmltext.includes('schließen') || htmltext.includes('close') || htmltext.includes('dismiss') || htmltext.includes('reject') || htmltext.includes('disallow') || htmltext.includes('akceptuję')) && a.innerText.length < 5) {
+         if ((htmltext.includes('schließen') || htmltext.includes('close') || htmltext.includes('dismiss') || htmltext.includes('reject') || htmltext.includes('disallow') || htmltext.includes('akceptuję') || a.innerText.trim().match(/^(x|×|Χ|Х|х|ᕁ|ᕽ|ᚷ|Ⅹ|ⅹ|╳|❌|⤫|⤬|⨯|𐌗|𐌢|𝝬|X|☓|Ꭓ)$/i)) && a.innerText.length < 5) {
             return true;
          }
       };
@@ -676,7 +676,6 @@
                            switchh.click();
                         }
                      }
-
                   }
                }
                speichern = document.querySelector('button#ez-save-settings');
@@ -2804,8 +2803,8 @@
                         text.includes('website makes use of cookies') ||
                         text.includes('manage cookies') ||
                         text.includes('accept all cookies') ||
+                        text.includes('accept the use of cookies') ||
                         text.includes('to improve the quality of our site') ||
-                        text.includes('accept all cookies') ||
                         text.includes('you agree with our cookie policy') ||
                         text.includes('Cookie instellingen') ||
                         text.includes('rejeitar cookies') ||
