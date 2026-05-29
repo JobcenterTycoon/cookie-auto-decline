@@ -629,18 +629,20 @@
                      speichern = usercentrics.shadowRoot.querySelector('button[data-testid="uc-save-button"], button#save.uc-save-button, button[class^="sc-"][data-testid="uc-save-button"][role="button"]');
                   }
                   if (cookieeinstellung === 'funktional') {
-                     const kategorietext = usercentrics.shadowRoot.querySelectorAll('div[data-testid="uc-virtual-list"] [data-testid="uc-expandable-card"]');
-                     for (let i = 0; i < kategorietext.length; i++) {
-                        if (knöpfetextcheck(kategorietext[i]) === 'funktionaltext') {
-                           const switchh = kategorietext[i].querySelector('button[role="switch"][aria-checked="false"]');
+                     if (usercentrics.shadowRoot.querySelector('[data-testid="uc-tcf-purposes-expandable"]')) {
+                        switchesdelay += 0.5;
+                     } else {
+                        switchesdelay++;
+                     }
+                     const boxen = usercentrics.shadowRoot.querySelectorAll('.uc-expandable-card, [data-testid="uc-expandable-card"], [data-testid="uc-tcf-special-features-expandable"], [data-testid="uc-tcf-purposes-expandable"]');
+                     for (let i = 0; i < boxen.length; i++) {
+                        const b = boxen[i].querySelector('.uc-card-title, button > div[id]:first-child');
+                        if (boxen[i].checkVisibility() && knöpfetextcheck(b) === 'funktionaltext') {
+                           const switchh = boxen[i].querySelector('button[role="switch"][aria-checked="false"]');
                            if (switchh && switchh.checkVisibility()) {
                               switchh.click();
                            }
                         }
-                     }
-                     const kategorie = usercentrics.shadowRoot.querySelector('button#uc-category-functional-toggle[role="switch"][aria-checked="false"]');
-                     if (kategorie && kategorie.checkVisibility()) {
-                        kategorie.click();
                      }
                   }
                } else {
