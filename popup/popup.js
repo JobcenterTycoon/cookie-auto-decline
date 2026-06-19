@@ -98,10 +98,6 @@ browser.tabs.query({
                         knopfstatuscontainer.style.display = 'none';
                      }
 
-                     if (a.cookiebannerstatuscookie[i].anbieter === _('providerSelfProgrammedMessage')) {
-                        knopfstatuscontainer.style.display = 'none';
-                     }
-
                      switch (a.cookiebannerstatuscookie[i].knopfstatus) {
                         case 'abgelehnt':
                            knopfstatus.innerText = _('buttonStatusDeclinedMessage');
