@@ -180,7 +180,7 @@
             const d = b;
             const paybutton = paybuttons(c);
             const marketingtracking = marketingtrackingg(d);
-            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'schliessen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'nichts akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nein danke.', 'nicht einverstanden', 'ich bin nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'alle verweigern', 'nur funktionelle cookies', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'essential only', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'odrzuć', 'odrzuć niewymagane', 'odrzuć wszystko', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels', 'tillåt nödvändiga'];
+            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'schließen', 'schliessen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'nichts akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nein danke.', 'nicht einverstanden', 'ich bin nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'alle verweigern', 'nur funktionelle cookies', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'essential only', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'odrzuć', 'odrzuć niewymagane', 'odrzuć wszystko', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels', 'tillåt nödvändiga', 'noraidīt'];
             for (let i = 0; i < ablehntext.length; i++) {
                if (b === ablehntext[i] && b.includes('einstellungen') === false) {
                   return 'ablehntext';
@@ -192,13 +192,13 @@
                   return 'speichertext';
                }
             }
-            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'akzeptiere alle', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle zulassen und fortsetzen', 'alle cookies zulassen', 'in ordnung', 'annehmen', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'přijmout', 'potwierdź', 'akceptuję'];
+            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'akzeptiere alle', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle zulassen und fortsetzen', 'alle cookies zulassen', 'in ordnung', 'annehmen', 'alle annehmen', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'přijmout', 'potwierdź', 'akceptuję', 'atļaut'];
             for (let i = 0; i < akzeptiertext.length; i++) {
                if (b === akzeptiertext[i]) {
                   return 'akzeptiertext';
                }
             }
-            const optionstext = ['einstellungen', 'einstellungen verwalten', 'ihre auswahl treffen', 'optionen', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies', 'hantera', 'ustawienia plików cookie', 'ayarları değiştir', 'ajustes', 'dostosuj', 'podrobné nastavení', 'voorkeuren instellen', 'voorkeuren aanpassen', 'paramétrage', 'anpassa cookies', 'pas aan', 'kişiselleştirin', 'ustawienia plików cookies', 'hallitse', 'indstillinger', 'manage settings', 'configurar', 'configurar as minhas escolhas', 'nastavení preferencí', 'ne, uprav', 'ei, säädä', 'nei, endre valg', 'nej, justera', 'nej, juster', 'いいえ、調整します', 'nee, pas aan', 'no, aggiusta', 'no, ajustar', 'non, ajuster', 'não, ajustar', 'personnaliser mes choix', 'configure', 'nastavení', 'ustawienia zaawansowane'];
+            const optionstext = ['einstellungen', 'einstellungen verwalten', 'ihre auswahl treffen', 'optionen', 'setting', 'cookies verwalten', 'benutzerdefiniert', 'dostosuj pliki cookie', 'çerez ayarları', 'çerez ayarlarını yapılandır', 'cookie instellingen', 'instellingen', 'więcej opcji', 'configurações', 'impostazioni', 'možnosti', 'ustawienia', 'ustawienia zaawansowane', 'hantera mina preferenser', 'configuración', 'nastavení', 'preferencje', 'manage cookies', 'hantera', 'ustawienia plików cookie', 'ayarları değiştir', 'ajustes', 'dostosuj', 'podrobné nastavení', 'voorkeuren instellen', 'voorkeuren aanpassen', 'paramétrage', 'anpassa cookies', 'pas aan', 'kişiselleştirin', 'ustawienia plików cookies', 'hallitse', 'indstillinger', 'manage settings', 'configurar', 'configurar as minhas escolhas', 'nastavení preferencí', 'ne, uprav', 'ei, säädä', 'nei, endre valg', 'nej, justera', 'nej, juster', 'いいえ、調整します', 'nee, pas aan', 'no, aggiusta', 'no, ajustar', 'non, ajuster', 'não, ajustar', 'personnaliser mes choix', 'configure', 'nastavení', 'ustawienia zaawansowane', 'pielāgot'];
             for (let i = 0; i < optionstext.length; i++) {
                if (b.includes(optionstext[i]) && !paybutton) {
                   return 'optionstext';
@@ -2765,7 +2765,7 @@
             }
 
             // Advanced
-            if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
+            if ( /*advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)*/ false) {
 
                // Einfachr alter Erkennungsscript
                const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, li, footer, app-cookie, cms-cookie-bar):is([class*="cookie" i], [id*="cookie" i], [aria-labelledby*="cookie" i], [aria-label*="cookie" i], [class*="keks" i], [id*="keks" i], [class*="consent" i], [id*="consent" i], [aria-labelledby*="consent" i], [aria-label*="consent" i], [class*="privacy" i], [id*="privacy" i], [class*="c-disclaimer" i], [class*="cc_banner" i], [id*="cc_banner"], [class*="cc_overlay"], [id*="cc_overlay"], [class*="cc-overlay"], [id*="cc-overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [class^="cc-notification"], [id^="cc-notification"], [data-testid="consent-banner" i], [cc_data], cookie-law):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .default-layout.cookie-is-shown)');
@@ -3109,611 +3109,568 @@
 
          const regeln = [{
             seite: 'consent.google.ac,consent.google.ae,consent.google.at,consent.google.be,consent.google.bg,consent.google.by,consent.google.ca,consent.google.ch,consent.google.cl,consent.google.co.id,consent.google.co.il,consent.google.coIn,consent.google.co.jp,consent.google.co.ke,consent.google.co.kr,consent.google.co.nz,consent.google.co.th,consent.google.co.uk,consent.google.co.ve,consent.google.co.za,consent.google.com,consent.google.com.ar,consent.google.com.au,consent.google.com.br,consent.google.com.co,consent.google.com.ec,consent.google.com.eg,consent.google.com.hk,consent.google.com.mx,consent.google.com.my,consent.google.com.pe,consent.google.com.ph,consent.google.com.pk,consent.google.com.py,consent.google.com.sa,consent.google.com.sg,consent.google.com.tr,consent.google.com.tw,consent.google.com.ua,consent.google.com.uy,consent.google.com.vn,consent.google.cz,consent.google.de,consent.google.dk,consent.google.dz,consent.google.ee,consent.google.es,consent.google.fi,consent.google.fr,consent.google.gr,consent.google.hr,consent.google.hu,consent.google.ie,consent.google.it,consent.google.lt,consent.google.lv,consent.google.nl,consent.google.no,consent.google.pl,consent.google.pt,consent.google.ro,consent.google.rs,consent.google.ru,consent.google.se,consent.google.sk,consent.google.coIn',
-            selector: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child:has(+ form:last-child) > div > div > button',
+            selectorablehnen: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child:has(+ form:last-child) > div > div > button',
+            selectorakzeptieren: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button',
             selectormobile: 'div:first-child + div > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button'
          }, {
             seite: 'consent.youtube.com',
-            selector: 'div > div:has(> div:only-child > button[aria-label][role="link"]) + form[action="https://consent.youtube.com/save"]:has(+ form:last-child) > div > div > button',
+            selectorablehnen: 'div > div:has(> div:only-child > button[aria-label][role="link"]) + form[action="https://consent.youtube.com/save"]:has(+ form:last-child) > div > div > button',
             selectormobile: 'div + div > form[action="https://consent.youtube.com/save"] + form[action="https://consent.youtube.com/save"]:has(+ div:last-child > div > button[aria-label][role="link"]) > div > div > button'
          }, {
             seite: 'consent.yahoo.com',
-            selector: 'button.reject-all[name="reject"][value="reject"]'
+            selectorablehnen: '#consent-page button.reject-all[name="reject"][value="reject"]',
+            selectorakzeptieren: 'button.accept-all[name="agree"][value="agree"]'
          }, {
             seite: 'youtube.com',
-            selector: 'tp-yt-paper-dialog#dialog div.eom-buttons.ytd-consent-bump-v2-lightbox ytd-button-renderer:first-child button[aria-label]',
+            selectorablehnen: 'tp-yt-paper-dialog#dialog div.eom-buttons.ytd-consent-bump-v2-lightbox ytd-button-renderer:first-child button[aria-label]',
+            selectorakzeptieren: 'tp-yt-paper-dialog#dialog div.eom-buttons.ytd-consent-bump-v2-lightbox ytd-button-renderer:first-child + ytd-button-renderer button[aria-label]',
             checkcookie: 'SOCS',
             noframe: true
          }, {
             seite: 'ecb.europa.eu',
-            selector: '#cookieConsent button.floatRight',
+            selectorablehnen: '#cookieConsent button.floatRight',
+            selectorakzeptieren: '#cookieConsent button.floatLeft',
             checkstorage: 'cookieChoice'
          }, {
             seite: 'europa.eu',
-            selector: '#cookie-consent-banner a[href="#refuse"]',
+            selectorablehnen: '#cookie-consent-banner a[href="#refuse"]',
+            selectorakzeptieren: '#cookie-consent-banner a[href="#accept"]',
             checkcookie: 'consent_cookies'
          }, {
             seite: 'warnung.bund.de',
             checkstorage: 'datahintAccept',
-            selector: '.datahint #data-hint-decline-button.decline'
+            selectorablehnen: '.datahint #data-hint-decline-button.decline',
+            selectorakzeptieren: '.datahint #data-hint-accept-button'
          }, {
             seite: 'deutsche-islam-konferenz.de,digital-fuer-deutschland.de,bvl.bund.de,auslandsschulwesen.de,bamf.de,thw.de,itzbund.de,bafin.de',
             checkcookie: 'cookiebanner',
-            selector: '#cookiebanner .js-close-banner'
-         }, {
-            seite: 'bund.de',
-            selector: '.cookie-consent__btn-wrapper > button.cookie-consent__btn.is-deny'
+            selectorablehnen: '#cookiebanner .js-close-banner',
+            selectorakzeptieren: '#cookiebanner .js-close-banner.consentToAll'
          }, {
             seite: 'wochenspiegelonline.de',
-            selector: 'button.btn--secondary[name*="[consent][deny]"]'
-         }, {
-            seite: 'chemnitz.de,ba-riesa.de,theater-chemnitz.de',
-            checkcookie: 'privacylayer',
-            selector: '#cc_privacy_layer button.cc_open_settings -> #cc_privacy_layer button.cc_accept_settings',
+            selectorablehnen: 'button.btn--secondary[name*="[consent][deny]"]',
+            selectorakzeptieren: 'button.select-all[name*="[consent][selectAll]"]'
          }, {
             seite: 'meta.com',
             checkstorage: 'Session',
-            selector: 'div[role="dialog"][aria-label*="ookies"] > div:first-child > div:first-child > div:first-child > div:last-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child[role="button"][tabindex]'
+            selectorablehnen: 'div[role="dialog"][aria-label*="ookies"] > div:first-child > div:first-child > div:first-child > div:last-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child[role="button"][tabindex]',
+            selectorakzeptieren: 'div[role="dialog"][aria-label*="ookies"] > div:first-child > div:first-child > div:first-child > div:last-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > div:last-child > div:only-child > div:only-child > div:last-child[role][data-visualcompletion]'
          }, {
             seite: 'm.facebook.com',
             checkstorage: 'wd',
-            selector: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_only_essential_button"]',
+            selectorablehnen: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_only_essential_button"]',
+            selectorakzeptieren: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_button"]',
             noframe: true
          }, {
             seite: 'facebook.com',
             checkstorage: 'wd',
-            selector: '[role="dialog"] [tabindex="0"]:is([aria-label*="ookies"], [aria-label*="lapukus"]):not([aria-label*="?"])',
+            selectorablehnen: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"])',
+            selectorakzeptieren: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:last-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"])',
             noframe: true
          }, {
             seite: 'threads.net,threads.com',
             checkstorage: 'Session',
-            selector: 'div[role="dialog"] div[aria-hidden="false"] div[role="button"][tabindex="0"] + div[role="button"][tabindex="0"]'
+            selectorablehnen: 'div[role="dialog"] div[aria-hidden="false"] div[role="button"][tabindex="0"]:first-child + div[role="button"][tabindex="0"]:last-child',
+            selectorakzeptieren: 'div[role="dialog"] div[aria-hidden="false"] div[role="button"][tabindex="0"]:first-child:has(+ div[role="button"][tabindex="0"]:last-child)'
          }, {
             seite: 'instagram.com',
-            selector: 'div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > button[tabindex] + button[tabindex]:not([disabled=""]), div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > div:last-child > div:last-child > button:only-child:not([disabled=""])'
-         }, {
-            seite: 'whatsapp.com',
-            checkcookie: 'wa_cb',
-            selector: 'div[data-testid="wa_cookies_banner_modal"] button[data-cookiebanner="accept_button"]'
+            selectorablehnen: 'div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > button[tabindex] + button[tabindex]:not([disabled=""]), div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > div:last-child > div:last-child > button:only-child:not([disabled=""])',
+            selectorakzeptieren: 'div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > button[tabindex]:has(+ button[tabindex]:not([disabled=""])), div[style="display: flex; flex-direction: column; height: 100%; max-width: 100%;"] > div:last-child > div:first-child > div:only-child > button:only-child:not([disabled=""])'
          }, {
             seite: 'linkedin.com',
-            selector: '.artdeco-global-alert-action__wrapper > button[action-type="DENY"][data-control-name^="ga-cookie.consent.deny"]'
+            selectorablehnen: '.artdeco-global-alert-action__wrapper > button[action-type="DENY"][data-control-name^="ga-cookie.consent.deny"]',
+            selectorakzeptieren: '.artdeco-global-alert-action__wrapper > button[action-type="ACCEPT"][data-control-name^="ga-cookie.consent.accept"]'
          }, {
             seite: 'office.com,microsoft.com,minecraft.net,skype.com,xbox.com',
-            selector: '#wcpConsentBannerCtrl button[type="button"]:nth-of-type(2)'
+            selectorablehnen: '#wcpConsentBannerCtrl button[type="button"]:nth-of-type(2)',
+            selectorakzeptieren: '#wcpConsentBannerCtrl button[type="button"]:nth-of-type(1)'
          }, {
             seite: 'etsy.com',
             checkcookie: ' p=',
-            selector: '#gdpr-single-choice-overlay button[data-gdpr-single-choice-reject="true"]'
+            selectorablehnen: '#gdpr-single-choice-overlay button[data-gdpr-single-choice-reject="true"]',
+            selectorakzeptieren: '#gdpr-single-choice-overlay button[data-gdpr-single-choice-accept="true"]'
          }, {
             seite: 'rp-online.de,wz.de,ga.de',
             checkcookie: 'OptanonAlertBoxClosed',
-            selector: '#consentAccept'
+            selectorakzeptieren: '#consentAccept'
          }, {
             seite: 'gamestar.de',
-            selector: '#cmp-modal a.cmp-accept.no-link[href="#"]',
+            selectorakzeptieren: '#cmp-modal a.cmp-accept.no-link[href="#"]',
          }, {
             seite: 'twitch.tv',
-            selector: 'button[data-a-target="consent-banner-manage-preferences"] -> button[data-a-target="consent-modal-save"]',
+            selectorablehnen: 'button[data-a-target="consent-banner-manage-preferences"] -> button[data-a-target="consent-modal-save"]',
+            selectorakzeptieren: 'button[data-a-target="consent-banner-accept"]',
             noframe: true
          }, {
             seite: 'roblox.com',
             checkcookie: 'RBXcb',
-            selector: '#cookie-banner-wrapper button.btn-secondary-lg[type="button"]'
-         }, {
-            seite: 'fandom.com',
-            checkcookie: 'tracking-opt-in-status',
-            selector: 'div[data-tracking-opt-in-overlay] div[data-tracking-opt-in-accept]'
+            selectorablehnen: '#cookie-banner-wrapper button.btn-secondary-lg[type="button"]',
+            selectorakzeptieren: '#cookie-banner-wrapper button[class^="btn-cta-lg cookie-btn btn-primary-md"]'
          }, {
             seite: 'ebay.com,ebay.de',
-            selector: '#gdpr-banner .gdpr-banner-actions > button#gdpr-banner-decline',
+            selectorablehnen: '#gdpr-banner .gdpr-banner-actions > button#gdpr-banner-decline',
+            selectorakzeptieren: '#gdpr-banner .gdpr-banner-actions > button#gdpr-banner-accept',
             countdown: 1500,
             noframe: true
          }, {
             seite: 'bbc.com',
-            selector: '#cookiePrompt > section.bbccookies-banner button#bbccookies-continue-button.continue-button'
+            selectorakzeptieren: '#cookiePrompt > section.bbccookies-banner button#bbccookies-continue-button.continue-button'
          }, {
             seite: 'music.amazon.de,music.amazon.com,music.amazon.co.uk,music.amazon.it,music.amazon.es,music.amazon.com.tr,music.amazon.pl',
-            selector: '#banner music-button[variant="outline"] >> button[class="button music-t1"]',
+            selectorablehnen: '#banner music-button[variant="outline"] >> button[class="button music-t1"]',
+            selectorakzeptieren: '#banner music-button[variant="solid"] >> button[class="button music-t1"]',
             checkcookie: 'com.amazon.tempo.cookies.status'
          }, {
             seite: 'luna.amazon.de,luna.amazon.com,luna.amazon.co.uk,luna.amazon.it,luna.amazon.es,luna.amazon.com.tr,luna.amazon.pl',
-            selector: '#cookie_consent_dialog button#item_cookie_consent_accept_button',
+            selectorakzeptieren: '#cookie_consent_dialog button#item_cookie_consent_accept_button',
             checkcookie: 'com.amazon.tempo.cookies.status'
          }, {
             seite: 'amazon.de,amazon.com,amazon.co.uk,amazon.it,amazon.es,amazon.com.tr,amazon.pl',
-            selector: 'form#sp-cc button#sp-cc-rejectall-link, #cos-banner input#sp-cc-rejectall-link',
+            selectorablehnen: 'form#sp-cc button#sp-cc-rejectall-link, #cos-banner input#sp-cc-rejectall-link',
+            selectorakzeptieren: '#cos-banner input#sp-cc-accept',
             keinesichtbarkeitsprüfung: true
          }, {
             seite: 'brightdata.com',
             checkcookie: 'brd_cookie_consent',
-            selector: '.cookies_popup_overlay .cookies_bar_popup_btns a#brd_cookies_bar_settings[role="button"]'
-         }, {
-            seite: 'wall-art.de',
-            checkcookie: 'cookieOptions',
-            selector: '#cookieNote .cookie__buttons button#adjust-cookie-settings -> #cookieNote .cookie__buttons button#saveCookieSelection'
+            selectorablehnen: '.cookies_popup_overlay .cookies_bar_popup_btns a#brd_cookies_bar_settings[role="button"]',
+            selectorakzeptieren: '.cookies_popup_overlay .cookies_bar_popup_btns a#brd_cookies_bar_accept[role="button"]'
          }, {
             seite: 'wirkaufendeinauto.de',
             checkstorage: 'gdpr_preferences',
-            selector: 'form[action="/v1/gdpr-preferences/"] div[class^="GDPRBanner-module_banner_"] [data-qa-selector="gdpr-banner-configuration-button"][role="button"] -> form[action="/v1/gdpr-preferences/"] div[class^="GDPRBanner-module_banner_"] [data-qa-selector="gdpr-banner-accept-selected-button"][role="button"]'
+            selectorablehnen: 'form[action="/v1/gdpr-preferences/"] div[class^="GDPRBanner-module_banner_"] [data-qa-selector="gdpr-banner-configuration-button"][role="button"] -> form[action="/v1/gdpr-preferences/"] div[class^="GDPRBanner-module_banner_"] [data-qa-selector="gdpr-banner-accept-selected-button"][role="button"]',
+            selectorakzeptieren: 'form[action="/v1/gdpr-preferences/"] button[data-qa-selector="gdpr-banner-accept-all-button"]'
          }, {
             seite: 'auto.de',
             checkstorage: 'cookieConfig',
-            selector: '.modalWrapper > .modalContent > .logoContainer > button.modalBtnAccept'
-         }, {
-            seite: '0rechner.de,0calc.com,0calc.es,0calc.fr',
-            checkcookie: 'precmp',
-            selector: '#precmpdialog form[action="/precmp"] button[value="deny"]'
-         }, {
-            seite: 'norton.com',
-            checkcookie: 'SYMANTEC_ENSIGHTEN_PRIVACY_BANNER_VIEWED',
-            selector: '#ensNotifyBanner button.gdpButton[onclick]'
-         }, {
-            seite: 'obi.de',
-            checkcookie: 'obiConsent',
-            selector: '.disc-cp--active[style="display: none"] button.js-disc-cp-deny-all[type="button"]'
+            selectorablehnen: '.modalWrapper > .modalContent > .logoContainer > button.modalBtnAccept',
+            selectorakzeptieren: '.modalWrapper > .modalContent > .modalBtnContainer > button.modalBtnAccept'
          }, {
             seite: 'keyed.de',
             checkcookie: 'hellotrust_cookies_accepted',
-            selector: '#hellotrust_cookie_popup input.htc_btn_only_necessary_checked[type="button"]'
+            selectorablehnen: '#hellotrust_cookie_popup input.htc_btn_only_necessary_checked[type="button"]',
+            selectorakzeptieren: '#hellotrust_cookie_popup input#hellotrust_cookies_btn_accept__first'
          }, {
             seite: 'thomann.de',
             checkcookie: 'thomann_settings',
-            selector: '.cookie-consent-spice button.consent-button.js-decline-all-cookies[type="button"]'
+            selectorablehnen: '.cookie-consent-spice button.consent-button.js-decline-all-cookies[type="button"]',
+            selectorakzeptieren: '.cookie-consent-spice button.consent-button.js-accept-all-cookies[type="button"]'
          }, {
             seite: 'computerbase.de',
             checkcookie: 'OptanonAlertBoxClosed',
-            selector: 'dialog.consent button#cookie-consent-button.js-consent-accept-button'
-         }, {
-            seite: 'nppes.cms.hhs.gov',
-            selector: '.modal-content .modal-footer > button.btn-primary[ng-click="accept()"]'
+            selectorakzeptieren: 'dialog.consent button#cookie-consent-button.js-consent-accept-button'
          }, {
             seite: 'diebayerische.de',
             checkcookie: 'cookieConsent',
-            selector: '#cookie-consent-layer button.js_cc-accept-custom'
+            selectorablehnen: '#cookie-consent-layer button.js_cc-accept-custom',
+            selectorakzeptieren: '#cookie-consent-layer button.js_cc-accept-all'
          }, {
             seite: 'xnxx.com,xvideos.com',
-            selector: '#disclaimer_background button#disclaimer-reject_cookies-btn[onclick]'
+            selectorablehnen: '#disclaimer_background button#disclaimer-reject_cookies-btn[onclick]',
+            selectorakzeptieren: '#disclaimer_background button#disclaimer-accept_cookies-btn[onclick]'
          }, {
             seite: 'dehogerielen.be',
             checkcookie: 'CookieConsent',
-            selector: '#cookieconsent-banner button.cookieconsent-banner-accept-necessary-button'
+            selectorablehnen: '#cookieconsent-banner button.cookieconsent-banner-accept-necessary-button',
+            selectorakzeptieren: '#cookieconsent-banner button.cookieconsent-banner-accept-all-button'
          }, {
             seite: 'humboldtforum.org',
             checkcookie: 'acceptCookie',
-            selector: 'div#cookieConsent button.naked'
-         }, {
-            seite: 'filmzie.com',
-            checkstorage: 'cookiesAccepted',
-            selector: 'div.justify-content-between > button.btn-decline'
+            selectorablehnen: 'div#cookieConsent button.naked',
+            selectorakzeptieren: 'div#cookieConsent button.border.black.prominent'
          }, {
             seite: 'asialadies.de',
             checkcookie: 'ladies-cookies-overlay',
-            selector: '#cookie-overlay button.cookies-decline[type="button"][onclick="submitCookieOverlay()"]'
-         }, {
-            seite: 'zoo-berlin.de',
-            selector: '.js-cookiebar-banner .js-cookiebar-deny-btn'
-         }, {
-            seite: 'lolaliza.com',
-            checkcookie: 'enableTracking',
-            selector: '#cookie-notice a#cookie-bar-button.cookieBar_close'
+            selectorablehnen: '#cookie-overlay button.cookies-decline',
+            selectorakzeptieren: '#cookie-overlay button.cookies-accept'
          }, {
             seite: 'schleswig-holstein.de,bmbf.de,bmleh.de',
             checkcookie: 'gsbbanner',
-            selector: '#cookiebanner button.confirmSelection'
+            selectorablehnen: '#cookiebanner button.confirmSelection',
+            selectorakzeptieren: '#cookiebanner button.consentToAll'
          }, {
             seite: 'mustijamirri.fi',
             checkcookie: 'mfi_consent_necessary',
-            selector: '#cookie_consent button#cookie_only_necessary2'
+            selectorablehnen: '#cookie_consent button#cookie_only_necessary2',
+            selectorakzeptieren: '#cookie_consent button#submit_privacy_consent3'
          }, {
             seite: 'smythstoys.com',
-            selector: '[options="[object Object]"] button.ios-modal-cookie'
+            selectorablehnen: '[options="[object Object]"] button.ios-modal-cookie',
+            selectorakzeptieren: '[options="[object Object]"] button.ios-modal-cookie + button'
          }, {
             seite: 'seb.lv',
             checkcookie: 'SEBConsents',
-            selector: '#cookiesMessage a.accept-mandatory'
+            selectorablehnen: '#cookiesMessage a.accept-mandatory',
+            selectorakzeptieren: '#cookiesMessage a.accept-selected'
          }, {
             seite: 'kocbayi.com.tr',
             checkcookie: 'CMSCookieLevel',
-            selector: '.CookieConsent input.btn-approve[value="Onaylıyorum"]'
-         }, {
-            seite: 'dasfutterhaus.at',
-            checkcookie: 'dsgvo_consent',
-            selector: '.js-cookiebox .js-cookiebox-just-close-button'
+            selectorakzeptieren: '.CookieConsent input.btn-approve[value="Onaylıyorum"]'
          }, {
             seite: 'fix-price.by',
             checkcookie: 'CookieConsent',
-            selector: '.cookies button.button'
+            selectorakzeptieren: '.cookies-bar button.button'
          }, {
-            seite: 'umicore.jp',
-            checkcookie: 'CookieConsent',
-            selector: '#cookieconsent-banner #cookieconsent-banner-accept-necessary-button'
-         }, {
-            seite: 'coqtales.com',
-            checkstorage: 'fareharbor-cookie-notice-dismissed',
-            selector: '#js-cookie-notice button.js-cookie-action[data-cookie-consent="true"]'
-         }, {
-            seite: 'check24.de',
+            seite: 'check24.deX',
             checkcookie: 'c24consent',
-            selector: '.c24-cookie-consent-wrapper a.c24-cookie-consent-functional[onclick]'
+            selectorablehnen: '.c24-cookie-consent-wrapper a.c24-cookie-consent-functional[onclick]',
+            selectorakzeptieren: '.c24-cookie-consent-wrapper a.c24-cookie-consent-button[onclick="Check24.cookieBanner.c24consent.giveConsent(\'fam\')"]'
          }, {
             seite: 'tarifcheck.de,affiliate-deals.de',
             checkcookie: 'consent',
-            selector: '.modal button[data-cookie-dismiss-all]'
+            selectorablehnen: '.modal button[data-cookie-dismiss-all]',
+            selectorakzeptieren: '.modal button[data-cookie-accept-all]'
          }, {
             seite: 'thw-bufdi.de',
             checkcookie: 'gsbbanner',
-            selector: '#cookiebanner a[class="button right close"]'
+            selectorablehnen: '#cookiebanner a[class="button right close"]',
+            selectorakzeptieren: '#cookiebanner a.consentToAll'
          }, {
             seite: 'bremerhaven.de',
             checkcookie: 'GDPRp',
-            selector: '.cookie-banner form[action*="cookies"] > button[name="cookies_deny"]'
+            selectorablehnen: '.cookie-banner form[action*="cookies"] > button[name="cookies_deny"]',
+            selectorakzeptieren: '.cookie-banner form[action*="cookies"] > button[name="cookies_accept"]'
          }, {
             seite: 'steampowered.com,steamcommunity.com',
-            selector: '#cookiePrefPopup .buttonGroup > div#rejectAllButton',
+            selectorablehnen: '#cookiePrefPopup .buttonGroup > div#rejectAllButton',
+            selectorakzeptieren: '#cookiePrefPopup .buttonGroup > div#acceptAllButton',
             countdown: 4502
          }, {
             seite: 'hema.com,hema.nl',
             checkcookie: 'landing_cookies_accepted',
-            selector: '.js-cookie-bar .js-close-cookies'
-         }, {
-            seite: 'soluxtec.de',
-            checkcookie: 'cookieconsent_status',
-            selector: 'div[style="display: flex;"] > [style="position: fixed;"] div:not([class], [id]) + div > div:last-child > button'
-         }, {
-            seite: 'o2.fr',
-            checkcookie: 'cookie.consent.done=true',
-            selector: '#cookie_popin_itsap_home button.perso -> #cookie_popin_itsap_cookies button.enregistrer'
-         }, {
-            seite: 'techbone.net',
-            checkcookie: 'ctb_base',
-            selector: '#cookie_banner button.btn-light[type="button"]'
+            selectorakzeptieren: '.js-cookie-bar .js-close-cookies'
          }, {
             seite: 'pferdekaemper.de',
             checkcookie: 'optin',
-            selector: '#cookiebanner button.set_essential_cookies'
+            selectorablehnen: '#cookiebanner button.set_essential_cookies',
+            selectorakzeptieren: '#cookiebanner button.set_all_cookies'
          }, {
             seite: 'fpv24.com',
             checkcookie: 'FPVCookiePolicy',
-            selector: '#cookieModal button.btn-secondary[type="submit"]'
+            selectorablehnen: '#cookieModal button.btn-secondary[type="submit"]',
+            selectorakzeptieren: '#cookieModal button.btn-select-all'
          }, {
             seite: 'frankfurt.de',
             checkcookie: 'cookieAccepted',
-            selector: '#cookieModal button#btnCookiesAcceptMandatory'
+            selectorablehnen: '#cookieModal button#btnCookiesAcceptMandatory',
+            selectorakzeptieren: '#cookieModal button#btnCookiesAcceptAll'
          }, {
             seite: 'rems.de',
             checkcookie: 'cookieinfosettings',
-            selector: '#cookieModal button#modalclose3[type="button"]'
+            selectorakzeptieren: '#cookieModal button#modalclose3[type="button"]'
          }, {
             seite: 'sozialleistungen.info',
             checkcookie: 'slinfo_cookieHash',
-            selector: '#toast-container button.cookie-ok'
+            selectorakzeptieren: '#toast-container button.cookie-ok'
          }, {
             seite: 'caritasnet.de',
             checkcookie: 'privacy-options-confirmed',
-            selector: '#privacy-policy-banner a.btn-decline'
+            selectorablehnen: '#privacy-policy-banner a.btn-decline',
+            selectorakzeptieren: '#privacy-policy-banner a.btn-accept'
          }, {
             seite: 'smard.de',
             checkstorage: 'smard-cookiebanner',
-            selector: '.js-cookie-banner button.js-cookie-decline'
+            selectorablehnen: '.js-cookie-banner button.js-cookie-decline',
+            selectorakzeptieren: '#privacy-policy-banner a.btn-accept'
          }, {
             seite: 'gronkh.tv',
             checkstorage: 'grnk-cookies-accepted',
-            selector: '.g-dialog-content grui-button[aria-label*="blehnen"]'
+            selectorablehnen: '.g-cookie-banner-controls > button:first-child',
+            selectorakzeptieren: '.g-cookie-banner-controls > button:first-child + button'
          }, {
             seite: 'sehen.de',
             checkcookie: 'analytics',
-            selector: '.m-cookie [data-block-cookies]'
+            selectorablehnen: '.m-cookie [data-block-cookies]',
+            selectorakzeptieren: '.m-cookie [data-action="__cookie[acceptall]"]'
          }, {
             seite: 'lentiamo.de',
-            selector: '.vc-bar-cookie button[data-cookie="0"]'
+            selectorablehnen: '.vc-bar-cookie button[data-cookie="0"]',
+            selectorakzeptieren: '.vc-bar-cookie button[data-cookie="1"]'
          }, {
             seite: 'haustechnikdialog.de',
             checkcookie: 'PRIVACY_SETTINGS',
-            selector: '#pnlPrivacy input#ctl01_btnCookieDecline[type="button"]'
+            selectorablehnen: '#pnlPrivacy input#ctl01_btnCookieDecline[type="button"]',
+            selectorakzeptieren: '#pnlPrivacy input#ctl01_btnCookieConfirmAll[type="button"]'
          }, {
             seite: 'weimarerland.de,weimar.de,jobcenter-blk.de',
-            selector: '#gccookiemessage button#cookieSubmitButton[onclick][type="button"]'
-         }, {
-            seite: 'websummit.com',
-            selector: '[class*="CivicCookieBanner"] .civic_cookie__buttons > button + button'
+            selectorakzeptieren: '#gccookiemessage button#cookieSubmitButton[onclick][type="button"]'
          }, {
             seite: 'google.ac,google.ae,google.at,google.be,google.bg,google.by,google.ca,google.ch,google.cl,google.co.id,google.co.il,google.coIn,google.co.jp,google.co.ke,google.co.kr,google.co.nz,google.co.th,google.co.uk,google.co.ve,google.co.za,google.com,google.com.ar,google.com.au,google.com.br,google.com.co,google.com.ec,google.com.eg,google.com.hk,google.com.mx,google.com.my,google.com.pe,google.com.ph,google.com.pk,google.com.py,google.com.sa,google.com.sg,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vn,google.cz,google.de,google.dk,google.dz,google.ee,google.es,google.fi,google.fr,google.gr,google.hr,google.hu,google.ie,google.it,google.lt,google.lv,google.nl,google.no,google.pl,google.pt,google.ro,google.rs,google.ru,google.se,google.sk,google.coIn,googleusercontent.com',
             checkcookie: 'SOCS',
-            selector: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child',
+            selectorablehnen: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child:has(+ button:last-child)',
+            selectorakzeptieren: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child + button:last-child',
             selectormobile: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
             noframe: true,
             keinesichtbarkeitsprüfung: true
          }, {
             seite: 'plus.web.de,plus.gmx.net',
             checkcookie: 'consentLevel',
-            selector: 'html.window-on > .window-on .row > button[data-id="later-button"]#reminder.btn-secondary',
+            selectorakzeptieren: 'html.window-on > .window-on .row > button[data-id="later-button"]#reminder.btn-secondary',
             countdown: 1000
          }, {
             seite: 'reddit.com',
-            selector: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
+            selectorablehnen: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
+            selectorakzeptieren: '#data-protection-consent-dialog button[slot="primary-button"]',
             checkcookie: 'eu_cookie'
          }, {
             seite: 'kabeleins.de,kabeleinsdoku.de,sat1gold.de,prosieben.de,sat1.de,sixx.de,prosiebenmaxx.de,joyn.de,atv.at,ran.de,7pass.de',
             checkcookie: 'cmp-settings',
-            selector: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
+            selectorablehnen: 'cmp-banner >> cmp-dialog >> cmp-button[variant="secondary"] >> button.button--secondary:not([disabled])',
+            selectorakzeptieren: 'cmp-banner >> cmp-dialog >> cmp-button[variant="primary"] >> button.button--primary:not([disabled])',
             keinesichtbarkeitsprüfung: true
-         }, {
-            seite: 'startmail.com',
-            checkcookie: 'cb_rejected',
-            selector: '.banner button.button-secondary'
          }, {
             seite: 'phoenix.de',
             checkstorage: 'user_anonymous_profile',
             setstoragename: 'user_anonymous_profile',
-            selector: 'div[phnx-privacy-settings] button[ng-click="save(1); close()"]'
-         }, {
-            seite: 'lifesum.com',
-            checkstorage: 'accepted-cookies',
-            selector: 'div[data-focus-lock-disabled] div.mb-20 > button:last-child.mx-auto.inline-block'
+            selectorablehnen: 'div[phnx-privacy-settings] button[ng-click="save(1); close()"]'
          }, {
             seite: 'bundesregierung.de,bundeskanzler.de',
             checkcookie: 'cookie-banner',
-            selector: '.bpa-cookie-banner button.bpa-close-button[type="button"]'
+            selectorablehnen: '.bpa-cookie-banner button.bpa-close-button[type="button"]',
+            selectorakzeptieren: '.bpa-cookie-banner button.bpa-accept-all-button[type="button"]'
          }, {
             seite: 'looker.de',
             checkcookie: 'setCookieHint;',
-            selector: '#cookie_dialog + div button[type="button"]:first-child'
+            selectorakzeptieren: '#cookie_dialog + div button[type="button"]:first-child'
          }, {
             seite: '45grad.de',
             checkcookie: '_user_cookie_settings',
-            selector: '#optin a.optin__button'
+            selectorakzeptieren: '#optin a.optin__button'
          }, {
-            seite: 'ardutronix.de,gateway-it.com',
-            selector: 'body > div[id^="elementor-popup-modal-"] a[href*="popup"][href*="settings"]'
+            seite: 'gateway-it.com',
+            selectorakzeptieren: 'body > div[id^="elementor-popup-modal-"] a[href*="popup"][href*="settings"]'
          }, {
             seite: 'alles-mahlsdorf.de',
-            selector: 'body > div[id^="elementor-popup-modal-"] button'
+            selectorablehnen: 'body > div[id^="elementor-popup-modal-"] button:first-child:has(+ button:last-child)',
+            selectorakzeptieren: 'body > div[id^="elementor-popup-modal-"] button:first-child + button:last-child'
          }, {
             seite: 'brabus.com',
             checkcookie: 'cookiesConsent',
-            selector: '#modal-cookie button#saveCookies'
+            selectorablehnen: '#modal-cookie button#saveCookies',
+            selectorakzeptieren: '#modal-cookie button#saveAllCookies'
          }, {
             seite: 'swindi.de',
             checkcookie: 'swindi-web-app-privacy-settings',
-            selector: '#privacy-modal button#privacy-modal-save-recommended[type="button"]'
-         }, {
-            seite: 'erdinger.de',
-            checkcookie: 'cConsent',
-            selector: '.cookie-consent-dialog button.cp-confirmSelected'
+            selectorakzeptieren: '#privacy-modal button#privacy-modal-save-recommended[type="button"]'
          }, {
             seite: 'buyzoxs.de,zoxs.de',
             checkcookie: 'essential',
-            selector: '#gdpr-dialog a.js-gdpr-settings -> #gdpr-dialog input#mediaSwitch -> #gdpr-dialog button#btnDeny[type="button"]'
+            selectorablehnen: '#gdpr-dialog a.js-gdpr-settings -> #gdpr-dialog input#mediaSwitch -> #gdpr-dialog button#btnDeny[type="button"]',
+            selectorakzeptieren: '#gdpr-dialog button#btnAccept1'
          }, {
             seite: 'constantin.film',
             checkcookie: 'cookie-layer-settings',
-            selector: '.cookielayer a.accept-none'
-         }, {
-            seite: 'backstagepro.de,regioactive.de',
-            checkcookie: 'reject',
-            selector: '#cookiescript_injected span[data-cs-show-title="cookie-script"] -> #cookiescript_injected_fsd #cookiescript_reject'
+            selectorablehnen: '.cookielayer a.accept-none',
+            selectorakzeptieren: '.cookielayer a.accept-all'
          }, {
             seite: 'henschel-schauspiel.de',
             checkcookie: 'ck_consent',
-            selector: 'input#cconsentcheck -> #approveform a.arrlink'
-         }, {
-            seite: 'shellfire.de,privatevpn.com',
-            checkcookie: 'CookieScriptConsent',
-            selector: '#cookiescript_injected #cookiescript_reject'
+            selectorakzeptieren: 'input#cconsentcheck -> #approveform a.arrlink'
          }, {
             seite: 'max-academy.de',
             checkcookie: 'max-academy-CookiesAccepted',
-            selector: '.MuiDialog-container button.MuiButtonBase-root + button[type="button"]'
+            selectorablehnen: '.MuiDialog-container button.MuiButtonBase-root + button[type="button"]',
+            selectorakzeptieren: '.MuiDialog-container button.MuiButtonBase-root:has(+ button[type="button"])'
          }, {
             seite: 'gibgas.de',
             checkcookie: 'gibgas',
-            selector: '#cookies_consent button#btnSave[onclick]',
+            selectorablehnen: '#cookies_consent button#btnSave[onclick]',
+            selectorakzeptieren: '#cookies_consent button#btnSaveAll[onclick]',
             countdown: 500
          }, {
             seite: 'kevag-telekom.de',
-            selector: '#fullScreenLockBlockOverlayKp .notConfirmKp'
+            selectorablehnen: '#fullScreenLockBlockOverlayKp .notConfirmKp',
+            selectorakzeptieren: '#fullScreenLockBlockOverlayKp .confirmKp'
          }, {
             seite: 'frischteigwaren-huber.de',
             checkstorage: 'privacyNote',
-            selector: '[data-overlay="privacy"] button'
+            selectorakzeptieren: '[data-overlay="privacy"] button'
          }, {
             seite: 'hokify.de,hokify.at',
             checkstorage: 'accept-cookies',
-            selector: '[data-modal="cookieBannerModal"] button + button'
+            selectorablehnen: '[data-modal="cookieBannerModal"] button + button',
+            selectorakzeptieren: '[data-modal="cookieBannerModal"] button:has(+ button)'
          }, {
             seite: 'nova-motors.de',
             checkcookie: 'amcookie_allowed',
-            selector: '#am-cookie-bar button.ambar-btn-accept'
+            selectorablehnen: '#am-cookie-bar button.ambar-btn-accept',
+            selectorakzeptieren: '#am-cookie-bar button.ambar-btn-allow'
          }, {
             seite: 'schaedlingskunde.de',
             checkcookie: 'cookieconsent',
-            selector: '#cookie-biter .allow-cookies-btn'
+            selectorakzeptieren: '#cookie-biter .allow-cookies-btn'
          }, {
             seite: 'destatis.de',
             checkcookie: 'gsbbanner',
-            selector: '#cookiebanner button.rejectAll'
-         }, {
-            seite: 'modell-werkstatt.de',
-            checkcookie: 'CookieConsent',
-            selector: '#cookie-manager-window button#accept-selected'
+            selectorablehnen: '#cookiebanner button.rejectAll',
+            selectorakzeptieren: '#cookiebanner button.consentToAll'
          }, {
             seite: 'lemonde.fr',
             checkcookie: 'euconsent',
-            selector: '.gdpr-lmd-wall button.gdpr-lmd-button'
-         }, {
-            seite: 'alibaba.com',
-            checkcookie: 'opt-out',
-            selector: '#GDPR-cookies-notice .gdpr-reject-btn[onclick*="reject"]'
-         }, {
-            seite: 'nbcnews.com',
-            checkcookie: 'show_gdpr_consent_messaging',
-            selector: 'body #cx_bottom_banner > button#cx_button_close'
+            selectorakzeptieren: '.gdpr-lmd-wall button.gdpr-lmd-button'
          }, {
             seite: 'rt.com',
             checkcookie: 'rt-cb-approve',
-            selector: '.js-cookies-banner a.js-cookies-button'
+            selectorakzeptieren: '.js-cookies-banner a.js-cookies-button'
          }, {
             seite: 'reg.ru',
             checkcookie: 'cookieAgree',
-            selector: '.b-policy-info button.b-policy-info__button'
+            selectorakzeptieren: '.b-policy-info button.b-policy-info__button'
          }, {
             seite: 'ionos.de',
             checkcookie: 'PRIVACY_CONSENT',
-            selector: '.privacy-consent--modal button#confirmSelection'
+            selectorablehnen: '.privacy-consent--modal button#confirmSelection',
+            selectorakzeptieren: '.privacy-consent--modal button#selectAll'
          }, {
             seite: 'frontline.de',
             checkcookie: 'it_eprivacy_ah-_essential',
-            selector: '#it-eprivacy-root button#it-eprivacy-banner-btn-decline'
+            selectorablehnen: '#it-eprivacy-root button#it-eprivacy-banner-btn-decline',
+            selectorakzeptieren: '#it-eprivacy-root button#it-eprivacy-banner-btn-accept'
          }, {
             seite: 'wisc.edu',
             checkcookie: 'uw_madison_cookieconsent_timestamp',
-            selector: '#cookieconsent-window button#cookieconsent-dismiss'
+            selectorakzeptieren: '#cookieconsent-window button#cookieconsent-dismiss'
          }, {
             seite: 'safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev,android.com,research.google,blog.google',
             checkstorage: 'glue.CookieNotificationBar',
-            selector: '.glue-cookie-notification-bar button.glue-cookie-notification-bar__accept'
-         }, {
-            seite: 'jobcenter-ge.de',
-            checkcookie: 'cookie_consent',
-            selector: '#cookieDialog button[aria-label*="uswahl"]'
+            selectorakzeptieren: '.glue-cookie-notification-bar button.glue-cookie-notification-bar__accept'
          }, {
             seite: 'staedteregion-aachen.de',
             checkcookie: 'cookieConsent',
-            selector: '.dbayCookieSelect a.cookieSelectAccept'
+            selectorablehnen: '.dbayCookieSelect a.cookieSelectAccept',
+            selectorakzeptieren: '.dbayCookieSelect a.cookieSelectAcceptAll'
          }, {
             seite: 'jobcenter-muenchen.de',
             checkcookie: 'jcm-disclaimer',
-            selector: '.disclaimer-content button.save'
-         }, {
-            seite: 'team-arbeit-hamburg.de',
-            checkcookie: 'tah-disclaimer',
-            selector: '.disclaimer-content-2 button.save'
+            selectorablehnen: '.disclaimer-content button.save',
+            selectorakzeptieren: '.disclaimer-content button.all'
          }, {
             seite: 'jobcenter-hallesaale.de',
             checkstorage: 'cookieSettings',
-            selector: '#cookieSettingsDialog .cm-cookie-content-button--save'
+            selectorablehnen: '#cookieSettingsDialog .cm-cookie-content-button--save',
+            selectorakzeptieren: '#cookieSettingsDialog .cm-cookie-content-button--accept-all'
          }, {
             seite: 'jobcenter-stadt-kassel.de',
             checkstorage: '_bnr',
-            selector: '.cookies-container button#cookies-save-btn'
+            selectorablehnen: '.cookies-container button#cookies-save-btn',
+            selectorakzeptieren: '.cookies-container button#cookies-all-btn'
          }, {
             seite: 'jobcenter-stade.de',
             checkstorage: 'cookie_consent',
-            selector: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn"]'
+            selectorablehnen: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn"]',
+            selectorakzeptieren: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn cc_btn--primary"]'
          }, {
             seite: 'wuppertal.de,kassel.de,remscheid.de',
             checkcookie: 'cookies-accepted',
-            selector: '.SP-CookieUsageNotification button.SP-CookieUsageNotification__ok'
+            selectorakzeptieren: '.SP-CookieUsageNotification button.SP-CookieUsageNotification__ok'
          }, {
             seite: 'itzehoe.de',
             checkcookie: 'communiceMatomo',
-            selector: '#privacy-container #matomo-btn-decline -> #communice-cookiebar #cookiebar-btn-understand'
-         }, {
-            seite: 'dortmund.de',
-            checkcookie: 'showCookieNote',
-            selector: '#cookieNoteBox button.btn-success[type="button"]'
+            selectorablehnen: '#privacy-container #matomo-btn-decline -> #communice-cookiebar #cookiebar-btn-understand',
+            selectorakzeptieren: '#privacy-container #matomo-btn-accept -> #communice-cookiebar #cookiebar-btn-understand'
          }, {
             seite: 'radebeul.de',
             checkcookie: 'acceptedBanner',
-            selector: '#cookiebanner button.cookiebutton[onclick="set_cookie(false)"]'
+            selectorablehnen: '#cookiebanner button.cookiebutton[onclick="set_cookie(false)"]',
+            selectorakzeptieren: '#cookiebanner button.cookiebutton[onclick="set_cookie(true)"]'
          }, {
             seite: 'stadt-eisenberg.de',
             checkcookie: 'Consent',
-            selector: '.cookieconsent button.cookie-reject-all'
+            selectorablehnen: '.cookieconsent button.cookie-reject-all',
+            selectorakzeptieren: '.cookieconsent button.cookie-accept-all'
          }, {
             seite: 'goettingen.de',
             checkcookie: 'nolis_cookiedough',
-            selector: '.nolis-cookie-consent-button button.secondary-button'
+            selectorablehnen: '.nolis-cookie-consent-button button.primary-button',
+            selectorakzeptieren: '.nolis-cookie-consent-button button.secondary-button'
          }, {
             seite: 'mein-digiport.de',
             checkcookie: 'COOKIE_SUPPORT',
-            selector: '#_com_comundus_cookies_CookieBanner_cookieConsentForm button#_com_comundus_cookies_CookieBanner_acceptEssentialCookies'
+            selectorablehnen: '#_com_comundus_cookies_CookieBanner_cookieConsentForm button#_com_comundus_cookies_CookieBanner_acceptEssentialCookies',
+            selectorakzeptieren: '#_com_comundus_cookies_CookieBanner_cookieConsentForm button#_com_comundus_cookies_CookieBanner_acceptAllCookies'
          }, {
             seite: 'gera.de',
             checkcookie: 'CookieConsent',
-            selector: '.cookie-banner button[aria-label*="notwendig"]'
+            selectorablehnen: '.cookie-banner button[aria-label*="notwendig"]',
+            selectorakzeptieren: '.cookie-banner button[aria-label="Alle Cookies zulassen"]'
          }, {
             seite: 'solingen.de',
             checkcookie: 'CookieConsent',
-            selector: '.CookieBanner button.OptionsButton'
-         }, {
-            seite: 'strafverteidiger-berlin.info',
-            checkstorage: 'publii-gdpr-allowed-cookies-v1',
-            selector: '.pcb button.pcb__btn--reject'
+            selectorablehnen: '.CookieBanner button.OptionsButton',
+            selectorakzeptieren: '.CookieBanner button.AcceptButton'
          }, {
             seite: 'fertighauswelt.de',
             checkcookie: 'cb-enabled',
-            selector: 'div > #cookie-consent-title + div + div > button + button'
-         }, {
-            seite: 'fingerhaus.de',
-            checkcookie: 'omCookieConsent',
-            selector: '#cookieBannerFH button[data-omcookie-panel-save="min"]'
+            selectorablehnen: 'div > #cookie-consent-title + div + div > button + button',
+            selectorakzeptieren: 'div > #cookie-consent-title + div + div > button:has(+ button)'
          }, {
             seite: 'emailnator.com',
             checkstorage: 'cookie',
-            selector: '#cookie-notice button#accept-cookies-usage'
+            selectorakzeptieren: '#cookie-notice button#accept-cookies-usage'
          }, {
             seite: 'tk.de',
             checkcookie: 'CONSENTMGR',
-            selector: '.consent-manager .consent-manager__button-container > tkds-button[variant="secondary"]'
+            selectorablehnen: '.consent-manager .consent-manager__button-container > tkds-button[variant="secondary"]',
+            selectorakzeptieren: '.consent-manager .consent-manager__button-container > tkds-button.consent-manager__approve-all-button'
          }, {
             seite: 'vdek.com',
             checkcookie: 'consent_gkv',
-            selector: '#datenschutz-consent #consent_selectbutton'
+            selectorablehnen: '#datenschutz-consent #consent_selectbutton',
+            selectorakzeptieren: '#datenschutz-consent #consent_allbutton'
          }, {
             seite: 'kkh.de',
             checkstorage: 'kkh-cookieConsent',
-            selector: '#cookieModal button#cookiebar-safe-settings',
+            selectorablehnen: '#cookieModal button#cookiebar-safe-settings',
+            selectorakzeptieren: '#cookieModal button#cookiebar-accept-all',
             countdown: 500
          }, {
             seite: 'get-in-it.de',
             checkstorage: 'Get_CookieConsent',
-            selector: '[class*="CookieConsentWidget_opened"] button[class*=" CookieConsentMainScreen_reject"]'
+            selectorablehnen: '[class*="CookieConsentWidget_opened"] button[class*=" CookieConsentMainScreen_reject"]',
+            selectorakzeptieren: '[class*="CookieConsentWidget_opened"] button[class*=" CookieConsentMainScreen_saveAll"]'
          }, {
             seite: 'commerzbank.de',
             checkcookie: 'cmp_PUK',
-            selector: '.cookiebox--landing button#denyAll'
-         }, {
-            seite: 'innn.it',
-            checkcookie: 'cookieConsent',
-            selector: '#cookieConsentModal + div button[class="btn btn-outline-light w-100"]'
-         }, {
-            seite: 'xenvn.com',
-            checkcookie: 'xf_notice_dismiss',
-            selector: '.notice-content a.js-noticeDismiss'
+            selectorablehnen: '.cookiebox--landing button#denyAll',
+            selectorakzeptieren: '.cookiebox--landing button#acceptAll'
          }, {
             seite: 'abuseipdb.com',
             checkcookie: 'hasConsent',
-            selector: '#cookies-eu-banner button#cookies-eu-reject'
+            selectorablehnen: '#cookies-eu-banner button#cookies-eu-reject',
+            selectorakzeptieren: '#cookies-eu-banner button#cookies-eu-accept'
          }, {
             seite: 'bundesfinanzministerium.de',
             checkcookie: 'cookie-banner',
-            selector: '.bhh-cookie-banner button.bhh-cookie-banner__btn--close'
+            selectorablehnen: '.bhh-cookie-banner button.bhh-cookie-banner__btn--close',
+            selectorakzeptieren: '.bhh-cookie-banner button.bhh-cookie-banner__btn--all'
          }, {
             seite: 'mediamarkt.de,saturn.de,mediamarkt.pl',
             checkcookie: 'pwaconsent',
-            selector: '[data-test="mms-privacy-layer"] button[data-test="pwa-consent-layer-deny-all"]'
+            selectorablehnen: '[data-test="mms-privacy-layer"] button[data-test="pwa-consent-layer-deny-all"]',
+            selectorakzeptieren: '[data-test="mms-privacy-layer"] button[data-test="pwa-consent-layer-accept-all"]'
          }, {
             seite: 'robert-thomas.de',
             checkcookie: 'cookieAllow',
-            selector: '.cookie--consent button#cookie--consent_confirm'
+            selectorablehnen: '.cookie--consent button#cookie--consent_confirm',
+            selectorakzeptieren: '.cookie--consent button#cookie--consent_confirmAll'
          }, {
             seite: 'delta21.de',
             checkstorage: 'cookie',
-            selector: '#cdk-overlay-0 button.cookie-settings-submit'
+            selectorablehnen: '#cdk-overlay-0 button.cookie-settings-submit',
+            selectorakzeptieren: '#cdk-overlay-0 button.cookie-settings-submitall'
          }, {
             seite: 'ga.de,saarbruecker-zeitung.de',
             checkcookie: 'Optanon',
-            selector: 'custom-card #consentAccept'
+            selectorakzeptieren: 'custom-card #consentAccept'
          }, {
             seite: 'movistar.es',
             checkcookie: 'OptanonAlertBoxClosed',
-            selector: '#cookies-bar-component button[aria-label*="Rechazar cookies opcionales"]'
+            selectorablehnen: '#cookies-bar-component button[aria-label*="Rechazar cookies opcionales"]',
+            selectorakzeptieren: '#cookies-bar-component button[aria-label*="Aceptar cookies"]'
          }, {
             seite: 'kicker.de',
             checkcookie: 'kickerQM',
             countdown: 1000,
-            selector: '#kick__pur a[onclick="ov.cmp.acceptAllConsents()"]'
+            selectorakzeptieren: '#kick__pur a[onclick="ov.cmp.acceptAllConsents()"]'
          }, {
             seite: 'truckscout24.de',
             checkcookie: 'confirmed%22%3Afalse',
@@ -3721,390 +3678,414 @@
          }, {
             seite: 'hansapark.de',
             checkcookie: 'cookieManager',
-            selector: '#cookie-manager button#btnUebernehmen'
+            selectorablehnen: '#cookie-manager button#btnUebernehmen',
+            selectorakzeptieren: '#cookie-manager button#btnAlleAuswaehlen'
          }, {
             seite: 'domains-anonymizer.com',
             checkcookie: 'cookieConsentAgree',
-            selector: '.cookie-consent button[onclick^="createCookieInfo"]'
+            selectorakzeptieren: '.cookie-consent button[onclick^="createCookieInfo"]'
          }, {
             seite: 'norberteder.com',
             checkcookie: 'cookielay',
-            selector: '#cookielay [data-cookielay-allow="custom"]'
+            selectorablehnen: '#cookielay [data-cookielay-allow="custom"]',
+            selectorakzeptieren: '#cookielay [data-cookielay-allow="all"]'
          }, {
             seite: 'hmd.com',
             checkcookie: 'GCString',
-            selector: '#cmp-modal button#modalRejectAllFirstLayerBtn'
+            selectorablehnen: '#cmp-modal button#modalRejectAllFirstLayerBtn',
+            selectorakzeptieren: '#cmp-modal button#modalAcceptAllBtn'
          }, {
             seite: 'energie-experten.ch',
             checkcookie: 'true%2C%22consentMarketing',
-            selector: '.fd-consent-main button#fd-unCheckAll'
+            selectorablehnen: '.fd-consent-main button#fd-unCheckAll',
+            selectorakzeptieren: '.fd-consent-main button#fd-checkAll'
          }, {
             seite: 'kleinwindanlagen.de',
             checkcookie: 'kwindanl_cn',
-            selector: '#annoyingeucookiemsg button.uk-button-success'
-         }, {
-            seite: 'heimbrock-winkler.de',
-            checkcookie: 'legalweb_cookie_settings',
-            selector: '.sp-dsgvo.not-accepted button.sp-dsgvo-privacy-btn-accept-nothing'
+            selectorakzeptieren: '#annoyingeucookiemsg button.uk-button-success'
          }, {
             seite: 'gas.info',
             checkcookie: 'Tracking',
-            selector: '.jwCOWidget button.jwOptinBtnDeny'
-         }, {
-            seite: 'ebayinc.com',
-            selector: '.phs-cookie-popup-area button.primary-button'
+            selectorablehnen: '.jwCOWidget button.jwOptinBtnDeny',
+            selectorakzeptieren: '.jwCOWidget button.jwOptinBtnAcceptAll'
          }, {
             seite: 'swhd.de',
             checkcookie: 'HRCookieManager',
-            selector: '.consent-banner button[onclick*=", false, true, ["]'
-         }, {
-            seite: 'stahl-online.de',
-            checkcookie: 'confirmed%22%3Atrue',
-            selector: '.phunk-cookie-modal input[value="Speichern"]'
+            selectorablehnen: '.consent-banner button[onclick*=", false, true, ["]',
+            selectorakzeptieren: '.consent-banner button[onclick*=", true, false, ["]'
          }, {
             seite: 'sfc.com',
             checkcookie: 'consent',
-            selector: '#consent #consent-onlytech'
-         }, {
-            seite: 'vontobel.com',
-            checkcookie: 'Cconsent:true',
-            selector: '[data-disclaimer-attributes] button.functional-only'
+            selectorablehnen: '#consent #consent-onlytech',
+            selectorakzeptieren: '#consent #consent-accept-all'
          }, {
             seite: 'augsburger-allgemeine.de,mainpost.de,suedkurier.de',
             checkstorage: 'SDGIds',
-            selector: '#pur_layer button#pgwl_pur-option-accept-button'
+            selectorakzeptieren: '#pur_layer button#pgwl_pur-option-accept-button'
          }, {
             seite: 'tvo.fi',
             checkstorage: 'accept-cookies',
-            selector: 'jaettu-evastekysely button[data-action="accept-mandatory-cookies"]'
+            selectorablehnen: 'jaettu-evastekysely button[data-action="accept-mandatory-cookies"]',
+            selectorakzeptieren: 'jaettu-evastekysely button[data-action="accept-all-cookies"]'
          }, {
             seite: 'liveramp.com',
-            selector: '#ketch-banner button[aria-label="Reject All"]'
+            selectorablehnen: '#ketch-banner button[aria-label="Reject All"]',
+            selectorakzeptieren: '#ketch-banner button[aria-label="Accept All"]'
          }, {
             seite: 'dgppn.de',
             checkcookie: 'cookieConsent',
-            selector: '#modal-cookie button#saveCookies'
+            selectorablehnen: '#modal-cookie button#saveCookies',
+            selectorakzeptieren: '#modal-cookie button#saveAllCookies'
          }, {
             seite: '3djake.de',
             checkcookie: 'cnstinf',
-            selector: '.tc-banner button[value="deny_all"]'
+            selectorablehnen: '.tc-banner button[value="deny_all"]',
+            selectorakzeptieren: '.tc-banner button[value="consent_all"]'
          }, {
             seite: 'xxxlutz.de',
             checkstorage: 'last_cmp_version',
-            selector: '[aria-describedby="consentbar"] button[data-purpose="cookieBar.button.accept"] + div > button[type="button"]'
+            selectorablehnen: '[aria-describedby="consentbar"] button[data-purpose="cookieBar.button.accept"] + div > button[type="button"]',
+            selectorakzeptieren: '[aria-describedby="consentbar"] button[data-purpose="cookieBar.button.accept"]'
          }, {
             seite: 'wasserstoff-sicherheit.de',
             checkcookie: 'ckies_cloudflare',
-            selector: '[data-gi-selector="reject-all-cookies"] > a'
+            selectorablehnen: '[data-gi-selector="reject-all-cookies"] > a',
+            selectorakzeptieren: '[data-gi-selector="accept-all-cookies"] > a'
          }, {
             seite: 'safety.google,opensource.google,developers.google.com,cloud.google.com,web.dev',
-            selector: '#glue-cookie-notification-bar-1 button.glue-cookie-notification-bar__accept'
+            selectorakzeptieren: '#glue-cookie-notification-bar-1 button.glue-cookie-notification-bar__accept'
          }, {
             seite: 'ok.ru',
-            selector: '[data-module="cookieBanner"] button.cb_setup -> input[name="button_save_choice"]',
+            selectorablehnen: '[data-module="cookieBanner"] button.cb_setup -> input[name="button_save_choice"]',
+            selectorakzeptieren: '[data-module="cookieBanner"] button.js-cb_accept',
             checkcookie: 'PRIVACY',
             countdown: 700
          }, {
             seite: 'aachener-zeitung.de',
-            selector: '[class^="zweiwegen-model-dialog_consentDialog"] button[data-testid="zweiwegen-accept-button"]',
+            selectorakzeptieren: '[class^="zweiwegen-model-dialog_consentDialog"] button[data-testid="zweiwegen-accept-button"]',
             checkcookie: 'euconsent-v2'
          }, {
-            seite: 'stepstone.de',
-            selector: '#GDPRConsentManagerContainer #ccmgt_explicit_accept',
-            checkcookie: 'CONSENTMGR'
-         }, {
             seite: 'idnes.cz',
-            selector: 'a[href="javascript:Didomi.setUserAgreeToAll();"]',
+            selectorakzeptieren: 'a[href="javascript:Didomi.setUserAgreeToAll();"]',
             countdown: 500,
             checkcookie: 'euconsent-v2'
          }, {
-            seite: 'incogni.com',
-            selector: '[class^="CookieConsent_cookieConsent"] button[data-testid="cookie-consent-left"] -> [class^="CookieConsent_cookieConsent"] button[data-testid="cookie-consent-right"]'
-         }, {
             seite: 'rolandgumpert.com',
-            selector: '.cookie a.hide',
+            selectorablehnen: '.cookie a.hide',
+            selectorakzeptieren: '.cookie a.dismiss',
             checkstorage: 'cookie_consent_202008181030'
          }, {
             seite: 'smart.com',
-            selector: '#cookie-pro-dialog button#cookie-pro-info-button -> #onetrust-pc-sdk button.ot-pc-refuse-all-handler',
+            selectorablehnen: '#cookie-pro-dialog button#cookie-pro-info-button -> #onetrust-pc-sdk button.ot-pc-refuse-all-handler',
+            selectorakzeptieren: '#cookie-pro-dialog button#cookie-pro-allow-button',
             checkstorage: 'OptanonAlertBoxClosed'
          }, {
             seite: 'filter-direkt.de',
-            selector: '.cookie-bar button[data-testing="cookie-bar-save"]',
+            selectorablehnen: '.cookie-bar button[data-testing="cookie-bar-save"]',
+            selectorakzeptieren: '.cookie-bar button[data-testing="cookie-bar-accept-all"]',
             checkcookie: 'necessary'
          }, {
             seite: 'hit-touristik.de',
-            selector: '[class^="CookiesInfo__BtnWrapper"] > button + button',
+            selectorablehnen: '[class^="CookiesInfo__BtnWrapper"] > button:first-child + button',
+            selectorakzeptieren: '[class^="CookiesInfo__BtnWrapper"] > button:first-child',
             checkcookie: 'acceptCookies'
          }, {
             seite: 'windtech-international.com',
-            selector: '#eu_cookies button.button_cookie',
+            selectorakzeptieren: '#eu_cookies button.button_cookie',
             checkcookie: 'windtech'
          }, {
             seite: 'proidee.de',
-            selector: '#COOKIE_EINSTELLUNG_BANNER a[onclick*="sendCookieData(false"]'
+            selectorablehnen: '#COOKIE_EINSTELLUNG_BANNER a[onclick*="sendCookieData(false"]',
+            selectorakzeptieren: '#COOKIE_EINSTELLUNG_BANNER a[onclick*="sendCookieData(true"]#COOKIE_BUTTON'
          }, {
             seite: 'dropbox.com',
-            selector: '#ccpa-iframe-theme-provider button#decline_cookies_button'
+            selectorablehnen: '#ccpa-iframe-theme-provider button#decline_cookies_button',
+            selectorakzeptieren: '#ccpa-iframe-theme-provider button#accept_all_cookies_button'
          }, {
             seite: 'kraemer.de',
-            selector: '#consentLayer button[onclick="openConsentSettings();"] -> #consentLayer button[onclick="uncheckAllCheckboxes();"]',
+            selectorablehnen: '#consentLayer button[onclick="openConsentSettings();"] -> #consentLayer button[onclick="uncheckAllCheckboxes();"]',
+            selectorakzeptieren: '#consentLayer button[onclick="checkAllCheckboxes();"]',
             checkcookie: 'websale_useragreement_optoutunchecked_consentAll'
          }, {
             seite: 'pflanzenforschung.de',
-            selector: '#eucookielaw a.acceptclose',
+            selectorakzeptieren: '#eucookielaw a.acceptclose',
             checkcookie: 'eucookie'
          }, {
             seite: 'mia-moebel.de',
-            selector: '#modal-consentmanager #cm-settings-open -> #modal-consentmanager-extended #cm-save-settings',
+            selectorablehnen: '#modal-consentmanager #cm-settings-open -> #modal-consentmanager-extended #cm-save-settings',
+            selectorakzeptieren: '#modal-consentmanager #cm-save-all',
             checkcookie: 'consent',
             countdown: 300
          }, {
             seite: 'medpets.de',
-            selector: '[ref="cookie-modal"] .gtm-button-deny-cookies-all-pages',
+            selectorablehnen: '[ref="cookie-modal"] .gtm-button-deny-cookies-all-pages',
+            selectorakzeptieren: '[ref="cookie-modal"] .gtm-button-accept-cookies-all-pages',
             checkcookie: 'op_tracking'
          }, {
-            seite: 'justiz.de',
-            selector: '[data-testid="cookie-banner"] button[data-testid="decline-cookie"]',
-            checkcookie: 'gdpr-consent'
-         }, {
-            seite: 'cecil.de',
-            selector: '.cookie-consent-mini button[data-testid="cookiesLocators_OnlyNecessary"]',
-            checkcookie: 'cbrConsent'
-         }, {
             seite: 'jbl.de',
-            selector: '.uim a.approve-none[aria-label="Nur unbedingt erforderlich"]'
+            selectorablehnen: '.uim a.approve-none[aria-label="Nur unbedingt erforderlich"]',
+            selectorakzeptieren: '.uim a.approve-all[aria-label="Alle erlauben"]'
          }, {
             seite: 'rs-online.com',
-            selector: '[aria-label="Consent Banner"] button#rejectAll',
+            selectorablehnen: '[aria-label="Consent Banner"] button#rejectAll',
+            selectorakzeptieren: '[aria-label="Consent Banner"] button#ensCloseBanner',
             checkstorage: 'RSCOMPONENTS'
          }, {
             seite: 'uptodown.com',
-            selector: '#cookiescript_injected_wrapper #cookiescript_reject',
+            selectorablehnen: '#cookiescript_injected_wrapper #cookiescript_reject',
+            selectorakzeptieren: '#cookiescript_injected_wrapper #cookiescript_accept',
             checkcookie: 'consenttime'
          }, {
             seite: 'gotha.de',
-            selector: '#gccookiemessage button#cookieSubmitButton',
+            selectorakzeptieren: '#gccookiemessage button#cookieSubmitButton',
          }, {
             seite: 'amiunique.org',
-            selector: 'div[class="v-snack v-snack--active v-snack--bottom v-snack--has-background"] button[class="mr-2 v-btn v-btn--is-elevated v-btn--has-bg v-btn--rounded theme--dark v-size--default"]:first-child:has(+ button:last-child)',
+            selectorablehnen: 'div[class="v-snack v-snack--active v-snack--bottom v-snack--has-background"] button[class="mr-2 v-btn v-btn--is-elevated v-btn--has-bg v-btn--rounded theme--dark v-size--default"]:first-child:has(+ button:last-child)',
+            selectorakzeptieren: 'div[class="v-snack v-snack--active v-snack--bottom v-snack--has-background"] button[class="mr-2 v-btn v-btn--is-elevated v-btn--has-bg v-btn--rounded theme--dark v-size--default"]:first-child + button:last-child',
             checkcookie: 'cookie_notice'
          }, {
             seite: 'lotto24.de,tipp24.de',
-            selector: 'button[data-element-id="cookieConsentPromptOverlay.functionalOnlyButton"]',
+            selectorablehnen: 'button[data-element-id="cookieConsentPromptOverlay.functionalOnlyButton"]',
+            selectorakzeptieren: 'button[data-element-id="cookieConsentPromptOverlay.acceptAllButton"]',
             checkcookie: 'cookieConsentDisclaimer'
          }, {
             seite: 'tellows.de',
-            selector: '#cmpscreen a#btnconsent.btn-success',
+            selectorakzeptieren: '#cmpscreen a#btnconsent.btn-success',
             checkcookie: 'euconsent-v2'
          }, {
             seite: 'single.infranken.de',
-            selector: '#ccp-overlay button#ccp-accept-all-btn'
+            selectorablehnen: '#ccp-overlay button#ccp-deny-all-btn',
+            selectorakzeptieren: '#ccp-overlay button#ccp-accept-all-btn'
          }, {
             seite: 'ing.de',
-            selector: 'ing-cc-manager >> ing-dialog-frame > ing-cc-dialog-level0 >> ing-button.cc-l0__button__more',
+            selectorablehnen: 'ing-cc-manager >> ing-dialog-frame > ing-cc-dialog-level0 >> ing-button.cc-l0__button__more',
+            selectorakzeptieren: 'ing-cc-manager >> ing-dialog-frame > ing-cc-dialog-level0 >> ing-button.cc-l0__button__accept',
             noframe: true
          }, {
             seite: 'ing.nl',
-            selector: 'ing-app-open-page >> #cookieDialog >> ing-feat-cookie-dialog-nl >> ing-feat-global-cookie-preference >> cookie-preference-main >> ing-button[data-testid="reject"]',
+            selectorablehnen: 'ing-app-open-page >> #cookieDialog >> ing-feat-cookie-dialog-nl >> ing-feat-global-cookie-preference >> cookie-preference-main >> ing-button[data-testid="reject"]',
+            selectorakzeptieren: 'ing-app-open-page >> #cookieDialog >> ing-feat-cookie-dialog-nl >> ing-feat-global-cookie-preference >> cookie-preference-main >> ing-button[data-testid="accept"]',
             checkcookie: 'COOKIE_PREF',
             noframe: true
          }, {
             seite: 'wp.pl,money.pl,o2.pl,parenting.pl,pudelek.pl,autokult.pl,gadzetomania.pl,fotoblogia.pl,komorkomania.pl,polygamia.pl,abczdrowie.pl,benchmark.pl,kafeteria.pl,pysznosci.pl,dobreprogramy.pl,genialne.pl,autocentrum.pl,jastrzabpost.pl,deliciousmagazine.pl,wirtualnemedia.pl',
-            selector: 'div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child + button:last-child -> div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child:has(+ button:last-child)',
+            selectorakzeptieren: 'div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child + button:last-child -> div[role="dialog"][aria-modal="true"][aria-label="Plansza informacyjna WP"] > div:last-child > div:last-child > div:only-child > button:first-child:has(+ button:last-child)',
             checkcookie: '__vads'
          }, {
             seite: 'deepl.com',
-            selector: '[aria-labelledby="CondensedStrictBanner-header"] button[data-testid="cookie-banner-strict-accept-all"]',
+            selectorablehnen: '[aria-labelledby="CondensedStrictBanner-header"] button[data-testid="cookie-banner-strict-accept-selected"]',
+            selectorakzeptieren: '[aria-labelledby="CondensedStrictBanner-header"] button[data-testid="cookie-banner-strict-accept-all"]',
             checkcookie: 'privacySettings'
          }, {
             seite: 'movieplayer.it',
-            selector: '#cl-consent a.cl-consent-node-a[data-role="b_options"] -> #cl-consent a.cl-consent-node-a[data-role="b_save_all"]'
+            selectorakzeptieren: '#cl-consent a.cl-consent-node-a[data-role="b_options"] -> #cl-consent a.cl-consent-node-a[data-role="b_save_all"]'
          }, {
             seite: 'gas-h2.de',
-            selector: '.jwCOWidget .jwOptinBtnAcceptAll + .jwOptinBtnAccept + button.jwOptinBtnDeny',
+            selectorablehnen: '.jwCOWidget .jwOptinBtnAcceptAll + .jwOptinBtnAccept + button.jwOptinBtnDeny',
+            selectorakzeptieren: '.jwCOWidget .jwOptinBtnAcceptAll:has(+ .jwOptinBtnAccept + button.jwOptinBtnDeny)',
             checkcookie: 'jwMautic'
          }, {
             seite: 'mydealz.de',
-            selector: '.popover-content button[data-t="showCookiesSettings"] -> .popover-content button[data-t="rejectAll"]',
+            selectorablehnen: '.popover-content button[data-t="showCookiesSettings"] -> .popover-content button[data-t="rejectAll"]',
+            selectorakzeptieren: '.popover-content button[data-t="acceptAll"]',
             checkcookie: 'cookie_policy_agreement'
          }, {
             seite: 'assets.poool.fr',
-            selector: '#app .p3-widget-consent > :not(.p3-d-xl-none) .consent-action > .p3-button-wrapper > button.p3-unlock-button + button'
+            selectorablehnen: '#app .p3-widget-consent > :not(.p3-d-xl-none) .consent-action > .p3-button-wrapper > button.p3-unlock-button + button'
          }, {
             seite: 'nature.com,scientificamerican.com',
             checkcookie: '26C%3DC01%26D%3Dtrue',
-            selector: '.cc-banner button.cc-banner__button-reject, .cc-banner:not(:has(button.cc-banner__button-reject)) button[data-cc-action="preferences"] -> .cc-preferences__dialog button[data-cc-action="reject"]'
+            selectorablehnen: '.cc-banner button.cc-banner__button-reject, .cc-banner:not(:has(button.cc-banner__button-reject)) button[data-cc-action="preferences"] -> .cc-preferences__dialog button[data-cc-action="reject"]',
+            selectorakzeptieren: '.cc-banner button[data-cc-action="accept"]'
          }, {
             seite: 'dsisolar.com',
-            selector: '#wmkcprivacy em[title*="eject"]'
+            selectorablehnen: '#wmkcprivacy em[title*="eject"]',
+            selectorakzeptieren: '#wmkcprivacy button.wmkcprivacy-btn'
          }, {
             seite: 'hvv.de',
             checkcookie: 'cookieBanner',
-            selector: 'div[data-options*="cookieBanner"] button.js-f-cookie-banner-button'
+            selectorakzeptieren: 'div[data-options*="cookieBanner"] button.js-f-cookie-banner-button'
          }, {
             seite: 'mercedes-benz.de',
-            selector: 'cmm-cookie-banner >> .button--only-technically-necessary'
+            selectorablehnen: 'cmm-cookie-banner >> .button--only-technically-necessary',
+            selectorakzeptieren: 'cmm-cookie-banner >> .button--accept-all'
          }, {
             seite: 'wise.com',
             checkcookie: 'twCookie',
-            selector: '#twcc__mechanism button#twcc__decline-button'
+            selectorablehnen: '#twcc__mechanism button#twcc__decline-button',
+            selectorakzeptieren: '#twcc__mechanism button#twcc__accept-button'
          }, {
             seite: 'comdirect.de',
             checkcookie: 'cmp_consent',
-            selector: 'com-consent-layer >> #cmpDenyAll >> button'
+            selectorablehnen: 'com-consent-layer >> #cmpDenyAll >> button',
+            selectorakzeptieren: 'com-consent-layer >> #cmpAcceptAll >> button'
          }, {
             seite: 'nah.sh.hafas.de',
             checkcookie: 'consent',
-            selector: '#HFS_CookieHint button#HFS_CookieSelectChoice'
+            selectorablehnen: '#HFS_CookieHint button#HFS_CookieSelectChoice',
+            selectorakzeptieren: '#HFS_CookieHint button#HFS_CookieSelectAll'
          }, {
             seite: 'apkpure.com',
             checkcookie: 'apkpure__policy_review',
-            selector: '#policy-info [dt-eid="only_necessary_cookies"]'
+            selectorablehnen: '#policy-info [dt-eid="only_necessary_cookies"]',
+            selectorakzeptieren: '#policy-info [dt-eid="accept_all"]'
          }, {
             seite: 'ao.com',
             checkcookie: 'AOCookieRequestReference',
-            selector: '[data-tag-section="cookie_banner_modal"] button[data-testid="cookieBanner-decline-btn"]'
+            selectorablehnen: '[data-tag-section="cookie_banner_modal"] button[data-testid="cookieBanner-decline-btn"]',
+            selectorakzeptieren: '[data-tag-section="cookie_banner_modal"] button[data-testid="cookieBanner-accept-btn"]'
          }, {
             seite: 'shein.com,shein.co.uk',
-            selector: 'div[class^="_shein_privacy_"] .cmp_c_3'
+            selectorablehnen: 'div[class^="_shein_privacy_"] .cmp_c_3',
+            selectorakzeptieren: 'div[class^="_shein_privacy_"] .cmp_c_2'
          }, {
             seite: 'consent.pdf24.org',
             checkstorage: 'consent/pdf24.org',
-            selector: '#consentManager a.settings -> #consentManager a.declineAll'
+            selectorablehnen: '#consentManager a.settings -> #consentManager a.declineAll',
+            selectorakzeptieren: '#consentManager a.acceptAll'
          }, {
             seite: 'modivo.de',
-            selector: '.modal-consents:has(a[href="https://modivo.de/b/datenschutz"]) button[class="button-large button secondary"] -> .cookie-settings-footer > button.primary-accent'
+            selectorablehnen: '.modal-consents:has(a[href="https://modivo.de/b/datenschutz"]) button[class="button-large button secondary"] -> .cookie-settings-footer > button.primary-accent',
+            selectorakzeptieren: '.modal-consents:has(a[href="https://modivo.de/b/datenschutz"]) button[class="button-large button primary-accent"]'
          }, {
             seite: 'gehalt.de',
             checkcookie: 'CONSENTMGR',
-            selector: '#GDPRConsentManagerContainer #ccmgt_explicit_preferences -> #GDPRConsentManagerContainer #ccmgt_preferences_reject'
+            selectorablehnen: '#GDPRConsentManagerContainer #ccmgt_explicit_preferences -> #GDPRConsentManagerContainer #ccmgt_preferences_reject',
+            selectorakzeptieren: '#GDPRConsentManagerContainer #ccmgt_explicit_accept'
          }, {
             seite: 'cookpad.com',
             checkcookie: 'cookies_preference',
-            selector: '[data-controller*="cookies-consent"] a[href*="/de/terms_of_use_consents?value=0"]'
+            selectorablehnen: '[data-controller*="cookies-consent"] a[href*="/de/terms_of_use_consents?value=0"]',
+            selectorakzeptieren: '[data-controller*="cookies-consent"] a[href*="/de/terms_of_use_consents?value=1"]'
          }, {
             seite: 'nike.com',
             checkcookie: 'AKA_A2',
-            selector: '.cookie-modal-base button.modal-actions-decline-btn'
+            selectorablehnen: '.cookie-modal-base button.modal-actions-decline-btn',
+            selectorakzeptieren: '.cookie-modal-base button.modal-actions-accept-btn'
          }, {
             seite: 'homebanking-hilfe.de',
             checkcookie: 'hbh42_cn',
-            selector: 'a[onclick^="eu_cookie_consent_accept'
+            selectorablehnen: 'a[onclick^="eu_cookie_consent_accept"]:has( + a)',
+            selectorakzeptieren: 'a[onclick^="eu_cookie_consent_accept"] + a[onclick]'
          }, {
             seite: 'retnemt.dk',
             checkstorage: 'ajs_user_traits',
-            selector: '#cookies button#accept-selected-cookies-btn'
-         }, {
-            seite: 'wetter.com',
-            checkcookie: 'receive-cookie-deprecation',
-            selector: '#cmp-content button#cmp-btn-accept',
-            selectormobile: 'div[class^="styles_wrapper__"] > div[class^="styles_contentWrapper__"] > div:first-child + div + button[class*="buttonCmp"]'
+            selectorablehnen: '#cookies button#accept-selected-cookies-btn',
+            selectorakzeptieren: '#cookies button#accept-all-cookies-btn'
          }, {
             seite: 'jobvector.de',
             checkstorage: 'cc_essential',
-            selector: '.ddt-modal button[onclick="ddt_openSettingpage();"] -> .ddt-modal button[onclick^="dd_saveSettings();"]'
+            selectorablehnen: '.ddt-modal button#ddt-settingsBtn1 -> .ddt-modal button#ddt-saveSettingsBtn2',
+            selectorakzeptieren: '.ddt-modal button#ddt-acceptAllBtn1'
          }, {
             seite: 'metro.co.uk',
             checkstorage: 'mol.ads.cmp.tcf.cache',
-            selector: '[data-project="mol-fe-cmp"] button[class*="consent"].level1PrimaryButton-0-0-6'
+            selectorakzeptieren: '[data-project="mol-fe-cmp"] button[class*="consent"].level1PrimaryButton-0-0-6'
          }, {
             seite: 'reiseauskunft.insa.de',
-            selector: '#HFS_CookieHint input#HFS_CookieOptionfunctional -> #HFS_CookieHint button#HFS_CookieSelectChoice',
+            selectorablehnen: '#HFS_CookieHint input#HFS_CookieOptionfunctional -> #HFS_CookieHint button#HFS_CookieSelectChoice',
             keinesichtbarkeitsprüfung: true
          }, {
             seite: 'kleinanzeigen.de',
             checkcookie: 'ekConsentBucketTcf2',
-            selector: '#consentBanner button[data-testid="gdpr-banner-decline-button"], #consentBanner button#gdpr-banner-accept'
+            selectorakzeptieren: '#consentBanner button[data-testid="gdpr-banner-decline-button"], #consentBanner button#gdpr-banner-accept'
          }, {
             seite: 'marca.com',
             checkcookie: 'euconsent-v2',
-            selector: '#ue-initial-modal button[action-name="agreeAll"]'
-         }, {
-            seite: 'asew.de',
-            checkcookie: 'HRCookieManager',
-            selector: '[aria-labelledby="consent-dialog-title"] button[id^="speichern_btn_"]'
+            selectorakzeptieren: '#ue-initial-modal button[action-name="agreeAll"]'
          }, {
             seite: 'bmw.com',
             checkcookie: 'cc_consentCookie',
-            selector: 'epaas-consent-drawer-shell >> .consentDrawer .reject-button'
+            selectorablehnen: 'epaas-consent-drawer-shell >> .consentDrawer .reject-button',
+            selectorakzeptieren: 'epaas-consent-drawer-shell >> .consentDrawer .accept-button'
          }, {
             seite: 'npo.nl,nos.nl',
-            selector: 'ccm-notification >> button.ccm_btn--save, button#ccm_close'
+            selectorakzeptieren: 'ccm-notification >> button.ccm_btn--save, button#ccm_close'
          }, {
             seite: 'rajapack.de',
-            selector: '.otsdk-rajapack button.js-ot-deny',
+            selectorablehnen: '.otsdk-rajapack button.js-ot-deny',
+            selectorakzeptieren: '.otsdk-rajapack button.js-ot-accept',
             checkcookie: 'OptanonConsent'
          }, {
             seite: 'pons.com',
-            selector: '[data-e2e="fg-modal"] button[data-e2e="fg-accept-ads-trigger"]',
+            selectorakzeptieren: '[data-e2e="fg-modal"] button[data-e2e="fg-accept-ads-trigger"]',
             checkcookie: 'OptanonAlertBoxClosed'
          }, {
             seite: 'online-mahnantrag.de',
-            selector: '#CookiesButtons a[onclick="setCookieAndGo()"]',
+            selectorakzeptieren: '#CookiesButtons a[onclick="setCookieAndGo()"]',
             checkcookie: 'cookieZustimmung'
          }, {
             seite: 'chat.mistral.ai',
-            selector: 'div[id^="radix-"][class^="data-[state=open]"][data-state="open"][style="pointer-events: auto;"] > div:first-child + button:last-child[class^="disabled:pointer-auto"]',
+            selectorakzeptieren: 'div[id^="radix-"][class^="data-[state=open]"][data-state="open"][style="pointer-events: auto;"] > div:first-child + button:last-child[class^="disabled:pointer-auto"]',
             checkcookie: 'intercom.intercom-state'
          }, {
             seite: 'trakt.tv',
-            selector: '.trakt-cookie-notice button[data-testid="consent-button"]',
+            selectorablehnen: '.trakt-cookie-notice button[aria-label="Accept functional cookies only"]',
+            selectorakzeptieren: '.trakt-cookie-notice button[aria-label="Accept all cookies"]',
             checkcookie: '_traktconsent'
          }, {
             seite: 'sparkasse.de',
-            selector: '[data-testid="consentManager"] button[data-testid="privacyBanner-rejectAll"]',
+            selectorakzeptieren: '[data-testid="consentManager"] button[data-testid="privacyBanner-agreeAll"]',
+            selectorablehnen: '[data-testid="consentManager"] button[data-testid="privacyBanner-rejectAll"]',
             checkcookie: 'TC_PRIVACY'
          }, {
             seite: 'kotte-zeller.de',
-            selector: '#agreementPrivacy #cookieDetailToggler -> #cookieDetails button[onclick*="ws_agreementcookies_set"]',
+            selectorablehnen: '#agreementPrivacy #cookieDetailToggler -> #cookieDetails button[onclick*="ws_agreementcookies_set"]',
+            selectorakzeptieren: '#agreementPrivacy input.ws_useragreement4alls',
             checkcookie: 'websale_useragreement'
          }, {
             seite: 'leo.org',
-            selector: 'ion-modal .leo-abo-hint ion-button[class="ion-color ion-color-success md button button-solid ion-activatable ion-focusable hydrated"]',
+            selectorakzeptieren: 'ion-modal .leo-abo-hint ion-button[class="ion-color ion-color-success md button button-solid ion-activatable ion-focusable hydrated"]',
             checkcookie: 'eupubconsent-v2'
          }, {
             seite: 'ihrlabor.befundpost.at',
-            selector: '#privacyConsent a#privacyButton',
+            selectorakzeptieren: '#privacyConsent a#privacyButton',
             checkcookie: 'consent'
          }, {
             seite: 'tradingview.com',
-            selector: '[style="position: fixed; z-index: 0;"] button[class^="managePreferences"] -> [class^="privacyPreferenceDialog"] button[data-overflow-tooltip-text="Sauvegarder les préférences"]',
+            selectorablehnen: '[style="position: fixed; z-index: 0;"] button[class^="managePreferences"] -> [class^="privacyPreferenceDialog"] button[data-overflow-tooltip-text="Sauvegarder les préférences"]',
+            selectorakzeptieren: '[style="position: fixed; z-index: 0;"] button[class^="acceptAll"]',
             checkcookie: 'cookiesSettings'
          }, {
             seite: 'united-domains.de',
-            selector: '.cookie-layer-dialog form.cookie-layer-form button.show-details -> .cookie-layer-dialog form.cookie-layer-form button.confirm-selection',
+            selectorablehnen: '.cookie-layer-dialog form.cookie-layer-form button.show-details -> .cookie-layer-dialog form.cookie-layer-form button.confirm-selection',
+            selectorakzeptieren: '.cookie-layer-dialog form.cookie-layer-form button.confirm-all',
             checkcookie: 'CookieSettingsGroupId'
          }, {
             seite: 'santander.nl',
-            selector: '.cookie-notification a#btnCookieShowSettings -> .cookie-notification-moreinfo a#btnCookieSaveSettings',
+            selectorablehnen: '.cookie-notification a#btnCookieShowSettings -> .cookie-notification-moreinfo a#btnCookieSaveSettings',
+            selectorakzeptieren: '.cookie-notification a#btnCookieAcceptAll',
             checkcookie: 'santander_cookie_consent_gtm'
          }, {
             seite: 'hirose.com',
-            selector: '.termsAndConditions-section .js-cookie-notification-accept',
+            selectorakzeptieren: '.termsAndConditions-section .js-cookie-notification-accept',
             checkcookie: 'cookie-notification=3'
          }, {
             seite: 'nikkei.com',
-            selector: '#datasign_cmp__host >> a + button.datasign__dialogButtonTheme--index-module',
+            selectorablehnen: '#datasign_cmp__host >> a + button.datasign__dialogButtonTheme--index-module',
+            selectorakzeptieren: '#datasign_cmp__host >> a + button.datasign__dialogButtonTheme--index-module + button',
             checkstorage: 'co.datasign.widget.operationState'
          }, {
             seite: 'privacy.samsung.com',
-            selector: '#cookie-eu button.cookie-eu__close',
+            selectorablehnen: '#cookie-eu button.cookie-eu__close',
+            selectorakzeptieren: '#cookie-eu button#accept-cookies-button',
             checkstorage: 'ALLOW_FUNCTIONAL_COOKIES'
          }, {
             seite: 'porsche.com',
-            selector: 'uc-layer2 >> uc-footer >> uc-p-button.deny >> button',
+            selectorablehnen: 'uc-layer2 >> uc-footer >> uc-p-button.deny >> button',
+            selectorakzeptieren: 'uc-layer2 >> uc-footer >> uc-p-button.accept >> button',
             checkstorage: 'uc_interaction_type'
          }, {
             seite: 'apollo-news.net',
-            selector: '#ad-free-sub-banner-container button#ad-free-sub-banner-btn-accept-all',
+            selectorakzeptieren: '#ad-free-sub-banner-container button#ad-free-sub-banner-btn-accept-all',
             checkstorage: 'CookieConsent'
          }, {
             seite: 'tumblr.com', // sub sites only, example: https://test.tumblr.com/
-            selector: 'html.gdpr-banner-context .gdpr-banner a.accept-button',
+            selectorakzeptieren: 'html.gdpr-banner-context .gdpr-banner a.accept-button',
             checkstorage: 'gdpr_banner_accepted'
          }];
 
+         let cookiebannerstatuslokal;
          for (let i = 0; i < regeln.length; i++) {
             // Gucken ob die aufgerufene Seite von einer Regel gedeckt ist.
             let seiten = regeln[i].seite.toString();
@@ -4116,7 +4097,24 @@
                   if ((document.cookie.includes(regeln[i].checkcookie) === false || !regeln[i].checkcookie) && (localStorage.getItem(regeln[i].checkstorage) === null || !regeln[i].checkstorage) && ((regeln[i].noframe === true && window.self == window.top) || regeln[i].noframe !== true)) {
                      console.log('[Cookie auto decline] Cookie Banner noch nicht akzeptiert.');
                      // Cookie Banner finden und klicken
-                     if (regeln[i].selector) {
+                     if (regeln[i].selectorakzeptieren || regeln[i].selectorablehnen) {
+                        if (cookieeinstellung === 'ablehnen' || cookieeinstellung === 'funktional') {
+                           if (regeln[i].selectorablehnen) {
+                              regeln[i].selector = regeln[i].selectorablehnen;
+                              cookiebannerstatuslokal = 'abgelehnt';
+                           } else {
+                              regeln[i].selector = regeln[i].selectorakzeptieren;
+                              cookiebannerstatuslokal = 'akzeptiert';
+                           }
+                        } else {
+                           if (regeln[i].selectorakzeptieren) {
+                              regeln[i].selector = regeln[i].selectorakzeptieren;
+                              cookiebannerstatuslokal = 'akzeptiert';
+                           } else {
+                              regeln[i].selector = regeln[i].selectorablehnen;
+                              cookiebannerstatuslokal = 'abgelehnt';
+                           }
+                        }
                         if (regeln[i].countdown === undefined) {
                            regeln[i].countdown = 302;
                         }
@@ -4161,6 +4159,7 @@
                                           }
                                           cookiebannerstatus.suchstatus = 'gefunden';
                                           cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
+                                          cookiebannerstatus.knopfstatus = cookiebannerstatuslokal;
                                           cookiebannerfinalakzeptiertversuche++;
                                           getfinalshadowrootselector.click();
                                           console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
@@ -4180,8 +4179,10 @@
                                        }
                                        cookiebannerstatus.suchstatus = 'gefunden';
                                        cookiebannerstatus.anbieter = _('providerSelfProgrammedMessage');
+                                       cookiebannerstatus.knopfstatus = cookiebannerstatuslokal;
                                        cookiebannerfinalakzeptiertversuche++;
                                        normalselector.click();
+                                       console.log(cookiebannerstatus.knopfstatus)
                                        console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                     }
                                  }
