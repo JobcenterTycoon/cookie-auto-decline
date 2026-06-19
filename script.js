@@ -2765,7 +2765,7 @@
             }
 
             // Advanced
-            if ( /*advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)*/ false) {
+            if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
                // Einfachr alter Erkennungsscript
                const advancedcontainer = document.querySelectorAll(':is(div, form, dialog, section, aside, li, footer, app-cookie, cms-cookie-bar):is([class*="cookie" i], [id*="cookie" i], [aria-labelledby*="cookie" i], [aria-label*="cookie" i], [class*="keks" i], [id*="keks" i], [class*="consent" i], [id*="consent" i], [aria-labelledby*="consent" i], [aria-label*="consent" i], [class*="privacy" i], [id*="privacy" i], [class*="c-disclaimer" i], [class*="cc_banner" i], [id*="cc_banner"], [class*="cc_overlay"], [id*="cc_overlay"], [class*="cc-overlay"], [id*="cc-overlay"], [class*="gdpr"], [id*="gdpr"], [class*="dsgvo"], [id*="dsgvo"], [class^="cc-banner"], [id^="cc-banner"], [class^="cc-notification"], [id^="cc-notification"], [data-testid="consent-banner" i], [cc_data], cookie-law):not([style*="display: none !important"], [style*="visibility: hidden !important"], :empty, .default-layout.cookie-is-shown)');
@@ -4182,7 +4182,6 @@
                                        cookiebannerstatus.knopfstatus = cookiebannerstatuslokal;
                                        cookiebannerfinalakzeptiertversuche++;
                                        normalselector.click();
-                                       console.log(cookiebannerstatus.knopfstatus)
                                        console.log('[Cookie auto decline] Cookie Banner Knopf geklickt.');
                                     }
                                  }
