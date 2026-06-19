@@ -3111,11 +3111,14 @@
             seite: 'consent.google.ac,consent.google.ae,consent.google.at,consent.google.be,consent.google.bg,consent.google.by,consent.google.ca,consent.google.ch,consent.google.cl,consent.google.co.id,consent.google.co.il,consent.google.coIn,consent.google.co.jp,consent.google.co.ke,consent.google.co.kr,consent.google.co.nz,consent.google.co.th,consent.google.co.uk,consent.google.co.ve,consent.google.co.za,consent.google.com,consent.google.com.ar,consent.google.com.au,consent.google.com.br,consent.google.com.co,consent.google.com.ec,consent.google.com.eg,consent.google.com.hk,consent.google.com.mx,consent.google.com.my,consent.google.com.pe,consent.google.com.ph,consent.google.com.pk,consent.google.com.py,consent.google.com.sa,consent.google.com.sg,consent.google.com.tr,consent.google.com.tw,consent.google.com.ua,consent.google.com.uy,consent.google.com.vn,consent.google.cz,consent.google.de,consent.google.dk,consent.google.dz,consent.google.ee,consent.google.es,consent.google.fi,consent.google.fr,consent.google.gr,consent.google.hr,consent.google.hu,consent.google.ie,consent.google.it,consent.google.lt,consent.google.lv,consent.google.nl,consent.google.no,consent.google.pl,consent.google.pt,consent.google.ro,consent.google.rs,consent.google.ru,consent.google.se,consent.google.sk,consent.google.coIn',
             selectorablehnen: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child:has(+ form:last-child) > div > div > button',
             selectorakzeptieren: 'div:first-child > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button',
-            selectormobile: 'div:first-child + div > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button'
+            selectormobileablehnen: 'div:first-child + div > form[action^="https://consent.google."][action$="/save"]:first-child + form:last-child > div > div > button',
+            selectormobileakzeptieren: 'div:first-child + div > form[action^="https://consent.google."][action$="/save"]:first-child > div > div > button'
          }, {
             seite: 'consent.youtube.com',
             selectorablehnen: 'div > div:has(> div:only-child > button[aria-label][role="link"]) + form[action="https://consent.youtube.com/save"]:has(+ form:last-child) > div > div > button',
-            selectormobile: 'div + div > form[action="https://consent.youtube.com/save"] + form[action="https://consent.youtube.com/save"]:has(+ div:last-child > div > button[aria-label][role="link"]) > div > div > button'
+            selectorakzeptieren: 'div > div:has(> div:only-child > button[aria-label][role="link"]) + form[action="https://consent.youtube.com/save"] + form:last-child > div > div > button',
+            selectormobileablehnen: 'div + div > form[action="https://consent.youtube.com/save"] + form[action="https://consent.youtube.com/save"]:has(+ div:last-child > div > button[aria-label][role="link"]) > div > div > button',
+            selectormobileakzeptieren: 'div + div > form[action="https://consent.youtube.com/save"]:first-child > div > div > button'
          }, {
             seite: 'consent.yahoo.com',
             selectorablehnen: '#consent-page button.reject-all[name="reject"][value="reject"]',
@@ -3398,7 +3401,8 @@
             checkcookie: 'SOCS',
             selectorablehnen: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child:has(+ button:last-child)',
             selectorakzeptieren: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[class] > div > button[id][class][data-ved]:first-child + button:last-child',
-            selectormobile: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
+            selectormobileablehnen: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved] + button[data-ved]',
+            selectormobileakzeptieren: 'div[aria-label*="oogle"] > div:last-child > span > div > div > div > div[data-ved] > div > h1 + div + div > button[data-ved]:has(+ button[data-ved])',
             noframe: true,
             keinesichtbarkeitsprüfung: true
          }, {
@@ -4121,8 +4125,24 @@
                         let cookiebannerspecificakzeptiert = false;
                         let tiefe = 0;
 
-                        if (window.screen.availWidth < 500 && regeln[i].selectormobile) {
-                           regeln[i].selector = regeln[i].selectormobile;
+                        if ((regeln[i].selectormobileablehnen || regeln[i].selectormobileakzeptieren) && window.screen.availWidth < 500) {
+                           if (cookieeinstellung === 'ablehnen' || cookieeinstellung === 'funktional') {
+                              if (regeln[i].selectormobileablehnen) {
+                                 regeln[i].selector = regeln[i].selectormobileablehnen;
+                                 cookiebannerstatuslokal = 'abgelehnt';
+                              } else {
+                                 regeln[i].selector = regeln[i].selectormobileakzeptieren;
+                                 cookiebannerstatuslokal = 'akzeptiert';
+                              }
+                           } else {
+                              if (regeln[i].selectormobileakzeptieren) {
+                                 regeln[i].selector = regeln[i].selectormobileakzeptieren;
+                                 cookiebannerstatuslokal = 'akzeptiert';
+                              } else {
+                                 regeln[i].selector = regeln[i].selectormobileablehnen;
+                                 cookiebannerstatuslokal = 'abgelehnt';
+                              }
+                           }
                         }
 
                         const mehrereselectoren = regeln[i].selector.split(' ,, ');
