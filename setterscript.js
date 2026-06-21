@@ -8,6 +8,7 @@
       iframereferrer = document.referrer.replace(/(www([0-9]{1,2})?\.)/, '').replace(/https?\:\/\//, '').replace(/\/.*/, '');
    }
    const domainohnewww = window.location.hostname.replace(/^(www([0-9]{1,2})?\.)?/, '');
+   let cookieeinstellung;
    if (document.contentType === 'text/html' && window.location.href.startsWith('http')) {
       const prüfeobdasaddondeaktiviertist = function () {
          scriptdeaktiviert = false;
@@ -21,7 +22,15 @@
                }
                if (scriptdeaktiviert === false) {
                   browser.storage.local.onChanged.removeListener(prüfeobdasaddondeaktiviertist);
-                  setzecookiehauptscript();
+                  // Cookie Einstellungen
+                  browser.storage.local.get("cookieeinstellung").then(function (a) {
+                     if (a && a.cookieeinstellung && a.cookieeinstellung.einstellung) {
+                        cookieeinstellung = a.cookieeinstellung.einstellung;
+                     } else {
+                        cookieeinstellung = 'ablehnen';
+                     }
+                     setzecookiehauptscript();
+                  });
                }
             }
          });
@@ -213,8 +222,8 @@
          }, {
             // privacy-mgmt.com - ENDE
             seite: 'bandlab.com',
-            setstoragename: 'privacyConsent',
-            setstoragecontent: '{"essential":true,"functionality":true,"analytics":false,"marketing":false}'
+            setstorageablehnen: 'privacyConsent={"essential":true,"functionality":true,"analytics":false,"marketing":false}',
+            setstorageakzeptieren: 'privacyConsent={"essential":true,"functionality":true,"analytics":true,"marketing":true}'
          }, {
             seite: 'aok.de',
             setcookie: 'aok-gp-cookie-settings={"comfort":{"key":"comfort","required":false,"approved":true},"functional":{"key":"functional","required":true,"approved":true},"tracking":{"key":"tracking","required":false,"approved":false}}; , aok_cookie_settings=%7B%22functional%22%3A%7B%22key%22%3A%22functional%22%2C%22name%22%3A%22Funktionale%20Cookies%22%2C%22required%22%3Atrue%2C%22approved%22%3Atrue%7D%2C%22comfort%22%3A%7B%22key%22%3A%22comfort%22%2C%22name%22%3A%22Komfort-Cookies%22%2C%22required%22%3Afalse%2C%22approved%22%3Atrue%7D%2C%22tracking%22%3A%7B%22key%22%3A%22tracking%22%2C%22name%22%3A%22Marketing-Cookies%22%2C%22required%22%3Afalse%2C%22approved%22%3Afalse%7D%7D;'
@@ -239,15 +248,15 @@
             setcookie: '_cookies_accepted=functionality;'
          }, {
             seite: 'gofundme.com,patreon.com',
-            setstoragename: 'tcmConsent',
-            setstoragecontent: '{"purposes":{"SaleOfInfo":"Auto","Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}'
+            setstorageablehnen: 'tcmConsent={"purposes":{"SaleOfInfo":"Auto","Analytics":false,"Functional":true,"Advertising":false},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}',
+            setstorageakzeptieren: 'tcmConsent={"purposes":{"SaleOfInfo":"Auto","Analytics":true,"Functional":true,"Advertising":true},"timestamp":"' + cookiedatum + '","confirmed":true,"prompted":true,"updated":true}'
          }, {
             seite: 'afternic.com,godaddy.com',
             setcookie: 'OPTOUTMULTI=0:0%7Cc2:1%7Cc9:1%7Cc11:1; , pwinteraction=Wed%2C%2013%20Sep%202023%2015%3A27%3A25%20GMT;'
          }, {
             seite: 'change.org',
-            setstoragename: '_change_cookie_prefs',
-            setstoragecontent: '{"preferences":{"consent_text":"Cookies akzeptieren","status":false},"analytics":{"consent_text":"Cookies akzeptieren","status":false},"marketing":{"consent_text":"Cookies akzeptieren","status":false}}'
+            setstorageablehnen: '_change_cookie_prefs={"preferences":{"consent_text":"Cookies akzeptieren","status":false},"analytics":{"consent_text":"Cookies akzeptieren","status":false},"marketing":{"consent_text":"Cookies akzeptieren","status":false}}',
+            setstorageakzeptieren: '_change_cookie_prefs={"preferences":{"consent_text":"Cookies akzeptieren","status":true},"analytics":{"consent_text":"Cookies akzeptieren","status":true},"marketing":{"consent_text":"Cookies akzeptieren","status":true}}'
          }, {
             seite: 'tunnelbear.com',
             setcookie: 'ac=true;'
@@ -261,14 +270,6 @@
             seite: 'bayernportal.de',
             setcookie: 'comfortConsent=true; , cookieConsent=true;',
             reload: true
-         }, {
-            seite: 'fingerprint.com',
-            setstoragename: 'cookieChoice',
-            setstoragecontent: '["required"]'
-         }, {
-            seite: 'eqmac.app',
-            setstoragename: 'EQM_PRIVACY_CONSENT_CHOSEN',
-            setstoragecontent: 'true'
          }, {
             seite: 'scoyo.de',
             setcookie: 'squla-analytical-agreement=0; , squla-cookie-agreement=1; , squla-marketing-agreement=0;'
@@ -291,8 +292,8 @@
             reload: true
          }, {
             seite: 'theo-schrauben.de',
-            setstoragename: 'consent',
-            setstoragecontent: '{"version":5,"settings":{"recaptcha":true,"grez_consent_googlekundenrezensionen":true,"jtl_paypal_commerce_consent":true,"youtube":false,"vimeo":false,"ws5_sendinblue_consent":false,"gc_analytics":false,"gc_adwords":false}}'
+            setstorageablehnen: '{"version":5,"settings":{"recaptcha":false,"youtube":false,"vimeo":false,"ws5_sendinblue_consent":false,"grez_consent_googlekundenrezensionen":false,"gc_analytics":false,"gc_adwords":false,"jtl_paypal_commerce_consent":false}}',
+            setstorageakzeptieren: 'consent={"version":5,"settings":{"youtube":true,"vimeo":true,"recaptcha":true,"ws5_sendinblue_consent":true,"grez_consent_googlekundenrezensionen":true,"gc_analytics":true,"gc_adwords":true,"jtl_paypal_commerce_consent":true}}'
          }, {
             seite: 'kick.com',
             setcookie: 'cookie_preferences_set_v2=%7B%22state%22%3A%7B%22preferences%22%3A%7B%22necessary%22%3Atrue%2C%22functional%22%3Atrue%2C%22performance%22%3Afalse%2C%22targeting%22%3Afalse%2C%22userHasMadeChoice%22%3Atrue%7D%2C%22functionalEnabled%22%3Atrue%2C%22performanceEnabled%22%3Afalse%2C%22targetingEnabled%22%3Afalse%7D%2C%22version%22%3A0%7D;'
@@ -346,8 +347,8 @@
          }, {
             seite: 'umcutrecht.nl',
             setcookie: '.AspNet.Consent=no;',
-            setstoragename: 'consent',
-            setstoragecontent: '.AspNet.Consent=no; expires=Fri, 22 Aug 2099 15:35:43 GMT; path=/; secure'
+            setstorageablehnen: 'consent=.AspNet.Consent=no; expires=Fri, 22 Aug 2099 15:35:43 GMT; path=/; secure',
+            setstorageakzeptieren: 'consent=.AspNet.Consent=yes; expires=Fri, 22 Aug 2099 15:35:43 GMT; path=/; secure'
          }, {
             seite: 'manutd.com',
             setcookie: 'userConsentCookiePolicy=off;'
@@ -359,9 +360,7 @@
             setcookie: 'privacy=%7B%22cga%22%3A0%2C%22cgc%22%3A0%2C%22cfb%22%3A0%2C%22cfb_share%22%3A0%2C%22cvwo%22%3A1%7D;'
          }, {
             seite: 'quickpharm.net',
-            setcookie: 'cookieAgreement=false;',
-            setstoragename: 'mapsAllowed',
-            setstoragecontent: 'true'
+            setcookie: 'cookieAgreement=false;'
          }, {
             seite: 'landkreis-pfaffenhofen.de',
             setcookie: 'ld-cookieselection16569--1156368248-0=cookieselection-checkbox-necessary;'
@@ -382,8 +381,8 @@
             setcookie: 'cookieConsent={%22Lang%22:%22DE%22%2C%22cat1%22:%22On%22%2C%22cat2%22:%22Off%22%2C%22cat3%22:%22Off%22%2C%22cat4%22:%22Off%22%2C%22cat5%22:%22Off%22%2C%22cat6%22:%22Off%22};'
          }, {
             seite: 'baechli-bergsport.ch',
-            setstoragename: 'cookieconsent',
-            setstoragecontent: '{"functionality":true,"tracking":false,"marketing":false}'
+            setstorageablehnen: 'cookieconsent={"functionality":true,"tracking":false,"marketing":false}',
+            setstorageakzeptieren: 'cookieconsent={"functionality":true,"tracking":true,"marketing":true}'
          }, {
             seite: 'asus.com',
             setcookie: 'isReadCookiePolicyDNTAa=false; , isReadCookiePolicyDNT=No; , LithiumCookiesAccepted=0;'
@@ -419,8 +418,8 @@
             setcookie: 'allowCookies=true;'
          }, {
             seite: 'roller.de',
-            setstoragename: 'cookie-hinweis',
-            setstoragecontent: '{"accepted":false,"declined":true}'
+            setstorageablehnen: 'cookie-hinweis={"accepted":false,"declined":true}',
+            setstorageakzeptieren: 'cookie-hinweis={"accepted":true,"declined":false}'
          }, {
             seite: 'hoeffner.de',
             setcookie: 'optOutAccepted=true;'
@@ -433,8 +432,7 @@
             setcookie: 'cookieConsent={"algolia":false,"basket-store":true,"dy":false,"emarsys":false,"taboola":false,"google-ga":false,"google-tm":false,"facebook":false,"bing":false,"clarity":false,"rememberMe":true,"trbo":false,"zenloop":false,"version":"1.4"};'
          }, {
             seite: 'utiq.com',
-            setstoragename: 'utiqCookieAcknowledged',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'utiqCookieAcknowledged=true'
          }, {
             seite: 'arbeitsagentur.de',
             setcookie: 'cookie_consent=denied; , marketing_consent=denied; , personalization_consent=denied;'
@@ -447,8 +445,8 @@
             setcookie: 'zdf_cmp_client={%22version%22:%22v1%22%2C%22iteration%22:1%2C%22consents%22:[{%22id%22:%22erforderlich%22%2C%22value%22:true}%2C{%22id%22:%22erfolgsmessung%22%2C%22value%22:false}%2C{%22id%22:%22personalisierung%22%2C%22value%22:false}%2C{%22id%22:%22socialMedia%22%2C%22value%22:false}%2C{%22id%22:%22instagram%22%2C%22value%22:false}%2C{%22id%22:%22twitter%22%2C%22value%22:false}%2C{%22id%22:%22facebook%22%2C%22value%22:false}%2C{%22id%22:%22drittsysteme%22%2C%22value%22:false}]};'
          }, {
             seite: 'lemon-aid.de',
-            setstoragename: 'cookie-consent',
-            setstoragecontent: 'refuse'
+            setstorageablehnen: 'cookie-consent=refuse',
+            setstorageakzeptieren: 'cookie-consent=accept'
          }, {
             seite: 'pcbway.com',
             setcookie: 'pcbwaycookies_analytics=1; , pcbwaycookies_functional=0; , pcbwaycookies=true;',
@@ -458,8 +456,8 @@
             setcookie: 'gsbbanner=closed; , cookieConsent=NO;'
          }, {
             seite: 'vdk.de',
-            setstoragename: 'vdk-iframe-enabled,vdk-podigee-enabled,vdk-required-enabled,vdk-status,vdk-youtube-enabled',
-            setstoragecontent: 'true ; true ; true ; acceptSelection ; true'
+            setstorageablehnen: 'vdk-required-enabled=true ,, vdk-status=acceptSelection',
+            setstorageakzeptieren: 'vdk-iframe-enabled=true ,, vdk-matomo-enabled=true ,, vdk-podigee-enabled=true ,, vdk-required-enabled=true ,, vdk-status=acceptAll ,, vdk-youtube-enabled=true'
          }, {
             seite: 'spacebar.news',
             setcookie: 'hideCookieBanner=true;'
@@ -507,12 +505,11 @@
             setcookie: 'nolis_cookiedough=ALL;'
          }, {
             seite: 'tricksplit.io',
-            setstoragename: 'accepted',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'accepted=true'
          }, {
             seite: 'aeroreport.de',
-            setstoragename: 'aeroreport-consent-key',
-            setstoragecontent: '[1]'
+            setstorageablehnen: 'aeroreport-consent-key=[1]',
+            setstorageakzeptieren: 'aeroreport-consent-key=[1,2]'
          }, {
             seite: 'transportenvironment.org',
             setcookie: 'CookieControl={"necessaryCookies":["PHPSESSID","wordpress_*","wfwaf-authcookie-*","wf_loginalerted_*","wfCBLBypass","__cfduid","__cfruid","lang","CookieConsent","CookieControl","gravityformsfbgfgocardlesshosted"],"optionalCookies":{},"statement":{"shown":true,"updated":"07/04/2021"},"consentDate":' + cookiezeit + ',"consentExpiry":90,"interactedWith":true,"user":"A083169D-10F1-472E-A1C8-EF6D54F9B0B1"};'
@@ -524,8 +521,8 @@
             setcookie: 'hasConsent=false;'
          }, {
             seite: 'wassermanufaktur.com',
-            setstoragename: 'cookiePreference',
-            setstoragecontent: 'required'
+            setstorageablehnen: 'cookiePreference=required',
+            setstorageakzeptieren: 'cookiePreference=marketing'
          }, {
             seite: 'autismus-verstehen.de',
             setcookie: 'cookie_consent={"statistics":{"googleAnalytics":false}};'
@@ -561,8 +558,7 @@
             reload: true
          }, {
             seite: '100prozentautark.de',
-            setstoragename: 'cookieNotificationHasBeenSeen',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'cookieNotificationHasBeenSeen=true'
          }, {
             seite: 'obelink.de',
             setcookie: 'cookieConsentPrefs={%22cg_essential%22:1%2C%22cg_analytical%22:1%2C%22cg_marketing%22:1%2C%22expire%22:182%2C%22secure%22:1};'
@@ -596,8 +592,8 @@
             setcookie: 'CookieLayerDismissed=true;'
          }, {
             seite: 'drimsim.com',
-            setstoragename: 'DS_POLICY',
-            setstoragecontent: '{"user":false,"anon":false}'
+            setstorageablehnen: 'DS_POLICY={"user":false,"anon":false}',
+            setstorageakzeptieren: 'DS_POLICY={"user":true,"anon":true}'
          }, {
             seite: 'highend-audiokabel.de',
             setcookie: 'accept_cookies2=true;',
@@ -622,11 +618,6 @@
             seite: 'blocksmc.com',
             setcookie: 'allowCookies=1;'
          }, {
-            seite: 'temu.com',
-            setcookie: 'privacy_setting=100;',
-            setstoragename: 'cookie_prompt_times,last_prompt_time',
-            setstoragecontent: '1 ; ' + cookiezeit + ''
-         }, {
             seite: 'karriere-feuerwehr.hamburg',
             setcookie: 'hsnCookieAllowed={"gtm":false,"youtube":true};'
          }, {
@@ -634,8 +625,7 @@
             setcookie: 'appguard-cookie-consent=operational%7C!performance%7C!advertising;'
          }, {
             seite: 'kba-online.de',
-            setstoragename: 'ora-cookie-policy',
-            setstoragecontent: 'accepted'
+            setstorageakzeptieren: 'ora-cookie-policy=accepted'
          }, {
             seite: 'swissgrid.ch',
             setcookie: 'acceptedCookie=true;'
@@ -648,10 +638,6 @@
          }, {
             seite: 'longi.com',
             setcookie: 'CookieConsent=false;'
-         }, {
-            seite: 'chargecloud.de',
-            setstoragename: 'stromfahrer_privacy_policy_read,stromfahrer_consent_required,stromfahrer_consent_google,stromfahrer_consent_extended_sentry',
-            setstoragecontent: 'true ; true ; true ; false'
          }, {
             seite: 'go-e.com',
             setcookie: 'gdpr={%22version%22:%221.1_tracking%22%2C%22options%22:{%22typo3%22:true%2C%22gdpr%22:true%2C%22openstreetmap%22:true%2C%22vimeo%22:true%2C%22youtube%22:true%2C%22recaptcha%22:true%2C%22googlemaps%22:true%2C%22tracking%22:false}};'
@@ -689,8 +675,8 @@
          }, {
             seite: 'sex.de',
             setcookie: 'CookieConsent=esex;',
-            setstoragename: 'CookieAccept',
-            setstoragecontent: '1'
+            setstorageablehnen: 'CookieAccept=1',
+            setstorageakzeptieren: 'CookieAccept=1 ,, CookiesAnalytics=1 ,, CookiesInternalStatistics=1 ,, CookiesLogin=1 ,, CookiesMarketing=1 ,, CookiesSupport=1'
          }, {
             seite: 'sex.com',
             setcookie: 'privacy-preferences=%7B%22essential%22%3Atrue%2C%22analytics%22%3Afalse%7D;'
@@ -702,12 +688,10 @@
             setcookie: 'GDPR_OPT=REJECTED; , LEGAL_OPT=1;'
          }, {
             seite: 'geotastic.net',
-            setstoragename: 'privacy-policy-accepted,privacy-policy-accepted-date',
-            setstoragecontent: 'true ; ' + cookiezeit + ''
+            setstorageakzeptieren: 'privacy-policy-accepted=true ,, privacy-policy-accepted-date=' + cookiezeit + ''
          }, {
             seite: 'dashboard-deutschland.de',
-            setstoragename: 'cbV2Closed',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'cbV2Closed=true'
          }, {
             seite: 'owayo.de',
             setcookie: 'CookieShow=true; , CookieShowpreferences=allow; , CookiePreferences=["preferences"]; , cc_cookie={"categories":["preferences"],"level":["preferences"],"revision":0,"data":null,"rfc_cookie":false,"consent_date":"2024-06-30T20:17:02.786Z","consent_uuid":"7348e67f-1bbd-429c-a657-7df0a2641004","last_consent_update":"2024-06-30T20:17:02.786Z"};'
@@ -716,8 +700,8 @@
             setcookie: 'cookie-cracker_1=true; , cookie-cracker_1_prefs=technischnotwendig,cookie-cracker,woocommerce,wordPress-user-login;'
          }, {
             seite: 'hyla-germany.de',
-            setstoragename: 'cookie-preference',
-            setstoragecontent: 'declined'
+            setstorageablehnen: 'cookie-preference=declined',
+            setstorageakzeptieren: 'cookie-preference=accepted'
          }, {
             seite: 'energie-und-management.de',
             setcookie: 'trackingConsent=1; , trackingDisableGoogle=1; , trackingDisableIVW=1; , trackingPressed=1;'
@@ -726,8 +710,8 @@
             setcookie: 'UPMCookiePolicy=strictlyNecessary|functional;'
          }, {
             seite: 'dekra.de',
-            setstoragename: 'privacySettings',
-            setstoragecontent: '{"baidu_maps":"true","linkedin":"false","facebook":"false","googleAds":"false","baidu":"false","hubspot":"false","hotjar":"false","matomo":"false","googleTagManager":"false","youtube":"true","applicationsights":"false","google_maps":"true","vimeo":"true"}'
+            setstorageablehnen: 'privacySettings={"baidu_maps":"true","linkedin":"false","facebook":"false","googleAds":"false","baidu":"false","hubspot":"false","hotjar":"false","matomo":"false","googleTagManager":"false","youtube":"true","applicationsights":"false","google_maps":"true","vimeo":"true"}',
+            setstorageakzeptieren: 'privacySettings={"baidu_maps":"true","linkedin":"true","facebook":"true","googleAds":"true","baidu":"true","hubspot":"true","hotjar":"true","matomo":"true","googleTagManager":"true","youtube":"true","applicationsights":"true","google_maps":"true","vimeo":"true"}'
          }, {
             seite: 'tiny-huchler.de',
             setcookie: 'CookieBanner=1;'
@@ -739,8 +723,7 @@
             setcookie: 'aiko-show-cookie-section=0;'
          }, {
             seite: 'vehgroshop.de',
-            setstoragename: 'showCookieBar',
-            setstoragecontent: 'false'
+            setstorageakzeptieren: 'showCookieBar=false'
          }, {
             seite: 'solaragentur.ch',
             setcookie: 'cookie-agreed=2;'
@@ -767,8 +750,8 @@
             reload: true
          }, {
             seite: 'dnr.de',
-            setstoragename: 'gd-consent',
-            setstoragecontent: '{"activeCategories":[],"activeServices":[]}'
+            setstorageablehnen: 'gd-consent={"activeCategories":[],"activeServices":[]}',
+            setstorageakzeptieren: 'gd-consent={"activeCategories":["essential","external_media","statistics","engagement"],"activeServices":["navigation","matomo","ga","youtube","vimeo"]}'
          }, {
             seite: 'pendlerinfo.org',
             setcookie: 'dataProtectionConfirmed=yes;'
@@ -801,10 +784,6 @@
             setcookie: 'CookieConsent={stamp:%27WM+blRw847WoKzGlcdHBfaOHz2SjIf+168yIrGTeXIOFA48wyhNUXA==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:false%2Cmarketing:false%2Cmethod:%27explicit%27%2Cver:2%2Cutc:1752782707503%2Cregion:%27de%27};',
             reload: true
          }, {
-            seite: 'zierschildkroete.de',
-            setstoragename: 'dsgvoaio',
-            setstoragecontent: 'dsgvoaiowp_cookie=!vgwort=false!wordpressmain=true'
-         }, {
             seite: 'vbv.at',
             setcookie: 'fcc_cookie_consent=1;'
          }, {
@@ -820,9 +799,6 @@
          }, {
             seite: 'bunny.net',
             setcookie: 'bn_cookies=1;'
-         }, {
-            seite: 'catf.us',
-            setcookie: 'CookieScriptConsent={"googleconsentmap":{"ad_storage":"targeting","analytics_storage":"performance","functionality_storage":"","personalization_storage":"","security_storage":""},"action":"reject","categories":"[]","key":"a1870d20-9eb3-4562-aef2-fb7f96b6d5ba"};'
          }, {
             seite: 'silent-power.com',
             setcookie: 'silent_power_cookie_policy=accepted;'
@@ -860,8 +836,8 @@
             setcookie: '4S_CookiePrivacy=v2-7465215491294153393:1[11]-0[0]-0[000]-0[00000];'
          }, {
             seite: 'consilium.europa.eu',
-            setstoragename: 'cookieConsentAccepted',
-            setstoragecontent: 'false'
+            setstorageablehnen: 'cookieConsentAccepted=false',
+            setstorageakzeptieren: 'cookieConsentAccepted=true'
          }, {
             seite: 'eskp.de',
             setcookie: 'netl_gdpr_allowed=["essential"];'
@@ -877,8 +853,8 @@
             reload: true
          }, {
             seite: 'ecwid.com',
-            setstoragename: 'allow-gdpr-cookie',
-            setstoragecontent: 'false'
+            setstorageablehnen: 'allow-gdpr-cookie=false',
+            setstorageakzeptieren: 'allow-gdpr-cookie=true'
          }, {
             seite: 'mytinyhouseproject.de',
             setcookie: 'cookie_notice_accepted=false;'
@@ -963,8 +939,7 @@
             setcookie: 'CCUserSettings=2%3D1%26default%3D1%2612%3D0%26statistiknutzeranalyse%3D0%2615%3D0%26marketing%3D0%2618%3D0%26funktional%3D0;'
          }, {
             seite: 'toplehrstellen.ch',
-            setstoragename: 'toplehrstellen.disclaimerClosed',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'toplehrstellen.disclaimerClosed=true'
          }, {
             seite: 'tasso.net',
             setcookie: 'CMSCookieLevel=0;',
@@ -1080,8 +1055,7 @@
             setcookie: 'CookieConsent=eyJoYXNTZWxlY3RlZFByZWZlcmVuY2VzIjp0cnVlLCJwcmVmZXJlbmNlcyI6eyJhZHZlcnRpc2luZyI6ZmFsc2UsImFuYWx5dGljcyI6ZmFsc2UsInByZWZlcmVuY2VzIjpmYWxzZX19;'
          }, {
             seite: 'statistik-nord.de',
-            setstoragename: 'cookie_banner',
-            setstoragecontent: 'hidden'
+            setstorageakzeptieren: 'cookie_banner=hidden'
          }, {
             seite: 'agila.de',
             setcookie: 'cookieconsent_dismissed=essential;'
@@ -1118,8 +1092,7 @@
             setcookie: 'cookiehint={"matomo":0};'
          }, {
             seite: 'remitly.com',
-            setstoragename: 'cookie_consent_date',
-            setstoragecontent: cookiezeit,
+            setstorageakzeptieren: 'cookie_consent_date=' + cookiezeit,
             setcookie: 'cookie_consent=000;'
          }, {
             seite: 'opploans.com',
@@ -1139,24 +1112,24 @@
             setcookie: 'cconsent={"version":1,"categories":{"necessary":{"wanted":true},"analytics":{"wanted":false},"functional":{"wanted":false}},"services":["mercari","x_ua_device","cconsent","trustedshops","tagmanager","googleAnalytics","googleAds","facebook","reddit","matomo","livezilla"],"consentMode":{"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied","analytics_storage":"denied"}};'
          }, {
             seite: 'revanced.app',
-            setstoragename: 'analytics',
-            setstoragecontent: 'false'
+            setstorageablehnen: 'analytics=false',
+            setstorageakzeptieren: 'analytics=true'
          }, {
             seite: 'compuram.de',
             setcookie: 'CompuRAM_CC=off;',
             reload: true
          }, {
             seite: 'bundeswehr.de',
-            setstoragename: 'privacyProtection',
-            setstoragecontent: '{"settings":{"tracking":{"enabled":false,"readonly":false},"maps":{"enabled":false,"readonly":false},"facebook":{"enabled":false,"readonly":false},"youtube":{"enabled":false,"readonly":false},"twitter":{"enabled":false,"readonly":false},"instagram":{"enabled":false,"readonly":false},"flickr":{"enabled":false,"readonly":false},"kaltura":{"enabled":false,"readonly":false},"mastodon":{"enabled":false,"readonly":false},"bluesky":{"enabled":false,"readonly":false}}}'
+            setstorageablehnen: 'privacyProtection={"settings":{"tracking":{"enabled":false,"readonly":false},"maps":{"enabled":false,"readonly":false},"facebook":{"enabled":false,"readonly":false},"youtube":{"enabled":false,"readonly":false},"twitter":{"enabled":false,"readonly":false},"instagram":{"enabled":false,"readonly":false},"flickr":{"enabled":false,"readonly":false},"kaltura":{"enabled":false,"readonly":false},"mastodon":{"enabled":false,"readonly":false},"bluesky":{"enabled":false,"readonly":false}}}',
+            setstorageakzeptieren: 'privacyProtection={"settings":{"tracking":{"enabled":true,"readonly":false},"maps":{"enabled":true,"readonly":false},"facebook":{"enabled":true,"readonly":false},"youtube":{"enabled":true,"readonly":false},"twitter":{"enabled":true,"readonly":false},"instagram":{"enabled":true,"readonly":false},"flickr":{"enabled":true,"readonly":false},"kaltura":{"enabled":true,"readonly":false},"mastodon":{"enabled":true,"readonly":false},"bluesky":{"enabled":true,"readonly":false}}}'
          }, {
             seite: 'site24x7.com',
-            setstoragename: 'zglobal_Acookie_optOut',
-            setstoragecontent: '2'
+            setstorageablehnen: 'zglobal_Acookie_optOut=2',
+            setstorageakzeptieren: 'zglobal_Acookie_optOut=0'
          }, {
             seite: 'kickstarter.com',
-            setstoragename: 'tcmConsent',
-            setstoragecontent: '{"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"2024-12-06T19:14:24.403Z","confirmed":true,"prompted":true,"updated":true}'
+            setstorageablehnen: 'tcmConsent={"purposes":{"SaleOfInfo":false,"Analytics":false,"Functional":true,"Advertising":false},"timestamp":"2025-12-06T19:14:24.403Z","confirmed":true,"prompted":true,"updated":true}',
+            setstorageakzeptieren: 'tcmConsent={"purposes":{"SaleOfInfo":true,"Analytics":true,"Functional":true,"Advertising":true},"timestamp":"2025-12-06T19:14:24.403Z","confirmed":true,"prompted":true,"updated":true}'
          }, {
             seite: 'opera.com',
             setcookie: 'cookie_consent_granted=true;'
@@ -1177,8 +1150,7 @@
             setcookie: 'wpcc=dismiss;'
          }, {
             seite: 'allekabel.de',
-            setstoragename: 'showlegal,uid',
-            setstoragecontent: '0 ; -1'
+            setstorageablehnen: 'showlegal=0 ,, uid=-1'
          }, {
             seite: 'bmw-public-charging.com',
             setcookie: 'CN_ALLOW_FUNCTIONAL_COOKIES=false;'
@@ -1209,8 +1181,7 @@
             setcookie: 'consent-1.0=%7B%22functional%22%3Atrue%2C%22analytics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22isSet%22%3Atrue%7D;'
          }, {
             seite: 'soeren-hentzschel.at',
-            setstoragename: 'storage_notice.shown',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'storage_notice.shown=true'
          }, {
             seite: 'eso.lt',
             setcookie: 'privacy_verify=1; , privacy_2=1; , privacy_3=0; , privacy_4=0;',
@@ -1220,8 +1191,8 @@
             setcookie: 'cookie_consent_v1=reject_all;'
          }, {
             seite: 'blacknut.com',
-            setstoragename: 'bn:a:privacyConsent',
-            setstoragecontent: '{"statistics":false,"marketing":false,"lang":"de","expiry":' + (cookiezeit + 86400) + '}'
+            setstorageablehnen: 'bn:a:privacyConsent={"statistics":false,"marketing":false,"lang":"de","expiry":' + (cookiezeit + 86400) + '}',
+            setstorageakzeptieren: 'bn:a:privacyConsent={"statistics":true,"marketing":true,"lang":"de","expiry":' + (cookiezeit + 86400) + '}'
          }, {
             seite: 'seznam.cz',
             setcookie: 'euconsent-v2=CQNBgcAQNBgcAD3ACQCSBdFsAP_gAEPgAATIJNQIwAFAAQAAqABkAEAAKAAZAA0ACSAEwAJwAWwAvwBhAGIAQEAggCEAEUAI4ATgAoQBxADuAIQAUgA04COgE2gKkAW4AvMBjID_AIDgRmAk0BecBIACoAIAAZAA0ACYAGIAPwAhABHACcAGaAO4AhABFgE2gKkAW4AvMAAA.YAAAAAAAAWAA;',
@@ -1285,17 +1256,12 @@
             seite: 'xbox-store-checker.com',
             setcookie: 'EU_COOKIE_LAW_CONSENT=true;'
          }, {
-            seite: 'kompass.com',
-            setcookie: 'axeptio_cookies=%7B%22%24%24token%22%3A%22tzuxh86xw3gvlc672faa%22%2C%22%24%24date%22%3A%222025-03-23T15%3A23%3A36.290Z%22%2C%22%24%24cookiesVersion%22%3A%7B%22name%22%3A%22de-DE%22%2C%22identifier%22%3A%2266f423a89a161582c3a9cf03%22%7D%2C%22%24%24completed%22%3Atrue%2C%22facebook_pixel%22%3Afalse%2C%22cloudflare%22%3Afalse%2C%22CloudFlare%22%3Afalse%2C%22vimeo%22%3Afalse%2C%22google_analytics%22%3Afalse%2C%22effinity%22%3Afalse%2C%22optomaton_ug%22%3Afalse%2C%22sojern%22%3Afalse%2C%22spotad%22%3Afalse%2C%22mediamath%22%3Afalse%2C%22widespace%22%3Afalse%2C%22adsense%22%3Afalse%2C%22getquanty%22%3Afalse%2C%22GetQuanty%22%3Afalse%2C%22oct8ne%22%3Afalse%2C%22snapengage%22%3Afalse%2C%22fastbase%22%3Afalse%2C%22shiny_stat%22%3Afalse%7D;',
-            setstoragename: '_ax_tcstring',
-            setstoragecontent: 'CQOuRYAQOuRYAEEAEBDEBiFgAAAAAAAAAAYgAAAAAAAA.YAAAAAAAAAAA'
-         }, {
             seite: 'fusionbase.com',
             setcookie: 'cookie_consent=%7B%22ad_storage%22%3A%22denied%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%7D;'
          }, {
             seite: 'emlakjet.com',
-            setstoragename: 'efl-saved-consent',
-            setstoragecontent: '{"updatedAt":1742743804412,"categories":{"essential":true,"functional":false,"marketing":false,"other":false},"browserData":{"userAgent":"' + navigator.userAgent + '","pageLoad":2070,"language":"' + navigator.language + '","networkType":"","screen":{"devicePixelRatio":1.5,"height":1080,"width":1920},"uuid":"e3a89f10-056b-48e2-9a69-5cfbf1fefaaf"}}'
+            setstorageablehnen: 'efl-saved-consent={"updatedAt":' + cookiezeit + ',"categories":{"essential":true,"functional":false,"marketing":false,"other":false},"browserData":{"userAgent":"' + navigator.userAgent + '","pageLoad":2070,"language":"' + navigator.language + '","networkType":"","screen":{"devicePixelRatio":1.5,"height":1080,"width":1920},"uuid":"e3a89f10-056b-48e2-9a69-5cfbf1fefaaf"}}',
+            setstorageakzeptieren: 'efl-saved-consent={"updatedAt":' + cookiezeit + ',"categories":{"essential":true,"functional":true,"marketing":true,"other":true},"browserData":{"userAgent":"' + navigator.userAgent + '","pageLoad":2070,"language":"' + navigator.language + '","networkType":"","screen":{"devicePixelRatio":1.5,"height":1080,"width":1920},"uuid":"e3a89f10-056b-48e2-9a69-5cfbf1fefaaf"}}'
          }, {
             seite: 'sucuri.net',
             setcookie: 'pwinteraction=Sun%2C%2023%20Mar%202025%2015%3A34%3A49%20GMT;'
@@ -1315,8 +1281,8 @@
             reload: true
          }, {
             seite: 'einforstungsverband.at',
-            setstoragename: 'pw_dch_banner',
-            setstoragecontent: '2'
+            setstorageablehnen: 'pw_dch_banner=2',
+            setstorageakzeptieren: 'pw_dch_banner=1'
          }, {
             seite: 'jeep.de',
             setcookie: 'opncl_advertising=false; , opncl_comfort=true; , opncl_essential=true; , opncl_general=true; , opncl_performance=false;'
@@ -1343,8 +1309,8 @@
             setcookie: 'easycmp={%22decided%22:%222025-05-13T19:59:09.912Z%22%2C%22cookies%22:[{%22id%22:%22netautor%22%2C%22allow%22:true}%2C{%22id%22:%22youtube%22%2C%22allow%22:false}%2C{%22id%22:%22recaptcha%22%2C%22allow%22:true}]};'
          }, {
             seite: 'gkv-spitzenverband.de',
-            setstoragename: 'cookie-consent',
-            setstoragecontent: '{"date":' + cookiezeit + ',"version":1,"statistics":false}'
+            setstorageablehnen: 'cookie-consent={"date":' + cookiezeit + ',"version":1,"statistics":false}',
+            setstorageakzeptieren: 'cookie-consent={"date":' + cookiezeit + ',"version":1,"statistics":true}'
          }, {
             seite: 'rauchmeldertest.net',
             setcookie: 'privacy_embeds=consent;'
@@ -1373,8 +1339,7 @@
             setcookie: '__w_cc={%22preferences%22:false%2C%22analysis%22:false%2C%22marketing%22:false};'
          }, {
             seite: 'supermarioplay.com',
-            setstoragename: 'cookies',
-            setstoragecontent: '1'
+            setstorageakzeptieren: 'cookies=1'
          }, {
             seite: 'chatgpt.com,platform.openai.com',
             setcookie: 'oai-allow-ne=false; , oai_consent_analytics=false; , oai_consent_marketing=false;'
@@ -1410,34 +1375,32 @@
             reload: true
          }, {
             seite: 'windowsonarm.org',
-            setstoragename: 'cookieConsent',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'cookieConsent=true'
          }, {
             seite: 'arte.tv',
             setcookie: 'user_consent=audience%3Doff%2Ctechnical%3Doff;'
          }, {
             seite: 'theonion.com',
-            setstoragename: 'consent_preferences',
-            setstoragecontent: '{"analytics_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}'
+            setstorageablehnen: 'consent_preferences={"analytics_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}',
+            setstorageakzeptieren: 'consent_preferences={"analytics_storage":"granted","ad_storage":"granted","ad_user_data":"granted","ad_personalization":"granted"}'
          }, {
             seite: 'praxis121.de',
-            setstoragename: 'cookieNotificationHasBeenSeen',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'cookieNotificationHasBeenSeen=true'
          }, {
             seite: 'iosgods.com',
             setcookie: 'ips4_cookie_consent=1;'
          }, {
             seite: 'gkv-90prozent.de',
-            setstoragename: 'cookie-consent',
-            setstoragecontent: '{"date":' + cookiezeit + ',"version":1,"statistics":false}'
+            setstorageablehnen: 'cookie-consent={"date":' + cookiezeit + ',"version":1,"statistics":false}',
+            setstorageakzeptieren: 'cookie-consent={"date":' + cookiezeit + ',"version":1,"statistics":true}'
          }, {
             seite: 'go-aheadnordic.no',
-            setstoragename: 'GOA:SETTINGS',
-            setstoragecontent: '{"LANGUAGE":"no","GOA_NECCESSARY_COOKIE":"ON","GOA_ANALYTICAL_COOKIE":"OFF","GOA_AD_COOKIE":"OFF"}'
+            setstorageablehnen: 'GOA:SETTINGS={"LANGUAGE":"no","GOA_NECCESSARY_COOKIE":"ON","GOA_ANALYTICAL_COOKIE":"OFF","GOA_AD_COOKIE":"OFF"}',
+            setstorageakzeptieren: 'GOA:SETTINGS={"LANGUAGE":"no","GOA_NECCESSARY_COOKIE":"ON","GOA_ANALYTICAL_COOKIE":"ON","GOA_AD_COOKIE":"ON"}'
          }, {
             seite: 'vy.se,vy.no',
-            setstoragename: 'Vy.User.Cookie.Settings',
-            setstoragecontent: '{"analytics":false,"marketing":false}'
+            setstorageablehnen: 'Vy.User.Cookie.Settings={"analytics":false,"marketing":false}',
+            setstorageakzeptieren: 'Vy.User.Cookie.Settings={"analytics":true,"marketing":true}'
          }, {
             seite: 'norrtag.se',
             setcookie: '__mmgdpr={%22version%22:%221.0.1%22%2C%22categories%22:[{%22id%22:1%2C%22approved%22:true}%2C{%22id%22:2%2C%22approved%22:false}%2C{%22id%22:3%2C%22approved%22:true}]};'
@@ -1446,8 +1409,8 @@
             setcookie: 'TrvCookieConsent=functional%3Dfalse%26analytical%3Dfalse;'
          }, {
             seite: 'yealink.com',
-            setstoragename: 'privacyData',
-            setstoragecontent: '{"necessary":1,"preferences":0,"statistics":0,"targeted":0}'
+            setstorageablehnen: 'privacyData={"necessary":1,"preferences":0,"statistics":0,"targeted":0}',
+            setstorageakzeptieren: 'privacyData={"necessary":1,"preferences":1,"statistics":1,"targeted":1}'
          }, {
             seite: 'gitflic.ru',
             setcookie: 'cookiesAccepted=true;'
@@ -1461,10 +1424,6 @@
          }, {
             seite: 'getränkefickel.de,xn--getrnkefickel-efb.de',
             setcookie: 'gox_cookie_consent=;'
-         }, {
-            seite: 'mediaduplicationsystems.com',
-            setstoragename: 'pieeye-consent',
-            setstoragecontent: 'Strictly Necessary'
          }, {
             seite: 'tanuloknak.hu',
             setcookie: 'gdpr_level=3;',
@@ -1511,23 +1470,22 @@
             reload: true
          }, {
             seite: 'streamawards.de',
-            setstoragename: 'cookie-consent',
-            setstoragecontent: 'declined'
+            setstorageablehnen: 'cookie-consent={"essential":true,"youtube":false,"analytics":false}',
+            setstorageakzeptieren: 'cookie-consent={"essential":true,"youtube":true,"analytics":true}'
          }, {
             seite: 'groupsumi.de',
-            setstoragename: '@sumi/consent',
-            setstoragecontent: '{"essential":true,"performance":false,"functional":true,"advertising":false}'
+            setstorageablehnen: '@sumi/consent={"essential":true,"performance":false,"functional":true,"advertising":false}',
+            setstorageakzeptieren: '@sumi/consent={"essential":true,"performance":true,"functional":true,"advertising":true}'
          }, {
             seite: 'brekz.de',
-            setstoragename: 'brekzConsentCookiebar_settings',
-            setstoragecontent: '{"ad_user_data":false,"ad_personalization":false,"ad_storage":false,"analytics_storage":false,"personalization_storage":false,"functionality_storage":true}'
+            setstorageablehnen: 'brekzConsentCookiebar_settings={"ad_user_data":false,"ad_personalization":false,"ad_storage":false,"analytics_storage":false,"personalization_storage":false,"functionality_storage":true}',
+            setstorageakzeptieren: 'brekzConsentCookiebar_settings={"ad_user_data":true,"ad_personalization":true,"ad_storage":true,"analytics_storage":true,"personalization_storage":true,"functionality_storage":true}'
          }, {
             seite: 'petcure.nl',
             setcookie: 'cookie_consent=dismiss;'
          }, {
             seite: 'posthog.com',
-            setstoragename: 'cookie_consent',
-            setstoragecontent: 'acknowledged'
+            setstorageakzeptieren: 'cookie_consent=acknowledged'
          }, {
             seite: 'optimism.io',
             setcookie: 'cookieAccepted=true;'
@@ -1536,8 +1494,8 @@
             setcookie: 'consent={"necessary":true,"preferences":false,"analytics":false,"marketing":false,"uncategorized":false};'
          }, {
             seite: 'portal.csav.fr',
-            setstoragename: 'app.cookieConsent',
-            setstoragecontent: '{"sys":"ACCEPTED","ux":"REJECTED"}'
+            setstorageablehnen: 'app.cookieConsent={"sys":"ACCEPTED","ux":"REJECTED"}',
+            setstorageakzeptieren: 'app.cookieConsent={"sys":"ACCEPTED","ux":"ACCEPTED"}'
          }, {
             seite: 'springest.de',
             setcookie: 'CookieConsent=%7B%22settings%22%3A%7B%22functional%22%3A1%7D%2C%22version%22%3A2%7D;'
@@ -1566,8 +1524,7 @@
          }, {
             seite: 'free-beat-company.jimdosite.com',
             setcookie: 'ckies_cloudflare=allow; , ckies_google_maps=deny; , ckies_youtube=deny;',
-            setstoragename: 'cookies-selected',
-            setstoragecontent: 'true'
+            setstorageakzeptieren: 'cookies-selected=true'
          }, {
             seite: 'gskill.com',
             setcookie: 'popupWindow=1;'
@@ -1614,10 +1571,28 @@
                if (location.hostname.endsWith('.' + seiten[k]) || location.hostname === seiten[k]) {
                   console.log('[Cookie auto decline] Regel für folgende Seite gefunden: ' + seiten[k]);
                   if ((regeln[i].noframe === true && window.self == window.top) || regeln[i].noframe !== true) {
+
+                     // Cookie Einstellungen auf setstorage übertragen
+                     if (regeln[i].setstorageablehnen || regeln[i].setstorageakzeptieren) {
+                        if (cookieeinstellung === 'ablehnen' || cookieeinstellung === 'funktional') {
+                           if (regeln[i].setstorageablehnen) {
+                              regeln[i].setstorage = regeln[i].setstorageablehnen;
+                           } else {
+                              regeln[i].setstorage = regeln[i].setstorageakzeptieren;
+                           }
+                        } else {
+                           if (regeln[i].setstorageakzeptieren) {
+                              regeln[i].setstorage = regeln[i].setstorageakzeptieren;
+                           } else {
+                              regeln[i].setstorage = regeln[i].setstorageablehnen;
+                           }
+                        }
+                     }
+
                      if (regeln[i].checkcookie === undefined && regeln[i].setcookie && document.cookie.includes(regeln[i].setcookie.split('=')[0]) === true) {
                         return;
                      }
-                     if (regeln[i].setstoragename && window.localStorage.getItem(regeln[i].setstoragename.split(',')[0]) !== null) {
+                     if (regeln[i].setstorage && window.localStorage.getItem(regeln[i].setstorage.split(' ,, ')[0].replace(/=.*/, '')) !== null) {
                         return;
                      }
                      if (regeln[i].checkcookie && document.cookie.includes(regeln[i].checkcookie)) {
@@ -1664,7 +1639,7 @@
                         });
                      }
 
-                     // Cookies oder/und LocalStorage setzen
+                     // Cookies setzen
                      if (regeln[i].setcookie) {
                         let setcookies = regeln[i].setcookie.toString();
                         setcookies = setcookies.split(' , ');
@@ -1677,16 +1652,17 @@
                         }
                         console.log('[Cookie auto decline] Cookie gesetzt.');
                      }
-                     if (regeln[i].setstoragename && regeln[i].setstoragecontent) {
-                        let setlocalstoragenames = regeln[i].setstoragename.toString();
-                        let setstoragecontent = regeln[i].setstoragecontent.toString();
-                        setlocalstoragenames = setlocalstoragenames.split(',');
-                        setstoragecontent = setstoragecontent.split(' ; ');
-                        for (let j = 0; j < setlocalstoragenames.length; j++) {
-                           localStorage.setItem(setlocalstoragenames[j], setstoragecontent[j]);
+
+                     // LocalStorage setzen
+                     if (regeln[i].setstorage) {
+                        let setstorages = regeln[i].setstorage.toString();
+                        setstorages = setstorages.split(' ,, ');
+                        for (let j = 0; j < setstorages.length; j++) {
+                           localStorage.setItem(setstorages[j].replace(/=.*/, ''), setstorages[j].replace(/^[^=]+=/, ''));
                         }
                         console.log('[Cookie auto decline] LocalStorage gesetzt.');
                      }
+
                      // Reload
                      if (regeln[i].reload === true) {
                         forcesessionstorage();
