@@ -2779,6 +2779,32 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
+            // https://marketpress.de/shop/plugins/cookie-cracker/
+            const cookiecracker = document.querySelector('#cc-cookie-message[role][aria-labelledby="cc-cookie-headline"]');
+            if (cookiecracker && document.cookie.includes('cookie-cracker_') === false) {
+               console.log('[Cookie auto decline] Detected: https://marketpress.de/shop/plugins/cookie-cracker/');
+               cookiebannerstatus.anbieter = 'https://marketpress.de/shop/plugins/cookie-cracker/';
+               advancedrun = false;
+               ablehnen = cookiecracker.querySelector('button#cc-cookie-necessary');
+               einstellungen = cookiecracker.querySelector('button#cc-cookie-advanced:not([disabled])');
+               speichern = cookiecracker.querySelector('button#cc-cookie-accept[data-accept="custom"]');
+               akzeptieren = cookiecracker.querySelector('button#cc-cookie-accept');
+               if (cookieeinstellung === 'funktional') {
+                  switchesdelay++;
+                  const boxen = cookiecracker.querySelectorAll('#cc-cookie-types li');
+                  for (let i = 0; i < boxen.length; i++) {
+                     const b = boxen[i].querySelector('label');
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
+                        const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
+                        if (checkbox) {
+                           checkbox.click();
+                        }
+                     }
+                  }
+               }
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
             // Advanced
             if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
