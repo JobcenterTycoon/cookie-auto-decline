@@ -2764,6 +2764,16 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
+            // eu_cookie_law_widget
+            const eucookielawwidget = document.querySelector('.widget_eu_cookie_law_widget[id^="eu_cookie_law_widget"]');
+            if (eucookielawwidget && document.cookie.includes('eucookielaw') === false) {
+               console.log('[Cookie auto decline] Detected: eu_cookie_law_widget');
+               cookiebannerstatus.anbieter = 'eu_cookie_law_widget';
+               advancedrun = false;
+               akzeptieren = eucookielawwidget.querySelector('input.accept');
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
             // Advanced
             if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
