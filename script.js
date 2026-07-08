@@ -2808,6 +2808,39 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
+            // fundingchoicesmessages.google.com (only appear when no adblocker is used)
+            const fundingchoicesmessages = document.querySelector('.fc-consent-root');
+            if (fundingchoicesmessages && document.cookie.includes('%5Bnull%2Cnull%2Cnull%2C%5B%22') === false) {
+               console.log('[Cookie auto decline] Detected: fundingchoicesmessages.google.com');
+               cookiebannerstatus.anbieter = 'fundingchoicesmessages.google.com';
+               advancedrun = false;
+               ablehnen = fundingchoicesmessages.querySelector('button.fc-cta-do-not-consent');
+               einstellungen = fundingchoicesmessages.querySelector('button.fc-cta-manage-options');
+               speichern = fundingchoicesmessages.querySelector('button.fc-confirm-choices');
+               akzeptieren = fundingchoicesmessages.querySelector('button.fc-cta-consent');
+               if (cookieeinstellung !== 'akzeptieren') {
+                  const switches = fundingchoicesmessages.querySelectorAll('.fc-data-preferences-dialog .fc-preference-container input[type="checkbox"]:checked:not([disabled], [rtayztwplpnfftousydd])');
+                  for (let i = 0; i < switches.length; i++) {
+                     switches[i].click();
+                  }
+               }
+               if (cookieeinstellung === 'funktional') {
+                  switchesdelay++;
+                  const boxen = fundingchoicesmessages.querySelectorAll('.fc-data-preferences-dialog .fc-preference-container');
+                  for (let i = 0; i < boxen.length; i++) {
+                     const b = boxen[i].querySelector('h2');
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
+                        const switchh = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
+                        if (switchh) {
+                           switchh.setAttribute('rtayztwplpnfftousydd', 'a');
+                           switchh.click();
+                        }
+                     }
+                  }
+               }
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
             // Advanced
             if (advancedcounter >= 5 && (advancedrun === true || (findconsentcounter >= (7000 / findconsentintervalzahl) && !cookiebannerfinalakzeptiert)) && (window.self === window.top || window.innerHeight > window.outerHeight / 3)) {
 
