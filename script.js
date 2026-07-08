@@ -277,7 +277,15 @@
       // Find Cookie Banner
       if (scriptdeaktiviert === false && sessionStorage.getItem('mpowlesu908hxfyw37ghg5ikx90jdzt') !== 'djx0v0odce35xrb2pt5dzbgaj1mud5c' && document.querySelector('body[class="no-js"] > .main-wrapper[role="main"] + script') === null && document.querySelector('html[style="height:100%"] iframe[src^="/_Incapsula_Resource?"]') === null && document.querySelector('link[href="/cdn-cgi/styles/challenges.css"][rel="stylesheet"]') === null && document.querySelector('body > .main-wrapper:first-child + script + script[src^="https://static.cloudflareinsights.com/beacon.min.js/"]:last-child') === null && document.querySelector('body > .main-wrapper > .main-content:only-child > noscript:only-child') === null && document.querySelector('body > script:first-child + #container + .cf-turnstile + div + script:last-child') === null && document.querySelector('body[style="margin:0"] > script[src^="https://ct.captcha-delivery.com/"]') === null && document.querySelector('head > script[src^="/TSPD/"] + noscript:last-child') === null && document.querySelector('body > div:first-child + script[src^="https://mcl.spur.us/d/mcl.js?"] + script:last-child') === null && document.querySelector('body > main > div > script[src^="/.within.website/x/cmd/anubis/static/js/main"]') === null && window.location.hostname !== 'accounts.google.com' && window.location.hostname !== 'challenges.cloudflare.com' && window.location.href.startsWith('https://www.google.com/recaptcha/') !== true && window.location.href.startsWith('https://www.recaptcha.net/recaptcha/') !== true && window.location.href.startsWith('https://w.soundcloud.com/player/?url=http') !== true && window.location.href.startsWith('https://r-login.wordpress.com/remote-login.php') !== true) {
 
-         const nc = 'domain=' + domainohnewww + ';secure=true; max-age=86400; SameSite=None; path=/';
+         let nc;
+         let ncnowww;
+         if (window.location.protocol === 'http:') {
+            nc = "domain=" + window.location.hostname + ";max-age=86400; SameSite=Lax; path=/";
+            ncnowww = "domain=" + domainohnewww + ";max-age=86400; SameSite=Lax; path=/";
+         } else {
+            nc = "domain=" + window.location.hostname + ";secure=true; max-age=86400; SameSite=None; path=/";
+            ncnowww = "domain=" + domainohnewww + ";secure=true; max-age=86400; SameSite=None; path=/";
+         }
          const cookiedatum = new Date().toISOString();
          const cookiezeit = new Date().getTime();
 
@@ -631,7 +639,6 @@
                   if (cookieeinstellung === 'funktional') {
                      if (bereitsgeklickt) {
                         if (usercentrics.shadowRoot.querySelector('[data-testid="uc-tcf-purposes-expandable"]')) {
-                           console.log(switchesdelay)
                            switchesdelay += 0.5;
                         } else {
                            switchesdelay++;
@@ -3508,11 +3515,6 @@
             selectorakzeptieren: 'cmp-banner >> cmp-dialog >> cmp-button[variant="primary"] >> button.button--primary:not([disabled])',
             keinesichtbarkeitsprüfung: true
          }, {
-            seite: 'phoenix.de',
-            checkstorage: 'user_anonymous_profile',
-            setstoragename: 'user_anonymous_profile',
-            selectorablehnen: 'div[phnx-privacy-settings] button[ng-click="save(1); close()"]'
-         }, {
             seite: 'bundesregierung.de,bundeskanzler.de',
             checkcookie: 'cookie-banner',
             selectorablehnen: '.bpa-cookie-banner button.bpa-close-button[type="button"]',
@@ -4327,22 +4329,57 @@
                         }
                      }
 
-                     // Cookies oder/und LocalStorage setzen
+                     // Cookie Einstellungen auf setstorage übertragen
+                     if (regeln[i].setstorageablehnen || regeln[i].setstorageakzeptieren) {
+                        if (cookieeinstellung === 'ablehnen' || cookieeinstellung === 'funktional') {
+                           if (regeln[i].setstorageablehnen) {
+                              regeln[i].setstorage = regeln[i].setstorageablehnen;
+                           } else {
+                              regeln[i].setstorage = regeln[i].setstorageakzeptieren;
+                           }
+                        } else {
+                           if (regeln[i].setstorageakzeptieren) {
+                              regeln[i].setstorage = regeln[i].setstorageakzeptieren;
+                           } else {
+                              regeln[i].setstorage = regeln[i].setstorageablehnen;
+                           }
+                        }
+                     }
+                     // Cookie Einstellungen auf setcookie übertragen
+                     if (regeln[i].setcookieablehnen || regeln[i].setcookieakzeptieren) {
+                        if (cookieeinstellung === 'ablehnen' || cookieeinstellung === 'funktional') {
+                           if (regeln[i].setcookieablehnen) {
+                              regeln[i].setcookie = regeln[i].setcookieablehnen;
+                           } else {
+                              regeln[i].setcookie = regeln[i].setcookieakzeptieren;
+                           }
+                        } else {
+                           if (regeln[i].setcookieakzeptieren) {
+                              regeln[i].setcookie = regeln[i].setcookieakzeptieren;
+                           } else {
+                              regeln[i].setcookie = regeln[i].setcookieablehnen;
+                           }
+                        }
+                     }
+                     // Cookies setzen
                      if (regeln[i].setcookie) {
                         let setcookies = regeln[i].setcookie.toString();
                         setcookies = setcookies.split(' , ');
                         for (let j = 0; j < setcookies.length; j++) {
-                           document.cookie = setcookies[j] + nc;
+                           if (regeln[i].nowww === true) {
+                              document.cookie = setcookies[j] + ncnowww;
+                           } else {
+                              document.cookie = setcookies[j] + nc;
+                           }
                         }
                         console.log('[Cookie auto decline] Cookie gesetzt.');
                      }
-                     if (regeln[i].setstoragename && regeln[i].setstoragecontent) {
-                        let setlocalstoragenames = regeln[i].setstoragename.toString();
-                        let setstoragecontent = regeln[i].setstoragecontent.toString();
-                        setlocalstoragenames = setlocalstoragenames.split(',');
-                        setstoragecontent = setstoragecontent.split(' ; ');
-                        for (let j = 0; j < setlocalstoragenames.length; j++) {
-                           localStorage.setItem(setlocalstoragenames[j], setstoragecontent[j]);
+                     // LocalStorage setzen
+                     if (regeln[i].setstorage) {
+                        let setstorages = regeln[i].setstorage.toString();
+                        setstorages = setstorages.split(' ,, ');
+                        for (let j = 0; j < setstorages.length; j++) {
+                           localStorage.setItem(setstorages[j].replace(/=.*/, ''), setstorages[j].replace(/^[^=]+=/, ''));
                         }
                         console.log('[Cookie auto decline] LocalStorage gesetzt.');
                      }
