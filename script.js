@@ -204,7 +204,7 @@
                   return 'optionstext';
                }
             }
-            const funktionaltext = ['funktional', 'funktionel', 'funktions-', 'notwendige cookies zulassen', 'warenkorb speichern', 'warenkorbs zu speichern', 'anmeldedaten speichern', 'komfort', 'personalisierte inhalte', 'personalisierter inhalt', 'optimierten kundenservice', 'videos und bilder', 'präferenzen', 'übersetzungstool', 'tidio ‑ live chat and chatbots', 'open street map', 'openstreetmap', 'optimized customer service', 'comfort', 'display videos', 'display images', 'functional', 'funzionale', 'fonctionnel', 'fonctionnalité', 'functioneel', 'functionele', 'funcionais', 'funcțional', 'funzionali', 'funcional', '機能的', '機能性', '功能性', 'foncionals', 'funksjonelle', 'i̇şlevsellik', 'swyddogaeth', 'функционалност', 'функціональності', 'Функционални', 'Функциональные', 'פונקציונליות', 'λειτουργικότητας', 'funksjonalitet', 'funkcionalitātes ', 'funkcionalumo', 'funktsionaal', 'funkcionalni', 'funkcjonalne', 'verwendung von profilen zur auswahl personalisierter inhalte', 'erstellung von profilen zur personalisierung von inhalten', 'verwendung reduzierter daten zur auswahl von inhalten', 'ein personalisiertes inhalts-profil erstellen', 'personalisierte inhalte auswählen', 'personalisierten inhalten', 'use limited data to select content', 'use profiles to select personalised content', 'create profiles to personalise content', 'utiliser des données limitées pour sélectionner le contenu', 'creare profili per la personalizzazione dei contenuti', 'utilizzare profili per la selezione di contenuti personalizzati', 'utilizzare dati limitati per la selezione dei contenuti', 'kreiranje profila za personalizaciju sadržaja', 'korišćenje profila za izbor personalizovanog sadržaja', 'sozial', 'social', 'preferenze', 'preferences', 'preferencias', 'préférences', 'external media', 'external content', 'externe medien', 'externe inhalte', 'externe dienste', 'externen inhalten', 'redaktionellen inhalten', 'redaktionelle inhalte', 'redaktionell empfohlene inhalte', 'toiminnallinen', 'funkční', 'third-party services', 'paypal express'];
+            const funktionaltext = ['funktional', 'funktionel', 'funktions-', 'notwendige cookies zulassen', 'warenkorb speichern', 'warenkorbs zu speichern', 'anmeldedaten speichern', 'komfort', 'personalisierte inhalte', 'personalisierter inhalt', 'personalisierung von inhalten', 'personalisierung von suchergebnissen', 'optimierten kundenservice', 'videos und bilder', 'präferenzen', 'übersetzungstool', 'tidio ‑ live chat and chatbots', 'open street map', 'openstreetmap', 'optimized customer service', 'comfort', 'display videos', 'display images', 'functional', 'funzionale', 'fonctionnel', 'fonctionnalité', 'functioneel', 'functionele', 'funcionais', 'funcțional', 'funzionali', 'funcional', '機能的', '機能性', '功能性', 'foncionals', 'funksjonelle', 'i̇şlevsellik', 'swyddogaeth', 'функционалност', 'функціональності', 'Функционални', 'Функциональные', 'פונקציונליות', 'λειτουργικότητας', 'funksjonalitet', 'funkcionalitātes ', 'funkcionalumo', 'funktsionaal', 'funkcionalni', 'funkcjonalne', 'verwendung von profilen zur auswahl personalisierter inhalte', 'erstellung von profilen zur personalisierung von inhalten', 'verwendung reduzierter daten zur auswahl von inhalten', 'ein personalisiertes inhalts-profil erstellen', 'personalisierte inhalte auswählen', 'personalisierten inhalten', 'use limited data to select content', 'use profiles to select personalised content', 'create profiles to personalise content', 'utiliser des données limitées pour sélectionner le contenu', 'creare profili per la personalizzazione dei contenuti', 'utilizzare profili per la selezione di contenuti personalizzati', 'utilizzare dati limitati per la selezione dei contenuti', 'kreiranje profila za personalizaciju sadržaja', 'korišćenje profila za izbor personalizovanog sadržaja', 'sozial', 'social', 'preferenze', 'preferences', 'preferencias', 'préférences', 'external media', 'external content', 'externe medien', 'externe inhalte', 'externe dienste', 'externen inhalten', 'redaktionellen inhalten', 'redaktionelle inhalte', 'redaktionell empfohlene inhalte', 'toiminnallinen', 'funkční', 'third-party services', 'paypal express'];
             for (let i = 0; i < funktionaltext.length; i++) {
                if (b.includes(funktionaltext[i]) && !marketingtracking) {
                   return 'funktionaltext';
@@ -923,15 +923,20 @@
                   einstellungen = didomi.querySelector('button#didomi-notice-learn-more-button');
                }
                if (bereitsgeklickt === true) {
+                  switchesdelay++;
                   const boxen = didomi.querySelectorAll('.didomi-consent-popup-container-click-all + .didomi-consent-popup-categories [class]:has(> .didomi-components-accordion)');
                   for (let i = 0; i < boxen.length; i++) {
                      const schalterannehmen = boxen[i].querySelector('.didomi-components-radio > button:first-child + button.didomi-components-radio__option--unselected:not([disabled])');
                      const schalterablehnen = boxen[i].querySelector('.didomi-components-radio > button:first-child.didomi-components-radio__option--unselected:not([disabled])');
+                     const switchess = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
                      if (cookieeinstellung === 'funktional') {
                         const boxtext = boxen[i].querySelector('span[id^="didomi-purpose-"]');
                         if (boxtext) {
                            const b = boxtext;
                            if (knöpfetextcheck(b) === 'funktionaltext') {
+                              if (switchess) {
+                                 switchess.click();
+                              }
                               if (schalterannehmen && schalterannehmen.checkVisibility()) {
                                  schalterannehmen.click();
                               }
@@ -962,6 +967,10 @@
                      if (akzeptierenselektor[i].checkVisibility() && paybuttons(c) !== true) {
                         akzeptieren = akzeptierenselektor[i];
                      }
+                  }
+                  const didomioeffnen = didomi.querySelector('button.didomi-see-more-button');
+                  if (didomioeffnen && didomioeffnen.checkVisibility()) {
+                     didomioeffnen.click();
                   }
                }
                speichern = didomi.querySelector('button#btn-toggle-save:not([disabled])');
