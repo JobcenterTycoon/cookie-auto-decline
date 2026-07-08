@@ -2042,18 +2042,18 @@
                cookiebannerstatus.anbieter = 'shapepress';
                advancedrun = false;
                if (window.screen.availWidth >= 576) {
-                  ablehnen = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-nothing');
-                  akzeptieren = shapepress.querySelector('a.sp-dsgvo-privacy-btn-accept-all');
+                  ablehnen = shapepress.querySelector('.sp-dsgvo-privacy-btn-accept-nothing');
+                  akzeptieren = shapepress.querySelector('.sp-dsgvo-privacy-btn-accept-all');
                } else {
-                  ablehnen = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block a.sp-dsgvo-privacy-btn-accept-nothing');
-                  akzeptieren = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block a.sp-dsgvo-privacy-btn-accept-all');
+                  ablehnen = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block a.sp-dsgvo-privacy-btn-accept-nothing, .sp-dsgvo-privacy-bottom > button.sp-dsgvo-privacy-btn-accept-nothing');
+                  akzeptieren = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block a.sp-dsgvo-privacy-btn-accept-all, .sp-dsgvo-privacy-bottom > button.sp-dsgvo-privacy-btn-accept-all');
                }
                if (cookieeinstellung === 'funktional') {
                   switchesdelay++;
                   if (window.screen.availWidth >= 576) {
-                     speichern = shapepress.querySelector('#sp-dsgvo-privacy-footer a.sp-dsgvo-privacy-btn-accept-selection');
+                     speichern = shapepress.querySelector('#sp-dsgvo-privacy-footer .sp-dsgvo-privacy-btn-accept-selection:not(.d-none)');
                   } else {
-                     speichern = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block  a.sp-dsgvo-privacy-btn-accept-selection');
+                     speichern = shapepress.querySelector('#sp-dsgvo-privacy-footer > .d-block .sp-dsgvo-privacy-btn-accept-selection:not(.d-none), .sp-dsgvo-privacy-bottom > .sp-dsgvo-privacy-btn-accept-selection:not(.d-none)');
                   }
                   const switchh = shapepress.querySelector('input[type="checkbox"]#sp-dsgvo-switch-category-embeddings:not([disabled], :checked)');
                   if (switchh && switchh.checkVisibility()) {
