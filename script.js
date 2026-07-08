@@ -2430,13 +2430,29 @@
             }
 
             // wordpress.com
-            const wordpress = document.querySelector('#cmp-app-container iframe');
-            if (wordpress && document.cookie.includes('euconsent-v2') === false) {
+            let wordpress = document.querySelector('#cmp-app-container iframe');
+            if (wordpress && wordpress.contentWindow && wordpress.contentWindow.document && document.cookie.includes('euconsent-v2') === false) {
+               wordpress = wordpress.contentWindow.document;
                console.log('[Cookie auto decline] Detected: wordpress.com');
                cookiebannerstatus.anbieter = 'wordpress.com';
-               ablehnen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button white-space-normal is-secondary"]');
-               einstellungen = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button is-secondary"]');
-               akzeptieren = wordpress.contentWindow.document.querySelector('button[class="cmp-components-button is-primary"]');
+               einstellungen = wordpress.querySelector('.cmp__notice-buttons > button[class="cmp-components-button is-secondary"]');
+               akzeptieren = wordpress.querySelector('.cmp__notice-buttons > button[class="cmp-components-button is-primary"]');
+               if (cookieeinstellung === 'funktional') {
+                  switchesdelay++;
+                  const boxen = wordpress.querySelectorAll('.cmp__settings-form-row:has(input)');
+                  for (let i = 0; i < boxen.length; i++) {
+                     const b = boxen[i].querySelector('button');
+                     if (knöpfetextcheck(b) === 'funktionaltext') {
+                        const checkbox = boxen[i].querySelector('input[type="checkbox"]:not([disabled], :checked)');
+                        if (checkbox) {
+                           checkbox.click();
+                        }
+                     }
+                  }
+                  speichern = wordpress.querySelector('.cmp__dialog-footer-buttons > button[class="cmp-components-button is-primary"]');
+               } else {
+                  ablehnen = wordpress.querySelector('.cmp__dialog-footer-buttons > button[class="cmp-components-button white-space-normal is-secondary"]');
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
