@@ -1600,6 +1600,10 @@
             setcookieablehnen: 'hife_eu_cookie_consent=%5B%5D;',
             setcookieakzeptieren: 'hife_eu_cookie_consent=%7B%22analytic-cookies%22%3A%221%22%7D;',
             reload: true
+         }, {
+            seite: 'spravazeleznic.cz',
+            setcookieablehnen: 'SPOJENICONSENT=0,1,0,0;',
+            setcookieakzeptieren: 'SPOJENICONSENT=0,1,1,0;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
