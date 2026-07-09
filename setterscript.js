@@ -1595,6 +1595,11 @@
             seite: 'stepstone.de',
             setstorageablehnen: 'consent_level={"isEssential":true,"isFunctional":false}',
             setstorageakzeptieren: 'consent_level={"isEssential":true,"isFunctional":true}'
+         }, {
+            seite: 'hife.es',
+            setcookieablehnen: 'hife_eu_cookie_consent=%5B%5D;',
+            setcookieakzeptieren: 'hife_eu_cookie_consent=%7B%22analytic-cookies%22%3A%221%22%7D;',
+            reload: true
          }];
 
          for (let i = 0; i < regeln.length; i++) {
