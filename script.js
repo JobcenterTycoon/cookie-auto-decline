@@ -180,7 +180,7 @@
             const d = b;
             const paybutton = paybuttons(c);
             const marketingtracking = marketingtrackingg(d);
-            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'technisch notwendige cookies erlauben', 'schließen', 'schliessen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'nichts akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nein danke.', 'nicht einverstanden', 'ich bin nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'alle verweigern', 'nur funktionelle cookies', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'do not consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'essential only', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'odrzuć', 'odrzuć niewymagane', 'odrzuć wszystko', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels', 'tillåt nödvändiga', 'noraidīt'];
+            const ablehntext = ['ablehnen', 'alle ablehnen', 'cookies ablehnen', 'alle cookies ablehnen', 'optionale cookies ablehnen', 'zusätzliche cookies ablehnen', 'unwichtige cookies ablehnen', 'ich lehne ab', 'notwendige', 'nur notwendige', 'nur notwendige cookies', 'nur notwendige cookies akzeptieren', 'nur technisch notwendige cookies akzeptieren', 'technisch notwendige cookies erlauben', 'schließen', 'schliessen', 'nur technisch', 'nur technische', 'nur technische cookies', 'technisch notwendige akzeptieren', 'nur erforderliche', 'nur erforderliche cookies', 'nur erforderliche cookies zulassen', 'nur mit erforderlichen cookies fortfahren', 'erforderlich bestätigen', 'fortfahren ohne zu akzeptieren', 'cookies zulassen', 'nur wesentliche', 'nur wesentliche cookies', 'weigern', 'essenzielle', 'nur essentielle cookies akzeptieren', 'nur essenzielle akzeptieren', 'nur essenzielle cookies akzeptieren', 'nicht akzeptieren', 'nichts akzeptieren', 'keine tracking-cookies', 'nur das nötigste', 'ohne cookies', 'eingeschränkte funktionalität', 'nein, danke', 'nein danke', 'nein danke.', 'nicht einverstanden', 'ich bin nicht einverstanden', 'weiter ohne einwilligung', 'weiter ohne zustimmung', 'weiter ohne tracking', 'cookies verbieten', 'lehne nicht notwendige ab', 'lehn nicht notwendige ab', 'sämtliche datennutzung ablehnen', 'ich stimme der nutzung von cookies nicht zu', 'webanalyse ablehnen', 'alle verweigern', 'nur funktionelle cookies', 'reject', 'i reject', 'reject all', 'reject cookies', 'reject optional', 'reject optional cookies', 'reject all optional cookies', 'reject additional cookies', 'reject & close', 'reject and close', 'reject non-essential', 'reject all non-essential cookies', 'reject all non essential cookies', 'essential cookies only', 'reject all non-required', 'decline', 'i decline', 'decline all', 'decline all cookies', 'deny', 'deny all', 'deny all cookies', 'refuse', 'refuse all', 'refuse all cookies', 'refuse cookies', 'disallow', 'disallow all', 'disallow all cookies', 'necassy', 'only necassy', 'only necassy cookies', 'dismiss', 'close', 'no thanks', 'necessary', 'only necessary', 'necessary only', 'required only', 'necessary cookies', 'only necessary cookies', 'necessary cookies only', 'without accept', 'continue without consent', 'continue without accepting', 'do not consent', 'nie akceptuję', 'rejeitar', 'kun nødvendige', 'nödvändiga', 'nødvendige', 'odmítnout', 'odmítnout volitelné cookies', 'odmítnout vše', 'رفض', 'niezbędne', 'begrænset', 'odmietnuť', 'essential', 'essential only', 'don\'t allow', 'ไม่ยอมรับ', 'deaktiver', 'pouze nezbytné', 'δεν αποδεχομαι', 'απόρριψη όλων', 'отклонить', 'continuar sin consentimiento', 'rifiuta', 'rifiutare', 'odmawiam', 'rechazar', 'rechazar cookies', 'prihvati samo neophodne kolačiće', 'continuer sans accepter', 'fortsätt utan att acceptera', 'zaakceptuj tylko niezbędne', 'odrzuć wszystkie', 'odrzuć', 'odrzuć niewymagane', 'odrzuć wszystko', 'refuser', 'eefuser tous les', 'refuser tous les cookies', 'tümünü reddet', 'endast nödvändiga', 'endast nödvändiga cookies', 'weigeren', 'atmesti', 'atmesti visus', 'pokračovať s nevyhnutnými cookies', 'отказвам', 'отказвам бисквитки', 'отказвам опционалните бисквитки', 'afwijzen', 'alles afwijzen', 'niet toestaan', '拒否', 'recusar', 'từ chối', '거부', '拒否する', '拒绝', '拒絕', '全部拒絕', '全部拒绝', '僅需', '仅需', 'godta bare de obligatoriske', 'godta endast nödvändiga', 'povolit jen nezbytné', 'nee, liever niet', 'alles weigeren', 'sólo cookies necesarias desde el punto de vista técnico', 'neka alla cookies', 'neka', 'refuza', 'tüm çerezleri reddediyorum', 'tüm çerezleri reddedin', 'tümünü reddet', 'en desacuerdo', 'godkänn nödvändiga cookies', 'avböj', 'n\'accepter que les cookies techniques', 'akceptuj tylko niezbędne', 'nej til cookies', 'hylkää kaikki', 'afvis', 'ne pas autoriser', 'accept necessary cookies only', 'denegar todas', 'negar', 'negare', 'nægt', 'kiellä', 'nie zgadzam się', 'nee, ik wil geen optimale cookies', 'vain välttämättömät', 'bara nödvändiga', 'только необходимые', 'dušše vealtameahttumiid', 'тільки обов\'язкові', 'refuser les cookies optionnels', 'tillåt nödvändiga', 'noraidīt'];
             for (let i = 0; i < ablehntext.length; i++) {
                if (b === ablehntext[i] && b.includes('einstellungen') === false) {
                   return 'ablehntext';
@@ -3270,14 +3270,14 @@
          }, {
             seite: 'm.facebook.com',
             checkstorage: 'wd',
-            selectorablehnen: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_only_essential_button"]',
-            selectorakzeptieren: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_button"]',
+            selectorablehnen: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_only_essential_button"], div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child[style^="transform:"] > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"][aria-label] -> div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child + div:not([aria-hidden="true"]) > div:only-child > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"][aria-label]',
+            selectorakzeptieren: '[data-testid="cookie-policy-manage-dialog"] [data-cookiebanner="accept_button"], div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child[style^="transform:"] > div:only-child > div:last-child > div:only-child > div:last-child > div[role="button"][aria-label]',
             noframe: true
          }, {
             seite: 'facebook.com',
             checkstorage: 'wd',
-            selectorablehnen: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"])',
-            selectorakzeptieren: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:last-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"])',
+            selectorablehnen: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"]), div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child[style^="transform:"] > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"][aria-label] -> div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child + div:not([aria-hidden="true"]) > div:only-child > div:only-child > div:last-child > div:only-child > div:first-child > div[role="button"][aria-label]',
+            selectorakzeptieren: 'div[role="dialog"][aria-modal="true"] > div:only-child > div:last-child > div:only-child > div:last-child > div[role="button"]:is([aria-label*="ookies"], [aria-label*="lapukus"]), div[role="dialog"][aria-modal="true"] > div:only-child > div:first-child[style^="transform:"] > div:only-child > div:last-child > div:only-child > div:last-child > div[role="button"][aria-label]',
             noframe: true
          }, {
             seite: 'threads.net,threads.com',
@@ -3667,7 +3667,7 @@
             selectorablehnen: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn"]',
             selectorakzeptieren: '#cookie-consent .cc_banner__footer > div:last-child button[class="cc_btn cc_btn--primary"]'
          }, {
-            seite: 'wuppertal.de,kassel.de,remscheid.de',
+            seite: 'wuppertal.de,remscheid.de',
             checkcookie: 'cookies-accepted',
             selectorakzeptieren: '.SP-CookieUsageNotification button.SP-CookieUsageNotification__ok'
          }, {
@@ -4150,11 +4150,6 @@
             selectorakzeptieren: '#privacyConsent a#privacyButton',
             checkcookie: 'consent'
          }, {
-            seite: 'tradingview.com',
-            selectorablehnen: '[style="position: fixed; z-index: 0;"] button[class^="managePreferences"] -> [class^="privacyPreferenceDialog"] button[data-overflow-tooltip-text="Sauvegarder les préférences"]',
-            selectorakzeptieren: '[style="position: fixed; z-index: 0;"] button[class^="acceptAll"]',
-            checkcookie: 'cookiesSettings'
-         }, {
             seite: 'united-domains.de',
             selectorablehnen: '.cookie-layer-dialog form.cookie-layer-form button.show-details -> .cookie-layer-dialog form.cookie-layer-form button.confirm-selection',
             selectorakzeptieren: '.cookie-layer-dialog form.cookie-layer-form button.confirm-all',
@@ -4195,6 +4190,25 @@
             seite: 'ademax-strom.de',
             sonderfall: 'ademaxstromde',
             checkcookie: 'cookie-preference'
+         }, {
+            seite: 'wetter.com',
+            selectorakzeptieren: '#cmp-wetter button#cmp-btn-accept',
+            checkcookie: '__vads'
+         }, {
+            seite: 'tradingview.com',
+            selectorablehnen: '[inert] + div[role="log"][aria-live="polite"] button[class^="rejectAll"][data-overflow-tooltip-text="Don\'t allow"]',
+            selectorakzeptieren: '[inert] + div[role="log"][aria-live="polite"] button[class^="acceptAll"][data-overflow-tooltip-text="Accept all"]',
+            checkstorage: 'cookiesSettings'
+         }, {
+            seite: 'bayernlabo.de',
+            selectorablehnen: '#form-privacy button[onclick="deleteAllCookies(event,this)"]',
+            selectorakzeptieren: '#form-privacy button[onclick="setAllCookies(event,this)"]',
+            checkcookie: 'layerCookie'
+         }, {
+            seite: 'lieferando.de',
+            selectorablehnen: 'pie-cookie-banner >> .c-cookieBanner pie-button[data-test-id="actions-necessary-only"]',
+            selectorakzeptieren: 'pie-cookie-banner >> .c-cookieBanner pie-button[data-test-id="actions-accept-all"]',
+            checkcookie: 'customerCookieConsent'
          }];
 
          let cookiebannerstatuslokal;
