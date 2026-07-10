@@ -1856,7 +1856,7 @@
             if (sirdatacom && document.cookie.includes('euconsent-v2') === false) {
                console.log('[Cookie auto decline] Detected: sirdata.com');
                cookiebannerstatus.anbieter = 'sirdata.com';
-               const knöpfe = sirdatacom.querySelectorAll('button');
+               const knöpfe = sirdatacom.querySelectorAll('button:not([disabled])');
                for (let i = 0; i < knöpfe.length; i++) {
                   const textgeprüft = knöpfetextcheck(knöpfe[i]);
                   if (textgeprüft === 'ablehntext') {
