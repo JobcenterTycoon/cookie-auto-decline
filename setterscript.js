@@ -336,10 +336,6 @@
             setcookieablehnen: 'allowAnalyticsCookiesKvK=0; , allowTrackingCookiesKvK=0;',
             setcookieakzeptieren: 'allowPreferenceCookiesKvK=1; , allowTrackingCookiesKvK=1;'
          }, {
-            seite: 'concursolutions.com',
-            setcookieablehnen: 'notice_gdpr_prefs=0:; , notice_preferences=0:;',
-            setcookieakzeptieren: 'notice_gdpr_prefs=0,1:; , notice_preferences=1:;'
-         }, {
             seite: 'wifi.at',
             setcookieakzeptieren: 'consent=true;'
          }, {
@@ -519,11 +515,7 @@
             seite: 'bdc.de',
             setcookieablehnen: 'analyse-disabled=true;',
             setcookieakzeptieren: 'analyse-disabled=false;'
-         }, { // trustarc.com
-            seite: 'oracle.com,trustarc.com,samsung.com,flickr.com,hostelworld.com,juniper.net,css-tricks.com,concursolutions.com,ibmcloud.com,mi.com',
-            setcookieablehnen: 'notice_gdpr_prefs=0:; , notice_preferences=0:; , cmapi_cookie_privacy=permit 1 required;',
-            setcookieakzeptieren: 'notice_gdpr_prefs=0,1,2:cb8350a2759273dccf1e483791e6f8fd; , notice_preferences=2:cb8350a2759273dccf1e483791e6f8fd; , cmapi_cookie_privacy=permit 1,2,3;'
-         }, { // trustarc.com - ENDE
+         }, {
             seite: 'helmholtz.de',
             setcookieablehnen: 'Helmholtz-Cookie=false;',
             setcookieakzeptieren: 'Helmholtz-Cookie=cookie-0;'
@@ -1604,6 +1596,10 @@
             seite: 'spravazeleznic.cz',
             setcookieablehnen: 'SPOJENICONSENT=0,1,0,0;',
             setcookieakzeptieren: 'SPOJENICONSENT=0,1,1,0;'
+         }, {
+            seite: 'ti.com',
+            setcookieablehnen: 'CONSENTMGR=c1:0%7Cc3:0%7Cc6:0%7Cc7:0%7Cts:1783720024876%7Cconsent:false;',
+            setcookieakzeptieren: 'CONSENTMGR=consent:true%7Cts:1783720081900%7Cc1:1%7Cc2:1%7Cc3:1%7Cc4:1%7Cc5:1%7Cc6:1%7Cc7:1%7Cc8:1%7Cc9:1%7Cc10:1%7Cc11:1%7Cc12:1%7Cc13:1%7Cc14:1%7Cc15:1;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
