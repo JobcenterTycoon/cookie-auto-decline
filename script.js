@@ -541,7 +541,12 @@
                advancedrun = false;
                ablehnen = cmpbox.querySelector('a.cmptxt_btn_no[role="button"]');
                speichern = cmpbox.querySelector('a.cmptxt_btn_save');
-               akzeptieren = cmpbox.querySelector('a.cmptxt_btn_yes[role="button"]');
+               const akzeptierenknöpfe = cmpbox.querySelectorAll('a.cmptxt_btn_yes[role="button"], .ck-btn-wrapper > button.ck-btn-primary[onclick]');
+               for (let i = 0; i < akzeptierenknöpfe.length; i++) {
+                  if (akzeptierenknöpfe[i].checkVisibility()) {
+                     akzeptieren = akzeptierenknöpfe[i];
+                  }
+               }
                const cookiebannertext = cmpbox.innerText.toLowerCase();
                if (!cookiebannertext.includes('kostenfrei mit werb') && !cookiebannertext.includes('contentpass') && !cookiebannertext.includes('werbevideo') && !cookiebannertext.includes('pur-abo') && !cookiebannertext.includes('pur abo') && !cookiebannertext.includes('abonnement')) {
                   einstellungen = cmpbox.querySelector('a.cmptxt_btn_settings[role="button"], a.cmptxt_btn_custom');
