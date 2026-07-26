@@ -1678,9 +1678,11 @@
                cookiebannerstatus.anbieter = 'cookie-consent-form__description (germany)';
                advancedrun = false;
                switchesdelay++;
+               einstellungen = cookieconsentformdescription.querySelector('button.cookie-consent-form__extended-hint-manage-cookies-button');
                speichern = cookieconsentformdescription.querySelector('button.cookie-consent-form__save-button');
+               akzeptieren = cookieconsentformdescription.querySelector('button.cookie-consent-form__extended-hint-permit-all-button');
                if (cookieeinstellung === 'ablehnen') {
-                  const checkboxen = cookieconsentformdescription.querySelectorAll('input[type="checkbox"]:checked:not([disabled])');
+                  const checkboxen = cookieconsentformdescription.querySelectorAll('input[type="checkbox"]:checked:not([disabled], [id^="cookie-option-core"])');
                   for (let i = 0; i < checkboxen.length; i++) {
                      if (checkboxen[i].checkVisibility()) {
                         checkboxen[i].click();
