@@ -976,6 +976,9 @@
                cookiebannerstatus.anbieter = 'didomi.io';
                nureinklickeinstellungen = true;
                advancedrun = false;
+               if (domainohnewww === 'wamiz.de' && cookieeinstellung === 'ablehnen') {
+                  cookieeinstellung = 'funktional';
+               }
                const ablehnenknopf = didomi.querySelector('#didomi-notice-disagree-button, button#ue-disagree-notice-button, .didomi-continue-without-agreeing[role="button"]');
                if (ablehnenknopf) {
                   const c = ablehnenknopf;
