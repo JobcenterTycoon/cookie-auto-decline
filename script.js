@@ -947,6 +947,9 @@
                   }
                }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            } else if(document.querySelector('script#borlabs-cookie-config-js') && document.cookie.includes('essential%22%3A%5B%22borlabs-cookie') === false && document.body.getBoundingClientRect().y === 0) {
+               // Der Cookie Banner erscheint oft erst nach einer Nutzerinteraktion auf der Seite (z.b. Klicken, Scrollen). Das Addon sucht nun beliebig lange Borlabs Cookie Banner.
+               findconsentcounter--;
             }
 
             // osano.com
