@@ -3011,7 +3011,7 @@
                            for (let k = 0; k < knöpfe.length; k++) {
                               const a = knöpfe[k];
                               if (sichtbarkeitsprüfung(a)) {
-                                 // console.log(a)
+                                 // console.log(a);
                                  let knöpfetext = knöpfe[k].innerText.toLowerCase();
                                  // Knöpfe start
                                  const knöpfevalue = knöpfe[k].value;
@@ -3113,31 +3113,43 @@
 
                // Erweiterte Cookie Banner Erkennung
                if (erweitertecookiebannererkennungaktiviert === true && altererkennungsscriptausgeführt === false) {
+                  const selektoren = 'body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], [data-nocookies], :disabled, *:has(nav, address, video, audio, input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="image"], [type="submit"], [type="text"], [type="url"]), a[href*="newsletter"]))';
+
+
                   advancedslowdown++;
                   if (advancedslowdown >= 3) {
                      advancedslowdown = 0;
                   }
 
                   if (advancedslowdown === 0) {
-                     let elemente = document.querySelectorAll('body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], [data-nocookies], :disabled, *:has(nav, address, video, audio, input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="image"], [type="submit"], [type="text"], [type="url"]), a[href*="newsletter"]))');
+                     // Sammel allgemeine Elemente und übergebe sie dann der for Schleife. "Array.from" wandelt das Objekt "NodeList" in ein normales Array um.
+                     let elemente = document.querySelectorAll(selektoren);
                      elemente = Array.from(elemente);
-
                      // console.log('-----------------------');
-
                      for (let i = 0; i < elemente.length; i++) {
+                        // ShadowRoots
                         if (elemente[i].shadowRoot) {
-                           // console.log(elemente[i])
+                           // console.log(elemente[i]);
                            let shadowrootelemente = elemente[i].shadowRoot.querySelectorAll('*:not(html, body, head, head *, abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, iframe, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], :empty, :disabled, *:has(nav, address, video, audio, input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="submit"], [type="image"], [type="text"], [type="url"])))');
+                           // Wandel die NodeList in ein Array um (Array.from) und verknüpfe sie (elemente.concat) mit den allgemeinen Elementen.
                            shadowrootelemente = Array.from(shadowrootelemente);
                            elemente = elemente.concat(shadowrootelemente);
                         }
 
-                        // console.log(elemente)
+                        // iFrames (Nur wenn diese von der gleichen Seite sind, Same-origin policy)
+                        if (elemente[i].contentDocument && elemente[i].contentDocument.documentElement) {
+                           // console.log(elemente[i]);
+                           let iframeelemente = elemente[i].contentDocument.documentElement.querySelectorAll(selektoren);
+                           iframeelemente = Array.from(iframeelemente);
+                           elemente = elemente.concat(iframeelemente);
+                        }
+
+                        // console.log(elemente);
                         const elementtext = elemente[i].innerText.toLowerCase();
                         const elementhtml = elemente[i].outerHTML.toLowerCase();
                         const webseitesprache = document.documentElement.lang.toLowerCase();
                         if (elementtext && elementtext.length >= 50 && elementtext.length < 3500 && (elementhtml.includes('cookie') || (document.documentElement.lang && webseitesprache === 'tr' && elementtext.includes('çerezler')))) {
-                           // console.log(elemente[i])
+                           // console.log(elemente[i]);
                            const elementscripte = elemente[i].querySelectorAll('script:not([type="application/json"])');
                            const inputs = elemente[i].querySelectorAll('input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="submit"], [type="image"])');
                            let inputs2 = [];
@@ -3166,7 +3178,7 @@
                               }
                            }
                            if (elementscripte.length <= 1 && (elemente[i].getElementsByTagName('a:not([id*="cookie"], [class*="cookie"])').length < 6 || elementhtml.toLowerCase().includes('privacy') || elementhtml.includes('datenschutz')) && elemente[i].querySelectorAll('img:not([src$=".svg"])').length < 4 && großesbild === false && elemente[i].querySelectorAll('button:not([class*="dropdown"]), input[type="button"]').length < 12 && elemente[i].querySelectorAll('a:has(> *:not(svg, i, strong, p) > *:not(svg, i, strong, p) > *:not(svg, i, strong, p))').length === 0 && inputs2.length === 0 && sprungmarken2 === false) {
-                              // console.log(elemente[i])
+                              // console.log(elemente[i]);
 
                               const elementcss = window.getComputedStyle(elemente[i]);
                               const elementrect = elemente[i].getBoundingClientRect();
