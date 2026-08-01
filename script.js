@@ -357,7 +357,13 @@
                   advancedrun = false;
                   nureinklickeinstellungen = true;
                   const knöpfe = document.querySelectorAll('button');
+                  const prüfeaboknöpfe = document.querySelectorAll('.cmp-button, .cmp-offer-pur-btn, .sp_choice_type_9');
                   let aboerforderlich = false;
+                  for (let i = 0; i < prüfeaboknöpfe.length; i++) {
+                     if (paybuttons(prüfeaboknöpfe[i])) {
+                        aboerforderlich = true;
+                     }
+                  }
                   for (let i = 0; i < knöpfe.length; i++) {
                      if (paybuttons(knöpfe[i])) {
                            aboerforderlich = true;
