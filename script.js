@@ -3115,7 +3115,6 @@
                if (erweitertecookiebannererkennungaktiviert === true && altererkennungsscriptausgeführt === false) {
                   const selektoren = 'body *:not(abbr, address, applet, area, audio, audio *, b, base, basefront, bdi, bdo, big, blockquote, br, button, button *, canvas, caption, cite, cite *, code, code *, col, colgroup, colgroup *, data, datalist, datalist *, dd, del, details, details *, dfn, dir, dl, dt, en, embed, fieldset, fieldset *, figcaption, font, frame, frameset, h1, h2, h3, h4, h5, h6, hgroup, hgroup *, hr, i, img, img *, ins, kbd, input, label, legend, li, li *, link, map, map *, mark, menu, menu *, meta, meter, nav, noframes, noscript, object, ol, ol *, optgroup, option, output, p, param, picture, picture *, pre, progress, q, rp, rt, ruby, ruby *, s, samp, samp *, script, search, search *, select, select *, small, source, strike, style, sub, summary, sup, template, template *, textarea, time, title, track, tt, var, video, video *, wbr, a, a *, u, ul, svg, svg *, defs, [style*="display: none !important"], [style*="visibility: hidden !important"], [data-nocookies], :disabled, *:has(nav, address, video, audio, input:not([type="button"], [type="checkbox"], [type="hidden"], [type="radio"], [type="image"], [type="submit"], [type="text"], [type="url"]), a[href*="newsletter"]))';
 
-
                   advancedslowdown++;
                   if (advancedslowdown >= 3) {
                      advancedslowdown = 0;
@@ -3137,7 +3136,7 @@
                         }
 
                         // iFrames (Nur wenn diese von der gleichen Seite sind, Same-origin policy)
-                        if (elemente[i].contentDocument && elemente[i].contentDocument.documentElement) {
+                        if (elemente[i].nodeName === 'IFRAME' && elemente[i].contentDocument && elemente[i].contentDocument.contentType === 'text/html' && elemente[i].contentDocument.documentElement) {
                            // console.log(elemente[i]);
                            let iframeelemente = elemente[i].contentDocument.documentElement.querySelectorAll(selektoren);
                            iframeelemente = Array.from(iframeelemente);
