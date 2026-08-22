@@ -3601,6 +3601,11 @@
             selectorakzeptieren: 'html.window-on > .window-on .row > button[data-id="later-button"]#reminder.btn-secondary',
             countdown: 1000
          }, {
+            seite: 'plus.gmx.com',
+            checkcookie: 'consentLevel',
+            selectorablehnen: 'html.cmp-on > body.cmp-on .cmp-overlay__footer button#deny',
+            selectorakzeptieren: 'html.cmp-on > body.cmp-on .cmp-overlay__footer button#save-all-conditionally'
+         }, {
             seite: 'reddit.com',
             selectorablehnen: 'reddit-cookie-banner >> div.items-center > shreddit-interactable-element#reject-nonessential-cookies-button > button ,, #data-protection-consent-dialog button[slot="secondary-button"]',
             selectorakzeptieren: '#data-protection-consent-dialog button[slot="primary-button"]',
