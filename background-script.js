@@ -18,9 +18,12 @@ function prüfestatus() {
          // Ändere URL zu Domain und entfernen das www sowie www mit Zahlen (z.b. www2)
          domain = tabs[0].url.replace(/^https?:\/\/(www([0-9]{1,2})?\.)?/, '').replace(/\/.*/, '');
          // Logo updaten je nach dem ob die Seite valid (http) oder invalid ist.
-         if (ungültigedomains.toString().includes(domain) === true) {
-            storagechecknichtausführen = true;
-            browserleisteicon(false);
+         for (let i = 0; i < ungültigedomains.length; i++) {
+            if (ungültigedomains[i].endsWith('.' + domain) || ungültigedomains[i] === domain) {
+               storagechecknichtausführen = true;
+               browserleisteicon(false);
+               break;
+            }
          }
       } else {
          storagechecknichtausführen = true;
