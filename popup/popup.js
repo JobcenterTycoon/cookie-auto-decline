@@ -2,7 +2,7 @@
 
 const _ = browser.i18n.getMessage;
 
-const ungültigedomains = ['accounts-static.cdn.mozilla.net', 'accounts.firefox.com', 'addons.cdn.mozilla.net', 'addons.mozilla.org', 'api.accounts.firefox.com', 'content.cdn.mozilla.net', 'discovery.addons.mozilla.org', 'oauth.accounts.firefox.com', 'profile.accounts.firefox.com', 'support.mozilla.org', 'sync.services.mozilla.com', '127.0.0.1', '0.0.0.0', '[::]', '[::1]', 'localhost', 'fritz.box', 'fritz.nas', 'fritz.repeater', 'myfritz.box', 'fritzbox.internal', 'giga.cube', 'congstar.box', 'easy.box', 'kabel.box', 'pi.hole', 'speedport.ip', 'my.router', 'home.arpa'];
+const ungültigedomains = ['accounts-static.cdn.mozilla.net', 'accounts.firefox.com', 'addons.cdn.mozilla.net', 'addons.mozilla.org', 'api.accounts.firefox.com', 'content.cdn.mozilla.net', 'discovery.addons.mozilla.org', 'oauth.accounts.firefox.com', 'profile.accounts.firefox.com', 'support.mozilla.org', 'sync.services.mozilla.com', '127.0.0.1', '0.0.0.0', '[::]', '[::1]', 'localhost', 'fritz.box', 'fritz.nas', 'fritz.repeater', 'myfritz.box', 'giga.cube', 'congstar.box', 'easy.box', 'kabel.box', 'pi.hole', 'speedport.ip', 'my.router', 'home.arpa', 'fire.walla', 'hitronhub.home', 'homerouter.cpe', 'mobile.hotspot', 'mwlogin.net', 'ntt.setup', 'plex.direct', 'repeater.asus.com', 'router.asus.com', 'samsung.router', 'steamloopback.host', 'telstra.gateway', 'tplinkap.net', 'tplinkeap.net', 'tplinkmodem.net', 'tplinkplclogin.net', 'tplinkrepeater.net', 'tplinkwifi.net', 'unifi.localdomain', 'web.setup', 'web.setup.home', 'web.setup.home'];
 
 const suchstatus = document.getElementById('suchstatus');
 const suchstatuscookie = document.getElementById('suchstatuscookie');
@@ -131,7 +131,14 @@ browser.tabs.query({
       browser.storage.local.onChanged.addListener(statusanzeigen);
 
       // Addon als ausgeschaltet anzeigen wenn die Domain eine geschütte Mozilla Domain ist.
-      if (ungültigedomains.toString().includes(domain) === false) {
+      let ungültigedomainergebnis = false;
+      for (let i = 0; i < ungültigedomains.length; i++) {
+         if (ungültigedomains[i].endsWith('.' + domain) || ungültigedomains[i] === domain) {
+            ungültigedomainergebnis = true;
+            break;
+         }
+      }
+      if (ungültigedomainergebnis === false) {
          main.style.display = 'block';
          keineseite.style.display = 'none';
          schalteranimationsofort(true);
