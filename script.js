@@ -186,13 +186,13 @@
                   return 'ablehntext';
                }
             }
-            const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'individuelle auswahlen speichern', 'auswahl speichern', 'auswahl akzeptieren', 'individuelle auswahl speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'einstellung speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'meine auswahl bestätigen', 'bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'speichern & schließen', 'auswahl zustimmen', 'ausgewählte zustimmen', 'ausgewählte akzeptieren', 'mit erforderlichen einstellungen fortfahren', 'save', 'save choices', 'save your choice', 'save custom choices', 'confirm choices', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren', 'accepteer selectie', 'potvrdit moje volby', 'spara val'];
+            const speichertext = ['speichern', 'speichern und schließen', 'schließen und speichern', 'individuelle auswahlen speichern', 'auswahl speichern', 'auswahl akzeptieren', 'individuelle auswahl speichern', 'einstellungen übernehmen', 'einstellungen speichern', 'einstellung speichern', 'meine einstellungen übernehmen', 'meine einstellungen speichern', 'aktuelle einstellungen speichern', 'auswahl übernehmen', 'auswahl bestätigen', 'meine auswahl bestätigen', 'bestätigen', 'ausgewählte übernehmen', 'ausgewählte speichern', 'ausgewählte cookies speichern', 'ausgewählte cookies übernehmen', 'speichern & schließen', 'auswahl zustimmen', 'ausgewählte zustimmen', 'ausgewählte akzeptieren', 'mit erforderlichen einstellungen fortfahren', 'save', 'save choices', 'save your choice', 'save custom choices', 'confirm choices', 'opslaan', 'keuze opslaan', 'udvalgte cookies', 'sutinku', 'gem indstillinger', 'vybraných', 'αποδοχή επιλογών', 'selectie toestaan', 'voorkeuren', 'accepteer selectie', 'potvrdit moje volby', 'spara val'];
             for (let i = 0; i < speichertext.length; i++) {
                if (b === speichertext[i]) {
                   return 'speichertext';
                }
             }
-            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'akzeptiere alle', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alles akzeptieren', 'alles akzeptieren und fortfahren', 'akzeptieren & schließen', 'akzeptieren und schließen', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle zulassen und fortsetzen', 'alle cookies zulassen', 'in ordnung', 'annehmen', 'alle annehmen', 'alle optionalen akzeptieren', 'annehmen und fortfahren', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'ok, weiter.', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'zustimmung erteilen', 'zur kenntnis genommen', '→ hinweis schließen', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', 'agree & continue', 'agree and continue', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'aceptar y continuar', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'accecpt', 'přijmout', 'potwierdź', 'akceptuję', 'atļaut', 'acceptar les cookies seleccionades', 'povolit všechny soubory cookie'];
+            const akzeptiertext = ['akzeptieren', 'akzeptiere', 'ich akzeptiere', 'akzeptiere alle', 'ich akzeptiere alle', 'ich akzeptiere alle cookies', 'alle akzeptieren', 'alle cookies akzeptieren', 'akzeptieren und fortfahren', 'alle cookies akzeptieren und fortfahren', 'alle cookies akzeptieren und schließen', 'alles akzeptieren', 'alles akzeptieren und fortfahren', 'akzeptieren & schließen', 'akzeptieren und schließen', 'cookies akzeptieren', 'ich stimme zu', 'ich stimme zu.', 'zustimmen', 'allen cookies zustimmen', 'allen zustimmen', 'cookies zustimmen', 'zustimmen und fortfahren', 'zustimmen und weiter', 'zustimmung', 'ich stimme allen cookies zu', 'verstanden', 'ausblenden', 'erlauben', 'alle erlauben', 'cookies erlauben', 'alles erlauben', 'alle cookies erlauben', 'nur notwendige erlauben', 'nicht mehr anzeigen', 'alle auswählen', 'alles auswählen', 'alles klar', 'alles klar!', 'alles zulassen', 'bestätige', 'ein­ver­standen', 'einverstanden', 'zulassen', 'alle zulassen', 'alle zulassen und fortsetzen', 'alle cookies zulassen', 'in ordnung', 'annehmen', 'alle annehmen', 'alle optionalen akzeptieren', 'annehmen und fortfahren', 'alle bestätigen', 'alle cookies annehmen', 'cookies annehmen', 'einwilligen', 'einwilligen und weiter', 'akzeptieren und weiter', 'akzeptieren und schließen', 'einverstanden und weiter', 'weiter mit den empfohlenen cookies', 'ich bestätige alle', 'ja, ich bin einverstanden', 'okay', 'okey', 'ok', 'ок', 'ok,habe es!', 'ok, weiter.', 'nehme an', 'ich habe das verstanden', 'übernehmen', 'ja, ich akzeptiere cookies', 'ich verstehe und stimme der nutzung von cookies zu', 'webanalyse akzeptieren', 'zustimmung erteilen', 'zur kenntnis genommen', '→ hinweis schließen', 'agree', 'i agree', 'accept', 'i accept', 'yes, i accept', 'accept all', 'all cookies', 'accept cookies', 'accept all cookies', 'accept additional cookies', 'accept & close', 'accept and close', 'Accept recommended settings', 'accept & proceed', 'accept and proceed', 'got it', 'got it!', 'got it !', 'continue', 'continue browsing', 'consent', 'consent all', 'consent to all', 'consent to all cookies', 'allow', 'allow all', 'allow all cookies', 'hide', 'i understand', 'understood', 'acknowledge', 'analytics only', 'ok, i agree', 'agreed', 'agree & continue', 'agree and continue', '続ける', '閉じる', 'sutinku su visais', 'sluit melding', 'acceptér', 'ja, det er greit', 'godta', 'godta alt', 'godta alle', 'godta alle cookies', 'принять', 'принять cookies', 'povolit', 'قبول', 'zaakceptuj', 'súhlasím', 'бәрін қабылдау', 'согласен', 'kabul et', 'kabul ediyorum', 'přijmout', 'přijmout všechny cookies', 'accetta', 'accetta tutti', 'ยอมรับ', 'aceito', 'aceitar', 'aceitar e fechar', 'elfogadom', 'hyväksy', 'tillad', 'tillad alle', 'samtycker', 'wszystko', 'zamknij', 'הבנתי', 'souhlasím', 'souhlasím a pokračovat', 'αποδοχή όλων', 'αποδεχομαι', 'αποδοχή', 'acepto', 'sluit', 'zgoda', 'zgoda i kontynuacja', 'aceptar', 'aceptar todo', 'aceptar todas', 'aceptar y continuar', 'slažem se', 'zaakceptuj', 'zaakceptuj wszystkie', 'akceptuj wszystkie', 'akceptuj wszystkie pliki cookies', 'autoriser tous les cookies', 'autoriser tous les', 'tümünü kabul et', 'tillåt alla', 'accepteren', 'alle accepteren', 'alles accepteren', 'alle cookies accepteren', 'sutikti', 'sutikti su', 'sutikti su visais', 'accepter', 'accepter alle', 'accepter & fermer', 'accepter and fermer', 'accepter et fermer', 'acceptera alla', 'acceptera alla cookies', 'accepter tous les cookies', 'acceptera', 'acceptera alla kakor', 'godkänn', 'godkänn alla', 'godkänn alla kakor', 'godkänn alla cookies', 'приемам', 'приемам всички', 'погодитися', 'zgadzam się', 'consentir', 'toestaan', 'alles toestaan', 'continuar', 'tiếp tụ', '계속', 'すべて受け入れる', '继续', '接受', '全部接受', '繼續', 'povolit všechny', 'zaakceptuj i zamknij okno', 'ik snap het!', 'ik snap het', 'povolit vše', 'akceptuję wszystkie', 'akceptuję i przechodzę do serwisu', 'zatwierdź wszystkie', 'tüm çerezleri kabul ediyorum', 'tüm çerezleri kabul edin', 'tümünü kabul et', 'estoy de acuerdo', 'прийняти файли cookie', 'zezwól', 'povolit cookies', 'j\'accepte', 'akkoord', 'accepteer alles', 'accepteer alle cookies', 'ja til cookies', 'hyväksy kaikki', 'godta alla', 'permitir todos', 'alle cookies aanvaarden', 'sluiten', 'aceitar todos', 'accettare tutti', 'akceptuj wszystko', 'tout accepter', 'accepter tout', 'ja, ik accepteer optimale cookies', 'принять все', 'dohkket buot', 'прийняти все', 'accept all non-essential cookies', 'accept all non essential cookies', 'accecpt', 'přijmout', 'potwierdź', 'akceptuję', 'atļaut', 'acceptar les cookies seleccionades', 'povolit všechny soubory cookie'];
             for (let i = 0; i < akzeptiertext.length; i++) {
                if (b === akzeptiertext[i]) {
                   return 'akzeptiertext';
@@ -234,9 +234,9 @@
             }
             c = textcomplete;
          }
-         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'abbonati', 'pur ', 'pur-', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro ', 'premium', 'order ', 'login', 'einloggen', 'anmelden', 'regist', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass', 'mitgliedschaft'];
+         const paytext = ['kaufe', 'bestell', 'kostenpflichtig', 'einloggen', 'abo', 'abbonati', 'pur ', 'pur-', 'werbefrei', 'spende', 'buchen', 'buy', 'pay', '€', '$', 'adfree', 'ad free', 'ad-free', 'subscribe', 'pro ', 'premium', 'order ', 'login', 'einloggen', 'anmelden', 'regist', 'donate', 'suscrib', 'pagar', 'download', 'contentpass', 'content-pass', 'content pass', 'mitgliedschaft', 'profil'];
          for (let i = 0; i < paytext.length; i++) {
-            if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order') {
+            if (c.includes(paytext[i]) || c.match(/[0-9]/) || c === 'order' || c.endsWith(' pur')) {
                return true;
             }
          }
@@ -1069,7 +1069,7 @@
             }
 
             // iubenda.com
-            const iubenda = document.querySelector('#iubenda-cs-banner');
+            const iubenda = document.querySelector('#iubenda-cs-banner, tb-banner-wrapper');
             if (iubenda && document.cookie.includes('%7B%22timestamp%22%') === false) {
                console.log('[Cookie auto decline] Detected: iubenda.com');
                cookiebannerstatus.anbieter = 'iubenda.com';
@@ -1078,11 +1078,37 @@
                findconsentintervalzahl = 502;
                findconsentintervalzahländern();
                ablehnen = iubenda.querySelector('button.iubenda-cs-reject-btn');
-               speichern = document.querySelector('#iubenda-iframe button#iubFooterBtn');
                akzeptieren = iubenda.querySelector('button.iubenda-cs-accept-btn');
+               if (iubenda.shadowRoot) {
+                  let iubendashadowroot = iubenda.shadowRoot.querySelector('tb-banner-footer');
+                  if (iubendashadowroot && iubendashadowroot.shadowRoot) {
+                     iubendashadowroot = iubendashadowroot.shadowRoot.querySelectorAll('tb-action-button');
+                     for (let i = 0; i < iubendashadowroot.length; i++) {
+                        if (iubendashadowroot[i].shadowRoot) {
+                           if (iubendashadowroot[i].shadowRoot.querySelector('button.reject-button')) {
+                              ablehnen = iubendashadowroot[i].shadowRoot.querySelector('button.reject-button');
+                           } else if (iubendashadowroot[i].shadowRoot.querySelector('button.accept-button')) {
+                              akzeptieren = iubendashadowroot[i].shadowRoot.querySelector('button.accept-button');
+                           }
+                        }
+                     }
+                  }
+                  let iubendashadowrooteinstellungen = iubenda.shadowRoot.querySelector('tb-tabs-container');
+                  if (iubendashadowrooteinstellungen && iubendashadowrooteinstellungen.shadowRoot) {
+                     iubendashadowrooteinstellungen = iubendashadowrooteinstellungen.shadowRoot.querySelectorAll('tb-banner-tab:not([active], [button-id="cmp-cs-title"])');
+                     for (let i = 0; i < iubendashadowrooteinstellungen.length; i++) {
+                        if (iubendashadowrooteinstellungen[i].shadowRoot && iubendashadowrooteinstellungen[i].shadowRoot.querySelector('button:not([disabled])') && iubendashadowrooteinstellungen[i].shadowRoot.querySelector('button:not([disabled])').checkVisibility()) {
+                           einstellungen = iubendashadowrooteinstellungen[i].shadowRoot.querySelector('button:not([disabled])');
+                        }
+                     }
+                  }
+               }
+               speichern = document.querySelector('#iubenda-iframe button#iubFooterBtn');
                const c = iubenda.querySelector('button.iubenda-cs-close-btn');
-               if (!iubenda.querySelector('button.app-btn-subscribe') && !paybuttons(c)) {
-                  einstellungen = iubenda.querySelector('button.iubenda-cs-customize-btn');
+               if (!iubenda.querySelector('button.app-btn-subscribe')) {
+                  if (c && !paybuttons(c)) {
+                     einstellungen = iubenda.querySelector('button.iubenda-cs-customize-btn');
+                  }
                }
                if (cookieeinstellung === 'funktional') {
                   const boxen = document.querySelectorAll('#iubenda-iframe [class^="purposes-item purpose-item-"]');
@@ -2047,10 +2073,10 @@
                advancedrun = false;
                cookiebannerstatus.anbieter = 'jtl-software.de';
                einstellungen = jtlsoftwarede.querySelector('#consent-banner-btn-settings, button#consent--banner-btn-config');
-               speichern = document.querySelector('#consent-settings button#consent-accept-banner-btn-close, #consent--settings button.consent--modal-close');
-               if (cookieeinstellung === 'funktional' && !bereitsgeklickt) {
-                  ablehnen = document.querySelector('#consent-manager.active button#consent-banner-btn-close, #consent.active button#consent--banner-btn-decline');
-                  akzeptieren = document.querySelector('#consent.active button#consent--banner-btn-accept, #consent-manager.active button#consent-banner-btn-all');
+               speichern = document.querySelector('#consent-settings :is(button#consent-accept-banner-btn-close, button.consent--modal-close, button[data-toggle="consent-close"].consent-btn-primary:not(.d-md-none))');
+               if (cookieeinstellung !== 'funktional') {
+                  ablehnen = jtlsoftwarede.querySelector('#consent-manager.active button#consent-banner-btn-close, #consent.active button#consent--banner-btn-decline');
+                  akzeptieren = jtlsoftwarede.querySelector('#consent.active button#consent--banner-btn-accept, #consent-manager.active button#consent-banner-btn-all');
                }
                if (cookieeinstellung === 'funktional') {
                   switchesdelay++;
@@ -2065,7 +2091,7 @@
                      }
                   }
                }
-               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+              klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
             // blogspot.com
