@@ -4632,18 +4632,7 @@
          };
 
          // Weitere Sonderfälle die gar nicht oben reinpassen.
-         if (window.location.hostname.endsWith('.de') && (window.location.hostname.includes('sparkasse-') || window.location.hostname.includes('-sparkasse') || window.location.hostname.includes('stadtsparkasse-') || window.location.hostname.startsWith('www.ssk') || window.location.hostname.startsWith('www.spk') || window.location.hostname.endsWith('haspa.de') || window.location.hostname.startsWith('www.ksk-')) && document.cookie.includes('ePrivacyStatus') === false) {
-            cookiebannerstatus.anbieter = 'Sparkasse';
-            console.log('[Cookie auto decline] Detected: Sparkasse cookie banner');
-            window.setTimeout(function () {
-               const check = document.querySelector('div[class*="privacy"] .ebutton > a[data-form=".eprivacy_optin_decline"]');
-               if (check) {
-                  forcesessionstorage();
-                  cookiebannerstatus.knopfstatus = 'abgelehnt';
-                  check.click();
-               }
-            }, 202);
-         } else if (window.location.hostname === 'js.driftt.com') {
+         if (window.location.hostname === 'js.driftt.com') {
             let findecookiebanner = window.setInterval(function () {
                const ablehnen = document.querySelector('.drift-widget-chat-wrapper__GDPR button.drift-gdpr-action--deny-consent');
                if (ablehnen) {
