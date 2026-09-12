@@ -1607,6 +1607,10 @@
             seite: 'plex.tv',
             setcookieablehnen: 'plex_tv_tcf_consent=CQpZjAAQpZjAAE3ABADECsFgAP_gAELAACiQAAAAAAAA.ILlsR9C5fTWFl8TJ3YbskeYQX11hh4sAgBgKAIiAFSDIEIBQE1iAAIASABCACGQIAIBBBAQEkCBgEAEAAIAAAJBBsIACQgBAIICBAABEBQABACAAiEAAgEACIoAAVAAQAmQgEQVKMQEQAkIAgAkAAIAABAIAFAIMgBAAKQAKAAlIEkigCAIIAAAIAAAAAARiIEEkAAAQAAIAAAAAAAAAQABAAAAAgHfQAAIAAABAAAAAAAAAAAAAAAAAAAIA.YAAAAAAAAAAA; , plex_tv_cookie_consent=2;',
             setcookieakzeptieren: 'plex_tv_tcf_consent=CQpZjAAQpZjAAE3ABADECsFgAP_gAELAACiQLlsR9C5fTWFh8TJ3YbskeYQH11hh4sAgBgKAAiAFSDIEIBQExiAAIASABCACGQIAIBBBAQEkCBAEAEAAIAAAJABMIACQgBAIICBAABEBAABACAAiEAAgEACIoAAVAAQAmAgEQVKMQEQAgIAAAkAAIAABAIAFAIMgBAAKQAKAAlIEkigAAIIAAAIAAAAAARiIAEkAAAQAAAAAAAAAAAAQABAAAAAgFfQAAIAAABAAAAAAAAAAAAAAAAAAAIF5wBAASAB-AIsAvMAA.ILlsR9C5fTWFl8TJ3YbskeYQX11hh4sAgBgKAIiAFSDIEIBQE1iAAIASABCACGQIAIBBBAQEkCBgEAEAAIAAAJBBsIACQgBAIICBAABEBQABACAAiEAAgEACIoAAVAAQAmQgEQVKMQEQAkIAgAkAAIAABAIAFAIMgBAAKQAKAAlIEkigCAIIAAAIAAAAAARiIEEkAAAQAAIAAAAAAAAAQABAAAAAgHfQAAIAAABAAAAAAAAAAAAAAAAAAAIA.YAAAAAAAAAAA; , plex_tv_cookie_consent=2; , plex_tv_optin_analytics=1; , plex_tv_optin_thirdparty=1;'
+         }, {
+            seite: 'sbk.org',
+            setcookieablehnen: 'sbk=%7B%22other-1%22%3Atrue%2C%22statistics-4%22%3Afalse%2C%22google-analytics-7%22%3Afalse%2C%22google-ads-10%22%3Afalse%2C%22google-maps-58%22%3Afalse%2C%22datawrapper-13%22%3Afalse%2C%22linkedin-16%22%3Afalse%2C%22monotype-19%22%3Afalse%2C%22netigate-22%22%3Afalse%2C%22youtube%22%3Afalse%7D;',
+            setcookieakzeptieren: 'sbk=%7B%22other-1%22%3Atrue%2C%22statistics-4%22%3Atrue%2C%22google-analytics-7%22%3Atrue%2C%22google-ads-10%22%3Atrue%2C%22google-maps-58%22%3Atrue%2C%22datawrapper-13%22%3Atrue%2C%22linkedin-16%22%3Atrue%2C%22monotype-19%22%3Atrue%2C%22netigate-22%22%3Atrue%2C%22youtube%22%3Atrue%7D;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
