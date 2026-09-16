@@ -575,7 +575,13 @@
             if (cmpboxshadowroot) {
                console.log('[Cookie auto decline] Detected: #cmpbox shadowroot (consensu.org, consentmanager.net)');
                cookiebannerstatus.anbieter = '#cmpbox shadowroot (consensu.org, consentmanager.net)';
-               const contentpassvorhanden = cmpboxshadowroot.shadowRoot.querySelector('.cmpcontentpass, a[href*="-pur-"], .pur__offer, [onclick="showPurPianoExperience()"]');
+               const contentpasscheck = cmpboxshadowroot.shadowRoot.querySelectorAll('a[class*="btn"]:not(.cmpmorelink), button');
+               let contentpassvorhanden = false;
+               for (let i = 0; i < contentpasscheck.length; i++) {
+                  if (paybuttons(contentpasscheck[i])) {
+                     contentpassvorhanden = true;
+                  }
+               }
                if (!contentpassvorhanden) {
                   ablehnen = cmpboxshadowroot.shadowRoot.querySelector('#cmpbox a.cmptxt_btn_no[role="button"], .cmpboxbtnsave[role="button"]');
                   const einstellungenknöpfe = cmpboxshadowroot.shadowRoot.querySelectorAll('a[onclick^="__cmp(\'showScreenAdvanced\')"], #cmpwelcomebtncustom a.cmpboxbtncustom, a.cmptxt_btn_custom');
@@ -4317,6 +4323,11 @@
             selectorablehnen: 'pie-cookie-banner >> .c-cookieBanner pie-button[data-test-id="actions-necessary-only"]',
             selectorakzeptieren: 'pie-cookie-banner >> .c-cookieBanner pie-button[data-test-id="actions-accept-all"]',
             checkcookie: 'customerCookieConsent'
+         }, {
+            seite: 'igorslab.de',
+            selectorablehnen: '#ilab-consent-banner button[data-ilab-consent-action="necessary"]',
+            selectorakzeptieren: '#ilab-consent-banner button[data-ilab-consent-action="all"]',
+            checkcookie: 'ilab_consent'
          }];
 
          let cookiebannerstatuslokal;
