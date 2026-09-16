@@ -139,7 +139,7 @@
             setcookieakzeptieren: 'consentUUID=a7f00152-3ceb-4694-a759-422cb7b302ad_26_35_38_40_43_44_46_49_55;'
          }, {
             seite: 'welt.de',
-            setcookieakzeptieren: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47_49_51_54_56_58;'
+            setcookieakzeptieren: 'consentUUID=c2e087c6-5092-49e0-8187-3634107772e3_47_49_51_54_56_58_60;'
          }, {
             seite: 't-online.de',
             setcookieakzeptieren: 'consentUUID=c1fe44cb-41ae-4d2e-be8e-7903548984c1_51_54;'
@@ -160,7 +160,7 @@
             setcookieakzeptieren: 'consentUUID=478090ac-09a6-451f-a2c3-20789ac47314_32_33_34_36_38_40_42_44_46_47_48_49_50_51_54_55_56_58;'
          }, {
             seite: 'focus.de',
-            setcookieakzeptieren: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46_49_51_54_58;'
+            setcookieakzeptieren: 'consentUUID=18b0a05b-008f-4e03-a958-439f32de8e88_32_34_36_38_39_42_44_46_49_51_54_58_60;'
          }, {
             seite: 'stuttgarter-nachrichten.de',
             setcookieakzeptieren: 'consentUUID=a376db30-519c-4054-a0fd-684cb7151ed4_54_59;'
@@ -172,29 +172,29 @@
             setcookieakzeptieren: 'consentUUID=84cfca1a-5862-4f4b-aa1f-1cc0a50992f1_54;'
          }, {
             seite: 'familie.de',
-            setcookieakzeptieren: 'consentUUID=d9910087-44a0-40a9-8006-ab765cd84e61_54_56_58;'
+            setcookieakzeptieren: 'consentUUID=d9910087-44a0-40a9-8006-ab765cd84e61_54_56_58_60;'
          }, {
             seite: 'sport1.de',
-            setcookieakzeptieren: 'consentUUID=89da2b14-cb6f-49e4-af96-67dc8d8a40f6_32_34_39_41_54_56_58_59;'
+            setcookieakzeptieren: 'consentUUID=89da2b14-cb6f-49e4-af96-67dc8d8a40f6_32_34_39_41_54_56_58_59_60;'
          }, {
             seite: 'kino.de',
             setcookieakzeptieren: 'consentUUID=48cf35cc-b2f2-4848-b888-be52246e47a9_54;'
          }, {
             seite: 'likehifi.de',
-            setcookieakzeptieren: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48_50_54_59;'
+            setcookieakzeptieren: 'consentUUID=9f9ccda5-c4b8-49bf-973c-3470fb663bbc_32_33_34_36_37_38_41_42_43_47_48_50_54_59_60;'
          }, {
             seite: 'backenmachtgluecklich.de',
             setcookieakzeptieren: 'consentUUID=c7ac4d5e-c8ae-42d6-aca3-4341da49d300_32_34_36_41_46_47_51_54_59;',
             nowww: true
          }, {
             seite: 'raspberry-pi-geek.de',
-            setcookieakzeptieren: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48_50_54_59;'
+            setcookieakzeptieren: 'consentUUID=039f14d5-214e-46a6-a3ab-0eebd5198635_32_33_34_36_38_41_42_43_47_48_50_54_59_60;'
          }, {
             seite: 'n-tv.de',
             setcookieakzeptieren: 'consentUUID=b275cb44-5e3c-4d1c-9a88-142c95caee24_44_46_49_51_54_56_59;'
          }, {
             seite: 'chip.de',
-            setcookieakzeptieren: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43_46_47_49_51_54_58;'
+            setcookieakzeptieren: 'consentUUID=8c7e01cc-3108-4650-a225-681acde1db99_32_33_34_35_36_38_39_40_42_43_46_47_49_51_54_58_60;'
          }, {
             seite: 'rtl.de',
             setcookieakzeptieren: 'consentUUID=5a2997bb-3886-4fa1-b0f2-66a8d716c19c_32_34_37_39_41_44_46_49_51_54_56_59;'
