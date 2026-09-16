@@ -1066,8 +1066,12 @@
                advancedrun = false;
                ablehnen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button + button[mode="secondary"]');
                einstellungen = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button[mode="secondary"]');
-               speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
-               akzeptieren = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > button#accept-btn');
+               if (window.screen.availWidth > 500) {
+                  speichern = document.querySelector('#qc-cmp2-container div[class^="qc-cmp2-buttons-"] > button[aria-pressed="false"][mode="primary"]');
+               } else {
+                  speichern = document.querySelector('#qc-cmp2-container .qc-cmp2-footer > button[mode="primary"]');
+               }
+               akzeptieren = document.querySelector('#qc-cmp2-container .qc-cmp2-summary-buttons > :is(button#accept-btn, button[mode="primary"])');
                if (speichern && !speichern.checkVisibility()) {
                   speichern = document.querySelector('#qc-cmp2-container .qc-cmp2-footer > button#save-and-exit');
                }
