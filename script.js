@@ -606,6 +606,18 @@
                   speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save, a.cmptxt_btn_save2');
                }
                akzeptieren = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_yes[role="button"]');
+               if (window.location.host.endsWith('.nl')) {
+                  const akzeptierenknopf = cmpboxshadowroot.shadowRoot.querySelector('a.cmpboxbtnyescustom2[role="button"]');
+                  if (akzeptierenknopf && akzeptierenknopf.checkVisibility() && akzeptierenknopf.innerText.toLowerCase() === 'akkoord, ik ben onder 24') {
+                     if (cookieeinstellung === 'akzeptieren') {
+                        console.log('[Cookie auto decline] Cookie Banner akzeptiert.');
+                        cookiebannerstatus.knopfstatus = 'akzeptiert';
+                        akzeptierenknopf.click();
+                     }
+                     einstellungen = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_settings');
+                     speichern = cmpboxshadowroot.shadowRoot.querySelector('a.cmptxt_btn_save, a.cmptxt_btn_save2');
+                  }
+               }
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
