@@ -747,7 +747,7 @@
 
             // trustarc.com
             const trustarc = document.querySelector('.truste_box_overlay, #truste-consent-track');
-            if (trustarc && document.cookie.includes('notice_gdpr_prefs=') === false && document.querySelector('script[src^="https://consent.trustarc.com/asset/notice.js/v/v"]')) {
+            if (trustarc && document.cookie.includes('notice_gdpr_prefs=') === false && document.querySelector('script[src^="https://consent.trustarc.com/asset/notice.js/v/"]')) {
                console.log('[Cookie auto decline] Detected: trustarc.com');
                cookiebannerstatus.anbieter = 'trustarc.com';
                nureinklickeinstellungen = true;
