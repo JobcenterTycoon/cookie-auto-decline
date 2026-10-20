@@ -852,16 +852,16 @@
             if (waconcookiemanagement && document.cookie.includes('waconcookiemanagement') === false) {
                console.log('[Cookie auto decline] Detected: waconcookiemanagement');
                cookiebannerstatus.anbieter = 'waconcookiemanagement';
-               ablehnen = waconcookiemanagement.querySelector('a#data-cookie-refuse, span.cookie-refuse');
-               speichern = document.querySelector('.waconcookiemanagement:not([style="display: none;"]) p.cookie-save');
-               einstellungen = waconcookiemanagement.querySelector('p.cookie-management');
+               ablehnen = waconcookiemanagement.querySelector('a#data-cookie-refuse, span.cookie-refuse:not(:has(button)), button#data-cookie-refuse');
+               speichern = document.querySelector('.waconcookiemanagement:not([style="display: none;"]) p.cookie-save:not(:has(button)), p.cookie-save > button');
+               einstellungen = waconcookiemanagement.querySelector('p.cookie-management:not(:has(button)), button#data-cookie-individual');
                if (cookieeinstellung === 'funktional') {
                   const switchh = waconcookiemanagement.querySelector('.cookiecat-e.cookie-off');
                   if (switchh && switchh.checkVisibility()) {
                      switchh.click();
                   }
                }
-               akzeptieren = waconcookiemanagement.querySelector('p.cookie-accept, a[data-cookie-accept], span.cookie-accept:not(:has(> a[data-cookie-accept]))');
+               akzeptieren = waconcookiemanagement.querySelector('p.cookie-accept, a[data-cookie-accept], span.cookie-accept:not(:has(> a[data-cookie-accept], button)), button[data-cookie-accept]');
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
