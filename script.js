@@ -633,7 +633,7 @@
             }
 
             // opencmp.net
-            const opencmp = document.querySelector('script#open-cmp-stub:is([src="https://cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"], [src="//cdn.opencmp.net/tcf-v2/cmp-stub-latest.js"])');
+            const opencmp = document.querySelector('script#open-cmp-stub[src*="cmp-stub"]');
             if (opencmp && document.cookie.includes('euconsent-v2') === false) {
                findconsentintervalzahl = 502;
                findconsentintervalzahländern();
