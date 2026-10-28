@@ -1611,6 +1611,9 @@
             seite: 'sbk.org',
             setcookieablehnen: 'sbk=%7B%22other-1%22%3Atrue%2C%22statistics-4%22%3Afalse%2C%22google-analytics-7%22%3Afalse%2C%22google-ads-10%22%3Afalse%2C%22google-maps-58%22%3Afalse%2C%22datawrapper-13%22%3Afalse%2C%22linkedin-16%22%3Afalse%2C%22monotype-19%22%3Afalse%2C%22netigate-22%22%3Afalse%2C%22youtube%22%3Afalse%7D;',
             setcookieakzeptieren: 'sbk=%7B%22other-1%22%3Atrue%2C%22statistics-4%22%3Atrue%2C%22google-analytics-7%22%3Atrue%2C%22google-ads-10%22%3Atrue%2C%22google-maps-58%22%3Atrue%2C%22datawrapper-13%22%3Atrue%2C%22linkedin-16%22%3Atrue%2C%22monotype-19%22%3Atrue%2C%22netigate-22%22%3Atrue%2C%22youtube%22%3Atrue%7D;'
+         }, {
+            seite: 'forum.armbian.com',
+            setcookieakzeptieren: 'ips4_guestTermsDismissed=1;'
          }];
 
          for (let i = 0; i < regeln.length; i++) {
