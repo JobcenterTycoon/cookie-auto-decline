@@ -2957,6 +2957,27 @@
                klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
             }
 
+            // CookieMonster
+            const cookiemonster = document.querySelector('dialog#cmnstr-alert');
+            if (cookiemonster && cookiemonster.checkVisibility() && document.cookie.includes('cmnstr') === false) {
+               console.log('[Cookie auto decline] Detected: CookieMonster');
+               cookiebannerstatus.anbieter = 'CookieMonster';
+               advancedrun = false;
+               ablehnen = cookiemonster.querySelector('button[data-cmnstr-action="decline"]');
+               akzeptieren = cookiemonster.querySelector('button[data-cmnstr-action="accept"]');
+               if (cookieeinstellung === 'funktional') {
+                  einstellungen = cookiemonster.querySelector('button[data-cmnstr-action="edit"]');
+                  speichern = document.querySelector('dialog#cmnstr-dialog button[data-cmnstr-action="save"]');
+                  switchesdelay++;
+                  nureinklickeinstellungen = true;
+                  const checkbox = document.querySelector('dialog#cmnstr-dialog input#cmnstr-external[type="checkbox"]:not([disabled], :checked)');
+                  if (checkbox) {
+                     checkbox.click();
+                  }
+               }
+               klickecookiebutton(ablehnen, speichern, einstellungen, schließen, akzeptieren, nureinklickeinstellungen);
+            }
+
             // fundingchoicesmessages.google.com (only appear when no adblocker is used)
             const fundingchoicesmessages = document.querySelector('.fc-consent-root');
             if (fundingchoicesmessages && document.cookie.includes('%5Bnull%2Cnull%2Cnull%2C%5B%22') === false) {
