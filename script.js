@@ -2861,7 +2861,7 @@
             }
 
             // omcookie
-            const omcookie = document.querySelector('.tx-om-cookie-consent, .tx-om-cc');
+            const omcookie = document.querySelector('.tx-om-cookie-consent, .tx-om-consent, .tx-om-cc');
             if (omcookie && document.cookie.includes('omCookieConsent') === false) {
                console.log('[Cookie auto decline] Detected: omcookie');
                cookiebannerstatus.anbieter = 'omcookie';
